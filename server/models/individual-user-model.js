@@ -12,17 +12,17 @@ const lookingForSchema = mongoose.Schema(
     { timestamps: true },
 );
 const privacySchema = mongoose.Schema({
-    calenderIsPublic: { type: Boolean, default: true },
-    emailIsPublic: { type: Boolean, default: true },
-    isSearchable: { type: Boolean, default: true },
+    isCalenderPublic: { type: Boolean, default: true },
+    isEmailSearchable: { type: Boolean, default: true },
+    isUserSearchable: { type: Boolean, default: true },
     showOnSearch: { type: String, default: 'always', enum: ['always', 'never', 'friends-of-friends'] },
     showActivity: { type: String, default: 'friends-of-friends', enum: ['no-one', 'friends', 'friends-of-friends', 'public'] },
 });
 const individualSchema = mongoose.Schema(
     {
         userId: { type: String, required: true },
-        firstName: { type: String, required: true },
-        lastName: { type: String, required: true },
+        firstName: { type: String },
+        lastName: { type: String },
         phone: { type: String },
         dateOfBirth: { type: Date },
         photo: { type: String },

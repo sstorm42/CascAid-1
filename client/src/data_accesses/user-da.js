@@ -50,7 +50,7 @@ class UserDA {
     };
     get_user = (userId) => {
         return axios
-            .get(APIPaths.getOneUser + userId)
+            .get(APIPaths.getOneUser + userId, APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

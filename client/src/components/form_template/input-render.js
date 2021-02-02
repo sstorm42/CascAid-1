@@ -97,8 +97,6 @@ export const SelectRender = ({ input, label, placeholder, type, meta: { touched,
     );
 };
 export const HalfInputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
-    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
-
     return (
         <>
             <input {...input} placeholder={placeholder} type={type} className="form-control half-text-input" />
@@ -141,7 +139,7 @@ export const SwitchRender = ({ input, label, type, placeholder, id, defaultCheck
             <label className="col-sm-6" htmlFor={id}>
                 {label}
             </label>
-            <div className="col-sm-6 custom-control custom-switch">
+            <div className="col-sm-3 custom-control custom-switch" style={{ marginLeft: 20 }}>
                 <input type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
                 <label className="custom-control-label" htmlFor={id}>
                     {/* Toggle this switch element */}

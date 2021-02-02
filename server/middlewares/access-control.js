@@ -1,5 +1,6 @@
 const { User } = require('../models/user-model');
-
+const expressJwt = require('express-jwt');
+const config = require('../config/config').get(process.env.NODE_ENV);
 const resources = {
     createEvent: { action: 'create', module: 'event' },
     readEvent: { action: 'read', module: 'event' },
@@ -128,19 +129,25 @@ exports.grantAccess = function (action, module) {
     };
 };
 
-exports.allowIfLoggedin = async (req, res, next) => {
-    let token = req.cookies.userAuthToken;
-    User.findByToken(token, (err, user) => {
-        if (err) throw err;
-        if (!user)
-            return res.status(401).json({
-                isAuth: false,
-                success: false,
-                message: 'Not authenticated',
-            });
+// exports.allowIfLoggedin = async (req, res, next) => {
+//     let token = req.cookies.userAuthToken;
+//     console.log(token);
 
-        req.token = token;
-        req.user = user;
-        next();
-    });
-};
+//     User.findByToken(token, (err, user) => {
+//         if (err) throw err;
+//         if (!user)
+//             return res.status(401).json({
+//                 isAuth: false,
+//                 success: false,
+//                 message: 'Not authenticated',
+//             });
+
+//         req.token = token;
+//         req.user = user;
+//         next();
+//     });
+// };
+exports.allowIfLoggedin = expressJwt({
+    secret: config.SECRET,
+    algorithms: ['HS256'],
+});

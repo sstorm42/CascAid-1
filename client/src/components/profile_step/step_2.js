@@ -1,12 +1,12 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { required, email, stringLengthRange, alphabetic } from '../../actions/validate';
-import { SaInputRender, HalfInputRender, InputRender } from '../form_template/input-render';
-import * as RoutePath from '../../constants/route-paths';
+// import { Link } from 'react-router-dom';
+import { required, email, stringLengthRange } from '../../actions/validate';
+import { HalfInputRender, InputRender } from '../form_template/input-render';
+// import * as RoutePath from '../../constants/route-paths';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 
-const stringRange2To200 = stringLengthRange(2, 200);
+// const stringRange2To200 = stringLengthRange(2, 200);
 const stringRange6To256 = stringLengthRange(6, 256);
 const stringRange6To100 = stringLengthRange(6, 100);
 

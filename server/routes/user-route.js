@@ -15,7 +15,7 @@ user.get('/', allowIfLoggedin, grantAccess('read', 'user'), UserController.index
 // Get one user
 // Individual and Organization are able to get only their own user model.
 // Admin are able to get both individual and organization user model
-user.get('/:userId', allowIfLoggedin, grantAccess('read', 'user'), UserController.show);
+user.get('/:userId', allowIfLoggedin,  UserController.show);
 
 // Create One user
 // Only Admin can create a new user.

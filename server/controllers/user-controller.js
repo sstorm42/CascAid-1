@@ -39,14 +39,9 @@ exports.show = async (req, res) => {
             const user = await User.findById(userId);
             if (!user) return res.status(404).json({ success: false, message: 'User does not exist' });
             // if (['individual', 'organization'].includes(user.userType)) {
-            const user_ = (({ _id, name, userType, email, phone }) => ({
-                _id,
-                name,
-                userType,
-                email,
-                phone,
-            }))(user);
-            res.status(200).json({ success: true, user: user_ });
+            user.hashedPassword = undefined;
+            user.salt = undefined;
+            res.status(200).json({ success: true, user });
         } else {
             res.status(404).json({
                 success: false,
@@ -134,6 +129,7 @@ exports.destroy = async (req, res) => {
 // @route GET api/user/email/{email}
 // @desc Check for existing email
 exports.checkEmailExist = async (req, res) => {
+    console.log('Came here with: ', req.params.email);
     try {
         const currentUserId = req.query.currentUserId;
         const email = req.params.email.toString().toLowerCase();

@@ -1,15 +1,11 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { required, email, stringLengthRange, alphabetic } from '../../actions/validate';
-import { InputRenderWithLargeLabel, HalfInputRender, InputRender, SwitchRender, SelectRender, CheckBoxRender } from '../form_template/input-render';
-import * as RoutePath from '../../constants/route-paths';
+// import { Link } from 'react-router-dom';
+import { SwitchRender, SelectRender } from '../form_template/input-render';
+// import * as RoutePath from '../../constants/route-paths';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { allInvolvementTypes } from '../../constants/involvement-types';
-
-const stringRange2To200 = stringLengthRange(2, 200);
-const stringRange6To256 = stringLengthRange(6, 256);
-const stringRange6To100 = stringLengthRange(6, 100);
+import { allActivityTypes } from '../../constants/privacy-activity-types';
+import { allSearchTypes } from '../../constants/privacy-search-types';
 
 const ProfileStep4 = (props) => {
     const submitting = props.submitting;
@@ -22,27 +18,33 @@ const ProfileStep4 = (props) => {
                         <br />
 
                         <div>
-                            <p>Step 3 of 7</p>
-                            <ProgressBar now={42} />
+                            <p>Step 4 of 7</p>
+                            <ProgressBar now={56} />
                             <br />
-                            <h4>Give us a sense of your invlovement interest</h4>
+                            <h4>Adjust any privacy settings if needed</h4>
                         </div>
 
-                        <Field id="volunteerOpportunity" name="lookingFor.volunteerOpportunity" component={SwitchRender} label="I am looking for Volunteer Opportunities" defaultChecked="true" />
-                        <Field id="availabilityPerWeek" name="lookingFor.availabilityPerWeek" type="text" component={InputRenderWithLargeLabel} label="Average Weekly Hours Available" />
-                        <Field id="project" name="lookingFor.project" component={SwitchRender} label="I am looking for Projects" defaultChecked="true" />
-                        <Field id="boardMembership" name="lookingFor.boardMembership" component={SwitchRender} label="I am looking for Board Membership" defaultChecked="true" />
-                        <Field id="committees" name="lookingFor.committees" component={SwitchRender} label="I am looking for Committees/Advisory Boards" defaultChecked="true" />
-                        <Field id="typeOfInvolvement" name="lookingFor.typeOfInvolvement" type="text" component={SelectRender} label="I want the following type of involvement">
-                            {allInvolvementTypes.map((involvementType, i) => {
+                        <Field id="publicCalender" name="privacy.isCalenderPublic" component={SwitchRender} label="My calender is public" defaultChecked="true" />
+                        <Field id="isEmailSearchable" name="privacy.isEmailSearchable" component={SwitchRender} label="Organizations may access my email" defaultChecked="true" />
+                        <Field id="project" name="privacy.isUserSearchable" component={SwitchRender} label="Organization can find me in searches" defaultChecked="true" />
+                        <Field id="showOnSearch" name="privacy.showOnSearch" type="text" component={SelectRender} label="I show up in individual search">
+                            {allActivityTypes.map((activity, i) => {
                                 return (
-                                    <option key={involvementType.value} value={involvementType.value}>
-                                        {involvementType.label}
+                                    <option key={activity.value} value={activity.value}>
+                                        {activity.label}
                                     </option>
                                 );
                             })}
                         </Field>
-
+                        <Field id="showActivity" name="privacy.showActivity" type="text" component={SelectRender} label="My activity shows up on the feeds of">
+                            {allSearchTypes.map((search, i) => {
+                                return (
+                                    <option key={search.value} value={search.value}>
+                                        {search.label}
+                                    </option>
+                                );
+                            })}
+                        </Field>
                         <br />
                         <Row>
                             <Col sm="6">

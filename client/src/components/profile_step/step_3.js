@@ -1,15 +1,10 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { required, email, stringLengthRange, alphabetic } from '../../actions/validate';
-import { InputRenderWithLargeLabel, HalfInputRender, InputRender, SwitchRender, SelectRender, CheckBoxRender } from '../form_template/input-render';
-import * as RoutePath from '../../constants/route-paths';
+// import { Link } from 'react-router-dom';
+import { InputRenderWithLargeLabel, SwitchRender, SelectRender } from '../form_template/input-render';
+// import * as RoutePath from '../../constants/route-paths';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { allInvolvementTypes } from '../../constants/involvement-types';
-
-const stringRange2To200 = stringLengthRange(2, 200);
-const stringRange6To256 = stringLengthRange(6, 256);
-const stringRange6To100 = stringLengthRange(6, 100);
 
 const ProfileStep3 = (props) => {
     const submitting = props.submitting;
