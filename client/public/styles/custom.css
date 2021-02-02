@@ -1,0 +1,45 @@
+.center-text {
+	text-align: center;
+}
+.small-par {
+	color: #808080;
+	font-size: 14px;
+}
+.user-type-checked {
+	color: cadetblue;
+	width: 100%;
+	border: 3px solid cadetblue;
+}
+.user-type-checked:hover {
+	color: cadetblue;
+}
+.user-type-unchecked {
+	color: black;
+	width: 100%;
+	border: 1px solid #e5e5e5;
+}
+.user-type-unchecked:hover {
+	color: black;
+}
+.sign-as-left:hover {
+	text-decoration: none;
+}
+.sign-as-right:hover {
+	text-decoration: none;
+}
+.sign-radio-btn {
+	text-decoration: none;
+}
+.half-text-input {
+	/* width: 50%; */
+}
+.form-label {
+	vertical-align: middle;
+	margin-top: 5px;
+}
+.mainView {
+	background-image: url("../images/email-pattern.png");
+}
+.right-align {
+	text-align: right;
+}

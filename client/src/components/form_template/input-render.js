@@ -1,0 +1,152 @@
+import React from 'react';
+export const InputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
+    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+
+    return (
+        <div className={Classname}>
+            <div className="col-sm-3">
+                <label className="form-label">{label}</label>
+            </div>
+
+            <div className="col-sm-9">
+                <input {...input} placeholder={placeholder} type={type} className="form-control" />
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
+        </div>
+    );
+};
+export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
+    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+
+    return (
+        <div className={Classname}>
+            <div className="col-sm-6">
+                <label className="form-label">{label}</label>
+            </div>
+
+            <div className="col-sm-6">
+                <input {...input} placeholder={placeholder} type={type} className="form-control" />
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
+        </div>
+    );
+};
+export const TextRender = ({ input, label, placeholder, type, meta: { touched, error, warning } }) => {
+    const Classname = `form-group row ${touched && error ? 'has-danger' : 'has-success'}`;
+    return (
+        <div className={Classname}>
+            <label className="col-sm-3">{label}</label>
+            <div className="col-sm-8">
+                <textarea {...input} placeholder={placeholder} rows="5" className="form-control" />
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
+        </div>
+    );
+};
+export const CheckBoxRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
+    return (
+        <div className="form-group row">
+            <label className="col-sm-3">{label}</label>
+            <div className="col-sm-8">
+                <input {...input} type={type} />
+            </div>
+        </div>
+    );
+};
+export const InputNumberRender = ({ input, label, type, placeholder, step, min, max, unit, meta: { touched, error, warning } }) => {
+    const className = `form-group row ${touched && error ? 'has-danger' : 'has-success'}`;
+    return (
+        <div className={className}>
+            <label className="col-sm-3 col-form-label">{label}</label>
+            <div className="col-sm-8">
+                <div className="input-group">
+                    <input style={{ float: 'left' }} {...input} placeholder={placeholder} step={step} min={min} max={max} type={type} className="form-control" />
+                    <span className="InputNumberUnitSpan">{unit}</span>
+                </div>
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
+        </div>
+    );
+};
+export const SaInputRender = ({ input, label, type, placeholder, meta: { asyncValidating, touched, error, warning } }) => {
+    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+
+    return (
+        <div style={{ marginBottom: '10px' }} className={Classname}>
+            <label className="col-sm-4 signUpLabel">{label}</label>
+
+            <div className={asyncValidating ? 'async-validating col-sm-8' : 'col-sm-8'}>
+                <input {...input} placeholder={placeholder} type={type} className={'form-control ' + input.name} />
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+            </div>
+        </div>
+    );
+};
+export const SelectRender = ({ input, label, placeholder, type, meta: { touched, error }, children }) => {
+    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+    return (
+        <div className={Classname}>
+            <label className="col-sm-6">{label}</label>
+            <div className="col-sm-6">
+                <select {...input} className="form-control">
+                    {children}
+                </select>
+                {touched && error && <span>{error}</span>}
+            </div>
+        </div>
+    );
+};
+export const HalfInputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
+    const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+
+    return (
+        <>
+            <input {...input} placeholder={placeholder} type={type} className="form-control half-text-input" />
+            {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </>
+    );
+};
+
+// export const SwitchRender = ({ input, label, type, id, checked, placeholder, meta: { touched, error, warning } }) => {
+//     const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
+
+//     return (
+//         <div className={Classname}>
+//             <div className="col-sm-9">
+//                 <label className="form-label">{label}</label>
+//             </div>
+
+//             <div className="col-sm-3 custom-control custom-switch">
+//                 {/* <input type="checkbox" class="custom-control-input" id={id} checked={checked} /> */}
+//                 <input type="checkbox" className="custom-control-input" id="customSwitch1"></input>
+//             </div>
+//         </div>
+//     );
+// };
+export const SwitchRender = ({ input, label, type, placeholder, id, defaultChecked, meta: { touched, error, warning } }) => {
+    console.log('🚀 ~ file: input-render.js ~ line 127 ~ SwitchRender ~ input', defaultChecked);
+    return (
+        // <div className="form-group row">
+        //     {/* <label className="col-sm-9" htmlFor={id}>
+        //         {label}
+        //     </label> */}
+        //     <div className="col-sm-3 custom-control custom-switch">
+        //         <label className="custom-control-label" htmlFor={id}>
+        //             A
+        //         </label>
+        //         <input type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
+        //     </div>
+        // </div>
+        <div className="form-group row">
+            <label className="col-sm-6" htmlFor={id}>
+                {label}
+            </label>
+            <div className="col-sm-6 custom-control custom-switch">
+                <input type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
+                <label className="custom-control-label" htmlFor={id}>
+                    {/* Toggle this switch element */}
+                </label>
+            </div>
+        </div>
+    );
+};
