@@ -1,21 +1,23 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 export const InputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
     const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
 
     return (
         <div className={Classname}>
-            <div className="col-sm-3">
+            <div className="col-sm-4">
                 <label className="form-label">{label}</label>
             </div>
 
-            <div className="col-sm-9">
+            <div className="col-sm-8">
                 <input {...input} placeholder={placeholder} type={type} className="form-control" />
                 {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
         </div>
     );
 };
-export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
+export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, min, max, unit, step, meta: { touched, error, warning } }) => {
     const Classname = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
 
     return (
@@ -25,7 +27,16 @@ export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, met
             </div>
 
             <div className="col-sm-6">
-                <input {...input} placeholder={placeholder} type={type} className="form-control" />
+                {type === 'number' ? (
+                    <div className="input-group">
+                        <input {...input} placeholder={placeholder} type={type} className="form-control" min={min} max={max} unit={unit} step={step} />
+                        <div className="input-group-append">
+                            <span className="input-group-text">{unit}</span>
+                        </div>
+                    </div>
+                ) : (
+                    <input {...input} placeholder={placeholder} type={type} className="form-control" />
+                )}
                 {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
         </div>
@@ -36,7 +47,7 @@ export const TextRender = ({ input, label, placeholder, type, meta: { touched, e
     return (
         <div className={Classname}>
             <label className="col-sm-3">{label}</label>
-            <div className="col-sm-8">
+            <div className="col-sm-9">
                 <textarea {...input} placeholder={placeholder} rows="5" className="form-control" />
                 {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
@@ -122,28 +133,29 @@ export const HalfInputRender = ({ input, label, type, placeholder, meta: { touch
 //     );
 // };
 export const SwitchRender = ({ input, label, type, placeholder, id, defaultChecked, meta: { touched, error, warning } }) => {
-    console.log('🚀 ~ file: input-render.js ~ line 127 ~ SwitchRender ~ input', defaultChecked);
     return (
-        // <div className="form-group row">
-        //     {/* <label className="col-sm-9" htmlFor={id}>
-        //         {label}
-        //     </label> */}
-        //     <div className="col-sm-3 custom-control custom-switch">
-        //         <label className="custom-control-label" htmlFor={id}>
-        //             A
-        //         </label>
-        //         <input type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
-        //     </div>
-        // </div>
         <div className="form-group row">
             <label className="col-sm-6" htmlFor={id}>
                 {label}
             </label>
             <div className="col-sm-3 custom-control custom-switch" style={{ marginLeft: 20 }}>
-                <input type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
+                <input {...input} type="checkbox" className="custom-control-input" id={id} defaultChecked={true} />
                 <label className="custom-control-label" htmlFor={id}>
                     {/* Toggle this switch element */}
                 </label>
+            </div>
+        </div>
+    );
+};
+
+export const DatePickerRender = ({ input, label, minDate, selectedDate, setDate, meta: { touched, error, warning } }) => {
+    selectedDate = input.value ? new Date(input.value) : new Date();
+
+    return (
+        <div className="form-group row">
+            <label className="col-sm-4">{label}</label>
+            <div className="col-sm-8 date-picker-div">
+                <DatePicker className="form-control custom-date-picker" {...input} selected={selectedDate} minDate={minDate} />
             </div>
         </div>
     );

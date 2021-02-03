@@ -19,9 +19,15 @@ const SignUpForm = (props) => {
                     <form onSubmit={props.handleSignUpSubmit}>
                         <div className="center-text">
                             <h3>Sign Up To CascAid</h3>
-                            <label>Step 1 of 7</label>
+                        </div>
+                        <div>
+                            {/* <label>Step 1 of 7</label>
                             <ProgressBar now={14} />
-                            <p className="small-par">Sign up as</p>
+                            <p className="small-par">Sign up as</p> */}
+                            <p>Step 1 of 7</p>
+                            <ProgressBar now={14} />
+                            <br />
+                            <h4>Sign up as</h4>
                         </div>
                         <Row onChange={props.handleUserTypeChange}>
                             <Col className="sign-as-left">

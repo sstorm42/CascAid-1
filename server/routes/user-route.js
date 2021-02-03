@@ -15,7 +15,7 @@ user.get('/', allowIfLoggedin, grantAccess('read', 'user'), UserController.index
 // Get one user
 // Individual and Organization are able to get only their own user model.
 // Admin are able to get both individual and organization user model
-user.get('/:userId', allowIfLoggedin,  UserController.show);
+user.get('/:userId', allowIfLoggedin, UserController.show);
 
 // Create One user
 // Only Admin can create a new user.
@@ -24,7 +24,7 @@ user.post('/', userValidation.setUser, validate, allowIfLoggedin, grantAccess('c
 // Update One user
 // Individual and organization can update themselves only.
 // Only Admin can update all users.
-user.put('/:userId', userValidation.setUser, validate, allowIfLoggedin, grantAccess('update', 'user'), UserController.update);
+user.put('/:userId', allowIfLoggedin, UserController.update);
 
 // Delete One user
 // Only Admin can delete a user(except himself)

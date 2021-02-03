@@ -1,4 +1,8 @@
 const { User } = require('../models/user-model');
+const { Individual } = require('../models/individual-user-model');
+const { Organization } = require('../models/organization-model');
+const IndividualController = require('./individual-controller');
+const OrganizationController = require('./organization-controller');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 // @route GET api/user
@@ -41,6 +45,13 @@ exports.show = async (req, res) => {
             // if (['individual', 'organization'].includes(user.userType)) {
             user.hashedPassword = undefined;
             user.salt = undefined;
+            if (user.userType === 'individual') {
+                const individual = await Individual.findOne({ userId: user._id });
+                return res.status(200).json({ success: true, user, individual });
+            } else if (user.userType === 'organization') {
+                const organization = await Organization.findOne({ userId: user._id });
+                return res.status(200).json({ success: true, user, organization });
+            }
             res.status(200).json({ success: true, user });
         } else {
             res.status(404).json({
@@ -73,31 +84,21 @@ exports.store = async (req, res) => {
 // @desc Update user details
 exports.update = async (req, res) => {
     try {
-        let update = (({ name, email, phone }) => ({
-            name,
-            email,
-            phone,
-        }))(req.body);
         const userId = req.params.userId;
-        if (req.user.userType === 'admin' && req.user._id !== req.params.userId) {
-            update.userType = req.body.userType;
+        const step = req.body.step;
+        const user = req.body.user;
+        const model = req.body.model;
+        console.log(userId, step, user, model);
+        if (user.userType === 'individual') {
+            const { statusCode, json } = await IndividualController.update(userId, step, model);
+            const updatedUser = await User.findOneAndUpdate({ _id: userId }, { $set: { stepCompleted: step } }, { new: true });
+            console.log('🚀 ~ file: user-controller.js ~ line 94 ~ exports.update= ~ statusCode, json', statusCode, json);
+            res.status(statusCode).send(json);
+        } else if (user.userType === 'organization') {
+            return OrganizationController.update(userId, step, model);
+        } else {
+            return res.status(400).send({ success: false, message: 'No user type found for this user' });
         }
-
-        const user = await User.findOneAndUpdate({ _id: userId }, { $set: update }, { new: true });
-
-        if (!user) return res.status(401).json({ success: false, message: 'User does not exist' });
-        const user_ = (({ _id, name, userType, email, phone }) => ({
-            _id,
-            name,
-            userType,
-            email,
-            phone,
-        }))(req.body);
-        return res.status(200).json({
-            success: true,
-            user: user_,
-            message: 'User has been updated',
-        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

@@ -14,7 +14,7 @@ const ProfileStep4 = (props) => {
             <Row>
                 <Col></Col>
                 <Col md="8" className="sign-ing-form">
-                    <form onSubmit={props.handleSignUpSubmit}>
+                    <form onSubmit={props.handleOnSubmit}>
                         <br />
 
                         <div>
@@ -24,9 +24,9 @@ const ProfileStep4 = (props) => {
                             <h4>Adjust any privacy settings if needed</h4>
                         </div>
 
-                        <Field id="publicCalender" name="privacy.isCalenderPublic" component={SwitchRender} label="My calender is public" defaultChecked="true" />
-                        <Field id="isEmailSearchable" name="privacy.isEmailSearchable" component={SwitchRender} label="Organizations may access my email" defaultChecked="true" />
-                        <Field id="project" name="privacy.isUserSearchable" component={SwitchRender} label="Organization can find me in searches" defaultChecked="true" />
+                        <Field id="publicCalender" name="privacy.isCalenderPublic" component={SwitchRender} label="My calender is public" />
+                        <Field id="isEmailSearchable" name="privacy.isEmailSearchable" component={SwitchRender} label="Organizations may access my email" />
+                        <Field id="project" name="privacy.isUserSearchable" component={SwitchRender} label="Organization can find me in searches" />
                         <Field id="showOnSearch" name="privacy.showOnSearch" type="text" component={SelectRender} label="I show up in individual search">
                             {allActivityTypes.map((activity, i) => {
                                 return (
@@ -48,7 +48,12 @@ const ProfileStep4 = (props) => {
                         <br />
                         <Row>
                             <Col sm="6">
-                                <Button className="btn signUpBtn" disabled={submitting} type="submit">
+                                <Button
+                                    className="btn signUpBtn"
+                                    onClick={() => {
+                                        props.handleBackButton(4);
+                                    }}
+                                >
                                     Back
                                 </Button>
                             </Col>

@@ -1,5 +1,5 @@
 // New
-export const completeUserProfile = '/user/complete-profile/step';
+export const completeUserProfile = '/user/complete-profile';
 
 //OLD
 // Sign related pages

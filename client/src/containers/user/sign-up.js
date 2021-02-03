@@ -38,7 +38,6 @@ class SignUp extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (this.state.formSubmitted && prevProps.auth !== this.props.auth) {
             if (this.props.auth) {
-                console.log(this.props.auth);
                 if (this.props.auth.success && this.props.auth.isAuth) {
                     authenticate(this.props.auth.user, this.props.auth.token);
                     printLocalStorage();

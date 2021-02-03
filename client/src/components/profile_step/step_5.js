@@ -48,7 +48,12 @@ const ProfileStep4 = (props) => {
                         <br />
                         <Row>
                             <Col sm="6">
-                                <Button className="btn signUpBtn" disabled={submitting} type="submit">
+                                <Button
+                                    className="btn signUpBtn"
+                                    onClick={() => {
+                                        props.handleBackButton(5);
+                                    }}
+                                >
                                     Back
                                 </Button>
                             </Col>

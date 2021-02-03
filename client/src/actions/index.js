@@ -27,17 +27,29 @@ export const printLocalStorage = () => {
     console.log('Printing local storage ended');
 };
 export const authenticate = (user, token) => {
-    console.log('🚀 ~ file: index.js ~ line 29 ~ authenticate ~ user, token', user, token);
     setLocalStorage('user', user);
     setLocalStorage('token', token);
 };
 
-export const isAuth = () => {
+export const userAuth = () => {
     if (window !== 'undefined') {
         const token = getLocalStorage('token');
         const user = getLocalStorage('user');
-        if (token && user) return user;
-        else return false;
+        if (token && user)
+            return {
+                type: Types.USER_AUTH,
+                payload: {
+                    isAuth: true,
+                    user,
+                },
+            };
+        else
+            return {
+                type: Types.USER_AUTH,
+                payload: {
+                    isAuth: false,
+                },
+            };
     }
 };
 
@@ -56,7 +68,7 @@ export const userSignIn = (user) => ({
 export const userSignOut = () => {
     removeLocalStorage('token');
     removeLocalStorage('user');
-    return { type: Types.USER_SIGN_OUT, payload: UserDA.user_signout() };
+    return { type: Types.USER_SIGN_OUT, payload: {} };
 };
 
 export const deleteUser = (user) => ({
@@ -68,6 +80,12 @@ export const getUserInformation = (userId) => {
     return {
         type: Types.GET_USER,
         payload: UserDA.get_user(userId),
+    };
+};
+export const setUserInformation = (userId, step, user, model) => {
+    return {
+        type: Types.SET_USER,
+        payload: UserDA.update_user(userId, step, user, model),
     };
 };
 
@@ -109,12 +127,12 @@ export const getAllUsers = (userType) => {
     };
 };
 
-export const userAuth = () => {
-    return {
-        type: Types.USER_AUTH,
-        payload: UserDA.user_auth(),
-    };
-};
+// export const userAuth = () => {
+//     return {
+//         type: Types.USER_AUTH,
+//         payload: UserDA.user_auth(),
+//     };
+// };
 
 export const clearUser = () => {
     return {

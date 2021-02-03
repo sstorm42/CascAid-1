@@ -31,10 +31,13 @@ class UserDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    update_user = (userId, user) => {
+    update_user = (userId, step, user, model) => {
         return axios
-            .put(APIPaths.updateUser + userId, user)
-            .then((response) => response.data)
+            .put(APIPaths.updateUser + userId, { user, step, model }, APIPaths.apiConfig())
+            .then((response) => {
+                console.log('🚀 ~ file: user-da.js ~ line 38 ~ UserDA ~ .then ~ response', response);
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
 

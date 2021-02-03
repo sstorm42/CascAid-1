@@ -13,9 +13,8 @@ const ProfileStep3 = (props) => {
             <Row>
                 <Col></Col>
                 <Col md="8" className="sign-ing-form">
-                    <form onSubmit={props.handleSignUpSubmit}>
+                    <form onSubmit={props.handleOnSubmit}>
                         <br />
-
                         <div>
                             <p>Step 3 of 7</p>
                             <ProgressBar now={42} />
@@ -23,12 +22,22 @@ const ProfileStep3 = (props) => {
                             <h4>Give us a sense of your invlovement interest</h4>
                         </div>
 
-                        <Field id="volunteerOpportunity" name="lookingFor.volunteerOpportunity" component={SwitchRender} label="I am looking for Volunteer Opportunities" defaultChecked="true" />
-                        <Field id="availabilityPerWeek" name="lookingFor.availabilityPerWeek" type="text" component={InputRenderWithLargeLabel} label="Average Weekly Hours Available" />
-                        <Field id="project" name="lookingFor.project" component={SwitchRender} label="I am looking for Projects" defaultChecked="true" />
-                        <Field id="boardMembership" name="lookingFor.boardMembership" component={SwitchRender} label="I am looking for Board Membership" defaultChecked="true" />
-                        <Field id="committees" name="lookingFor.committees" component={SwitchRender} label="I am looking for Committees/Advisory Boards" defaultChecked="true" />
-                        <Field id="typeOfInvolvement" name="lookingFor.typeOfInvolvement" type="text" component={SelectRender} label="I want the following type of involvement">
+                        <Field id="volunteerOpportunity" name="involvement.volunteerOpportunity" component={SwitchRender} label="I am looking for Volunteer Opportunities" defaultChecked="true" />
+                        <Field
+                            id="availabilityPerWeek"
+                            name="involvement.availabilityPerWeek"
+                            type="number"
+                            component={InputRenderWithLargeLabel}
+                            min="0"
+                            max="40"
+                            unit="Hour"
+                            step="1"
+                            label="Average Weekly Hours Available"
+                        />
+                        <Field id="project" name="involvement.project" component={SwitchRender} label="I am looking for Projects" />
+                        <Field id="boardMembership" name="involvement.boardMembership" component={SwitchRender} label="I am looking for Board Membership" />
+                        <Field id="committees" name="involvement.committees" component={SwitchRender} label="I am looking for Committees/Advisory Boards" />
+                        <Field id="typeOfInvolvement" name="involvement.typeOfInvolvement" type="text" component={SelectRender} label="I want the following type of involvement">
                             {allInvolvementTypes.map((involvementType, i) => {
                                 return (
                                     <option key={involvementType.value} value={involvementType.value}>
@@ -41,11 +50,15 @@ const ProfileStep3 = (props) => {
                         <br />
                         <Row>
                             <Col sm="6">
-                                <Button className="btn signUpBtn" disabled={submitting} type="submit">
+                                <Button
+                                    className="btn signUpBtn"
+                                    onClick={() => {
+                                        props.handleBackButton(3);
+                                    }}
+                                >
                                     Back
                                 </Button>
                             </Col>
-                            {/* <Col sm="6"></Col> */}
                             <Col sm="6" className="right-align">
                                 <Button className="btn signUpBtn" disabled={submitting} type="submit">
                                     Next
