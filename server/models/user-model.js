@@ -15,6 +15,8 @@ const userSchema = mongoose.Schema(
         hashedPassword: { type: String, required: true },
         salt: { type: String },
         resetPasswordLink: { type: String, default: '' },
+        isActive: { type: Boolean, default: true },
+        isDeleted: { type: Boolean, default: false },
     },
     { timestamps: true },
 );

@@ -25,8 +25,8 @@ export default function (ComposedClass, allowedUserTypes, allowAuthenticatedUser
                             authDone: true,
                         });
                     } else {
-                        // Go to warning (unauthorised) page
-                        this.props.history.push(RoutePath.unAuthorisedPage);
+                        // Go to warning (unauthorized) page
+                        this.props.history.push(RoutePath.unAuthorizedPage);
                     }
                 } else if (this.props.auth.isAuth && !allowAuthenticatedUsers) {
                     // Already logged in, so go to homepage. can not go there until logout

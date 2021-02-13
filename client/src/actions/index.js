@@ -1,4 +1,6 @@
 import UserDA from '../data_accesses/user-da';
+import AreaOfInterestDA from '../data_accesses/area-of-interest-da';
+import SearchDA from '../data_accesses/search-da';
 import * as Types from '../constants/reducer-types';
 
 export const setLocalStorage = (key, value) => {
@@ -60,10 +62,12 @@ export const userSignUp = (user) => {
     };
 };
 
-export const userSignIn = (user) => ({
-    type: Types.USER_SIGN_IN,
-    payload: UserDA.user_signin(user),
-});
+export const userSignIn = (user) => {
+    return {
+        type: Types.USER_SIGN_IN,
+        payload: UserDA.user_signin(user),
+    };
+};
 
 export const userSignOut = () => {
     removeLocalStorage('token');
@@ -167,4 +171,16 @@ export const userResetPassword = (userId, token, passwords) => {
         type: Types.RESET_PASSWORD,
         payload: UserDA.reset_password(userId, token, passwords),
     };
+};
+
+export const getAllAreaOfInterests = () => {
+    return {
+        type: Types.GET_ALL_AREA_OF_INTEREST,
+        payload: AreaOfInterestDA.get_all_area_of_interest(),
+    };
+};
+
+//
+export const searchUsersByName = (name) => {
+    if (name.length > 0) return SearchDA.search_by_name(name);
 };

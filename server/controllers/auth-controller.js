@@ -55,17 +55,17 @@ exports.signUp = async (req, res) => {
         const user_ = await newUser.save();
         const token = jwt.sign({ _id: user_._id, email: user_.email }, config.SECRET, { expiresIn: '14d' });
         const { _id, email, userType, stepCompleted } = user_;
-        console.log('🚀 ~ file: auth-controller.js ~ line 56 ~ exports.signUp= ~ userType', userType);
+
         if (userType === 'individual') {
             const newIndividual = new Individual({ userId: _id, firstName: '', lastName: '' });
-            const individualRespone = await newIndividual.save();
-            console.log('🚀 ~ file: auth-controller.js ~ line 59 ~ exports.signUp= ~ individualRespone', individualRespone);
-            if (!individualRespone._id) return res.status(500).json({ success: false, message: individualRespone });
+            const individualResponse = await newIndividual.save();
+
+            if (!individualResponse._id) return res.status(500).json({ success: false, message: individualResponse });
         } else if (userType === 'organization') {
-            const newOrganization = { userId: _id };
-            const organizationRespone = await Organization.save();
-            console.log('🚀 ~ file: auth-controller.js ~ line 63 ~ exports.signUp= ~ organizationRespone', organizationRespone);
-            if (!organizationRespone._id) return res.status(500).json({ success: false, message: organizationRespone });
+            const newOrganization = new Organization({ userId: _id });
+            const organizationResponse = await newOrganization.save();
+
+            if (!organizationResponse._id) return res.status(500).json({ success: false, message: organizationResponse });
         } else if (userType === 'admin') {
         }
         return res.status(200).send({
@@ -74,14 +74,6 @@ exports.signUp = async (req, res) => {
             user: { _id, email, userType, stepCompleted },
             isAuth: true,
         });
-        // user_.generateToken((err, user) => {
-        //   if (err) return res.status(401).json({ message: "Invalid user data" });
-        //   else
-        //     return res.cookie("userAuthToken", user.token).json({
-        //       success: true,
-        //       isAuth: true,
-        //     });
-        // });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
     }
@@ -92,6 +84,7 @@ exports.signUp = async (req, res) => {
 exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
+
         email = email.toLowerCase();
         const user = await User.findOne({ email });
 
@@ -102,22 +95,22 @@ exports.signIn = async (req, res) => {
                 message: 'No user found with this email',
             });
         }
-        if (!user.comparePassword(password))
+        if (!user.authenticate(password))
             return res.status(401).json({
                 success: false,
                 isAuth: false,
                 message: 'Invalid email or password',
             });
+
+        const token = jwt.sign({ _id: user._id, email: user.email }, config.SECRET, { expiresIn: '14d' });
+
         const user_ = (({ _id, name, userType }) => ({ _id, name, userType }))(user);
 
-        user.generateToken((err, user) => {
-            if (err) return res.status(401).json({ message: 'Invalid user data' });
-            else
-                return res.cookie('userAuthToken', user.token).json({
-                    success: true,
-                    isAuth: true,
-                    user: user_,
-                });
+        return res.status(200).json({
+            success: true,
+            isAuth: true,
+            user: user_,
+            token,
         });
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -1,84 +1,129 @@
 const { Individual } = require('../models/individual-user-model');
-// const updateForStep1 = ['firstName','lastName','phone','dateOfBirth','']
+const { saveImagesOnServer } = require('../utils/library');
+const ImpactAreaController = require('./impact-area-controller');
+const RESPONSES = require('../responses/individual-response');
 
-exports.show = async (req, res) => {};
+exports.getBasicInfo = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const individual = await Individual.findOne({ userId });
+        if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
+        else res.status(200).send({ ...RESPONSES.IndividualFound, basicInfo: individual.basicInfo });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
 
-exports.update = async (userId, step, individual) => {
-    console.log('🚀 ~ file: individual-controller.js ~ line 7 ~ exports.update= ~ userId, step, individual', userId, step, individual);
-    if (step === 2) {
+exports.getInvolvement = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const individual = await Individual.findOne({ userId }).populate('involvement.impactAreas', { _id: 1, label: 1, value: 1 });
+
+        if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
+        else res.status(200).send({ ...RESPONSES.IndividualFound, involvement: individual.involvement ? individual.involvement : {} });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getPrivacy = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const individual = await Individual.findOne({ userId });
+        if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
+        else res.status(200).send({ ...RESPONSES.IndividualFound, privacy: individual.privacy });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.setBasicInfo = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        let basicInfo = req.body;
+
+        if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
+        if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },
-            { $set: { basicInfo: individual.basicInfo } },
             {
-                new: true,
+                $set: { basicInfo: basicInfo },
             },
+            { new: true },
         );
-        if (!updatedIndividual)
-            return {
-                statusCode: 404,
-                json: {
-                    success: false,
-                    message: 'Individual user not found!',
-                },
-            };
-        else
-            return {
-                statusCode: 200,
-                json: {
-                    success: true,
-                    message: 'Individual information saved successfully!',
-                    stepCompleted: step,
-                },
-            };
-    } else if (step === 3) {
+        if (!updatedIndividual) res.status(404).send(RESPONSES.IndividualNotUpdated);
+        else res.status(200).send(RESPONSES.IndividualUpdated);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.setInvolvement = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        let involvement = req.body;
+
+        if (involvement.impactAreas) {
+            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(userId, 'individual', involvement.impactAreas);
+            if (success) involvement.impactAreas = newImpactAreas;
+            else res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
+        }
+
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },
-            { $set: { involvement: individual.involvement } },
             {
-                new: true,
+                $set: { involvement: involvement },
             },
+            { new: true },
         );
-        if (!updatedIndividual)
-            return {
-                statusCode: 404,
-                json: {
-                    success: false,
-                    message: 'Individual user not found!',
-                },
-            };
-        else
-            return {
-                statusCode: 200,
-                json: {
-                    success: true,
-                    message: 'Individual information saved successfully!',
-                    stepCompleted: step,
-                },
-            };
-    } else if (step === 4) {
+        if (!updatedIndividual) return res.status(404).send(RESPONSES.IndividualNotUpdated);
+        else res.status(200).send(RESPONSES.IndividualUpdated);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+exports.setPrivacy = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        let privacy = req.body;
+
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },
-            { $set: { privacy: individual.privacy } },
             {
-                new: true,
+                $set: { privacy: privacy },
             },
+            { new: true },
         );
-        if (!updatedIndividual)
-            return {
-                statusCode: 404,
-                json: {
-                    success: false,
-                    message: 'Individual user not found!',
-                },
-            };
-        else
-            return {
-                statusCode: 200,
-                json: {
-                    success: true,
-                    message: 'Individual information saved successfully!',
-                    stepCompleted: step,
-                },
-            };
+        if (!updatedIndividual) res.status(404).send(RESPONSES.IndividualNotUpdated);
+        else res.status(200).send(RESPONSES.IndividualUpdated);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAll = async (req, res) => {
+    try {
+        // Implement all logic here
+        const allIndividuals = await Individual.find();
+        if (allIndividuals) return res.status(200).send({ ...RESPONSES.IndividualFound, allIndividuals });
+        else return res.status(404).send(RESPONSES.IndividualNotFound);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+exports.getPublicInfo = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const individual = await Individual.findOne({ userId }).populate('involvement.impactAreas', { _id: 1, label: 1, value: 1 });
+        if (individual._id) return res.status(200).send({ ...RESPONSES.IndividualFound, individual });
+        else {
+            // const basicInfo = individual.basicInfo.toObject();
+            // const involvement = individual.involvement.toObject();
+            // const privacy = individual.privacy.toObject();
+
+            return res.status(404).send(RESPONSES.IndividualNotFound);
+        }
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
     }
 };

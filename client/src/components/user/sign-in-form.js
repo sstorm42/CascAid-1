@@ -15,7 +15,7 @@ const SignInForm = (props) => {
             <Row>
                 <Col></Col>
                 <Col md="6" className="sign-ing-form">
-                    <form onSubmit={props.handleSignUpSubmit}>
+                    <form onSubmit={props.handleSignInSubmit}>
                         <div className="center-text">
                             <h3>Sign In To CascAid</h3>
                         </div>

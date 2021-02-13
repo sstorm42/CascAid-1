@@ -88,14 +88,16 @@ exports.update = async (req, res) => {
         const step = req.body.step;
         const user = req.body.user;
         const model = req.body.model;
-        console.log(userId, step, user, model);
+
         if (user.userType === 'individual') {
             const { statusCode, json } = await IndividualController.update(userId, step, model);
             const updatedUser = await User.findOneAndUpdate({ _id: userId }, { $set: { stepCompleted: step } }, { new: true });
-            console.log('🚀 ~ file: user-controller.js ~ line 94 ~ exports.update= ~ statusCode, json', statusCode, json);
             res.status(statusCode).send(json);
         } else if (user.userType === 'organization') {
-            return OrganizationController.update(userId, step, model);
+            const { statusCode, json } = await OrganizationController.update(userId, step, model);
+
+            const updatedUser = await User.findOneAndUpdate({ _id: userId }, { $set: { stepCompleted: step } }, { new: true });
+            res.status(statusCode).send(json);
         } else {
             return res.status(400).send({ success: false, message: 'No user type found for this user' });
         }
@@ -130,7 +132,6 @@ exports.destroy = async (req, res) => {
 // @route GET api/user/email/{email}
 // @desc Check for existing email
 exports.checkEmailExist = async (req, res) => {
-    console.log('Came here with: ', req.params.email);
     try {
         const currentUserId = req.query.currentUserId;
         const email = req.params.email.toString().toLowerCase();
@@ -148,5 +149,35 @@ exports.checkEmailExist = async (req, res) => {
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
+    }
+};
+exports.searchByName = async (req, res) => {
+    try {
+        const name = req.params.name;
+
+        const individuals = await Individual.find(
+            {
+                $or: [{ 'basicInfo.firstName': { $regex: name, $options: 'i' } }, { 'basicInfo.lastName': { $regex: name, $options: 'i' } }],
+            },
+            { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] } },
+        );
+
+        const organizations = await Organization.find(
+            {
+                $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
+            },
+            { userId: '$userId', userType: 'organization', name: '$basicInfo.name' },
+        );
+
+        const users = [
+            { userType: 'ORGANIZATION', users: organizations },
+            {
+                userType: 'INDIVIDUAL',
+                users: individuals,
+            },
+        ];
+        res.status(200).send({ success: true, users });
+    } catch (err) {
+        res.status(500).send({ success: false, message: 'Database access denied' });
     }
 };

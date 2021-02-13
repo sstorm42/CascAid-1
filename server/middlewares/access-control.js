@@ -128,26 +128,7 @@ exports.grantAccess = function (action, module) {
         }
     };
 };
-
-// exports.allowIfLoggedin = async (req, res, next) => {
-//     let token = req.cookies.userAuthToken;
-//     console.log(token);
-
-//     User.findByToken(token, (err, user) => {
-//         if (err) throw err;
-//         if (!user)
-//             return res.status(401).json({
-//                 isAuth: false,
-//                 success: false,
-//                 message: 'Not authenticated',
-//             });
-
-//         req.token = token;
-//         req.user = user;
-//         next();
-//     });
-// };
-exports.allowIfLoggedin = expressJwt({
+exports.allowIfLoggedIn = expressJwt({
     secret: config.SECRET,
     algorithms: ['HS256'],
 });

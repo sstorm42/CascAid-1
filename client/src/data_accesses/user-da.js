@@ -4,13 +4,17 @@ class UserDA {
     user_signup = (user) => {
         return axios
             .post(APIPaths.userSignUp, user)
-            .then((response) => response.data)
+            .then((response) => {
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
     user_signin = (user) => {
         return axios
             .post(APIPaths.userSignIn, user)
-            .then((response) => response.data)
+            .then((response) => {
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
     user_signout = () => {
@@ -32,13 +36,17 @@ class UserDA {
             .catch((err) => err.response.data);
     };
     update_user = (userId, step, user, model) => {
+        console.log('🚀 ~ file: user-da.js ~ line 39 ~ UserDA ~ userId, step, user, model', userId, step, user, model);
         return axios
             .put(APIPaths.updateUser + userId, { user, step, model }, APIPaths.apiConfig())
             .then((response) => {
-                console.log('🚀 ~ file: user-da.js ~ line 38 ~ UserDA ~ .then ~ response', response);
+                console.log(response);
                 return response.data;
             })
-            .catch((err) => err.response.data);
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
     };
 
     get_all_users = (userType) => {

@@ -8,7 +8,7 @@ import asyncValidate from '../../actions/asyncValidate';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { getUserTypeDataById } from '../../constants/user-type-data';
 import { NotificationManager } from 'react-notifications';
-import * as RoutePath from '../../constants/route-paths';
+import { getBasicInfoPageByUserType } from '../../constants/route-paths';
 class SignUp extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +31,6 @@ class SignUp extends Component {
     };
     onSubmit = (values) => {
         values.userType = getUserTypeDataById(parseInt(this.state.user.userType)).name;
-
         this.props.dispatch(userSignUp(values));
         this.setState({ formSubmitted: true, loading: true });
     };
@@ -42,7 +41,8 @@ class SignUp extends Component {
                     authenticate(this.props.auth.user, this.props.auth.token);
                     printLocalStorage();
                     NotificationManager.success('Welcome to CascAid', 'Success');
-                    this.props.history.push(RoutePath.completeUserProfile);
+                    const userType = getUserTypeDataById(parseInt(this.state.user.userType)).name;
+                    this.props.history.push(getBasicInfoPageByUserType(userType));
                 } else if (this.props.auth.success === false && this.props.auth.isAuth === false) {
                     this.setState({ loading: false, formSubmitted: false });
                 }

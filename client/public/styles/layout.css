@@ -51,3 +51,35 @@
         opacity: 0;
     }
 }
+.parent-page {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.full-page-div {
+    position: relative;
+    height: calc(100vh-50px);
+}
+.main-div {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.15s;
+    transition: all 0.15s;
+    padding: 0 20px;
+    margin-left: 64px;
+    background-image: url('../images/email-pattern.png');
+    min-height: 500px;
+}
+.sidenav---sidenav---_2tBP {
+    background-color: cadetblue !important;
+    min-height: 500px;
+}
+.sidenav---collapsed---LQDEv {
+    background-color: cadetblue !important;
+    min-height: 500px;
+}

@@ -18,12 +18,9 @@ const SignUpForm = (props) => {
                 <Col md="6" className="sign-ing-form">
                     <form onSubmit={props.handleSignUpSubmit}>
                         <div className="center-text">
-                            <h3>Sign Up To CascAid</h3>
+                            <h3>Sign Up On CascAid</h3>
                         </div>
                         <div>
-                            {/* <label>Step 1 of 7</label>
-                            <ProgressBar now={14} />
-                            <p className="small-par">Sign up as</p> */}
                             <p>Step 1 of 7</p>
                             <ProgressBar now={14} />
                             <br />
@@ -51,7 +48,7 @@ const SignUpForm = (props) => {
                             <br />
                             <Row>
                                 <Col sm="6">
-                                    <Button className="btn signUpBtn" disabled={submitting} type="submit">
+                                    <Button className="btn signUpBtn" disabled={submitting} type="submit" size="sm">
                                         SIGN UP
                                     </Button>
                                 </Col>

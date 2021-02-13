@@ -1,8 +1,9 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import * as RoutePath from '../../constants/route-paths';
 import { Link } from 'react-router-dom';
-
+import SearchBox from './search-box';
+import ReactAutoSuggest from './react-autosuggest-lib';
 const Header = (props) => {
     const isAuth = props.isAuth || false;
 
@@ -12,11 +13,24 @@ const Header = (props) => {
 
         return (
             <div className="header">
-                <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
+                {/* <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
                     <Navbar.Brand href="/">CascAid</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
+                            <SearchBox />
+                            <Link to={RoutePath.signOutPage} className="nav-link">
+                                Sign out
+                            </Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar> */}
+                <Navbar bg="primary" variant="dark" expand="lg">
+                    <Navbar.Brand href="/">CascAid</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse className="justify-content-end">
+                        <Nav>
+                            <ReactAutoSuggest />
                             <Link to={RoutePath.signOutPage} className="nav-link">
                                 Sign out
                             </Link>

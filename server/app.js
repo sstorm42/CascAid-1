@@ -32,10 +32,10 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
-
+app.use('/uploaded-images', express.static('uploaded_images'));
 //connect all routes to the application
 app.use('/api', routes);
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/*', function (req, res) {
     res.cookie().sendFile(path.join(__dirname, 'build', 'index.html'));
