@@ -197,16 +197,15 @@ exports.seedOrganization = async (req, res) => {
     for (let type = 0; type < organizationTypes.length; type++) {
         typeObj[organizationTypes[type].label] = organizationTypes[type]._id;
     }
+    console.log(typeObj);
     for (let i = 0; i < allOrganizations.length; i++) {
         let organization = allOrganizations[i];
         const email = organization.Contact.toLocaleLowerCase();
         if (email) {
             let userFound = await User.find({ email: email });
-            console.log('🚀 ~ file: user-controller.js ~ line 205 ~ exports.seedOrganization= ~ userFound', userFound);
             if (userFound && userFound.length > 0) continue;
             else {
                 let password = getRandomPassword();
-                console.log('🚀 ~ file: user-controller.js ~ line 209 ~ exports.seedOrganization= ~ password', password);
                 orgs.push({
                     email,
                     password,

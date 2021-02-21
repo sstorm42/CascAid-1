@@ -3,6 +3,12 @@ import { Card, CardColumns } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
 const OrganizationListView = (props) => {
     const allOrganizations = props.allOrganizations;
+    const descriptionRender = (description) => {
+        if (description) {
+            if (description.length < 101) return description;
+            else return description.substr(0, 100) + '...';
+        } else return 'No description available';
+    };
     if (allOrganizations && allOrganizations.length > 0) {
         return (
             <CardColumns>
@@ -17,7 +23,10 @@ const OrganizationListView = (props) => {
                             <Card.Img variant="top" src={org.basicInfo.profilePicture ? org.basicInfo.profilePicture : defaultOrganizationProfilePicture} alt="No Image Found" />
                             <Card.Body className="justify-text">
                                 <Card.Title>{org.basicInfo.name}</Card.Title>
-                                <Card.Text>{org.basicInfo.description}</Card.Text>
+                                <hr />
+                                <Card.Text>
+                                    <small>{descriptionRender(org.basicInfo.description)}</small>
+                                </Card.Text>
                             </Card.Body>
                             {/* <Card.Footer></Card.Footer> */}
                         </Card>

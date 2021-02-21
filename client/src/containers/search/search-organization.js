@@ -27,6 +27,7 @@ const SearchOrganization = (props) => {
         setLoading(true);
         props.dispatch(getAllOrganizationsByFilter(filter));
         setLoading(false);
+        setActivePage(1);
     };
     const gotoOrganizationDetails = (userId) => {
         props.history.push(`/organization/details/${userId}`);
@@ -98,6 +99,8 @@ const SearchOrganization = (props) => {
                         {viewType === 'list' && (
                             <>
                                 <Pagination
+                                    itemClass="page-item"
+                                    linkClass="page-link"
                                     activePage={activePage}
                                     itemsCountPerPage={30}
                                     totalItemsCount={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations.length : 0}

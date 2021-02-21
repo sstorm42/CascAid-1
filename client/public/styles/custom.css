@@ -213,3 +213,6 @@ tr td:last-child {
 .special-btn {
     cursor: pointer;
 }
+.card-text {
+    line-height: 1;
+}

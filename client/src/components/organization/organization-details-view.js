@@ -44,22 +44,26 @@ const DetailsView = (props) => {
         );
     };
     const tagsRender = (label, tags) => {
-        return (
-            <Row>
-                <Col md="3">
-                    <b>{label}</b>
-                </Col>
-                <Col md="9">
-                    {tags.map((tag, i) => {
-                        return (
-                            <Badge variant="primary" key={i} className="badge-single">
-                                {tag.label}
-                            </Badge>
-                        );
-                    })}
-                </Col>
-            </Row>
-        );
+        if (tags && tags.length > 0) {
+            return (
+                <Row>
+                    <Col md="3">
+                        <b>{label}</b>
+                    </Col>
+                    <Col md="9">
+                        {tags.map((tag, i) => {
+                            if (tag)
+                                return (
+                                    <Badge variant="primary" key={i} className="badge-single">
+                                        {tag.label}
+                                    </Badge>
+                                );
+                            else return <></>;
+                        })}
+                    </Col>
+                </Row>
+            );
+        } else return <></>;
     };
     const addressMaker = (address) => {
         let fullAddress = '';
@@ -77,7 +81,7 @@ const DetailsView = (props) => {
         const basicInfo = organization.basicInfo;
         const serviceInfo = organization.serviceInfo;
         const impactAreas = serviceInfo.impactAreas;
-
+        console.log(basicInfo);
         return (
             <Container>
                 <Row>

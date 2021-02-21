@@ -33,7 +33,10 @@ import CreateEvent from './containers/event/create-event';
 import DisplayEvent from './containers/event/display-event';
 import ListingEvents from './containers/event/listing-events';
 import ManageEvents from './containers/event/manage-events';
-
+const allRoles = ['individual', 'organization', 'admin'];
+const individualAndAdminRoles = ['individual', 'admin'];
+const organizationAndAdminRoles = [, 'organization', 'admin'];
+const adminRoles = ['admin'];
 const Routes = () => {
     return (
         <Switch>
@@ -41,27 +44,27 @@ const Routes = () => {
             <LayoutRoute path={RoutePath.signInPage} exact component={UserAuthCheck(UserSignIn, [], false)} layout={Layout} />
             <LayoutRoute path={RoutePath.signOutPage} exact component={UserSignOut} layout={Layout} />
 
-            <LayoutRoute path={RoutePath.individualCompleteBasicInfoPage} exact component={UserAuthCheck(IndividualBasicInfo, ['individual', 'admin', true])} layout={Layout} />
-            <LayoutRoute path={RoutePath.individualCompleteInvolvementPage} exact component={UserAuthCheck(IndividualInvolvement, ['individual', 'admin', true])} layout={Layout} />
-            <LayoutRoute path={RoutePath.individualCompletePrivacyPage} exact component={UserAuthCheck(IndividualPrivacy, ['individual', 'admin', true])} layout={Layout} />
+            <LayoutRoute path={RoutePath.individualCompleteBasicInfoPage} exact component={UserAuthCheck(IndividualBasicInfo, individualAndAdminRoles, true)} layout={Layout} />
+            <LayoutRoute path={RoutePath.individualCompleteInvolvementPage} exact component={UserAuthCheck(IndividualInvolvement, ['individual', 'admin'], true)} layout={Layout} />
+            <LayoutRoute path={RoutePath.individualCompletePrivacyPage} exact component={UserAuthCheck(IndividualPrivacy, ['individual', 'admin'], true)} layout={Layout} />
 
-            <LayoutRoute path={RoutePath.individualEditBasicInfoPage} exact component={UserAuthCheck(IndividualBasicInfo, ['individual', 'admin', true])} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.individualEditInvolvementPage} exact component={UserAuthCheck(IndividualInvolvement, ['individual', 'admin', true])} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.individualEditPrivacyPage} exact component={UserAuthCheck(IndividualPrivacy, ['individual', 'admin', true])} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.individualEditBasicInfoPage} exact component={UserAuthCheck(IndividualBasicInfo, ['individual', 'admin'], true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.individualEditInvolvementPage} exact component={UserAuthCheck(IndividualInvolvement, ['individual', 'admin'], true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.individualEditPrivacyPage} exact component={UserAuthCheck(IndividualPrivacy, ['individual', 'admin'], true)} layout={DashboardLayout} />
 
-            <LayoutRoute path={RoutePath.individualDetailsPage} exact component={UserAuthCheck(IndividualDetails, ['individual', 'organization', 'admin'], true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.individualDetailsPage} exact component={UserAuthCheck(IndividualDetails, allRoles, true)} layout={DashboardLayout} />
 
-            <LayoutRoute path={RoutePath.organizationCompleteBasicInfoPage} exact component={UserAuthCheck(OrganizationBasicInfo, ['organization', 'admin', true])} layout={Layout} />
-            <LayoutRoute path={RoutePath.organizationCompleteServiceInfoPage} exact component={UserAuthCheck(OrganizationServiceInfo, ['organization', 'admin', true])} layout={Layout} />
-            <LayoutRoute path={RoutePath.organizationCompleteInternalLinkPage} exact component={UserAuthCheck(OrganizationInternalLink, ['organization', 'admin', true])} layout={Layout} />
-            <LayoutRoute path={RoutePath.organizationDetailsPage} exact component={UserAuthCheck(OrganizationDetails, ['individual', 'organization', 'admin'], true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.organizationCompleteBasicInfoPage} exact component={UserAuthCheck(OrganizationBasicInfo, organizationAndAdminRoles, true)} layout={Layout} />
+            <LayoutRoute path={RoutePath.organizationCompleteServiceInfoPage} exact component={UserAuthCheck(OrganizationServiceInfo, organizationAndAdminRoles, true)} layout={Layout} />
+            <LayoutRoute path={RoutePath.organizationCompleteInternalLinkPage} exact component={UserAuthCheck(OrganizationInternalLink, organizationAndAdminRoles, true)} layout={Layout} />
+            <LayoutRoute path={RoutePath.organizationDetailsPage} exact component={UserAuthCheck(OrganizationDetails, allRoles, true)} layout={DashboardLayout} />
 
-            <LayoutRoute path={RoutePath.organizationEditBasicInfoPage} exact component={UserAuthCheck(OrganizationBasicInfo, ['organization', 'admin', true])} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.organizationEditServiceInfoPage} exact component={UserAuthCheck(OrganizationServiceInfo, ['organization', 'admin', true])} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.organizationEditInternalLinkPage} exact component={UserAuthCheck(OrganizationInternalLink, ['organization', 'admin', true])} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.organizationEditBasicInfoPage} exact component={UserAuthCheck(OrganizationBasicInfo, organizationAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.organizationEditServiceInfoPage} exact component={UserAuthCheck(OrganizationServiceInfo, organizationAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.organizationEditInternalLinkPage} exact component={UserAuthCheck(OrganizationInternalLink, organizationAndAdminRoles, true)} layout={DashboardLayout} />
 
-            <LayoutRoute path={RoutePath.homePage} exact component={UserAuthCheck(HomePage, ['individual', 'organization', 'admin'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.organizationSearchPage} exact component={SearchOrganization} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.homePage} exact component={UserAuthCheck(HomePage, allRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.organizationSearchPage} exact component={UserAuthCheck(SearchOrganization, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventSearchPage} exact component={SearchEvent} layout={DashboardLayout} />
 
             <LayoutRoute path="/messages" exact component={Messages} layout={DashboardLayout} />
@@ -73,7 +76,7 @@ const Routes = () => {
             <LayoutRoute path={RoutePath.eventEditPage + ':eventId'} exact component={UserAuthCheck(CreateEvent, ['organization'], true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventListByOrganizationPage} exact component={UserAuthCheck(ManageEvents, ['organization'], true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventListPage} exact component={UserAuthCheck(ListingEvents, ['individual', 'organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventDetailsPage + ':eventId'} exact component={UserAuthCheck(DisplayEvent, ['individual', 'organization', 'admin'], true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.eventDetailsPage + ':eventId'} exact component={UserAuthCheck(DisplayEvent, allRoles, true)} layout={DashboardLayout} />
         </Switch>
     );
 };

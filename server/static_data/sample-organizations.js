@@ -1,7 +1,7 @@
 exports.allOrganizations = [
     {
         Name: '100 Black Men Philadelphia Chapter',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.100blackmenphilly.org/',
         Address: '1324 W. Clearfield Street',
         ImpactAreas: 'Racial Justice, Education, Children',
@@ -28,7 +28,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'STEPHEN AND SANDRA SHELLER 11TH STREET FAMILY HEALTH SERVICES',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://drexel.edu/cnhp/practices/11th-street/',
         Address: '850 N. 11th Street',
         ImpactAreas: 'Public Health, Healthcare',
@@ -56,7 +56,7 @@ exports.allOrganizations = [
     },
     {
         Name: '\n11th Hour Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://11thhourtheatrecompany.org/',
         Address: '2329 South 3rd Street',
         ImpactAreas: 'Arts',
@@ -83,7 +83,7 @@ exports.allOrganizations = [
     },
     {
         Name: '1807 & Friends',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.1807friends.org/',
         Address: '',
         ImpactAreas: 'Arts, Education, Children',
@@ -110,7 +110,7 @@ exports.allOrganizations = [
     },
     {
         Name: '1812 Productions',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.1812productions.org/',
         Address: '2329 S 3rd Street',
         ImpactAreas: 'Arts',
@@ -163,7 +163,7 @@ exports.allOrganizations = [
     },
     {
         Name: '21st Ward Meals on Wheels Inc.',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '630 E. Cathedral Road',
         ImpactAreas: 'Food and Hunger, Elderly',
@@ -189,7 +189,7 @@ exports.allOrganizations = [
     },
     {
         Name: '21st Ward Junior League Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.leaguelineup.com/welcome.asp?url=21stwardjl',
         Address: '',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -215,7 +215,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Our House Culture Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://iloveourhouse.org/',
         Address: '6376-6380 Germantown Ave.',
         ImpactAreas: 'Arts, Community Development',
@@ -241,7 +241,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Mill Creek Farm',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.millcreekurbanfarm.org/',
         Address: '4901 Brown Street',
         ImpactAreas: 'Food and Hunger, Community Development',
@@ -322,7 +322,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ace Mentor Program of Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.acementorphilly.org/',
         Address: '36 South 18th Street',
         ImpactAreas: 'Children, Workforce Development, Education',
@@ -376,7 +376,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ARTZ Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.artzphilly.org/',
         Address: '1229 Chestnut St., #188',
         ImpactAreas: 'Elderly, Arts, Public Health, Mental Health',
@@ -430,7 +430,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Academy for Earling Learning Child Care Facility',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.aelchildcare.org/',
         Address: '5000 Wissahickon Ave',
         ImpactAreas: 'Children, Education',
@@ -457,7 +457,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Academy of Cognitive and Behvaioral Therapies',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.academyofct.org/',
         Address: '17 New College Building',
         ImpactAreas: 'Healthcare, Public Health, Mental Health',
@@ -484,7 +484,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Academy of Music',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.academyofmusic.org/',
         Address: '240 S Broad Street',
         ImpactAreas: 'Arts',
@@ -511,7 +511,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Academy of Natural Sciences',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ansp.org/',
         Address: '1900 Benjamin Franklin Parkway',
         ImpactAreas: 'Environment, Education',
@@ -537,7 +537,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Academy of the Vocal Arts',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://avaopera.org/',
         Address: '1920 Spruce Street',
         ImpactAreas: 'Arts',
@@ -563,7 +563,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Access Matters',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.accessmatters.org/',
         Address: '1700 Market Street, Suite 1540',
         ImpactAreas: 'Public Health, Healthcare',
@@ -589,7 +589,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Achieve Now',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.achieve-now.com/',
         Address: '1735 Market St., Ste. A500',
         ImpactAreas: 'Children, Education',
@@ -615,7 +615,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Action Wellness',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.actionwellness.org/',
         Address: '1216 Arch Street, 6th Floor',
         ImpactAreas: 'Public Health, Healthcare',
@@ -642,7 +642,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Acts Christian Transitional Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.actsservices.org/',
         Address: '1429 N Newkirk St',
         ImpactAreas: 'Poverty, Homelessness, Housing',
@@ -723,7 +723,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Addiction Medicine and Health Advocates',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.amhainc.org/',
         Address: '928 Market Street',
         ImpactAreas: 'Public Health',
@@ -776,7 +776,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Affordable Housing Centers of Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ahcopa.org/',
         Address: '846 North Broad Street, 1st Floor',
         ImpactAreas: 'Housing',
@@ -803,7 +803,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Collaboration for IT and Communications Excellence',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.thecollaboration-itexcellence.org/',
         Address: '421 N. 7th Street . Suite 603',
         ImpactAreas: 'Economic Development',
@@ -829,7 +829,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'African Cultural Alliance of North America',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://acanaus.org/',
         Address: '5530 Chester Ave Philadelphia',
         ImpactAreas: 'Human Services, Community Development, Public Health, Culture',
@@ -857,7 +857,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'After School Activities Partnership',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://phillyasap.org/',
         Address: '1520 Locust St., Suite 1104',
         ImpactAreas: 'Children, Education',
@@ -883,7 +883,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'AIDS Fund',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aidsfundphilly.org/',
         Address: '2628 Orthodox Street',
         ImpactAreas: 'Public Health, Education',
@@ -910,7 +910,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'AIDS Law Project of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aidslawpa.org/',
         Address: '1211 Chestnut Street, Suite 600',
         ImpactAreas: 'Law and Policy, Public Health',
@@ -937,7 +937,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Aikikai of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://aikikaiofphiladelphia.org/',
         Address: '3502 Scotts Lane',
         ImpactAreas: 'Education, Culture, Public Health',
@@ -991,7 +991,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Any Kid Will Do',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://anykidwilldo.org/',
         Address: '726 N 3RD ST',
         ImpactAreas: 'Children, Education',
@@ -1045,7 +1045,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Al-Bustan Seeds of Culture',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.albustanseeds.org/',
         Address: '526 South 46th Street',
         ImpactAreas: 'Arts, Culture, Education',
@@ -1152,7 +1152,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Allen Lanes Art Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://allenslane.org/',
         Address: '601 WEST ALLENS LANE',
         ImpactAreas: 'Arts, Culture, Community Development',
@@ -1178,7 +1178,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Alliance Francaise de Philadelphie',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.afphila.com/',
         Address: '1420 Walnut Street, Suite 700',
         ImpactAreas: 'Culture, Education',
@@ -1230,7 +1230,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Allied Tried Assistance Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.alliedtrades-online.com/',
         Address: '4170 Woodhaven Road',
         ImpactAreas: 'Mental Health, Public Health',
@@ -1256,7 +1256,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Alpha Bravo Canine',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'www.alphabravocanine.org',
         Address: '',
         ImpactAreas: 'Veterans, Mental Health, Public Health',
@@ -1283,7 +1283,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'AlphaCare Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://alphacarephilly.org/',
         Address: '3807 LANCASTER AVE',
         ImpactAreas: 'Women and Gender Rights, Healthcare, Human Services',
@@ -1362,7 +1362,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'PCOM Alumni Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://alumni.pcom.edu/',
         Address: '4180 City Avenue',
         ImpactAreas: 'Education, Healthcare',
@@ -1389,7 +1389,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Amachi',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.amachimentoring.org/',
         Address: '2210 S. 71st St.',
         ImpactAreas: 'Crime and Public Safety, Children, Religion',
@@ -1415,7 +1415,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'America Italy Society of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aisphila.org/',
         Address: '230 South Broad Street, Suite 1105',
         ImpactAreas: 'Culture, Education',
@@ -1470,7 +1470,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Civil Liberties University',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aclupa.org/',
         Address: '',
         ImpactAreas: 'Civil Rights, Crime and Public Safety',
@@ -1497,7 +1497,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Competitiveness Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'www.aciusa.org',
         Address: '1 International Plaza, Suite 600',
         ImpactAreas: 'Economic Development',
@@ -1524,7 +1524,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Composers Forum Philadelphia Chapter',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.acfphiladelphia.org/',
         Address: '252 S. Saint Bernard St',
         ImpactAreas: 'Arts',
@@ -1550,7 +1550,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Historical Theatre',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'www.ahtheatre.org',
         Address: '',
         ImpactAreas: 'History, Arts',
@@ -1577,7 +1577,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Law Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '4025 Chestnut Street',
         ImpactAreas: 'Law and Policy',
@@ -1629,7 +1629,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Philosophical Society',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.amphilsoc.org/',
         Address: '105 South Fifth Street',
         ImpactAreas: 'Education',
@@ -1656,7 +1656,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'American Swedish Historical Museum',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.americanswedish.org/',
         Address: '1900 Pattison Avenue',
         ImpactAreas: 'History, Education, Culture',
@@ -1683,7 +1683,7 @@ exports.allOrganizations = [
     },
     {
         Name: "American Women's Heritage Society",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.belmontmansion.org/american_women_s_heritage.html',
         Address: '2000 Belmont Mansion Drive',
         ImpactAreas: 'History, Parks and Open Spaces',
@@ -1709,7 +1709,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Americans with Disabilities Action Planning Team',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'adapt.org',
         Address: '4513 TYSON AVE',
         ImpactAreas: 'Education, Disabilities, Civil Rights',
@@ -1736,7 +1736,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Amerihealth Caritas Partnership',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.amerihealthcaritaspartnership.org/',
         Address: '200 Stevens Drive',
         ImpactAreas: 'Healthcare, Public Health, Education',
@@ -1763,7 +1763,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Amparo de la Ni�ez Inc. / Children's Safe Harbor Inc.",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '107 E Luray St',
         ImpactAreas: 'Children, Public Health',
@@ -1790,7 +1790,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Angels in Motion',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://aimangelsinmotion.org/',
         Address: '9883 Cowden Street',
         ImpactAreas: 'Public Health',
@@ -1816,7 +1816,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ACCT Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.acctphilly.org/',
         Address: '111 W. Hunting Park Avenue',
         ImpactAreas: 'Animal Welfare',
@@ -1843,7 +1843,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Anna Crusis Women's Choir",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://annacrusis.org/',
         Address: '',
         ImpactAreas: 'Arts, Arts',
@@ -1870,7 +1870,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ann Kids',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.annkids.com/',
         Address: '10100 Jamison Avenue',
         ImpactAreas: 'Children, Education',
@@ -1896,7 +1896,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Anti-Violence Partnership of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://avpphila.org/',
         Address: '2000 Hamilton Street, Suite 204',
         ImpactAreas: 'Human Services, Public Health, Mental Health, Children',
@@ -1950,7 +1950,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Aqua String Band',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://aquastringband.com/about-us/',
         Address: '4624 Richmond St.',
         ImpactAreas: 'Arts',
@@ -1977,7 +1977,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Aquinas Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '1700 Fernon St',
         ImpactAreas: 'Education, Human Services',
@@ -2003,7 +2003,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Federation Housing',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.federationhousing.org/',
         Address: '8900 Roosevelt Boulevard',
         ImpactAreas: 'Housing, Elderly',
@@ -2029,7 +2029,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Arcadia Commons',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.arcadiacommons.org/',
         Address: 'Kern Street',
         ImpactAreas: 'Community Development, Economic Development',
@@ -2056,7 +2056,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Arch Street Meeting House',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.historicasmh.org',
         Address: '320 Arch Street',
         ImpactAreas: 'History, Education',
@@ -2110,7 +2110,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ArcheDream for HUMANKIND',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://adhk.org/',
         Address: '4532 Linmore Ave',
         ImpactAreas: 'Arts, Culture, Education',
@@ -2137,7 +2137,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Arden Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://ardentheatre.org/',
         Address: '40 N. 2nd Street',
         ImpactAreas: 'Arts, Culture, Education',
@@ -2163,7 +2163,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Jefferson Health Northeast',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://northeast.jeffersonhealth.org/',
         Address: '4900 Frankford Avenue',
         ImpactAreas: 'Healthcare',
@@ -2189,7 +2189,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ars Nova Workshop',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.arsnovaworkshop.org/about/',
         Address: 'Bok Room 509, 1901 South 9th Street',
         ImpactAreas: 'Arts',
@@ -2215,7 +2215,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Art Sanctuary Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://artsanctuary.org/',
         Address: '628 S. 16th Street',
         ImpactAreas: 'Arts, Education, Children',
@@ -2241,7 +2241,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Art Sphere Inc.',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://artsphere.org/',
         Address: '1901 S 9th Street, Studio #502',
         ImpactAreas: 'Arts, Children, Education',
@@ -2268,7 +2268,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Art Smart',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://artsmart.org/',
         Address: '1315 Walnut St., Suite 320',
         ImpactAreas: 'Arts, Children, Education',
@@ -2295,7 +2295,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ArtistYear',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://artistyear.org/',
         Address: '',
         ImpactAreas: 'Arts, Children, Education',
@@ -2322,7 +2322,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Artistas y Musicos Latino Americanos',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.amla.org/',
         Address: '4261 N. 5th St, 3rd Floor',
         ImpactAreas: 'Arts, Culture, Education',
@@ -2349,7 +2349,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Art-Reach',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.art-reach.org/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Arts',
@@ -2375,7 +2375,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ArtWell',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://theartwell.org/',
         Address: '100 W. Oxford St., Suite E-1200',
         ImpactAreas: 'Arts, Children, Education, Community Development',
@@ -2402,7 +2402,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ash Theater Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.ashtheater.org/',
         Address: '7 Lock St, Philadelphia',
         ImpactAreas: 'Arts',
@@ -2428,7 +2428,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Asian American Senior Assoc of Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.aasapa.org/',
         Address: '1019 Cherry Street',
         ImpactAreas: 'Elderly, Culture, Disabilities, Healthcare, Human Services',
@@ -2455,7 +2455,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Asian American Women's Coalition",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aawcphilly.org/',
         Address: '301-305 North 9th Street',
         ImpactAreas: 'Women and Gender Rights, Children, Culture',
@@ -2507,7 +2507,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Asian Arts Initiative',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://asianartsinitiative.org/',
         Address: '1219 Vine Street',
         ImpactAreas: 'Arts, Culture',
@@ -2534,7 +2534,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Asian Community Health Coalition',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.asiancommunityhealthcoalition.org/home.htm',
         Address: '1106 Buttonwood Street Unit A',
         ImpactAreas: 'Public Health, Healthcare',
@@ -2561,7 +2561,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Asociacion de Puertorriquenos En Marcha (APM)',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://apmphila.org/',
         Address: '900 N. Ninth Street',
         ImpactAreas: 'Education, Community Development, Human Services, Economic Development',
@@ -2640,7 +2640,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Assistance in Healthcare',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://philadelphia.aih.org/',
         Address: '1331 E. Wyoming Avenue, Suite 4100',
         ImpactAreas: 'Healthcare',
@@ -2666,7 +2666,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Associated Alumni of Central High School',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://centralhighalumni.com/',
         Address: '1700 W Olney Ave.',
         ImpactAreas: 'Children, Education',
@@ -2693,7 +2693,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Associated Polish Home',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://polishhome.com/main/',
         Address: '9150 Academy Road',
         ImpactAreas: 'Culture, Arts',
@@ -2720,7 +2720,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Associated Services for the Blind and Visually Impaired',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.asb.org/',
         Address: '919 Walnut Street',
         ImpactAreas: 'Healthcare, Education',
@@ -2747,7 +2747,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Association for Public Art',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.associationforpublicart.org/',
         Address: '1528 Walnut Street, Suite 1000',
         ImpactAreas: 'Arts, Culture',
@@ -2773,7 +2773,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Association for the Advancement of Sustainability in Higher Education',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aashe.org/',
         Address: '2401 Walnut Street, Suite 102',
         ImpactAreas: 'Education',
@@ -2799,7 +2799,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Association of Fundraising Professionals of Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://afpgpc.org/',
         Address: '',
         ImpactAreas: 'Education',
@@ -2826,7 +2826,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Association of Gay & Lesbian Psychiatrists',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.aglp.org/',
         Address: '4514 Chester Avenue',
         ImpactAreas: 'LGBTQ, Mental Health',
@@ -2852,7 +2852,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Astral Artists',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.astralartists.org/',
         Address: '1500 Walnut Street, Suite 413',
         ImpactAreas: 'Arts, Education',
@@ -2879,7 +2879,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Atlantic Center for Capital Representation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.atlanticcenter.org/',
         Address: '1315 WALNUT STREET, SUITE 905',
         ImpactAreas: 'Crime and Public Safety',
@@ -2906,7 +2906,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Atlantic Coast Opera Festival',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.atlanticcoastoperafestival.org/',
         Address: '2028 S. 17th Street, Suite 11',
         ImpactAreas: 'Arts',
@@ -2932,7 +2932,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Augustinian Defenders of the Rights of the Poor',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.rightsofthepoor.org/',
         Address: '2130 S 21ST ST, SECOND FLOOR',
         ImpactAreas: 'Poverty, Community Development',
@@ -2959,7 +2959,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Autism Solace Inc.',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.autismsolace.org/?fbclid=IwAR2Vsmv7NsDTR3Ut3gyOU8Yijx8B34RHHGD4594ihYJPXD5AX1HqukId4IQ',
         Address: '',
         ImpactAreas: 'Public Health, Mental Health, Education',
@@ -2985,7 +2985,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Avalon String Band',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.avalonstringband.com/',
         Address: '1538-40 S. 2nd Street',
         ImpactAreas: 'Arts',
@@ -3011,7 +3011,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Avenue of the Arts',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.avenueofthearts.org/',
         Address: '777 South Broad Street # 321',
         ImpactAreas: 'Arts, Community Development, Economic Development',
@@ -3064,7 +3064,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Awbury Arboretum',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://awbury.org/',
         Address: 'One Awbury Road',
         ImpactAreas: 'History, Parks and Open Spaces',
@@ -3090,7 +3090,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Azuka Theatre',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.azukatheatre.org/',
         Address: '1700 Sansom Street Suite 800',
         ImpactAreas: 'Arts',
@@ -3116,7 +3116,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Choral Arts Philadelphia',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.choralarts.com/',
         Address: '',
         ImpactAreas: 'Arts',
@@ -3144,7 +3144,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Back on My Feet',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://backonmyfeet.org/',
         Address: '100 S Broad Street, Suite 2136',
         ImpactAreas: 'Homelessness, Housing, Poverty, Workforce Development',
@@ -3171,7 +3171,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'BalletX',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.balletx.org/',
         Address: '1923 WASHINGTON AVENUE',
         ImpactAreas: 'Arts',
@@ -3196,7 +3196,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Barefoot Artists',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://barefootartists.org/',
         Address: '2412 WAVERLY STREET',
         ImpactAreas: 'Arts, Culture, Community Development',
@@ -3250,7 +3250,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Barristers' Association of Philadelphia",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.phillybarristers.com/',
         Address: '1735 Market Street, Ste A234',
         ImpactAreas: 'Law and Policy, Racial Justice',
@@ -3277,7 +3277,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Bartram's Garden",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bartramsgarden.org/',
         Address: '5400 LINDBERGH BLVD.',
         ImpactAreas: 'Arts, Parks and Open Spaces',
@@ -3304,7 +3304,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Beacon Theatre Productions',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.beacontheatreproductions.org/',
         Address: '',
         ImpactAreas: 'Arts, Civil Rights',
@@ -3331,7 +3331,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Beat the Streets Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://btsphilly.org/',
         Address: '3700 Market Street � Suite 300',
         ImpactAreas: 'Children',
@@ -3358,7 +3358,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bebashi Transition to Hope',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bebashi.org/',
         Address: '1235 Spring Garden Street',
         ImpactAreas: 'Healthcare, Education, Human Services',
@@ -3385,7 +3385,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Beech Companies',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://beechcompanies.com/',
         Address: '1510 Cecil B. Moore Avenue, Suite 300',
         ImpactAreas: 'Community Development, Economic Development',
@@ -3439,7 +3439,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ben Franklin Technology Partners of Southeastern PA',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.sep.benfranklin.org/',
         Address: '4801 South Broad Street, Suite 200',
         ImpactAreas: 'Economic Development',
@@ -3466,7 +3466,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Beneficial Data Trust',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bdtrust.org/',
         Address: '1500 Market St, Suite 2800',
         ImpactAreas: 'Human Services',
@@ -3493,7 +3493,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Best Behavioral Healthcare',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '5043 Frankford Avenue',
         ImpactAreas: 'Healthcare, Public Health, Mental Health',
@@ -3546,7 +3546,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bethesda Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bethesdaproject.org/',
         Address: '1630 South Street',
         ImpactAreas: 'Housing, Homelessness',
@@ -3572,7 +3572,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Beyond the Bars',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://beyondthebarsmusic.org/',
         Address: '3500 Lancaster Ave',
         ImpactAreas: 'Arts, Children, Crime and Public Safety',
@@ -3599,7 +3599,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bicycle Club of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://phillybikeclub.org/bcpdo/',
         Address: '',
         ImpactAreas: 'Sports and Recreation, Public Health',
@@ -3625,7 +3625,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bicycle Coalition of Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bicyclecoalition.org/',
         Address: '1500 Walnut St # 1107',
         ImpactAreas: 'Sports and Recreation, Public Health',
@@ -3679,7 +3679,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Big Brothers Big Sisters Independence Region',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.independencebigs.org/',
         Address: '123 S. Broad Street, Suite 1050',
         ImpactAreas: 'Children',
@@ -3706,7 +3706,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Big Picture Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bigpicturephiladelphia.org/',
         Address: '2300 W. Master Street',
         ImpactAreas: 'Children, Education, Mental Health',
@@ -3733,7 +3733,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bike and Build',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bikeandbuild.org/',
         Address: '1901 S. 9th Street #410',
         ImpactAreas: 'Sports and Recreation, Public Health, Housing',
@@ -3759,7 +3759,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bikkur Cholim of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bikkurcholimphilly.org/',
         Address: '1706 Solly Ave',
         ImpactAreas: 'Human Services, Public Health',
@@ -3785,7 +3785,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Birthright Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://birthright.org/philadelphia/',
         Address: '7986 Oxford Ave',
         ImpactAreas: 'Women and Gender Rights, Healthcare',
@@ -3811,7 +3811,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Black Pearl Chamber Orchestra',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.blackpearlco.org/',
         Address: '30 South 15th Street, 15th Floor',
         ImpactAreas: 'Arts',
@@ -3865,7 +3865,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Black Women's Health Alliance Phladelphia",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.pbwha.org/',
         Address: '1324 W. Clearfield Street',
         ImpactAreas: 'Healthcare, Public Health, Racial Justice',
@@ -3892,7 +3892,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Blackriver Financial Youth Academy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.blackriveryouthacademy.org/',
         Address: '6037 W. Jefferson Street',
         ImpactAreas: 'Children, Education',
@@ -3919,7 +3919,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Blackstar Film Festival',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.blackstarfest.org/',
         Address: '1901 South 9th Street, Bok 314',
         ImpactAreas: 'Arts, Racial Justice',
@@ -3946,7 +3946,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Blackwell Culture Aliiance Inc.',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '3500 Lancaster Ave',
         ImpactAreas: 'Community Development, Economic Development, Education',
@@ -3973,7 +3973,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Blessed Sarnelli Community',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bscphilly.org',
         Address: '2739 Kensington Ave',
         ImpactAreas: 'Homelessness',
@@ -3999,7 +3999,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bloktoberfest',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bloktoberfest.org/',
         Address: '1601 Washington Ave',
         ImpactAreas: 'Community Development',
@@ -4079,7 +4079,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Books Through Bars',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://booksthroughbars.org/',
         Address: '4722 Baltimore Ave',
         ImpactAreas: 'Crime and Public Safety, Community Development, Education',
@@ -4105,7 +4105,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bria Young Basketball',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.briayoungbasketball.com/',
         Address: '123 Leverington Ave Philadelphia',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -4132,7 +4132,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bustleton Bengals Youth Club',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bustletonbengals.org/',
         Address: '9945 President Street',
         ImpactAreas: 'Children, Sports and Recreation, Community Development',
@@ -4159,7 +4159,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Casa Soccer League',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.phillysoccer.org/',
         Address: '728 STRATFORD DR',
         ImpactAreas: 'Sports and Recreation',
@@ -4185,7 +4185,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Philadelphia Center for Architecture',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.philadelphiacfa.org',
         Address: '218 Arch Street',
         ImpactAreas: 'Culture, Education',
@@ -4212,7 +4212,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Chestnut Hill Youth Sports Club',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.chysc.org/',
         Address: '209 E HARTWELL LN',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -4238,7 +4238,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Compete 360',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.compete360.org/',
         Address: '1639 N Hancock St, Suite 309',
         ImpactAreas: 'Children, Education',
@@ -4292,7 +4292,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fairmount Soccer Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://fairmount-soccer-association.constantcontactsites.com/',
         Address: '',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -4318,7 +4318,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Frankford Chargers Sports & Mentoring Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.frankfordchargers.org/',
         Address: '4800 Ditman Street',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -4345,7 +4345,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Boost Community Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.boostcdc.com/',
         Address: '6010 Lansdowne Avenue',
         ImpactAreas: 'Community Development',
@@ -4371,7 +4371,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'African Family Health Organization',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://afaho.org/',
         Address: '4415 Chestnut Street',
         ImpactAreas: 'Education, Culture, Human Services',
@@ -4397,7 +4397,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bowerbird',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bowerbird.org/',
         Address: '3637 Chestnut Street',
         ImpactAreas: 'Arts',
@@ -4451,7 +4451,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Boys & Girls Club of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bgcphila.org/',
         Address: '1518 Walnut Street, Suite 712',
         ImpactAreas: 'Children, Education, Arts, Sports and Recreation',
@@ -4477,7 +4477,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Brandywine Workshop and Archives',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://brandywineworkshopandarchives.org/',
         Address: '730 South Broad Street',
         ImpactAreas: 'Arts, Community Development',
@@ -4531,7 +4531,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Breakthrough Bike Challenge',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'www.breakthroughbikechallenge.org',
         Address: '',
         ImpactAreas: 'Public Health, Healthcare',
@@ -4585,7 +4585,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bridesburg Cougars',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.bridesburgcougars.org/',
         Address: '4101 Richmond St',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -4611,7 +4611,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bridge of Hope Community Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://bridgeofhopecdc.org/aboutus.html',
         Address: '12th Street & Cecil B. Moore Avenue',
         ImpactAreas: 'Community Development, Economic Development',
@@ -4666,7 +4666,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Brith Sholom House',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.brithsholom.com/',
         Address: '3939 Conshohocken Avenue',
         ImpactAreas: 'Housing, Elderly',
@@ -4692,7 +4692,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Broad Street Ministry',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.broadstreetministry.org/',
         Address: '315 South Broad street',
         ImpactAreas: 'Religion, Human Services, Community Development',
@@ -4718,7 +4718,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Broad Street Review',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.broadstreetreview.com/',
         Address: '399 Market St., Suite 360',
         ImpactAreas: 'Arts',
@@ -4771,7 +4771,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Build A Bridge International',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.buildabridge.org/',
         Address: '205 W Tulpehocken St',
         ImpactAreas: 'Arts, Education, Poverty',
@@ -4798,7 +4798,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Burholme Emergency Medical Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.burholme.org/',
         Address: '830 Bleigh Street',
         ImpactAreas: 'Public Health',
@@ -4825,7 +4825,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bushfire Theatre of Performing Arts',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.bushfiretheatre.org/',
         Address: '224 South 52nd Street',
         ImpactAreas: 'Arts, Children, Education',
@@ -4851,7 +4851,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Bustleton Mental Health Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://bmhiphila.wixsite.com/website',
         Address: '1701 Grant Ave',
         ImpactAreas: 'Public Health, Mental Health',
@@ -4878,7 +4878,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'By My Side',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.bymysideparenting.org/',
         Address: '1747 Tulip Street',
         ImpactAreas: 'Children, Community Development',
@@ -4932,7 +4932,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CADEkids',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.cadekids.org/',
         Address: '128 Chestnut Street, Suite 302',
         ImpactAreas: 'Children',
@@ -4959,7 +4959,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CASA Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://casaphiladelphia.org/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Children',
@@ -5039,7 +5039,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Children's Crisis Treatment Center",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://cctckids.org/',
         Address: '1080 North Delaware Avenue, Suite 600',
         ImpactAreas: 'Children, Healthcare, Mental Health',
@@ -5066,7 +5066,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Children's Hospital of Philadelphia",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.chop.edu/',
         Address: '3401 Civic Center Blvd.',
         ImpactAreas: 'Children, Healthcare',
@@ -5092,7 +5092,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cohmar Health',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.comhar.org/',
         Address: '100 West Lehigh Avenue',
         ImpactAreas: 'Public Health, Mental Health',
@@ -5118,7 +5118,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CORA Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.coraservices.org/',
         Address: '8540 Verree Road',
         ImpactAreas: 'Public Health, Mental Health',
@@ -5172,7 +5172,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Called to Serve CDC',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://calledtoservecdc.org/',
         Address: '3600 N. Broad Street',
         ImpactAreas: 'Community Development, Economic Development, Poverty',
@@ -5199,7 +5199,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cambodia Association of Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://cagp.org/',
         Address: '2416-18 South 7th Street',
         ImpactAreas: 'Human Services, Immigrants and Refugees, Education, Culture',
@@ -5226,7 +5226,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cambridge Street Studios',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.cambridgeststudios.com/',
         Address: '915 N 4TH ST',
         ImpactAreas: 'Arts, Education',
@@ -5253,7 +5253,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Camp Achdus',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://campachdus.com/',
         Address: '7942 Dorcas Street',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -5279,7 +5279,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Camp Galil',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.campgalil.org/',
         Address: '2100 Arch Street',
         ImpactAreas: 'Children, Sports and Recreation, Religion',
@@ -5305,7 +5305,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Campaign for Working Families',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cwfphilly.org/',
         Address: '1415 N Broad Street, Suite 221-A',
         ImpactAreas: 'Human Services, Economic Development',
@@ -5332,7 +5332,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Campus Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://campusphilly.org/',
         Address: '1500 John F. Kennedy Blvd. Suite 411',
         ImpactAreas: 'Education',
@@ -5359,7 +5359,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cancer Support Community Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cancersupportphiladelphia.org/',
         Address: '4100 Chamounix Drive',
         ImpactAreas: 'Public Health',
@@ -5412,7 +5412,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Team Foster',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'teamfoster.org',
         Address: '',
         ImpactAreas: 'Veterans, Mental Health',
@@ -5438,7 +5438,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cardiovacular Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cviphiladelphia.org/',
         Address: '',
         ImpactAreas: 'Healthcare, Education',
@@ -5465,7 +5465,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Care to Learn Child Development International',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://caretolearn.net/',
         Address: '1227-31 N. 52nd St',
         ImpactAreas: 'Children, Education',
@@ -5492,7 +5492,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Caring Heart Rehabilitation and Nursing Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.caringheartrnc.com/',
         Address: '6445 Germantown Avenue',
         ImpactAreas: 'Healthcare',
@@ -5519,7 +5519,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Caring for Friends',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://caringforfriends.org/',
         Address: '12271 Townsend Road',
         ImpactAreas: 'Children, Elderly, Food and Hunger',
@@ -5571,7 +5571,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Carpenters Joint Apprenticeship Training Center of Philadelphia & Vicinity',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.carpentersofphila.com/',
         Address: '10401 DECATUR RD',
         ImpactAreas: 'Workforce Development',
@@ -5598,7 +5598,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Carpenters Hall',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.carpentershall.org/',
         Address: '320 Chestnut Street',
         ImpactAreas: 'History',
@@ -5624,7 +5624,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CASA de Consejeria y Salud Integral',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.casacares.net/',
         Address: '213 W Allegheny Ave.',
         ImpactAreas: 'Human Services, Education',
@@ -5704,7 +5704,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Catholic Kolping Society of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.phillykolpingnews.org/',
         Address: '9130 Academy Rd',
         ImpactAreas: 'Human Services',
@@ -5730,7 +5730,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Catholic Social Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cssphiladelphia.org/',
         Address: '222 North 17th Street, 3rd Floor',
         ImpactAreas: 'Human Services, Housing, Homelessness, Immigrants and Refugees, Children',
@@ -5809,7 +5809,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ceiba',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.ceibaphiladelphia.org/',
         Address: '174 Diamond St',
         ImpactAreas: 'Economic Development, Housing',
@@ -5836,7 +5836,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Centennial Parkside CDC',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://centennialparkside.org/',
         Address: '3479 West Girard Avenue',
         ImpactAreas: 'Community Development',
@@ -5863,7 +5863,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center City Crime Victim Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cccvs.org/',
         Address: '1315 Walnut Street, Suite 320',
         ImpactAreas: 'Crime and Public Safety, Human Services',
@@ -5890,7 +5890,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center City District',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.centercityphila.org/',
         Address: '660 Chestnut Street',
         ImpactAreas: 'Community Development, Economic Development',
@@ -5917,7 +5917,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center City Residents Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.centercityresidents.org/',
         Address: '1900 Market St Street, 8th Floor',
         ImpactAreas: 'Community Development',
@@ -5944,7 +5944,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center for Contemporary Mussar',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://contemporarymussar.org/',
         Address: '2201 Chestnut Street, #501',
         ImpactAreas: 'Education, Religion',
@@ -5970,7 +5970,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Pennsylvania Client Assistance Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.equalemployment.org/',
         Address: '1515 Market Street, Suite 1300',
         ImpactAreas: 'Human Services, Disabilities',
@@ -5996,7 +5996,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Center for Families and Relationships',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cfarcounseling.org/',
         Address: '7901 Bustleton Avenue, Suite 300',
         ImpactAreas: 'Children, Mental Health',
@@ -6023,7 +6023,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center for Independent Thought',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.centerforindependentthought.org/',
         Address: '1420 Walnut Street, Suite 1011',
         ImpactAreas: 'Civil Rights, Education',
@@ -6050,7 +6050,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Center for Literacy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://centerforliteracy.org/',
         Address: '1420 Pine Street',
         ImpactAreas: 'Education, Workforce Development, Poverty',
@@ -6077,7 +6077,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CARIE',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.carie.org/',
         Address: '1500 JFK Blvd., Suite 1500',
         ImpactAreas: 'Elderly, Education',
@@ -6103,7 +6103,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Centro Nueva Creacion',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'www.goodlands.org',
         Address: '185 W Tioga St.',
         ImpactAreas: 'Children, Culture, Arts',
@@ -6129,7 +6129,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Challah for Hunger',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://challahforhunger.org/',
         Address: '1900 Market St. 8th Floor',
         ImpactAreas: 'Food and Hunger',
@@ -6156,7 +6156,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Change 4 a Dollar',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.mychange4adollar.com/contact-us.html',
         Address: '5720 Media St Philadelphia',
         ImpactAreas: 'Children, Education',
@@ -6183,7 +6183,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Character Lab',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://characterlab.org/',
         Address: '3675 Market Street',
         ImpactAreas: 'Children',
@@ -6209,7 +6209,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Grand Lodge of Pennsylvania Sons & Daughters of Italy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://sdoitaly.com/',
         Address: '1518 Walnut Street, Suite 1410',
         ImpactAreas: 'Culture, History',
@@ -6262,7 +6262,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Chestnut Hill Community Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.chestnuthill.org/',
         Address: '8434 Germantown Avenue',
         ImpactAreas: 'Community Development',
@@ -6289,7 +6289,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Chestnut Hill Business District',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://chestnuthillpa.com/',
         Address: '8514 GERMANTOWN AVENUE',
         ImpactAreas: 'Economic Development, Community Development',
@@ -6316,7 +6316,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Chestnut Hill Hospital',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.towerhealth.org/locations/chestnut-hill-hospital',
         Address: '8835 Germantown Avenue',
         ImpactAreas: 'Healthcare',
@@ -6368,7 +6368,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Child Inner Sense Education, Arts, & Recreation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.childinnersense.org/about',
         Address: '4525 N COLORADO ST',
         ImpactAreas: 'Arts, Education, Children',
@@ -6395,7 +6395,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Child USA',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://childusa.org/',
         Address: '3508 Market Street, Suite 202',
         ImpactAreas: 'Children, Law and Policy',
@@ -6422,7 +6422,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Child Promise',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.childpromise.org/',
         Address: '2021 North 63rd St',
         ImpactAreas: 'Children, Education',
@@ -6476,7 +6476,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Children's Literacy Initiative",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cli.org/',
         Address: '990 Spring Garden St., Suite 400',
         ImpactAreas: 'Children, Education',
@@ -6529,7 +6529,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Children's Village",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.childrensvillagephila.org/',
         Address: '125 North 8th Street',
         ImpactAreas: 'Children, Education',
@@ -6583,7 +6583,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Children's Jubilee Fund",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.jubileefund.org/',
         Address: '116 Greenwood Ave., 3rd Floor Rear (Wyncote)',
         ImpactAreas: 'Children, Education, Religion',
@@ -6609,7 +6609,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Child Space Daycare Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://childspacedaycarecenters.org/',
         Address: '7500 Germantown Ave, Smith Hall',
         ImpactAreas: 'Children, Education',
@@ -6662,7 +6662,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Christian Legal Clinic of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.clcphila.org/',
         Address: '4455 N 6th St Ste 100',
         ImpactAreas: 'Poverty, Law and Policy',
@@ -6742,7 +6742,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Circadium',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://circadium.com/',
         Address: '6452 Greene Street',
         ImpactAreas: 'Arts',
@@ -6768,7 +6768,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Citizen Diplomacy International',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cdiphila.org/',
         Address: '30 S. 15th Street, 15th Floor',
         ImpactAreas: 'Culture',
@@ -6794,7 +6794,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Citizens Acting Together Can Help',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://catchinc.com/',
         Address: '1409 Lombard Street',
         ImpactAreas: 'Public Health, Disabilities',
@@ -6821,7 +6821,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Citizens Crime Commission',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.crimecommission.org/',
         Address: '1518 Walnut St # 902',
         ImpactAreas: 'Crime and Public Safety',
@@ -6847,7 +6847,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'City Kitties',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.citykitties.org/',
         Address: '',
         ImpactAreas: 'Animal Welfare',
@@ -6901,7 +6901,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Citywide Community Counseling Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.citywideccs.org/',
         Address: '533-539 East Allegheny Avenue',
         ImpactAreas: 'Public Health, Mental Health, Human Services',
@@ -6927,7 +6927,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Clara Baldwin Manor',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.clarabaldwinmanor.com/',
         Address: '2600 W. Susquehanna Avenue',
         ImpactAreas: 'Housing, Elderly',
@@ -6953,7 +6953,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Clarifi',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://clarifi.org/',
         Address: '1635 Market Street, 5th Floor',
         ImpactAreas: 'Education, Human Services',
@@ -7006,7 +7006,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Classical Association of the Atlantic States',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://caas-cw.org/caas/',
         Address: '500 City Avenue, 322 Bellarmine Hall',
         ImpactAreas: 'Culture, Education',
@@ -7032,7 +7032,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Clay Studio',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.theclaystudio.org/',
         Address: '137-139 North Second Street',
         ImpactAreas: 'Arts',
@@ -7059,7 +7059,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Clean Air Council',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cleanair.org/',
         Address: '135 S. 19th Street, Suite 300',
         ImpactAreas: 'Environment, Public Health',
@@ -7112,7 +7112,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cliveden of the National Trust',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cliveden.org/',
         Address: '6401 Germantown Avenue',
         ImpactAreas: 'History',
@@ -7138,7 +7138,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Comhar',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.comhar.org/',
         Address: '100 West Lehigh Avenue',
         ImpactAreas: 'Public Health, Human Services',
@@ -7164,7 +7164,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Coalition Against Childhood Cancer',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cac2.org/',
         Address: '',
         ImpactAreas: 'Children, Healthcare',
@@ -7191,7 +7191,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cobbs Creek Community Environmental Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '700 Cobbs Creek Parkway',
         ImpactAreas: 'Environment, Education',
@@ -7217,7 +7217,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Coded by Kids',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://codedbykids.com/',
         Address: '3675 MARKET ST STE 200',
         ImpactAreas: 'Children, Education',
@@ -7269,7 +7269,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Collaborative Cataloging Japan',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.collabjapan.org/',
         Address: '5927 PULASKI AVE',
         ImpactAreas: 'Culture, History',
@@ -7296,7 +7296,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Collegium Instititue',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.collegiuminstitute.org/',
         Address: '',
         ImpactAreas: 'Education, Religion',
@@ -7323,7 +7323,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Commission on Graduates of Foreign Nursing Schools',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cgfns.org/',
         Address: '3600 Market Street, Suite 400',
         ImpactAreas: 'Healthcare',
@@ -7350,7 +7350,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Committee of Seventy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://seventy.org/',
         Address: '123 South Broad Street, Suite 1800',
         ImpactAreas: 'Civil Rights, Education',
@@ -7378,7 +7378,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Committee on Sustainability Assessment',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://thecosa.org/',
         Address: '1008 S 9TH ST',
         ImpactAreas: 'Food and Hunger, Environment',
@@ -7405,7 +7405,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Commodore Barry Arts and Cultural Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://theirishcenter.org/',
         Address: '6815 Emlen St',
         ImpactAreas: 'Arts, Culture',
@@ -7432,7 +7432,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Common Market Mid Atlantic',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.thecommonmarket.org/locations/the-common-market-mid-atlantic',
         Address: '428 East Erie Avenue',
         ImpactAreas: 'Food and Hunger',
@@ -7458,7 +7458,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Commonwealth Youth Choirs',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cychoirs.org/',
         Address: '35 West Chelten Avenue',
         ImpactAreas: 'Arts, Children',
@@ -7511,7 +7511,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Capital Advisors',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.communitycapitaladvisors.org/',
         Address: '6723 Musgrave Street',
         ImpactAreas: 'Women and Gender Rights, Education',
@@ -7537,7 +7537,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Care of the Northeast',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.communitycarenephila.org/',
         Address: '2417 Welsh Rd, #202',
         ImpactAreas: 'Elderly, Disabilities',
@@ -7564,7 +7564,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community College of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.facebook.com/CCPedu',
         Address: '1700 Spring Garden Street',
         ImpactAreas: 'Education, Workforce Development',
@@ -7591,7 +7591,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Concern 13 Multi Purpose Learning Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.communityconcern13.com/',
         Address: '2721 W Cecil B. Moore Avenue',
         ImpactAreas: 'Children, Education',
@@ -7645,7 +7645,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Council Health Systems',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cchss.org/',
         Address: '4900 Wyalusing Avenue',
         ImpactAreas: 'Mental Health',
@@ -7671,7 +7671,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Design Collaborative',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cdesignc.org/',
         Address: '1218 Arch Street',
         ImpactAreas: 'Community Development, Economic Development',
@@ -7725,7 +7725,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Integrated Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cisworks.org/',
         Address: '441 N. 5th Street, Suite 101',
         ImpactAreas: 'Disabilities, Workforce Development',
@@ -7776,7 +7776,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Learning Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://communitylearningcenter.org/',
         Address: '2701 N. Broad Street',
         ImpactAreas: 'Education, Workforce Development',
@@ -7803,7 +7803,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Legal Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://clsphila.org/',
         Address: '1424 Chestnut St.',
         ImpactAreas: 'Law and Policy, Poverty',
@@ -7856,7 +7856,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Ventures',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.community-ventures.org/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Community Development, Housing',
@@ -7884,7 +7884,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Concert Operetta Theater',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.concertoperetta.com/index1.shtml',
         Address: '2129 W. Ritner Street',
         ImpactAreas: 'Arts',
@@ -7911,7 +7911,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Chamber Orchestra of Philadelphia',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://chamberorchestra.org/',
         Address: '1520 Locust St, Suite 500',
         ImpactAreas: 'Arts',
@@ -7938,7 +7938,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Congreso',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.congreso.net/',
         Address: '216 West Somerset St.',
         ImpactAreas: 'Culture, Economic Development, Community Development, Workforce Development, Human Services',
@@ -7965,7 +7965,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Connection Training Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://ctsworks.org/',
         Address: '2243 West Allegheny Avenue',
         ImpactAreas: 'Human Services, Economic Development, Housing',
@@ -7992,7 +7992,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Conservation Center for Art & Historic Artifacts',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ccaha.org/',
         Address: '264 South 23rd Street',
         ImpactAreas: 'Arts, History',
@@ -8019,7 +8019,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Conservation Voters of PA',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.conservationpa.org/',
         Address: '1429 WALNUT ST STE 400',
         ImpactAreas: 'Law and Policy, Environment',
@@ -8046,7 +8046,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Consortium for History of Science, Technology and Medicine',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.chstm.org/',
         Address: '431 Chestnut Street',
         ImpactAreas: 'History',
@@ -8072,7 +8072,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Consumer Bankruptcy Assistance Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cbap-phl.org/',
         Address: '718 Arch Street, Suite 300N',
         ImpactAreas: 'Law and Policy',
@@ -8099,7 +8099,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Consumer Satisfaction Team',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.thecst.org/',
         Address: '520 Delaware Ave., 7th Floor',
         ImpactAreas: 'Mental Health',
@@ -8153,7 +8153,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cornerstone Christian Academy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cornerstonephiladelphia.com/',
         Address: '1939 S. 58th St.',
         ImpactAreas: 'Children, Education',
@@ -8180,7 +8180,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cosacosa Art at Large',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.cosacosa.org/',
         Address: '4427 Main St',
         ImpactAreas: 'Arts, Community Development',
@@ -8206,7 +8206,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Council for Relationships',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://councilforrelationships.org/',
         Address: '4025 Chestnut St',
         ImpactAreas: 'Human Services',
@@ -8233,7 +8233,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Concilio',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://elconcilio.net/',
         Address: '141 East Hunting Park',
         ImpactAreas: 'Culture, Community Development, Human Services',
@@ -8260,7 +8260,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CAIR Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://pa.cair.com/',
         Address: '1501 Cherry St.',
         ImpactAreas: 'Civil Rights, Law and Policy, Education',
@@ -8287,7 +8287,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Covenant House PA',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.covenanthousepa.org/',
         Address: '31 E Armat St',
         ImpactAreas: 'Homelessness',
@@ -8313,7 +8313,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Crispin Gardens Athletic Club',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://crispingardensac.com/',
         Address: '8903 Convent Ave',
         ImpactAreas: 'Sports and Recreation, Children',
@@ -8366,7 +8366,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Crossroads Community Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://crossroadsphilly.org/',
         Address: '2916-18 N 6th St',
         ImpactAreas: 'Religion, Human Services, Sports and Recreation',
@@ -8392,7 +8392,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Crossroads Music',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.crossroadsconcerts.org/',
         Address: '801 South 48th Street',
         ImpactAreas: 'Arts, Culture',
@@ -8419,7 +8419,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'CultureTrust Greater Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.culturetrustphila.org/',
         Address: '1315 Walnut Street, Suite 320',
         ImpactAreas: 'Arts, Culture',
@@ -8446,7 +8446,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Curio Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.curiotheatre.org/',
         Address: '4740 Baltimore Avenue',
         ImpactAreas: 'Arts',
@@ -8473,7 +8473,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Curtis Institute of Music',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.curtis.edu/',
         Address: '1726 Locust Street',
         ImpactAreas: 'Arts, Education, Children',
@@ -8499,7 +8499,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Da Vinci Art Alliance',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://davinciartalliance.org/',
         Address: '704 Catharine St.',
         ImpactAreas: 'Arts, Community Development',
@@ -8526,7 +8526,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Daily Pennsylvanian',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.thedp.com/',
         Address: '4015 Walnut St.',
         ImpactAreas: 'Education',
@@ -8552,7 +8552,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dance Iquail',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://danceiquail.org/',
         Address: '3500 Lancaster Ave.',
         ImpactAreas: 'Arts, Education, Civil Rights',
@@ -8578,7 +8578,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Dance Store Expression',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://gloriawalker92.wixsite.com/dancestoreexpression',
         Address: '851-951 West Olney Avenue',
         ImpactAreas: 'Arts',
@@ -8605,7 +8605,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dancing Class Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://dancingclassroomsphilly.org/',
         Address: '4226 Spruce Street',
         ImpactAreas: 'Arts, Children',
@@ -8632,7 +8632,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dancing With the Students',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.dancingwiththestudents.org/',
         Address: '',
         ImpactAreas: 'Arts',
@@ -8713,7 +8713,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Danse4nia Repertory Ensemble',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.danse4nia.org/',
         Address: '143 West Walnut Lane, Suite 106',
         ImpactAreas: 'Arts',
@@ -8766,7 +8766,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Dawn's Place",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ahomefordawn.org/',
         Address: '',
         ImpactAreas: 'Crime and Public Safety, Human Services, Women and Gender Rights, Law and Policy',
@@ -8793,7 +8793,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Deborah's Little Shepherds",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://deborahslittleshepherds.homestead.com/',
         Address: '5238 Sansom Street',
         ImpactAreas: 'Children, Education',
@@ -8845,7 +8845,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Deer Meadows Retirement Community',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.deer-meadows.org/',
         Address: '8301 Roosevelt Blvd',
         ImpactAreas: 'Housing, Elderly',
@@ -8872,7 +8872,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Riverfront North Partnership',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://riverfrontnorth.org/',
         Address: '460 N Delaware Ave Suite 306',
         ImpactAreas: 'Sports and Recreation, Environment',
@@ -8899,7 +8899,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware River Water Front',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.delawareriverwaterfront.com/',
         Address: '121 N. Columbus Blvd',
         ImpactAreas: 'Environment',
@@ -8925,7 +8925,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'First Up',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.firstup.org/about-us/',
         Address: '1608 Walnut Street, Suite 300',
         ImpactAreas: 'Children, Education',
@@ -8951,7 +8951,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware Valley Association of Rail Passengers',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://mail09908.wixsite.com/dvarp/',
         Address: '1635 Market Street, Suite 1600',
         ImpactAreas: 'Law and Policy',
@@ -8977,7 +8977,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware Valley Community Health',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://dvch.org/',
         Address: '1412 Fairmount Ave',
         ImpactAreas: 'Public Health, Healthcare',
@@ -9004,7 +9004,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware Valley Industrial Resource Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.dvirc.org/',
         Address: '2905 Southampton Road',
         ImpactAreas: 'Economic Development',
@@ -9056,7 +9056,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware Valley Opera Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.dvopera.org/',
         Address: '1731 Chandler Street',
         ImpactAreas: 'Arts',
@@ -9083,7 +9083,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Delaware Valley Science Fairs',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.dvsf.org/',
         Address: '3201 Arch Street, Suite 310a',
         ImpactAreas: 'Children',
@@ -9187,7 +9187,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Cannstatter Volksfest-Verein',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cannstatter.org/',
         Address: '9130 Academy Road',
         ImpactAreas: 'Culture',
@@ -9240,7 +9240,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dignity Housing',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.dignityhousing.org/',
         Address: '5227-R Germantown Avenue',
         ImpactAreas: 'Housing, Homelessness, Poverty',
@@ -9266,7 +9266,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dining Out for Life',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.diningoutforlife.com/',
         Address: '1229 CHESTNUT STREET PMB 108',
         ImpactAreas: 'Healthcare, Public Health',
@@ -9292,7 +9292,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Disabled in Action of Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.disabledinaction.com/',
         Address: '112 N 8th St, Suite 600',
         ImpactAreas: 'Disabilities, Law and Policy, Civil Rights',
@@ -9318,7 +9318,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Distance Learning Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://thedistancelearningcenter.org/',
         Address: '1324 West Clearfield Street',
         ImpactAreas: 'Racial Justice',
@@ -9345,7 +9345,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Community Education Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.cecarts.org/',
         Address: '3500 Lancaster Ave',
         ImpactAreas: 'Arts',
@@ -9372,7 +9372,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Diversified Community Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.dcsphila.org/',
         Address: '1529 S. 22nd Street',
         ImpactAreas: 'Children, Education, Community Development, Economic Development',
@@ -9426,7 +9426,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dolce Suono Ensemble',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://dolcesuono.com/',
         Address: '135 N. 22nd Street',
         ImpactAreas: 'Arts',
@@ -9453,7 +9453,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Downtowners Fancy Brigade',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://downtowners.squarespace.com/',
         Address: '148-50 Snyder Avenue',
         ImpactAreas: 'Arts',
@@ -9479,7 +9479,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Drueding Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.druedingcenter.org/',
         Address: '413 W. Master Street',
         ImpactAreas: 'Women and Gender Rights, Housing, Homelessness, Human Services, Healthcare',
@@ -9531,7 +9531,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Dutton Road Veterinary Clinic',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.duttonroadvetclinic.com/',
         Address: '10901 Dutton Road',
         ImpactAreas: 'Animal Welfare',
@@ -9557,7 +9557,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ECOG-ARIN Cancer Research',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ecog-acrin.org/',
         Address: '1818 Market Street, Suite 3000',
         ImpactAreas: 'Healthcare',
@@ -9583,7 +9583,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'EMIR Healing Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://emirphilly.org/',
         Address: '59 E Haines Street',
         ImpactAreas: 'Human Services, Crime and Public Safety',
@@ -9609,7 +9609,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eagles Autism Challenge',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.eaglesautismchallenge.org/',
         Address: 'One NovaCare Way',
         ImpactAreas: 'Healthcare',
@@ -9661,7 +9661,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Early Year Development Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://eydc.org/index.html',
         Address: '6901 Woodland ave',
         ImpactAreas: 'Children, Education',
@@ -9688,7 +9688,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Earth Quaker Action Team',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.eqat.org/',
         Address: '4510 Kingsessing Ave',
         ImpactAreas: 'Environment',
@@ -9715,7 +9715,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'East Falls Community Council',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.eastfallscommunity.org/',
         Address: '',
         ImpactAreas: 'Community Development, Economic Development',
@@ -9742,7 +9742,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'East Mounty Airy Neighbors',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.eastmountairy.org/',
         Address: '7301 GERMANTOWN AVENUE',
         ImpactAreas: 'Community Development',
@@ -9768,7 +9768,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Discovery Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.discoveryphila.org/',
         Address: '3401 Reservoir Drive',
         ImpactAreas: 'Children, Sports and Recreation, Environment',
@@ -9795,7 +9795,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'East Passyunk Avenue Business Improvement District',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.visiteastpassyunk.com/',
         Address: '1904 E PASSYUNK AVE',
         ImpactAreas: 'Economic Development, Community Development',
@@ -9821,7 +9821,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'East Passyunk Crossing Civic Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.epcrossing.org/',
         Address: '1025 Mifflin St',
         ImpactAreas: 'Community Development',
@@ -9848,7 +9848,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Easterseals of Southeastern Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.easterseals.com/sepa/',
         Address: '3975 Conshohocken Avenue',
         ImpactAreas: 'Disabilities, Human Services',
@@ -9875,7 +9875,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eastern Pennsylvania Alliance for Clean Transportation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ep-act.org/',
         Address: '1900 Market Street, 8th Floor',
         ImpactAreas: 'Environment',
@@ -9901,7 +9901,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'HOBY Pennsylvania East',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hobypaeast.org/',
         Address: '12811 McCarthy Circle',
         ImpactAreas: 'Children',
@@ -9927,7 +9927,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eastern State Penitentiary',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.easternstate.org/',
         Address: '2027 Fairmount Avenue',
         ImpactAreas: 'History, Crime and Public Safety',
@@ -9954,7 +9954,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Ebenezer Maxwell Mansion',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ebenezermaxwellmansion.org/',
         Address: '200 W Tulpehocken Street',
         ImpactAreas: 'History, Arts, Education',
@@ -9980,7 +9980,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'eClose Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ecloseinstitute.org/',
         Address: '7232 Rising Sun Avenue',
         ImpactAreas: 'Children',
@@ -10034,7 +10034,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Education Law Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.elc-pa.org/',
         Address: '1800 JFK Blvd., Suite 1900-A',
         ImpactAreas: 'Children, Poverty, Education, Law and Policy',
@@ -10088,7 +10088,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Education Works',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://educationworks.org/',
         Address: '990 SPRING GARDEN STREET, SUITE 601',
         ImpactAreas: 'Children, Education',
@@ -10115,7 +10115,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Educational Advocates (EARTHS)',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://earthsinc.org/',
         Address: '2743 North Opal Street',
         ImpactAreas: 'Children, Education',
@@ -10142,7 +10142,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eogpo Classic Theater',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.egopo.org/',
         Address: '317 Dickinson Street, Unit D',
         ImpactAreas: 'Arts',
@@ -10169,7 +10169,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eisenhower Fellowships',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.efworld.org/',
         Address: '250 South 16th Street',
         ImpactAreas: 'Law and Policy, Education',
@@ -10222,7 +10222,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Eleone Dance Theatre',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.eleonedance.org/',
         Address: '1725 S. 25th Street, 2nd Floor',
         ImpactAreas: 'Arts',
@@ -10249,7 +10249,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Elvira B. Pierce Scholarship Fund',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ebpsf.org/',
         Address: '6114 ELLSWORTH ST',
         ImpactAreas: 'Children, Education',
@@ -10274,7 +10274,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Emmanuel Advancement Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.emmanueladvancementcenter.org/',
         Address: '5132 N 4th St.',
         ImpactAreas: 'Children, Education',
@@ -10328,7 +10328,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Enchantment Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://enchantmenttheatre.org/',
         Address: '100 South Broad Street, Suite 1318',
         ImpactAreas: 'Arts',
@@ -10355,7 +10355,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Energy Coordinating Agency',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ecasavesenergy.org/',
         Address: '106 W Clearfield St',
         ImpactAreas: 'Environment',
@@ -10381,7 +10381,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Enterprise Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.theenterprisecenter.com/',
         Address: '4548 Market St',
         ImpactAreas: 'Economic Development',
@@ -10407,7 +10407,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Epilepsy Foundation of Eastern Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.efepa.org/',
         Address: '919 Walnut Street, Suite 700',
         ImpactAreas: 'Public Health',
@@ -10434,7 +10434,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Episcopal Community Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ecsphilly.org/',
         Address: '225 S. 3rd Street',
         ImpactAreas: 'Poverty, Workforce Development',
@@ -10461,7 +10461,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Equal Access Legal Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.equalaccesslegal.org/',
         Address: '402 Bethlehem Pike (Erdenheim)',
         ImpactAreas: 'Law and Policy, Human Services',
@@ -10488,7 +10488,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Equal Measure',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.equalmeasure.org/',
         Address: '520 WALNUT ST., SUITE 1450',
         ImpactAreas: '',
@@ -10514,7 +10514,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Equality Forum',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.equalityforum.com/',
         Address: '1420 Locust Street, Suite 300',
         ImpactAreas: 'LGBTQ, Civil Rights',
@@ -10595,7 +10595,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Esperanza Health Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://esperanzahealth.com/',
         Address: '4417 N. 6th Street',
         ImpactAreas: 'Healthcare, Public Health',
@@ -10622,7 +10622,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Esperanza',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.esperanza.us/',
         Address: '4261 North 5th Street',
         ImpactAreas: 'Poverty, Arts, Culture, Economic Development, Housing',
@@ -10676,7 +10676,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Evoluer House',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.evoluerhouse.org/',
         Address: '104 Church Street',
         ImpactAreas: 'Women and Gender Rights, Racial Justice, Poverty',
@@ -10702,7 +10702,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Eastern State Penitentiary Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://fespp.com/',
         Address: '22nd & Brown St.',
         ImpactAreas: 'Parks and Open Spaces, Community Development',
@@ -10728,7 +10728,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fabric Workshop and Museum',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://fabricworkshopandmuseum.org/?doing_wp_cron=1612057330.5473849773406982421875',
         Address: '1214 Arch Street',
         ImpactAreas: 'Arts',
@@ -10755,7 +10755,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Face to Face',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://facetofacegermantown.org/',
         Address: '123 East Price Street',
         ImpactAreas: 'Human Services, Homelessness',
@@ -10782,7 +10782,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fair Food',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.fairfoodphilly.org/',
         Address: '1315 WALNUT ST STE 320',
         ImpactAreas: 'Food and Hunger',
@@ -10808,7 +10808,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fair Housing Rights Center in Southeastern Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://fairhousingrights.org/',
         Address: '444 N. 3rd Street, Suite 110',
         ImpactAreas: 'Housing',
@@ -10834,7 +10834,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fairmount CDC',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fairmountcdc.org/',
         Address: '2837 W. Girard Avenue.',
         ImpactAreas: 'Community Development, Economic Development',
@@ -10861,7 +10861,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fairmount Park Conservancy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://myphillypark.org/',
         Address: '4700 States Drive',
         ImpactAreas: 'Parks and Open Spaces',
@@ -10888,7 +10888,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Faith in the Future',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.faithinthefuture.com/',
         Address: '222 North 17th Street',
         ImpactAreas: 'Children, Education',
@@ -10914,7 +10914,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Families Achieving Success Together',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.fast-foundation.com/',
         Address: '1700 MARKET ST. SUITE 1005',
         ImpactAreas: 'Human Services',
@@ -10940,7 +10940,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Families Forward Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://familiesforwardphilly.org/',
         Address: '111 N. 49 Street',
         ImpactAreas: 'Human Services, Housing',
@@ -10967,7 +10967,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Father John McNamee Scholars Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fathermcnameescholars.org/',
         Address: '323 W Mermaid Ln',
         ImpactAreas: 'Children, Education',
@@ -10994,7 +10994,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fathers Day Rally Committee',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://fathersrally.com/',
         Address: '1243 W. 65th Ave',
         ImpactAreas: 'Human Services, Racial Justice',
@@ -11046,7 +11046,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Feast of Justice',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.feastofjustice.org/',
         Address: '3101 TYSON AVENUE',
         ImpactAreas: 'Food and Hunger',
@@ -11071,7 +11071,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Federation Housing',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.federationhousing.org',
         Address: '8900 Roosevelt Boulevard',
         ImpactAreas: 'Housing, Elderly',
@@ -11097,7 +11097,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fels Early Learning Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://felskids.org/',
         Address: '10700 Jamison Avenue',
         ImpactAreas: 'Children, Education',
@@ -11124,7 +11124,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Federation of Neighborhood Centers',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://fncphilly.org/',
         Address: '1901 S 9th Street, Bok room 212',
         ImpactAreas: 'Community Development, Human Services',
@@ -11151,7 +11151,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fidget',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.thefidget.org/',
         Address: '1714 N. Mascher Street',
         ImpactAreas: 'Arts',
@@ -11177,7 +11177,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fifty Shades of Purple Against Bullying',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fspagainstbullying.org/',
         Address: '31 W UPSAL ST Philadelphia PA',
         ImpactAreas: 'Children',
@@ -11203,7 +11203,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Filitalia Foundation',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://filitaliainternational.org/',
         Address: '1834 E Passyunk Ave',
         ImpactAreas: 'Culture',
@@ -11230,7 +11230,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Finata',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://finanta.org/',
         Address: '1301 N. 2nd STREET',
         ImpactAreas: 'Human Services',
@@ -11258,7 +11258,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Finishing Trades Institute of the Mid-Atlantic Region',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fti.edu/',
         Address: '2190 Hornig Rd.',
         ImpactAreas: 'Workforce Development',
@@ -11285,7 +11285,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'First Person Arts',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.firstpersonarts.org/',
         Address: '443 W. Girard Ave #2C',
         ImpactAreas: 'Arts',
@@ -11339,7 +11339,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'First Troop Philadelphia City Calvalry',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.firsttroop.com/',
         Address: '22 S 23RD ST',
         ImpactAreas: 'History',
@@ -11365,7 +11365,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fishtown Neighbors Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fishtown.org/',
         Address: '1202 E Montgomery Ave',
         ImpactAreas: 'Community Development',
@@ -11417,7 +11417,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fitler Square Neighbors',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fitlersquareneighbors.org/',
         Address: '',
         ImpactAreas: 'Community Development',
@@ -11444,7 +11444,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Fitler Square Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fitlersquare.org/',
         Address: 'Pine Street & 24th street',
         ImpactAreas: 'Community Development, Parks and Open Spaces',
@@ -11470,7 +11470,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fleisher Art Memorial',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://fleisher.org/',
         Address: '719 Catharine Street',
         ImpactAreas: 'Arts',
@@ -11523,7 +11523,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Food Connect',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.foodconnectgroup.com/',
         Address: '2407 Grays Ferry',
         ImpactAreas: 'Food and Hunger',
@@ -11549,7 +11549,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Food Moxie',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.foodmoxie.org/',
         Address: '559 Carpenter Lane',
         ImpactAreas: 'Food and Hunger',
@@ -11575,7 +11575,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Foreign Policy Research Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fpri.org/',
         Address: '1528 Walnut St., Ste. 610',
         ImpactAreas: 'History, Culture',
@@ -11602,7 +11602,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fort Mifflin on the Delaware',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.fortmifflin.us/',
         Address: '6400 Hog Island Road',
         ImpactAreas: 'History, Education',
@@ -11629,7 +11629,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Foundation for Advancement of International Medical Education and Research',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.faimer.org/',
         Address: '3624 Market Street',
         ImpactAreas: 'Education, Healthcare, Public Health',
@@ -11655,7 +11655,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Foundation for Individual Rights in Education',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.thefire.org/',
         Address: '510 Walnut St., Suite 1250',
         ImpactAreas: 'Civil Rights, Education',
@@ -11681,7 +11681,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Foundation for International Medical Relief of Children',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fimrc.org/',
         Address: '1518 Walnut St. Suite 1504',
         ImpactAreas: 'Healthcare',
@@ -11707,7 +11707,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Foundation for Neurovirology',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://neurovirologyfoundation.org/index.php',
         Address: '3500 N. Broad Street',
         ImpactAreas: 'Public Health, Healthcare',
@@ -11733,7 +11733,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fox Chase Cancer Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.foxchase.org/',
         Address: '333 Cottman Avenue',
         ImpactAreas: 'Healthcare',
@@ -11759,7 +11759,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Fralinger String Band',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.fralinger.org/',
         Address: '1901-03 South 3rd Street',
         ImpactAreas: 'Arts',
@@ -11785,7 +11785,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Francisville Neighborhood Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.francisvillendc.org/',
         Address: '1708 Ridge Avenue',
         ImpactAreas: 'Community Development, Economic Development',
@@ -11812,7 +11812,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Frankford Community Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://frankfordcdc.org/',
         Address: '4667-69 Paul Street, 2nd Floor',
         ImpactAreas: 'Workforce Development, Community Development, Economic Development',
@@ -11839,7 +11839,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Frankie's World",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.frankiesworld.com/',
         Address: '1001 - 1011 Poplar Street',
         ImpactAreas: 'Children, Healthcare',
@@ -11920,7 +11920,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Free Library of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.freelibrary.org/',
         Address: '1901 Vine St',
         ImpactAreas: 'Education',
@@ -11947,7 +11947,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Free Migration Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://freemigrationproject.org/',
         Address: '150 Cecil B. Moore Ave, Suite 203',
         ImpactAreas: 'Civil Rights, Immigrants and Refugees',
@@ -11973,7 +11973,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Free Your Time Senior Errand Service',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.freeyourtime.org/',
         Address: '106 E 64TH AVE',
         ImpactAreas: 'Elderly, Veterans, Disabilities',
@@ -12026,7 +12026,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Association for Higher Education',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://quakerfahe.com/about/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Education',
@@ -12052,7 +12052,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Center City Retirement Community',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://friendscentercity.org/',
         Address: '1500 JFK BLVD STE 711',
         ImpactAreas: 'Elderly',
@@ -12105,7 +12105,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Child Care Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://friendschildcare.org/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Children, Education',
@@ -12132,7 +12132,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Council on Education',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.friendscouncil.org/',
         Address: '1507 Cherry Street',
         ImpactAreas: 'Education, Children',
@@ -12159,7 +12159,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Rehabilitation Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://friends-frp.com/',
         Address: '704 West Girard Avenue',
         ImpactAreas: 'Housing, Human Services',
@@ -12186,7 +12186,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Fidicuiar Company',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://friendsfiduciary.org/',
         Address: '1700 Market Street, Suite 1535',
         ImpactAreas: 'Community Development',
@@ -12212,7 +12212,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of 2125 Chestnut Street',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://friendsof2125chestnut.org/',
         Address: '2125 Chestnut Street',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12239,7 +12239,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Publishing Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.friendsjournal.org/',
         Address: '1216 Arch Street, Suite 2D',
         ImpactAreas: 'Religion',
@@ -12265,7 +12265,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends Select',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.friends-select.org/',
         Address: '17th & Benjamin Franklin Parkway',
         ImpactAreas: 'Children, Education',
@@ -12292,7 +12292,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Bache Martin',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.friendsofbachemartin.org/',
         Address: '2201 Brown St',
         ImpactAreas: 'Children, Education, Community Development',
@@ -12319,7 +12319,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Chester Arthur',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.friendsofchesterarthur.org/',
         Address: '2000 CATHARINE ST.',
         ImpactAreas: 'Children, Education',
@@ -12373,7 +12373,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of FDR Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fdrparkphilly.org/',
         Address: '1500 PATTISON AVENUE',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12426,7 +12426,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Historic Sedgeley',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.friendsofhistoricsedgeley.org/',
         Address: '15 Kelly Drive',
         ImpactAreas: 'History, Parks and Open Spaces',
@@ -12453,7 +12453,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Independence Historical Trust',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://inht.org/',
         Address: '143 South Third Street',
         ImpactAreas: 'History',
@@ -12480,7 +12480,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of J.S. Jenks',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.friendsofjsjenks.org/',
         Address: '8301 Germantown Ave',
         ImpactAreas: 'Children, Education',
@@ -12507,7 +12507,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Laurel Hill & West Laurel Hill Cemeteries',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://thelaurelhillcemetery.org/',
         Address: '3822 Ridge Avenue',
         ImpactAreas: 'Parks and Open Spaces, History',
@@ -12534,7 +12534,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Little Flower',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://littleflowerhighschool.org/',
         Address: '1000 W. Lycoming St',
         ImpactAreas: 'Children, Education, Religion',
@@ -12561,7 +12561,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Mount Moriah Cemetery',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://friendsofmountmoriahcemetery.org/',
         Address: '6201 Kingsessing Ave',
         ImpactAreas: 'Parks and Open Spaces, Veterans',
@@ -12588,7 +12588,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Mwangaza',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.mwangazapartnership.org/',
         Address: '614 South 4th Street, STE 368',
         ImpactAreas: 'Education, Public Health',
@@ -12640,7 +12640,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Penn Treaty Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://penntreatypark.org/',
         Address: '1301 N Beach St',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12666,7 +12666,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Ritenhouse Square',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.friendsofrittenhouse.org/',
         Address: '201 South 18th Street, Unit 411',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12693,7 +12693,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Schuylkill River Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.fsrp.org/',
         Address: '2037 Chestnut Street',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12720,7 +12720,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Seger Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://segerpark.org/',
         Address: '1020 Lombard Street',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12746,7 +12746,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of Shen Yun Sociert',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://fosys.org/',
         Address: '100 South Broad Street, Ste. 30',
         ImpactAreas: 'Arts, Culture',
@@ -12800,7 +12800,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of UNIFAT',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://friendsofunifat.org/',
         Address: '919 S. Farragut Street',
         ImpactAreas: 'Children, Education',
@@ -12881,7 +12881,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Friends of the Cresheim Trail',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://cresheimtrail.org/',
         Address: '',
         ImpactAreas: 'Parks and Open Spaces, Sports and Recreation',
@@ -12908,7 +12908,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Friends of the Rail Park',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.therailpark.org/',
         Address: '448 N 10th Street, Suite 601',
         ImpactAreas: 'Parks and Open Spaces',
@@ -12934,7 +12934,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'FringeArts',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://fringearts.com/',
         Address: '140 N Columbus Blvd',
         ImpactAreas: 'Arts',
@@ -12960,7 +12960,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Front Step',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://frontstepphilly.org/',
         Address: '1539 West Courtland Street',
         ImpactAreas: 'Community Development, Human Services',
@@ -13015,7 +13015,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Gan Chabad',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://theganchild.org/',
         Address: '7620 Castor Avenue',
         ImpactAreas: 'Children',
@@ -13067,7 +13067,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Diabetes Education & Research Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.diabeteseducationandresearchcenter.org/',
         Address: '',
         ImpactAreas: 'Healthcare, Public Health',
@@ -13093,7 +13093,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Gaudenzia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.gaudenzia.org/contact/',
         Address: '1306 Spring Garden Street',
         ImpactAreas: 'Public Health, Healthcare',
@@ -13120,7 +13120,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Gearing Up',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://gearing-up.org/',
         Address: '718 Arch Street, Suite 401N',
         ImpactAreas: 'Sports and Recreation',
@@ -13146,7 +13146,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Genealogical Society of Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://genpa.org/',
         Address: '2100 Byberry Road, Suite 111',
         ImpactAreas: 'Education',
@@ -13173,7 +13173,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Generations on Line',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.generationsonline.com/',
         Address: '1017 CLINTON ST',
         ImpactAreas: 'Elderly',
@@ -13251,7 +13251,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Germantown Avenue Crisis Ministry',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.crisisministry.org/',
         Address: '35 W. Chelten Avenue',
         ImpactAreas: 'Food and Hunger, Housing, Human Services',
@@ -13278,7 +13278,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Germantown Life Enrichment Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.glifecenter.org/',
         Address: '5722 Greene Street',
         ImpactAreas: 'Community Development, Sports and Recreation',
@@ -13330,7 +13330,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Germantown United Community Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://germantownunitedcdc.org/',
         Address: '5320 Germantown Avenue',
         ImpactAreas: 'Community Development, Economic Development',
@@ -13357,7 +13357,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Germination Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://germinationproject.com/',
         Address: '1500 Market Street, Suite 3500E',
         ImpactAreas: 'Children, Food and Hunger',
@@ -13411,7 +13411,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Gift of Life Family House',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.giftoflifefamilyhouse.org/',
         Address: '401 Callowhill Street',
         ImpactAreas: 'Public Health, Human Services',
@@ -13464,7 +13464,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Girls Justice League',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://girlsjusticeleague.org/',
         Address: '',
         ImpactAreas: 'Women and Gender Rights, Civil Rights',
@@ -13491,7 +13491,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Girls Rock Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.girlsrockphilly.org/',
         Address: '1428 GERMANTOWN AVENU',
         ImpactAreas: 'Women and Gender Rights, Arts',
@@ -13517,7 +13517,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Girls with Guts',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.girlswithguts.org/',
         Address: '6024 Ridge Avenue STE. 116 #332',
         ImpactAreas: 'Women and Gender Rights, Public Health',
@@ -13544,7 +13544,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Girls Inc. of Greather Philadelphia and Southern New Jersey',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://girlsincpa-nj.org/',
         Address: '1501 Cherry Street',
         ImpactAreas: 'Women and Gender Rights',
@@ -13570,7 +13570,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Girls on the Run Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.gotrphiladelphia.org/',
         Address: '40 W. EVERGREEN STREET, SUITE 104',
         ImpactAreas: 'Women and Gender Rights, Sports and Recreation',
@@ -13596,7 +13596,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Giving of Self Partnership',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.givingofselfpartnership.org/',
         Address: '6101 Limekiln Pike',
         ImpactAreas: 'Community Development',
@@ -13622,7 +13622,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Glen Foerd',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.glenfoerd.org/',
         Address: '5001 GRANT AVE',
         ImpactAreas: 'Parks and Open Spaces',
@@ -13649,7 +13649,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Global Interdependence Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.interdependence.org/',
         Address: '100 N Independence Mall West, 5th Fl SW',
         ImpactAreas: 'Law and Policy',
@@ -13676,7 +13676,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'GMWA Philadelphia Chapter',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.gmwaphiladelphia.org/',
         Address: '',
         ImpactAreas: 'Arts',
@@ -13729,7 +13729,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Good Family Support Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.goodfamilyhomecare.org/',
         Address: '6715 Ogontz Ave',
         ImpactAreas: 'Healthcare',
@@ -13755,7 +13755,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Good Shepherd Mediation Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.phillymediators.org/',
         Address: '8540 Verree Road',
         ImpactAreas: 'Human Services',
@@ -13781,7 +13781,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Grace Neighborhood Development Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.gndchca.com/',
         Address: '5221 Oxford Avenue',
         ImpactAreas: 'Community Development, Housing',
@@ -13808,7 +13808,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Grand as Parents',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://gapsnow.org/',
         Address: '2227 N Broad St',
         ImpactAreas: 'Elderly, Children, Human Services',
@@ -13835,7 +13835,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Grays Ferry Community Council',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '1501 S. 29th Street',
         ImpactAreas: 'Community Development',
@@ -13861,7 +13861,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Great Dames',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.greatdames.com/',
         Address: '318 Queen St',
         ImpactAreas: 'Women and Gender Rights',
@@ -13889,7 +13889,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greater Philadelphian Asian Culture Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.gp-acc.org/',
         Address: '',
         ImpactAreas: 'Culture, Education',
@@ -13916,7 +13916,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greater Philadelphia Asian Social Service Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.gpasspa.org/',
         Address: '4943 N. 5th Street',
         ImpactAreas: 'Human Services, Housing, Community Development',
@@ -13942,7 +13942,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greater Philadelphia Business Coalition on Health',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.gpbch.org/',
         Address: '123 South Broad Street, Suite 1235',
         ImpactAreas: 'Healthcare',
@@ -13969,7 +13969,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Coalition Against Hunger',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.hungercoalition.org/',
         Address: '123 Chestnut Street, Suite 401',
         ImpactAreas: 'Food and Hunger',
@@ -14021,7 +14021,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greater Philadelphia Film Office',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://film.org/',
         Address: '1515 Arch Street, 11th Floor',
         ImpactAreas: 'Arts, Economic Development',
@@ -14047,7 +14047,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greater Philadelphia Hispanic Chamber of Commerce',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.philahispanicchamber.org/',
         Address: '1520 Locust Street, Suite 1001',
         ImpactAreas: 'Racial Justice, Economic Development',
@@ -14073,7 +14073,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Green Building United',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://greenbuildingunited.org/',
         Address: '2401 Walnut Street, Suite 103',
         ImpactAreas: 'Environment, Law and Policy',
@@ -14099,7 +14099,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Green Byrne Child Care Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.greenbyrnechildcare.org/',
         Address: '600 Arch Street, Suite 1211',
         ImpactAreas: 'Children, Education',
@@ -14126,7 +14126,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Green Street Rescue',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://greenstreetrescue.org/index',
         Address: '2713 W GIRARD AVE',
         ImpactAreas: 'Animal Welfare',
@@ -14234,7 +14234,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greens Grow',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.greensgrow.org/',
         Address: '2501 E. Cumberland St.',
         ImpactAreas: 'Food and Hunger',
@@ -14261,7 +14261,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Greentreks Network',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.greentreks.tv/',
         Address: '2000 Hamilton Street, PMB #912',
         ImpactAreas: 'Environment',
@@ -14287,7 +14287,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Groove Fund',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.groovefund.org/',
         Address: '',
         ImpactAreas: 'Education, Racial Justice',
@@ -14313,7 +14313,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Grow Philly',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '',
         ImpactAreas: '',
@@ -14338,7 +14338,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Guiding Star Ministries',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.guidingstar.org/',
         Address: '1940 E CHELTEN AVE',
         ImpactAreas: 'Women and Gender Rights, Public Health, Religion',
@@ -14364,7 +14364,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Gunnar Montana Productions',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.gunnarmontana.com/',
         Address: '428 N. 13th Street, #6F',
         ImpactAreas: 'Arts',
@@ -14390,7 +14390,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'HACE CDC',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hacecdc.org/',
         Address: '167 W. Allegheny Avenue',
         ImpactAreas: 'Housing, Economic Development, Community Development',
@@ -14416,7 +14416,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'HIAS Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://hiaspa.org/',
         Address: '600 Chestnut St., Suite 500B',
         ImpactAreas: 'Immigrants and Refugees, Human Services',
@@ -14470,7 +14470,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Habitat for Humanity Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.habitatphiladelphia.org/',
         Address: '2318 Washington Ave.',
         ImpactAreas: 'Housing',
@@ -14579,7 +14579,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hand2paw Foundation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://hand2paw.org/',
         Address: '315 Market St.',
         ImpactAreas: 'Animal Welfare, Workforce Development',
@@ -14605,7 +14605,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Handy Training Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.handytraining.org/',
         Address: '5021 Wakefield',
         ImpactAreas: 'Children, Workforce Development',
@@ -14685,7 +14685,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Haven Youth Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.havenyouthcenter.org/',
         Address: '6934 Woodland Ave',
         ImpactAreas: 'Children, Healthcare, Public Health',
@@ -14711,7 +14711,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hayes Manor Retirement Residence',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://hayesmanor.org/',
         Address: '2210 Belmont Avenue',
         ImpactAreas: 'Housing, Elderly',
@@ -14738,7 +14738,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Headlong Dance Theater',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.headlong.org/',
         Address: '1170 South Broad Street',
         ImpactAreas: 'Arts',
@@ -14792,7 +14792,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Health Federation of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://healthfederation.org/',
         Address: '123 S. Broad Street, Suite 650',
         ImpactAreas: 'Healthcare, Public Health',
@@ -14818,7 +14818,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Health Promotion Council of Southeastern Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hpcpa.org/',
         Address: 'CENTRE SQUARE EAST, 1500 MARKET STREET',
         ImpactAreas: 'Public Health',
@@ -14844,7 +14844,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Health and Technology Training Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.httiphila.org/',
         Address: '100 South Broad Street, 9th Floor',
         ImpactAreas: 'Public Health, Human Services, Workforce Development, Education',
@@ -14871,7 +14871,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Healthshare Exchange',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.healthshareexchange.org/',
         Address: '190 N. Independence Mall West, Suite 701',
         ImpactAreas: 'Public Health',
@@ -14898,7 +14898,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Healthy Caregiver Community Foundation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.healthycaregiver.com/',
         Address: '7782 Crittenden Street, Unit 27774',
         ImpactAreas: 'Public Health, Education',
@@ -14979,7 +14979,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hellenic University Club of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.hucphiladelphia.org/',
         Address: '',
         ImpactAreas: 'Culture, Education',
@@ -15006,7 +15006,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Helping Hand Rescue Mission',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://helpinghandphilly.org/',
         Address: '610 N. 6th Street',
         ImpactAreas: 'Homelessness, Food and Hunger, Education',
@@ -15033,7 +15033,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Hero Thrill Show',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: '',
         Address: '1125 WALNUT ST',
         ImpactAreas: 'Children, Education',
@@ -15113,7 +15113,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Himio',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.himio.org/',
         Address: '7524 Haverford Ave',
         ImpactAreas: 'Workforce Development, Education',
@@ -15139,7 +15139,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'HIS Breast Cancer Awareness',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hisbreastcancer.org/',
         Address: '440 S BROAD ST UNIT 1708',
         ImpactAreas: 'Healthcare, Education',
@@ -15166,7 +15166,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hispanic Bar Association of Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.hbapa.net/',
         Address: '',
         ImpactAreas: 'Education',
@@ -15193,7 +15193,7 @@ exports.allOrganizations = [
     },
     {
         Name: "Freedom's Backyard",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://freedomsbackyard.com/',
         Address: '5501 Germantown Avenue',
         ImpactAreas: 'History',
@@ -15220,7 +15220,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Historic Gloria Dei Preservation Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://preserveoldswedes.org/',
         Address: 'Columbus Blvd. & Christian Sts.',
         ImpactAreas: 'History',
@@ -15247,7 +15247,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Historic Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.historicphiladelphia.org/',
         Address: '601 Walnut Street, Suite 130',
         ImpactAreas: 'History, Education',
@@ -15275,7 +15275,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Historic Rittenhouse Town',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://rittenhousetown.org/',
         Address: '208 Lincoln Dr',
         ImpactAreas: 'History, Education',
@@ -15302,7 +15302,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Historical Society of Pennsylvania',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.portal.hsp.org/',
         Address: '1300 Locust Street',
         ImpactAreas: 'History, Education',
@@ -15328,7 +15328,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Holly Street Neighbors Community Garden',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://hollystreetneighborscommunitygarden.com/?fbclid=IwAR24llZzA_uoLjuH8z3cS5S4Uh5e-r3G_ynL4ADS7_77WgN3ilmwp6D5sY4',
         Address: '323 N Holly St.',
         ImpactAreas: 'Community Development, Crime and Public Safety',
@@ -15381,7 +15381,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Little Sisters of the Poor',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.littlesistersofthepoorphiladelphia.org/our-home/',
         Address: '5300 Chester Avenue',
         ImpactAreas: 'Elderly, Poverty, Religion',
@@ -15408,7 +15408,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Homeless Advocacy Project',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.haplegal.org/',
         Address: '1429 Walnut Street, 15th Floor',
         ImpactAreas: 'Homelessness, Human Services',
@@ -15461,7 +15461,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Homemaker Service of the Metropolitan Area',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://homemaker-service.org/',
         Address: '444 N. 3rd St',
         ImpactAreas: 'Disabilities, Elderly',
@@ -15514,7 +15514,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hope Partnership for Education',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hopepartnershipforeducation.org/',
         Address: '2601 N. 11th Street',
         ImpactAreas: 'Education, Children',
@@ -15540,7 +15540,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Horizon House',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.hhinc.org/',
         Address: '5901 Market Street, 3rd Floor',
         ImpactAreas: 'Mental Health, Healthcare, Homelessness',
@@ -15567,7 +15567,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hospital Fire Marshalls Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://hfma-safety.org/',
         Address: '',
         ImpactAreas: 'Education, Crime and Public Safety',
@@ -15593,7 +15593,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'House of Chayah Ministries',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.houseofchayah.org/',
         Address: '6303 N Fairhill St',
         ImpactAreas: 'Religion, Arts, Children',
@@ -15620,7 +15620,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'House of Umoja',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.houseofumoja.net/',
         Address: '5625 Master St',
         ImpactAreas: 'Children, Community Development',
@@ -15647,7 +15647,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Humbled Helping Hands Initiative',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://humbledhelpinghand.wixsite.com/correct',
         Address: '',
         ImpactAreas: 'Children',
@@ -15699,7 +15699,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Hunting Park Neighborhood Advisory Council',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.huntingparknac.org/',
         Address: '3760 N. Delhi Street',
         ImpactAreas: 'Community Development, Economic Development',
@@ -15720,13 +15720,13 @@ exports.allOrganizations = [
         Membership: '',
         Keywords: 'LIHEAP, Food Relief, Zoning, Community',
         Mission:
-            'The Hunting Park Neighborhood Advisory Committee (HPNAC) is a 501(c)3 non profit organization, established to promote the general development, welfare and well being of all people residing or established in the Hunting Park Community.',
+            'The Hunting Park Neighborhood Advisory Committee (HPNAC) is a 501(c)3 Non-Profit organization, established to promote the general development, welfare and well being of all people residing or established in the Hunting Park Community.',
         Description:
             'Helping to improve the quality of life in Hunting Park Philadelphia through economic empowerment, support programs, and social responsibility! Our commitment is to develop the Hunting Park Community, focusing on, but not limited to the areas of housing, education, economic development, social welfare, area beautification and recreation,  without displacing residents.\n\nHPNAC is also an Energy Center, assisting low income people with grants to help pay utility bills and promote energy conservation, inclusive of LIHEAP, CRISIS, UESF and LICAP Grants. We also assist with major repairs, Mortgage, Rental, and Emergency Food. We conduct community meetings, informing our residents about other services they may be entitled to receive, in addition to addressing zoning issues.',
     },
     {
         Name: "Ian-Yae's In Touch",
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://www.ian-yaesintouch.org/',
         Address: '',
         ImpactAreas: 'Human Services, Children',
@@ -15752,7 +15752,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'The Idiopathic Ridiculopathy Consortium',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.idiopathicridiculopathyconsortium.org/',
         Address: '',
         ImpactAreas: 'Arts',
@@ -15779,7 +15779,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'IHM Center for Literacy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ihmcenterforliteracy.com/',
         Address: '7341 Cottage Street',
         ImpactAreas: 'Immigrants and Refugees, Education',
@@ -15805,7 +15805,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Images of the Motherland Interactive Theatre',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://imagesofthemotherland.mystrikingly.com/',
         Address: '7812 Michener Avenue',
         ImpactAreas: 'Arts, Culture',
@@ -15858,7 +15858,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Impact Services Corporation',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.impactservices.org/',
         Address: '1952 E. Allegheny Avenue',
         ImpactAreas: 'Community Development, Workforce Development, Housing',
@@ -15884,7 +15884,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'ImpactPHL',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.impactphl.org/',
         Address: '4801 S BROAD ST',
         ImpactAreas: 'Economic Development',
@@ -16017,7 +16017,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Independence Hall Association',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ushistory.org/iha.html',
         Address: '320 CHESTNUT ST',
         ImpactAreas: 'History, Education',
@@ -16043,7 +16043,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Independence Media',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://independencemedia.org/',
         Address: '1800 JFK Blvd, Ste 300',
         ImpactAreas: 'Community Development',
@@ -16070,7 +16070,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Independence Seaport Museum',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.phillyseaport.org/',
         Address: '211 S. Columbus Blvd.',
         ImpactAreas: 'History',
@@ -16097,7 +16097,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Independence Visitor Center',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.phlvisitorcenter.com/',
         Address: '599 Market Street, 1 N. Independence Mall West',
         ImpactAreas: 'Parks and Open Spaces',
@@ -16124,7 +16124,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Indochinese American Council',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://iacphila.org/',
         Address: '4936 Old York Road',
         ImpactAreas: 'Culture, Education',
@@ -16151,7 +16151,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Infinity Track Club',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.infinitytc.org/',
         Address: '4603 MORRIS ST',
         ImpactAreas: 'Children, Sports and Recreation',
@@ -16176,7 +16176,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Inglis',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.inglis.org/',
         Address: '2600 Belmont Avenue',
         ImpactAreas: 'Disabilities, Mental Health',
@@ -16202,7 +16202,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Inus Nua Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://inisnuatheatre.org/',
         Address: '302 S. Hicks Street',
         ImpactAreas: 'Arts, Culture',
@@ -16229,7 +16229,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Injured Workers Advocacy Program',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://injuredworkersnetwork.com/',
         Address: '214 Osborn St.',
         ImpactAreas: 'Human Services',
@@ -16256,7 +16256,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'InLiquid',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://inliquid.org/contact/',
         Address: '1400 North American Street, Studio #314',
         ImpactAreas: 'Arts, Culture',
@@ -16283,7 +16283,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Inn Dwelling',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://inndwelling.org/',
         Address: '109 E. Price Street',
         ImpactAreas: 'Poverty, Education',
@@ -16310,7 +16310,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Inner City Lacrosse',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.innercitylacrosse.org/',
         Address: '834 N 27th St.',
         ImpactAreas: 'Sports and Recreation, Children',
@@ -16363,7 +16363,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'InspiriTec',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.inspiritec.org/',
         Address: '340 N 12th St, Ste 200',
         ImpactAreas: 'Disabilities, Veterans',
@@ -16390,7 +16390,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Institute for the Development of African American Youth',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://idaay.org/',
         Address: '',
         ImpactAreas: 'Children, Racial Justice, Education, Culture',
@@ -16417,7 +16417,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Institute for the Economic Development of Children',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.ifedoc.org/home',
         Address: '42 W. Harvey St.',
         ImpactAreas: 'Children, Economic Development',
@@ -16442,7 +16442,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Interact Theatre Company',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.interacttheatre.org/about-2',
         Address: '302 South Hicks Street',
         ImpactAreas: 'Arts',
@@ -16469,7 +16469,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Intercommunity Action',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://intercommunityaction.org/',
         Address: '6012 Ridge Ave',
         ImpactAreas: 'Elderly, Disabilities, Mental Health',
@@ -16495,7 +16495,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Intercultural Family Services',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ifsinc.org/',
         Address: '4225 Chestnut Street',
         ImpactAreas: 'Mental Health',
@@ -16521,7 +16521,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Intercultural Journeys',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.interculturaljourneys.org/',
         Address: '701 S. 50TH STREET, THIRD FLOOR',
         ImpactAreas: 'Arts',
@@ -16548,7 +16548,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Interfaith Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.interfaithphiladelphia.org/',
         Address: '100 W Oxford St Suite E-1300',
         ImpactAreas: 'Religion, Human Services',
@@ -16575,7 +16575,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Intergenerational Community Alliances & Programs',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://icap-inc.com/',
         Address: '',
         ImpactAreas: 'Culture, Education, Public Health',
@@ -16602,7 +16602,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International Academy of Cosmetic Dermatology',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://iacdworld.org/',
         Address: '1508 Creswood Road',
         ImpactAreas: 'Public Health, Healthcare',
@@ -16629,7 +16629,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International Performing Arts for Youth',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ipayweb.org/',
         Address: '1315 Walnut Street, Suite 320',
         ImpactAreas: 'Arts, Children, Education',
@@ -16656,7 +16656,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International Ballet Exchange',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'https://www.internationalballet.org/',
         Address: '38 E. Schoolhouse Lane',
         ImpactAreas: 'Arts',
@@ -16710,7 +16710,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International House Philadelphia',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://ihousephilly.org/',
         Address: '3000 Chestnut Street #7258',
         ImpactAreas: 'Culture, Arts, Education',
@@ -16737,7 +16737,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International Shotokan Karate Club',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://iskf.com/',
         Address: '222 South 45th Street',
         ImpactAreas: 'Sports and Recreation, Culture',
@@ -16763,7 +16763,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'International Student Athletic Academy',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'http://isaasports.com/',
         Address: '1316 E. Cliveden St.',
         ImpactAreas: 'Sports and Recreation, Children',
@@ -16790,7 +16790,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Wistar Institute',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://wistar.org/about-wistar/our-story',
         Address: '3601 Spruce Street',
         ImpactAreas: 'Education',
@@ -16817,7 +16817,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'New Africa Center',
-        OrganizationType: 'Arts',
+        OrganizationType: 'Arts Organization',
         Website: 'http://www.newafricacenter.com/',
         Address: '4243 Lancaster Ave',
         ImpactAreas: 'Culture, History',
@@ -16843,7 +16843,7 @@ exports.allOrganizations = [
     },
     {
         Name: 'Pew Charitable Trusts',
-        OrganizationType: 'Non Profit',
+        OrganizationType: 'Non-Profit',
         Website: 'https://www.pewtrusts.org/en/',
         Address: '2005 Market Street, Suite 2800',
         ImpactAreas: 'Law and Policy, Arts, Culture, Public Health',
