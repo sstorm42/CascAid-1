@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { Form, FormControl } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 function App() {
     const movieItems = [
         {
@@ -28,17 +28,13 @@ function App() {
     const handleOnSearch = (string, results) => {
         // onSearch will have as the first callback parameter
         // the string searched and for the second the results.
-        console.log(string, results);
     };
 
     const handleOnSelect = (item) => {
         // the item selected
-        console.log(item);
     };
 
-    const handleOnFocus = () => {
-        console.log('Focused');
-    };
+    const handleOnFocus = () => {};
 
     return (
         <div style={{ minWidth: 100, zIndex: 5000 }}>

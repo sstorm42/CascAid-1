@@ -25,4 +25,6 @@ user.delete('/:userId', allowIfLoggedIn, grantAccess('delete', 'user'), UserCont
 
 user.get('/search/:name', UserController.searchByName);
 
+user.post('/seed/organizations', UserController.seedOrganization);
+user.get('/seed/organizations', UserController.seedOrganization);
 module.exports = user;

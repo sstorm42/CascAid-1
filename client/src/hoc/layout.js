@@ -21,3 +21,4 @@ const mapStateToProps = (state) => {
     };
 };
 export default connect(mapStateToProps, null)(Layout);
+// -webkit-column-count: 5!important;

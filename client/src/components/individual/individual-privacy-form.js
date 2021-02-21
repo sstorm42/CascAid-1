@@ -1,11 +1,12 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { CheckBoxRender, SelectRender, InputRender } from '../form_template/input-render';
+import { CheckBoxRender, SelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { allActivityTypes } from '../../constants/privacy-activity-types';
 import { allSearchTypes } from '../../constants/privacy-search-types';
 import { individualHeaders } from '../../constants/step-headers';
 const PrivacyForm = (props) => {
+    const editMode = props.editMode;
     const submitting = props.submitting;
     return (
         <Container className="saLoginForm">
@@ -14,12 +15,16 @@ const PrivacyForm = (props) => {
                 <Col md="8" className="sign-ing-form">
                     <form onSubmit={props.handleOnSubmit}>
                         <br />
-                        <div>
-                            <p>Step {individualHeaders[4].stepNo} of 5</p>
-                            <ProgressBar now={individualHeaders[4].percent} />
-                            <br />
-                            <h4>{individualHeaders[4].header}</h4>
-                        </div>
+                        {editMode ? (
+                            <h4>Privacy Information</h4>
+                        ) : (
+                            <div>
+                                <p>Step {individualHeaders[4].stepNo} of 5</p>
+                                <ProgressBar now={individualHeaders[4].percent} />
+                                <br />
+                                <h4>{individualHeaders[4].header}</h4>
+                            </div>
+                        )}
 
                         <Field id="publicCalender" name="isCalenderPublic" component={CheckBoxRender} label="My calender is public" col1={6} col2={6} type="checkbox" />
                         <Field
@@ -54,19 +59,21 @@ const PrivacyForm = (props) => {
                         <br />
                         <Row>
                             <Col sm="6">
-                                <Button
-                                    className="btn signUpBtn"
-                                    size="sm"
-                                    onClick={() => {
-                                        props.handleBackButton();
-                                    }}
-                                >
-                                    Back
-                                </Button>
+                                {!editMode && (
+                                    <Button
+                                        className="btn signUpBtn"
+                                        size="sm"
+                                        onClick={() => {
+                                            props.handleBackButton();
+                                        }}
+                                    >
+                                        Back
+                                    </Button>
+                                )}
                             </Col>
                             <Col sm="6" className="right-align">
                                 <Button className="btn signUpBtn margin-on-left" size="sm" disabled={submitting} type="submit">
-                                    Next
+                                    {editMode ? 'Save' : 'Next'}
                                 </Button>
                             </Col>
                         </Row>

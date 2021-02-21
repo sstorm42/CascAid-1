@@ -4,10 +4,12 @@ const { v4: uuidv4 } = require('uuid');
 const base64ToImage = require('base64-to-image');
 const fs = require('fs');
 const moment = require('moment');
+const randomstring = require('randomstring');
+
+const appDir = `http://localhost:3001/uploaded-images/`;
+const path2 = './uploaded_images/';
 
 exports.saveImagesOnServer = (imageArray) => {
-    const appDir = `http://localhost:3001/uploaded-images/`;
-    const path2 = './uploaded_images/';
     let i = 1;
     let newSavedImageArray = [];
     if (imageArray.length > 0) {
@@ -20,6 +22,30 @@ exports.saveImagesOnServer = (imageArray) => {
 
                 base64ToImage(base64Str, path2, optionalObj);
                 newSavedImageArray.push(appDir + imageFileName + '.' + imageType);
+
+                i++;
+            } else {
+                newSavedImageArray.push(item);
+            }
+        });
+    }
+
+    return newSavedImageArray;
+};
+
+exports.saveImageSchemaOnServer = (imageArray) => {
+    let i = 1;
+    let newSavedImageArray = [];
+    if (imageArray.length > 0) {
+        imageArray.map((item) => {
+            if (item.path.length >= 200) {
+                const base64Str = item.path;
+                const imageFileName = uuidv1() + uuidv4() + i.toString();
+                const imageType = item.path.match(/[^:/]\w+(?=;|,)/)[0];
+                const optionalObj = { fileName: imageFileName, type: imageType };
+
+                base64ToImage(base64Str, path2, optionalObj);
+                newSavedImageArray.push({ path: appDir + imageFileName + '.' + imageType, description: item.description });
 
                 i++;
             } else {
@@ -57,4 +83,11 @@ exports.lineToWordConverter = (line) => {
         word += lineArray[i].toLocaleLowerCase();
     }
     return word;
+};
+
+exports.writeLocalJsonFile = (object, fileName) => {
+    fs.writeFileSync(path.resolve(__dirname, fileName + '.json'), JSON.stringify(object));
+};
+exports.getRandomPassword = () => {
+    return randomstring.generate(7);
 };

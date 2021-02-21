@@ -64,7 +64,9 @@ exports.grantAccess = function (action, module) {
         try {
             const signedInUserType = req.user.userType;
             const roles = accessControlTable[signedInUserType];
+            console.log(roles);
             const access = accessChecker(roles, { action, module });
+            console.log(access);
             if (access.isAble && access.case === 'inverse-own') {
                 if (module === 'user') {
                     if (req.params.userId.toString() !== req.user._id.toString()) {
@@ -116,6 +118,7 @@ exports.grantAccess = function (action, module) {
                         message: 'Module not found.',
                     });
             } else if (access.isAble) {
+                console.log(next);
                 next();
             } else {
                 return res.status(401).json({

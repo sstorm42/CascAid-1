@@ -4,7 +4,7 @@ export const allRaces = [
     { id: 3, value: 'black', label: 'black' },
     { id: 4, value: 'hispanic', label: 'Hispanic' },
     { id: 5, value: 'middle-eastern-north-african', label: 'middle Eastern/North African' },
-    { id: 6, value: 'native-hawaiian-other-pacific-islancer', label: 'Native Hawaiian/Other Pacific Islander' },
+    { id: 6, value: 'native-hawaiian-other-pacific-islander', label: 'Native Hawaiian/Other Pacific Islander' },
     { id: 7, value: 'white', label: 'White' },
     { id: 8, value: 'other', label: 'Other' },
 ];
@@ -14,4 +14,8 @@ export const getRaceByValue = (value) => {
         if (allRaces[race].value === value) return allRaces[race].name;
     }
     return name;
+};
+
+export const getRacesByValues = (values) => {
+    return allRaces.filter((race) => values.includes(race.value));
 };

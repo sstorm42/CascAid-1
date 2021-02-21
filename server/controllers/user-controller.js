@@ -1,10 +1,13 @@
 const { User } = require('../models/user-model');
 const { Individual } = require('../models/individual-user-model');
 const { Organization } = require('../models/organization-model');
+const { ImpactArea } = require('../models/impact-area-model');
+const { OrganizationType } = require('../models/organization-type-model');
 const IndividualController = require('./individual-controller');
 const OrganizationController = require('./organization-controller');
 const ObjectId = require('mongoose').Types.ObjectId;
-
+const { allOrganizations } = require('../static_data/sample-organizations');
+const { writeLocalJsonFile, getRandomPassword } = require('../utils/library');
 // @route GET api/user
 // @desc Returns all users
 exports.index = async (req, res) => {
@@ -180,4 +183,80 @@ exports.searchByName = async (req, res) => {
     } catch (err) {
         res.status(500).send({ success: false, message: 'Database access denied' });
     }
+};
+
+exports.seedOrganization = async (req, res) => {
+    let orgs = [];
+    let impactAreas = await ImpactArea.find();
+    let impactAreasObj = {};
+    for (let area = 0; area < impactAreas.length; area++) {
+        impactAreasObj[impactAreas[area].label] = impactAreas[area]._id;
+    }
+    let organizationTypes = await OrganizationType.find();
+    let typeObj = {};
+    for (let type = 0; type < organizationTypes.length; type++) {
+        typeObj[organizationTypes[type].label] = organizationTypes[type]._id;
+    }
+    for (let i = 0; i < allOrganizations.length; i++) {
+        let organization = allOrganizations[i];
+        const email = organization.Contact.toLocaleLowerCase();
+        if (email) {
+            let userFound = await User.find({ email: email });
+            console.log('🚀 ~ file: user-controller.js ~ line 205 ~ exports.seedOrganization= ~ userFound', userFound);
+            if (userFound && userFound.length > 0) continue;
+            else {
+                let password = getRandomPassword();
+                console.log('🚀 ~ file: user-controller.js ~ line 209 ~ exports.seedOrganization= ~ password', password);
+                orgs.push({
+                    email,
+                    password,
+                });
+                let user = new User({
+                    email: email,
+                    password: password,
+                    userType: 'organization',
+                });
+                let user_ = await user.save();
+                if (user_ && user_._id) {
+                    let organizationModel = new Organization({
+                        userId: user_._id,
+                        basicInfo: {
+                            name: organization.Name,
+                            phone: '',
+                            profilePicture: '',
+                            coverPicture: '',
+                            mission: organization.Mission,
+                            website: organization.Website,
+                            contactEmail: organization.Contact,
+                            organizationTypes: organization.OrganizationType.split(', ').map((type) => typeObj[type]),
+                            description: organization.Description,
+                            address: {
+                                street1: organization.Address,
+                                street2: '',
+                                city: '',
+                                state: '',
+                                country: 'US',
+                                code: organization.Zip,
+                            },
+                        },
+                        serviceInfo: {
+                            serviceAreaTypes: [],
+                            serviceAreas: organization.ServiceArea.split(','),
+                            impactAreas: organization.ImpactAreas.split(', ').map((area) => impactAreasObj[area]),
+                            donationLink: organization.Donate,
+                            newsLetterLink: organization.NewsLetter,
+                            keywords: organization.Keywords.split(','),
+                        },
+                        internalLink: { eventLink: organization.Events, rssLink: organization.RSS, blogLink: organization.Blog },
+                    });
+                    let savedOrganization = await organizationModel.save();
+                    if (!savedOrganization) {
+                        return res.status(500).send({ success: false, message: 'Organization failed to save:', organizationModel });
+                    }
+                }
+            }
+        }
+    }
+    writeLocalJsonFile(orgs, 'organizations');
+    res.status(200).send({ success: true, orgs });
 };

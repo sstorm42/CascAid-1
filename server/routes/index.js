@@ -4,12 +4,16 @@ const auth = require('./auth-route');
 const individual = require('./individual-route');
 const organization = require('./organization-route');
 const impactArea = require('./impact-area-route');
+const organizationType = require('./organization-type-route');
+const event = require('./event-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
 routes.use('/individual', individual);
 routes.use('/organization', organization);
 routes.use('/impact-area', impactArea);
+routes.use('/organization-type', organizationType);
+routes.use('/events', event);
 
 const connected = {
     success: true,

@@ -42,7 +42,6 @@ class OrganizationDA {
         return axios
             .get(APIPaths.getOrganizationPublicInfo(userId))
             .then((response) => {
-                console.log(response);
                 return response.data;
             })
             .catch((err) => err.response.data);
@@ -57,6 +56,13 @@ class OrganizationDA {
         const params = `?impactAreas=${JSON.stringify(impactArea)}&organizationType=${JSON.stringify(organizationType)}`;
         return axios
             .get(APIPaths.getOrganizationList + params)
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_all_events_by_organization = (userId) => {
+        console.log(APIPaths.getAllEventsByOrganization(userId));
+        return axios
+            .get(APIPaths.getAllEventsByOrganization(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

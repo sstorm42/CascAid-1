@@ -20,13 +20,11 @@ export const getLocalStorage = (key) => {
 };
 
 export const printLocalStorage = () => {
-    console.log('Printing local storage started');
     Object.entries(localStorage).map(([key, valueJSON]) => {
         const value = JSON.parse(valueJSON);
-        console.log(key, value);
+
         return value;
     });
-    console.log('Printing local storage ended');
 };
 export const authenticate = (user, token) => {
     setLocalStorage('user', user);

@@ -34,7 +34,6 @@ class App extends React.Component {
             <div
                 style={{ width: '100%' }}
                 onClick={() => {
-                    console.log(suggestion);
                     this.props.history.push(`/${suggestion.userType}/details/${suggestion.userId}`);
                 }}
             >
@@ -53,7 +52,6 @@ class App extends React.Component {
                 return response.users;
             } else return [];
         });
-        console.log('🚀 ~ file: react-autosuggest-lib.js ~ line 22 ~ users ~ users', users);
 
         return users;
     };
@@ -65,7 +63,7 @@ class App extends React.Component {
 
     onSuggestionsFetchRequested = async ({ value }) => {
         const users = await this.getSuggestions(value);
-        console.log('RESULT', users);
+
         this.setState({
             suggestions: users,
         });

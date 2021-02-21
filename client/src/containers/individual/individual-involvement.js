@@ -10,10 +10,10 @@ import { individualCompleteBasicInfoPage, individualCompletePrivacyPage } from '
 
 const Involvement = (props) => {
     const [loading, setLoading] = useState(false);
-
+    const [editMode, setEditMode] = useState(false);
     const getInitialInfo = () => {
         const user = props.auth.user;
-        console.log(user);
+
         if (user && user._id) {
             props.dispatch(getAllImpactAreasByUser(user._id));
             props.dispatch(getInvolvement(user._id));
@@ -23,8 +23,10 @@ const Involvement = (props) => {
         const { success, message } = props.setInvolvementResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            props.history.push(individualCompletePrivacyPage);
-            props.dispatch(clearInvolvement());
+            if (!editMode) {
+                props.history.push(individualCompletePrivacyPage);
+                props.dispatch(clearInvolvement());
+            }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
     const handleGetResponse = () => {
@@ -33,7 +35,8 @@ const Involvement = (props) => {
         }
     };
     useEffect(() => {
-        console.log('HI');
+        const url = window.location.pathname;
+        if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -58,6 +61,7 @@ const Involvement = (props) => {
     else
         return (
             <IndividualInvolvementForm
+                editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
@@ -68,16 +72,15 @@ const Involvement = (props) => {
         );
 };
 const mapStateToProps = (state) => {
-    console.log('STATE', state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
     const getInvolvementResponse = state.Individual.getInvolvement;
     const setInvolvementResponse = state.Individual.setInvolvement;
     let initialValues = {};
-    console.log('getInvolvementResponse', getImpactAreaResponse);
+
     if (getInvolvementResponse.success) {
         initialValues = getInvolvementResponse.involvement;
     }
-    console.log(initialValues);
+
     return {
         getImpactAreaResponse,
         initialValues,

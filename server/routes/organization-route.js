@@ -13,4 +13,6 @@ organization.put('/:userId/internal-link', allowIfLoggedIn, OrganizationControll
 organization.get('/', OrganizationController.getAll);
 organization.get('/:userId/public-info', OrganizationController.getPublicInfo);
 
+organization.get('/:userId/events', OrganizationController.getAllEvents);
+
 module.exports = organization;

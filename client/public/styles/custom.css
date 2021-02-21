@@ -160,4 +160,56 @@
     padding: 10px;
     font-size: small;
     font-weight: 500;
+    border-radius: 5;
+}
+.thread-list {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.thread-details {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.message-main {
+    background-color: white;
+    margin-top: 20px;
+}
+.image-description-input {
+    width: 100%;
+}
+tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+.row-details:hover {
+    color: green;
+    cursor: pointer;
+}
+.Collapsible {
+    margin-top: 10px;
+    background-color: cadetblue;
+    padding: 2px;
+    color: white;
+    border-bottom: 2px black;
+    border-radius: 5px;
+}
+.Collapsible:hover {
+    background-color: cadetblue;
+}
+.Collapsible__contentInner {
+    background-color: white;
+    padding: 5px;
+    color: black;
+}
+.Collapsible__trigger {
+    padding: 10px;
+    width: 100%;
+    display: block;
+}
+.list-button:hover {
+    background-color: lightseagreen;
+    color: white;
+}
+.special-btn {
+    cursor: pointer;
 }

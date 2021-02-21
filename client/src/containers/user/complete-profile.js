@@ -42,7 +42,7 @@ const CompleteProfile = (props) => {
     };
     const onSubmit = (values) => {
         setLoading(true);
-        console.log('🚀 ~ file: complete-profile.js ~ line 44 ~ onSubmit ~ values', values);
+
         if (stepId === 2) {
             if (values.basicInfo) values.basicInfo.photo = image;
             else

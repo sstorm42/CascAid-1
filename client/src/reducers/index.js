@@ -5,6 +5,8 @@ import AreaOfInterest from './area-of-interest-reducer';
 import Individual from './individualReducer';
 import Organization from './organizationReducer';
 import ImpactArea from './impact-area-reducer';
+import OrganizationType from './organization-type-reducer';
+import Event from './event-reducer';
 import { reducer as formReducer } from 'redux-form';
 const rootReducer = combineReducers({
     form: formReducer,
@@ -14,6 +16,8 @@ const rootReducer = combineReducers({
     Individual,
     Organization,
     ImpactArea,
+    OrganizationType,
+    Event,
 });
 
 export default rootReducer;

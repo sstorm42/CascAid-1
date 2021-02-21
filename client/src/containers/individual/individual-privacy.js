@@ -8,10 +8,11 @@ import { NotificationManager } from 'react-notifications';
 import IndividualPrivacyForm from '../../components/individual/individual-privacy-form';
 import { individualCompleteInvolvementPage, homePage } from '../../constants/route-paths';
 const Privacy = (props) => {
+    const [editMode, setEditMode] = useState(false);
     const [loading, setLoading] = useState(false);
     const getInitialInfo = () => {
         const user = props.auth.user;
-        console.log(user);
+
         if (user && user._id) {
             props.dispatch(getAllImpactAreasByUser(user._id));
             props.dispatch(getPrivacy(user._id));
@@ -21,8 +22,10 @@ const Privacy = (props) => {
         const { success, message } = props.setPrivacyResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            props.dispatch(clearPrivacy());
-            props.history.push(homePage);
+            if (!editMode) {
+                props.dispatch(clearPrivacy());
+                props.history.push(homePage);
+            }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
     const handleGetResponse = () => {
@@ -31,7 +34,8 @@ const Privacy = (props) => {
         }
     };
     useEffect(() => {
-        console.log('HI');
+        const url = window.location.pathname;
+        if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -54,6 +58,7 @@ const Privacy = (props) => {
     else
         return (
             <IndividualPrivacyForm
+                editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
@@ -63,16 +68,15 @@ const Privacy = (props) => {
         );
 };
 const mapStateToProps = (state) => {
-    console.log('STATE', state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
     const getPrivacyResponse = state.Individual.getPrivacy;
     const setPrivacyResponse = state.Individual.setPrivacy;
     let initialValues = {};
-    console.log('getPrivacyResponse', getImpactAreaResponse);
+
     if (getPrivacyResponse.success) {
         initialValues = getPrivacyResponse.privacy;
     }
-    console.log(initialValues);
+
     return {
         getImpactAreaResponse,
         initialValues,

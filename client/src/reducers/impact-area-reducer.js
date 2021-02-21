@@ -8,7 +8,7 @@ const initialState = {
 
 const ImpactAreaReducer = (state = initialState, action) => {
     switch (action.type) {
-        case Types.GET_ALL_IMPACT_AREAS:
+        case Types.GET_ALL_GLOBAL_IMPACT_AREAS:
             return { ...state, getGlobalImpactAreas: action.payload };
         case Types.GET_ALL_IMPACT_AREAS_BY_USER:
             return { ...state, getImpactAreasByUser: action.payload };

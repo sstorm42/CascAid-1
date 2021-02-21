@@ -11,7 +11,7 @@ const InternalLink = (props) => {
     const [loading, setLoading] = useState(false);
     const getInitialInfo = () => {
         const user = props.auth.user;
-        console.log(user);
+
         if (user && user._id) {
             props.dispatch(getAllImpactAreasByUser(user._id));
             props.dispatch(getInternalLink(user._id));
@@ -31,7 +31,6 @@ const InternalLink = (props) => {
         }
     };
     useEffect(() => {
-        console.log('HI');
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -63,16 +62,15 @@ const InternalLink = (props) => {
         );
 };
 const mapStateToProps = (state) => {
-    console.log('STATE', state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
     const getInternalLinkResponse = state.Organization.getInternalLink;
     const setInternalLinkResponse = state.Organization.setInternalLink;
     let initialValues = {};
-    console.log('getInternalLinkResponse', getImpactAreaResponse);
+
     if (getInternalLinkResponse.success) {
         initialValues = getInternalLinkResponse.internalLink;
     }
-    console.log(initialValues);
+
     return {
         getImpactAreaResponse,
         initialValues,

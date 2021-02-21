@@ -9,7 +9,7 @@ import { allOrganizationTypes } from '../../constants/organization-types';
 const ProfileStep2 = (props) => {
     const submitting = props.submitting;
     const [infoModal, setInfoModal] = useState(false);
-    const [selectedCountry, setSelectedCountry] = useState('');
+    const [selectedCountry, setSelectedCountry] = useState('US');
     const userType = props.userType;
     return (
         <Container className="saLoginForm">
@@ -165,7 +165,7 @@ const ProfileStep2 = (props) => {
                                 <Field name="basicInfo.address.city" type="text" component={InputRender} label="City" placeholder="" />
                             </Col>
                             <Col>
-                                <Field name="basicInfo.address.code" type="text" component={InputRender} label="PIN/ZIP Code" placeholder="1234..." />
+                                <Field name="basicInfo.address.code" type="text" component={InputRender} label="ZIP Code" placeholder="1234..." />
                             </Col>
                         </Row>
                         <Row>

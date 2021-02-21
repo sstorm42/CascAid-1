@@ -12,7 +12,6 @@ class IndividualDA {
         return axios
             .put(APIPaths.setIndividualBasicInfo(userId), basicInfo, APIPaths.apiConfig())
             .then((response) => {
-                console.log(response);
                 return response.data;
             })
             .catch((err) => err.response.data);
@@ -45,7 +44,6 @@ class IndividualDA {
         return axios
             .get(APIPaths.getIndividualPublicInfo(userId))
             .then((response) => {
-                console.log(response);
                 return response.data;
             })
             .catch((err) => err.response.data);

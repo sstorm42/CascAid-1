@@ -4,18 +4,19 @@ import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { getServiceInfo, setServiceInfo, clearServiceInfo } from '../../actions/organization-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import { NotificationManager } from 'react-notifications';
 import OrganizationServiceInfoForm from '../../components/organization/organization-service-info-form';
-import { organizationCompleteBasicInfoPage, organizationCompleteInternalLinkPage } from '../../constants/route-paths';
+import { homePage, organizationCompleteBasicInfoPage, organizationCompleteInternalLinkPage } from '../../constants/route-paths';
 
 const ServiceInfo = (props) => {
     const [loading, setLoading] = useState(false);
-
+    const [editMode, setEditMode] = useState(false);
     const getInitialInfo = () => {
         const user = props.auth.user;
-        console.log(user);
         if (user && user._id) {
             props.dispatch(getAllImpactAreasByUser(user._id));
+            props.dispatch(getAllOrganizationTypes());
             props.dispatch(getServiceInfo(user._id));
         }
     };
@@ -23,8 +24,10 @@ const ServiceInfo = (props) => {
         const { success, message } = props.setServiceInfoResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            props.history.push(organizationCompleteInternalLinkPage);
-            props.dispatch(clearServiceInfo());
+            if (!editMode) {
+                props.history.push(homePage);
+                props.dispatch(clearServiceInfo());
+            }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
     const handleGetResponse = () => {
@@ -33,7 +36,8 @@ const ServiceInfo = (props) => {
         }
     };
     useEffect(() => {
-        console.log('HI');
+        const url = window.location.pathname;
+        if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -52,37 +56,40 @@ const ServiceInfo = (props) => {
         props.history.push(organizationCompleteBasicInfoPage);
     };
     const handleSkipButton = () => {
-        props.history.push(organizationCompleteInternalLinkPage);
+        props.history.push(homePage);
     };
     if (loading) return <LoadingAnim />;
     else
         return (
             <OrganizationServiceInfoForm
+                editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
                 allImpactAreas={props.getImpactAreaResponse.success ? props.getImpactAreaResponse.impactAreas : []}
+                allOrganizationTypes={props.getOrganizationTypesResponse.success ? props.getOrganizationTypesResponse.organizationTypes : []}
                 handleBackButton={handleBackButton}
                 handleSkipButton={handleSkipButton}
             />
         );
 };
 const mapStateToProps = (state) => {
-    console.log('STATE', state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
     const getServiceInfoResponse = state.Organization.getServiceInfo;
     const setServiceInfoResponse = state.Organization.setServiceInfo;
+    const getOrganizationTypesResponse = state.OrganizationType.getAllOrganizationTypes;
     let initialValues = {};
-    console.log('getServiceInfoResponse', getImpactAreaResponse);
+
     if (getServiceInfoResponse.success) {
         initialValues = getServiceInfoResponse.serviceInfo;
     }
-    console.log(initialValues);
+
     return {
         getImpactAreaResponse,
         initialValues,
         getServiceInfoResponse,
         setServiceInfoResponse,
+        getOrganizationTypesResponse,
     };
 };
 export default connect(

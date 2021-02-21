@@ -1,5 +1,5 @@
 import { getLocalStorage } from '../actions';
-const serverAddress = `http://localhost:3001`;
+export const serverAddress = `http://localhost:3001`;
 
 export const checkEmailExist = serverAddress + `/api/users/email/`;
 export const userSignUp = serverAddress + `/api/auth/sign-up`;
@@ -48,8 +48,20 @@ export const errorLog = (apiPath, err) => {
 };
 
 // Impact Area
-export const getAllImpactAres = serverAddress + '/api/impact-area/';
+export const getAllGlobalImpactAreas = serverAddress + '/api/impact-area/global';
 export const getAllImpactAreasByUser = serverAddress + '/api/impact-area/user/';
 
 // SEARCH
 export const searchByName = serverAddress + '/api/users/search/';
+
+// Organization Type
+export const getAllOrganizationTypes = serverAddress + '/api/organization-type/';
+
+// EVENTS
+export const getEventById = serverAddress + '/api/events/';
+export const createEvent = serverAddress + '/api/events/';
+export const updateEventById = serverAddress + '/api/events/';
+export const deleteEventById = serverAddress + '/api/events/';
+export const getAllEvents = serverAddress + '/api/events';
+
+export const getAllEventsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/events`;

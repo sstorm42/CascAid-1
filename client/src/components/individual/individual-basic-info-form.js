@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
-import { SelectRender, InputRender, DatePickerRender, TextRender, MultiSelectRender } from '../form_template/input-render';
+import { SelectRender, InputRender, DatePickerRender, MultiSelectRender } from '../form_template/input-render';
 import { information_asking_reason } from '../../constants/misc';
 import { Container, Row, Col, ProgressBar, Button, Modal, Image } from 'react-bootstrap';
 import { countries, states } from '../../constants/country-and-state';
+import { allGenders } from '../../constants/genders';
 import { allRaces } from '../../constants/races';
+import { allLanguages } from '../../constants/languages';
 import { individualHeaders } from '../../constants/step-headers';
-
+import { date } from '../../actions/validate';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
+    const editMode = props.editMode;
     const [infoModal, setInfoModal] = useState(false);
-    const [selectedCountry, setSelectedCountry] = useState(props.stateAndCountry.country);
-    const [selectedState, setSelectedState] = useState(props.stateAndCountry.state);
+    const [selectedCountry, setSelectedCountry] = useState(props.stateAndCountry.country ? props.stateAndCountry.country : 'US');
+    // const [selectedState, setSelectedState] = useState(props.stateAndCountry.state);
     useEffect(() => {
         setSelectedCountry(props.stateAndCountry.country);
     }, [props.stateAndCountry.country]);
@@ -44,22 +47,25 @@ const BasicInfoForm = (props) => {
                 <Col></Col>
                 <Col md="9" className="sign-ing-form">
                     <form onSubmit={props.handleOnSubmit}>
-                        <div>
-                            <p>Step {individualHeaders[2].stepNo} of 5</p>
-                            <ProgressBar now={individualHeaders[2].percent} />
-                            <br />
-                            <h4>{individualHeaders[2].header}</h4>
-                            <small
-                                className="small-simple-btn"
-                                onClick={() => {
-                                    setInfoModal(true);
-                                }}
-                            >
-                                Why do we ask for this information?
-                            </small>
-                            <div style={{ height: 20 }} />
-                        </div>
-
+                        {editMode ? (
+                            <h4>Basic Information</h4>
+                        ) : (
+                            <div>
+                                <p>Step {individualHeaders[2].stepNo} of 5</p>
+                                <ProgressBar now={individualHeaders[2].percent} />
+                                <br />
+                                <h4>{individualHeaders[2].header}</h4>
+                                <small
+                                    className="small-simple-btn"
+                                    onClick={() => {
+                                        setInfoModal(true);
+                                    }}
+                                >
+                                    Why do we ask for this information?
+                                </small>
+                                <div style={{ height: 20 }} />
+                            </div>
+                        )}
                         <Row>
                             <Col>
                                 <Field name="firstName" type="text" component={InputRender} label="First Name" placeholder="John" />
@@ -70,7 +76,7 @@ const BasicInfoForm = (props) => {
                         </Row>
                         <Row>
                             <Col sm="6">
-                                <Field name="dateOfBirth" type="text" component={DatePickerRender} label="Date Of Birth" />
+                                <Field name="dateOfBirth" type="text" component={DatePickerRender} label="Date Of Birth" zIndex={4000} validate={[date]} />
                             </Col>
                             <Col sm="6">
                                 <Field name="kids" type="text" component={SelectRender} label="Kids" col1={4} col2={8}>
@@ -88,33 +94,27 @@ const BasicInfoForm = (props) => {
                                 <Field name="phone" type="text" component={InputRender} label="Phone" />
                             </Col>
                             <Col>
-                                {/* <Field name="races" component={MultiSelectRender} label="Race" col1={4} col2={8} options={allRaces} zIndex={2000} /> */}
-                                {/* <Field name="race" type="text" component={SelectRender} label="race" col1={4} col2={8}>
-                                    {allRaces.map((race, i) => {
+                                <Field name="gender" type="text" component={SelectRender} label="Gender" col1={4} col2={8}>
+                                    {allGenders.map((gender, i) => {
                                         return (
-                                            <option key={i} value={race.value}>
-                                                {race.label}
+                                            <option key={i} value={gender.value}>
+                                                {gender.label}
                                             </option>
                                         );
                                     })}
-                                </Field> */}
-                                <Field name="gender" type="text" component={SelectRender} label="Gender" col1={4} col2={8}>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
                                 </Field>
                             </Col>
                         </Row>
-                        {/* <Row>
+                        <Row>
                             <Col>
-                                <Field name="gender" type="text" component={SelectRender} label="Gender" col1={4} col2={8}>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </Field>
+                                <Field name="races" component={MultiSelectRender} label="Race" col1={2} col2={10} options={allRaces} zIndex={3000} />
                             </Col>
+                        </Row>
+                        <Row>
                             <Col>
-                                <Field name="languages" type="text" component={InputRender} label="Language" />
+                                <Field name="languages" component={MultiSelectRender} label="Languages Fluency" col1={2} col2={10} options={allLanguages} zIndex={2000} />
                             </Col>
-                        </Row> */}
+                        </Row>
 
                         <hr />
                         <Row>
@@ -132,7 +132,7 @@ const BasicInfoForm = (props) => {
                                 <Field name="address.city" type="text" component={InputRender} label="City" placeholder="" />
                             </Col>
                             <Col>
-                                <Field name="address.code" type="text" component={InputRender} label="PIN/ZIP Code" placeholder="1234..." />
+                                <Field name="address.code" type="text" component={InputRender} label="ZIP Code" placeholder="1234..." />
                             </Col>
                         </Row>
                         <Row>
@@ -187,7 +187,7 @@ const BasicInfoForm = (props) => {
                             <Col sm="6"></Col>
                             <Col sm="6" className="right-align">
                                 <Button className="btn next-btn margin-on-left" size="sm" disabled={submitting} type="submit">
-                                    Next
+                                    {editMode ? 'Save' : 'Next'}
                                 </Button>
                             </Col>
                         </Row>

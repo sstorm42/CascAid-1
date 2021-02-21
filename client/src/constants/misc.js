@@ -1,1 +1,1 @@
-export const information_asking_reason = `We want to be able to connect you to the organizations and people that will best help you get the most out of your community involvement. This information helps those organizations find you efficiently.`;
+export const information_asking_reason = `We want to be able to connect you to the organizations and people that will best help you get the most out of your community involvement. This information helps those organizations find you efficiently. Populate only with what you are comfortable with`;

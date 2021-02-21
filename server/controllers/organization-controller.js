@@ -5,11 +5,12 @@ const RESPONSES = require('../responses/organization-response');
 const { allOrganizationTypes } = require('../static_data/organization-types');
 const { allServiceAreaTypes } = require('../static_data/service-area-types');
 const { json } = require('body-parser');
+const { Event } = require('../models/event-model');
 exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
 
-        const organization = await Organization.findOne({ userId });
+        const organization = await Organization.findOne({ userId }).populate('basicInfo.organizationTypes', { _id: 1, label: 1, value: 1 });
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
             let basicInfo = organization.basicInfo.toObject();
@@ -64,8 +65,7 @@ exports.setBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
         let basicInfo = req.body;
-
-        if (basicInfo.organizationType) basicInfo.organizationType = basicInfo.organizationType.map((type) => type.value);
+        console.log('🚀 ~ file: organization-controller.js ~ line 68 ~ exports.setBasicInfo= ~ basicInfo', basicInfo);
         if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
         if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];
         const updatedOrganization = await Organization.findOneAndUpdate(
@@ -157,9 +157,27 @@ exports.getPublicInfo = async (req, res) => {
     try {
         // Implement all logic here
         const userId = req.params.userId;
-        const organization = await Organization.findOne({ userId }).populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 });
+        const organization = await Organization.findOne({ userId })
+            .populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 })
+            .populate('basicInfo.organizationTypes', { _id: 1, label: 1, value: 1 });
         if (organization._id) return res.status(200).send({ ...RESPONSES.OrganizationFound, organization });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAllEvents = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        console.log('🚀 ~ file: organization-controller.js ~ line 173 ~ exports.getAllEvents= ~ userId', userId);
+        const events = await Event.find({
+            creatorId: userId,
+        });
+        console.log(events);
+        if (events) {
+            return res.status(200).send({ success: true, events });
+        } else return res.status(404).send({ success: false, message: 'No events found' });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

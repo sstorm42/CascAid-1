@@ -1,8 +1,8 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import * as RoutePath from '../../constants/route-paths';
 import { Link } from 'react-router-dom';
-import SearchBox from './search-box';
+// import SearchBox from './search-box';
 import ReactAutoSuggest from './react-autosuggest-lib';
 const Header = (props) => {
     const isAuth = props.isAuth || false;

@@ -1,5 +1,3 @@
-const e = require('express');
-const { trimEnd } = require('lodash');
 const { ImpactArea } = require('../models/impact-area-model');
 const { ImpactAreas } = require('../static_data/seed-data');
 const { lineToWordConverter } = require('../utils/library');
@@ -43,7 +41,7 @@ exports.createMultiple = async (impactArray, userType, userId) => {
     }
 };
 
-exports.getAll = async (req, res) => {
+exports.getAllGlobal = async (req, res) => {
     const impactAreas = await ImpactArea.find({
         createdBy: 'admin',
         isActive: true,
@@ -60,6 +58,7 @@ exports.getAllByUser = async (req, res) => {
     const impactAreas = await ImpactArea.find({
         $and: [{ $or: [{ createdBy: 'admin' }, { creatorId: userId }] }, { isActive: true }, { isDeleted: false }],
     });
+    console.log('🚀 ~ file: impact-area-controller.js ~ line 61 ~ exports.getAllByUser= ~ impactAreas', impactAreas);
     res.status(200).send({
         success: true,
         impactAreas,

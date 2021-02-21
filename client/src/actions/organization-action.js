@@ -82,3 +82,10 @@ export const clearInternalLink = (userId) => {
         payload: {},
     };
 };
+
+export const getAllEventsByOrganization = (userId) => {
+    return {
+        type: Types.GET_ALL_EVENTS,
+        payload: OrganizationDA.get_all_events_by_organization(userId),
+    };
+};

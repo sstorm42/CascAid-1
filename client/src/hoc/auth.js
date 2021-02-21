@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LoadingAnim from '../components/form_template/loading-anim';
 import * as RoutePath from '../constants/route-paths';
 import { NotificationManager } from 'react-notifications';
-export default function (ComposedClass, allowedUserTypes, allowAuthenticatedUsers = true) {
+const UserAuthChecker = (ComposedClass, allowedUserTypes, allowAuthenticatedUsers = true) => {
     class AuthenticationCheck extends Component {
         state = {
             loading: true,
@@ -26,7 +26,6 @@ export default function (ComposedClass, allowedUserTypes, allowAuthenticatedUser
                         });
                     } else {
                         // Go to warning (unauthorized) page
-                        this.props.history.push(RoutePath.unAuthorizedPage);
                     }
                 } else if (this.props.auth.isAuth && !allowAuthenticatedUsers) {
                     // Already logged in, so go to homepage. can not go there until logout
@@ -60,4 +59,5 @@ export default function (ComposedClass, allowedUserTypes, allowAuthenticatedUser
         };
     }
     return connect(mapStateToProps)(AuthenticationCheck);
-}
+};
+export default UserAuthChecker;

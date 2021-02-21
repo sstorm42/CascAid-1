@@ -64,3 +64,12 @@ export const mailSentPage = '/mail/sent';
 export const getBasicInfoPageByUserType = (userType) => {
     return `/complete/${userType}/basic-info`;
 };
+// POSTS
+export const postManagePage = '/user/post';
+
+// EVENTS
+export const eventCreatePage = '/user/event/create';
+export const eventEditPage = '/user/event/edit/';
+export const eventListByOrganizationPage = '/user/event/all';
+export const eventListPage = '/event/all';
+export const eventDetailsPage = '/event/details/';

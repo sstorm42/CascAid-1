@@ -6,9 +6,12 @@ import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/indivi
 import { NotificationManager } from 'react-notifications';
 import IndividualBasicInfoForm from '../../components/individual/individual-basic-info-form';
 import { individualCompleteInvolvementPage } from '../../constants/route-paths';
+import { getLanguagesByValues } from '../../constants/languages';
+import { getRacesByValues } from '../../constants/races';
 const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);
     const [profilePicture, setProfilePicture] = useState();
+    const [editMode, setEditMode] = useState(false);
     const [stateAndCountry, setStateAndCountry] = useState({
         state: '',
         country: '',
@@ -23,8 +26,10 @@ const BasicInfo = (props) => {
         const { success, message } = props.setBasicInfoResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            props.history.push(individualCompleteInvolvementPage);
-            props.dispatch(clearBasicInfo());
+            if (!editMode) {
+                props.history.push(individualCompleteInvolvementPage);
+                props.dispatch(clearBasicInfo());
+            }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
     const handleGetResponse = () => {
@@ -40,6 +45,8 @@ const BasicInfo = (props) => {
         }
     };
     useEffect(() => {
+        const url = window.location.pathname;
+        if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -51,8 +58,14 @@ const BasicInfo = (props) => {
 
     const onSubmit = (values) => {
         setLoading(true);
-        values.profilePicture = profilePicture;
-        props.dispatch(setBasicInfo(props.auth.user._id, values));
+        let user = {
+            ...values,
+            profilePicture: profilePicture,
+            races: values.races.map((race) => race.value),
+            languages: values.languages.map((language) => language.value),
+        };
+
+        props.dispatch(setBasicInfo(props.auth.user._id, user));
         setLoading(false);
     };
     const handlePictureUpload = (event) => {
@@ -73,6 +86,7 @@ const BasicInfo = (props) => {
     else
         return (
             <IndividualBasicInfoForm
+                editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
@@ -88,8 +102,11 @@ const mapStateToProps = (state) => {
     let initialValues = {};
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;
+        console.log(initialValues);
+        if (initialValues.languages.length > 0 && typeof initialValues.languages[0] === 'string') initialValues.languages = getLanguagesByValues(initialValues.languages);
+        if (initialValues.races.length > 0 && typeof initialValues.races[0] === 'string') initialValues.races = getRacesByValues(initialValues.races);
     }
-
+    console.log(initialValues);
     return {
         initialValues,
         getBasicInfoResponse,

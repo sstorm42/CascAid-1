@@ -4,15 +4,15 @@ const addressSchema = require('./address-schema');
 // Step 2
 const basicInfoSchema = mongoose.Schema({
     name: { type: String, required: true },
-    ein: { type: String, required: true },
+    ein: { type: String },
     phone: { type: String },
     profilePicture: { type: String },
     coverPicture: { type: String },
-    mission: { type: String, required: true },
-    website: { type: String, required: true },
-    contactEmail: { type: String, required: true },
-    organizationType: [{ type: String }],
-    description: { type: String, required: true },
+    mission: { type: String },
+    website: { type: String },
+    contactEmail: { type: String },
+    organizationTypes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'OrganizationType' }],
+    description: { type: String },
     address: { type: addressSchema },
 });
 
@@ -23,7 +23,7 @@ const serviceInfoSchema = mongoose.Schema(
         serviceAreas: [{ type: String }],
         impactAreas: [{ type: String, ref: 'ImpactArea' }],
         donationLink: { type: String },
-        newsLetter: { type: String },
+        newsLetterLink: { type: String },
         keywords: [{ type: String }],
     },
     { timestamps: true },
@@ -32,9 +32,9 @@ const serviceInfoSchema = mongoose.Schema(
 // Step 4
 const internalLinkSchema = mongoose.Schema(
     {
-        events: { type: String },
-        rss: { type: String },
-        blog: { type: String },
+        eventLink: { type: String },
+        rssLink: { type: String },
+        blogLink: { type: String },
     },
     { timestamps: true },
 );

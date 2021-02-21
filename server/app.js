@@ -33,6 +33,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/uploaded-images', express.static('uploaded_images'));
+app.use('/default-images', express.static('default_images'));
 //connect all routes to the application
 app.use('/api', routes);
 // app.use(express.static(path.join(__dirname, 'build')));

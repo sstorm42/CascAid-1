@@ -84,10 +84,11 @@ exports.signUp = async (req, res) => {
 exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
+        console.log('🚀 ~ file: auth-controller.js ~ line 87 ~ exports.signIn= ~ email', email);
 
         email = email.toLowerCase();
         const user = await User.findOne({ email });
-
+        console.log(user);
         if (!user) {
             return res.status(401).json({
                 success: false,
@@ -102,7 +103,7 @@ exports.signIn = async (req, res) => {
                 message: 'Invalid email or password',
             });
 
-        const token = jwt.sign({ _id: user._id, email: user.email }, config.SECRET, { expiresIn: '14d' });
+        const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
 
         const user_ = (({ _id, name, userType }) => ({ _id, name, userType }))(user);
 

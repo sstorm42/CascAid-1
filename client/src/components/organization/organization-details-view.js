@@ -1,46 +1,37 @@
 import React from 'react';
-import { Container, Image, Row, Col, Badge } from 'react-bootstrap';
+import { Container, Image, Row, Col, Badge, ListGroup } from 'react-bootstrap';
 import moment from 'moment';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { getOrganizationTypeByValue } from '../../constants/organization-types';
+import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import Collapsible from 'react-collapsible';
 const DetailsView = (props) => {
     const organization = props.organization;
     const infoRender = (label, value) => {
-        return (
-            <Row>
-                <Col md="4">
-                    <b>{label}</b>
-                </Col>
-                <Col md="8">{value}</Col>
-            </Row>
-        );
+        if (value) {
+            return (
+                <Row>
+                    <Col md="3">
+                        <b>{label}</b>
+                    </Col>
+                    <Col md="9">
+                        {value.split('\n').map((para, i) => (
+                            <p key={i} className="justify-text">
+                                {para}
+                            </p>
+                        ))}
+                    </Col>
+                </Row>
+            );
+        } else return <></>;
     };
-    const organizationTypeRender = (types) => {
-        console.log(types);
-        return (
-            <Row>
-                <Col md="4">
-                    <b>Organization Type</b>
-                </Col>
-                <Col md="8">
-                    {types.map((type, i) => {
-                        return (
-                            <Badge variant="primary" key={i} className="badge-single">
-                                {getOrganizationTypeByValue(type)}
-                            </Badge>
-                        );
-                    })}
-                </Col>
-            </Row>
-        );
-    };
+
     const keywordsRender = (label, keywords) => {
         return (
             <Row>
-                <Col md="4">
+                <Col md="3">
                     <b>{label}</b>
                 </Col>
-                <Col md="8">
+                <Col md="9">
                     {keywords.map((key, i) => {
                         return (
                             <Badge variant="primary" key={i} className="badge-single">
@@ -55,10 +46,10 @@ const DetailsView = (props) => {
     const tagsRender = (label, tags) => {
         return (
             <Row>
-                <Col md="4">
+                <Col md="3">
                     <b>{label}</b>
                 </Col>
-                <Col md="8">
+                <Col md="9">
                     {tags.map((tag, i) => {
                         return (
                             <Badge variant="primary" key={i} className="badge-single">
@@ -86,23 +77,62 @@ const DetailsView = (props) => {
         const basicInfo = organization.basicInfo;
         const serviceInfo = organization.serviceInfo;
         const impactAreas = serviceInfo.impactAreas;
-        console.log('🚀 ~ file: organization-details-view.js ~ line 29 ~ DetailsView ~ involvement', organization);
+
         return (
             <Container>
                 <Row>
                     <Col className="right-align" sm="2">
-                        <Image className="left-image" src={basicInfo.profilePicture} width="100%" thumbnail />
+                        <Image className="left-image" src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultOrganizationProfilePicture} width="100%" thumbnail />
+                        <Collapsible trigger="MENU" className="special-btn">
+                            <ListGroup>
+                                <ListGroup.Item
+                                    className="list-button"
+                                    onClick={() => {
+                                        alert('YET TO DEVELOP');
+                                    }}
+                                >
+                                    About
+                                </ListGroup.Item>
+                                <ListGroup.Item
+                                    className="list-button"
+                                    onClick={() => {
+                                        alert('YET TO DEVELOP');
+                                    }}
+                                >
+                                    Events
+                                </ListGroup.Item>
+                                <ListGroup.Item
+                                    className="list-button"
+                                    onClick={() => {
+                                        alert('YET TO DEVELOP');
+                                    }}
+                                >
+                                    Projects
+                                </ListGroup.Item>
+                                <ListGroup.Item
+                                    className="list-button"
+                                    onClick={() => {
+                                        alert('YET TO DEVELOP');
+                                    }}
+                                >
+                                    Message
+                                </ListGroup.Item>
+                            </ListGroup>
+                        </Collapsible>
                     </Col>
                     <Col sm="9" className="left-border">
                         <h3>{basicInfo.name}</h3>
-                        {infoRender('Phone', basicInfo.phone)}
-                        {infoRender('EIN', basicInfo.ein)}
+                        {tagsRender('Organization Type', basicInfo.organizationTypes)}
                         {infoRender('Contact Email', basicInfo.contactEmail)}
                         {infoRender('Website', basicInfo.website)}
-                        {organizationTypeRender(basicInfo.organizationType)}
+
+                        {infoRender('Phone', basicInfo.phone)}
+                        {infoRender('EIN', basicInfo.ein)}
                         {infoRender('Address', addressMaker(basicInfo.address))}
-                        {infoRender('Description', basicInfo.description)}
+                        <hr />
                         {infoRender('Mission', basicInfo.mission)}
+                        <hr />
+                        {infoRender('Description', basicInfo.description)}
                         <div style={{ height: 25 }} />
                         <hr />
                         <div style={{ height: 25 }} />

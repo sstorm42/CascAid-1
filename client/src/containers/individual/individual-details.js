@@ -28,7 +28,7 @@ const IndividualDetails = (props) => {
 };
 const mapStateToProps = (state) => {
     const getPublicInfoResponse = state.Individual.getPublicInfo;
-    console.log('🚀 ~ file: individual-details.js ~ line 31 ~ mapStateToProps ~ getPublicInfoResponse', getPublicInfoResponse);
+
     return {
         getPublicInfoResponse,
     };

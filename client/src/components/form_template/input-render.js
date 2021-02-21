@@ -1,9 +1,10 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, InputGroup, FormControl } from 'react-bootstrap';
 import CreatableSelect from 'react-select/creatable';
 import Select from 'react-select';
+import moment from 'moment';
 
 export const InputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
     const className = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
@@ -34,9 +35,11 @@ export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, min
                 {type === 'number' ? (
                     <div className="input-group">
                         <input {...input} placeholder={placeholder} type={type} className="form-control" min={min} max={max} unit={unit} step={step} />
-                        <div className="input-group-append">
-                            <span className="input-group-text">{unit}</span>
-                        </div>
+                        {unit && (
+                            <div className="input-group-append">
+                                <span className="input-group-text">{unit}</span>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <input {...input} placeholder={placeholder} type={type} className="form-control" />
@@ -46,12 +49,12 @@ export const InputRenderWithLargeLabel = ({ input, label, type, placeholder, min
         </div>
     );
 };
-export const TextRender = ({ input, label, placeholder, type, meta: { touched, error, warning } }) => {
+export const TextRender = ({ input, label, placeholder, type, col1, col2, meta: { touched, error, warning } }) => {
     const className = `form-group row ${touched && error ? 'has-danger' : 'has-success'}`;
     return (
         <div className={className}>
-            <label className="col-sm-3">{label}</label>
-            <div className="col-sm-9">
+            <label className={'col-sm-' + col1}>{label}</label>
+            <div className={'col-sm-' + col2}>
                 <textarea {...input} placeholder={placeholder} rows="5" className="form-control" />
                 {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
@@ -137,7 +140,6 @@ export const HalfInputRender = ({ input, label, type, placeholder, meta: { touch
 //     );
 // };
 export const SwitchRender = ({ input, label, type, placeholder, id, defaultChecked, meta: { touched, error, warning } }) => {
-    console.log(input);
     return (
         <div className="form-group row">
             <label className="col-sm-6" htmlFor={id}>
@@ -153,14 +155,18 @@ export const SwitchRender = ({ input, label, type, placeholder, id, defaultCheck
     );
 };
 
-export const DatePickerRender = ({ input, label, minDate, selectedDate, setDate, meta: { touched, error, warning } }) => {
-    selectedDate = input.value ? new Date(input.value) : new Date();
+export const DatePickerRender = ({ input, label, minDate, selectedDate, setDate, zIndex, meta: { touched, error, warning } }) => {
+    console.log(input.value);
+    const date = moment(input.value).isValid();
+    selectedDate = date ? new Date(input.value) : '';
+    console.log('🚀 ~ file: input-render.js ~ line 157 ~ DatePickerRender ~ selectedDate', selectedDate);
     input.value = selectedDate;
     return (
         <div className="form-group row">
             <label className="col-sm-4">{label}</label>
-            <div className="col-sm-8 date-picker-div">
-                <DatePicker className="form-control custom-date-picker" {...input} selected={selectedDate} minDate={minDate} />
+            <div className="col-sm-8 date-picker-div" style={{ zIndex: zIndex }}>
+                <DatePicker className="form-control custom-date-picker" {...input} selected={selectedDate} minDate={minDate} dateFormat="MM/dd/yyyy" />
+                {touched && error && <span>{error}</span>}
             </div>
         </div>
     );
@@ -190,5 +196,21 @@ export const MultiSelectRender = ({ input, label, placeholder, options, col1, co
                 {touched && error && <span>{error}</span>}
             </Col>
         </Row>
+    );
+};
+export const DateTimePickerRender = ({ input, label, minDate, selectedDate, col1, col2, setDate, zIndex, meta: { touched, error, warning } }) => {
+    console.log(input.value);
+    const date = moment(input.value).isValid();
+    selectedDate = date ? new Date(input.value) : '';
+    console.log('🚀 ~ file: input-render.js ~ line 157 ~ DatePickerRender ~ selectedDate', selectedDate);
+    input.value = selectedDate;
+    return (
+        <div className="form-group row">
+            <label className={'form-label col-sm-' + col1}>{label}</label>
+            <div className={'col-sm-' + col2} style={{ zIndex: zIndex }}>
+                <DatePicker showTimeSelect className="form-control custom-date-picker" {...input} selected={selectedDate} minDate={minDate} dateFormat="MM/dd/yyyy h:mm aa" />
+                {touched && error && <span>{error}</span>}
+            </div>
+        </div>
     );
 };

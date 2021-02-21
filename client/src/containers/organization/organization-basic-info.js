@@ -6,32 +6,37 @@ import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/organi
 import { NotificationManager } from 'react-notifications';
 import OrganizationBasicInfoForm from '../../components/organization/organization-basic-info-form';
 import { organizationCompleteServiceInfoPage } from '../../constants/route-paths';
+import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);
     const [profilePicture, setProfilePicture] = useState();
+    const [editMode, setEditMode] = useState(false);
     const [stateAndCountry, setStateAndCountry] = useState({
         state: '',
-        country: '',
+        country: 'US',
     });
     const getInitialInfo = () => {
         const user = props.auth.user;
         if (user && user._id) {
             props.dispatch(getBasicInfo(user._id));
         }
+        props.dispatch(getAllOrganizationTypes());
     };
     const handleSetResponse = () => {
         const { success, message } = props.setBasicInfoResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            props.history.push(organizationCompleteServiceInfoPage);
-            props.dispatch(clearBasicInfo());
+            if (!editMode) {
+                props.history.push(organizationCompleteServiceInfoPage);
+                props.dispatch(clearBasicInfo());
+            }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
     const handleGetResponse = () => {
         const { success, basicInfo } = props.getBasicInfoResponse;
         if (success && basicInfo) {
             if (basicInfo.profilePicture) setProfilePicture(basicInfo.profilePicture);
-            if (basicInfo.address) {
+            if (basicInfo.address && basicInfo.address.country) {
                 setStateAndCountry({
                     state: basicInfo.address.state,
                     country: basicInfo.address.country,
@@ -40,6 +45,8 @@ const BasicInfo = (props) => {
         }
     };
     useEffect(() => {
+        const url = window.location.pathname;
+        if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
     }, [props.auth]);
     useEffect(() => {
@@ -51,8 +58,13 @@ const BasicInfo = (props) => {
 
     const onSubmit = (values) => {
         setLoading(true);
-        values.profilePicture = profilePicture;
-        props.dispatch(setBasicInfo(props.auth.user._id, values));
+        let user = {
+            ...values,
+            profilePicture: profilePicture,
+            organizationTypes: values.organizationTypes.map((type) => type._id),
+        };
+
+        props.dispatch(setBasicInfo(props.auth.user._id, user));
         setLoading(false);
     };
     const handlePictureUpload = (event) => {
@@ -73,28 +85,38 @@ const BasicInfo = (props) => {
     else
         return (
             <OrganizationBasicInfoForm
+                editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
                 profilePicture={profilePicture}
                 handlePictureUpload={handlePictureUpload}
                 stateAndCountry={stateAndCountry}
+                allOrganizationTypes={props.getAllOrganizationTypesResponse.success ? props.getAllOrganizationTypesResponse.organizationTypes : []}
             />
         );
 };
 const mapStateToProps = (state) => {
-    console.log(state);
     const getBasicInfoResponse = state.Organization.getBasicInfo;
     const setBasicInfoResponse = state.Organization.setBasicInfo;
+    const getAllOrganizationTypesResponse = state.OrganizationType.getAllOrganizationTypes;
     let initialValues = {};
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;
+        if (initialValues.address && !initialValues.address.country) {
+            initialValues.address.country = 'US';
+        } else if (!initialValues.address) {
+            initialValues.address = {
+                country: 'US',
+            };
+        }
     }
 
     return {
         initialValues,
         getBasicInfoResponse,
         setBasicInfoResponse,
+        getAllOrganizationTypesResponse,
     };
 };
 export default connect(
