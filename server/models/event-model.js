@@ -11,6 +11,7 @@ const eventSchema = mongoose.Schema(
         creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         location: { type: locationSchema },
         impactAreas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ImpactArea' }],
+
         isActive: { type: Boolean, default: true },
         isDeleted: { type: Boolean, default: false },
     },

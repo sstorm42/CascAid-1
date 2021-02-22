@@ -1,16 +1,23 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-
+import React, { useState, useEffect } from 'react';
+import EventDetails from '../../components/event/event-details';
+import { connect } from 'react-redux';
+import { getEventById } from '../../actions/event-action';
 const DisplayEvent = (props) => {
-    return (
-        <Container>
-            <Row>
-                <Col className="parent-page">
-                    <h1>Welcome To DisplayEvent EVENTS</h1>
-                    <p>This is yet to develop</p>
-                </Col>
-            </Row>
-        </Container>
-    );
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        const getInitialInfo = () => {
+            setLoading(true);
+            props.dispatch(getEventById(eventId));
+            setLoading(false);
+        };
+        const eventId = props.match.params.eventId;
+        if (eventId) getInitialInfo(eventId);
+        else {
+        }
+    }, [props.auth]);
+    return <EventDetails />;
 };
-export default DisplayEvent;
+const mapStateToProps = (state) => {
+    return {};
+};
+export default connect(mapStateToProps, null)(DisplayEvent);
