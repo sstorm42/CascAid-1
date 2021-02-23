@@ -14,6 +14,7 @@ if (mongoose.connection.readyState == 0) {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
+    console.log('Connected');
     mongoose.set('useFindAndModify', false);
 }
 app.use(cors());
