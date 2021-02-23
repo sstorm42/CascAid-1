@@ -216,3 +216,6 @@ tr td:last-child {
 .card-text {
     line-height: 1;
 }
+.image-description-box {
+    margin-bottom: 5px;
+}
