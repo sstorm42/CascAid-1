@@ -1,4 +1,5 @@
 const { Event } = require('../models/event-model');
+const { Organization } = require('../models/organization-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
 
 exports.createOne = async (req, res) => {
@@ -24,11 +25,11 @@ exports.createOne = async (req, res) => {
 exports.getOne = async (req, res) => {
     try {
         const eventId = req.params.eventId;
-        const event = await Event.findById(eventId)
-            .populate({ path: 'creatorId', populate: { path: 'userId', select: 'name' } })
-            .populate('impactAreas', { _id: 1, label: 1, value: 1 });
+        const event = await Event.findById(eventId).populate('impactAreas', { _id: 1, label: 1, value: 1 });
         if (event) {
-            res.status(200).send({ success: true, message: 'Event found', event });
+            const organizations = await Organization.find({ userId: event.creatorId }, { basicInfo: 1 });
+            if (organizations && organizations.length > 0) res.status(200).send({ success: true, message: 'Event found', event, organization: organizations[0] });
+            else res.status(200).send({ success: false, event });
         } else {
             res.status(404).send({ success: false, message: 'Event not found' });
         }
@@ -46,6 +47,28 @@ exports.getAll = async (req, res) => {
 
 exports.updateOne = async (req, res) => {
     try {
+        const eventId = req.params.eventId;
+        console.log('🚀 ~ file: event-controller.js ~ line 51 ~ exports.updateOne= ~ eventId', eventId);
+        const event = req.body;
+        console.log('🚀 ~ file: event-controller.js ~ line 52 ~ exports.updateOne= ~ event', event);
+        const updatedEvent = await Event.findOneAndUpdate(
+            {
+                _id: eventId,
+            },
+            { $set: event },
+            { new: true },
+        );
+        console.log(updatedEvent);
+        if (!updatedEvent)
+            return res.status(401).send({
+                success: false,
+                message: 'Event does not exist.',
+            });
+        else
+            return res.status(200).send({
+                success: true,
+                message: 'Event updated successfully.',
+            });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

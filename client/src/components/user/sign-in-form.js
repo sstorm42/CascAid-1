@@ -27,7 +27,7 @@ const SignInForm = (props) => {
                         <br />
                         <Row>
                             <Col sm="6">
-                                <Button className="btn signUpBtn" disabled={submitting} type="submit">
+                                <Button className="btn signUpBtn" disabled={submitting} type="submit" size="sm">
                                     SIGN IN
                                 </Button>
                             </Col>

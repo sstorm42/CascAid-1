@@ -3,6 +3,12 @@ import { Container, Row, Col, Button, Table } from 'react-bootstrap';
 
 const EventList = (props) => {
     const allEvents = props.allEvents;
+    const descriptionRender = (description) => {
+        if (description) {
+            if (description.length < 101) return description;
+            else return description.substr(0, 100) + '...';
+        } else return 'No description available';
+    };
     if (allEvents && allEvents.length > 0) {
         return (
             <Container>
@@ -14,6 +20,7 @@ const EventList = (props) => {
                             </Col>
                             <Col sm="6" className="right-align">
                                 <Button
+                                    size="sm"
                                     className="primary"
                                     onClick={() => {
                                         props.handleGoToEventCreate();
@@ -46,7 +53,7 @@ const EventList = (props) => {
                                             >
                                                 {event.title}
                                             </td>
-                                            <td>{event.description}</td>
+                                            <td>{descriptionRender(event.description)}</td>
                                             <td>
                                                 <Button
                                                     size="sm"

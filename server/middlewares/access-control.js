@@ -1,4 +1,5 @@
 const { User } = require('../models/user-model');
+const { Event } = require('../models/event-model');
 const expressJwt = require('express-jwt');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const resources = {
@@ -95,7 +96,7 @@ exports.grantAccess = function (action, module) {
                     }
                 } else if (module === 'event') {
                     const event = await Event.findById(req.params.eventId);
-                    if (event.organizationId.toString() === req.user._id.toString()) {
+                    if (event.creatorId.toString() === req.user._id.toString()) {
                         next();
                     } else {
                         return res.status(401).json({

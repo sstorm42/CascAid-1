@@ -13,6 +13,8 @@
     "multiselect-react-dropdown": "^1.6.7",
     "react": "^17.0.1",
     "react-autosuggest": "^10.1.0",
+    "react-avatar": "^3.10.0",
+    "react-avatar-editor": "^11.1.0",
     "react-bootstrap": "^1.4.3",
     "react-collapsible": "^2.8.3",
     "react-confirm-alert": "^2.7.0",

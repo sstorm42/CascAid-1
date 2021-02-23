@@ -110,14 +110,21 @@ const CreateEvent = (props) => {
         }
     }, [props.auth]);
     useEffect(() => {
+        return () => {
+            setImages({});
+            props.dispatch(clearEvent());
+        };
+    }, []);
+    useEffect(() => {
         const { success, message } = props.setEventResponse;
         if (success) {
             NotificationManager.success(message, 'success');
+            setImages({});
+            props.dispatch(clearEvent());
             if (editMode) props.history.push(RoutePaths.eventDetailsPage + props.match.params.eventId);
             else {
                 props.history.push(RoutePaths.eventDetailsPage + props.setEventResponse.event._id);
             }
-            props.dispatch(clearEvent());
         } else if (success === false) NotificationManager.error(message, 'Failed');
     }, [props.setEventResponse]);
     if (loading) return <LoadingAnim />;

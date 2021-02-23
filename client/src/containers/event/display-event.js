@@ -15,9 +15,13 @@ const DisplayEvent = (props) => {
         else {
         }
     }, [props.auth]);
-    return <EventDetails />;
+    return <EventDetails event={props.getEventResponse.success ? props.getEventResponse.event : {}} organization={props.getEventResponse.success ? props.getEventResponse.organization : {}} />;
 };
 const mapStateToProps = (state) => {
-    return {};
+    console.log(state);
+    const getEventResponse = state.Event.getEvent ? state.Event.getEvent : {};
+    console.log('🚀 ~ file: display-event.js ~ line 23 ~ mapStateToProps ~ getEventResponse', getEventResponse);
+
+    return { getEventResponse };
 };
 export default connect(mapStateToProps, null)(DisplayEvent);
