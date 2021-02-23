@@ -61,8 +61,8 @@ const BasicInfo = (props) => {
         let user = {
             ...values,
             profilePicture: profilePicture,
-            races: values.races.map((race) => race.value),
-            languages: values.languages.map((language) => language.value),
+            races: values.races && values.races.length > 0 ? values.races.map((race) => race.value) : [],
+            languages: values.languages && values.languages.length > 0 ? values.languages.map((language) => language.value) : [],
         };
 
         props.dispatch(setBasicInfo(props.auth.user._id, user));
@@ -102,11 +102,20 @@ const mapStateToProps = (state) => {
     let initialValues = {};
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;
-        console.log(initialValues);
-        if (initialValues.languages.length > 0 && typeof initialValues.languages[0] === 'string') initialValues.languages = getLanguagesByValues(initialValues.languages);
-        if (initialValues.races.length > 0 && typeof initialValues.races[0] === 'string') initialValues.races = getRacesByValues(initialValues.races);
+        if (initialValues) {
+            if (initialValues.languages && initialValues.languages.length > 0 && typeof initialValues.languages[0] === 'string')
+                initialValues.languages = getLanguagesByValues(initialValues.languages);
+            if (initialValues.races && initialValues.races.length > 0 && typeof initialValues.races[0] === 'string') initialValues.races = getRacesByValues(initialValues.races);
+            if (initialValues.address && !initialValues.address.country) {
+                initialValues.address.country = 'US';
+            } else if (!initialValues.address) {
+                initialValues.address = {
+                    country: 'US',
+                };
+            }
+        }
     }
-    console.log(initialValues);
+
     return {
         initialValues,
         getBasicInfoResponse,

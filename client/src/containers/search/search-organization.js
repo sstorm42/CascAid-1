@@ -3,7 +3,8 @@ import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 import OrganizationListView from '../../components/organization/organization-list-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllOrganizationsByFilter } from '../../actions/organization-action';
-import { allOrganizationTypes } from '../../constants/organization-types';
+import { getAllOrganizationTypes } from '../../actions/organization-type-action';
+// import { allOrganizationTypes } from '../../constants/organization-types';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import Select from 'react-select';
@@ -36,6 +37,7 @@ const SearchOrganization = (props) => {
         const getInitialInfo = () => {
             setLoading(true);
             props.dispatch(getAllGlobalImpactAreas());
+            props.dispatch(getAllOrganizationTypes());
             setLoading(false);
         };
         getInitialInfo();
@@ -63,7 +65,12 @@ const SearchOrganization = (props) => {
                         <Select onChange={(value) => changeFilter('impactArea', value)} isMulti={true} options={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []} />
                         <br />
                         <label>Organization Type</label>
-                        <Select onChange={(value) => changeFilter('organizationType', value)} isMulti={true} options={allOrganizationTypes} />
+                        <Select
+                            onChange={(value) => changeFilter('organizationType', value)}
+                            isMulti={true}
+                            options={props.getOrganizationTypeResponse?.success ? props.getOrganizationTypeResponse.organizationTypes : []}
+                        />
+                        {/* <Select onChange={(value) => changeFilter('organizationType', value)} isMulti={true} options={allOrganizationTypes} /> */}
                         <br />
                         <br />
                         <Button
@@ -129,10 +136,12 @@ const SearchOrganization = (props) => {
 };
 const mapStateToProps = (state) => {
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
+    const getOrganizationTypeResponse = state.OrganizationType.getAllOrganizationTypes;
     const getAllOrganizationsResponse = state.Organization.getAllOrganizations;
     return {
         getImpactAreaResponse,
         getAllOrganizationsResponse,
+        getOrganizationTypeResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchOrganization);

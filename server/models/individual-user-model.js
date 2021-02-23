@@ -4,15 +4,15 @@ const addressSchema = require('./address-schema');
 //Step 2
 const basicInfoSchema = mongoose.Schema(
     {
-        firstName: { type: String },
-        lastName: { type: String },
-        phone: { type: String },
-        kids: { type: Number },
+        firstName: { type: String, default: '' },
+        lastName: { type: String, default: '' },
+        phone: { type: String, default: '' },
+        kids: { type: Number, default: 0 },
         dateOfBirth: { type: Date },
-        profilePicture: { type: String },
-        coverPicture: { type: String },
+        profilePicture: { type: String, default: '' },
+        coverPicture: { type: String, default: '' },
         races: [{ type: String }],
-        gender: { type: String },
+        gender: { type: String, default: 'male' },
         languages: [{ type: String }],
         address: { type: addressSchema },
         boardMemberships: [{ type: String }],
@@ -27,7 +27,7 @@ const involvementSchema = mongoose.Schema(
     {
         volunteerOpportunity: { type: Boolean, default: true, require: true },
         communityInvolvement: { type: String },
-        impactAreas: [{ type: String, ref: 'ImpactArea' }],
+        impactAreas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ImpactArea' }],
         availabilityPerWeek: { type: Number },
         project: { type: Boolean, default: true, require: true },
         boardMembership: { type: Boolean, default: true, require: true },

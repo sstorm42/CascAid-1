@@ -6,6 +6,7 @@ const organization = require('./organization-route');
 const impactArea = require('./impact-area-route');
 const organizationType = require('./organization-type-route');
 const event = require('./event-route');
+const test = require('./test-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -14,7 +15,7 @@ routes.use('/organization', organization);
 routes.use('/impact-area', impactArea);
 routes.use('/organization-type', organizationType);
 routes.use('/events', event);
-
+routes.use('/test', test);
 const connected = {
     success: true,
     version: '1.0.0',

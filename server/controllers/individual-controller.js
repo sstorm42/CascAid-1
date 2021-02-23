@@ -7,8 +7,9 @@ exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
         const individual = await Individual.findOne({ userId });
+
         if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
-        else res.status(200).send({ ...RESPONSES.IndividualFound, basicInfo: individual.basicInfo });
+        else res.status(200).send({ ...RESPONSES.IndividualFound, basicInfo: individual.basicInfo ? individual.basicInfo : {} });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }
@@ -31,7 +32,7 @@ exports.getPrivacy = async (req, res) => {
         const userId = req.params.userId;
         const individual = await Individual.findOne({ userId });
         if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
-        else res.status(200).send({ ...RESPONSES.IndividualFound, privacy: individual.privacy });
+        else res.status(200).send({ ...RESPONSES.IndividualFound, privacy: individual.privacy ? individual.privacy : {} });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

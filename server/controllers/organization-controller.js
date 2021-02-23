@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { Organization } = require('../models/organization-model');
 const { saveImagesOnServer } = require('../utils/library');
 const ImpactAreaController = require('./impact-area-controller');
@@ -13,7 +14,7 @@ exports.getBasicInfo = async (req, res) => {
         const organization = await Organization.findOne({ userId }).populate('basicInfo.organizationTypes', { _id: 1, label: 1, value: 1 });
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
-            let basicInfo = organization.basicInfo.toObject();
+            let basicInfo = organization.basicInfo ? organization.basicInfo.toObject() : {};
             if (basicInfo.organizationType) {
                 basicInfo.organizationType = allOrganizationTypes.filter((type) => basicInfo.organizationType.includes(type.value));
             }
@@ -32,7 +33,7 @@ exports.getServiceInfo = async (req, res) => {
         const organization = await Organization.findOne({ userId }).populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 });
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
-            let serviceInfo = organization.serviceInfo.toObject();
+            let serviceInfo = organization.serviceInfo ? organization.serviceInfo.toObject() : {};
             if (serviceInfo.serviceAreaTypes) serviceInfo.serviceAreaTypes = allServiceAreaTypes.filter((type) => serviceInfo.serviceAreaTypes.includes(type.value));
             if (serviceInfo.serviceAreas)
                 serviceInfo.serviceAreas = serviceInfo.serviceAreas.map((area) => {
@@ -46,6 +47,7 @@ exports.getServiceInfo = async (req, res) => {
             res.status(200).send({ ...RESPONSES.OrganizationFound, serviceInfo: serviceInfo });
         }
     } catch (err) {
+        console.log(err);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -132,21 +134,22 @@ exports.setInternalLink = async (req, res) => {
 exports.getAll = async (req, res) => {
     try {
         // Implement all logic here
-        const organizationType = req.query.organizationType ? JSON.parse(req.query.organizationType) : [];
+        const organizationTypes = req.query.organizationTypes ? JSON.parse(req.query.organizationTypes) : [];
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
 
         let match = {};
-        if (organizationType && organizationType.length > 0) {
-            match['basicInfo.organizationType'] = { $in: organizationType };
+        if (organizationTypes && organizationTypes.length > 0) {
+            match['basicInfo.organizationTypes'] = { $in: organizationTypes.map((type) => mongoose.Types.ObjectId(type)) };
         }
         if (impactAreas && impactAreas.length > 0) {
             match['serviceInfo.impactAreas'] = { $in: impactAreas };
         }
-
+        console.log(match);
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match });
 
         const allOrganizations = await Organization.aggregate(aggregateOptions);
+        // console.log('🚀 ~ file: organization-controller.js ~ line 151 ~ exports.getAll= ~ allOrganizations', allOrganizations);
         if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
     } catch (err) {
@@ -155,7 +158,6 @@ exports.getAll = async (req, res) => {
 };
 exports.getPublicInfo = async (req, res) => {
     try {
-        // Implement all logic here
         const userId = req.params.userId;
         const organization = await Organization.findOne({ userId })
             .populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 })

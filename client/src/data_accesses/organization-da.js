@@ -52,8 +52,8 @@ class OrganizationDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_list_by_filter = (impactArea, organizationType) => {
-        const params = `?impactAreas=${JSON.stringify(impactArea)}&organizationType=${JSON.stringify(organizationType)}`;
+    get_list_by_filter = (impactAreas, organizationTypes) => {
+        const params = `?impactAreas=${JSON.stringify(impactAreas)}&organizationTypes=${JSON.stringify(organizationTypes)}`;
         return axios
             .get(APIPaths.getOrganizationList + params)
             .then((response) => response.data)

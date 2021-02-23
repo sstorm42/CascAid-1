@@ -61,7 +61,7 @@ const BasicInfo = (props) => {
         let user = {
             ...values,
             profilePicture: profilePicture,
-            organizationTypes: values.organizationTypes.map((type) => type._id),
+            organizationTypes: values.organizationTypes && values.organizationTypes.length > 0 ? values.organizationTypes.map((type) => type._id) : [],
         };
 
         props.dispatch(setBasicInfo(props.auth.user._id, user));

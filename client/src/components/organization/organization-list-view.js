@@ -13,24 +13,26 @@ const OrganizationListView = (props) => {
         return (
             <CardColumns>
                 {allOrganizations.map((org, i) => {
-                    return (
-                        <Card
-                            key={i}
-                            onClick={() => {
-                                props.gotoOrganizationDetails(org.userId);
-                            }}
-                        >
-                            <Card.Img variant="top" src={org.basicInfo.profilePicture ? org.basicInfo.profilePicture : defaultOrganizationProfilePicture} alt="No Image Found" />
-                            <Card.Body className="justify-text">
-                                <Card.Title>{org.basicInfo.name}</Card.Title>
-                                <hr />
-                                <Card.Text>
-                                    <small>{descriptionRender(org.basicInfo.description)}</small>
-                                </Card.Text>
-                            </Card.Body>
-                            {/* <Card.Footer></Card.Footer> */}
-                        </Card>
-                    );
+                    if (org && org.basicInfo && org.basicInfo.name) {
+                        return (
+                            <Card
+                                key={i}
+                                onClick={() => {
+                                    props.gotoOrganizationDetails(org.userId);
+                                }}
+                            >
+                                <Card.Img variant="top" src={org.basicInfo.profilePicture ? org.basicInfo.profilePicture : defaultOrganizationProfilePicture} alt="No Image Found" />
+                                <Card.Body className="justify-text">
+                                    <Card.Title>{org.basicInfo.name}</Card.Title>
+                                    <hr />
+                                    <Card.Text>
+                                        <small>{descriptionRender(org.basicInfo.description)}</small>
+                                    </Card.Text>
+                                </Card.Body>
+                                {/* <Card.Footer></Card.Footer> */}
+                            </Card>
+                        );
+                    } else return <></>;
                 })}
             </CardColumns>
         );
