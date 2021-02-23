@@ -142,7 +142,7 @@ exports.getAll = async (req, res) => {
             match['basicInfo.organizationTypes'] = { $in: organizationTypes.map((type) => mongoose.Types.ObjectId(type)) };
         }
         if (impactAreas && impactAreas.length > 0) {
-            match['serviceInfo.impactAreas'] = { $in: impactAreas };
+            match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
         }
         console.log(match);
         let aggregateOptions = [];

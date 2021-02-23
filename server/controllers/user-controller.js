@@ -200,8 +200,9 @@ exports.seedOrganization = async (req, res) => {
     console.log(typeObj);
     for (let i = 0; i < allOrganizations.length; i++) {
         let organization = allOrganizations[i];
-        const email = organization.Contact.toLocaleLowerCase();
+        let email = organization.Contact;
         if (email) {
+            email = email.toLocaleLowerCase();
             let userFound = await User.find({ email: email });
             if (userFound && userFound.length > 0) continue;
             else {
@@ -227,7 +228,7 @@ exports.seedOrganization = async (req, res) => {
                             mission: organization.Mission,
                             website: organization.Website,
                             contactEmail: organization.Contact,
-                            organizationTypes: organization.OrganizationType.split(', ').map((type) => typeObj[type]),
+                            organizationTypes: organization.OrganizationType ? organization.OrganizationType.split(', ').map((type) => typeObj[type]) : [],
                             description: organization.Description,
                             address: {
                                 street1: organization.Address,
@@ -240,11 +241,11 @@ exports.seedOrganization = async (req, res) => {
                         },
                         serviceInfo: {
                             serviceAreaTypes: [],
-                            serviceAreas: organization.ServiceArea.split(','),
-                            impactAreas: organization.ImpactAreas.split(', ').map((area) => impactAreasObj[area]),
+                            serviceAreas: organization.ServiceArea ? organization.ServiceArea.split(',') : [],
+                            impactAreas: organization.ImpactAreas ? organization.ImpactAreas.split(', ').map((area) => impactAreasObj[area]) : [],
                             donationLink: organization.Donate,
                             newsLetterLink: organization.NewsLetter,
-                            keywords: organization.Keywords.split(','),
+                            keywords: organization.Keywords ? organization.Keywords.split(',') : [],
                         },
                         internalLink: { eventLink: organization.Events, rssLink: organization.RSS, blogLink: organization.Blog },
                     });
