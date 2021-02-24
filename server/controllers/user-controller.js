@@ -157,6 +157,7 @@ exports.checkEmailExist = async (req, res) => {
 exports.searchByName = async (req, res) => {
     try {
         const name = req.params.name;
+        console.log('🚀 ~ file: user-controller.js ~ line 160 ~ exports.searchByName= ~ name', name);
 
         const individuals = await Individual.find(
             {
@@ -181,7 +182,7 @@ exports.searchByName = async (req, res) => {
         ];
         res.status(200).send({ success: true, users });
     } catch (err) {
-        res.status(500).send({ success: false, message: 'Database access denied' });
+        res.status(500).send({ success: false, err, message: 'Database access denied' });
     }
 };
 
