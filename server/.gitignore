@@ -7,9 +7,9 @@
 .pnp.js
 /uploaded_images
 /testGitIgnore.js
+/utils/organizations.json
 # testing
 /coverage
-
 # production
 
 

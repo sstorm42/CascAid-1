@@ -3,13 +3,18 @@ import Autosuggest from 'react-autosuggest';
 import { withRouter } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { searchUsersByName } from '../../actions';
-
+const individualNameRender = (individual) => {
+    let name = individual.firstName ? individual.firstName + ' ' : '';
+    name += individual.lastName ? individual.lastName : '';
+    return name;
+};
 function escapeRegexCharacters(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function getSuggestionValue(suggestion) {
-    return suggestion.name;
+    if (suggestion.userType === 'organization') return suggestion.name;
+    else if (suggestion.userType === 'individual') return individualNameRender(suggestion);
 }
 
 function renderSectionTitle(section) {
@@ -29,6 +34,11 @@ class App extends React.Component {
             suggestions: [],
         };
     }
+    individualNameRender = (individual) => {
+        let name = individual.firstName ? individual.firstName + ' ' : '';
+        name += individual.lastName ? individual.lastName : '';
+        return name;
+    };
     renderSuggestion = (suggestion) => {
         return (
             <div
@@ -37,7 +47,8 @@ class App extends React.Component {
                     this.props.history.push(`/${suggestion.userType}/details/${suggestion.userId}`);
                 }}
             >
-                <small className="suggestion-text">{suggestion.name}</small>
+                {suggestion.userType === 'individual' && <small className="suggestion-text">{this.individualNameRender(suggestion)}</small>}
+                {suggestion.userType === 'organization' && <small className="suggestion-text">{suggestion.name}</small>}
             </div>
         );
     };

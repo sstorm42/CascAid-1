@@ -159,21 +159,20 @@ exports.searchByName = async (req, res) => {
         const name = req.params.name;
         console.log('🚀 ~ file: user-controller.js ~ line 160 ~ exports.searchByName= ~ name', name);
 
-        const individuals = await Individual.find(
+        let individuals = await Individual.find(
             {
                 $or: [{ 'basicInfo.firstName': { $regex: name, $options: 'i' } }, { 'basicInfo.lastName': { $regex: name, $options: 'i' } }],
             },
-            { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] } },
+            { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName' },
         );
-        console.log('🚀 ~ file: user-controller.js ~ line 168 ~ exports.searchByName= ~ individuals', individuals);
 
+        console.log('🚀 ~ file: user-controller.js ~ line 168 ~ exports.searchByName= ~ individuals', individuals);
         const organizations = await Organization.find(
             {
                 $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
             },
             { userId: '$userId', userType: 'organization', name: '$basicInfo.name' },
         );
-        console.log('🚀 ~ file: user-controller.js ~ line 176 ~ exports.searchByName= ~ organizations', organizations);
 
         const users = [
             { userType: 'ORGANIZATION', users: organizations },
@@ -182,7 +181,6 @@ exports.searchByName = async (req, res) => {
                 users: individuals,
             },
         ];
-        console.log('🚀 ~ file: user-controller.js ~ line 185 ~ exports.searchByName= ~ users', users);
 
         res.status(200).send({ success: true, users });
     } catch (err) {
