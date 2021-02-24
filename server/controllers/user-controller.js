@@ -159,20 +159,49 @@ exports.searchByName = async (req, res) => {
         const name = req.params.name;
         console.log('🚀 ~ file: user-controller.js ~ line 160 ~ exports.searchByName= ~ name', name);
 
-        let individuals = await Individual.find(
+        // let individuals = await Individual.find(
+        //     {
+        //         $or: [{ 'basicInfo.firstName': { $regex: name, $options: 'i' } }, { 'basicInfo.lastName': { $regex: name, $options: 'i' } }],
+        //     },
+        //     { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName' },
+        // );
+        let individuals = await Individual.aggregate([
             {
-                $or: [{ 'basicInfo.firstName': { $regex: name, $options: 'i' } }, { 'basicInfo.lastName': { $regex: name, $options: 'i' } }],
+                $match: {
+                    $or: [{ 'basicInfo.firstName': { $regex: name, $options: 'i' } }, { 'basicInfo.lastName': { $regex: name, $options: 'i' } }],
+                },
             },
-            { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName' },
-        );
+            {
+                $project: {
+                    userId: 1,
+                    userType: 'individual',
+                    firstName: '$basicInfo.firstName',
+                    lastName: '$basicInfo.lastName',
+                },
+            },
+        ]);
 
         console.log('🚀 ~ file: user-controller.js ~ line 168 ~ exports.searchByName= ~ individuals', individuals);
-        const organizations = await Organization.find(
+        // const organizations = await Organization.find(
+        //     {
+        //         $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
+        //     },
+        //     { userId: '$userId', userType: 'organization', name: '$basicInfo.name' },
+        // );
+        const organizations = await Organization.aggregate([
             {
-                $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
+                $match: {
+                    $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
+                },
             },
-            { userId: '$userId', userType: 'organization', name: '$basicInfo.name' },
-        );
+            {
+                $project: {
+                    userId: 1,
+                    userType: 'organization',
+                    name: '$basicInfo.name',
+                },
+            },
+        ]);
 
         const users = [
             { userType: 'ORGANIZATION', users: organizations },
