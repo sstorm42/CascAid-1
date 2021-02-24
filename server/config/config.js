@@ -9,7 +9,7 @@ const config = {
     },
     default: {
         SECRET: 'j54O6D6i46T7or45dAk6S445un4eAklA435702',
-        DATABASE: 'mongodb://localhost:27017/cascaid_db',
+        DATABASE: 'mongodb://localhost:27017/cascaid',
         EMAIL_USER: 'test@domain.com',
         EMAIL_PASSWORD: '12345678ABC',
     },

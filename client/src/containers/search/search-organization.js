@@ -126,7 +126,7 @@ const SearchOrganization = (props) => {
                         )}
                         {viewType === 'map' && (
                             <>
-                                <Image src="http://localhost:3001/uploaded-images/sample-g-map.png" width="100%" height="auto" thumbnail />
+                                <Image src="http://172.104.35.84/default-images/sample-g-map.png" width="100%" height="auto" thumbnail />
                             </>
                         )}
                     </Col>

@@ -1,6 +1,6 @@
 import { getLocalStorage } from '../actions';
-export const serverAddress = `http://localhost:3001`;
-
+// export const serverAddress = `http://localhost:3001`;
+export const serverAddress = `http://172.104.35.84`;
 export const checkEmailExist = serverAddress + `/api/users/email/`;
 export const userSignUp = serverAddress + `/api/auth/sign-up`;
 export const userSignIn = serverAddress + `/api/auth/sign-in`;
