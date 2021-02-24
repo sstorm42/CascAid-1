@@ -6,6 +6,7 @@
 .pnp.js
 /uploaded_images
 /config
+/config/config.js
 # testing
 /coverage
 
