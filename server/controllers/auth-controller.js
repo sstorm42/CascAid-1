@@ -39,6 +39,7 @@ exports.seed = async (req, res) => {
 exports.signUp = async (req, res) => {
     try {
         let user = req.body;
+        console.log(user);
         user.email = user.email.toLowerCase();
         if (user) {
             const email = user.email.toLowerCase();
