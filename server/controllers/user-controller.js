@@ -165,6 +165,7 @@ exports.searchByName = async (req, res) => {
             },
             { userId: '$userId', userType: 'individual', firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] } },
         );
+        console.log('🚀 ~ file: user-controller.js ~ line 168 ~ exports.searchByName= ~ individuals', individuals);
 
         const organizations = await Organization.find(
             {
@@ -172,6 +173,7 @@ exports.searchByName = async (req, res) => {
             },
             { userId: '$userId', userType: 'organization', name: '$basicInfo.name' },
         );
+        console.log('🚀 ~ file: user-controller.js ~ line 176 ~ exports.searchByName= ~ organizations', organizations);
 
         const users = [
             { userType: 'ORGANIZATION', users: organizations },
@@ -180,9 +182,11 @@ exports.searchByName = async (req, res) => {
                 users: individuals,
             },
         ];
+        console.log('🚀 ~ file: user-controller.js ~ line 185 ~ exports.searchByName= ~ users', users);
+
         res.status(200).send({ success: true, users });
     } catch (err) {
-        res.status(500).send({ success: false, err, message: 'Database access denied' });
+        res.status(500).send({ success: false, err, message: err.message });
     }
 };
 
