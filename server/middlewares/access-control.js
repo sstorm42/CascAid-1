@@ -63,6 +63,7 @@ const accessChecker = (roles, access) => {
 exports.grantAccess = function (action, module) {
     return async (req, res, next) => {
         try {
+            console.log(req.user);
             const signedInUserType = req.user.userType;
             const roles = accessControlTable[signedInUserType];
             console.log(roles);
