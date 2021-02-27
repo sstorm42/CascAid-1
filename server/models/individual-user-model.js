@@ -13,6 +13,7 @@ const basicInfoSchema = mongoose.Schema(
         coverPicture: { type: String, default: '' },
         races: [{ type: String }],
         gender: { type: String, default: 'male' },
+        // languages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Language' }],
         languages: [{ type: String }],
         address: { type: addressSchema },
         boardMemberships: [{ type: String }],

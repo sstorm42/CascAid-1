@@ -36,3 +36,11 @@ export const clearEvent = () => {
         payload: {},
     };
 };
+
+export const getAllEventsByFilter = ({ title, impactArea }) => {
+    impactArea = impactArea.map((area) => area._id);
+    return {
+        type: Types.GET_ALL_EVENTS,
+        payload: EventDA.get_list_by_filter(title, impactArea),
+    };
+};

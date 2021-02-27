@@ -32,5 +32,12 @@ class EventDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_list_by_filter = (title, impactAreas) => {
+        const params = `?title=${title}&impactAreas=${JSON.stringify(impactAreas)}`;
+        return axios
+            .get(APIPaths.getAllEvents + params, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new EventDA();

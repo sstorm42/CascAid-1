@@ -39,6 +39,10 @@ class App extends React.Component {
         name += individual.lastName ? individual.lastName : '';
         return name;
     };
+    cutOffName = (name) => {
+        if (name && name.length <= 25) return name;
+        else return name.substr(0, 24) + ' ...';
+    };
     renderSuggestion = (suggestion) => {
         return (
             <div
@@ -47,8 +51,8 @@ class App extends React.Component {
                     this.props.history.push(`/${suggestion.userType}/details/${suggestion.userId}`);
                 }}
             >
-                {suggestion.userType === 'individual' && <small className="suggestion-text">{this.individualNameRender(suggestion)}</small>}
-                {suggestion.userType === 'organization' && <small className="suggestion-text">{suggestion.name}</small>}
+                {suggestion.userType === 'individual' && <small className="suggestion-text">{this.cutOffName(this.individualNameRender(suggestion))}</small>}
+                {suggestion.userType === 'organization' && <small className="suggestion-text">{this.cutOffName(suggestion.name)}</small>}
             </div>
         );
     };

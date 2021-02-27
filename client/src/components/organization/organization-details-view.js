@@ -133,16 +133,17 @@ const DetailsView = (props) => {
                         {infoRender('Phone', basicInfo.phone)}
                         {infoRender('EIN', basicInfo.ein)}
                         {infoRender('Address', addressMaker(basicInfo.address))}
-                        <hr />
-                        {infoRender('Mission', basicInfo.mission)}
-                        <hr />
-                        {infoRender('Description', basicInfo.description)}
-                        <div style={{ height: 25 }} />
+
                         <hr />
                         <div style={{ height: 25 }} />
                         {keywordsRender('Service Areas', serviceInfo.serviceAreas)}
                         {tagsRender('Impact Area', impactAreas)}
                         {keywordsRender('Keywords', serviceInfo.keywords)}
+                        <div style={{ height: 25 }} />
+                        <hr />
+                        {infoRender('Mission', basicInfo.mission)}
+                        <hr />
+                        {infoRender('Description', basicInfo.description)}
                         <div style={{ height: 25 }} />
                     </Col>
                 </Row>

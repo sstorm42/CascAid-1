@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import EventImageList from './event-image-list';
 import { SelectRender, InputRender, DateTimePickerRender, TextRender, MultiSelectRender } from '../form_template/input-render';
+import EventGeoCoding from './event-geo-coding';
 const EventForm = (props) => {
     console.log(props);
     const allImpactAreas = props.allImpactAreas;
@@ -58,6 +59,13 @@ const EventForm = (props) => {
                                 </div>
                             </Col>
                             <Col sm="8"></Col>
+                        </Row>
+                        <hr />
+                        <Row>
+                            <Col sm={4}>Location</Col>
+                            <Col sm={8}>
+                                <EventGeoCoding selectedLocation={props.location} handleLocationChange={props.setLocation} />
+                            </Col>
                         </Row>
                         {/* Location */}
 

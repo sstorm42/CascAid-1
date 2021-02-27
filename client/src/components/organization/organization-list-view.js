@@ -16,15 +16,20 @@ const OrganizationListView = (props) => {
                     if (org && org.basicInfo && org.basicInfo.name) {
                         return (
                             <Card
+                                className="special-btn special-card"
                                 key={i}
                                 onClick={() => {
                                     props.gotoOrganizationDetails(org.userId);
                                 }}
                             >
-                                <Card.Img variant="top" src={org.basicInfo.profilePicture ? org.basicInfo.profilePicture : defaultOrganizationProfilePicture} alt="No Image Found" />
+                                <Card.Img
+                                    variant="top"
+                                    src={org.basicInfo.profilePicture ? org.basicInfo.profilePicture : defaultOrganizationProfilePicture}
+                                    alt="No Image Found"
+                                    className="organization-list-image"
+                                />
                                 <Card.Body className="justify-text">
                                     <Card.Title>{org.basicInfo.name}</Card.Title>
-                                    <hr />
                                     <Card.Text>
                                         <small>{descriptionRender(org.basicInfo.description)}</small>
                                     </Card.Text>

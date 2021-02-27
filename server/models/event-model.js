@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const imageSchema = require('./image-schema');
-const locationSchema = require('./location-schema');
+const addressSchema = require('./address-schema');
 const eventSchema = mongoose.Schema(
     {
         title: { type: String },
@@ -9,9 +9,8 @@ const eventSchema = mongoose.Schema(
         startDateTime: { type: Date },
         endDateTime: { type: Date },
         creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-        location: { type: locationSchema },
+        address: { type: addressSchema },
         impactAreas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ImpactArea' }],
-
         isActive: { type: Boolean, default: true },
         isDeleted: { type: Boolean, default: false },
     },

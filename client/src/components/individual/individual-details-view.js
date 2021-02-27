@@ -54,11 +54,11 @@ const DetailsView = (props) => {
     const addressMaker = (address) => {
         let fullAddress = '';
         if (address) {
-            if (address.street1) fullAddress += address.street1 + ', ';
-            if (address.street2) fullAddress += address.street2 + ', ';
+            // if (address.street1) fullAddress += address.street1 + ', ';
+            // if (address.street2) fullAddress += address.street2 + ', ';
+            if (address.code) fullAddress += address.code + '\n';
             if (address.city) fullAddress += address.city + ', ';
-            if (address.code) fullAddress += address.code + ', ';
-            if (address.state) fullAddress += getStateByCountryAndCode(address.country, address.state) + ', ';
+            if (address.state) fullAddress += getStateByCountryAndCode(address.country, address.state) + '\n';
             if (address.country) fullAddress += getCountryByCode(address.country);
         }
         return fullAddress;
@@ -78,12 +78,13 @@ const DetailsView = (props) => {
                     </Col>
                     <Col sm="9" className="left-border">
                         <h3>{basicInfo.firstName + ' ' + basicInfo.lastName}</h3>
-                        {infoRender('Phone', basicInfo.phone)}
+                        {/* {infoRender('Phone', basicInfo.phone)} */}
                         {infoRender('Kids', basicInfo.kids)}
                         {infoRender('Date Of Birth', moment(basicInfo.dateOfBirth).format('LL'))}
-                        {tagsRender('Race', getRacesByValues(basicInfo.races))}
-                        {infoRender('Gender', getGenderByValue(basicInfo.gender))}
+                        {/* {tagsRender('Race', getRacesByValues(basicInfo.races))} */}
+                        {/* {infoRender('Gender', getGenderByValue(basicInfo.gender))} */}
                         {tagsRender('Language Fluency', getLanguagesByValues(basicInfo.languages))}
+                        <br />
                         {infoRender('Address', addressMaker(basicInfo.address))}
                         <div style={{ height: 25 }} />
                         <hr />

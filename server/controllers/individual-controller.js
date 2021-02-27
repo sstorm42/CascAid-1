@@ -42,6 +42,7 @@ exports.setBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
         let basicInfo = req.body;
+        console.log('🚀 ~ file: individual-controller.js ~ line 45 ~ exports.setBasicInfo= ~ basicInfo', basicInfo);
 
         if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
         if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];

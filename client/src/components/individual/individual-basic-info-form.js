@@ -112,7 +112,7 @@ const BasicInfoForm = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="languages" component={MultiSelectRender} label="Languages Fluency" col1={2} col2={10} options={allLanguages} zIndex={2000} />
+                                <Field name="languages" component={MultiSelectRender} label="Language Fluency" col1={2} col2={10} options={allLanguages} zIndex={2000} />
                             </Col>
                         </Row>
 

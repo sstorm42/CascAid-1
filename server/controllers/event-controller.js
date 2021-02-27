@@ -1,16 +1,13 @@
 const { Event } = require('../models/event-model');
 const { Organization } = require('../models/organization-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
-
+const RESPONSES = require('../responses/event-response');
+const mongoose = require('mongoose');
 exports.createOne = async (req, res) => {
     try {
         let event = new Event(req.body);
-
         event.images = saveImageSchemaOnServer(event.images);
-        console.log('🚀 ~ file: event-controller.js ~ line 7 ~ exports.createOne= ~ event', event);
         const savedEvent = await event.save();
-        console.log('🚀 ~ file: event-controller.js ~ line 10 ~ exports.createOne= ~ savedEvent', savedEvent);
-        console.log('🚀 ~ file: event-controller.js ~ line 9 ~ exports.createOne= ~ savedEvent', savedEvent);
         if (savedEvent && savedEvent._id) {
             return res.status(200).send({ success: true, message: 'Event created successfully', event: savedEvent });
         } else {
@@ -27,7 +24,7 @@ exports.getOne = async (req, res) => {
         const eventId = req.params.eventId;
         const event = await Event.findById(eventId).populate('impactAreas', { _id: 1, label: 1, value: 1 });
         if (event) {
-            const organizations = await Organization.find({ userId: event.creatorId }, { basicInfo: 1 });
+            const organizations = await Organization.find({ userId: event.creatorId }, { basicInfo: 1, userId: 1 });
             if (organizations && organizations.length > 0) res.status(200).send({ success: true, message: 'Event found', event, organization: organizations[0] });
             else res.status(200).send({ success: false, event });
         } else {
@@ -40,6 +37,25 @@ exports.getOne = async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
+        const title = req.query.title ? req.query.title : '';
+        const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
+        console.log('🚀 ~ file: event-controller.js ~ line 41 ~ exports.getAll= ~ impactAreas', impactAreas);
+
+        let match = {};
+        if (title && title.length > 0) {
+            match['title'] = { $regex: title, $options: 'i' };
+        }
+        if (impactAreas && impactAreas.length > 0) {
+            match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
+        }
+        console.log(match);
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: match });
+
+        const allEvents = await Event.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: event-controller.js ~ line 54 ~ exports.getAll= ~ allEvents', allEvents);
+        if (allEvents) return res.status(200).send({ ...RESPONSES.EventFound, allEvents });
+        else return res.status(404).send(RESPONSES.EventNotFound);
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }
@@ -48,9 +64,9 @@ exports.getAll = async (req, res) => {
 exports.updateOne = async (req, res) => {
     try {
         const eventId = req.params.eventId;
-        console.log('🚀 ~ file: event-controller.js ~ line 51 ~ exports.updateOne= ~ eventId', eventId);
+
         const event = req.body;
-        console.log('🚀 ~ file: event-controller.js ~ line 52 ~ exports.updateOne= ~ event', event);
+
         const updatedEvent = await Event.findOneAndUpdate(
             {
                 _id: eventId,

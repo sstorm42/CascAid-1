@@ -54,7 +54,7 @@ exports.signUp = async (req, res) => {
         user.stepCompleted = 1;
         const newUser = new User(user);
         const user_ = await newUser.save();
-        const token = jwt.sign({ _id: user_._id, email: user_.email }, config.SECRET, { expiresIn: '14d' });
+        const token = jwt.sign({ _id: user_._id, email: user_.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
         const { _id, email, userType, stepCompleted } = user_;
 
         if (userType === 'individual') {

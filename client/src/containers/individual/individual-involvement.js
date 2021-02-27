@@ -80,7 +80,7 @@ const mapStateToProps = (state) => {
     if (getInvolvementResponse.success) {
         initialValues = getInvolvementResponse.involvement;
     }
-
+    console.log('initialValues', initialValues);
     return {
         getImpactAreaResponse,
         initialValues,

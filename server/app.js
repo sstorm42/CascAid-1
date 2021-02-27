@@ -7,6 +7,9 @@ const config = require('./config/config').get(process.env.NODE_ENV);
 const app = express();
 const routes = require('./routes');
 const cors = require('cors');
+const morgan = require('morgan');
+const fs = require('fs');
+
 mongoose.Promise = global.Promise;
 if (mongoose.connection.readyState == 0) {
     mongoose.connect(config.DATABASE, {
@@ -17,6 +20,7 @@ if (mongoose.connection.readyState == 0) {
     console.log('Connected');
     mongoose.set('useFindAndModify', false);
 }
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
 app.use(cors());
 app.use(
     bodyParser.urlencoded({
@@ -27,7 +31,7 @@ app.use(
 app.use(bodyParser.json({ limit: '100mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 app.use(cookieParser());
-
+app.use(morgan('combined', { stream: accessLogStream }));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -35,6 +39,7 @@ app.use((req, res, next) => {
 });
 app.use('/uploaded-images', express.static('uploaded_images'));
 app.use('/default-images', express.static('default_images'));
+app.use('/logs', express.static('access.log'));
 //connect all routes to the application
 app.use('/api', routes);
 app.use(express.static(path.join(__dirname, 'build')));

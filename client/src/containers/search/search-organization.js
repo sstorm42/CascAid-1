@@ -4,7 +4,7 @@ import OrganizationListView from '../../components/organization/organization-lis
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllOrganizationsByFilter } from '../../actions/organization-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
-// import { allOrganizationTypes } from '../../constants/organization-types';
+import SearchMenu from '../../components/search/search-menu';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import Select from 'react-select';
@@ -48,18 +48,7 @@ const SearchOrganization = (props) => {
             <Container>
                 <Row className="parent-page">
                     <Col lg={4}>
-                        <Nav variant="pills" activeKey="organization">
-                            <Nav.Item sz="sm">
-                                <Nav.Link eventKey="organization" href="/search/organization">
-                                    Organization
-                                </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item sz="sm">
-                                <Nav.Link eventKey="event" href="/search/event">
-                                    Events
-                                </Nav.Link>
-                            </Nav.Item>
-                        </Nav>
+                        <SearchMenu selected="organization" />
                         <hr />
                         <label>Impact Area</label>
                         <Select onChange={(value) => changeFilter('impactArea', value)} isMulti={true} options={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []} />

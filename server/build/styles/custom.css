@@ -219,3 +219,26 @@ tr td:last-child {
 .image-description-box {
     margin-bottom: 5px;
 }
+.special-card:hover {
+    border-color: black;
+}
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2 !important;
+    }
+}
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 3;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 3;
+    }
+}
+.organization-list-image {
+    height: 200px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

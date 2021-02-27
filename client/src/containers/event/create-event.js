@@ -13,11 +13,21 @@ const CreateEvent = (props) => {
     const [loading, setLoading] = useState(false);
     const [images, setImages] = useState([]);
     const [editMode, setEditMode] = useState(false);
+    const [location, setLocation] = useState({
+        latitude: 0,
+        longitude: 0,
+    });
     const [userId, setUserId] = useState('');
     useEffect(() => {
         if (props.getEventResponse.success) {
             console.log(props.getEventResponse.event);
             setImages(props.getEventResponse.event.images);
+            if (props.getEventResponse.event.address) {
+                setLocation({
+                    latitude: props.getEventResponse.event.address.latitude,
+                    longitude: props.getEventResponse.event.address.longitude,
+                });
+            }
         }
     }, [props.getEventResponse]);
     const handlePictureUpload = (event) => {
@@ -47,6 +57,10 @@ const CreateEvent = (props) => {
             creatorId: props.auth.user._id,
             images: images,
             impactAreas: values.impactAreas.map((area) => area._id),
+            address: {
+                latitude: location.latitude,
+                longitude: location.longitude,
+            },
         };
         setLoading(true);
         console.log('🚀 ~ file: create-event.js ~ line 36 ~ onSubmit ~ event', event);
@@ -55,7 +69,6 @@ const CreateEvent = (props) => {
         } else {
             props.dispatch(createEvent(event));
         }
-        setLoading(false);
     };
     const handleImageDescriptionEdit = (idx, e) => {
         let images_ = images;
@@ -116,6 +129,7 @@ const CreateEvent = (props) => {
         };
     }, []);
     useEffect(() => {
+        setLoading(false);
         const { success, message } = props.setEventResponse;
         if (success) {
             NotificationManager.success(message, 'success');
@@ -142,6 +156,8 @@ const CreateEvent = (props) => {
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);
                 })}
+                location={location}
+                setLocation={setLocation}
             />
         );
 };

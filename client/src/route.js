@@ -65,7 +65,7 @@ const Routes = () => {
 
             <LayoutRoute path={RoutePath.homePage} exact component={UserAuthCheck(HomePage, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.organizationSearchPage} exact component={UserAuthCheck(SearchOrganization, allRoles, true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventSearchPage} exact component={SearchEvent} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.eventSearchPage} exact component={UserAuthCheck(SearchEvent, allRoles, true)} layout={DashboardLayout} />
 
             <LayoutRoute path="/messages" exact component={Messages} layout={DashboardLayout} />
             {/* POST */}
