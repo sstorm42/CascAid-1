@@ -32,9 +32,9 @@ class DashboardLayout extends Component {
                         <NavIcon>
                             <FaSearch size={24} />
                         </NavIcon>
-                        <NavText>Search</NavText>
+                        <NavText>Discover</NavText>
                     </NavItem>
-                    <NavItem eventKey="/">
+                    <NavItem eventKey={RoutePath.communityFriendListPage}>
                         <NavIcon>
                             <FaConnectdevelop size={24} />
                         </NavIcon>
@@ -95,7 +95,7 @@ class DashboardLayout extends Component {
                         <NavIcon>
                             <FaSearch size={24} />
                         </NavIcon>
-                        <NavText>Search</NavText>
+                        <NavText>Discover</NavText>
                     </NavItem>
                     <NavItem eventKey="/">
                         <NavIcon>

@@ -8,6 +8,7 @@ const organizationType = require('./organization-type-route');
 const event = require('./event-route');
 const test = require('./test-route');
 const language = require('./language-route');
+const follow = require('./follow-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -18,6 +19,8 @@ routes.use('/organization-type', organizationType);
 routes.use('/events', event);
 routes.use('/test', test);
 routes.use('/languages', language);
+routes.use('/follows', follow);
+
 const connected = {
     success: true,
     version: '1.0.0',

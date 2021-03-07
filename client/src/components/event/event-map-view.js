@@ -25,7 +25,14 @@ const AllEventOnMap = (props) => {
     });
     const markers = props.allEvents;
     console.log('🚀 ~ file: event-map-view.js ~ line 27 ~ AllEventOnMap ~ markers', markers);
-    if (markers && markers.length > 0) {
+    if (props.currentLocation) {
+        if (props.currentLocation.latitude && props.currentLocation.longitude) {
+            center = {
+                lat: props.currentLocation.latitude,
+                lng: props.currentLocation.longitude,
+            };
+        }
+    } else if (markers && markers.length > 0) {
         if (markers[0].address)
             center = {
                 lat: markers[0].address.latitude,

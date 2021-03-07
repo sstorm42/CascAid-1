@@ -52,10 +52,20 @@ class OrganizationDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_list_by_filter = (impactAreas, organizationTypes) => {
-        const params = `?impactAreas=${JSON.stringify(impactAreas)}&organizationTypes=${JSON.stringify(organizationTypes)}`;
+    get_list_by_filter = (filter) => {
+        let queryString = '?';
+
+        for (let t in filter) {
+            if (filter[t]) {
+                console.log(t);
+                queryString += t.toString();
+                queryString += '=';
+                queryString += JSON.stringify(filter[t]);
+                queryString += '&';
+            }
+        }
         return axios
-            .get(APIPaths.getOrganizationList + params)
+            .get(APIPaths.getOrganizationList + queryString.slice(0, -1))
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

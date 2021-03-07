@@ -33,6 +33,12 @@ import CreateEvent from './containers/event/create-event';
 import DisplayEvent from './containers/event/display-event';
 import ListingEvents from './containers/event/listing-events';
 import ManageEvents from './containers/event/manage-events';
+
+import CommunityFriends from './containers/community/friends';
+import CommunityFollowers from './containers/community/followers';
+import CommunityFollowings from './containers/community/followings';
+import CommunityRequests from './containers/community/requests';
+
 const allRoles = ['individual', 'organization', 'admin'];
 const individualAndAdminRoles = ['individual', 'admin'];
 const organizationAndAdminRoles = [, 'organization', 'admin'];
@@ -77,6 +83,12 @@ const Routes = () => {
             <LayoutRoute path={RoutePath.eventListByOrganizationPage} exact component={UserAuthCheck(ManageEvents, ['organization'], true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventListPage} exact component={UserAuthCheck(ListingEvents, ['individual', 'organization'], true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventDetailsPage + ':eventId'} exact component={UserAuthCheck(DisplayEvent, allRoles, true)} layout={DashboardLayout} />
+
+            {/* COMMUNITY */}
+            <LayoutRoute path={RoutePath.communityFriendListPage} exact component={UserAuthCheck(CommunityFriends, individualAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.communityFollowerListPage} exact component={UserAuthCheck(CommunityFollowers, individualAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.communityFollowingListPage} exact component={UserAuthCheck(CommunityFollowings, individualAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.communityRequestListPage} exact component={UserAuthCheck(CommunityRequests, individualAndAdminRoles, true)} layout={DashboardLayout} />
         </Switch>
     );
 };

@@ -73,3 +73,9 @@ export const eventEditPage = '/user/event/edit/';
 export const eventListByOrganizationPage = '/user/event/all';
 export const eventListPage = '/event/all';
 export const eventDetailsPage = '/event/details/';
+
+// COMMUNITY
+export const communityFriendListPage = '/community/friends';
+export const communityFollowerListPage = '/community/followers';
+export const communityFollowingListPage = '/community/followings';
+export const communityRequestListPage = '/community/requests';

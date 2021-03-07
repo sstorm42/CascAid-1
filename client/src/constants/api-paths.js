@@ -35,33 +35,40 @@ export const setOrganizationServiceInfo = (userId) => serverAddress + `/api/user
 export const setOrganizationInternalLink = (userId) => serverAddress + `/api/users/organization/${userId}/internal-link`;
 
 export const getIndividualList = serverAddress + `/api/users/individual`;
-export const getOrganizationList = serverAddress + '/api/users/organization';
+export const getOrganizationList = serverAddress + `/api/users/organization`;
 
 export const getIndividualPublicInfo = (userId) => serverAddress + `/api/users/individual/${userId}/public-info`;
 export const getOrganizationPublicInfo = (userId) => serverAddress + `/api/users/organization/${userId}/public-info`;
 
 export const responseLog = (apiPath, response) => {
-    console.log('RESPONSE FROM ' + apiPath + ': ' + response);
+    console.log(`RESPONSE FROM ` + apiPath + `: ` + response);
 };
 export const errorLog = (apiPath, err) => {
-    console.log('ERROR FROM', apiPath, err);
+    console.log(`ERROR FROM`, apiPath, err);
 };
 
 // Impact Area
-export const getAllGlobalImpactAreas = serverAddress + '/api/impact-area/global';
-export const getAllImpactAreasByUser = serverAddress + '/api/impact-area/user/';
+export const getAllGlobalImpactAreas = serverAddress + `/api/impact-area/global`;
+export const getAllImpactAreasByUser = serverAddress + `/api/impact-area/user/`;
 
 // SEARCH
-export const searchByName = serverAddress + '/api/users/search/';
+export const searchByName = serverAddress + `/api/users/search/`;
 
 // Organization Type
-export const getAllOrganizationTypes = serverAddress + '/api/organization-type/';
+export const getAllOrganizationTypes = serverAddress + `/api/organization-type/`;
 
 // EVENTS
-export const getEventById = serverAddress + '/api/events/';
-export const createEvent = serverAddress + '/api/events/';
-export const updateEventById = serverAddress + '/api/events/';
-export const deleteEventById = serverAddress + '/api/events/';
-export const getAllEvents = serverAddress + '/api/events';
+export const getEventById = serverAddress + `/api/events/`;
+export const createEvent = serverAddress + `/api/events/`;
+export const updateEventById = serverAddress + `/api/events/`;
+export const deleteEventById = serverAddress + `/api/events/`;
+export const getAllEvents = serverAddress + `/api/events`;
 
 export const getAllEventsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/events`;
+
+export const followUser = serverAddress + `/api/follows/follow`;
+export const unfollowUser = serverAddress + `/api/follows/unfollow`;
+
+export const getAllFollower = (userId) => serverAddress + `/api/follows/follower/${userId}`;
+export const getAllFollowing = (userId) => serverAddress + `/api/follows/following/${userId}`;
+export const checkIfFollower = (followerId, followingId) => serverAddress + `/api/follows/${followerId}/${followingId}`;

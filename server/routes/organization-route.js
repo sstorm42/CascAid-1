@@ -14,5 +14,5 @@ organization.get('/', OrganizationController.getAll);
 organization.get('/:userId/public-info', OrganizationController.getPublicInfo);
 
 organization.get('/:userId/events', OrganizationController.getAllEvents);
-
+organization.post('/change-address', OrganizationController.changeAddress);
 module.exports = organization;

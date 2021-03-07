@@ -227,6 +227,16 @@ tr td:last-child {
         column-count: 2 !important;
     }
 }
+@media (min-width: 576px) {
+    .four-columns {
+        column-count: 4 !important;
+    }
+}
+@media (min-width: 576px) {
+    .five-columns {
+        column-count: 5 !important;
+    }
+}
 .card-columns {
     @include media-breakpoint-only(lg) {
         column-count: 3;
@@ -241,4 +251,19 @@ tr td:last-child {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+.bold-text {
+    font-weight: bolder;
+}
+.details-follow-btn {
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.details-following-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #bdd8da;
+    font-weight: bold;
+    color: white;
 }

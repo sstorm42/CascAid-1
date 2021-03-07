@@ -5,6 +5,7 @@ const validate = require('../middlewares/validators/validate');
 const { grantAccess, allowIfLoggedIn } = require('../middlewares/access-control');
 const IndividualController = require('../controllers/individual-controller');
 const OrganizationController = require('../controllers/organization-controller');
+
 const individualRoutes = require('./individual-route');
 const organizationRoutes = require('./organization-route');
 
