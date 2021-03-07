@@ -28,9 +28,9 @@ const OrganizationListView = (props) => {
                                     alt="No Image Found"
                                     className="organization-list-image"
                                 />
-                                <Card.Body className="justify-text">
-                                    <Card.Title>{org.basicInfo.name}</Card.Title>
-                                    <Card.Text>
+                                <Card.Body>
+                                    <Card.Text className="left-text bold-text">{org.basicInfo.name}</Card.Text>
+                                    <Card.Text className="justify-text">
                                         <small>{descriptionRender(org.basicInfo.description)}</small>
                                     </Card.Text>
                                 </Card.Body>

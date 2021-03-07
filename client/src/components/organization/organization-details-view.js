@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, Image, Row, Col, Badge, ListGroup } from 'react-bootstrap';
+import { Container, Image, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import moment from 'moment';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
 import Collapsible from 'react-collapsible';
+import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 const DetailsView = (props) => {
     const organization = props.organization;
+    const follows = props.follows;
     const infoRender = (label, value) => {
         if (value) {
             return (
@@ -58,12 +60,23 @@ const DetailsView = (props) => {
                                         {tag.label}
                                     </Badge>
                                 );
-                            else return <></>;
                         })}
                     </Col>
                 </Row>
             );
         } else return <></>;
+    };
+    const RenderListButtonItem = (label) => {
+        return (
+            <ListGroup.Item
+                className="list-button"
+                onClick={() => {
+                    alert('YET TO DEVELOP');
+                }}
+            >
+                {label}
+            </ListGroup.Item>
+        );
     };
     const addressMaker = (address) => {
         let fullAddress = '';
@@ -87,40 +100,42 @@ const DetailsView = (props) => {
                 <Row>
                     <Col className="right-align" sm="2">
                         <Image className="left-image" src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultOrganizationProfilePicture} width="100%" thumbnail />
+                        {follows ? (
+                            <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to unfollow</Tooltip>}>
+                                <Button
+                                    size="sm"
+                                    variant="outline-info"
+                                    className="details-following-btn"
+                                    onClick={() => {
+                                        props.handleUnfollowClick();
+                                    }}
+                                >
+                                    <RiUserFollowFill /> Following
+                                </Button>
+                            </OverlayTrigger>
+                        ) : (
+                            <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to follow</Tooltip>}>
+                                <Button
+                                    size="sm"
+                                    variant="outline-info"
+                                    className="details-follow-btn"
+                                    onClick={() => {
+                                        props.handleFollowClick();
+                                    }}
+                                >
+                                    <RiUserFollowFill /> Follow
+                                </Button>
+                            </OverlayTrigger>
+                        )}
                         <Collapsible trigger="MENU" className="special-btn">
                             <ListGroup>
-                                <ListGroup.Item
-                                    className="list-button"
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                >
-                                    About
-                                </ListGroup.Item>
-                                <ListGroup.Item
-                                    className="list-button"
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                >
-                                    Events
-                                </ListGroup.Item>
-                                <ListGroup.Item
-                                    className="list-button"
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                >
-                                    Projects
-                                </ListGroup.Item>
-                                <ListGroup.Item
-                                    className="list-button"
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                >
-                                    Message
-                                </ListGroup.Item>
+                                {RenderListButtonItem('About')}
+                                {RenderListButtonItem('Message')}
+                                {RenderListButtonItem('Events')}
+                                {RenderListButtonItem('Projects')}
+                                {RenderListButtonItem('In-Kind')}
+                                {RenderListButtonItem('Volunteering')}
+                                {RenderListButtonItem('Feed')}
                             </ListGroup>
                         </Collapsible>
                     </Col>

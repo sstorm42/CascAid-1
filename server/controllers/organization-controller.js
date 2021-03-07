@@ -7,6 +7,7 @@ const { allOrganizationTypes } = require('../static_data/organization-types');
 const { allServiceAreaTypes } = require('../static_data/service-area-types');
 const { json } = require('body-parser');
 const { Event } = require('../models/event-model');
+const { zips } = require('../static_data/zipCodes');
 exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
@@ -34,7 +35,8 @@ exports.getServiceInfo = async (req, res) => {
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
             let serviceInfo = organization.serviceInfo ? organization.serviceInfo.toObject() : {};
-            if (serviceInfo.serviceAreaTypes) serviceInfo.serviceAreaTypes = allServiceAreaTypes.filter((type) => serviceInfo.serviceAreaTypes.includes(type.value));
+            if (serviceInfo.serviceAreaTypes)
+                serviceInfo.serviceAreaTypes = allServiceAreaTypes.filter((type) => serviceInfo.serviceAreaTypes.includes(type.value));
             if (serviceInfo.serviceAreas)
                 serviceInfo.serviceAreas = serviceInfo.serviceAreas.map((area) => {
                     return { value: area, label: area };
@@ -133,9 +135,17 @@ exports.setInternalLink = async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
+        const query = req.query;
+        console.log('🚀 ~ file: organization-controller.js ~ line 137 ~ exports.getAll= ~ query', query);
         // Implement all logic here
-        const organizationTypes = req.query.organizationTypes ? JSON.parse(req.query.organizationTypes) : [];
-        const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
+        const organizationTypes = query.organizationTypes ? JSON.parse(query.organizationTypes) : [];
+        console.log('🚀 ~ file: organization-controller.js ~ line 139 ~ exports.getAll= ~ organizationTypes', organizationTypes);
+        const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
+        console.log('🚀 ~ file: organization-controller.js ~ line 141 ~ exports.getAll= ~ impactAreas', impactAreas);
+        const name = query.name ? JSON.parse(query.name) : '';
+        const keyword = query.keyword ? JSON.parse(query.keyword) : '';
+        const serviceArea = query.serviceArea ? JSON.parse(query.serviceArea) : '';
+        const address = query.address ? JSON.parse(query.address) : '';
 
         let match = {};
         if (organizationTypes && organizationTypes.length > 0) {
@@ -144,12 +154,32 @@ exports.getAll = async (req, res) => {
         if (impactAreas && impactAreas.length > 0) {
             match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
         }
-        console.log(match);
+        if (name) {
+            match['basicInfo.name'] = { $regex: name, $options: 'i' };
+        }
+        if (keyword) {
+            match['serviceInfo.keywords'] = { $regex: keyword, $options: 'i' };
+        }
+        if (serviceArea) {
+            match['serviceInfo.serviceAreas'] = { $regex: serviceArea, $options: 'i' };
+        }
+        let addressCondition = {};
+        if (address) {
+            addressCondition = {
+                $or: [
+                    { 'basicInfo.address.city': { $regex: address, $options: 'i' } },
+                    { 'basicInfo.address.state': { $regex: address, $options: 'i' } },
+                    { 'basicInfo.address.country': { $regex: address, $options: 'i' } },
+                    { 'basicInfo.address.code': { $regex: address, $options: 'i' } },
+                ],
+            };
+        }
+
         let aggregateOptions = [];
-        aggregateOptions.push({ $match: match });
+        aggregateOptions.push({ $match: { $and: [match, addressCondition] } });
 
         const allOrganizations = await Organization.aggregate(aggregateOptions);
-        // console.log('🚀 ~ file: organization-controller.js ~ line 151 ~ exports.getAll= ~ allOrganizations', allOrganizations);
+
         if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
     } catch (err) {
@@ -180,6 +210,33 @@ exports.getAllEvents = async (req, res) => {
         if (events) {
             return res.status(200).send({ success: true, events });
         } else return res.status(404).send({ success: false, message: 'No events found' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.changeAddress = async (req, res) => {
+    try {
+        let zipUpdates = {};
+        for (z in zips) {
+            if (z)
+                zipUpdates = await Organization.updateMany(
+                    {
+                        'basicInfo.address.code': z,
+                    },
+                    {
+                        $set: { 'basicInfo.address.latitude': zips[z].lat, 'basicInfo.address.longitude': zips[z].lng },
+                    },
+                );
+        }
+
+        const updates = await Organization.updateMany(
+            {},
+            {
+                $set: { 'basicInfo.address.country': 'UnitedStates', 'basicInfo.address.state': 'Pennsylvania', 'basicInfo.address.city': 'Philadelphia' },
+            },
+        );
+        res.status(200).send({ success: true, zipUpdates, updates });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

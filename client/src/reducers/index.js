@@ -8,6 +8,7 @@ import ImpactArea from './impact-area-reducer';
 import OrganizationType from './organization-type-reducer';
 import Event from './event-reducer';
 import { reducer as formReducer } from 'redux-form';
+import Follow from './follow-reducer';
 const rootReducer = combineReducers({
     form: formReducer,
     Auth,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     ImpactArea,
     OrganizationType,
     Event,
+    Follow,
 });
 
 export default rootReducer;

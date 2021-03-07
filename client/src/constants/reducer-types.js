@@ -57,3 +57,10 @@ export const SET_EVENT = 'SET_EVENT';
 export const GET_ALL_EVENTS = 'GET_ALL_EVENTS';
 export const CLEAR_EVENT = 'CLEAR_EVENT';
 export const DELETE_EVENT = 'DELETE_EVENT';
+
+// Follow
+export const FOLLOW_USER = 'FOLLOW_USER';
+export const UNFOLLOW_USER = 'UNFOLLOW_USER';
+export const GET_ALL_FOLLOWERS = 'GET_ALL_FOLLOWERS';
+export const GET_ALL_FOLLOWINGS = 'GET_ALL_FOLLOWINGS';
+export const CHECK_IF_FOLLOWER = 'CHECK_IF_FOLLOWER';

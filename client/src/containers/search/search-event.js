@@ -9,8 +9,9 @@ import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import Select from 'react-select';
 import Pagination from 'react-js-pagination';
-
+import { defaultCurrentLocation } from '../../constants/default-user-information';
 const SearchEvent = (props) => {
+    const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
@@ -18,7 +19,18 @@ const SearchEvent = (props) => {
         title: '',
         impactArea: [],
     });
-
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            console.log(position);
+            if (position) {
+                const coords = position.coords;
+                setCurrentLocation({
+                    latitude: coords.latitude,
+                    longitude: coords.longitude,
+                });
+            }
+        });
+    }, []);
     const changeFilter = (key, value) => {
         let filter_ = filter;
         filter[key] = value;
@@ -116,7 +128,11 @@ const SearchEvent = (props) => {
                         </>
                     )}
                     {viewType === 'map' && (
-                        <EventMapView allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []} zoom={6} />
+                        <EventMapView
+                            allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                            zoom={6}
+                            currentLocation={currentLocation}
+                        />
                     )}
                 </Col>
             </Row>

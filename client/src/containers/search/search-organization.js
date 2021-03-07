@@ -5,24 +5,55 @@ import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllOrganizationsByFilter } from '../../actions/organization-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import SearchMenu from '../../components/search/search-menu';
+import FilterOrganization from '../../components/search/filter-organization';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import Select from 'react-select';
+import OrganizationMapView from '../../components/organization/organization-map-view';
 import Pagination from 'react-js-pagination';
+import { defaultCurrentLocation } from '../../constants/default-user-information';
 
 const SearchOrganization = (props) => {
+    const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
     const [filter, setFilter] = useState({
-        impactArea: [],
-        organizationType: [],
+        name: '',
+        impactAreas: [],
+        organizationTypes: [],
+        serviceArea: '',
+        address: '',
+        keyword: '',
+        keywords: [],
     });
-
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            console.log(position);
+            if (position) {
+                const coords = position.coords;
+                setCurrentLocation({
+                    latitude: coords.latitude,
+                    longitude: coords.longitude,
+                });
+            }
+        });
+    }, []);
+    const resetFilter = () => {
+        setFilter({
+            name: '',
+            impactAreas: [],
+            organizationTypes: [],
+            serviceArea: '',
+            address: '',
+            keyword: '',
+            keywords: [],
+        });
+    };
     const changeFilter = (key, value) => {
         let filter_ = filter;
         filter[key] = value;
-        setFilter(filter_);
+        console.log(filter_);
+        setFilter({ ...filter_ });
     };
     const handleOnApplyFilter = () => {
         setLoading(true);
@@ -42,6 +73,7 @@ const SearchOrganization = (props) => {
         };
         getInitialInfo();
     }, []);
+    console.log('FILTER', filter);
     if (loading) return <LoadingAnim />;
     else
         return (
@@ -50,26 +82,14 @@ const SearchOrganization = (props) => {
                     <Col lg={4}>
                         <SearchMenu selected="organization" />
                         <hr />
-                        <label>Impact Area</label>
-                        <Select onChange={(value) => changeFilter('impactArea', value)} isMulti={true} options={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []} />
-                        <br />
-                        <label>Organization Type</label>
-                        <Select
-                            onChange={(value) => changeFilter('organizationType', value)}
-                            isMulti={true}
-                            options={props.getOrganizationTypeResponse?.success ? props.getOrganizationTypeResponse.organizationTypes : []}
+                        <FilterOrganization
+                            changeFilter={changeFilter}
+                            resetFilter={resetFilter}
+                            handleOnApplyFilter={handleOnApplyFilter}
+                            filter={filter}
+                            organizationTypes={props.getOrganizationTypeResponse?.success ? props.getOrganizationTypeResponse.organizationTypes : []}
+                            impactAreas={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []}
                         />
-                        {/* <Select onChange={(value) => changeFilter('organizationType', value)} isMulti={true} options={allOrganizationTypes} /> */}
-                        <br />
-                        <br />
-                        <Button
-                            onClick={() => {
-                                handleOnApplyFilter();
-                            }}
-                        >
-                            Search
-                        </Button>
-                        <div style={{ height: 25 }} />
                     </Col>
                     <Col lg={8}>
                         <Nav
@@ -114,9 +134,12 @@ const SearchOrganization = (props) => {
                             </>
                         )}
                         {viewType === 'map' && (
-                            <>
-                                <Image src="http://172.104.35.84/default-images/sample-g-map.png" width="100%" height="auto" thumbnail />
-                            </>
+                            <OrganizationMapView
+                                allOrganizations={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations : []}
+                                gotoOrganizationDetails={gotoOrganizationDetails}
+                                zoom={6}
+                                currentLocation={currentLocation}
+                            />
                         )}
                     </Col>
                 </Row>

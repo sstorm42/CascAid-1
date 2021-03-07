@@ -84,3 +84,34 @@
     background-color: cadetblue !important;
     min-height: 500px;
 }
+
+#basic-nav-dropdown::after {
+    content: none;
+}
+.notification-bell {
+    border-radius: 16;
+    padding: 0px;
+}
+.notification-count {
+    top: -10px !important;
+    left: -10px;
+    margin-right: -10px;
+}
+.notification-row {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.notification-title {
+    line-height: initial;
+    font-size: 14px;
+    margin: 0px;
+}
+.notification-time {
+    font-size: 8px;
+    margin: 0px;
+    color: gray;
+}
+.notification-image {
+    vertical-align: middle;
+    margin-left: 5px;
+}

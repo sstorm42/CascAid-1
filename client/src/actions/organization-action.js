@@ -34,12 +34,12 @@ export const getAllOrganizations = () => {
     };
 };
 
-export const getAllOrganizationsByFilter = ({ impactArea, organizationType }) => {
-    impactArea = impactArea.map((area) => area._id);
-    organizationType = organizationType.map((type) => type._id);
+export const getAllOrganizationsByFilter = (filter) => {
+    if (filter.impactAreas && filter.impactAreas.length > 0) filter.impactAreas = filter.impactAreas.map((area) => area._id);
+    if (filter.organizationTypes && filter.organizationTypes.length > 0) filter.organizationTypes = filter.organizationTypes.map((type) => type._id);
     return {
         type: Types.GET_ALL_ORGANIZATIONS,
-        payload: OrganizationDA.get_list_by_filter(impactArea, organizationType),
+        payload: OrganizationDA.get_list_by_filter(filter),
     };
 };
 
