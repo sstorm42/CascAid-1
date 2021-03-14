@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
-import { SelectRender, InputRender, DatePickerRender, MultiSelectRender } from '../form_template/input-render';
+import { SelectRender, InputRender, DatePickerRender, MultiSelectRender, CreatableMultiSelectRender } from '../form_template/input-render';
 import { information_asking_reason } from '../../constants/misc';
 import { Container, Row, Col, ProgressBar, Button, Modal, Image } from 'react-bootstrap';
 import { countries, states } from '../../constants/country-and-state';
 import { allGenders } from '../../constants/genders';
 import { allRaces } from '../../constants/races';
-import { allLanguages } from '../../constants/languages';
 import { individualHeaders } from '../../constants/step-headers';
 import { date } from '../../actions/validate';
 const BasicInfoForm = (props) => {
@@ -112,7 +111,12 @@ const BasicInfoForm = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="languages" component={MultiSelectRender} label="Language Fluency" col1={2} col2={10} options={allLanguages} zIndex={2000} />
+                                <Field name="languages" component={CreatableMultiSelectRender} label="Language Fluency" col1={2} col2={10} options={props.allLanguages} zIndex={2000} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Field name="skills" component={CreatableMultiSelectRender} label="Skills" col1={2} col2={10} options={props.allSkills} zIndex={1000} />
                             </Col>
                         </Row>
 

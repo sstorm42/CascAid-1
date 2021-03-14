@@ -76,5 +76,23 @@ class OrganizationDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_all_projects_by_organization = (userId) => {
+        return axios
+            .get(APIPaths.getAllProjectsByOrganization(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_all_posts_by_organization = (userId) => {
+        return axios
+            .get(APIPaths.getAllPostsByOrganization(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_all_volunteerings_by_organization = (userId) => {
+        return axios
+            .get(APIPaths.getAllVolunteeringsByOrganization(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new OrganizationDA();

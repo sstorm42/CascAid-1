@@ -7,8 +7,13 @@ import Organization from './organizationReducer';
 import ImpactArea from './impact-area-reducer';
 import OrganizationType from './organization-type-reducer';
 import Event from './event-reducer';
+import Project from './project-reducer';
+import Post from './post-reducer';
+import Volunteering from './volunteering-reducer';
 import { reducer as formReducer } from 'redux-form';
 import Follow from './follow-reducer';
+import Skill from './skill-reducer';
+import Language from './language-reducer';
 const rootReducer = combineReducers({
     form: formReducer,
     Auth,
@@ -19,7 +24,12 @@ const rootReducer = combineReducers({
     ImpactArea,
     OrganizationType,
     Event,
+    Project,
+    Post,
+    Volunteering,
     Follow,
+    Skill,
+    Language,
 });
 
 export default rootReducer;

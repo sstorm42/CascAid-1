@@ -6,8 +6,11 @@ import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/indivi
 import { NotificationManager } from 'react-notifications';
 import IndividualBasicInfoForm from '../../components/individual/individual-basic-info-form';
 import { individualCompleteInvolvementPage } from '../../constants/route-paths';
-import { getLanguagesByValues } from '../../constants/languages';
+// import { getLanguagesByValues } from '../../constants/languages';
+import { getAllLanguagesByUser } from '../../actions/language-action';
+import { getAllSkillsByUser } from '../../actions/skill-action';
 import { getRacesByValues } from '../../constants/races';
+
 const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);
     const [profilePicture, setProfilePicture] = useState();
@@ -19,6 +22,8 @@ const BasicInfo = (props) => {
     const getInitialInfo = () => {
         const user = props.auth.user;
         if (user && user._id) {
+            props.dispatch(getAllLanguagesByUser(user._id));
+            props.dispatch(getAllSkillsByUser(user._id));
             props.dispatch(getBasicInfo(user._id));
         }
     };
@@ -62,7 +67,6 @@ const BasicInfo = (props) => {
             ...values,
             profilePicture: profilePicture,
             races: values.races && values.races.length > 0 ? values.races.map((race) => race.value) : [],
-            languages: values.languages && values.languages.length > 0 ? values.languages.map((language) => language.value) : [],
         };
 
         props.dispatch(setBasicInfo(props.auth.user._id, user));
@@ -93,18 +97,21 @@ const BasicInfo = (props) => {
                 profilePicture={profilePicture}
                 handlePictureUpload={handlePictureUpload}
                 stateAndCountry={stateAndCountry}
+                allSkills={props.getSkillResponse.success ? props.getSkillResponse.skills : []}
+                allLanguages={props.getLanguageResponse.success ? props.getLanguageResponse.languages : []}
             />
         );
 };
 const mapStateToProps = (state) => {
+    console.log('ST', state);
+    const getSkillResponse = state.Skill.getSkillsByUser;
+    const getLanguageResponse = state.Language.getLanguagesByUser;
     const getBasicInfoResponse = state.Individual.getBasicInfo;
     const setBasicInfoResponse = state.Individual.setBasicInfo;
     let initialValues = {};
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;
         if (initialValues) {
-            if (initialValues.languages && initialValues.languages.length > 0 && typeof initialValues.languages[0] === 'string')
-                initialValues.languages = getLanguagesByValues(initialValues.languages);
             if (initialValues.races && initialValues.races.length > 0 && typeof initialValues.races[0] === 'string') initialValues.races = getRacesByValues(initialValues.races);
             if (initialValues.address && !initialValues.address.country) {
                 initialValues.address.country = 'US';
@@ -120,6 +127,8 @@ const mapStateToProps = (state) => {
         initialValues,
         getBasicInfoResponse,
         setBasicInfoResponse,
+        getSkillResponse,
+        getLanguageResponse,
     };
 };
 export default connect(

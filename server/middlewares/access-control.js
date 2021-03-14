@@ -1,5 +1,8 @@
 const { User } = require('../models/user-model');
 const { Event } = require('../models/event-model');
+const { Project } = require('../models/project-model');
+const { Post } = require('../models/post-model');
+const { Volunteering } = require('../models/volunteering-model');
 const expressJwt = require('express-jwt');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const resources = {
@@ -7,6 +10,21 @@ const resources = {
     readEvent: { action: 'read', module: 'event' },
     updateEvent: { action: 'update', module: 'event' },
     deleteEvent: { action: 'delete', module: 'event' },
+
+    createProject: { action: 'create', module: 'project' },
+    readProject: { action: 'read', module: 'project' },
+    updateProject: { action: 'update', module: 'project' },
+    deleteProject: { action: 'delete', module: 'project' },
+
+    createPost: { action: 'create', module: 'post' },
+    readPost: { action: 'read', module: 'post' },
+    updatePost: { action: 'update', module: 'post' },
+    deletePost: { action: 'delete', module: 'post' },
+
+    createVolunteering: { action: 'create', module: 'volunteering' },
+    readVolunteering: { action: 'read', module: 'volunteering' },
+    updateVolunteering: { action: 'update', module: 'volunteering' },
+    deleteVolunteering: { action: 'delete', module: 'volunteering' },
 
     createUser: { action: 'create', module: 'user' },
     readUser: { action: 'read', module: 'user' },
@@ -17,6 +35,7 @@ const resources = {
 };
 const individualRole = [
     { ...resources.readEvent, isAble: 'true' },
+    { ...resources.readProject, isAble: 'true' },
     { ...resources.readUser, isAble: 'true', case: 'own' },
     { ...resources.updateUser, isAble: 'true', case: 'own' },
     { ...resources.updatePassword, isAble: 'true', case: 'own' },
@@ -27,6 +46,21 @@ const organizationRole = [
     { ...resources.readEvent, isAble: 'true' },
     { ...resources.updateEvent, isAble: 'true', case: 'own' },
     { ...resources.deleteEvent, isAble: 'true', case: 'own' },
+    { ...resources.createProject, isAble: 'true' },
+    { ...resources.readProject, isAble: 'true' },
+    { ...resources.updateProject, isAble: 'true', case: 'own' },
+    { ...resources.deleteProject, isAble: 'true', case: 'own' },
+
+    { ...resources.createPost, isAble: 'true' },
+    { ...resources.readPost, isAble: 'true' },
+    { ...resources.updatePost, isAble: 'true', case: 'own' },
+    { ...resources.deletePost, isAble: 'true', case: 'own' },
+
+    { ...resources.createVolunteering, isAble: 'true' },
+    { ...resources.readVolunteering, isAble: 'true' },
+    { ...resources.updateVolunteering, isAble: 'true', case: 'own' },
+    { ...resources.deleteVolunteering, isAble: 'true', case: 'own' },
+
     { ...resources.readUser, isAble: 'true', case: 'own' },
     { ...resources.updateUser, isAble: 'true', case: 'own' },
     { ...resources.updatePassword, isAble: 'true', case: 'own' },
@@ -37,6 +71,10 @@ const adminRole = [
     { ...resources.readEvent, isAble: 'true' },
     { ...resources.updateEvent, isAble: 'true' },
     { ...resources.deleteEvent, isAble: 'true' },
+    { ...resources.createProject, isAble: 'true' },
+    { ...resources.readProject, isAble: 'true' },
+    { ...resources.updateProject, isAble: 'true' },
+    { ...resources.deleteProject, isAble: 'true' },
     { ...resources.createUser, isAble: 'true' },
     { ...resources.readUser, isAble: 'true' },
     { ...resources.updateUser, isAble: 'true' },
@@ -98,6 +136,37 @@ exports.grantAccess = function (action, module) {
                 } else if (module === 'event') {
                     const event = await Event.findById(req.params.eventId);
                     if (event.creatorId.toString() === req.user._id.toString()) {
+                        next();
+                    } else {
+                        return res.status(401).json({
+                            success: false,
+                            message: 'Not authorised.',
+                        });
+                    }
+                } else if (module === 'post') {
+                    const post = await Post.findById(req.params.postId);
+                    if (post.creatorId.toString() === req.user._id.toString()) {
+                        next();
+                    } else {
+                        return res.status(401).json({
+                            success: false,
+                            message: 'Not authorised.',
+                        });
+                    }
+                } else if (module === 'project') {
+                    const project = await Project.findById(req.params.projectId);
+                    if (project.creatorId.toString() === req.user._id.toString()) {
+                        next();
+                    } else {
+                        return res.status(401).json({
+                            success: false,
+                            message: 'Not authorised.',
+                        });
+                    }
+                } else if (module === 'volunteering') {
+                    const volunteering = await Volunteering.findById(req.params.volunteeringId);
+                    if (volunteering.creatorId.toString() === req.user._id.toString()) {
+                        console.log('Same person');
                         next();
                     } else {
                         return res.status(401).json({

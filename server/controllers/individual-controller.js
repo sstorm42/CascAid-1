@@ -1,12 +1,16 @@
 const { Individual } = require('../models/individual-user-model');
 const { saveImagesOnServer } = require('../utils/library');
 const ImpactAreaController = require('./impact-area-controller');
+const SkillController = require('./skill-controller');
+const LanguageController = require('./language-controller');
 const RESPONSES = require('../responses/individual-response');
 
 exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const individual = await Individual.findOne({ userId });
+        const individual = await Individual.findOne({ userId })
+            .populate('basicInfo.skills', { _id: 1, label: 1, value: 1 })
+            .populate('basicInfo.languages', { _id: 1, label: 1, value: 1 });
 
         if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
         else res.status(200).send({ ...RESPONSES.IndividualFound, basicInfo: individual.basicInfo ? individual.basicInfo : {} });
@@ -46,6 +50,17 @@ exports.setBasicInfo = async (req, res) => {
 
         if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
         if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];
+        if (basicInfo.skills) {
+            const { success, newSkills } = await SkillController.convertObjectToId(userId, 'individual', basicInfo.skills);
+            if (success) basicInfo.skills = newSkills;
+            else res.status(400).send({ success: false, message: 'Skills can not be saved' });
+        }
+        if (basicInfo.languages) {
+            const { success, newLanguages } = await LanguageController.convertObjectToId(userId, 'individual', basicInfo.languages);
+            if (success) basicInfo.languages = newLanguages;
+            else res.status(400).send({ success: false, message: 'Languages can not be saved' });
+        }
+        console.log(basicInfo);
         delete basicInfo['_id'];
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },

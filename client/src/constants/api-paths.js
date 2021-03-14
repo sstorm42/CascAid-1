@@ -51,6 +51,14 @@ export const errorLog = (apiPath, err) => {
 export const getAllGlobalImpactAreas = serverAddress + `/api/impact-area/global`;
 export const getAllImpactAreasByUser = serverAddress + `/api/impact-area/user/`;
 
+// Skill
+export const getAllGlobalSkills = serverAddress + `/api/skills/global`;
+export const getAllSkillsByUser = serverAddress + `/api/skills/user/`;
+
+// Languages
+export const getAllGlobalLanguages = serverAddress + `/api/languages/global`;
+export const getAllLanguagesByUser = serverAddress + `/api/languages/user/`;
+
 // SEARCH
 export const searchByName = serverAddress + `/api/users/search/`;
 
@@ -66,6 +74,34 @@ export const getAllEvents = serverAddress + `/api/events`;
 
 export const getAllEventsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/events`;
 
+// PROJECTS
+export const getProjectById = serverAddress + `/api/projects/`;
+export const createProject = serverAddress + `/api/projects/`;
+export const updateProjectById = serverAddress + `/api/projects/`;
+export const deleteProjectById = serverAddress + `/api/projects/`;
+export const getAllProjects = serverAddress + `/api/projects`;
+
+export const getAllProjectsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/projects`;
+
+// POSTS
+export const getPostById = serverAddress + `/api/posts/`;
+export const createPost = serverAddress + `/api/posts/`;
+export const updatePostById = serverAddress + `/api/posts/`;
+export const deletePostById = serverAddress + `/api/posts/`;
+export const getAllPosts = serverAddress + `/api/posts`;
+
+export const getAllPostsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/posts`;
+
+// VOLUNTEERING
+export const getVolunteeringById = serverAddress + `/api/volunteerings/`;
+export const createVolunteering = serverAddress + `/api/volunteerings/`;
+export const updateVolunteeringById = serverAddress + `/api/volunteerings/`;
+export const deleteVolunteeringById = serverAddress + `/api/volunteerings/`;
+export const getAllVolunteerings = serverAddress + `/api/volunteerings`;
+
+export const getAllVolunteeringsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/volunteerings`;
+
+// FOLLOW
 export const followUser = serverAddress + `/api/follows/follow`;
 export const unfollowUser = serverAddress + `/api/follows/unfollow`;
 

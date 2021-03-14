@@ -65,7 +65,7 @@ export const getBasicInfoPageByUserType = (userType) => {
     return `/complete/${userType}/basic-info`;
 };
 // POSTS
-export const postManagePage = '/user/post';
+export const newsManagePage = '/user/news';
 
 // EVENTS
 export const eventCreatePage = '/user/event/create';
@@ -73,6 +73,27 @@ export const eventEditPage = '/user/event/edit/';
 export const eventListByOrganizationPage = '/user/event/all';
 export const eventListPage = '/event/all';
 export const eventDetailsPage = '/event/details/';
+
+// PROJECTS
+export const projectCreatePage = '/user/project/create';
+export const projectEditPage = '/user/project/edit/';
+export const projectListByOrganizationPage = '/user/project/all';
+export const projectListPage = '/project/all';
+export const projectDetailsPage = '/project/details/';
+
+// POSTS
+export const postCreatePage = '/user/post/create';
+export const postEditPage = '/user/post/edit/';
+export const postListByOrganizationPage = '/user/post/all';
+export const postListPage = '/post/all';
+export const postDetailsPage = '/post/details/';
+
+// VOLUNTEERING
+export const volunteeringCreatePage = '/user/volunteering/create';
+export const volunteeringEditPage = '/user/volunteering/edit/';
+export const volunteeringListByOrganizationPage = '/user/volunteering/all';
+export const volunteeringListPage = '/volunteering/all';
+export const volunteeringDetailsPage = '/volunteering/details/';
 
 // COMMUNITY
 export const communityFriendListPage = '/community/friends';

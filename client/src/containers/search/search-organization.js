@@ -50,6 +50,7 @@ const SearchOrganization = (props) => {
         });
     };
     const changeFilter = (key, value) => {
+        console.log('🚀 ~ file: search-organization.js ~ line 53 ~ changeFilter ~ key, value', key, value);
         let filter_ = filter;
         filter[key] = value;
         console.log(filter_);
@@ -60,6 +61,7 @@ const SearchOrganization = (props) => {
         props.dispatch(getAllOrganizationsByFilter(filter));
         setLoading(false);
         setActivePage(1);
+        console.log('FFF', filter);
     };
     const gotoOrganizationDetails = (userId) => {
         props.history.push(`/organization/details/${userId}`);
@@ -73,7 +75,7 @@ const SearchOrganization = (props) => {
         };
         getInitialInfo();
     }, []);
-    console.log('FILTER', filter);
+
     if (loading) return <LoadingAnim />;
     else
         return (
@@ -137,7 +139,7 @@ const SearchOrganization = (props) => {
                             <OrganizationMapView
                                 allOrganizations={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations : []}
                                 gotoOrganizationDetails={gotoOrganizationDetails}
-                                zoom={6}
+                                zoom={8}
                                 currentLocation={currentLocation}
                             />
                         )}

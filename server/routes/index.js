@@ -9,6 +9,10 @@ const event = require('./event-route');
 const test = require('./test-route');
 const language = require('./language-route');
 const follow = require('./follow-route');
+const project = require('./project-route');
+const post = require('./post-route');
+const volunteering = require('./volunteering-route');
+const skill = require('./skill-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -20,6 +24,10 @@ routes.use('/events', event);
 routes.use('/test', test);
 routes.use('/languages', language);
 routes.use('/follows', follow);
+routes.use('/projects', project);
+routes.use('/posts', post);
+routes.use('/volunteerings', volunteering);
+routes.use('/skills', skill);
 
 const connected = {
     success: true,

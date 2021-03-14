@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button, Table } from 'react-bootstrap';
-
+import { FaEdit } from 'react-icons/fa';
 const EventList = (props) => {
     const allEvents = props.allEvents;
     const descriptionRender = (description) => {

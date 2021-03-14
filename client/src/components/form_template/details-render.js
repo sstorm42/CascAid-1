@@ -17,7 +17,7 @@ export const DetailsInfoRowRender = ({ label, value }) => {
 };
 
 export const TagWithLabelRender = (label, tags) => {
-    if (label && tags.length > 0) {
+    if (label && tags && tags.length > 0) {
         return (
             <Row>
                 {label && (

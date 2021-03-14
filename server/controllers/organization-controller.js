@@ -7,7 +7,11 @@ const { allOrganizationTypes } = require('../static_data/organization-types');
 const { allServiceAreaTypes } = require('../static_data/service-area-types');
 const { json } = require('body-parser');
 const { Event } = require('../models/event-model');
+const { Post } = require('../models/post-model');
+const { Project } = require('../models/project-model');
+const { Volunteering } = require('../models/volunteering-model');
 const { zips } = require('../static_data/zipCodes');
+
 exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
@@ -174,15 +178,35 @@ exports.getAll = async (req, res) => {
                 ],
             };
         }
+        const lookUps = [
+            {
+                $lookup: {
+                    from: 'organizationtypes',
+                    localField: 'basicInfo.organizationTypes',
+                    foreignField: '_id',
+                    as: 'organizationTypes',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'impactareas',
+                    localField: 'serviceInfo.impactAreas',
+                    foreignField: '_id',
+                    as: 'impactAreas',
+                },
+            },
+        ];
 
         let aggregateOptions = [];
-        aggregateOptions.push({ $match: { $and: [match, addressCondition] } });
+        aggregateOptions.push({ $match: { $and: [match, addressCondition] } }, ...lookUps);
 
         const allOrganizations = await Organization.aggregate(aggregateOptions);
 
+        console.log('🚀 ~ file: organization-controller.js ~ line 186 ~ exports.getAll= ~ allOrganizations', allOrganizations);
         if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
     } catch (err) {
+        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -215,6 +239,51 @@ exports.getAllEvents = async (req, res) => {
     }
 };
 
+exports.getAllProjects = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const projects = await Project.find({
+            creatorId: userId,
+        });
+
+        if (projects) {
+            return res.status(200).send({ success: true, projects });
+        } else return res.status(404).send({ success: false, message: 'No projects found' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAllPosts = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const posts = await Post.find({
+            creatorId: userId,
+        });
+
+        if (posts) {
+            return res.status(200).send({ success: true, posts });
+        } else return res.status(404).send({ success: false, message: 'No posts found' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAllVolunteerings = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+
+        const volunteerings = await Volunteering.find({
+            creatorId: userId,
+        });
+
+        if (volunteerings) {
+            return res.status(200).send({ success: true, volunteerings });
+        } else return res.status(404).send({ success: false, message: 'No volunteerings found' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
 exports.changeAddress = async (req, res) => {
     try {
         let zipUpdates = {};

@@ -1,7 +1,8 @@
 import React from 'react';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import * as RoutePath from '../../constants/route-paths';
-import { Button } from 'react-bootstrap';
+import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
+import { Button, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 const libraries = ['places'];
 const mapContainerStyle = {
@@ -45,7 +46,28 @@ const AllOrganizationOnMap = (props) => {
         mapRef.current = map;
     }, []);
     const mapRef = React.useRef();
-
+    const addressMaker = (address) => {
+        let fullAddress = '';
+        if (address) {
+            if (address.street1) fullAddress += address.street1 + ', ';
+            if (address.street2) fullAddress += address.street2 + ', ';
+            if (address.city) fullAddress += address.city + ', ';
+            if (address.code) fullAddress += address.code + ', ';
+            if (address.state) fullAddress += getStateByCountryAndCode(address.country, address.state) + ', ';
+            if (address.country) fullAddress += getCountryByCode(address.country);
+        }
+        return fullAddress;
+    };
+    const pairsRender = (label, tags) => {
+        return (
+            <label>
+                {label}{' '}
+                {tags.map((t, i) => {
+                    return i === 0 ? tags.label : ', ' + tags.label;
+                })}
+            </label>
+        );
+    };
     if (loadError) return 'Error loading maps';
     if (!isLoaded) return 'Loading maps';
     return (
@@ -78,10 +100,32 @@ const AllOrganizationOnMap = (props) => {
                         }}
                     >
                         <div>
-                            <h4>Organization</h4>
-                            <b>Name: </b>
-                            {selected.basicInfo.name}
-
+                            <h6>{selected.basicInfo.name}</h6>
+                            <label>
+                                Organization Type:{' '}
+                                {selected.organizationTypes.map((type, i) => {
+                                    return (
+                                        <Badge variant="primary" key={i}>
+                                            {type.label}
+                                        </Badge>
+                                    );
+                                    // return i !== 0 ? ', ' + type.label : type.label;
+                                })}
+                            </label>
+                            <br />
+                            <label>
+                                Impact Areas:{' '}
+                                {selected.impactAreas.map((area, i) => {
+                                    // return i !== 0 ? ', ' + area.label : area.label;
+                                    return (
+                                        <Badge variant="primary" key={i}>
+                                            {area.label}
+                                        </Badge>
+                                    );
+                                })}
+                            </label>
+                            <label>Address: {addressMaker(selected.basicInfo.address)}</label>
+                            {/* {pairsRender('Organization Type', selected.basicInfo.organizationTypes)} */}
                             <br />
                             <Button
                                 size="sm"
@@ -90,7 +134,7 @@ const AllOrganizationOnMap = (props) => {
                                     props.gotoOrganizationDetails(selected.userId);
                                 }}
                             >
-                                Details
+                                Go to Page
                             </Button>
                         </div>
                     </InfoWindow>
