@@ -10,7 +10,7 @@
 /utils/organizations.json
 # testing
 /coverage
-/access.log
+access.log
 # production
 
 
