@@ -4,7 +4,12 @@ import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 const SearchMenu = (props) => {
     console.log(props);
     return (
-        <>
+        <form
+            onSubmit={() => {
+                console.log('Pressed');
+                props.handleOnApplyFilter();
+            }}
+        >
             <label>Organization Name</label>
             <input className="form-control" type="text" value={props.filter.name} onChange={(e) => props.changeFilter('name', e.target.value)} />
             <br />
@@ -57,6 +62,7 @@ const SearchMenu = (props) => {
             </Button>
             &nbsp;
             <Button
+                type="submit"
                 size="sm"
                 onClick={() => {
                     props.handleOnApplyFilter();
@@ -65,7 +71,7 @@ const SearchMenu = (props) => {
                 Search
             </Button>
             <div style={{ height: 25 }} />
-        </>
+        </form>
     );
 };
 export default SearchMenu;

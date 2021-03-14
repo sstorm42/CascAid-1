@@ -35,11 +35,12 @@ export const getAllOrganizations = () => {
 };
 
 export const getAllOrganizationsByFilter = (filter) => {
-    if (filter.impactAreas && filter.impactAreas.length > 0) filter.impactAreas = filter.impactAreas.map((area) => area._id);
-    if (filter.organizationTypes && filter.organizationTypes.length > 0) filter.organizationTypes = filter.organizationTypes.map((type) => type._id);
+    let filters = { ...filter };
+    if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
+    if (filters.organizationTypes && filters.organizationTypes.length > 0) filters.organizationTypes = filters.organizationTypes.map((type) => type._id);
     return {
         type: Types.GET_ALL_ORGANIZATIONS,
-        payload: OrganizationDA.get_list_by_filter(filter),
+        payload: OrganizationDA.get_list_by_filter(filters),
     };
 };
 
@@ -87,5 +88,26 @@ export const getAllEventsByOrganization = (userId) => {
     return {
         type: Types.GET_ALL_EVENTS,
         payload: OrganizationDA.get_all_events_by_organization(userId),
+    };
+};
+
+export const getAllProjectsByOrganization = (userId) => {
+    return {
+        type: Types.GET_ALL_PROJECTS,
+        payload: OrganizationDA.get_all_projects_by_organization(userId),
+    };
+};
+
+export const getAllPostsByOrganization = (userId) => {
+    return {
+        type: Types.GET_ALL_POSTS,
+        payload: OrganizationDA.get_all_posts_by_organization(userId),
+    };
+};
+
+export const getAllVolunteeringsByOrganization = (userId) => {
+    return {
+        type: Types.GET_ALL_VOLUNTEERINGS,
+        payload: OrganizationDA.get_all_volunteerings_by_organization(userId),
     };
 };

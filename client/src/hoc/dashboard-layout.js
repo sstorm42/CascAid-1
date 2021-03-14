@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { withRouter } from 'react-router-dom';
-import { FaHome, FaSearch, FaConnectdevelop, FaCalendarAlt, FaUserCog, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaSearch, FaConnectdevelop, FaCalendarAlt, FaUserCog, FaEnvelope, FaNewspaper } from 'react-icons/fa';
 import { BsFilePost } from 'react-icons/bs';
 import * as RoutePath from '../constants/route-paths';
 class DashboardLayout extends Component {
@@ -109,11 +109,12 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Calender</NavText>
                     </NavItem>
-                    <NavItem eventKey={RoutePath.postManagePage}>
+                    <NavItem eventKey={RoutePath.newsManagePage}>
                         <NavIcon>
-                            <BsFilePost size={24} />
+                            {/* <BsFilePost size={24} /> */}
+                            <FaNewspaper size={24} />
                         </NavIcon>
-                        <NavText>Post</NavText>
+                        <NavText>Posts</NavText>
                     </NavItem>
                     <NavItem eventKey="/messages">
                         <NavIcon>

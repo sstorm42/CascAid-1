@@ -4,6 +4,8 @@ const languageSchema = mongoose.Schema(
     {
         value: { type: String },
         label: { type: String },
+        createdBy: { type: String },
+        creatorId: { type: String },
         isActive: { type: Boolean, default: true },
         isDeleted: { type: Boolean, default: false },
     },

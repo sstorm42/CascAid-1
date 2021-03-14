@@ -1,5 +1,5 @@
 const language = require('express').Router();
-const LanguageController = require('../controllers/impact-area-controller');
+const LanguageController = require('../controllers/language-controller');
 
 language.post('/seed', LanguageController.seed);
 language.get('/seed', LanguageController.seed);

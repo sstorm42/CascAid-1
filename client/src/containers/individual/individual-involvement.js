@@ -13,7 +13,6 @@ const Involvement = (props) => {
     const [editMode, setEditMode] = useState(false);
     const getInitialInfo = () => {
         const user = props.auth.user;
-
         if (user && user._id) {
             props.dispatch(getAllImpactAreasByUser(user._id));
             props.dispatch(getInvolvement(user._id));
