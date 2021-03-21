@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import * as RoutePath from '../../constants/route-paths';
 import { Link } from 'react-router-dom';
 // import SearchBox from './search-box';
@@ -24,7 +24,9 @@ const Header = (props) => {
         return (
             <div className="header">
                 <Navbar bg="primary" variant="dark" expand="lg">
-                    <Navbar.Brand href="/">CascAid</Navbar.Brand>
+                    <Navbar.Brand href="/">
+                        <Image src="/images/cascaid-logo-2.png" thumbnail rounded={10} style={{ height: '50px', width: '80%', marginLeft: '64px' }} />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
@@ -46,7 +48,9 @@ const Header = (props) => {
         return (
             <div className="header">
                 <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <Navbar.Brand href="/">CascAid</Navbar.Brand>
+                    <Navbar.Brand href="/">
+                        <Image src="/images/cascaid-logo-2.png" rounded={10} style={{ height: '50px', width: '100%', marginLeft: '64px' }} />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>

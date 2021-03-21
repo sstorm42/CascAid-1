@@ -14,7 +14,6 @@ exports.createOne = async (req, res) => {
             return res.status(401).send({ success: false, message: 'Event is not created.' });
         }
     } catch (err) {
-        console.log(err.message);
         return res.status(500).json({ success: false, message: err.message });
     }
 };
@@ -25,7 +24,8 @@ exports.getOne = async (req, res) => {
         const event = await Event.findById(eventId).populate('impactAreas', { _id: 1, label: 1, value: 1 });
         if (event) {
             const organizations = await Organization.find({ userId: event.creatorId }, { basicInfo: 1, userId: 1 });
-            if (organizations && organizations.length > 0) res.status(200).send({ success: true, message: 'Event found', event, organization: organizations[0] });
+            if (organizations && organizations.length > 0)
+                res.status(200).send({ success: true, message: 'Event found', event, organization: organizations[0] });
             else res.status(200).send({ success: false, event });
         } else {
             res.status(404).send({ success: false, message: 'Event not found' });
@@ -39,7 +39,6 @@ exports.getAll = async (req, res) => {
     try {
         const title = req.query.title ? req.query.title : '';
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
-        console.log('🚀 ~ file: event-controller.js ~ line 41 ~ exports.getAll= ~ impactAreas', impactAreas);
 
         let match = {};
         if (title && title.length > 0) {
@@ -48,12 +47,12 @@ exports.getAll = async (req, res) => {
         if (impactAreas && impactAreas.length > 0) {
             match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
         }
-        console.log(match);
+
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match });
 
         const allEvents = await Event.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: event-controller.js ~ line 54 ~ exports.getAll= ~ allEvents', allEvents);
+
         if (allEvents) return res.status(200).send({ ...RESPONSES.EventFound, allEvents });
         else return res.status(404).send(RESPONSES.EventNotFound);
     } catch (err) {
@@ -74,7 +73,7 @@ exports.updateOne = async (req, res) => {
             { $set: event },
             { new: true },
         );
-        console.log(updatedEvent);
+
         if (!updatedEvent)
             return res.status(401).send({
                 success: false,

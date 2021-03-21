@@ -6,6 +6,11 @@ import { getAllPostsByOrganization } from '../../actions/organization-action';
 import * as RoutePaths from '../../constants/route-paths';
 const ManagePosts = (props) => {
     const [loading, setLoading] = useState(false);
+    const [filter, setFilter] = useState({
+        postType: '',
+        title: '',
+        isActive: 'both',
+    });
     useEffect(() => {
         const getInitialInfo = (userId) => {
             setLoading(true);
@@ -16,14 +21,14 @@ const ManagePosts = (props) => {
         if (user && user._id);
         getInitialInfo(user._id);
     }, [props.auth]);
-    const handleGoToPostEdit = (postId) => {
-        props.history.push(RoutePaths.postEditPage + postId);
+    const handleGoToPostEdit = (postType, postId) => {
+        props.history.push(RoutePaths.postEditPage(postType, postId));
     };
-    const handleGoToPostDetails = (postId) => {
-        props.history.push(RoutePaths.postDetailsPage + postId);
+    const handleGoToPostDetails = (postType, postId) => {
+        props.history.push(RoutePaths.postDetailsPage(postType, postId));
     };
-    const handleGoToPostCreate = () => {
-        props.history.push(RoutePaths.postCreatePage);
+    const handleGoToPostCreate = (postType) => {
+        props.history.push(RoutePaths.postCreatePage(postType));
     };
     if (loading) return <LoadingAnim />;
     else {
@@ -33,6 +38,7 @@ const ManagePosts = (props) => {
                 handleGoToPostEdit={handleGoToPostEdit}
                 handleGoToPostDetails={handleGoToPostDetails}
                 handleGoToPostCreate={handleGoToPostCreate}
+                filter={filter}
             />
         );
     }

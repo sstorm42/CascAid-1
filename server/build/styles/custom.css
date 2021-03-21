@@ -281,3 +281,8 @@ tr td:last-child {
         margin-right: 5px !important;
     }
 }
+.post-map-box {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}

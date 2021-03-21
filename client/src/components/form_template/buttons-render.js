@@ -1,18 +1,21 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
+import { RiUserFollowLine } from 'react-icons/ri';
+import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp } from 'react-icons/fa';
+import { BiDetail } from 'react-icons/bi';
 export const DetailsButtonRender = (props) => {
     return (
         <Button className="actionButton" variant="outline-info" size="sm" {...props}>
-            Details
+            <BiDetail />
         </Button>
     );
 };
 
 export const EditButtonRender = (props) => {
     return (
-        <Button className="actionButton" variant="outline-warning" size="sm" {...props}>
-            Edit
+        <Button className="actionButton" variant="outline-dark" size="sm" {...props}>
+            <FaRegEdit />
         </Button>
     );
 };
@@ -20,7 +23,7 @@ export const EditButtonRender = (props) => {
 export const DeleteButtonRender = (props) => {
     return (
         <Button className="actionButton" variant="outline-danger" size="sm" {...props}>
-            Delete
+            <FaRegTrashAlt />
         </Button>
     );
 };
@@ -84,6 +87,35 @@ export const GoingButtonRender = (props) => {
     return (
         <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
             <FaLocationArrow /> Going
+        </Button>
+    );
+};
+export const FollowButtonRender = (props) => {
+    return (
+        <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
+            <RiUserFollowLine /> Follow
+        </Button>
+    );
+};
+export const RemoveButtonRender = (props) => {
+    return (
+        <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
+            <RiUserFollowLine /> Follow
+        </Button>
+    );
+};
+export const UpArrowButtonRender = (props) => {
+    return (
+        <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
+            <FaArrowCircleUp />
+        </Button>
+    );
+};
+
+export const DownArrowButtonRender = (props) => {
+    return (
+        <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
+            <FaArrowCircleDown />
         </Button>
     );
 };

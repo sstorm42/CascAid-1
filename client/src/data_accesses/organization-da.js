@@ -88,6 +88,12 @@ class OrganizationDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_all_posts_by_organization_and_postType = (userId, postType) => {
+        return axios
+            .get(APIPaths.getAllPostsByOrganizationAndPostType(userId, postType), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
     get_all_volunteerings_by_organization = (userId) => {
         return axios
             .get(APIPaths.getAllVolunteeringsByOrganization(userId), APIPaths.apiConfig())

@@ -13,7 +13,7 @@ exports.seed = async (req, res) => {
                 label: initialData[i],
             });
             let savedData = await organizationType.save();
-            console.log('🚀 ~ file: organization-type-controller.js ~ line 14 ~ exports.seed= ~ savedData', savedData);
+
             if (!savedData) return res.status(500).send({ success: false, message: initialData[i] + ' Could not be saved on database' });
         }
         res.status(200).send({ success: true, message: 'All organization types are created' });

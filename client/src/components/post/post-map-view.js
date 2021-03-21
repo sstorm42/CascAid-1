@@ -18,13 +18,13 @@ let center = {
     lat: 43.6532,
     lng: -79.3832,
 };
-const AllEventOnMap = (props) => {
+const AllPostOnMap = (props) => {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries,
     });
-    const markers = props.allEvents;
-    console.log('🚀 ~ file: event-map-view.js ~ line 27 ~ AllEventOnMap ~ markers', markers);
+    const markers = props.allPosts;
+    console.log('🚀 ~ file: post-map-view.js ~ line 27 ~ AllPostOnMap ~ markers', markers);
     if (props.currentLocation) {
         if (props.currentLocation.latitude && props.currentLocation.longitude) {
             center = {
@@ -77,12 +77,13 @@ const AllEventOnMap = (props) => {
                         }}
                     >
                         <div>
-                            <h2>Event</h2>
+                            <h2>Post</h2>
                             <b>Title: </b>
                             {selected.title}
 
                             <br />
-                            <Link to={RoutePath.eventDetailsPage + selected._id}>Details</Link>
+                            {/* <Link to={RoutePath.postDetailsPage + selected._id}>Details</Link> */}
+                            <Link to={RoutePath.postDetailsPage('post', selected._id)}>Details</Link>
                         </div>
                     </InfoWindow>
                 ) : null}
@@ -90,4 +91,4 @@ const AllEventOnMap = (props) => {
         </div>
     );
 };
-export default AllEventOnMap;
+export default AllPostOnMap;

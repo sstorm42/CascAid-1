@@ -8,7 +8,6 @@ const ImpactAreaController = require('./impact-area-controller');
 
 exports.createOne = async (req, res) => {
     try {
-        console.log(req.body);
         let project = req.body;
         project.images = saveImageSchemaOnServer(project.images);
         if (project.impactAreas) {
@@ -22,7 +21,7 @@ exports.createOne = async (req, res) => {
             else return res.status(400).send({ success: false, message: 'Skills can not be saved' });
         }
         project = new Project(project);
-        console.log('🚀 ~ file: project-controller.js ~ line 9 ~ exports.createOne= ~ project', project);
+
         const savedProject = await project.save();
         if (savedProject && savedProject._id) {
             return res.status(200).send({ success: true, message: 'Project created successfully', project: savedProject });
@@ -30,7 +29,6 @@ exports.createOne = async (req, res) => {
             return res.status(401).send({ success: false, message: 'Project is not created.' });
         }
     } catch (err) {
-        console.log(err.message);
         return res.status(500).json({ success: false, message: err.message });
     }
 };
@@ -58,7 +56,6 @@ exports.getAll = async (req, res) => {
     try {
         const title = req.query.title ? req.query.title : '';
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
-        console.log('🚀 ~ file: project-controller.js ~ line 41 ~ exports.getAll= ~ impactAreas', impactAreas);
 
         let match = {};
         if (title && title.length > 0) {
@@ -67,12 +64,12 @@ exports.getAll = async (req, res) => {
         if (impactAreas && impactAreas.length > 0) {
             match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
         }
-        console.log(match);
+
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match });
 
         const allProjects = await Project.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: project-controller.js ~ line 54 ~ exports.getAll= ~ allProjects', allProjects);
+
         if (allProjects) return res.status(200).send({ ...RESPONSES.ProjectFound, allProjects });
         else return res.status(404).send(RESPONSES.ProjectNotFound);
     } catch (err) {
@@ -93,7 +90,7 @@ exports.updateOne = async (req, res) => {
             { $set: project },
             { new: true },
         );
-        console.log(updatedProject);
+
         if (!updatedProject)
             return res.status(401).send({
                 success: false,

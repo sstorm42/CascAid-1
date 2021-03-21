@@ -47,6 +47,7 @@ export const organizationEditInternalLinkPage = '/edit/organization/internal-lin
 
 export const organizationDetailsPage = '/organization/details/:userId';
 export const organizationListPage = '/user/organization/all';
+export const userDetailsPage = (userType, userId) => `/${userType}/details/${userId}`;
 
 // COMMON: (INDIVIDUAL+ORGANIZATION)
 export const userCommonSettingsPage = '/user/common/settings';
@@ -65,35 +66,36 @@ export const getBasicInfoPageByUserType = (userType) => {
     return `/complete/${userType}/basic-info`;
 };
 // POSTS
-export const newsManagePage = '/user/news';
+// export const newsManagePage = '/user/news';
 
-// EVENTS
-export const eventCreatePage = '/user/event/create';
-export const eventEditPage = '/user/event/edit/';
-export const eventListByOrganizationPage = '/user/event/all';
-export const eventListPage = '/event/all';
-export const eventDetailsPage = '/event/details/';
+// // EVENTS
+// export const eventCreatePage = '/user/event/create';
+// export const eventEditPage = '/user/event/edit/';
+// export const eventListByOrganizationPage = '/user/event/all';
+// export const eventListPage = '/event/all';
+// export const eventDetailsPage = '/event/details/';
 
-// PROJECTS
-export const projectCreatePage = '/user/project/create';
-export const projectEditPage = '/user/project/edit/';
-export const projectListByOrganizationPage = '/user/project/all';
-export const projectListPage = '/project/all';
-export const projectDetailsPage = '/project/details/';
+// // PROJECTS
+// export const projectCreatePage = '/user/project/create';
+// export const projectEditPage = '/user/project/edit/';
+// export const projectListByOrganizationPage = '/user/project/all';
+// export const projectListPage = '/project/all';
+// export const projectDetailsPage = '/project/details/';
 
 // POSTS
-export const postCreatePage = '/user/post/create';
-export const postEditPage = '/user/post/edit/';
-export const postListByOrganizationPage = '/user/post/all';
-export const postListPage = '/post/all';
-export const postDetailsPage = '/post/details/';
-
+export const postCreatePage = (postType) => `/user/${postType}/create`;
+export const postEditPage = (postType, postId) => `/user/${postType}/edit/${postId}`;
+export const postListByOrganizationPage = (postType) => `/user/${postType}/all`;
+export const postListPage = (postType) => `/${postType}/all`;
+export const postDetailsPage = (postType, postId) => `/user/${postType}/details/${postId}`;
+export const postManagePage = `/user/post/manage`;
+export const postListPageByOrganizationAndPostType = (userId, postType) => `/organization/${userId}/${postType}/all`;
 // VOLUNTEERING
-export const volunteeringCreatePage = '/user/volunteering/create';
-export const volunteeringEditPage = '/user/volunteering/edit/';
-export const volunteeringListByOrganizationPage = '/user/volunteering/all';
-export const volunteeringListPage = '/volunteering/all';
-export const volunteeringDetailsPage = '/volunteering/details/';
+// export const volunteeringCreatePage = '/user/volunteering/create';
+// export const volunteeringEditPage = '/user/volunteering/edit/';
+// export const volunteeringListByOrganizationPage = '/user/volunteering/all';
+// export const volunteeringListPage = '/volunteering/all';
+// export const volunteeringDetailsPage = '/volunteering/details/';
 
 // COMMUNITY
 export const communityFriendListPage = '/community/friends';

@@ -46,7 +46,6 @@ exports.setBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
         let basicInfo = req.body;
-        console.log('🚀 ~ file: individual-controller.js ~ line 45 ~ exports.setBasicInfo= ~ basicInfo', basicInfo);
 
         if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
         if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];
@@ -60,7 +59,7 @@ exports.setBasicInfo = async (req, res) => {
             if (success) basicInfo.languages = newLanguages;
             else res.status(400).send({ success: false, message: 'Languages can not be saved' });
         }
-        console.log(basicInfo);
+
         delete basicInfo['_id'];
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },
@@ -79,16 +78,15 @@ exports.setBasicInfo = async (req, res) => {
 exports.setInvolvement = async (req, res) => {
     try {
         const userId = req.params.userId;
-        console.log('🚀 ~ file: individual-controller.js ~ line 65 ~ exports.setInvolvement= ~ userId', userId);
+
         let involvement = req.body;
-        console.log('🚀 ~ file: individual-controller.js ~ line 66 ~ exports.setInvolvement= ~ involvement', involvement);
 
         if (involvement.impactAreas) {
             const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(userId, 'individual', involvement.impactAreas);
             if (success) involvement.impactAreas = newImpactAreas;
             else res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
         }
-        console.log(involvement);
+
         delete involvement['_id'];
         const updatedIndividual = await Individual.findOneAndUpdate(
             { userId: userId },
@@ -97,7 +95,7 @@ exports.setInvolvement = async (req, res) => {
             },
             { new: true },
         );
-        console.log(updatedIndividual);
+
         if (!updatedIndividual) return res.status(404).send(RESPONSES.IndividualNotUpdated);
         else res.status(200).send(RESPONSES.IndividualUpdated);
     } catch (err) {

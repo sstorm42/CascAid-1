@@ -32,14 +32,14 @@ const ProjectForm = (props) => {
                             </Col>
                         </Row>
                         <br />
-                        <Field name="title" type="text" component={InputRender} label="Project Title" placeholder="Your project title..." />
+                        <Field name="title" type="text" component={InputRender} label="Title" placeholder="Your project title..." />
 
                         {/* StartDateTime */}
-                        <Field name="startDateTime" component={DateTimePickerRender} label="Project start time" col1={4} col2={8} zIndex={6001} />
+                        <Field name="startDateTime" component={DateTimePickerRender} label="Start time" col1={4} col2={8} zIndex={6001} />
                         {/* EndDateTime */}
-                        <Field name="endDateTime" component={DateTimePickerRender} label="Project end time" col1={4} col2={8} zIndex={6000} />
+                        <Field name="endDateTime" component={DateTimePickerRender} label="End time" col1={4} col2={8} zIndex={6000} />
 
-                        <Field name="description" type="text" component={TextRender} label="Project Description" placeholder="Your project description..." col1={4} col2={8} />
+                        <Field name="description" type="text" component={TextRender} label="Description" placeholder="Your project description..." col1={4} col2={8} />
                         {/* Skill */}
                         <Field name="skills" component={CreatableMultiSelectRender} label="Skill" col1={4} col2={8} options={allSkills} zIndex={5000} menuPlacement="top" />
                         {/* Impact Areas */}

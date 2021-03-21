@@ -75,7 +75,7 @@ export const InputNumberRender = ({ input, label, type, placeholder, step, min, 
     const className = `form-group row ${touched && error ? 'has-danger' : 'has-success'}`;
     return (
         <div className={className}>
-            <label className="col-sm-3 col-form-label">{label}</label>
+            <label className="col-sm-4 col-form-label">{label}</label>
             <div className="col-sm-8">
                 <div className="input-group">
                     <input style={{ float: 'left' }} {...input} placeholder={placeholder} step={step} min={min} max={max} type={type} className="form-control" />

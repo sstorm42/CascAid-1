@@ -58,7 +58,7 @@ exports.getAllByUser = async (req, res) => {
     const impactAreas = await ImpactArea.find({
         $and: [{ $or: [{ createdBy: 'admin' }, { creatorId: userId }] }, { isActive: true }, { isDeleted: false }],
     });
-    console.log('🚀 ~ file: impact-area-controller.js ~ line 61 ~ exports.getAllByUser= ~ impactAreas', impactAreas);
+
     res.status(200).send({
         success: true,
         impactAreas,

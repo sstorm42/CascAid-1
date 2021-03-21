@@ -1,5 +1,8 @@
 import React from 'react';
-import { Row, Col, Badge, Image } from 'react-bootstrap';
+import { Row, Col, Badge, Image, Table } from 'react-bootstrap';
+import { FiExternalLink } from 'react-icons/fi';
+import { CheckIconRender, CrossIconRender } from './icon-render';
+import moment from 'moment';
 export const DetailsInfoRowRender = ({ label, value }) => {
     if (value) {
         return (
@@ -48,6 +51,48 @@ export const TagWithLabelRender = (label, tags) => {
                             return (
                                 <Badge variant="primary" key={i} className={'badge-single'}>
                                     {tag.label}
+                                </Badge>
+                            );
+                        else return <></>;
+                    })}
+                </Col>
+            </Row>
+        );
+    } else return <></>;
+};
+
+export const ImpactAreasRender = (label, areas) => {
+    if (label && areas && areas.length > 0) {
+        return (
+            <Row>
+                {label && (
+                    <Col md="3">
+                        <b>{label}</b>
+                    </Col>
+                )}
+                <Col md="9">
+                    {areas.map((area, i) => {
+                        if (area)
+                            return (
+                                <Badge variant="primary" key={i} className={'badge-single'}>
+                                    {area.label}
+                                </Badge>
+                            );
+                        else return <></>;
+                    })}
+                </Col>
+            </Row>
+        );
+    }
+    if (areas && areas.length > 0) {
+        return (
+            <Row>
+                <Col md="12">
+                    {areas.map((area, i) => {
+                        if (area)
+                            return (
+                                <Badge variant="primary" key={i} className="impact-area-badge  badge-single-small">
+                                    {area.label}
                                 </Badge>
                             );
                         else return <></>;
@@ -122,4 +167,98 @@ export const InfoRender = (label, value) => {
             </Row>
         );
     } else return <></>;
+};
+export const LinkRender = (label, link) => {
+    if (label && link) {
+        return (
+            <Row>
+                <Col sm="3">
+                    <b>{label}</b>
+                </Col>
+                <Col sm="9">
+                    <a href={link} className="btn-outline-primary btn btn-sm" target="_blank">
+                        <FiExternalLink />
+                    </a>
+                </Col>
+            </Row>
+        );
+    } else if (link) {
+        return (
+            <Row>
+                <Col sm="12">
+                    <a href={link} target="_blank">
+                        <FiExternalLink />
+                    </a>
+                </Col>
+            </Row>
+        );
+    } else return <></>;
+};
+
+export const BooleanRender = (label, value) => {
+    if (label && value) {
+        return (
+            <Row>
+                <Col sm="3">
+                    <b>{label}</b>
+                </Col>
+                <Col sm="9">{value ? <CheckIconRender /> : <CrossIconRender />}</Col>
+            </Row>
+        );
+    } else if (value) {
+        return (
+            <Row>
+                <Col sm="12">{value ? <CheckIconRender /> : <CrossIconRender />}</Col>
+            </Row>
+        );
+    } else return <></>;
+};
+export const RequiredItemsRender = (items) => {
+    if (items && items.length > 0) {
+        return (
+            <>
+                <h6>Required Items</h6>
+                <Table striped bordered>
+                    <thead variant="dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Requirement</th>
+                            <th>Needed By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {items.map((item, i) => {
+                            return (
+                                <tr key={i}>
+                                    <td>{i + 1}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.requirement}</td>
+                                    <td>{moment(item.neededBy).format('LLLL')}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </Table>
+            </>
+        );
+    } else return <label>No required items found!</label>;
+};
+export const KeywordsRender = (label, keywords) => {
+    return (
+        <Row>
+            <Col md="3">
+                <b>{label}</b>
+            </Col>
+            <Col md="9">
+                {keywords.map((key, i) => {
+                    return (
+                        <Badge variant="primary" key={i} className="badge-single">
+                            {key}
+                        </Badge>
+                    );
+                })}
+            </Col>
+        </Row>
+    );
 };

@@ -91,6 +91,7 @@ export const deletePostById = serverAddress + `/api/posts/`;
 export const getAllPosts = serverAddress + `/api/posts`;
 
 export const getAllPostsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/posts`;
+export const getAllPostsByOrganizationAndPostType = (userId, postType) => serverAddress + `/api/organization/${userId}/posts/${postType}`;
 
 // VOLUNTEERING
 export const getVolunteeringById = serverAddress + `/api/volunteerings/`;

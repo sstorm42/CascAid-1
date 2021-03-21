@@ -7,7 +7,7 @@ exports.followUser = async (req, res) => {
             followerId,
             followingId,
         });
-        console.log('🚀 ~ file: follow-controller.js ~ line 10 ~ exports.followUser= ~ follow', follow);
+
         const follow_ = await follow.save();
         if (!follow_) res.status(200).send({ success: false, follow: follow_ });
         else if (follow_) res.status(200).send({ success: true, follow: follow_ });
@@ -52,7 +52,7 @@ exports.CheckIfFollower = async (req, res) => {
             followerId: followerId,
             followingId: followingId,
         });
-        console.log(followerId, followingId, follow);
+
         if (!follow) res.status(200).send({ success: true, follows: false });
         else if (follow) res.status(200).send({ success: true, follows: true });
     } catch (err) {

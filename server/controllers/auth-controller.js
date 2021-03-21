@@ -39,7 +39,6 @@ exports.seed = async (req, res) => {
 exports.signUp = async (req, res) => {
     try {
         let user = req.body;
-        console.log(user);
         user.email = user.email.toLowerCase();
         if (user) {
             const email = user.email.toLowerCase();
@@ -76,7 +75,6 @@ exports.signUp = async (req, res) => {
             isAuth: true,
         });
     } catch (error) {
-        console.log(error);
         res.status(500).json({ success: false, message: error.message });
     }
 };
@@ -86,11 +84,10 @@ exports.signUp = async (req, res) => {
 exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
-        console.log('🚀 ~ file: auth-controller.js ~ line 87 ~ exports.signIn= ~ email', email);
 
         email = email.toLowerCase();
         const user = await User.findOne({ email });
-        console.log(user);
+
         if (!user) {
             return res.status(401).json({
                 success: false,
