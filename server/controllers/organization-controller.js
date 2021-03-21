@@ -357,3 +357,14 @@ exports.changeAddress = async (req, res) => {
         res.status(500).send({ success: false, message: err.message });
     }
 };
+
+exports.convertOrgUserId = async (req, res) => {
+    const updt = Organization.find((err, doc) => {
+        doc.forEach(async function (org) {
+            let userId = mongoose.Types.ObjectId(org.userId);
+            let upd = await Organization.updateOne({ _id: org._id }, { userId: userId });
+        });
+        res.status(200).send({ success: 'OK' });
+    });
+    // res.status(200).send({ success: 'OK' });
+};

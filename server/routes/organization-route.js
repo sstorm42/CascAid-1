@@ -19,4 +19,5 @@ organization.get('/:userId/posts', OrganizationController.getAllPosts);
 // organization.get('/:userId/volunteerings', OrganizationController.getAllVolunteerings);
 organization.get('/:userId/posts/:postType', OrganizationController.getAllPostsByType);
 organization.post('/change-address', OrganizationController.changeAddress);
+organization.post('/convertOrgUserId', OrganizationController.convertOrgUserId);
 module.exports = organization;
