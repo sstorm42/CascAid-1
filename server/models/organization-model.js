@@ -41,7 +41,7 @@ const internalLinkSchema = mongoose.Schema(
 
 const organizationSchema = mongoose.Schema(
     {
-        userId: { type: String, required: true },
+        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         basicInfo: { type: basicInfoSchema },
         serviceInfo: { type: serviceInfoSchema },
         internalLink: internalLinkSchema,

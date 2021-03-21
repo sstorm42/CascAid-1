@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Image, Button, Row, Col, Badge } from 'react-bootstrap';
+import { DeleteButtonRender, UpArrowButtonRender, DownArrowButtonRender } from '../form_template/buttons-render';
 const PostImageList = (props) => {
     const images = props.images;
     if (images && images.length > 0) {
@@ -44,6 +45,31 @@ const PostImageList = (props) => {
                                         />
                                     </td>
                                     <td className="block">
+                                        <DeleteButtonRender
+                                            onClick={() => {
+                                                props.handleImageDelete(i);
+                                            }}
+                                        />
+                                        {i > 0 && (
+                                            <>
+                                                &nbsp;
+                                                <UpArrowButtonRender
+                                                    onClick={() => {
+                                                        props.handleItemPosition(i, 'up');
+                                                    }}
+                                                />
+                                            </>
+                                        )}
+                                        &nbsp;
+                                        {i < images.length - 1 && (
+                                            <DownArrowButtonRender
+                                                onClick={() => {
+                                                    props.handleItemPosition(i, 'down');
+                                                }}
+                                            />
+                                        )}
+                                    </td>
+                                    {/* <td className="block">
                                         <Button
                                             variant="outline-danger"
                                             onClick={() => {
@@ -78,7 +104,7 @@ const PostImageList = (props) => {
                                                 <Image src="/images/arrow-down-icon.png" thumbnail />
                                             </Button>
                                         )}
-                                    </td>
+                                    </td> */}
                                 </tr>
                             );
                         })}

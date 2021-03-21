@@ -3,11 +3,23 @@
     text-align: center;
     color: white;
 }
+.home-post-image-dark {
+    position: relative;
+    text-align: center;
+    color: black;
+}
 .home-post-image-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+.image-text-top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /* transform: translate(-50%, -50%); */
     font-size: 20px;
 }
 .ppl-liked-list {
@@ -19,4 +31,15 @@
     color: white;
 }
 .v-middle {
+}
+.badge-single-small {
+    margin-right: 3px;
+    margin-bottom: 3px;
+    padding: 5px;
+    font-size: small;
+    font-weight: 500;
+    border-radius: 3px;
+}
+.impact-area-badge {
+    background-color: #d2b4de;
 }

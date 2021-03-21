@@ -18,7 +18,7 @@ exports.createOne = async (req, res) => {
             if (success) volunteering.skills = newSkills;
             else return res.status(400).send({ success: false, message: 'Skills can not be saved' });
         }
-        console.log('VV', volunteering);
+
         volunteering.images = saveImageSchemaOnServer(volunteering.images);
         volunteering = new Volunteering(volunteering);
         const savedVolunteering = await volunteering.save();
@@ -28,7 +28,6 @@ exports.createOne = async (req, res) => {
             return res.status(401).send({ success: false, message: 'Volunteering is not created.' });
         }
     } catch (err) {
-        console.log(err.message);
         return res.status(500).json({ success: false, message: err.message });
     }
 };
@@ -56,7 +55,6 @@ exports.getAll = async (req, res) => {
     try {
         const title = req.query.title ? req.query.title : '';
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
-        console.log('🚀 ~ file: volunteering-controller.js ~ line 41 ~ exports.getAll= ~ impactAreas', impactAreas);
 
         let match = {};
         if (title && title.length > 0) {
@@ -65,12 +63,12 @@ exports.getAll = async (req, res) => {
         if (impactAreas && impactAreas.length > 0) {
             match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
         }
-        console.log(match);
+
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match });
 
         const allVolunteerings = await Volunteering.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: volunteering-controller.js ~ line 54 ~ exports.getAll= ~ allVolunteerings', allVolunteerings);
+
         if (allVolunteerings) return res.status(200).send({ ...RESPONSES.VolunteeringFound, allVolunteerings });
         else return res.status(404).send(RESPONSES.VolunteeringNotFound);
     } catch (err) {
@@ -82,7 +80,7 @@ exports.updateOne = async (req, res) => {
     try {
         const volunteeringId = req.params.volunteeringId;
         const volunteering = req.body;
-        console.log('VVS', volunteering.skills);
+
         if (volunteering.impactAreas) {
             const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(volunteering.creatorId, 'organization', volunteering.impactAreas);
             if (success) volunteering.impactAreas = newImpactAreas;
@@ -93,7 +91,7 @@ exports.updateOne = async (req, res) => {
             if (success) volunteering.skills = newSkills;
             else return res.status(400).send({ success: false, message: 'Skills can not be saved' });
         }
-        console.log('VV', volunteering);
+
         volunteering.images = saveImageSchemaOnServer(volunteering.images);
         const updatedVolunteering = await Volunteering.findOneAndUpdate(
             {
@@ -102,7 +100,7 @@ exports.updateOne = async (req, res) => {
             { $set: volunteering },
             { new: true },
         );
-        console.log(updatedVolunteering);
+
         if (!updatedVolunteering)
             return res.status(401).send({
                 success: false,

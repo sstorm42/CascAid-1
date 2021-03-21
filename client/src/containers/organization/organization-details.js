@@ -5,6 +5,7 @@ import { getPublicInfo } from '../../actions/organization-action';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import DetailsView from '../../components/organization/organization-details-view';
 import { followUser, unfollowUser, checkIfFollower } from '../../actions/follow-action';
+import SideSubMenu from '../../components/organization/organization-sub-menu';
 // import { NotificationManager } from 'react-notifications';
 const OrganizationDetails = (props) => {
     const [loading, setLoading] = useState(false);
@@ -55,18 +56,34 @@ const OrganizationDetails = (props) => {
             // NotificationManager.success('Server connection error', 'failed');
         }
     }, [props.getUnfollowResponse]);
+    const gotoPage = (url) => {
+        props.history.push(url);
+    };
     if (loading) return <LoadingAnim />;
     else
         return (
             <Container>
                 <Row>
                     <Col className="parent-page">
-                        <DetailsView
-                            organization={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.organization : {}}
-                            handleFollowClick={handleFollowClick}
-                            handleUnfollowClick={handleUnfollowClick}
-                            follows={follows}
-                        />
+                        <Row>
+                            <Col className="right-align" sm="2">
+                                <SideSubMenu
+                                    organization={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.organization : {}}
+                                    handleFollowClick={handleFollowClick}
+                                    handleUnfollowClick={handleUnfollowClick}
+                                    follows={follows}
+                                    gotoPage={gotoPage}
+                                />
+                            </Col>
+                            <Col sm="9" className="left-border">
+                                <DetailsView
+                                    organization={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.organization : {}}
+                                    handleFollowClick={handleFollowClick}
+                                    handleUnfollowClick={handleUnfollowClick}
+                                    follows={follows}
+                                />
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

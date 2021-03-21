@@ -53,7 +53,6 @@ exports.getServiceInfo = async (req, res) => {
             res.status(200).send({ ...RESPONSES.OrganizationFound, serviceInfo: serviceInfo });
         }
     } catch (err) {
-        console.log(err);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -73,7 +72,7 @@ exports.setBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
         let basicInfo = req.body;
-        console.log('🚀 ~ file: organization-controller.js ~ line 68 ~ exports.setBasicInfo= ~ basicInfo', basicInfo);
+
         if (basicInfo.profilePicture) basicInfo.profilePicture = saveImagesOnServer([basicInfo.profilePicture])[0];
         if (basicInfo.coverPicture) basicInfo.coverPicture = saveImagesOnServer([basicInfo.coverPicture])[0];
         const updatedOrganization = await Organization.findOneAndUpdate(
@@ -140,12 +139,12 @@ exports.setInternalLink = async (req, res) => {
 exports.getAll = async (req, res) => {
     try {
         const query = req.query;
-        console.log('🚀 ~ file: organization-controller.js ~ line 137 ~ exports.getAll= ~ query', query);
+
         // Implement all logic here
         const organizationTypes = query.organizationTypes ? JSON.parse(query.organizationTypes) : [];
-        console.log('🚀 ~ file: organization-controller.js ~ line 139 ~ exports.getAll= ~ organizationTypes', organizationTypes);
+
         const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
-        console.log('🚀 ~ file: organization-controller.js ~ line 141 ~ exports.getAll= ~ impactAreas', impactAreas);
+
         const name = query.name ? JSON.parse(query.name) : '';
         const keyword = query.keyword ? JSON.parse(query.keyword) : '';
         const serviceArea = query.serviceArea ? JSON.parse(query.serviceArea) : '';
@@ -202,11 +201,9 @@ exports.getAll = async (req, res) => {
 
         const allOrganizations = await Organization.aggregate(aggregateOptions);
 
-        console.log('🚀 ~ file: organization-controller.js ~ line 186 ~ exports.getAll= ~ allOrganizations', allOrganizations);
         if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -226,11 +223,11 @@ exports.getPublicInfo = async (req, res) => {
 exports.getAllEvents = async (req, res) => {
     try {
         const userId = req.params.userId;
-        console.log('🚀 ~ file: organization-controller.js ~ line 173 ~ exports.getAllEvents= ~ userId', userId);
+
         const events = await Event.find({
             creatorId: userId,
         });
-        console.log(events);
+
         if (events) {
             return res.status(200).send({ success: true, events });
         } else return res.status(404).send({ success: false, message: 'No events found' });
@@ -268,7 +265,57 @@ exports.getAllPosts = async (req, res) => {
         res.status(500).send({ success: false, message: err.message });
     }
 };
+exports.getAllPostsByType = async (req, res) => {
+    try {
+        const userId = mongoose.Types.ObjectId(req.params.userId);
+        const postType = req.params.postType;
+        let match = {};
+        match['creatorId'] = userId;
+        match['postType'] = postType;
+        match['isActive'] = true;
+        console.log(match);
+        let aggregateOptions = [];
+        const lookUps = [
+            {
+                $lookup: {
+                    from: 'organizations',
+                    localField: 'creatorId',
+                    foreignField: 'userId',
+                    as: 'organization',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'impactareas',
+                    localField: 'impactAreas',
+                    foreignField: '_id',
+                    as: 'impactAreaNames',
+                },
+            },
+        ];
+        const project = {
+            _id: 1,
+            title: 1,
+            images: 1,
+            description: 1,
+            organizationName: '$organization.basicInfo.name',
+            creatorId: 1,
+            postType: 1,
+            impactAreaNames: 1,
+            address: 1,
+        };
+        aggregateOptions.push({ $match: match }, ...lookUps, { $project: project });
 
+        const allPosts = await Post.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: organization-controller.js ~ line 309 ~ exports.getAllPostsByType= ~ allPosts', allPosts);
+        if (allPosts) {
+            return res.status(200).send({ success: true, allPosts });
+        } else return res.status(404).send({ success: false, message: 'No posts found' });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
 exports.getAllVolunteerings = async (req, res) => {
     try {
         const userId = req.params.userId;

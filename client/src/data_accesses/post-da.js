@@ -32,12 +32,26 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_list_by_filter = (title, impactAreas) => {
-        const params = `?title=${title}&impactAreas=${JSON.stringify(impactAreas)}`;
+    get_list_by_filter = (filter) => {
+        let queryString = '?';
+        for (let t in filter) {
+            if (filter[t]) {
+                console.log(t);
+                queryString += t.toString();
+                queryString += '=';
+                queryString += JSON.stringify(filter[t]);
+                queryString += '&';
+            }
+        }
         return axios
-            .get(APIPaths.getAllPosts + params, APIPaths.apiConfig())
+            .get(APIPaths.getAllPosts + queryString.slice(0, -1), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
+        // const params = `?title=${title}&impactAreas=${JSON.stringify(impactAreas)}`;
+        // return axios
+        //     .get(APIPaths.getAllPosts + params, APIPaths.apiConfig())
+        //     .then((response) => response.data)
+        //     .catch((err) => err.response.data);
     };
 }
 export default new PostDA();

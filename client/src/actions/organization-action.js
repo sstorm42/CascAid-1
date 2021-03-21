@@ -104,6 +104,13 @@ export const getAllPostsByOrganization = (userId) => {
         payload: OrganizationDA.get_all_posts_by_organization(userId),
     };
 };
+export const getAllPostsByOrganizationAndPostType = (userId, postType) => {
+    console.log('🚀 ~ file: organization-action.js ~ line 108 ~ getAllPostsByOrganizationAndPostType ~ userId, postType', userId, postType);
+    return {
+        type: Types.GET_ALL_POSTS,
+        payload: OrganizationDA.get_all_posts_by_organization_and_postType(userId, postType),
+    };
+};
 
 export const getAllVolunteeringsByOrganization = (userId) => {
     return {

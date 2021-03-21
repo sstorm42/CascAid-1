@@ -1,7 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Badge, Row, Col, Image, Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { FollowButtonRender } from '../../components/form_template/buttons-render';
+import { BsFillExclamationDiamondFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
+import Avatar from 'react-avatar';
 const SamplePosts = (props) => {
     const posts = [
         {
@@ -65,32 +69,81 @@ const SamplePosts = (props) => {
             ttl: 7,
         },
     ];
+    const types = ['Non-profit', 'Political'];
+    const areas = ['Santiago', 'Chaney', 'Tucker', 'Finch', 'Debbie', 'Virginia', 'Merrill Celina', 'Pierce'];
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Title as="h4">Suggestions</Popover.Title>
+            <Popover.Content>The suggestions is based on your profile informations such as location, impact areas, etc.</Popover.Content>
+        </Popover>
+    );
     const mapImage = 'http://cascaid.sky4242.com/default-images/sample-g-map.png';
     return (
         <div>
             <Row>
-                <Col>
-                    <h6>Suggestions for you.</h6>
-                    <small>Based on your profile</small>
+                <Col sm="10">
+                    <h6>
+                        Suggestions for you.
+                        {/* </Col>
+                <Col> */}
+                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                            <a>
+                                <BsFillExclamationDiamondFill style={{ marginBottom: 5 }} />
+                            </a>
+                            {/* <Button variant="light" size="sm" style={{ padding: 0, margin: 0 }}>
+                        
+                            <BsFillExclamationDiamondFill />
+                        </Button> */}
+                        </OverlayTrigger>
+                    </h6>
+                    {/* <small>Based on your profile</small> */}
                 </Col>
             </Row>
-
+            <br />
             {posts.map((post, i) => {
                 return (
                     <div key={i} className="post-box">
                         <Row>
-                            <Col sm={3}>
-                                <Image src={defaultOrganizationProfilePicture} thumbnail style={{ height: 50, width: 50 }} />
+                            <Col>
+                                <Row>
+                                    <Col sm="2">
+                                        <Avatar src={defaultOrganizationProfilePicture} round={5} size={30} />
+                                    </Col>
+                                    <Col sm="10">
+                                        <Link to={'/organization/details/'}>
+                                            {' '}
+                                            <h6>{post.org}</h6>
+                                        </Link>
+                                    </Col>
+                                </Row>
+                                {/* <Image src={defaultOrganizationProfilePicture} thumbnail style={{ height: 50, width: 50 }} />
+                            {/* </Col>
+                            <Col md="10"> */}
+                                {/* <small>{moment(post.createdAt).format('LLLL')}</small> */}
                             </Col>
-                            <Col sm="9">
-                                <h6>{post.org}</h6>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                {types.map((type, i) => {
+                                    return (
+                                        <Badge variant="info" className="badge-single-small">
+                                            {type}
+                                        </Badge>
+                                    );
+                                })}
                             </Col>
                         </Row>
                         <Row>
-                            <Col>Organization Type: Non-profit, Political</Col>
-                        </Row>
-                        <Row>
-                            <Col>Impact Areas: ASD ZXC QWE ...</Col>
+                            <Col>
+                                {areas.map((area, i) => {
+                                    return (
+                                        <Badge variant="light" className="badge-single-small impact-area-badge">
+                                            {area}
+                                        </Badge>
+                                    );
+                                })}
+                            </Col>
                         </Row>
                         <Row>
                             <Col>
@@ -100,13 +153,8 @@ const SamplePosts = (props) => {
                         <br />
                         <Row>
                             <Col>
-                                <Button variant="outline-primary" size="sm">
-                                    Go to Description
-                                </Button>
+                                <FollowButtonRender />
                                 &nbsp;
-                                <Button variant="outline-info" size="sm">
-                                    Details
-                                </Button>
                             </Col>
                         </Row>
                     </div>

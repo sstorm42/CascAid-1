@@ -109,7 +109,7 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Calender</NavText>
                     </NavItem>
-                    <NavItem eventKey={RoutePath.newsManagePage}>
+                    <NavItem eventKey={RoutePath.postManagePage}>
                         <NavIcon>
                             {/* <BsFilePost size={24} /> */}
                             <FaNewspaper size={24} />

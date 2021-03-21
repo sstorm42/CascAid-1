@@ -157,7 +157,6 @@ exports.checkEmailExist = async (req, res) => {
 exports.searchByName = async (req, res) => {
     try {
         const name = req.params.name;
-        console.log('🚀 ~ file: user-controller.js ~ line 160 ~ exports.searchByName= ~ name', name);
 
         // let individuals = await Individual.find(
         //     {
@@ -181,7 +180,6 @@ exports.searchByName = async (req, res) => {
             },
         ]);
 
-        console.log('🚀 ~ file: user-controller.js ~ line 168 ~ exports.searchByName= ~ individuals', individuals);
         // const organizations = await Organization.find(
         //     {
         //         $or: [{ 'basicInfo.name': { $regex: name, $options: 'i' } }],
@@ -229,7 +227,7 @@ exports.seedOrganization = async (req, res) => {
     for (let type = 0; type < organizationTypes.length; type++) {
         typeObj[organizationTypes[type].label] = organizationTypes[type]._id;
     }
-    console.log(typeObj);
+
     for (let i = 0; i < allOrganizations.length; i++) {
         let organization = allOrganizations[i];
         let email = organization.Contact;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 import EventListView from '../../components/event/event-card-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllEventsByFilter } from '../../actions/event-action';
+import { getAllPostsByFilter } from '../../actions/post-action';
 import EventMapView from '../../components/event/event-map-view';
 import SearchMenu from '../../components/search/search-menu';
 import { connect } from 'react-redux';
@@ -10,6 +10,8 @@ import LoadingAnim from '../../components/form_template/loading-anim';
 import Select from 'react-select';
 import Pagination from 'react-js-pagination';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
+import FilterEvent from '../../components/search/filter-event';
+import { allSearchablePostTypes } from '../../constants/post-types';
 const SearchEvent = (props) => {
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
@@ -17,8 +19,24 @@ const SearchEvent = (props) => {
     const [viewType, setViewType] = useState('list');
     const [filter, setFilter] = useState({
         title: '',
-        impactArea: [],
+        impactAreas: [],
+        postTypes: allSearchablePostTypes,
+        startDate: new Date(),
+        endDate: new Date(),
+        fullAddress: '',
+        keyword: '',
     });
+    const resetFilter = () => {
+        setFilter({
+            title: '',
+            impactAreas: [],
+            postTypes: allSearchablePostTypes,
+            startDate: new Date(),
+            endDate: new Date(),
+            fullAddress: '',
+            keyword: '',
+        });
+    };
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(function (position) {
             console.log(position);
@@ -32,25 +50,25 @@ const SearchEvent = (props) => {
         });
     }, []);
     const changeFilter = (key, value) => {
+        console.log('🚀 ~ file: search-event.js ~ line 49 ~ changeFilter ~ key, value', key, value);
         let filter_ = filter;
         filter[key] = value;
-        console.log(filter_);
-        setFilter(filter_);
+
+        setFilter({ ...filter_ });
     };
     const handleOnApplyFilter = () => {
         setLoading(true);
-        props.dispatch(getAllEventsByFilter(filter));
+        props.dispatch(getAllPostsByFilter(filter));
         setLoading(false);
         setActivePage(1);
     };
-    const gotoEventDetails = (userId) => {
-        props.history.push(`/event/details/${userId}`);
+    const gotoPostDetails = (postType, postId) => {
+        props.history.push(`/user/${postType}/details/${postId}`);
     };
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
             props.dispatch(getAllGlobalImpactAreas());
-
             setLoading(false);
         };
         getInitialInfo();
@@ -62,30 +80,14 @@ const SearchEvent = (props) => {
                 <Col lg={4}>
                     <SearchMenu selected="event" />
                     <hr />
-                    <label>Title</label>
-                    <input
-                        type="text"
-                        placeholder="Event title"
-                        className="form-control"
-                        onChange={(e) => {
-                            changeFilter('title', e.target.value);
-                        }}
+                    <FilterEvent
+                        changeFilter={changeFilter}
+                        resetFilter={resetFilter}
+                        handleOnApplyFilter={handleOnApplyFilter}
+                        filter={filter}
+                        organizationTypes={props.getOrganizationTypeResponse?.success ? props.getOrganizationTypeResponse.organizationTypes : []}
+                        impactAreas={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []}
                     />
-                    <br />
-                    <label>Impact Area</label>
-                    <Select onChange={(value) => changeFilter('impactArea', value)} isMulti={true} options={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []} />
-                    <br />
-
-                    <br />
-                    <br />
-                    <Button
-                        onClick={() => {
-                            handleOnApplyFilter();
-                        }}
-                    >
-                        Search
-                    </Button>
-                    <div style={{ height: 25 }} />
                 </Col>
                 <Col lg={8}>
                     <Nav
@@ -115,21 +117,24 @@ const SearchEvent = (props) => {
                                 linkClass="page-link"
                                 activePage={activePage}
                                 itemsCountPerPage={30}
-                                totalItemsCount={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.length : 0}
+                                // totalItemsCount={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.length : 0}
+                                totalItemsCount={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.length : 0}
                                 pageRangeDisplayed={5}
                                 onChange={(page) => {
                                     setActivePage(page);
                                 }}
                             />
                             <EventListView
-                                allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
-                                gotoEventDetails={gotoEventDetails}
+                                // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                                allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                                gotoPostDetails={gotoPostDetails}
                             />
                         </>
                     )}
                     {viewType === 'map' && (
                         <EventMapView
-                            allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                            // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                            allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
                             zoom={6}
                             currentLocation={currentLocation}
                         />
@@ -140,11 +145,14 @@ const SearchEvent = (props) => {
     );
 };
 const mapStateToProps = (state) => {
+    console.log(state);
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
-    const getAllEventsResponse = state.Event.getAllEvents;
+    // const getAllEventsResponse = state.Event.getAllEvents;
+    const getAllPostsResponse = state.Post.getAllPosts;
     return {
         getImpactAreaResponse,
-        getAllEventsResponse,
+        // getAllEventsResponse,
+        getAllPostsResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchEvent);

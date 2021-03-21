@@ -37,10 +37,13 @@ export const clearPost = () => {
     };
 };
 
-export const getAllPostsByFilter = ({ title, impactArea }) => {
-    impactArea = impactArea.map((area) => area._id);
+export const getAllPostsByFilter = (filter) => {
+    let filters = { ...filter };
+    if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
+    if (filters.postTypes && filters.postTypes.length > 0) filters.postTypes = filters.postTypes.map((type) => type.value);
+    console.log(filters);
     return {
         type: Types.GET_ALL_POSTS,
-        payload: PostDA.get_list_by_filter(title, impactArea),
+        payload: PostDA.get_list_by_filter(filters),
     };
 };

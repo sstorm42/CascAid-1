@@ -31,15 +31,15 @@ const EventForm = (props) => {
                             </Col>
                         </Row>
                         <br />
-                        <Field name="title" type="text" component={InputRender} label="Event Title" placeholder="Your event title..." />
-                        <Field name="description" type="text" component={TextRender} label="Event Description" placeholder="Your event description..." col1={4} col2={8} />
+                        <Field name="title" type="text" component={InputRender} label="Title" placeholder="Your event title..." />
+                        <Field name="description" type="text" component={TextRender} label="Description" placeholder="Your event description..." col1={4} col2={8} />
                         {/* Impact Areas */}
                         <Field name="impactAreas" component={MultiSelectRender} label="Impact area" col1={4} col2={8} options={allImpactAreas} zIndex={4000} menuPlacement="top" />
                         {/* StartDateTime */}
-                        <Field name="startDateTime" component={DateTimePickerRender} label="Event start time" col1={4} col2={8} zIndex={3001} />
+                        <Field name="startDateTime" component={DateTimePickerRender} label="Start time" col1={4} col2={8} zIndex={3001} />
 
                         {/* EndDateTime */}
-                        <Field name="endDateTime" component={DateTimePickerRender} label="Event end time" col1={4} col2={8} zIndex={2000} />
+                        <Field name="endDateTime" component={DateTimePickerRender} label="End time" col1={4} col2={8} zIndex={2000} />
                         {/* Images */}
                         <div style={{ height: 50 }} />
                         <EventImageList

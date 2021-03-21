@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import PostForm from '../../components/post/post-form';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
+import { reduxForm, formValueSelector, change } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { getPostById, createPost, updatePostById, clearPost } from '../../actions/post-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import { getAllSkillsByUser } from '../../actions/skill-action';
+import { getServiceInfo } from '../../actions/organization-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import * as RoutePaths from '../../constants/route-paths';
+
 const CreatePost = (props) => {
     const [loading, setLoading] = useState(false);
     const [images, setImages] = useState([]);
+    const [requiredItems, setRequiredItems] = useState([]);
     const [editMode, setEditMode] = useState(false);
     const [location, setLocation] = useState({
         latitude: 0,
@@ -22,6 +26,7 @@ const CreatePost = (props) => {
         if (props.getPostResponse.success) {
             console.log(props.getPostResponse.post);
             setImages(props.getPostResponse.post.images);
+            setRequiredItems(props.getPostResponse.post.requiredItems);
             if (props.getPostResponse.post.address) {
                 setLocation({
                     latitude: props.getPostResponse.post.address.latitude,
@@ -49,21 +54,26 @@ const CreatePost = (props) => {
         }
     };
     const handleGoToManagePosts = () => {
-        props.history.push(RoutePaths.postListByOrganizationPage);
+        props.history.push(RoutePaths.postManagePage);
     };
     const onSubmit = (values) => {
+        let items = [];
+        if (requiredItems && requiredItems.length > 0) {
+            items = requiredItems.filter((item) => item.name && item.name.length > 0 && item.requirement && item.requirement.length > 0);
+        }
         let post = {
             ...values,
+            postType: props.match.params.postType,
             creatorId: props.auth.user._id,
             images: images,
-
+            requiredItems: items,
             address: {
+                ...values.address,
                 latitude: location.latitude,
                 longitude: location.longitude,
             },
         };
         setLoading(true);
-        console.log('🚀 ~ file: create-post.js ~ line 36 ~ onSubmit ~ post', post);
         if (editMode) {
             props.dispatch(updatePostById(props.match.params.postId, post));
         } else {
@@ -94,6 +104,45 @@ const CreatePost = (props) => {
             ],
         });
     };
+    const handleItemEdit = (idx, name, value) => {
+        console.log('🚀 ~ file: create-post.js ~ line 103 ~ handleItemEdit ~ idx, name, value', idx, name, value);
+        let requiredItems_ = requiredItems;
+        let item = requiredItems_[idx];
+        item[name] = value;
+        console.log('T', item);
+        requiredItems_[idx] = item;
+        setRequiredItems([...requiredItems_]);
+    };
+    const handleItemDelete = (idx) => {
+        confirmAlert({
+            title: 'Warning',
+            message: 'Are you sure to delete this item?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        const requiredItems_ = requiredItems;
+                        requiredItems_.splice(idx, 1);
+                        setRequiredItems([...requiredItems_]);
+                    },
+                },
+                {
+                    label: 'No',
+                },
+            ],
+        });
+    };
+    const handleItemPosition = (idx, movement) => {
+        if (movement === 'up' && idx > 0) {
+            let requiredItems_ = requiredItems;
+            [requiredItems_[idx], requiredItems_[idx - 1]] = [requiredItems_[idx - 1], requiredItems_[idx]];
+            setRequiredItems([...requiredItems_]);
+        } else if (movement === 'down' && idx < requiredItems.length - 1) {
+            let requiredItems_ = requiredItems;
+            [requiredItems_[idx], requiredItems_[idx + 1]] = [requiredItems_[idx + 1], requiredItems_[idx]];
+            setRequiredItems([...requiredItems_]);
+        }
+    };
     const handleImagePosition = (idx, movement) => {
         if (movement === 'up' && idx > 0) {
             let images_ = images;
@@ -105,7 +154,20 @@ const CreatePost = (props) => {
             setImages([...images_]);
         }
     };
+    const handleAddMineImpactAreas = () => {
+        props.change('impactAreas', props.getServiceInfoResponse.serviceInfo.impactAreas);
+    };
+    const handleAddItem = () => {
+        const requiredItems_ = requiredItems;
+        requiredItems_.push({
+            name: '',
+            requirement: '',
+            neededBy: new Date(),
+        });
+        setRequiredItems([...requiredItems_]);
+    };
     useEffect(() => {
+        console.log(props.match);
         const getInitialInfo = (postId) => {
             setLoading(true);
             props.dispatch(getPostById(postId));
@@ -115,10 +177,16 @@ const CreatePost = (props) => {
         if (user && user._id) {
             console.log(user);
             props.dispatch(getAllImpactAreasByUser(user._id));
+            props.dispatch(getAllSkillsByUser(user._id));
+            props.dispatch(getServiceInfo(user._id));
             const url = window.location.pathname;
             if (url.split('/')[3] === 'edit') {
                 setEditMode(true);
                 getInitialInfo(props.match.params.postId);
+            } else {
+                props.dispatch(clearPost());
+                setImages([]);
+                setRequiredItems([]);
             }
         }
     }, [props.auth]);
@@ -135,22 +203,25 @@ const CreatePost = (props) => {
             NotificationManager.success(message, 'success');
             setImages({});
             props.dispatch(clearPost());
-            if (editMode) props.history.push(RoutePaths.postDetailsPage + props.match.params.postId);
+            if (editMode) props.history.push(RoutePaths.postDetailsPage(props.match.params.postType, props.match.params.postId));
             else {
-                props.history.push(RoutePaths.postDetailsPage + props.setPostResponse.post._id);
+                props.history.push(RoutePaths.postDetailsPage(props.match.params.postType, props.setPostResponse.post._id));
             }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     }, [props.setPostResponse]);
+
     if (loading) return <LoadingAnim />;
     else
         return (
             <PostForm
+                postType={props.match.params.postType}
                 handleGoToManagePosts={handleGoToManagePosts}
                 handleImagePosition={handleImagePosition}
                 handleImageDelete={handleImageDelete}
                 handlePictureUpload={handlePictureUpload}
                 handleImageDescriptionEdit={handleImageDescriptionEdit}
                 allImpactAreas={props.getImpactAreaResponse.success ? props.getImpactAreaResponse.impactAreas : []}
+                allSkills={props.getSkillResponse.success ? props.getSkillResponse.skills : []}
                 images={images}
                 editMode={editMode}
                 handleOnSubmit={props.handleSubmit((post) => {
@@ -158,6 +229,12 @@ const CreatePost = (props) => {
                 })}
                 location={location}
                 setLocation={setLocation}
+                handleAddMineImpactAreas={handleAddMineImpactAreas}
+                handleAddItem={handleAddItem}
+                handleItemEdit={handleItemEdit}
+                handleItemDelete={handleItemDelete}
+                handleItemPosition={handleItemPosition}
+                requiredItems={requiredItems}
             />
         );
 };
@@ -165,18 +242,26 @@ const CreatePost = (props) => {
 const mapStateToProps = (state) => {
     console.log(state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
-
+    const getSkillResponse = state.Skill.getSkillsByUser;
     const getPostResponse = state.Post.getPost;
     const setPostResponse = state.Post.setPost;
+    const getServiceInfoResponse = state.Organization.getServiceInfo;
     let initialValues = {};
     if (getPostResponse.success) {
         initialValues = getPostResponse.post;
+        if (initialValues.keywords) {
+            initialValues.keywords = initialValues.keywords.map((area) => {
+                return { value: area, label: area };
+            });
+        }
     }
     return {
         getImpactAreaResponse,
         initialValues,
         getPostResponse,
         setPostResponse,
+        getSkillResponse,
+        getServiceInfoResponse,
     };
 };
 export default connect(

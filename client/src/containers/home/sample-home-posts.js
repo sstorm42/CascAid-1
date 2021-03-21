@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import { Container, Row, Col, Image, Button, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button, Modal, Badge } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { FaThumbsUp, FaLocationArrow, FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Avatar from 'react-avatar';
 const SamplePosts = (props) => {
     const [show, setShow] = useState(false);
 
@@ -135,28 +137,58 @@ const SamplePosts = (props) => {
                         <h4 style={{ color: 'cadetblue' }}>{post.type}</h4>
                         <h5>{post.name}</h5>
                         <Row>
-                            <Col sm={2}>
-                                <Image src={defaultOrganizationProfilePicture} thumbnail style={{ height: 50, width: 50 }} />
-                            </Col>
-                            <Col sm="10">
-                                <h6>{post.org}</h6>
-                                <small>{moment(post.createdAt).format('LLLL')}</small>
+                            <Col>
+                                <Row>
+                                    <Col sm="1">
+                                        <Avatar src={defaultOrganizationProfilePicture} round={5} size="50" />
+                                    </Col>
+                                    <Col sm="8">
+                                        <Link to={'/organization/details/'}>
+                                            {' '}
+                                            <h6>{post.org}</h6>
+                                        </Link>
+                                        <small>Created At {moment(post.createdAt).format('LLLL')}</small>
+                                    </Col>
+                                </Row>
+                                {/* <Image src={defaultOrganizationProfilePicture} thumbnail style={{ height: 50, width: 50 }} />
+                            {/* </Col>
+                            <Col md="10"> */}
+                                {/* <small>{moment(post.createdAt).format('LLLL')}</small> */}
                             </Col>
                         </Row>
                         <Row>
-                            <Col className="justify-text">
-                                {post.description}
-                                <a href="#">See More</a>
+                            {/* <Col sm="2">Impact Areas</Col> */}
+                            <Col>
+                                {post.name.split(' ').map((nm, i) => {
+                                    return (
+                                        <Badge variant="light" className="badge-single-small impact-area-badge">
+                                            {nm}
+                                        </Badge>
+                                    );
+                                })}
+                            </Col>
+                        </Row>
+                        <Row>
+                            {/* <Col sm="2">Skills</Col> */}
+                            <Col>
+                                {post.org.split(' ').map((nm, i) => {
+                                    return (
+                                        <Badge variant="dark" className="badge-single-small">
+                                            {nm}
+                                        </Badge>
+                                    );
+                                })}
                             </Col>
                         </Row>
                         <br />
                         <Row>
-                            <Col sm="6" className="home-post-image">
-                                <Image src="https://picsum.photos/400/300" thumbnail style={{ width: '100%', height: '100%' }} />
+                            <Col sm="4" className="home-post-image">
+                                <Image src="https://picsum.photos/400/300" thumbnail style={{ width: '100%', height: 'auto' }} />
                                 <div className="home-post-image-text">{post.ttl} More Images</div>
                             </Col>
-                            <Col sm="6">
-                                <Image src={mapImage} thumbnail style={{ width: '100%', height: '100%' }} />
+                            <Col sm="8" className="justify-text">
+                                {post.description}
+                                <a href="#">See More</a>
                             </Col>
                         </Row>
                         <hr />

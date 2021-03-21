@@ -1,16 +1,16 @@
-exports.EventNotFound = {
+exports.PostNotFound = {
     success: false,
-    message: 'No event user found!',
+    message: 'No post  found!',
 };
-exports.EventFound = {
+exports.PostFound = {
     success: true,
-    message: 'Event user found!',
+    message: 'Post found!',
 };
-exports.EventNotUpdated = {
+exports.PostNotUpdated = {
     success: false,
-    message: 'Event user update failed!',
+    message: 'Post update failed!',
 };
-exports.EventUpdated = {
+exports.PostUpdated = {
     success: true,
-    message: 'Event user update successful',
+    message: 'Post update successful',
 };

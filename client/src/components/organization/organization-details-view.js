@@ -2,9 +2,7 @@ import React from 'react';
 import { Container, Image, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import moment from 'moment';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import Collapsible from 'react-collapsible';
-import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
+
 const DetailsView = (props) => {
     const organization = props.organization;
     const follows = props.follows;
@@ -66,18 +64,7 @@ const DetailsView = (props) => {
             );
         } else return <></>;
     };
-    const RenderListButtonItem = (label) => {
-        return (
-            <ListGroup.Item
-                className="list-button"
-                onClick={() => {
-                    alert('YET TO DEVELOP');
-                }}
-            >
-                {label}
-            </ListGroup.Item>
-        );
-    };
+
     const addressMaker = (address) => {
         let fullAddress = '';
         if (address) {
@@ -96,74 +83,28 @@ const DetailsView = (props) => {
         const impactAreas = serviceInfo.impactAreas;
         console.log(basicInfo);
         return (
-            <Container>
-                <Row>
-                    <Col className="right-align" sm="2">
-                        <Image className="left-image" src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultOrganizationProfilePicture} width="100%" thumbnail />
-                        {follows ? (
-                            <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to unfollow</Tooltip>}>
-                                <Button
-                                    size="sm"
-                                    variant="outline-info"
-                                    className="details-following-btn"
-                                    onClick={() => {
-                                        props.handleUnfollowClick();
-                                    }}
-                                >
-                                    <RiUserFollowFill /> Following
-                                </Button>
-                            </OverlayTrigger>
-                        ) : (
-                            <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to follow</Tooltip>}>
-                                <Button
-                                    size="sm"
-                                    variant="outline-info"
-                                    className="details-follow-btn"
-                                    onClick={() => {
-                                        props.handleFollowClick();
-                                    }}
-                                >
-                                    <RiUserFollowFill /> Follow
-                                </Button>
-                            </OverlayTrigger>
-                        )}
-                        <Collapsible trigger="MENU" className="special-btn">
-                            <ListGroup>
-                                {RenderListButtonItem('About')}
-                                {RenderListButtonItem('Message')}
-                                {RenderListButtonItem('Events')}
-                                {RenderListButtonItem('Projects')}
-                                {RenderListButtonItem('In-Kind')}
-                                {RenderListButtonItem('Volunteering')}
-                                {RenderListButtonItem('Feed')}
-                            </ListGroup>
-                        </Collapsible>
-                    </Col>
-                    <Col sm="9" className="left-border">
-                        <h3>{basicInfo.name}</h3>
-                        {tagsRender('Organization Type', basicInfo.organizationTypes)}
-                        {infoRender('Contact Email', basicInfo.contactEmail)}
-                        {infoRender('Website', basicInfo.website)}
+            <>
+                <h3>{basicInfo.name}</h3>
+                {tagsRender('Organization Type', basicInfo.organizationTypes)}
+                {infoRender('Contact Email', basicInfo.contactEmail)}
+                {infoRender('Website', basicInfo.website)}
 
-                        {infoRender('Phone', basicInfo.phone)}
-                        {infoRender('EIN', basicInfo.ein)}
-                        {infoRender('Address', addressMaker(basicInfo.address))}
+                {infoRender('Phone', basicInfo.phone)}
+                {infoRender('EIN', basicInfo.ein)}
+                {infoRender('Address', addressMaker(basicInfo.address))}
 
-                        <hr />
-                        <div style={{ height: 25 }} />
-                        {keywordsRender('Service Areas', serviceInfo.serviceAreas)}
-                        {tagsRender('Impact Area', impactAreas)}
-                        {keywordsRender('Keywords', serviceInfo.keywords)}
-                        <div style={{ height: 25 }} />
-                        <hr />
-                        {infoRender('Mission', basicInfo.mission)}
-                        <hr />
-                        {infoRender('Description', basicInfo.description)}
-                        <div style={{ height: 25 }} />
-                    </Col>
-                </Row>
+                <hr />
                 <div style={{ height: 25 }} />
-            </Container>
+                {keywordsRender('Service Areas', serviceInfo.serviceAreas)}
+                {tagsRender('Impact Area', impactAreas)}
+                {keywordsRender('Keywords', serviceInfo.keywords)}
+                <div style={{ height: 25 }} />
+                <hr />
+                {infoRender('Mission', basicInfo.mission)}
+                <hr />
+                {infoRender('Description', basicInfo.description)}
+                <div style={{ height: 25 }} />
+            </>
         );
     } else
         return (
