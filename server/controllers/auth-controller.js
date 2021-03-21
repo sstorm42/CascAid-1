@@ -84,6 +84,7 @@ exports.signUp = async (req, res) => {
 exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
+        console.log('🚀 ~ file: auth-controller.js ~ line 87 ~ exports.signIn= ~ email, password', email, password);
 
         email = email.toLowerCase();
         const user = await User.findOne({ email });

@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+access.log
 /config
 /node_modules
 /.pnp
@@ -8,9 +9,10 @@
 /uploaded_images
 /testGitIgnore.js
 /utils/organizations.json
+
 # testing
 /coverage
-access.log
+
 # production
 
 
