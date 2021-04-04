@@ -11,7 +11,7 @@ const SearchMenu = (props) => {
             </Nav.Item>
             <Nav.Item sz="sm">
                 <Nav.Link eventKey="event" href="/search/event">
-                    Events
+                    Community Activity
                 </Nav.Link>
             </Nav.Item>
         </Nav>

@@ -111,10 +111,9 @@ export const getAllPostsByOrganizationAndPostType = (userId, postType) => {
         payload: OrganizationDA.get_all_posts_by_organization_and_postType(userId, postType),
     };
 };
-
-export const getAllVolunteeringsByOrganization = (userId) => {
+export const getAllOrganizationSuggestions = () => {
     return {
-        type: Types.GET_ALL_VOLUNTEERINGS,
-        payload: OrganizationDA.get_all_volunteerings_by_organization(userId),
+        type: Types.GET_ALL_SUGGESTED_ORGANIZATIONS,
+        payload: OrganizationDA.get_all_suggestions(),
     };
 };

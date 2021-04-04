@@ -73,6 +73,6 @@ const EventListView = (props) => {
                 })}
             </CardColumns>
         );
-    } else return <h4>No Events Found</h4>;
+    } else return <h4>No Posts Found</h4>;
 };
 export default EventListView;

@@ -26,21 +26,24 @@ export const printLocalStorage = () => {
         return value;
     });
 };
-export const authenticate = (user, token) => {
-    setLocalStorage('user', user);
-    setLocalStorage('token', token);
+export const authenticate = ({ user, token, basicInfo }) => {
+    if (user) setLocalStorage('user', user);
+    if (token) setLocalStorage('token', token);
+    if (basicInfo) setLocalStorage('basicInfo', basicInfo);
 };
 
 export const userAuth = () => {
     if (window !== 'undefined') {
         const token = getLocalStorage('token');
         const user = getLocalStorage('user');
+        const basicInfo = getLocalStorage('basicInfo');
         if (token && user)
             return {
                 type: Types.USER_AUTH,
                 payload: {
                     isAuth: true,
                     user,
+                    basicInfo,
                 },
             };
         else

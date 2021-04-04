@@ -10,6 +10,7 @@ const initialState = {
     setInternalLink: {},
 
     getAllOrganizations: {},
+    getAllSuggestions: {},
 };
 const UserReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -37,6 +38,9 @@ const UserReducer = (state = initialState, action) => {
             return { ...state, getServiceInfo: action.payload, setServiceInfo: action.payload };
         case Types.CLEAR_ORGANIZATION_INTERNAL_LINK:
             return { ...state, getInternalLink: action.payload, setInternalLink: action.payload };
+
+        case Types.GET_ALL_SUGGESTED_ORGANIZATIONS:
+            return { ...state, getAllSuggestions: action.payload };
         default:
             return state;
     }

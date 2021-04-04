@@ -94,7 +94,7 @@ const PostList = (props) => {
                                     <th>Post Type</th>
                                     <th>Title</th>
                                     <th>Created At</th>
-                                    <th>Active</th>
+                                    <th>Published</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

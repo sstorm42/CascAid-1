@@ -56,12 +56,7 @@ const SideMenu = (props) => {
                     <ListGroup>
                         {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization.userId))}
                         {RenderListButtonItem('Message', '')}
-                        {RenderListButtonItem('Events', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
-                        {RenderListButtonItem('Projects', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'project'))}
-                        {RenderListButtonItem('In-Kind', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'in-kind'))}
-                        {RenderListButtonItem('Volunteering', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'volunteering'))}
-                        {RenderListButtonItem('general', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'general'))}
-                        {RenderListButtonItem('Advocacy', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'advocacy'))}
+                        {RenderListButtonItem('Posts', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
                         {RenderListButtonItem('Feed')}
                     </ListGroup>
                 </Collapsible>

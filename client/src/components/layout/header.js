@@ -7,19 +7,21 @@ import ReactAutoSuggest from './react-autosuggest-lib';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import Avatar from 'react-avatar';
 import GlobalNotification from './global-notification';
+import { get } from '../../actions';
 const Header = (props) => {
     const isAuth = props.isAuth || false;
 
     if (isAuth && props.user._id) {
         // const username = props.user.name;
         // const userId = props.user._id;
-        const name = props.user.name || 'USER';
+        const basicInfo = props.basicInfo;
+        const name = basicInfo.name || 'USER';
         let profilePicture = '';
         if (props.user.userType === 'individual') {
-            profilePicture = props.user.profilePicture || defaultIndividualProfilePicture;
+            profilePicture = basicInfo.profilePicture || defaultIndividualProfilePicture;
         }
         if (props.user.userType === 'organization') {
-            profilePicture = props.user.profilePicture || defaultOrganizationProfilePicture;
+            profilePicture = basicInfo.profilePicture || defaultOrganizationProfilePicture;
         }
         return (
             <div className="header">
@@ -32,7 +34,7 @@ const Header = (props) => {
                         <Nav>
                             <ReactAutoSuggest />
                             <GlobalNotification />
-                            <NavDropdown title={<Avatar size="32" src={profilePicture} round="16px" />} id="basic-nav-dropdown" alignRight={true}>
+                            <NavDropdown title={<Avatar size="30" src={profilePicture} round="5px" />} id="basic-nav-dropdown" alignRight={true}>
                                 <NavDropdown.Item disabled={true}>Welcome, {name}</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <Link to={RoutePath.signOutPage} className="dropdown-item">

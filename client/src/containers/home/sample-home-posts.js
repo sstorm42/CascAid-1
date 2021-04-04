@@ -173,7 +173,7 @@ const SamplePosts = (props) => {
                             <Col>
                                 {post.org.split(' ').map((nm, i) => {
                                     return (
-                                        <Badge variant="dark" className="badge-single-small">
+                                        <Badge variant="light" className="badge-single-small skill-badge">
                                             {nm}
                                         </Badge>
                                     );

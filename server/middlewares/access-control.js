@@ -6,25 +6,10 @@ const { Volunteering } = require('../models/volunteering-model');
 const expressJwt = require('express-jwt');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const resources = {
-    createEvent: { action: 'create', module: 'event' },
-    readEvent: { action: 'read', module: 'event' },
-    updateEvent: { action: 'update', module: 'event' },
-    deleteEvent: { action: 'delete', module: 'event' },
-
-    createProject: { action: 'create', module: 'project' },
-    readProject: { action: 'read', module: 'project' },
-    updateProject: { action: 'update', module: 'project' },
-    deleteProject: { action: 'delete', module: 'project' },
-
     createPost: { action: 'create', module: 'post' },
     readPost: { action: 'read', module: 'post' },
     updatePost: { action: 'update', module: 'post' },
     deletePost: { action: 'delete', module: 'post' },
-
-    createVolunteering: { action: 'create', module: 'volunteering' },
-    readVolunteering: { action: 'read', module: 'volunteering' },
-    updateVolunteering: { action: 'update', module: 'volunteering' },
-    deleteVolunteering: { action: 'delete', module: 'volunteering' },
 
     createUser: { action: 'create', module: 'user' },
     readUser: { action: 'read', module: 'user' },
@@ -34,7 +19,7 @@ const resources = {
     updatePassword: { action: 'update', module: 'password' },
 };
 const individualRole = [
-    { ...resources.readEvent, isAble: 'true' },
+    { ...resources.readPost, isAble: 'true' },
     { ...resources.readProject, isAble: 'true' },
     { ...resources.readUser, isAble: 'true', case: 'own' },
     { ...resources.updateUser, isAble: 'true', case: 'own' },

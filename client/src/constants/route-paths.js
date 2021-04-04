@@ -83,12 +83,12 @@ export const getBasicInfoPageByUserType = (userType) => {
 // export const projectDetailsPage = '/project/details/';
 
 // POSTS
-export const postCreatePage = (postType) => `/user/${postType}/create`;
-export const postEditPage = (postType, postId) => `/user/${postType}/edit/${postId}`;
-export const postListByOrganizationPage = (postType) => `/user/${postType}/all`;
+export const postCreatePage = (postType) => `/${postType}/create`;
+export const postEditPage = (postType, postId) => `/${postType}/edit/${postId}`;
+export const postListByOrganizationPage = (postType) => `/${postType}/all`;
 export const postListPage = (postType) => `/${postType}/all`;
-export const postDetailsPage = (postType, postId) => `/user/${postType}/details/${postId}`;
-export const postManagePage = `/user/post/manage`;
+export const postDetailsPage = (postType, postId) => `/${postType}/details/${postId}`;
+export const postManagePage = `/post/manage`;
 export const postListPageByOrganizationAndPostType = (userId, postType) => `/organization/${userId}/${postType}/all`;
 // VOLUNTEERING
 // export const volunteeringCreatePage = '/user/volunteering/create';

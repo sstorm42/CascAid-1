@@ -2,7 +2,7 @@ import React from 'react';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import * as RoutePath from '../../constants/route-paths';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { Button, Badge } from 'react-bootstrap';
+import { Button, Badge, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 const libraries = ['places'];
 const mapContainerStyle = {
@@ -54,7 +54,6 @@ const AllOrganizationOnMap = (props) => {
             if (address.city) fullAddress += address.city + ', ';
             if (address.code) fullAddress += address.code + ', ';
             if (address.state) fullAddress += getStateByCountryAndCode(address.country, address.state) + ', ';
-            if (address.country) fullAddress += getCountryByCode(address.country);
         }
         return fullAddress;
     };
@@ -99,32 +98,51 @@ const AllOrganizationOnMap = (props) => {
                             setSelected(null);
                         }}
                     >
-                        <div>
-                            <h6>{selected.basicInfo.name}</h6>
-                            <label>
-                                Organization Type:{' '}
-                                {selected.organizationTypes.map((type, i) => {
-                                    return (
-                                        <Badge variant="primary" key={i}>
-                                            {type.label}
-                                        </Badge>
-                                    );
-                                    // return i !== 0 ? ', ' + type.label : type.label;
-                                })}
-                            </label>
+                        <Container>
+                            <Row>
+                                <Col>
+                                    <h6>{selected.basicInfo.name}</h6>
+                                </Col>
+                            </Row>
+                            {selected.organizationTypes && selected.organizationTypes.length > 0 && (
+                                <Row>
+                                    <Col>
+                                        {selected.organizationTypes.map((type, i) => {
+                                            return (
+                                                <Badge variant="primary" key={i} className="organization-type-badge">
+                                                    {type.label}
+                                                </Badge>
+                                            );
+                                            // return i !== 0 ? ', ' + type.label : type.label;
+                                        })}
+                                    </Col>
+                                </Row>
+                            )}
+                            {selected.impactAreas && selected.impactAreas.length > 0 && (
+                                <Row>
+                                    <Col>
+                                        {selected.impactAreas.map((type, i) => {
+                                            return (
+                                                <Badge key={i} className="impact-area-badge">
+                                                    {type.label}
+                                                </Badge>
+                                            );
+                                            // return i !== 0 ? ', ' + type.label : type.label;
+                                        })}
+                                    </Col>
+                                </Row>
+                            )}
                             <br />
-                            <label>
-                                Impact Areas:{' '}
-                                {selected.impactAreas.map((area, i) => {
-                                    // return i !== 0 ? ', ' + area.label : area.label;
-                                    return (
-                                        <Badge variant="primary" key={i}>
-                                            {area.label}
-                                        </Badge>
-                                    );
-                                })}
-                            </label>
-                            <label>Address: {addressMaker(selected.basicInfo.address)}</label>
+                            {selected.basicInfo.address && <AddressRender address={selected.basicInfo.address} />}
+                            {/* <Row>
+                                {/* <Col sm={3}>
+                                    <label>Address</label>
+                                </Col> */}
+                            {/*  <Col>
+                                    
+                                </Col>
+                            </Row> */}
+
                             {/* {pairsRender('Organization Type', selected.basicInfo.organizationTypes)} */}
                             <br />
                             <Button
@@ -136,11 +154,32 @@ const AllOrganizationOnMap = (props) => {
                             >
                                 Go to Page
                             </Button>
-                        </div>
+                        </Container>
                     </InfoWindow>
                 ) : null}
             </GoogleMap>
         </div>
     );
+};
+const AddressRender = ({ address }) => {
+    if (address) {
+        let line1 = '',
+            line2 = '';
+        if (address.street1) line1 += address.street1 + ', ';
+        if (address.street2) line1 += address.street2 + ', ';
+        if (address.city) line2 += address.city + ', ';
+        if (address.code) line2 += address.code + ', ';
+        if (address.state) line2 += getStateByCountryAndCode(address.country, address.state);
+        return (
+            <>
+                <Row>
+                    <Col>{line1} </Col>
+                </Row>
+                <Row>
+                    <Col>{line2} </Col>
+                </Row>
+            </>
+        );
+    } else return <></>;
 };
 export default AllOrganizationOnMap;

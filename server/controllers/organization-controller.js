@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Organization } = require('../models/organization-model');
+const { Individual } = require('../models/individual-user-model');
 const { saveImagesOnServer } = require('../utils/library');
 const ImpactAreaController = require('./impact-area-controller');
 const RESPONSES = require('../responses/organization-response');
@@ -367,4 +368,64 @@ exports.convertOrgUserId = async (req, res) => {
         res.status(200).send({ success: 'OK' });
     });
     // res.status(200).send({ success: 'OK' });
+};
+
+exports.getAllSuggestions = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
+        const individual = await Individual.findOne({ userId: userId });
+        const impactAreas = individual.involvement.impactAreas;
+        console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
+        const address = individual.basicInfo.address;
+        console.log('🚀 ~ file: organization-controller.js ~ line 381 ~ exports.getAllSuggestions= ~ address', address);
+
+        let match1 = {};
+        let match2 = {};
+        if (impactAreas && impactAreas.length > 0) {
+            match1['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
+        }
+        if (address) {
+            if (address.code) match2['address.code'] = { $regex: address.code, $options: 'i' };
+            // if (address.state) match['address.state'] = { $regex: address.state, $options: 'i' };
+            if (address.city) match2['address.city'] = { $regex: address.city, $options: 'i' };
+        }
+        const lookUps = [
+            {
+                $lookup: {
+                    from: 'organizationtypes',
+                    localField: 'basicInfo.organizationTypes',
+                    foreignField: '_id',
+                    as: 'organizationTypes',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'impactareas',
+                    localField: 'serviceInfo.impactAreas',
+                    foreignField: '_id',
+                    as: 'impactAreas',
+                },
+            },
+        ];
+        const project = {
+            _id: 1,
+            name: '$basicInfo.name',
+            profilePicture: '$basicInfo.profilePicture',
+            organizationTypes: 1,
+            impactAreas: 1,
+            description: '$basicInfo.description',
+            address: '$basicInfo.address',
+        };
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: { $or: [match1, match2] } }, ...lookUps, { $project: project });
+        const allOrganizations = await Organization.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: organization-controller.js ~ line 419 ~ exports.getAllSuggestions= ~ allOrganizations', allOrganizations);
+
+        if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
+        else return res.status(404).send(RESPONSES.OrganizationNotFound);
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ success: false, message: err.message });
+    }
 };

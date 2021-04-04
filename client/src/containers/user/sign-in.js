@@ -24,13 +24,16 @@ class SignIn extends Component {
         this.setState({ formSubmitted: true });
     };
     componentDidUpdate = (prevProps, prevState) => {
+        console.log(this.props.auth);
         if (this.state.formSubmitted && prevProps.auth !== this.props.auth) {
             if (this.props.auth) {
+                console.log('🚀 ~ file: sign-in.js ~ line 30 ~ SignIn ~ this.props.auth', this.props.auth);
                 if (this.props.auth.success && this.props.auth.isAuth) {
-                    authenticate(this.props.auth.user, this.props.auth.token);
+                    authenticate(this.props.auth);
                     NotificationManager.success('Welcome to CascAid', 'Success');
                     this.props.history.push(RoutePath.homePage);
                 } else if (this.props.auth.success === false && this.props.auth.isAuth === false) {
+                    console.log('🚀 ~ file: sign-in.js ~ line 34 ~ SignIn ~ this.props.auth', this.props.auth);
                     this.setState({
                         formSubmitted: false,
                         errorFlag: true,

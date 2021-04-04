@@ -89,13 +89,16 @@
     content: none;
 }
 .notification-bell {
-    border-radius: 16;
+    border-radius: 5;
     padding: 0px;
+    /* border: 1px solid gray; */
+    padding-left: 5px;
 }
 .notification-count {
     top: -10px !important;
     left: -10px;
     margin-right: -10px;
+    font-size: 10px;
 }
 .notification-row {
     padding-left: 0px;

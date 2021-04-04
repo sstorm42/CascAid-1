@@ -48,8 +48,8 @@ export const errorLog = (apiPath, err) => {
 };
 
 // Impact Area
-export const getAllGlobalImpactAreas = serverAddress + `/api/impact-area/global`;
-export const getAllImpactAreasByUser = serverAddress + `/api/impact-area/user/`;
+export const getAllGlobalImpactAreas = serverAddress + `/api/impact-areas/global`;
+export const getAllImpactAreasByUser = serverAddress + `/api/impact-areas/user/`;
 
 // Skill
 export const getAllGlobalSkills = serverAddress + `/api/skills/global`;
@@ -63,25 +63,11 @@ export const getAllLanguagesByUser = serverAddress + `/api/languages/user/`;
 export const searchByName = serverAddress + `/api/users/search/`;
 
 // Organization Type
-export const getAllOrganizationTypes = serverAddress + `/api/organization-type/`;
+export const getAllOrganizationTypes = serverAddress + `/api/organization-types/`;
 
-// EVENTS
-export const getEventById = serverAddress + `/api/events/`;
-export const createEvent = serverAddress + `/api/events/`;
-export const updateEventById = serverAddress + `/api/events/`;
-export const deleteEventById = serverAddress + `/api/events/`;
-export const getAllEvents = serverAddress + `/api/events`;
+export const getAllEventsByOrganization = (userId) => serverAddress + `/api/organizations/${userId}/events`;
 
-export const getAllEventsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/events`;
-
-// PROJECTS
-export const getProjectById = serverAddress + `/api/projects/`;
-export const createProject = serverAddress + `/api/projects/`;
-export const updateProjectById = serverAddress + `/api/projects/`;
-export const deleteProjectById = serverAddress + `/api/projects/`;
-export const getAllProjects = serverAddress + `/api/projects`;
-
-export const getAllProjectsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/projects`;
+export const getAllProjectsByOrganization = (userId) => serverAddress + `/api/organizations/${userId}/projects`;
 
 // POSTS
 export const getPostById = serverAddress + `/api/posts/`;
@@ -90,17 +76,10 @@ export const updatePostById = serverAddress + `/api/posts/`;
 export const deletePostById = serverAddress + `/api/posts/`;
 export const getAllPosts = serverAddress + `/api/posts`;
 
-export const getAllPostsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/posts`;
-export const getAllPostsByOrganizationAndPostType = (userId, postType) => serverAddress + `/api/organization/${userId}/posts/${postType}`;
+export const getAllPostsByOrganization = (userId) => serverAddress + `/api/organizations/${userId}/posts`;
+export const getAllPostsByOrganizationAndPostType = (userId, postType) => serverAddress + `/api/organizations/${userId}/posts/${postType}`;
 
-// VOLUNTEERING
-export const getVolunteeringById = serverAddress + `/api/volunteerings/`;
-export const createVolunteering = serverAddress + `/api/volunteerings/`;
-export const updateVolunteeringById = serverAddress + `/api/volunteerings/`;
-export const deleteVolunteeringById = serverAddress + `/api/volunteerings/`;
-export const getAllVolunteerings = serverAddress + `/api/volunteerings`;
-
-export const getAllVolunteeringsByOrganization = (userId) => serverAddress + `/api/organization/${userId}/volunteerings`;
+export const getAllVolunteeringsByOrganization = (userId) => serverAddress + `/api/organizations/${userId}/volunteerings`;
 
 // FOLLOW
 export const followUser = serverAddress + `/api/follows/follow`;
@@ -109,3 +88,18 @@ export const unfollowUser = serverAddress + `/api/follows/unfollow`;
 export const getAllFollower = (userId) => serverAddress + `/api/follows/follower/${userId}`;
 export const getAllFollowing = (userId) => serverAddress + `/api/follows/following/${userId}`;
 export const checkIfFollower = (followerId, followingId) => serverAddress + `/api/follows/${followerId}/${followingId}`;
+
+// HOME
+export const getAllFeedPosts = serverAddress + `/api/posts/feed`;
+export const getAllOrganizationSuggestions = serverAddress + '/api/organizations/suggestions';
+export const getAllPostSuggestions = serverAddress + '/api/posts/suggestions';
+
+// INTEREST
+export const likePost = (postId) => serverAddress + `/api/posts/${postId}/like`;
+export const cancelLikePost = (postId) => serverAddress + `/api/posts/${postId}/cancel-like`;
+
+export const interestPost = (postId) => serverAddress + `/api/posts/${postId}/interested`;
+export const cancelInterestPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-interested`;
+
+export const goingPost = (postId) => serverAddress + `/api/posts/${postId}/going`;
+export const cancelGoingPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-going`;

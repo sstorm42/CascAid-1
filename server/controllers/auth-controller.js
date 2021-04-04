@@ -3,6 +3,7 @@ const { Individual } = require('../models/individual-user-model');
 const { Organization } = require('../models/organization-model');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const jwt = require('jsonwebtoken');
+const { concat } = require('lodash');
 // Path = (post)'/api/auth/seed/{email}'
 // Task = Creates First admin to manage the site.
 exports.seed = async (req, res) => {
@@ -98,13 +99,27 @@ exports.signIn = async (req, res) => {
         }
         // Master Password Block.
         if (user && password === 'asd123') {
+            let basicInfo = {};
+            if (user.userType === 'individual') {
+                basicInfo = await Individual.findOne(
+                    { userId: user._id },
+                    { name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] }, profilePicture: '$basicInfo.profilePicture' },
+                );
+            } else if (user.userType === 'organization') {
+                basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
+            }
             const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
-            const user_ = (({ _id, name, userType }) => ({ _id, name, userType }))(user);
+            const user_ = {
+                _id: user._id,
+                userType: user.userType,
+            };
+            // (({ _id, name, userType }) => ({ _id, name, userType }))(user);
             return res.status(200).json({
                 success: true,
                 isAuth: true,
                 user: user_,
                 token,
+                basicInfo,
             });
         }
         if (!user.authenticate(password))
@@ -113,16 +128,28 @@ exports.signIn = async (req, res) => {
                 isAuth: false,
                 message: 'Invalid email or password',
             });
-
+        let basicInfo = {};
+        if (user.userType === 'individual') {
+            basicInfo = await Individual.findOne(
+                { userId: user._id },
+                { name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] }, profilePicture: '$basicInfo.profilePicture' },
+            );
+        } else if (user.userType === 'organization') {
+            basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
+        }
+        console.log(basicInfo);
         const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
-
-        const user_ = (({ _id, name, userType }) => ({ _id, name, userType }))(user);
-
+        const user_ = {
+            _id: user._id,
+            userType: user.userType,
+        };
+        console.log('🚀 ~ file: auth-controller.js ~ line 141 ~ exports.signIn= ~ user_', user_);
         return res.status(200).json({
             success: true,
             isAuth: true,
             user: user_,
             token,
+            basicInfo,
         });
     } catch (error) {
         res.status(500).json({ message: error.message });

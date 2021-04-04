@@ -15,6 +15,7 @@ const SignInForm = (props) => {
             <Row>
                 <Col></Col>
                 <Col md="6" className="sign-ing-form">
+                    {props.errorFlag && <div className="sign-in-error-message">{props.errorMessage}</div>}
                     <form onSubmit={props.handleSignInSubmit}>
                         <div className="center-text">
                             <h3>Sign In To CascAid</h3>

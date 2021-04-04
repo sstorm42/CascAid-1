@@ -5,13 +5,15 @@ import { Button, Badge, NavDropdown, Image, Row, Container, Col } from 'react-bo
 import * as RoutePath from '../../constants/route-paths';
 import moment from 'moment';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { BsBellFill } from 'react-icons/bs';
 const RenderBellIcon = () => {
     const count = 99;
 
     return (
-        <Button className="notification-bell">
-            {/* <BsBellFill />  */}
-            <Image src="http://localhost:3001/default-images/flag-icon.png" roundedCircle />
+        <Button size="lg" className="notification-bell">
+            <BsBellFill />
+            {/* <Image src="http://localhost:3001/default-images/flag-icon.png" roundedCircle /> */}
+
             <Badge className="notification-count" variant="dark">
                 {count}
             </Badge>

@@ -20,4 +20,5 @@ organization.get('/:userId/posts', OrganizationController.getAllPosts);
 organization.get('/:userId/posts/:postType', OrganizationController.getAllPostsByType);
 organization.post('/change-address', OrganizationController.changeAddress);
 organization.post('/convertOrgUserId', OrganizationController.convertOrgUserId);
+organization.get('/suggestions', allowIfLoggedIn, OrganizationController.getAllSuggestions);
 module.exports = organization;

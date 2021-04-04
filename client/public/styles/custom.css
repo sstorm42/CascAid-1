@@ -286,3 +286,28 @@ tr td:last-child {
     border: 1px solid black;
     border-radius: 3px;
 }
+.sign-in-error-message {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: #d8000c;
+    background-color: #ffbaba;
+    border-radius: 8px;
+}
+.link-name:hover {
+    color: cadetblue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.filled-like-btn {
+    background-color: #a1d4c6;
+    color: white;
+}
+.filled-going-btn {
+    background-color: #9ad6e2;
+    color: white;
+}
+.filled-interest-btn {
+    background-color: #f9cbcd;
+    color: white;
+}

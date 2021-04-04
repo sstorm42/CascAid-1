@@ -1,5 +1,8 @@
 const { Post } = require('../models/post-model');
 const { Organization } = require('../models/organization-model');
+const { Individual } = require('../models/individual-user-model');
+const { Follow } = require('../models/follow-model');
+const { Interest } = require('../models/interest-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
 const RESPONSES = require('../responses/post-response');
 const mongoose = require('mongoose');
@@ -8,7 +11,7 @@ const SkillController = require('./skill-controller');
 exports.createOne = async (req, res) => {
     try {
         let post = req.body;
-        console.log(post);
+
         post.images = saveImageSchemaOnServer(post.images);
         if (post.skills && post.skills.length > 0) {
             const { success, newSkills } = await SkillController.convertObjectToId(post.creatorId, 'organization', post.skills);
@@ -37,9 +40,9 @@ exports.createOne = async (req, res) => {
 exports.getOne = async (req, res) => {
     try {
         const postId = req.params.postId;
+
         const post = await Post.findById(postId).populate('impactAreas', { _id: 1, label: 1, value: 1 }).populate('skills', { _id: 1, label: 1, value: 1 });
         if (post) {
-            console.log(post);
             const organizations = await Organization.find({ userId: post.creatorId }, { basicInfo: 1, userId: 1 });
             if (organizations && organizations.length > 0) res.status(200).send({ success: true, message: 'Post found', post, organization: organizations[0] });
             else res.status(200).send({ success: false, post });
@@ -53,7 +56,6 @@ exports.getOne = async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
-        console.log(req.query);
         const title = req.query.title ? JSON.parse(req.query.title) : '';
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
         const fullAddress = req.query.fullAddress ? JSON.parse(req.query.fullAddress) : '';
@@ -88,7 +90,7 @@ exports.getAll = async (req, res) => {
                 endDate = new Date(endDate).setHours(0, 0, 0, 0);
                 endDate = new Date(endDate).toJSON();
             }
-            console.log(startDate, endDate);
+
             dateCondition = {
                 $or: [
                     { $and: [{ startDateTime: { $gte: new Date(startDate) } }, { endDateTime: { $lte: new Date(endDate) } }] },
@@ -99,7 +101,7 @@ exports.getAll = async (req, res) => {
         }
 
         match['isActive'] = isActive;
-        console.log('Match', dateCondition);
+
         let aggregateOptions = [];
         // const lookUp1 = {
         //     from: 'organizations',
@@ -173,7 +175,7 @@ exports.updateOne = async (req, res) => {
             else return res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
         }
         if (post.keywords) post.keywords = post.keywords.map((key) => key.label);
-        console.log(post);
+
         const updatedPost = await Post.findOneAndUpdate(
             {
                 _id: postId,
@@ -203,3 +205,176 @@ exports.deleteOne = async (req, res) => {
         res.status(500).send({ success: false, message: err.message });
     }
 };
+exports.getAllFeeds = async (req, res) => {
+    try {
+        const userId = req.user._id;
+
+        const allFollowingOrganizations = await Follow.find({ followerId: userId });
+        let match = {};
+        match['creatorId'] = { $in: allFollowingOrganizations.map((follow) => follow.followingId) };
+        const lookUps = [
+            {
+                $lookup: {
+                    from: 'organizations',
+                    localField: 'creatorId',
+                    foreignField: 'userId',
+                    as: 'organization',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'impactareas',
+                    localField: 'impactAreas',
+                    foreignField: '_id',
+                    as: 'impactAreaNames',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'skills',
+                    localField: 'skills',
+                    foreignField: '_id',
+                    as: 'skillNames',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'interests',
+                    localField: '_id',
+                    foreignField: 'postId',
+                    as: 'interests',
+                },
+            },
+        ];
+        const project = {
+            _id: 1,
+            title: 1,
+            images: 1,
+            description: 1,
+            organizationName: '$organization.basicInfo.name',
+            organizationProfilePicture: '$organization.basicInfo.profilePicture',
+            creatorId: 1,
+            postType: 1,
+            impactAreaNames: 1,
+            skillNames: 1,
+            address: 1,
+            createdAt: 1,
+            interests: 1,
+        };
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: match }, ...lookUps, { $sort: { createdAt: -1 } }, { $project: project });
+
+        const allPosts = await Post.aggregate(aggregateOptions);
+        // const allPosts = await Post.find({ creatorId: { $in: allFollowingOrganizations.map((follow) => follow.followingId) } });
+
+        res.status(200).send({ success: true, message: 'Posts for home page', allPosts });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+exports.getAllSuggestions = async (req, res) => {
+    try {
+        res.status(200).send({ success: true, message: 'All Post Suggestions' });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.like = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { liked: true, likedAt: new Date().toJSON() },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) return res.status(200).send({ success: true, message: 'Like done', liked: true });
+        else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
+exports.cancelLike = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { liked: false },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) return res.status(200).send({ success: true, message: 'Like done', liked: true });
+        else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
+
+exports.interested = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { interested: true, interestedAt: new Date().toJSON() },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) return res.status(200).send({ success: true, message: 'Interest done', interested: true });
+        else return res.status(200).send({ success: false, message: 'Interest can not be done', interested: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
+exports.cancelInterested = async (req, res) => {};
+
+exports.going = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { going: true, goingAt: new Date().toJSON() },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) return res.status(200).send({ success: true, message: 'Going done', going: true });
+        else return res.status(200).send({ success: false, message: 'Going can not be done', going: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
+exports.cancelGoing = async (req, res) => {};
+
+// exports.countLikes = async (req, res) => {};
+// exports.countInterests = async (req, res) => {};
+// exports.countGoings = async (req, res) => {};
+
+// exports.getAllLikers = async (req, res) => {};
+// exports.getAllInteresteds = async (req, res) => {};
+// exports.getAllGoers = async (req, res) => {};
