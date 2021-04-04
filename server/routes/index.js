@@ -13,22 +13,22 @@ const project = require('./project-route');
 const post = require('./post-route');
 const volunteering = require('./volunteering-route');
 const skill = require('./skill-route');
-
+const home = require('./home-route');
 routes.use('/users', user);
 routes.use('/auth', auth);
-routes.use('/individual', individual);
-routes.use('/organization', organization);
-routes.use('/impact-area', impactArea);
-routes.use('/organization-type', organizationType);
-routes.use('/events', event);
+routes.use('/individuals', individual);
+routes.use('/organizations', organization);
+routes.use('/impact-areas', impactArea);
+routes.use('/organization-types', organizationType);
+// routes.use('/events', event);
 routes.use('/test', test);
 routes.use('/languages', language);
 routes.use('/follows', follow);
-routes.use('/projects', project);
+// routes.use('/projects', project);
 routes.use('/posts', post);
-routes.use('/volunteerings', volunteering);
+// routes.use('/volunteerings', volunteering);
 routes.use('/skills', skill);
-
+routes.use('/home', home);
 const connected = {
     success: true,
     version: '1.0.0',

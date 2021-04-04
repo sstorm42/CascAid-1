@@ -15,6 +15,7 @@ exports.getBasicInfo = async (req, res) => {
         if (!individual) return res.status(404).send(RESPONSES.IndividualNotFound);
         else res.status(200).send({ ...RESPONSES.IndividualFound, basicInfo: individual.basicInfo ? individual.basicInfo : {} });
     } catch (err) {
+        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -134,7 +135,9 @@ exports.getAll = async (req, res) => {
 exports.getPublicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const individual = await Individual.findOne({ userId }).populate('involvement.impactAreas', { _id: 1, label: 1, value: 1 });
+        const individual = await Individual.findOne({ userId })
+            .populate('involvement.impactAreas', { _id: 1, label: 1, value: 1 })
+            .populate('basicInfo.skills', { _id: 1, label: 1, value: 1 });
         if (individual._id) return res.status(200).send({ ...RESPONSES.IndividualFound, individual });
         else {
             // const basicInfo = individual.basicInfo.toObject();

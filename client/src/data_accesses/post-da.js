@@ -53,5 +53,57 @@ class PostDA {
         //     .then((response) => response.data)
         //     .catch((err) => err.response.data);
     };
+    get_home_feed = () => {
+        return axios
+            .get(APIPaths.getAllFeedPosts, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_all_suggestions = () => {
+        return axios
+            .get(APIPaths.getAllPostSuggestions, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+
+    like_post = (postId) => {
+        console.log(APIPaths.apiConfig());
+        return axios
+            .post(APIPaths.likePost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    cancel_like_post = (postId) => {
+        return axios
+            .post(APIPaths.cancelLikePost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+
+    interested_post = (postId) => {
+        return axios
+            .post(APIPaths.interestPost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    cancel_interested_post = (postId) => {
+        return axios
+            .post(APIPaths.cancelInterestPost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+
+    going_post = (postId) => {
+        return axios
+            .post(APIPaths.goingPost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    cancel_going_post = (postId) => {
+        return axios
+            .post(APIPaths.cancelGoingPost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new PostDA();

@@ -153,10 +153,10 @@ class DashboardLayout extends Component {
         console.log(this.props.auth);
         const isAuth = this.props.auth.isAuth;
         const user = this.props.auth.user;
-
+        const basicInfo = this.props.auth.basicInfo;
         return (
             <div>
-                <Header isAuth={isAuth || false} user={user || {}} />
+                <Header isAuth={isAuth || false} user={user || {}} basicInfo={basicInfo || {}} />
                 <div className="full-page-div">
                     <div>
                         {user && user.userType === 'individual' && this.individualSideNav()}

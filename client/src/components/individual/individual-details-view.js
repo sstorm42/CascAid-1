@@ -69,7 +69,7 @@ const DetailsView = (props) => {
         console.log('🚀 ~ file: individual-details-view.js ~ line 63 ~ DetailsView ~ basicInfo', basicInfo);
         const involvement = individual.involvement;
         const impactAreas = involvement.impactAreas;
-
+        const skills = basicInfo.skills;
         return (
             <Container>
                 <Row>
@@ -80,10 +80,10 @@ const DetailsView = (props) => {
                         <h3>{basicInfo.firstName + ' ' + basicInfo.lastName}</h3>
                         {/* {infoRender('Phone', basicInfo.phone)} */}
                         {infoRender('Kids', basicInfo.kids)}
-                        {infoRender('Date Of Birth', moment(basicInfo.dateOfBirth).format('LL'))}
+                        {/* {infoRender('Date Of Birth', moment(basicInfo.dateOfBirth).format('LL'))} */}
                         {/* {tagsRender('Race', getRacesByValues(basicInfo.races))} */}
                         {/* {infoRender('Gender', getGenderByValue(basicInfo.gender))} */}
-                        {tagsRender('Language Fluency', getLanguagesByValues(basicInfo.languages))}
+                        {/* {tagsRender('Language Fluency', getLanguagesByValues(basicInfo.languages))} */}
                         <br />
                         {infoRender('Address', addressMaker(basicInfo.address))}
                         <div style={{ height: 25 }} />
@@ -91,7 +91,7 @@ const DetailsView = (props) => {
                         <div style={{ height: 25 }} />
                         {infoRender('About Me', involvement.communityInvolvement)}
                         {tagsRender('Impact Area', impactAreas)}
-
+                        {tagsRender('Skill', skills)}
                         <div style={{ height: 25 }} />
                     </Col>
                 </Row>

@@ -100,5 +100,14 @@ class OrganizationDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_all_suggestions = () => {
+        return axios
+            .get(APIPaths.getAllOrganizationSuggestions, APIPaths.apiConfig())
+            .then((response) => {
+                console.log(response);
+                return response.data;
+            })
+            .catch((err) => err.response.data);
+    };
 }
 export default new OrganizationDA();

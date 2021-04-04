@@ -21,6 +21,7 @@ import * as RoutePath from '../../constants/route-paths';
 import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
 const DisplayPost = (props) => {
     const post = props.post;
+    const userId = props.userId;
     const organization = props.organization;
     const fields = postTypeFields[post.postType];
     if (post && post._id && organization) {
@@ -32,6 +33,22 @@ const DisplayPost = (props) => {
                 <Row>
                     <Col></Col>
                     <Col md="10" className="parent-page">
+                        {post.creatorId === userId && (
+                            <Row>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        variant="outline-info"
+                                        onClick={() => {
+                                            props.handleGotoManagePosts();
+                                        }}
+                                    >
+                                        Manage Posts
+                                    </Button>
+                                    <hr />
+                                </Col>
+                            </Row>
+                        )}
                         {post.postType !== 'general' && (
                             <Row>
                                 <Col>
@@ -92,7 +109,7 @@ const DisplayPost = (props) => {
                         {fields.topNeed && post.topNeed && (
                             <>
                                 <Row>
-                                    <Col>{BooleanRender('Top Needed', post.topNeed)}</Col>
+                                    <Col>{BooleanRender('Top Need', post.topNeed)}</Col>
                                 </Row>
                                 <hr />
                             </>
@@ -113,7 +130,7 @@ const DisplayPost = (props) => {
                             <Col>{ImageAndDescriptionRender(post.images)}</Col>
                         </Row>
                         <hr />
-                        {fields.address && (
+                        {fields.address && post.address && (
                             <>
                                 <Row>
                                     <Col>{InfoRender('Full Address', post.address.fullAddress)}</Col>

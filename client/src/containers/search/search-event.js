@@ -12,6 +12,7 @@ import Pagination from 'react-js-pagination';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
 import FilterEvent from '../../components/search/filter-event';
 import { allSearchablePostTypes } from '../../constants/post-types';
+import { postDetailsPage } from '../../constants/route-paths';
 const SearchEvent = (props) => {
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
@@ -63,7 +64,7 @@ const SearchEvent = (props) => {
         setActivePage(1);
     };
     const gotoPostDetails = (postType, postId) => {
-        props.history.push(`/user/${postType}/details/${postId}`);
+        props.history.push(postDetailsPage(postType, postId));
     };
     useEffect(() => {
         const getInitialInfo = () => {

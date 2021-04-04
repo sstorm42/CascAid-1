@@ -6,12 +6,14 @@ import { followUser, unfollowUser, checkIfFollower } from '../../actions/follow-
 import SideSubMenu from '../../components/organization/organization-sub-menu';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
+import PostTypeMenu from '../../components/organization/organization-post-menu';
+import { postDetailsPage } from '../../constants/route-paths';
 const SearchEvent = (props) => {
     const [loading, setLoading] = useState(false);
     const [follows, setFollows] = useState(false);
 
     const gotoPostDetails = (postType, postId) => {
-        props.history.push(`/user/${postType}/details/${postId}`);
+        props.history.push(postDetailsPage(postType, postId));
     };
     useEffect(() => {
         const getInitialInfo = () => {
@@ -91,6 +93,8 @@ const SearchEvent = (props) => {
                             />
                         </Col>
                         <Col sm="9" className="left-border">
+                            <PostTypeMenu selected={props.match.params.postType} userId={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.organization.userId : ''} />
+                            <hr />
                             <EventListView allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []} gotoPostDetails={gotoPostDetails} />
                         </Col>
                     </Row>

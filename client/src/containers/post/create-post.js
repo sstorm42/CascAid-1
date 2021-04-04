@@ -17,6 +17,7 @@ const CreatePost = (props) => {
     const [images, setImages] = useState([]);
     const [requiredItems, setRequiredItems] = useState([]);
     const [editMode, setEditMode] = useState(false);
+    const [isActive, setIsActive] = useState(true);
     const [location, setLocation] = useState({
         latitude: 0,
         longitude: 0,
@@ -56,6 +57,7 @@ const CreatePost = (props) => {
     const handleGoToManagePosts = () => {
         props.history.push(RoutePaths.postManagePage);
     };
+
     const onSubmit = (values) => {
         let items = [];
         if (requiredItems && requiredItems.length > 0) {
@@ -72,7 +74,9 @@ const CreatePost = (props) => {
                 latitude: location.latitude,
                 longitude: location.longitude,
             },
+            isActive: isActive,
         };
+        console.log(post);
         setLoading(true);
         if (editMode) {
             props.dispatch(updatePostById(props.match.params.postId, post));
@@ -155,7 +159,10 @@ const CreatePost = (props) => {
         }
     };
     const handleAddMineImpactAreas = () => {
-        props.change('impactAreas', props.getServiceInfoResponse.serviceInfo.impactAreas);
+        console.log(props.getServiceInfoResponse);
+        if (props.getServiceInfoResponse.success && props.getServiceInfoResponse.serviceInfo.impactAreas) {
+            props.change('impactAreas', props.getServiceInfoResponse.serviceInfo.impactAreas);
+        } else props.change('impactAreas', []);
     };
     const handleAddItem = () => {
         const requiredItems_ = requiredItems;
@@ -167,7 +174,6 @@ const CreatePost = (props) => {
         setRequiredItems([...requiredItems_]);
     };
     useEffect(() => {
-        console.log(props.match);
         const getInitialInfo = (postId) => {
             setLoading(true);
             props.dispatch(getPostById(postId));
@@ -180,7 +186,7 @@ const CreatePost = (props) => {
             props.dispatch(getAllSkillsByUser(user._id));
             props.dispatch(getServiceInfo(user._id));
             const url = window.location.pathname;
-            if (url.split('/')[3] === 'edit') {
+            if (url.split('/')[2] === 'edit') {
                 setEditMode(true);
                 getInitialInfo(props.match.params.postId);
             } else {
@@ -235,6 +241,7 @@ const CreatePost = (props) => {
                 handleItemDelete={handleItemDelete}
                 handleItemPosition={handleItemPosition}
                 requiredItems={requiredItems}
+                setIsActive={setIsActive}
             />
         );
 };
@@ -249,11 +256,13 @@ const mapStateToProps = (state) => {
     let initialValues = {};
     if (getPostResponse.success) {
         initialValues = getPostResponse.post;
-        if (initialValues.keywords) {
-            initialValues.keywords = initialValues.keywords.map((area) => {
-                return { value: area, label: area };
+        if (initialValues.keywords && initialValues.keywords.length > 0 && typeof initialValues.keywords[0] === 'string') {
+            initialValues.keywords = initialValues.keywords.map((word) => {
+                console.log(word);
+                return { value: word, label: word };
             });
         }
+        console.log(initialValues);
     }
     return {
         getImpactAreaResponse,

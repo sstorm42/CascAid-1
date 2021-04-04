@@ -119,7 +119,7 @@ const PostForm = (props) => {
                         <br />
                         {fields.address && (
                             <>
-                                <Field name="address.fullAddress" type="text" component={InputRender} label="Full Address" placeholder="House, Road, Area, Sector, ZIP, City, State, Country..." />
+                                {/* <Field name="address.fullAddress" type="text" component={InputRender} label="Full Address" placeholder="House, Road, Area, Sector, ZIP, City, State, Country..." /> */}
                                 <Row>
                                     <Col sm={4}>Location</Col>
                                     <Col sm={8}>
@@ -128,13 +128,24 @@ const PostForm = (props) => {
                                 </Row>
                             </>
                         )}
-                        {fields.isActive && <Field name="isActive" type="checkbox" component={CheckBoxRender} label="Publish/Active" col1={4} col2={8} />}
+                        {/* {fields.isActive && <Field name="isActive" type="checkbox" component={CheckBoxRender} label="Publish/Active" col1={4} col2={8} />} */}
                         <div style={{ height: 50 }} />
                         {/* Buttons */}
                         <Row>
                             <Col>
-                                <Button className="primary" size="sm" type="submit">
-                                    {editMode ? 'Update' : 'Save'}
+                                <Button
+                                    variant="warning"
+                                    size="sm"
+                                    type="submit"
+                                    onClick={() => {
+                                        props.setIsActive(false);
+                                    }}
+                                >
+                                    Save as Draft
+                                </Button>
+                                &nbsp;
+                                <Button variant="primary" size="sm" type="submit">
+                                    {editMode ? 'Update and Publish' : 'Save and Publish'}
                                 </Button>
                             </Col>
                         </Row>
