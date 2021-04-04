@@ -373,12 +373,22 @@ exports.convertOrgUserId = async (req, res) => {
 exports.getAllSuggestions = async (req, res) => {
     try {
         const userId = req.user._id;
-        console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
-        const individual = await Individual.findOne({ userId: userId });
-        const impactAreas = individual.involvement.impactAreas;
-        console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
-        const address = individual.basicInfo.address;
-        console.log('🚀 ~ file: organization-controller.js ~ line 381 ~ exports.getAllSuggestions= ~ address', address);
+        const userType = req.user.userType;
+        let impactAreas = [];
+        let address = {};
+        if (userType === 'individual') {
+            console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
+            const individual = await Individual.findOne({ userId: userId });
+            impactAreas = individual.involvement.impactAreas;
+            console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
+            address = individual.basicInfo.address;
+        } else if (userType === 'organization') {
+            console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
+            const organization = await Organization.findOne({ userId: userId });
+            impactAreas = organization.serviceInfo.impactAreas;
+            console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
+            address = organization.basicInfo.address;
+        }
 
         let match1 = {};
         let match2 = {};
