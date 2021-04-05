@@ -15,7 +15,13 @@ const Header = (props) => {
         // const username = props.user.name;
         // const userId = props.user._id;
         const basicInfo = props.basicInfo;
-        const name = basicInfo.name || 'USER';
+        let name = '';
+        if (props.user.userType === 'individual') {
+            name = basicInfo.firstName + ' ' + basicInfo.lastName || 'USER';
+        } else if (props.user.userType === 'organization') {
+            name = basicInfo.name || 'USER';
+        }
+
         let profilePicture = '';
         if (props.user.userType === 'individual') {
             profilePicture = basicInfo.profilePicture || defaultIndividualProfilePicture;

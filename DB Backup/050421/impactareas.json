@@ -1,0 +1,562 @@
+[{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37ae"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "animal-welfare",
+  "label": "Animal Welfare",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.260Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.260Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37af"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "arts",
+  "label": "Arts",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.403Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.403Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b0"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "children",
+  "label": "Children",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.407Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.407Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b1"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "civil-rights",
+  "label": "Civil Rights",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.411Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.411Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b2"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "community-development",
+  "label": "Community Development",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.415Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.415Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b3"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "crime-and-public-safety",
+  "label": "Crime and Public Safety",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.420Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.420Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b4"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "culture",
+  "label": "Culture",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.423Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.423Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b5"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "disabilities",
+  "label": "Disabilities",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.427Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.427Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b6"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "economic-development",
+  "label": "Economic Development",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.431Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.431Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b7"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "education",
+  "label": "Education",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.434Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.434Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b8"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "elderly",
+  "label": "Elderly",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.437Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37b9"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "food-and-hunger",
+  "label": "Food and Hunger",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.440Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.440Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37ba"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "healthcare",
+  "label": "Healthcare",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.445Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.445Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37bb"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "history",
+  "label": "History",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.449Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.449Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37bc"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "homelessness",
+  "label": "Homelessness",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.452Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.452Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37bd"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "housing",
+  "label": "Housing",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.455Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.455Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37be"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "human-services",
+  "label": "Human Services",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.458Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.458Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37bf"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "immigrants-and-refugees",
+  "label": "Immigrants and Refugees",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.461Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.461Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c0"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "law-and-policy",
+  "label": "Law and Policy",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.465Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.465Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c1"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "mental-health",
+  "label": "Mental Health",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.468Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.468Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c2"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "parks-and-open-spaces",
+  "label": "Parks and Open Spaces",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.471Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.471Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c3"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "poverty",
+  "label": "Poverty",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.474Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c4"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "public-health",
+  "label": "Public Health",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.477Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.477Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c5"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "racial-justice",
+  "label": "Racial Justice",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.481Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.481Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c6"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "religion",
+  "label": "Religion",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.484Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.484Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c7"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "sports-and-recreation",
+  "label": "Sports and Recreation",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.487Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.487Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c8"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "women-and-gender-rights",
+  "label": "Women and Gender Rights",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.490Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.490Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37c9"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "workforce-development",
+  "label": "Workforce Development",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.493Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.493Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37ca"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "environment",
+  "label": "Environment",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.496Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.496Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37cb"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "veterans",
+  "label": "Veterans",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.500Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.500Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365a9588a0b357534e37cc"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "lgbtq",
+  "label": "LGBTQ",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-02-24T13:54:29.503Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:54:29.503Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6038374e923a7c931e20c8bd"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "journalism",
+  "label": "journalism",
+  "createdBy": "organization",
+  "creatorId": "60382bd9923a7c931e20c89d",
+  "createdAt": {
+    "$date": "2021-02-25T23:48:30.430Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-25T23:48:30.430Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605f4fb19182eb7adfbcc4fb"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "science",
+  "label": "science",
+  "createdBy": "organization",
+  "creatorId": "60365ac688a0b357534e383c",
+  "createdAt": {
+    "$date": "2021-03-27T15:30:57.246Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-27T15:30:57.246Z"
+  },
+  "__v": 0
+}]
