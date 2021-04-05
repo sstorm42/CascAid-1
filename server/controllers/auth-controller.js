@@ -103,11 +103,12 @@ exports.signIn = async (req, res) => {
             if (user.userType === 'individual') {
                 basicInfo = await Individual.findOne(
                     { userId: user._id },
-                    { name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] }, profilePicture: '$basicInfo.profilePicture' },
+                    { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
                 );
             } else if (user.userType === 'organization') {
                 basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
             }
+            console.log(basicInfo);
             const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
             const user_ = {
                 _id: user._id,
@@ -132,7 +133,7 @@ exports.signIn = async (req, res) => {
         if (user.userType === 'individual') {
             basicInfo = await Individual.findOne(
                 { userId: user._id },
-                { name: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] }, profilePicture: '$basicInfo.profilePicture' },
+                { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
             );
         } else if (user.userType === 'organization') {
             basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });

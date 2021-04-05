@@ -1,0 +1,545 @@
+[{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1923"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "accounting",
+  "label": "Accounting",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.028Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.028Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1924"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "advocacy",
+  "label": "Advocacy",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.048Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.048Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1925"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "bilingual",
+  "label": "Bilingual",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.051Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.051Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1926"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "business",
+  "label": "Business",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.055Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.055Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1927"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "corporate-relations",
+  "label": "Corporate Relations",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.058Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.058Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1928"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "community-connections",
+  "label": "Community Connections",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.061Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.061Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1929"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "community-organizing",
+  "label": "Community Organizing",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.065Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.065Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192a"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "data-analytics",
+  "label": "Data Analytics",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.069Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.069Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192b"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "education-&-after-school-programs",
+  "label": "Education & After School Programs",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.073Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.073Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192c"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "event-planning",
+  "label": "Event Planning",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.079Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.079Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192d"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "finance",
+  "label": "Finance",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.085Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.085Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192e"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "fund-raising",
+  "label": "Fund Raising",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.089Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.089Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d192f"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "government-relations",
+  "label": "Government Relations",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.092Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.092Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1930"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "grant-writing",
+  "label": "Grant Writing",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.095Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.095Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1931"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "graphic-design",
+  "label": "Graphic Design",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.098Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.098Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1932"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "health-care/public-health",
+  "label": "Health Care/Public Health",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.101Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.101Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1933"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "human-resource-management",
+  "label": "Human Resource Management",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.104Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.104Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1934"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "information-technology",
+  "label": "Information Technology",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.107Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.107Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1935"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "legal",
+  "label": "Legal",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.110Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.110Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1936"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "marketing",
+  "label": "Marketing",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.114Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.114Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1937"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "media-&-public-relations",
+  "label": "Media & Public Relations",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.117Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.117Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1938"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "non-profit-management",
+  "label": "Non-Profit Management",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.120Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.120Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1939"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "policy",
+  "label": "Policy",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.125Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.125Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193a"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "program-management",
+  "label": "Program Management",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.128Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.128Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193b"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "real-estate",
+  "label": "Real Estate",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.130Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.130Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193c"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "research-&-evaluation",
+  "label": "Research & Evaluation",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.133Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.133Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193d"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "sales",
+  "label": "Sales",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.137Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.137Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193e"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "social-services",
+  "label": "Social Services",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.139Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.139Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d193f"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "strategic-planning",
+  "label": "Strategic Planning",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.142Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.142Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1940"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "web-&-social-media",
+  "label": "Web & Social Media",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.144Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.144Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e14bf5b137f26ac1d1941"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "writing",
+  "label": "Writing",
+  "createdBy": "admin",
+  "creatorId": "000000000000000000000000",
+  "createdAt": {
+    "$date": "2021-03-14T13:50:55.148Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T13:50:55.148Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "604e8ae25b137f26ac1d194f"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "search-engine-optmization",
+  "label": "Search Engine Optmization",
+  "createdBy": "organization",
+  "creatorId": "60365ac688a0b357534e37ee",
+  "createdAt": {
+    "$date": "2021-03-14T22:14:58.757Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T22:14:58.757Z"
+  },
+  "__v": 0
+}]

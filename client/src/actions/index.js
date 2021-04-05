@@ -73,6 +73,7 @@ export const userSignIn = (user) => {
 export const userSignOut = () => {
     removeLocalStorage('token');
     removeLocalStorage('user');
+    removeLocalStorage('basicInfo');
     return { type: Types.USER_SIGN_OUT, payload: {} };
 };
 

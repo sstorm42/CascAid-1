@@ -1,0 +1,422 @@
+[{
+  "_id": {
+    "$oid": "604e8c555b137f26ac1d1955"
+  },
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37b2"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37b6"
+    }
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "Thank You for Attending West Philly Summer Jam!",
+  "description": "With over 1,000 community members and two dozen community organizations in attendance, West Philly Summer Jam was a huge success!  Hope you all had fun and got the chance to check out some local businesses on the commercial corridor!",
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e37ee"
+  },
+  "images": [],
+  "createdAt": {
+    "$date": "2021-03-14T22:21:09.136Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-14T22:21:09.136Z"
+  },
+  "__v": 0,
+  "postType": "general"
+},{
+  "_id": {
+    "$oid": "6057604078c9197aafd97500"
+  },
+  "postType": "event",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37b7"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37ca"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37c9"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37af"
+    }
+  ],
+  "skills": [],
+  "topNeed": false,
+  "petitionLink": "",
+  "keywords": [
+    "asd",
+    "fd",
+    "gf",
+    "qwe"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "First test event",
+  "startDateTime": {
+    "$date": "2021-03-06T14:00:00Z"
+  },
+  "endDateTime": {
+    "$date": "2021-03-27T15:30:00Z"
+  },
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum elit nulla, auctor imperdiet justo elementum in. Vestibulum tempor mauris ac lacus tincidunt dictum. Nunc hendrerit pretium velit eget lobortis. Sed lacinia magna et metus venenatis, a sollicitudin est sagittis. Suspendisse quis malesuada nunc, vitae aliquet metus. Phasellus vel porttitor tortor. Nunc ac nisl et libero venenatis maximus. Pellentesque at ex orci.\n\nDuis commodo scelerisque convallis. Nullam et lacinia nibh, ac dapibus diam. Donec id odio sodales, suscipit lacus et, feugiat mi. Suspendisse potenti. Nullam sit amet auctor velit. Aliquam porttitor quis tortor eget dictum. Maecenas tincidunt urna eros, at vehicula ligula porta eu. Sed sem turpis, iaculis eu laoreet quis, venenatis blandit magna. Morbi luctus ornare urna, vitae ultrices dolor luctus eget. Proin non felis vitae tellus convallis dignissim vitae a leo. In eu fermentum mauris, at semper nibh. Integer rutrum arcu at vehicula mollis. In consequat pulvinar scelerisque. Morbi sit amet tortor sed purus lacinia ultricies eget non nulla.",
+  "address": {
+    "_id": {
+      "$oid": "6057604078c9197aafd97501"
+    },
+    "fullAddress": "Policlinico di Bari Piazza Giulio Cesare, 11 70124 Bari BA Italy",
+    "latitude": 41.11889774743287,
+    "longitude": 16.851008646190166,
+    "createdAt": {
+      "$date": "2021-03-21T15:03:28.028Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-21T15:03:28.028Z"
+    }
+  },
+  "creatorId": {
+    "$oid": "603891dc923a7c931e20c8ce"
+  },
+  "images": [],
+  "requiredItems": [],
+  "createdAt": {
+    "$date": "2021-03-21T15:03:28.029Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-21T15:03:28.029Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605d2e769182eb7adfbcc44c"
+  },
+  "postType": "advocacy",
+  "impactAreas": [],
+  "skills": [],
+  "topNeed": true,
+  "petitionLink": "",
+  "keywords": [
+    "PWD",
+    "Shutoff"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "Call Your Representatives Now!",
+  "description": "Philly Water is ending the shutoff moratorium!  Call your City Council person and tell them to extend it!",
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e37ee"
+  },
+  "images": [],
+  "requiredItems": [],
+  "address": {
+    "_id": {
+      "$oid": "605d2e769182eb7adfbcc44d"
+    },
+    "latitude": 0,
+    "longitude": 0,
+    "createdAt": {
+      "$date": "2021-04-04T16:59:27.093Z"
+    },
+    "updatedAt": {
+      "$date": "2021-04-04T16:59:27.093Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-26T00:44:38.321Z"
+  },
+  "updatedAt": {
+    "$date": "2021-04-04T16:59:27.093Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605d2fbc9182eb7adfbcc47a"
+  },
+  "postType": "event",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37c8"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37c5"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37ba"
+    }
+  ],
+  "skills": [],
+  "topNeed": false,
+  "petitionLink": "",
+  "keywords": [
+    "COVID"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "The Impacts of Gender, Race, and Class on COVID-19 in the United States",
+  "startDateTime": {
+    "$date": "2021-04-03T16:00:00Z"
+  },
+  "endDateTime": {
+    "$date": "2021-04-03T18:00:00Z"
+  },
+  "description": "Description",
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e37ee"
+  },
+  "images": [],
+  "requiredItems": [],
+  "address": {
+    "_id": {
+      "$oid": "605d2fbc9182eb7adfbcc47b"
+    },
+    "latitude": 39.9537233,
+    "longitude": -75.1725913,
+    "createdAt": {
+      "$date": "2021-03-26T00:50:04.972Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-26T00:50:04.972Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-26T00:50:04.972Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-26T00:50:04.972Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605f4fb19182eb7adfbcc4fc"
+  },
+  "postType": "event",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37ca"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37b7"
+    },
+    {
+      "$oid": "605f4fb19182eb7adfbcc4fb"
+    }
+  ],
+  "skills": [],
+  "topNeed": false,
+  "petitionLink": "",
+  "keywords": [
+    "Botanicals",
+    "Crafts",
+    "Museum"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "description": "Spend your spring break at the Academy with our fun educators, cool exhibits and wild science!",
+  "title": "Vacation Science Days",
+  "startDateTime": {
+    "$date": "2021-03-29T13:00:00Z"
+  },
+  "endDateTime": {
+    "$date": "2021-03-29T20:00:00Z"
+  },
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e383c"
+  },
+  "images": [],
+  "requiredItems": [],
+  "address": {
+    "_id": {
+      "$oid": "605f4fb19182eb7adfbcc4fd"
+    },
+    "latitude": 39.9569274,
+    "longitude": -75.1711368,
+    "createdAt": {
+      "$date": "2021-03-27T15:30:57.256Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-27T15:30:57.256Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-27T15:30:57.257Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-27T15:30:57.257Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605f50ea9182eb7adfbcc506"
+  },
+  "postType": "project",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37ca"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37b7"
+    }
+  ],
+  "skills": [
+    {
+      "$oid": "604e14bf5b137f26ac1d192a"
+    },
+    {
+      "$oid": "604e14bf5b137f26ac1d193c"
+    }
+  ],
+  "topNeed": true,
+  "petitionLink": "",
+  "keywords": [
+    "Inventory",
+    "Labeling",
+    "Sorting"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "Collections and Systematics Research",
+  "description": "Volunteers assist scientists in caring for the vast research collections of the Academy. The departments where volunteers have been active include: Botany, Diatom Herbarium, Entomology, Ichthyology, Malacology, Ornithology, and Vertebrate Zoology. These collections include 18 million specimens from around the world, including thousands of types, the specimens used as standards to describe the entire species. Depending upon your skills and interests, you can assist in a variety of tasks critical to the effective use of the collections—everything from cleaning and labeling to cataloging, sorting, and inventory. ",
+  "expectedRequiredHours": 20,
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e383c"
+  },
+  "images": [],
+  "requiredItems": [],
+  "address": {
+    "_id": {
+      "$oid": "605f50ea9182eb7adfbcc507"
+    },
+    "latitude": 39.9569274,
+    "longitude": -75.1711368,
+    "createdAt": {
+      "$date": "2021-03-27T15:36:10.136Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-27T15:36:10.136Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-27T15:36:10.136Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-27T15:36:10.136Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605f51479182eb7adfbcc511"
+  },
+  "postType": "volunteering",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37ca"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37b7"
+    }
+  ],
+  "skills": [],
+  "topNeed": false,
+  "petitionLink": "",
+  "keywords": [
+    "Guide",
+    "Garden",
+    "Butterflies"
+  ],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "Working with Museum Visitors",
+  "description": "Volunteers serve as informal guides in this enchanting tropical garden of flowering plants, where a hundred or more live butterflies from various parts of the world fly freely. Volunteers are key in helping visitors enjoy and learn about the variety of very colorful butterflies in this garden within our museum.",
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e383c"
+  },
+  "images": [],
+  "requiredItems": [],
+  "address": {
+    "_id": {
+      "$oid": "605f51479182eb7adfbcc512"
+    },
+    "latitude": 39.9569274,
+    "longitude": -75.1711368,
+    "createdAt": {
+      "$date": "2021-03-27T15:37:43.023Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-27T15:37:43.023Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-27T15:37:43.024Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-27T15:37:43.024Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605f51c69182eb7adfbcc51d"
+  },
+  "postType": "in-kind",
+  "impactAreas": [
+    {
+      "$oid": "60365a9588a0b357534e37ca"
+    },
+    {
+      "$oid": "60365a9588a0b357534e37b7"
+    }
+  ],
+  "skills": [],
+  "topNeed": true,
+  "petitionLink": "",
+  "keywords": [],
+  "isActive": true,
+  "isDeleted": false,
+  "title": "Collection Additions",
+  "description": "Help the academy by adding to its collection!",
+  "creatorId": {
+    "$oid": "60365ac688a0b357534e383c"
+  },
+  "images": [],
+  "requiredItems": [
+    {
+      "_id": {
+        "$oid": "605f51c69182eb7adfbcc51e"
+      },
+      "name": "Dinosaur Bones",
+      "requirement": "T-Rex Preferred",
+      "neededBy": {
+        "$date": "2021-06-23T15:38:12Z"
+      },
+      "createdAt": {
+        "$date": "2021-03-27T15:39:50.254Z"
+      },
+      "updatedAt": {
+        "$date": "2021-03-27T15:39:50.254Z"
+      }
+    }
+  ],
+  "address": {
+    "_id": {
+      "$oid": "605f51c69182eb7adfbcc51f"
+    },
+    "latitude": 0,
+    "longitude": 0,
+    "createdAt": {
+      "$date": "2021-03-27T15:39:50.254Z"
+    },
+    "updatedAt": {
+      "$date": "2021-03-27T15:39:50.254Z"
+    }
+  },
+  "createdAt": {
+    "$date": "2021-03-27T15:39:50.255Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-27T15:39:50.255Z"
+  },
+  "__v": 0
+}]

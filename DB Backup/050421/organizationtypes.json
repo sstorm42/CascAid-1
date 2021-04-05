@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37cd"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "non-profit",
+  "label": "Non-Profit",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.448Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.448Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37ce"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "community-group",
+  "label": "Community Group",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.507Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.507Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37cf"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "political-organization",
+  "label": "Political Organization",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.518Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.518Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d0"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "government",
+  "label": "Government",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.529Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.529Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d1"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "religious",
+  "label": "Religious",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.539Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.539Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d2"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "arts-organization",
+  "label": "Arts Organization",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.548Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.548Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d3"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "school",
+  "label": "School",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.561Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d4"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "club/association",
+  "label": "Club/Association",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.574Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.574Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60365ab988a0b357534e37d5"
+  },
+  "isActive": true,
+  "isDeleted": false,
+  "value": "foundation",
+  "label": "Foundation",
+  "createdAt": {
+    "$date": "2021-02-24T13:55:05.590Z"
+  },
+  "updatedAt": {
+    "$date": "2021-02-24T13:55:05.590Z"
+  },
+  "__v": 0
+}]

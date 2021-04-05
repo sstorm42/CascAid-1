@@ -4,7 +4,7 @@ const { lineToWordConverter } = require('../utils/library');
 
 exports.seed = async (req, res) => {
     try {
-        const initialData = req.body.Languages || Languages;
+        const initialData = JSON.parse(req.body.Languages) || Languages;
         for (let i = 0; i < initialData.length; i++) {
             let language = await new Language({
                 value: lineToWordConverter(initialData[i]),
