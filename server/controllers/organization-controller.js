@@ -418,6 +418,7 @@ exports.getAllSuggestions = async (req, res) => {
         ];
         const project = {
             _id: 1,
+            userId: 1,
             name: '$basicInfo.name',
             profilePicture: '$basicInfo.profilePicture',
             organizationTypes: 1,
