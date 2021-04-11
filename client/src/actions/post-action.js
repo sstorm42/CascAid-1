@@ -61,6 +61,13 @@ export const getAllPostSuggestions = () => {
     };
 };
 
+export const changePostInterest = (postId, userId, type) => {
+    return {
+        type: Types.CHANGE_POST_INTEREST,
+        payload: { postId, userId, type },
+    };
+};
+
 export const likePost = (postId) => {
     return {
         type: Types.LIKE_POST,

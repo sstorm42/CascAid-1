@@ -6,12 +6,15 @@ import HomeOrganizationSuggestions from '../../components/home/home-suggestions'
 import { getHomeFeed, getAllPostSuggestions } from '../../actions/post-action';
 import { getAllOrganizationSuggestions } from '../../actions/organization-action';
 import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
-import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost } from '../../actions/post-action';
+import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 const Home = (props) => {
     const [loading, setLoading] = useState(false);
+    const [userId, setUserId] = useState('');
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
+            const user = props.auth.user;
+            setUserId(user._id);
             props.dispatch(getHomeFeed());
             props.dispatch(getAllPostSuggestions());
             props.dispatch(getAllOrganizationSuggestions());
@@ -28,29 +31,35 @@ const Home = (props) => {
     };
     const handleLikePost = (postId) => {
         props.dispatch(likePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'like'));
     };
     const handleCancelLikePost = (postId) => {
         props.dispatch(cancelLikePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'unlike'));
     };
 
     const handleInterestedPost = (postId) => {
-        console.log('🚀 ~ file: home.js ~ line 36 ~ handleInterestedPost ~ postId', postId);
         props.dispatch(interestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'interested'));
     };
     const handleCancelInterestedPost = (postId) => {
+        console.log('🚀 ~ file: home.js ~ line 46 ~ handleCancelInterestedPost ~ postId', postId);
         props.dispatch(cancelInterestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'uninterested'));
     };
 
     const handleGoingPost = (postId) => {
         props.dispatch(goingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'going'));
     };
     const handleCancelGoingPost = (postId) => {
         props.dispatch(cancelGoingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'ungoing'));
     };
     return (
         <Container>
             <Row>
-                <Col className="parent-page">
+                <Col className="parent-page-home">
                     <Row>
                         <Col md="8">
                             <HomePostFeeds
@@ -63,6 +72,7 @@ const Home = (props) => {
                                 handleCancelInterestedPost={handleCancelInterestedPost}
                                 handleGoingPost={handleGoingPost}
                                 handleCancelGoingPost={handleCancelGoingPost}
+                                userId={userId}
                             />
                         </Col>
                         <Col md="4">

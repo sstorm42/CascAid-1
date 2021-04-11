@@ -14,6 +14,52 @@ const initialState = {
     going: {},
     cancelGoing: {},
 };
+
+const changePostInterest = (posts, { postId, userId, type }) => {
+    console.log('🚀 ~ file: post-reducer.js ~ line 19 ~ changePostInterest ~ posts, { postId, userId, type }', posts, { postId, userId, type });
+    let posts_ = posts.allPosts;
+    for (let i = 0; i < posts_.length; i++) {
+        if (posts_[i]._id === postId) {
+            let interests = posts_[i].interests || [];
+            console.log(interests);
+            let exists = false;
+            for (let j = 0; j < interests.length; j++) {
+                if (interests[j].userId === userId) {
+                    exists = true;
+                    if (type === 'like') {
+                        interests[j].liked = true;
+                    } else if (type === 'unlike') {
+                        interests[j].liked = false;
+                    } else if (type === 'interested') {
+                        interests[j].interested = true;
+                    } else if (type === 'uninterested') {
+                        interests[j].interested = false;
+                    } else if (type === 'going') {
+                        interests[j].going = true;
+                    } else if (type === 'ungoing') {
+                        interests[j].going = false;
+                    }
+                }
+            }
+            if (!exists) {
+                interests.push({
+                    userId,
+                    postId,
+                    liked: type === 'like' ? true : false,
+                    interested: type === 'interested' ? true : false,
+                    going: type === 'going' ? true : false,
+                });
+            }
+            posts_[i].interests = interests;
+        }
+    }
+    console.log('posts_', posts_);
+    return {
+        allPosts: posts_,
+        success: true,
+        message: 'Post interest changed',
+    };
+};
 const PostReducer = (state = initialState, action) => {
     switch (action.type) {
         case Types.GET_POST:
@@ -45,6 +91,8 @@ const PostReducer = (state = initialState, action) => {
             return { ...state, going: action.payload };
         case Types.CANCEL_GOING_POST:
             return { ...state, cancelGoing: action.payload };
+        case Types.CHANGE_POST_INTEREST:
+            return { ...state, homeFeed: changePostInterest(state.homeFeed, action.payload) };
         default:
             return { ...state };
     }

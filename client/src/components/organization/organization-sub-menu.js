@@ -56,7 +56,8 @@ const SideMenu = (props) => {
                     <ListGroup>
                         {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization.userId))}
                         {RenderListButtonItem('Message', '')}
-                        {RenderListButtonItem('Posts', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
+                        {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
+                        {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
                         {RenderListButtonItem('Feed')}
                     </ListGroup>
                 </Collapsible>

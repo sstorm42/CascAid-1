@@ -1,4 +1,6 @@
 const { Follow } = require('../models/follow-model');
+const NotificationController = require('./notification-controller');
+const NotificationResponse = require('../responses/notification-response');
 
 exports.followUser = async (req, res) => {
     try {

@@ -76,7 +76,7 @@ const HomeSuggestions = (props) => {
                                     org.impactAreas.length > 0 &&
                                     org.impactAreas.map((area, i) => {
                                         return (
-                                            <Badge variant="light" className="badge-single-small impact-area-badge">
+                                            <Badge variant="light" className="badge-single-small impact-area-badge" key={i}>
                                                 {area.label}
                                             </Badge>
                                         );

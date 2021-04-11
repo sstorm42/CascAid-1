@@ -52,7 +52,7 @@ const privacySchema = mongoose.Schema(
 
 const individualSchema = mongoose.Schema(
     {
-        userId: { type: String, required: true },
+        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         basicInfo: basicInfoSchema,
         involvement: involvementSchema,
         privacy: privacySchema,

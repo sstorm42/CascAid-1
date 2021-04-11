@@ -76,7 +76,10 @@ class PostDA {
     cancel_like_post = (postId) => {
         return axios
             .post(APIPaths.cancelLikePost(postId), {}, APIPaths.apiConfig())
-            .then((response) => response.data)
+            .then((response) => {
+                console.log('🚀 ~ file: post-da.js ~ line 80 ~ PostDA ~ .then ~ response', response);
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
 
@@ -89,7 +92,10 @@ class PostDA {
     cancel_interested_post = (postId) => {
         return axios
             .post(APIPaths.cancelInterestPost(postId), {}, APIPaths.apiConfig())
-            .then((response) => response.data)
+            .then((response) => {
+                console.log('🚀 ~ file: post-da.js ~ line 96 ~ PostDA ~ .then ~ response', response);
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
 
