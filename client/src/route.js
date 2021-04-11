@@ -58,6 +58,9 @@ import CommunityFollowers from './containers/community/followers';
 import CommunityFollowings from './containers/community/followings';
 import CommunityRequests from './containers/community/requests';
 
+//NOTIFICATION
+import ManageNotifications from './containers/notification/manage-notifications';
+
 const allRoles = ['individual', 'organization', 'admin'];
 const individualAndAdminRoles = ['individual', 'admin'];
 const organizationAndAdminRoles = [, 'organization', 'admin'];
@@ -92,16 +95,17 @@ const Routes = () => {
             <LayoutRoute path={RoutePath.organizationSearchPage} exact component={UserAuthCheck(SearchOrganization, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventSearchPage} exact component={UserAuthCheck(SearchEvent, allRoles, true)} layout={DashboardLayout} />
 
-            <LayoutRoute path="/messages" exact component={Messages} layout={DashboardLayout} />
+            <LayoutRoute path="/messages" exact component={UserAuthCheck(Messages, allRoles, true)} layout={DashboardLayout} />
             {/* POST */}
             {/* <LayoutRoute path={RoutePath.newsManagePage} exact component={UserAuthCheck(ManageNews, ['organization'], true)} layout={DashboardLayout} /> */}
             <LayoutRoute path={RoutePath.postManagePage} exact component={UserAuthCheck(ManagePosts, ['organization'], true)} layout={DashboardLayout} />
             <LayoutRoute
                 path={RoutePath.postListPageByOrganizationAndPostType(':userId', ':postType')}
                 exact
-                component={UserAuthCheck(PostListPageByOrganizationAndPostType, ['organization'], true)}
+                component={UserAuthCheck(PostListPageByOrganizationAndPostType, allRoles, true)}
                 layout={DashboardLayout}
             />
+            <LayoutRoute path={RoutePath.ManageNotificationsPage} exact component={UserAuthCheck(ManageNotifications, allRoles, true)} layout={DashboardLayout} />
             {/* EVENTS */}
             {/* <LayoutRoute path={RoutePath.eventCreatePage} exact component={UserAuthCheck(CreateEvent, ['organization'], true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.eventEditPage + ':eventId'} exact component={UserAuthCheck(CreateEvent, ['organization'], true)} layout={DashboardLayout} />

@@ -274,7 +274,7 @@ exports.getAllPostsByType = async (req, res) => {
         match['creatorId'] = userId;
         match['postType'] = postType;
         match['isActive'] = true;
-        console.log(match);
+
         let aggregateOptions = [];
         const lookUps = [
             {
@@ -377,16 +377,14 @@ exports.getAllSuggestions = async (req, res) => {
         let impactAreas = [];
         let address = {};
         if (userType === 'individual') {
-            console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
             const individual = await Individual.findOne({ userId: userId });
             impactAreas = individual.involvement.impactAreas;
-            console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
+
             address = individual.basicInfo.address;
         } else if (userType === 'organization') {
-            console.log('🚀 ~ file: organization-controller.js ~ line 376 ~ exports.getAllSuggestions= ~ userId', userId);
             const organization = await Organization.findOne({ userId: userId });
             impactAreas = organization.serviceInfo.impactAreas;
-            console.log('🚀 ~ file: organization-controller.js ~ line 379 ~ exports.getAllSuggestions= ~ impactAreas', impactAreas);
+
             address = organization.basicInfo.address;
         }
 
@@ -430,12 +428,10 @@ exports.getAllSuggestions = async (req, res) => {
         let aggregateOptions = [];
         aggregateOptions.push({ $match: { $or: [match1, match2] } }, ...lookUps, { $project: project });
         const allOrganizations = await Organization.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: organization-controller.js ~ line 419 ~ exports.getAllSuggestions= ~ allOrganizations', allOrganizations);
 
         if (allOrganizations) return res.status(200).send({ ...RESPONSES.OrganizationFound, allOrganizations });
         else return res.status(404).send(RESPONSES.OrganizationNotFound);
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };

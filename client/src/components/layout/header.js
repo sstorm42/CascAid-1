@@ -33,13 +33,13 @@ const Header = (props) => {
             <div className="header">
                 <Navbar bg="primary" variant="dark" expand="lg">
                     <Navbar.Brand href="/">
-                        <Image src="/images/cascaid-logo-2.png" thumbnail rounded={10} style={{ height: '50px', width: '80%', marginLeft: '64px' }} />
+                        <Image src="/images/logo/logo8.png" thumbnail rounded={10} style={{ height: '50px', width: 'auto', marginLeft: '64px' }} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
                             <ReactAutoSuggest />
-                            <GlobalNotification />
+                            <GlobalNotification user={props.user} />
                             <NavDropdown title={<Avatar size="30" src={profilePicture} round="5px" />} id="basic-nav-dropdown" alignRight={true}>
                                 <NavDropdown.Item disabled={true}>Welcome, {name}</NavDropdown.Item>
                                 <NavDropdown.Divider />
@@ -57,7 +57,7 @@ const Header = (props) => {
             <div className="header">
                 <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
                     <Navbar.Brand href="/">
-                        <Image src="/images/cascaid-logo-2.png" rounded={10} style={{ height: '50px', width: '100%', marginLeft: '64px' }} />
+                        <Image src="/images/logo/logo8.png" thumbnail rounded={10} style={{ height: '50px', width: 'auto', marginLeft: '64px' }} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse className="justify-content-end">

@@ -8,6 +8,8 @@ const RESPONSES = require('../responses/post-response');
 const mongoose = require('mongoose');
 const ImpactAreaController = require('./impact-area-controller');
 const SkillController = require('./skill-controller');
+const NotificationController = require('./notification-controller');
+const NotificationResponse = require('../responses/notification-response');
 exports.createOne = async (req, res) => {
     try {
         let post = req.body;
@@ -284,7 +286,7 @@ exports.like = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
-
+        console.log('like', userId, postId);
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -296,8 +298,18 @@ exports.like = async (req, res) => {
                 upsert: true,
             },
         );
-        if (interest) return res.status(200).send({ success: true, message: 'Like done', liked: true });
-        else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
+        if (interest) {
+            const post = await Post.findOne({ _id: postId });
+            NotificationController.createOne({
+                userId: post.creatorId,
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Like,
+                isRead: false,
+                isActive: true,
+            });
+            return res.status(200).send({ success: true, message: 'Like done', liked: true });
+        } else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
     } catch (err) {
         return res.status(501).send({ success: false, message: err.message });
     }
@@ -306,6 +318,7 @@ exports.cancelLike = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
+        console.log('unlike', userId, postId);
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -317,8 +330,10 @@ exports.cancelLike = async (req, res) => {
                 upsert: true,
             },
         );
-        if (interest) return res.status(200).send({ success: true, message: 'Like done', liked: true });
-        else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
+        if (interest) {
+            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Like });
+            return res.status(200).send({ success: true, message: 'Like removed', liked: true });
+        } else return res.status(200).send({ success: false, message: 'Like can not be removed', liked: false });
     } catch (err) {
         return res.status(501).send({ success: false, message: err.message });
     }
@@ -340,13 +355,46 @@ exports.interested = async (req, res) => {
                 upsert: true,
             },
         );
-        if (interest) return res.status(200).send({ success: true, message: 'Interest done', interested: true });
-        else return res.status(200).send({ success: false, message: 'Interest can not be done', interested: false });
+        if (interest) {
+            const post = await Post.findOne({ _id: postId });
+            NotificationController.createOne({
+                userId: post.creatorId,
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Interest,
+                isRead: false,
+                isActive: true,
+            });
+            return res.status(200).send({ success: true, message: 'Interest done', interested: true });
+        } else return res.status(200).send({ success: false, message: 'Interest can not be done', interested: false });
     } catch (err) {
         return res.status(501).send({ success: false, message: err.message });
     }
 };
-exports.cancelInterested = async (req, res) => {};
+exports.cancelInterested = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+        console.log('uninterested', userId, postId);
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { interested: false },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) {
+            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Interest });
+            return res.status(200).send({ success: true, message: 'Interest removed', liked: true });
+        } else return res.status(200).send({ success: false, message: 'Interest can not be removed', liked: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
 
 exports.going = async (req, res) => {
     try {
@@ -363,13 +411,46 @@ exports.going = async (req, res) => {
                 upsert: true,
             },
         );
-        if (interest) return res.status(200).send({ success: true, message: 'Going done', going: true });
-        else return res.status(200).send({ success: false, message: 'Going can not be done', going: false });
+        if (interest) {
+            const post = await Post.findOne({ _id: postId });
+            NotificationController.createOne({
+                userId: post.creatorId,
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Going,
+                isRead: false,
+                isActive: true,
+            });
+            return res.status(200).send({ success: true, message: 'Going done', going: true });
+        } else return res.status(200).send({ success: false, message: 'Going can not be done', going: false });
     } catch (err) {
         return res.status(501).send({ success: false, message: err.message });
     }
 };
-exports.cancelGoing = async (req, res) => {};
+exports.cancelGoing = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const postId = req.params.postId;
+        console.log('uninterested', userId, postId);
+        const interest = await Interest.findOneAndUpdate(
+            {
+                userId: userId,
+                postId: postId,
+            },
+            { going: false },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (interest) {
+            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Going });
+            return res.status(200).send({ success: true, message: 'Going removed', liked: true });
+        } else return res.status(200).send({ success: false, message: 'Going can not be removed', liked: false });
+    } catch (err) {
+        return res.status(501).send({ success: false, message: err.message });
+    }
+};
 
 // exports.countLikes = async (req, res) => {};
 // exports.countInterests = async (req, res) => {};
@@ -378,3 +459,8 @@ exports.cancelGoing = async (req, res) => {};
 // exports.getAllLikers = async (req, res) => {};
 // exports.getAllInteresteds = async (req, res) => {};
 // exports.getAllGoers = async (req, res) => {};
+// exports.getAllInterests = async (req, res) => {
+//     const interestType = req.params.interestType;
+//     const postId = req.params.postId;
+//     const interests = await Interest.aggregate({})
+// };

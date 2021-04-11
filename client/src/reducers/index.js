@@ -14,6 +14,7 @@ import { reducer as formReducer } from 'redux-form';
 import Follow from './follow-reducer';
 import Skill from './skill-reducer';
 import Language from './language-reducer';
+import Notification from './notification-reducer';
 const rootReducer = combineReducers({
     form: formReducer,
     Auth,
@@ -25,7 +26,7 @@ const rootReducer = combineReducers({
     OrganizationType,
 
     Post,
-
+    Notification,
     Follow,
     Skill,
     Language,

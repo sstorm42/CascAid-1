@@ -7,15 +7,27 @@ import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 const HomePostFeed = (props) => {
+    const userId = props.userId;
     const [show, setShow] = useState(false);
+
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (interestType, postId) => {
+        setShow(true);
+    };
     const posts = props.allPosts;
-    console.log('🚀 ~ file: home-post-feeds.js ~ line 14 ~ HomePostFeed ~ posts', posts);
+    let interest = {};
+
     if (posts && posts.length > 0) {
         return (
             <>
                 {posts.map((post, i) => {
+                    interest = {};
+                    let filter = post.interests.filter((interest) => interest.userId === userId);
+                    if (filter && filter.length > 0) interest = filter[0];
+                    let liked = post.interests.filter((interest) => interest.liked).length;
+                    let interested = post.interests.filter((interest) => interest.interested).length;
+                    let going = post.interests.filter((interest) => interest.going).length;
+
                     return (
                         <div key={i} className="justify-text post-box">
                             <h6 style={{ color: 'cadetblue' }}>{post.postType === 'general' ? '' : post.postType.toUpperCase()}</h6>
@@ -98,40 +110,92 @@ const HomePostFeed = (props) => {
 
                             <Row>
                                 <Col>
-                                    <LikeButtonRender
-                                        onClick={() => {
-                                            props.handleLikePost(post._id);
-                                        }}
-                                    />
+                                    {interest.liked ? (
+                                        <LikeButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelLikePost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <LikeButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleLikePost(post._id);
+                                            }}
+                                        />
+                                    )}
                                     &nbsp;
-                                    <InterestedButtonRender
-                                        onClick={() => {
-                                            console.log('handleInterestedPost');
-                                            props.handleInterestedPost(post._id);
-                                        }}
-                                    />
+                                    {interest.interested ? (
+                                        <InterestedButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelInterestedPost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <InterestedButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleInterestedPost(post._id);
+                                            }}
+                                        />
+                                    )}
                                     &nbsp;
-                                    <GoingButtonRender
-                                        onClick={() => {
-                                            props.handleGoingPost(post._id);
-                                        }}
-                                    />
+                                    {interest.going ? (
+                                        <GoingButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelGoingPost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <GoingButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleGoingPost(post._id);
+                                            }}
+                                        />
+                                    )}
                                     &nbsp;
                                 </Col>
-                                {/* <Col className="right-align">
-                                    <Button variant="outline-primary" size="sm" onClick={handleShow}>
-                                        10 Liked
-                                    </Button>
+                                <Col className="right-align">
+                                    {liked > 0 && (
+                                        <Button
+                                            variant="outline-primary"
+                                            size="sm"
+                                            onClick={() => {
+                                                handleShow('like', post._id);
+                                            }}
+                                        >
+                                            {liked} Liked
+                                        </Button>
+                                    )}
                                     &nbsp;
-                                    <Button variant="outline-info" size="sm" onClick={handleShow}>
-                                        100 Interested
-                                    </Button>
+                                    {interested > 0 && (
+                                        <Button
+                                            variant="outline-secondary"
+                                            size="sm"
+                                            onClick={() => {
+                                                handleShow('interest', post._id);
+                                            }}
+                                        >
+                                            {interested} Interested
+                                        </Button>
+                                    )}
                                     &nbsp;
-                                    <Button variant="outline-secondary" size="sm" onClick={handleShow}>
-                                        1000 Going
-                                    </Button>
-                                    &nbsp;
-                                </Col> */}
+                                    {going > 0 && (
+                                        <Button
+                                            variant="outline-info"
+                                            size="sm"
+                                            onClick={() => {
+                                                handleShow('going', post._id);
+                                            }}
+                                        >
+                                            {going} Going
+                                        </Button>
+                                    )}
+                                </Col>
                             </Row>
                         </div>
                     );

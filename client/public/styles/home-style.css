@@ -46,3 +46,14 @@
 .skill-badge {
     background-color: #c9ae5d;
 }
+.parent-page-home {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    background-color: #eeeeee;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 20px;
+}

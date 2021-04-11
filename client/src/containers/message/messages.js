@@ -2,15 +2,52 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ThreadList from './sample-thread-list';
 import ThreadDetails from './sample-thread-details';
+import styles from '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
+import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Avatar } from '@chatscope/chat-ui-kit-react';
 const Messages = (props) => {
+    const joeIco = 'https://picsum.photos/100/100';
+    const anotherIco = 'https://picsum.photos/50/50';
+    const chats = [
+        { src: joeIco, name: 'Joe', message: 'Hi.' },
+        { src: anotherIco, name: 'John', message: 'Hello.' },
+        { src: joeIco, name: 'Joe', message: 'How are you.' },
+        { src: anotherIco, name: 'John', message: 'Fine, You?' },
+        { src: joeIco, name: 'Joe', message: 'Good. What are you doing?' },
+        { src: anotherIco, name: 'John', message: 'Playing.You?' },
+        { src: joeIco, name: 'Joe', message: 'Writing. Ok, Bye' },
+        { src: anotherIco, name: 'John', message: 'Bye.' },
+    ];
     return (
-        <Container>
-            <Row className="message-main">
-                <Col sm="4" className="thread-list">
+        <Container className="parent-page">
+            <Row>
+                <Col sm={3}>
                     <ThreadList />
                 </Col>
-                <Col sm="8" className="thread-details">
-                    <ThreadDetails />
+                <Col>
+                    <div style={{ position: 'relative', height: '500px' }}>
+                        <MainContainer>
+                            <ChatContainer>
+                                <MessageList>
+                                    {chats.map((chat, i) => {
+                                        return (
+                                            <div key={i}>
+                                                <Message.Header sentTime="just now" />
+                                                <Avatar src={chat.src} name={chat.name} />
+                                                <Message
+                                                    model={{
+                                                        message: chat.message,
+                                                        sentTime: 'just now',
+                                                        sender: 'Joe',
+                                                    }}
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                                </MessageList>
+                                <MessageInput placeholder="Type message here" />
+                            </ChatContainer>
+                        </MainContainer>
+                    </div>
                 </Col>
             </Row>
         </Container>

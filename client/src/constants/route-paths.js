@@ -102,3 +102,6 @@ export const communityFriendListPage = '/community/friends';
 export const communityFollowerListPage = '/community/followers';
 export const communityFollowingListPage = '/community/followings';
 export const communityRequestListPage = '/community/requests';
+
+// NOTIFICATION
+export const ManageNotificationsPage = '/notification/all';

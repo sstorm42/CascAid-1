@@ -18,14 +18,14 @@ const SearchEvent = (props) => {
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
-
+            console.log('Came here');
             const userId = props.match.params.userId;
-
             props.dispatch(getPublicInfo(userId));
             const user = props.auth.user;
             const postType = props.match.params.postType;
             props.dispatch(getAllPostsByOrganizationAndPostType(userId, postType));
             props.dispatch(checkIfFollower(user._id, props.match.params.userId));
+
             setLoading(false);
         };
         getInitialInfo();

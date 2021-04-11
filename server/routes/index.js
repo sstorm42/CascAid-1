@@ -14,6 +14,8 @@ const post = require('./post-route');
 const volunteering = require('./volunteering-route');
 const skill = require('./skill-route');
 const home = require('./home-route');
+const notification = require('./notification-route');
+
 routes.use('/users', user);
 routes.use('/auth', auth);
 routes.use('/individuals', individual);
@@ -29,6 +31,7 @@ routes.use('/posts', post);
 // routes.use('/volunteerings', volunteering);
 routes.use('/skills', skill);
 routes.use('/home', home);
+routes.use('/notifications', notification);
 const connected = {
     success: true,
     version: '1.0.0',

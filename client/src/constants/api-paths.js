@@ -1,6 +1,6 @@
 import { getLocalStorage } from '../actions';
-export const serverAddress = `http://localhost:3001`;
-// export const serverAddress = `http://172.104.35.84`;
+// export const serverAddress = `http://localhost:3001`;
+export const serverAddress = `http://172.104.35.84`;
 export const checkEmailExist = serverAddress + `/api/users/email/`;
 export const userSignUp = serverAddress + `/api/auth/sign-up`;
 export const userSignIn = serverAddress + `/api/auth/sign-in`;
@@ -103,3 +103,8 @@ export const cancelInterestPost = (postId) => serverAddress + `/api/posts/${post
 
 export const goingPost = (postId) => serverAddress + `/api/posts/${postId}/going`;
 export const cancelGoingPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-going`;
+
+// NOTIFICATION
+export const getNotificationsCount = (onlyNew) => serverAddress + `/api/notifications/count${onlyNew ? '?onlyNew=true' : ''}`;
+export const getAllNotifications = (topNotifications) => serverAddress + `/api/notifications/${topNotifications ? '?topNotifications=true' : ''}`;
+export const updateNotification = (notificationId) => serverAddress + `/api/notifications/${notificationId}`;

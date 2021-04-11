@@ -130,17 +130,12 @@ const DisplayPost = (props) => {
                             <Col>{ImageAndDescriptionRender(post.images)}</Col>
                         </Row>
                         <hr />
-                        {fields.address && post.address && (
-                            <>
-                                <Row>
-                                    <Col>{InfoRender('Full Address', post.address.fullAddress)}</Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        <PostMapView allPosts={[post]} zoom={16} />
-                                    </Col>
-                                </Row>
-                            </>
+                        {fields.address && post.address && post.address.latitude && post.address.longitude && (
+                            <Row>
+                                <Col>
+                                    <PostMapView allPosts={[post]} zoom={16} />
+                                </Col>
+                            </Row>
                         )}
                         <div style={{ height: 50 }} />
                         <Row>
