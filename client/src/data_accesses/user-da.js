@@ -13,6 +13,8 @@ class UserDA {
         return axios
             .post(APIPaths.userSignIn, user)
             .then((response) => {
+                console.log('🚀 ~ file: user-da.js ~ line 16 ~ UserDA ~ .then ~ response', response);
+
                 return response.data;
             })
             .catch((err) => err.response.data);

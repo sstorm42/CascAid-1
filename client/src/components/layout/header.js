@@ -15,6 +15,7 @@ const Header = (props) => {
         // const username = props.user.name;
         // const userId = props.user._id;
         const basicInfo = props.basicInfo;
+        console.log('basicInfo', basicInfo);
         let name = '';
         if (props.user.userType === 'individual') {
             name = basicInfo.firstName + ' ' + basicInfo.lastName || 'USER';

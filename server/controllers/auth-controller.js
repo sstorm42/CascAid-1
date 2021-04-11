@@ -101,12 +101,31 @@ exports.signIn = async (req, res) => {
         if (user && password === 'asd123') {
             let basicInfo = {};
             if (user.userType === 'individual') {
-                basicInfo = await Individual.findOne(
-                    { userId: user._id },
-                    { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
-                );
+                basicInfo = await Individual.aggregate([
+                    { $match: { userId: user._id } },
+                    {
+                        $project: {
+                            firstName: '$basicInfo.firstName',
+                            lastName: '$basicInfo.lastName',
+                            profilePicture: '$basicInfo.profilePicture',
+                        },
+                    },
+                ]);
+                // basicInfo = await Individual.aggregate(
+                //     { userId: user._id },
+                //     { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
+                // );
             } else if (user.userType === 'organization') {
-                basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
+                basicInfo = await Organization.aggregate([
+                    { $match: { userId: user._id } },
+                    {
+                        $project: {
+                            name: '$basicInfo.name',
+                            profilePicture: '$basicInfo.profilePicture',
+                        },
+                    },
+                ]);
+                // basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
             }
             console.log(basicInfo);
             const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
@@ -120,7 +139,7 @@ exports.signIn = async (req, res) => {
                 isAuth: true,
                 user: user_,
                 token,
-                basicInfo,
+                basicInfo: basicInfo[0],
             });
         }
         if (!user.authenticate(password))
@@ -131,12 +150,31 @@ exports.signIn = async (req, res) => {
             });
         let basicInfo = {};
         if (user.userType === 'individual') {
-            basicInfo = await Individual.findOne(
-                { userId: user._id },
-                { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
-            );
+            basicInfo = await Individual.aggregate([
+                { $match: { userId: user._id } },
+                {
+                    $project: {
+                        firstName: '$basicInfo.firstName',
+                        lastName: '$basicInfo.lastName',
+                        profilePicture: '$basicInfo.profilePicture',
+                    },
+                },
+            ]);
+            // basicInfo = await Individual.aggregate(
+            //     { userId: user._id },
+            //     { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
+            // );
         } else if (user.userType === 'organization') {
-            basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
+            basicInfo = await Organization.aggregate([
+                { $match: { userId: user._id } },
+                {
+                    $project: {
+                        name: '$basicInfo.name',
+                        profilePicture: '$basicInfo.profilePicture',
+                    },
+                },
+            ]);
+            // basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
         }
         console.log(basicInfo);
         const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
@@ -150,7 +188,7 @@ exports.signIn = async (req, res) => {
             isAuth: true,
             user: user_,
             token,
-            basicInfo,
+            basicInfo: basicInfo[0],
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
