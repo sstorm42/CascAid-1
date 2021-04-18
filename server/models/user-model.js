@@ -1,4 +1,9 @@
 const mongoose = require('mongoose');
+const basicInfoSchema = require('./basic-info-schema');
+const involvementSchema = require('./involvement-schema');
+const privacySchema = require('./privacy-schema');
+const serviceInfoSchema = require('./service-info-schema');
+const internalLinkSchema = require('./internal-link-schema');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const crypto = require('crypto');
@@ -11,6 +16,11 @@ const userSchema = mongoose.Schema(
             default: 'individual',
             enum: ['individual', 'organization', 'admin'],
         },
+        basicInfo: basicInfoSchema,
+        involvement: involvementSchema,
+        privacy: privacySchema,
+        serviceInfo: serviceInfoSchema,
+        internalLink: internalLinkSchema,
         stepCompleted: { type: Number, default: 0 },
         hashedPassword: { type: String, required: true },
         salt: { type: String },

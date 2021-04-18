@@ -73,7 +73,7 @@ const AllOrganizationOnMap = (props) => {
         <div>
             <GoogleMap id="map" mapContainerStyle={mapContainerStyle} zoom={props.zoom ? props.zoom : 3} center={center} options={options} onLoad={onMapLoad}>
                 {markers.map((marker, i) => {
-                    if (marker.basicInfo.address && marker.basicInfo.address.latitude && marker.basicInfo.address.longitude) {
+                    if (marker.basicInfo && marker.basicInfo.address && marker.basicInfo.address.latitude && marker.basicInfo.address.longitude) {
                         return (
                             <Marker
                                 key={`${i}.${marker.lat}-${marker.lng}`}
@@ -149,7 +149,7 @@ const AllOrganizationOnMap = (props) => {
                                 size="sm"
                                 variant="outline-primary"
                                 onClick={() => {
-                                    props.gotoOrganizationDetails(selected.userId);
+                                    props.gotoOrganizationDetails(selected._id);
                                 }}
                             >
                                 Go to Page

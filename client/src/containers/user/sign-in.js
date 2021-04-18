@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SignInForm from '../../components/user/sign-in-form';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { userSignIn, clearUser, authenticate } from '../../actions';
+import { userSignIn, authenticate } from '../../actions';
 import { NotificationManager } from 'react-notifications';
 import * as RoutePath from '../../constants/route-paths';
 class SignIn extends Component {
@@ -44,11 +44,10 @@ class SignIn extends Component {
         }
     };
     componentWillUnmount = () => {
-        this.props.dispatch(clearUser());
+        // this.props.dispatch(clearUser());
     };
     render() {
         const { submitting } = this.props;
-
         return (
             <SignInForm submitting={submitting} errorFlag={this.state.errorFlag} errorMessage={this.state.errorMessage} handleSignInSubmit={this.props.handleSubmit((event) => this.onSubmit(event))} />
         );

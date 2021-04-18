@@ -314,3 +314,15 @@ tr td:last-child {
     background-color: #f9cbcd;
     color: white;
 }
+.profile-picture-uploader-modal {
+    margin: 20px;
+    padding: 20px;
+}
+.member-row {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+.gray-text {
+    color: gray;
+}

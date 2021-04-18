@@ -97,14 +97,16 @@ exports.allOrganizations = [
         Donate: 'https://ci.ovationtix.com/35380/store/donations/34930',
         Blog: 'https://www.1812productions.org/the-1812-blog',
         Keywords: 'Theatre, Performing Arts, Plays, Comedy',
-        Mission: '1812 Productions is dedicated to creating theatrical works of comedy and comedic works of theater that explore and celebrate our sense of community, our history, and our humanity.',
+        Mission:
+            '1812 Productions is dedicated to creating theatrical works of comedy and comedic works of theater that explore and celebrate our sense of community, our history, and our humanity.',
         Description:
             '1812 Productions was founded in 1997 by Jennifer Childs and Peter Pryor, two long-time friends and artistic collaborators, with a dedication to comedy, theater, accessibility and Philadelphia artists.  In 1998 the company premiered with The Compleat Works of Wllm Shkspr (abridged) and was promptly named “Best of Philly – Theater in Infancy” by Philadelphia Magazine.\r\n\r\nSince that time, 1812 has continued to combine their original work with plays and devised theater pieces by established and emerging playwrights and artists, producing three mainstage shows and several limited engagement comedy events each season.\r\n\r\nTheir award winning education program, 1812 Outreach, has been in residence at South Philadelphia High School and the Widener School for Children with Disabilities for thirteen years.\r\n\r\n1812 is the only professional theater company in the country dedicated to comedy.  In 2010, they were honored as one of only 10 theaters in the country to receive a National Theatre Company grant from the American Theatre Wing, founder of the Tony Awards.',
     },
     {
         Name: '1926 Foundation',
         OrganizationType: 'Foundation',
-        Website: 'https://www.the1926foundationinc.com/?fbclid=IwAR33TN77I6_2lNx04zMST64MuEBUyrCt1eA_cmkYsZrA1wtza2w66Bb1QtI',
+        Website:
+            'https://www.the1926foundationinc.com/?fbclid=IwAR33TN77I6_2lNx04zMST64MuEBUyrCt1eA_cmkYsZrA1wtza2w66Bb1QtI',
         ImpactAreas: 'Education',
         Contact: 'the1926foundationincorporated@gmail.com',
         ServiceArea: 'Philadelphia',
@@ -116,7 +118,7 @@ exports.allOrganizations = [
         Mission:
             'The 1926 Foundation, Inc. is a non-profit corporation, 501(c)(3) organized to provide program support to the Omega Omega Chapter of Alpha Kappa Alpha Sorority, Inc. and scholarship assistance to high school and college students.',
         Description:
-            'The Board of Directors will promote and provide charitable, community and educational services that further the mission of Omega Omega. The Foundation will receive annual financial support from the portion of annual chapter membership dues duly approved by the body of Omega Omega financial members each year. The Board will raise funds to support the administration of the Foundation, and charitable community organizations whose mission reflects the programmatic thrusts of Omega Omega. The Board will also ensure that the Foundation engages in nondiscriminatory practices, policies, and procedures in accordance with Federal regulations.',
+            'The Membership of Directors will promote and provide charitable, community and educational services that further the mission of Omega Omega. The Foundation will receive annual financial support from the portion of annual chapter membership dues duly approved by the body of Omega Omega financial members each year. The Membership will raise funds to support the administration of the Foundation, and charitable community organizations whose mission reflects the programmatic thrusts of Omega Omega. The Membership will also ensure that the Foundation engages in nondiscriminatory practices, policies, and procedures in accordance with Federal regulations.',
     },
     {
         Name: '21st Ward Meals on Wheels Inc.',
@@ -156,7 +158,8 @@ exports.allOrganizations = [
         Newsletter: 'https://iloveourhouse.org/home',
         Donate: 'https://charity.gofundme.com/o/en/donate-widget/13933',
         Keywords: 'Community Center',
-        Mission: 'Our House is a community space that holds workshops, programs, and events that cultivate and celebrate creative and cultural expression in our community.',
+        Mission:
+            'Our House is a community space that holds workshops, programs, and events that cultivate and celebrate creative and cultural expression in our community.',
         Description:
             'Founded  in 2017,  Our House Culture Center is a 501(c)(3) non-profit organization located in the Historic Germantown area of Philadelphia.  We are dedicated to providing a safe space for community members to connect, create, and celebrate one another.   Our spaces are utilized in collaboration with creatives, community members, and organizations to develop programs and events that help us connect and grow as a community.  We exist because we believe our community is incredibly rich with creativity, because celebration is paramount, and because our communities deserve quality programs and safe spaces to gather.  To that end, we have hosted over 300 programs and events',
     },
@@ -220,7 +223,7 @@ exports.allOrganizations = [
         Mission:
             'As an operating charity, we develop and implement projects in support of our mission to advance the core values of medical professionalism as a force to improve the quality of health care.',
         Description:
-            'The ABIM Foundation was created by the American Board of Internal Medicine (ABIM) in 1989. Through an extensive strategic planning process, the ABIM Board of Directors established a separate Board of Trustees in 1999 to govern the Foundation.\r\n\r\nAs an operating charity, we develop and implement projects in support of our mission to advance the core values of medical professionalism as a force to improve the quality of health care. One of our most significant contributions has been the publication of Medical Professionalism in the New Millennium: A Physician Charter in 2002. Our past and present initiatives focus on promoting the principles and commitments outlined in this seminal document.\r\n\r\nSince 2010, our work has focused primarily on advancing medical professionalism in the area of stewardship of health care resources. Programs supporting this work include the Choosing Wisely® campaign, the Teaching Value and Choosing Wisely® Challenge, and the Putting Stewardship into Medical Education and Training grant program.',
+            'The ABIM Foundation was created by the American Membership of Internal Medicine (ABIM) in 1989. Through an extensive strategic planning process, the ABIM Membership of Directors established a separate Membership of Trustees in 1999 to govern the Foundation.\r\n\r\nAs an operating charity, we develop and implement projects in support of our mission to advance the core values of medical professionalism as a force to improve the quality of health care. One of our most significant contributions has been the publication of Medical Professionalism in the New Millennium: A Physician Charter in 2002. Our past and present initiatives focus on promoting the principles and commitments outlined in this seminal document.\r\n\r\nSince 2010, our work has focused primarily on advancing medical professionalism in the area of stewardship of health care resources. Programs supporting this work include the Choosing Wisely® campaign, the Teaching Value and Choosing Wisely® Challenge, and the Putting Stewardship into Medical Education and Training grant program.',
     },
     {
         Name: 'Ace Mentor Program of Greater Philadelphia',
@@ -261,7 +264,8 @@ exports.allOrganizations = [
         Impact: 'https://www.alshf.org/volunteers',
         Blog: 'https://www.alshf.org/blog',
         Keywords: 'ALS, Research, Disease Prevention',
-        Mission: 'Our mission is to provide Care for patients and families with ALS, Education to our community, and Research for a cure for ALS.',
+        Mission:
+            'Our mission is to provide Care for patients and families with ALS, Education to our community, and Research for a cure for ALS.',
         Description:
             'Founded in 1999 by Terry Heiman-Patterson, MD, and Jeffrey Deitch, PhD, the ALS Hope Foundation provides funding for the MDA/ALS Center of Hope at Temple University Lewis Katz School of Medicine, one of the first multidisciplinary ALS clinics in the country, and the Neuromuscular Research Laboratory at Temple University College of Medicine. The Foundation also provides educational events to inform people living with ALS and the public about ALS research. The ALS Hope Foundation funds local and international efforts to find the cause and cure of ALS. This much needed support is generated through fundraisers and private donations.\r\n\r\nWe are honored to have spent more than 21 years serving the ALS community and are committed to continuing our work until there is a cure.',
     },
@@ -383,7 +387,8 @@ exports.allOrganizations = [
         Blog: 'https://www.anspblog.org/?_ga=2.9891573.1180135886.1610311177-534489232.1609708267',
         Membership: 'https://www.anspblog.org/?_ga=2.9891573.1180135886.1610311177-534489232.1609708267',
         Keywords: 'Museum, Environment, Research, Science',
-        Mission: 'The Academy of Natural Sciences of Drexel University is dedicated to advancing research, education, and public engagement in biodiversity and environmental science.',
+        Mission:
+            'The Academy of Natural Sciences of Drexel University is dedicated to advancing research, education, and public engagement in biodiversity and environmental science.',
         Description:
             "Founded in 1812, the Academy of Natural Sciences of Drexel University is a leading natural history museum dedicated to advancing research, education, and public engagement in biodiversity and environmental science. Visitors to the Academy have the opportunity to get face-to-face with towering dinosaurs, meet live animals, and explore a tropical garden filled with live butterflies. Philadelphia’s natural history museum offers surprises for all ages, from changing interactive science exhibits to a children’s discovery center, a fossil dig, and opportunities to interact with real science experts.\r\n\r\nThe Academy’s working scientists spend their days focusing on critical global issues in biodiversity, evolution, and environmental science. In the field, Academy scientists have traveled as far as Vietnam to sample wild bird populations for emerging diseases such as avian influenza, and closer to home they have been studying the effects of natural gas drilling in the Marcellus Shale. These research efforts and many others enable the Academy to provide accurate, real-time scientific information to the public on environmental and sustainability matters.\r\n\r\nThe Academy’s collections contain more than 18 million specimens and archival treasures and rate among the world’s most significant in terms of geographic, biological, and historical depth and breadth. Many specimens in the Academy’s collections predate the institution’s founding and reflect the work of famous naturalists and scientists, including Thomas Jefferson, John James Audubon, Meriwether Lewis, and William Clark. This “library of life” records the extraordinary diversity of life on Earth and preserves a long-term record of environmental change.\r\n\r\nIn 2011, Academy CEO George W. Gephart, Jr., and Drexel University President John A. Fry announced the completion of a historic affiliation between the Academy and Drexel. This unique affiliation unites two of Philadelphia's most respected research institutions and promotes discovery, learning, and civic engagement in the natural and environmental sciences.",
     },
@@ -397,10 +402,12 @@ exports.allOrganizations = [
         Contact: 'info@avaopera.org',
         ServiceArea: 'Philadelphia',
         Events: 'https://avaopera.org/event/',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001SGG2uWK0MWnptDHF0Lk2Z2yNbJGtd_yMuSKn1gBrFCXvJ5kCVLnCEQhAdHQ7Tlw3ytJEpbF3nbUCFZambA4wAw%3D%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001SGG2uWK0MWnptDHF0Lk2Z2yNbJGtd_yMuSKn1gBrFCXvJ5kCVLnCEQhAdHQ7Tlw3ytJEpbF3nbUCFZambA4wAw%3D%3D',
         Donate: 'https://my.avaopera.org/donate/contribute1',
         Keywords: 'Singing, Opera, Performing Arts',
-        Mission: 'The mission of the Academy of Vocal Arts is to be the world’s premier institution for training young artists to become international opera soloists.',
+        Mission:
+            'The mission of the Academy of Vocal Arts is to be the world’s premier institution for training young artists to become international opera soloists.',
         Description:
             'Through rigorous instruction and coaching, and by presentations of Resident Artists from around the world in concerts, oratorios, public programs and fully staged professional opera productions, AVA will train artists with the high potential for career success while enriching lives in Philadelphia and beyond.\r\n\r\nGifted singers come from throughout the world to seek the exceptional guidance and training that AVA offers. Admission is determined by competitive annual auditions.\r\n\r\nAVA is distinguished by its reputation for high quality performances that are acclaimed by critics locally, nationally, and internationally. Each year AVA resident artists are presented in four or five fully-staged opera productions accompanied by orchestra. Resident Artists are cast in leading roles that they will in all likelihood continue to perform for the rest of their careers.',
     },
@@ -420,7 +427,8 @@ exports.allOrganizations = [
         Newsletter: 'https://www.accessmatters.org/what-we-do/about-us/contact-us/',
         Donate: 'https://www.accessmatters.org/support-us/',
         Keywords: 'Sexual Health, Reproductive Health, Sexual Education, Advocacy',
-        Mission: 'AccessMatters’ mission is to protect, expand, and enhance equitable access to sexual and reproductive health care and information for all people.',
+        Mission:
+            'AccessMatters’ mission is to protect, expand, and enhance equitable access to sexual and reproductive health care and information for all people.',
         Description:
             'AccessMatters is the catalyst for providing sexual and reproductive health care for teens and adults in need. As a capacity-building organization, we have been trailblazing for over 40 years to eliminate barriers to high caliber care for more than 200,000 people annually.\r\n\r\nAccessMatters develops, implements, and evaluates innovative programs that make a sustained community impact: family planning, HIV and STD prevention and testing, breast and cervical cancer screening and prevention, teen pregnancy prevention, and condom distribution are just a few of the important programs we support.',
     },
@@ -441,7 +449,8 @@ exports.allOrganizations = [
         Keywords: 'Literacy',
         Mission:
             'Achieve Now is dedicated to transforming the educational system in Philadelphia to one that produces students who can read. We will do this by incorporating evidence-based literacy instruction into Philadelphia schools, resulting in dramatic improvements in grade level reading.',
-        Description: 'Achieve Now supports 15 schools and community partners. 1200 students and 300 adult volunteers participate in the program.',
+        Description:
+            'Achieve Now supports 15 schools and community partners. 1200 students and 300 adult volunteers participate in the program.',
     },
     {
         Name: 'Action Wellness',
@@ -509,7 +518,7 @@ exports.allOrganizations = [
         Mission:
             'The Adam and Maria Sarah Seybert Institution for Poor Boys and Girls of Philadelphia, known as the Seybert Foundation, is an independent charitable foundation dedicated to providing support to nonprofit organizations serving disadvantaged children and youth in the City of Philadelphia.\r\n\r\nThrough its Core Grants program, newly revamped in 2018, and its Innovation Grants program (launching soon), Seybert Foundation provides General Operating support to dozens of nonprofit partners each year.',
         Description:
-            'We are the Adam and Maria Sarah Seybert Foundation for Poor Boys and Girls of Philadelphia, or “The Seybert Foundation” for short.\r\n\r\nFounded in 1914 as the Adam and Maria Sarah Seybert Institution for Poor Boys and Girls, an independent foundation that makes grants to nonprofits serving disadvantaged children and youth in the city of Philadelphia.\r\nTen-member volunteer Board of Directors and one staff member\r\nIn 2013, the Board voted to make all grants in the form of General Operating Support, in recognition of the scarcity of this type of funding for nonprofits. (Seybert works to encourage other funders to consider providing Gen Op funding)',
+            'We are the Adam and Maria Sarah Seybert Foundation for Poor Boys and Girls of Philadelphia, or “The Seybert Foundation” for short.\r\n\r\nFounded in 1914 as the Adam and Maria Sarah Seybert Institution for Poor Boys and Girls, an independent foundation that makes grants to nonprofits serving disadvantaged children and youth in the city of Philadelphia.\r\nTen-member volunteer Membership of Directors and one staff member\r\nIn 2013, the Membership voted to make all grants in the form of General Operating Support, in recognition of the scarcity of this type of funding for nonprofits. (Seybert works to encourage other funders to consider providing Gen Op funding)',
     },
     {
         Name: 'Addiction Medicine and Health Advocates',
@@ -521,7 +530,8 @@ exports.allOrganizations = [
         Contact: 'sandy@amhainc.org',
         ServiceArea: 'Philadelphia',
         Keywords: 'Substance Abuse, Addiction',
-        Mission: 'AMHA facility is a licensed comprehensive and professional treatment and referral center, specifically designed to aid individuals in their recovery from substance use disorders.',
+        Mission:
+            'AMHA facility is a licensed comprehensive and professional treatment and referral center, specifically designed to aid individuals in their recovery from substance use disorders.',
         Description:
             'AMHA accepts all persons who are appropriate for treatment at its facility, without regard to race, ethnicity, gender, creed, sexual preference or disability.\r\n\r\nLocated in the heart of Center City, AMHA provides a congenial and supportive environment which facilities the recovery process with dignity and respect for the individual.\r\n\r\nOur experienced and professional staff assists patients with identifying and achieving individualized treatment goals. We believe in a patient-centered approach that embraces multiple pathways to personal recovery.',
     },
@@ -615,7 +625,8 @@ exports.allOrganizations = [
         Donate: 'https://phillyasap.org/donate/',
         Blog: 'https://phillyasap.org/category/blog/',
         Keywords: 'Chess, Debate, Drama, After School',
-        Mission: 'To develop high quality after school activities and resources to empower youth and strengthen communities in Philadelphia.',
+        Mission:
+            'To develop high quality after school activities and resources to empower youth and strengthen communities in Philadelphia.',
         Description:
             'ASAP was founded in 2002 by noted educator Marciene Mattleman to raise awareness of the dangers of the after school hours for unsupervised youth.\r\n\r\nWith reports indicating that as many as 40,000 youths in Philadelphia were unsupervised every day from 3-6 pm, ASAP mounted an ambitious public service campaign to help schools and communities keep their children safe and engaged after school.\r\n\r\nBeginning in 2004, ASAP made the decision to focus on recruiting volunteers to lead specific activities that best addressed the academic, social, and emotional needs of children in Philadelphia and which presented the greatest opportunity to be scaled citywide through strategic partnerships or different affinity networks. This work led ASAP to rallying around the four citywide initiatives it has today – ASAP Chess, ASAP Debate, ASAP Drama, and ASAP Scrabble.\r\n\r\nThe impact of this shift in focus was profound. By 2007, ASAP’s four citywide initiatives were serving more than 4,000 youth. During this time, ASAP also assumed leadership of the Philadelphia Scholastic Chess League and the Philadelphia Scholastic Debate League. Both leagues flourished under ASAP’s direction, quickly rivaling the District’s athletic leagues in size',
     },
@@ -744,7 +755,8 @@ exports.allOrganizations = [
         Donate: 'https://www.albustanseeds.org/donate/',
         Blog: 'https://www.albustanseeds.org/news/',
         Keywords: 'Heritage, Arabic, Language, Multicultural',
-        Mission: 'Al-Bustan Seeds of Culture is dedicated to presenting and teaching Arab culture through the arts and language.',
+        Mission:
+            'Al-Bustan Seeds of Culture is dedicated to presenting and teaching Arab culture through the arts and language.',
         Description:
             'The organization’s main goals, which embody its core values, are the following:\r\n\r\nto expose and educate youth and adults of Arab and non-Arab heritage to the diversity of Arab culture and other cultural traditions\r\nto support the development of youth leadership by empowering them with a deeper knowledge of their cultural heritage and history, creating opportunities for greater academic achievement and civic engagement.\r\nto create a welcoming and inclusive space in West Philadelphia that serves as an administrative and programming space for Al-Bustan and engages with community members in Philadelphia and beyond',
     },
@@ -793,9 +805,11 @@ exports.allOrganizations = [
         Zip: 19105,
         Contact: 'jennifer@doutyfoundation.org',
         ServiceArea: 'Philadelphia',
-        Twitter: 'https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.doutyfoundation.org%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name=doutyfoundation&tw_p=followbutton',
+        Twitter:
+            'https://twitter.com/intent/follow?original_referer=http%3A%2F%2Fwww.doutyfoundation.org%2F&ref_src=twsrc%5Etfw&region=follow_link&screen_name=doutyfoundation&tw_p=followbutton',
         Keywords: 'Grassroots, Foundation, Community, Grants',
-        Mission: 'The mission of the Douty Foundation is to support grassroots organizations and movements in making social change in their communities with an emphasis on children & youth.',
+        Mission:
+            'The mission of the Douty Foundation is to support grassroots organizations and movements in making social change in their communities with an emphasis on children & youth.',
         Description:
             'Since 1968, the Douty Foundation has provided funding to organizations working to foster equitable opportunities for children and youth in Montgomery and Philadelphia Counties in Pennsylvania.\r\n\r\nThe foundation supports organizations that:\r\n• have demonstrated roots within the community;\r\n• have a commitment to community engagement;\r\n• have limited access to funding sources;\r\n• provide or promote educational opportunities for children and youth;\r\n• are focused on long-term social change through its work;\r\n• are willing to take risks in terms of program delivery or the development of solutions to needs or problems',
     },
@@ -814,7 +828,8 @@ exports.allOrganizations = [
         Impact: 'https://allenslane.org/about/volunteer-opportunties/',
         Donate: 'https://allenslane.org/about/donate-today/',
         Keywords: 'Art, Exhibitions, Multicultural',
-        Mission: 'Allens Lane Art Center (ALAC) provides programs and activities that bring our diverse community together to experience and support the arts.',
+        Mission:
+            'Allens Lane Art Center (ALAC) provides programs and activities that bring our diverse community together to experience and support the arts.',
         Description:
             'Since establishment in 1953, Allens Lane Art Center has been a cornerstone of the Mt. Airy community by bringing the residents together to participate in and enjoy the arts.  Whether its art classes for children or adults, amazing art exhibitions, or cutting edge plays on the mainstage, there is something for everyone at Allens Lane.\r\n\r\nAllens Lane Art Center (ALAC) was founded in 1953 by an interracial group of Mt. Airy residents who were concerned about the dangers of increasing community tension. Most were parents of children attending local schools who felt that increasing access to the arts would be a way to bring people together as well as develop individual talents. "Living Together Through the Arts," a program of The Ford Foundation and the Henry Home & School Association, originally sponsored ALAC.  We formally incorporated as a nonprofit organization - 501 c(3) - on June 29, 1953.\r\n\r\nALAC\'s founders saw creative activities as an effective avenue for channeling the energy of youth in a constructive way. Developing artistic skills and appreciation for the arts would help round the education of local youth and build self-esteem in a non-competitive way. Most importantly, creative activities would bring people of diverse backgrounds together and help them overcome prejudices. Today, Allens Lane still promotes "living together in the community through arts" by offering programs and activities that enrich the lives of numerous children and adults.',
     },
@@ -832,7 +847,8 @@ exports.allOrganizations = [
         Donate: 'https://www.afphila.com/membership-support/donate/',
         Membership: 'https://www.afphila.com/membership-support/membership/',
         Keywords: 'France, International, Language',
-        Mission: 'The Alliance Française de Philadelphia is a nonprofit organization dedicated to helping people learn French and deepen their knowledge of Francophone cultures.',
+        Mission:
+            'The Alliance Française de Philadelphia is a nonprofit organization dedicated to helping people learn French and deepen their knowledge of Francophone cultures.',
         Description:
             "We fulfull our mission by offering a wide variety of classes for all levels, many cultural events and a welcoming community. In the time since we temporarily closed our physical doors in March, we have continued to enthusiastically and successfully fulfill our mission by innovating and adapting our offerings and transitioning to an online virtual platform.\r\n\r\nWe are part of the Délégation générale de l'Alliance Française which groups all the Alliances Françaises in the United States in a directory.\r\n\r\nWith more than 100 branches in the US and over 900 all around the world, the Alliance Française offers French classes for all levels from beginner to advanced speakers. It is also the opportunity to foster your knowledge of French culture and language thanks to cultural events like dinner, movies, lectures and so much more social cultural activities.",
     },
@@ -845,7 +861,8 @@ exports.allOrganizations = [
         Zip: 19121,
         ServiceArea: 'North Philadelphia',
         Keywords: 'Technology, Charter School',
-        Mission: 'It is the mission of AFPCS to ensure the achievement and success of every students through a technologically rich and individualized learning environment.',
+        Mission:
+            'It is the mission of AFPCS to ensure the achievement and success of every students through a technologically rich and individualized learning environment.',
         Description:
             'Welcome to Alliance for Progress, a mission-driven, K-8 charter school, rooted in North Philadelphia.  Founded in 1998, AFPCS offers enhanced educational opportunities to children in surrounding neighborhoods and beyond.',
     },
@@ -900,7 +917,8 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/alphacarephilly/',
         Donate: 'https://alphacarephilly.org/give/',
         Keywords: 'Pregnancy, Prenatal Care, Maternal Health, Reproductive Health',
-        Mission: 'AlphaCare’s mission is to empower pregnant women and families by providing health and social services and serving as a bridge to community resources.',
+        Mission:
+            'AlphaCare’s mission is to empower pregnant women and families by providing health and social services and serving as a bridge to community resources.',
     },
     {
         Name: 'Alston Beech Foundation',
@@ -1008,7 +1026,8 @@ exports.allOrganizations = [
         Contact: 'info@amchs.org',
         ServiceArea: 'Philadelphia',
         Events: 'https://amchs.org/events-grid/',
-        Twitter: 'https://twitter.com/intent/tweet?source=https://amchs.org/donate/&text=Donate:https://amchs.org/donate/',
+        Twitter:
+            'https://twitter.com/intent/tweet?source=https://amchs.org/donate/&text=Donate:https://amchs.org/donate/',
         Facebook: 'https://www.facebook.com/AmericanCatholicHistoricalSociety',
         Newsletter:
             'https://visitor.r20.constantcontact.com/manage/optin?v=001GEb4-cqp7jxBBfUUVFzfdLRyiGOl10t0NnGQiJK8YZ-6X8i8LtEAK7Bniodjj9r-DZHCPbd6yTMZ7N_LC8EBUHjNAInc82h5nquANEtEGsxCupjU32JmDREqVj3w7MLb3dq8X95z-DEwt-elhy6FY5lnjpMhs2Sw-nepVpIBWT0%3D',
@@ -1038,7 +1057,8 @@ exports.allOrganizations = [
         Impact: 'https://www.aclupa.org/en/act, https://aclupa.org/en/volunteer-or-intern',
         Donate: 'https://www.aclupa.org/en/join-donate-or-both',
         Blog: 'https://www.aclupa.org/en/news',
-        Membership: 'https://action.aclu.org/give/pennsylvania-join-renew-today?ms_aff=PA&initms_aff=PA&ms=Join&initms=Join&ms_chan=web&initms_chan=web',
+        Membership:
+            'https://action.aclu.org/give/pennsylvania-join-renew-today?ms_aff=PA&initms_aff=PA&ms=Join&initms=Join&ms_chan=web&initms_chan=web',
         Keywords: 'Freedom, Reproductive, LGBTQ, Women, Minorities, Immigrants',
         Mission:
             'The American Civil Liberties Union of Pennsylvania is a nonprofit, nonpartisan, membership organization dedicated to defending and expanding individual rights and personal freedoms throughout the entire state of Pennsylvania.',
@@ -1083,7 +1103,8 @@ exports.allOrganizations = [
         Donate: 'https://www.acfphiladelphia.org/support',
         Blog: 'https://www.acfphiladelphia.org/news',
         Keywords: 'Music, Composers, Performance',
-        Mission: 'The Philadelphia Chapter of the American Composers Forum (ACF Philadelphia) is committed to supporting local composers and developing new markets for their music.',
+        Mission:
+            'The Philadelphia Chapter of the American Composers Forum (ACF Philadelphia) is committed to supporting local composers and developing new markets for their music.',
         Description:
             'Through granting, commissioning, and performance programs, ACF Philadelphia provides composers at all stages of their careers with valuable resources for professional and artistic development. By linking communities with composers and performers, ACF Philadelphia fosters a demand for new music, enriches communities, and helps develop the next generation of composers, musicians, and music patrons.\r\n\r\nACF Philadelphia was established in 1997, one of 10 regional Chapters established across the nation by the Minnesota-based national office of the American Composers Forum. The Forum recognized that local Chapters could engage artists and communities in metropolitan areas more directly, vitally and efficiently than a distant, national entity could. Using this approach, the ACF Philadelphia engages composers and local residents with a wide range of creative, educational, and performance activities tailored to needs and circumstances specific to the city, its neighborhoods, and the artists who live and work here. ACF Philadelphia was incorporated in 1999 and obtained tax-exempt status in the state of Pennsylvania in December of 2002.',
     },
@@ -1116,7 +1137,8 @@ exports.allOrganizations = [
         Contact: 'ali@ali.org',
         ServiceArea: 'Philadelphia',
         Donate: 'https://forms.ali.org/contributions.cfm?mhid=None',
-        Mission: 'The American Law Institute is the leading independent organization in the United States producing scholarly work to clarify, modernize, and otherwise improve the law.',
+        Mission:
+            'The American Law Institute is the leading independent organization in the United States producing scholarly work to clarify, modernize, and otherwise improve the law.',
     },
     {
         Name: 'American Paradigm Schools',
@@ -1194,9 +1216,11 @@ exports.allOrganizations = [
         Events: 'https://www.belmontmansion.org/news_events_belmont.html',
         Twitter: 'http://twitter.com/#!/BelmontURM',
         Facebook: 'http://www.facebook.com/belmontmansionurm',
-        Donate: 'https://www.paypal.com/donate?token=8S_ivIGcfSn_cQquwSJmE9qHFOb9NXGCo1uWjTI-P0xPA5iXxaeuS6O2yUZpvZOjclt68_KIAv1lOHNf',
+        Donate:
+            'https://www.paypal.com/donate?token=8S_ivIGcfSn_cQquwSJmE9qHFOb9NXGCo1uWjTI-P0xPA5iXxaeuS6O2yUZpvZOjclt68_KIAv1lOHNf',
         Keywords: 'Event Venue, Historic Site, Women, African-American, Fine Arts, Dance, Music',
-        Mission: "The American Women's Heritage Society was founded in November 1986 to maintain and restore Belmont Mansion, an eighteenth century house in Fairmount Park in Philadelphia, PA.",
+        Mission:
+            "The American Women's Heritage Society was founded in November 1986 to maintain and restore Belmont Mansion, an eighteenth century house in Fairmount Park in Philadelphia, PA.",
         Description:
             "The Society is the first organization to operate Belmont Mansion primarily as an historic site. And the Society is the only African-American Women's organization to administer an historic mansion in Fairmount Park. The Society has drawn attention to the importance of Belmont Mansion. In the 1987 Assessment of Ten Historic Structures in Fairmount Park considered to be at risk, Belmont Mansion was singled out as the most significant structure studied, and among the most important in Fairmount Park. This work was followed by a complete historical study and architectural analysis published as The Belmont Mansion Historical Structures Report. On this basis, the restoration of Belmont Mansion became the first major project of the Fairmount Park Historic Preservation Trust in 1994.\r\n\r\nThe AWHS is a non-profit historic preservation organization that raises funds from membership fees, admissions, rentals, grants and donations. Through the Society, Belmont Mansion has become an interpretive and educational center for American history and culture. The Society seeks to expose the community to the fine arts (literature, art, dance and music), as well as build bridges of communication and interaction among various ethnic communities in Philadelphia. Belmont Mansion also serves as a site for wedding receptions, private parties, meetings of civic and cultural organizations, and tours for visitors.",
     },
@@ -1259,10 +1283,12 @@ exports.allOrganizations = [
         ImpactAreas: 'Public Health',
         Zip: 19115,
         Contact: 'info@aimangelsinmotion.org',
-        ServiceArea: 'Northeast Philadelphia, North Philadelphia, Grays Ferry, Upper Darby, West Philadelphia, South Philadephia',
+        ServiceArea:
+            'Northeast Philadelphia, North Philadelphia, Grays Ferry, Upper Darby, West Philadelphia, South Philadephia',
         Facebook: 'https://www.facebook.com/groups/AIMAngelInMotion/',
         Impact: 'https://aimangelsinmotion.org/donate/,https://aimangelsinmotion.org/volunteer/',
-        Donate: 'https://www.paypal.com/donate?token=GxC9iHCe5-tJ4t01BKCS-sUI51jWjERTdyJ3YMtP_kkKVbum-42MXGf7d63WInFVgr4QlO-EntUFMrIJ',
+        Donate:
+            'https://www.paypal.com/donate?token=GxC9iHCe5-tJ4t01BKCS-sUI51jWjERTdyJ3YMtP_kkKVbum-42MXGf7d63WInFVgr4QlO-EntUFMrIJ',
         Blog: 'https://aimangelsinmotion.org/aim-in-the-news/',
         Keywords: 'Addiction',
         Mission: 'Changing the way those suffering with the disease of addiction are treated, one life at a time.',
@@ -1321,7 +1347,8 @@ exports.allOrganizations = [
         Events: 'https://www.annkids.com/specialevents',
         Facebook: 'https://www.facebook.com/AnnKidsChildDayCareCenter/',
         Keywords: 'Day Care, Pre-School, Summer Camp, Nursery',
-        Mission: 'Ann Kids prepares children for success in their continued education and helps them become productive community members.',
+        Mission:
+            'Ann Kids prepares children for success in their continued education and helps them become productive community members.',
         Description:
             "Ann Kids is not just a day care center. Ann Kids is a family, where everyone is treated with love and respect. We build lifelong friendships with kids and raise worthy members of our society, who already started to bring their own kids to our center. We know every child's story, every personality, and have an individualized approach to every child. We strive to provide an educational environment, while getting your kids to enjoy every minute spent at our centers.",
     },
@@ -1416,7 +1443,8 @@ exports.allOrganizations = [
         Donate: 'https://www.federationhousing.org/contribute',
         Blog: 'https://www.federationhousing.org/news',
         Keywords: 'Affordable Housing, Senior Living, Low Income, Fixed Income',
-        Mission: 'Providing much-needed affordable housing communities and services that empower low-and-moderate-income seniors to live independently and with an enhanced quality of life',
+        Mission:
+            'Providing much-needed affordable housing communities and services that empower low-and-moderate-income seniors to live independently and with an enhanced quality of life',
         Description:
             'Federation Housing develops and manages quality, affordable, independent living communities for low and moderate income seniors. Founded in 1970, the non-profit organization addresses a dire need in the Philadelphia region, where one in five seniors lives below the poverty line. While Jewish-affiliated, Federation Housing welcomes people of all faiths and currently serves as home to more than 1,500 seniors in 11 rental communities located across Philadelphia, Bucks and Montgomery Counties. The organization is unique in the extensive support services it provides to residents, including meals, transportation, visiting nurse, onsite social workers, and a broad array of social, cultural, educational, recreational and intergenerational enrichment programs.',
     },
@@ -1518,7 +1546,8 @@ exports.allOrganizations = [
         Donate: 'https://ardentheatre.org/support/',
         Blog: 'https://ardentheatre.org/blog/',
         Keywords: 'Theatre, Performing Arts',
-        Mission: 'Arden Theatre Company is dedicated to bringing to life great stories by great storytellers – on the stage, in the classroom and in the community.',
+        Mission:
+            'Arden Theatre Company is dedicated to bringing to life great stories by great storytellers – on the stage, in the classroom and in the community.',
         Description:
             'We produce a wide range of stories in a variety of styles – classic and contemporary, intimate and epic, musical and dramatic – and have a commitment to stories that highlight the diversity of people and human experiences. Producing the great playwrights allows us to measure ourselves against the masters of our craft, while sharing the voices of new writers and emerging theatre companies gives us the opportunity to advance our community and the American theatre.\r\n\r\nWe believe in the power of stories to bring people together – that they can celebrate our unique identities while reminding us of our shared humanity. We work to build a vital community of artists who excel creatively through shared experiences and to expand the pool of artists with whom we work to bring new energies and perspectives to our stages. The Arden strives to be Philadelphia’s hometown theatre, contributing to the region’s vibrant cultural landscape.',
     },
@@ -1574,7 +1603,8 @@ exports.allOrganizations = [
         Donate: 'https://artsanctuary.org/content/support-art-sanctuary',
         Membership: 'https://artsanctuary.org/content/support-art-sanctuary',
         Keywords: 'Diversity',
-        Mission: 'Art Sanctuary uses the power of black art to transform individuals, create and build community and foster cultural understanding.',
+        Mission:
+            'Art Sanctuary uses the power of black art to transform individuals, create and build community and foster cultural understanding.',
         Description:
             'Art Sanctuary is dedicated to bringing Philadelphians together through the unique community-building power of black art. We celebrate diversity passionately, understanding the unparalleled strength we gain by embracing our cultural differences.\r\n\r\nWe use this strength to provide opportunities where they do not yet exist; when Philadelphia schools are underfunded and inner city neighborhoods underserved, Art Sanctuary sees possibilities and works to bring them to life through the transformative influence of black art in the community.\r\n\r\nArt Sanctuary is just that; we’ve worked tirelessly to build a safe place for creative expression and development of not just the community, but the self. We believe this sanctuary transcends physical space, and that the idea of “home” is one we carry with us. Home is a place that is welcome to all, and shaped by the relationships which inspire us.',
     },
@@ -1679,7 +1709,8 @@ exports.allOrganizations = [
         Donate: 'https://www.art-reach.org/support/donate/',
         Blog: 'https://www.art-reach.org/blog/',
         Keywords: 'Low-Income, Accessibility, Disabilities',
-        Mission: 'We are a non-profit organization devoted to increasing cultural participation\r\namong traditionally underrepresented audiences in both the disability and low-income sectors.',
+        Mission:
+            'We are a non-profit organization devoted to increasing cultural participation\r\namong traditionally underrepresented audiences in both the disability and low-income sectors.',
         Description:
             'Art-Reach creates cultural accessibility for people with disabilities and low-income communities in Greater Philadelphia by partnering with over 400 organizations to create over 212,000 opportunities for engagement a year.',
     },
@@ -1758,7 +1789,8 @@ exports.allOrganizations = [
         Blog: 'https://www.aawcphilly.org/news-and-events.html',
         Membership: 'https://www.aawcphilly.org/membership.html',
         Keywords: 'Asian',
-        Mission: 'Our mission is to promote the advancement of Asian American women through leadership and mutual support.',
+        Mission:
+            'Our mission is to promote the advancement of Asian American women through leadership and mutual support.',
         Description:
             'The Asian American Women\'s Coalition (AAWC) is a multi-cultural group dedicated to the concerns of all Asian American Women. The AAWC was formed in 1987 as the result of a successful collaboration of the community and the Balch Institute of Ethnic Studies to sponsor the exhibit, "Chinese Women of America 1834-1982." \r\n\r\nAAWC\'s members include women from all professions and walks of life. The Honorable Ida Chen and Cecilia Moy Yep are our founding members. Judge Chen is the first female Asian American Judge in the Commonwealth of Pennsylvania and Cecilia is the Executive Director Emeritus of the Philadelphia Chinatown Development Corporation (PCDC).',
     },
@@ -1774,11 +1806,13 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/asamunited',
         Facebook: 'https://www.facebook.com/AsianAmericansUnited/',
         Instagram: 'https://www.instagram.com/asianamericansunited/',
-        Newsletter: 'https://visitor.constantcontact.com/manage/optin?v=001TqkDdJpTfnqSclWBExnK6H_tDzbuR670NcFWumQkiJGa-XNQLSiVTA53Hpe0mwx31eYcEjr5-c5vIZfXkeNipgSDPH6xQ9e1O2KwlXOyIj4%3D',
+        Newsletter:
+            'https://visitor.constantcontact.com/manage/optin?v=001TqkDdJpTfnqSclWBExnK6H_tDzbuR670NcFWumQkiJGa-XNQLSiVTA53Hpe0mwx31eYcEjr5-c5vIZfXkeNipgSDPH6xQ9e1O2KwlXOyIj4%3D',
         Impact: 'https://aaunited.org/get-involved/',
         Donate: 'https://aaunited.org/donate/',
         Keywords: 'Asian, Immigrants, Folks Arts',
-        Mission: 'Since 1985, Asian Americans United exists so that people of Asian ancestry in Philadelphia exercise leadership to build their communities and unite to challenge oppression.',
+        Mission:
+            'Since 1985, Asian Americans United exists so that people of Asian ancestry in Philadelphia exercise leadership to build their communities and unite to challenge oppression.',
         Description:
             'Asian Americans United was founded in 1985 by a small group of volunteers seeking to create an organized response to rising issues of anti-Asian violence, substandard housing and the need for educational services for non-English speaking Asians in the city.  Since that time, Asian American’s United’s mission has been to grow leadership in Asian American communities to build our neighborhoods and unite against oppression.\r\n\r\nFor more than three decades, AAU has worked in Philadelphia’s Asian American communities and in broader multiracial coalitions around quality education, youth leadership, anti-Asian violence, immigrant rights, neighborhood development, and folk arts and cultural maintenance.\r\n\r\nAmong AAU’s accomplishments are: initiating and monitoring the settlement of a lawsuit with the School District of Philadelphia to improve services to immigrant students; developing the ​leadership of hundreds of youth; creating the Chinatown Mid-Autumn Festival; founding Chinatown Vote; and founding the Folk Arts-Cultural Treasures Charter School.​\r\n\r\nAAU is the recipient of numerous awards for services to youth, folk arts programs, organizational excellence and intergenerational leadership.',
     },
@@ -1911,7 +1945,7 @@ exports.allOrganizations = [
         Mission:
             'The mission of the Associated Alumni of Central High School is to encourage and support the School’s high standards of scholarship, integrity and democratic values, to facilitate and maintain pride in Central High School and, as well, to encourage an impact upon community growth through financial and personal involvement, while broadening social and professional relationships among its alumni.',
         Description:
-            'The relationship between the Alumni and the School started almost immediately after the 1st Class graduated in 1842 with the founding of our predecessor organization. By 1873, when the alumni formally reorganized, the AACHS was actively supporting the school’s activities.\r\n\r\nIt is critical for the future of the school that we, as graduates, give back to the school by: endowed gifts to support programs (including Science Fair, Robotics, Dramatics, Publications, Music, Art and Athletics); by our presence with Career Day; by support of special events such as International Day, and by promotion of Central’s activities through the media. We also participate in the student recruitment process, and help students and recent graduates with networking and interning opportunities. We administer close to $2 million of endowed scholarship and prize funds for the benefit of both underclassmen/women and seniors; the annual distribution of proceeds averages about 8%.\r\n\r\nThe ultimate demonstration of our commitment was the rebuilding of the Barnwell Library into a 21st century research facility and conference center. This landmark public-private partnership with the CHS faculty, students and the School District has changed the learning culture in the school. Teachers from all disciplines use the research lab to effectively teach students how to properly perform internet research.\r\n\r\nAACHS also provided for the construction of a new faculty lounge, and gifted laptop computers to all faculty members, allowing for more cross-pollination of ideas between members of various departments.\r\n\r\nThe Association works with the senior and junior class officers. They, as well as the president of the Student Association and the Editor-in-Chief of the Centralizer, participate in AACHS Board of Managers meetings. Our Alumni Journal and web site highlight school activities to encourage graduates to connect with the Central of today. AACHS also works with the Home and School Association and support its activities to assist parents to support their children’s life at Central.\r\n\r\nAlumni, on an individual basis, support the work of literary publications, and robotics by working with and advising students. They volunteer to chaperone events, such as Museum Day, and pay for students to attend alumni events such as our annual lunch, annual dinner meeting, and Thanksgiving Day Victory Breakfast.',
+            'The relationship between the Alumni and the School started almost immediately after the 1st Class graduated in 1842 with the founding of our predecessor organization. By 1873, when the alumni formally reorganized, the AACHS was actively supporting the school’s activities.\r\n\r\nIt is critical for the future of the school that we, as graduates, give back to the school by: endowed gifts to support programs (including Science Fair, Robotics, Dramatics, Publications, Music, Art and Athletics); by our presence with Career Day; by support of special events such as International Day, and by promotion of Central’s activities through the media. We also participate in the student recruitment process, and help students and recent graduates with networking and interning opportunities. We administer close to $2 million of endowed scholarship and prize funds for the benefit of both underclassmen/women and seniors; the annual distribution of proceeds averages about 8%.\r\n\r\nThe ultimate demonstration of our commitment was the rebuilding of the Barnwell Library into a 21st century research facility and conference center. This landmark public-private partnership with the CHS faculty, students and the School District has changed the learning culture in the school. Teachers from all disciplines use the research lab to effectively teach students how to properly perform internet research.\r\n\r\nAACHS also provided for the construction of a new faculty lounge, and gifted laptop computers to all faculty members, allowing for more cross-pollination of ideas between members of various departments.\r\n\r\nThe Association works with the senior and junior class officers. They, as well as the president of the Student Association and the Editor-in-Chief of the Centralizer, participate in AACHS Membership of Managers meetings. Our Alumni Journal and web site highlight school activities to encourage graduates to connect with the Central of today. AACHS also works with the Home and School Association and support its activities to assist parents to support their children’s life at Central.\r\n\r\nAlumni, on an individual basis, support the work of literary publications, and robotics by working with and advising students. They volunteer to chaperone events, such as Museum Day, and pay for students to attend alumni events such as our annual lunch, annual dinner meeting, and Thanksgiving Day Victory Breakfast.',
     },
     {
         Name: 'The Associated Polish Home',
@@ -1973,7 +2007,8 @@ exports.allOrganizations = [
         Blog: 'https://www.associationforpublicart.org/apa-now/',
         Membership: 'https://www.associationforpublicart.org/support-us/become-a-member/',
         Keywords: 'Public Art, Preservation, Heritage',
-        Mission: 'The Association for Public Art (aPA) seeks to respond to the conditions of our time with new commissions, while interpreting and preserving public art for future generations',
+        Mission:
+            'The Association for Public Art (aPA) seeks to respond to the conditions of our time with new commissions, while interpreting and preserving public art for future generations',
         Description:
             'he Association for Public Art (aPA, formerly the Fairmount Park Art Association) was established in 1872 and is the nation’s first private, nonprofit civic organization dedicated to creating a “museum without walls” by integrating public art and urban design.\r\n\r\nThe Association for Public Art carries out its multiple objectives to commission, preserve, interpret, and promote public art in Philadelphia through exemplary and innovative programs and advocacy efforts.\r\n\r\nBy engaging diverse segments of the community, the aPA seeks to respond to the conditions of our time, creating a legacy and maintaining a heritage for future generations, while promoting Philadelphia as a premier city for public art.',
     },
@@ -2188,7 +2223,8 @@ exports.allOrganizations = [
         Contact: 'acwa.phl@gmail.com',
         ServiceArea: 'Philadelphia',
         Keywords: 'Financial Inclusion, Scholarships',
-        Mission: 'To create opportunities for women to unite and grow through the establishment of charitable, educational and service programs.',
+        Mission:
+            'To create opportunities for women to unite and grow through the establishment of charitable, educational and service programs.',
         Description:
             'The Women’s Christian Association of Philadelphia was founded in 1870 and chartered by the Pennsylvania Legislature in 1871. “Young” was added to our name in 1902 and we have served the women of Philadelphia continuously since our founding.  In 1906 we joined, as a charter member, a national association now known as YWCA USA.\r\nSince 2010 our organization has been independent and while our corporate name remains unchanged, we are now doing business as the Avis Chase Women’s Association of Philadelphia.\r\nThis honors the late Avis Chase of Chatham, MA and Philadelphia who was a major benefactor.',
     },
@@ -2208,7 +2244,8 @@ exports.allOrganizations = [
         Impact: 'https://awbury.org/volunteer/',
         Donate: 'https://awbury.org/give/',
         Keywords: 'Preservation, Meadows, Gardens, Farm, Summer Camp',
-        Mission: 'The mission of the awbury arboretum association is to preserve and interpret awbury’s historic house and landscape, thereby connecting an urban community with nature and history',
+        Mission:
+            'The mission of the awbury arboretum association is to preserve and interpret awbury’s historic house and landscape, thereby connecting an urban community with nature and history',
         Description:
             'Tucked away in the historic Germantown neighborhood of Northwest Philadelphia, Awbury Arboretum is a vibrant landscape with a rich history.  Once the private enclave of an extended Quaker family, Awbury Arboretum has been open to the public free of charge as a public park and arboretum for over 100 years. Its 56-acre historic landscape now stands as a green oasis in a densely populated urban environment.\r\n\r\nNature, history, and community intersect at Awbury, and the Awbury Arboretum Association is committed to stewarding the relationships between these three pillars of our mission, and continuing to tell its story.\r\n\r\nPlease take some time to explore the Arboretum online, and then come experience it in person. We know you’ll be glad you did.',
     },
@@ -2229,7 +2266,8 @@ exports.allOrganizations = [
         Donate: 'https://ci.ovationtix.com/35093/store/donations',
         Blog: 'azukatheatre.org/blog',
         Keywords: 'Performing Arts, Theater',
-        Mission: 'Azuka Theatre strengthens the connection and shared humanity among its diverse audiences by giving voice to the people whose stories go unheard.',
+        Mission:
+            'Azuka Theatre strengthens the connection and shared humanity among its diverse audiences by giving voice to the people whose stories go unheard.',
         Description:
             'In the fall of 2011, Azuka Theatre along with Inis Nua Theatre Company took up residence in The First Baptist Church at 17th & Sansom where we carved out a 75-seat black box theater as well as office and rehearsal space. Named The Off-Broad Street Theater, Azuka produced 11 shows over the next four years, having expanded our programming to three shows a season. When a new congregation took over the building in 2015, we were forced to leave. Soon after, InterAct Theatre Company opened the brand new Theatres at The Drake that included two new performance spaces. We gladly joined the group of theaters there as Resident Partners. Since that time we have continued producing three shows a year, alternating between the two spaces. The Theaters at the Drake are known as Philadelphia’s Home for New Plays, and we embrace that moniker, so far producing eight world premieres there - all by Philadelphia-based playwrights.',
     },
@@ -2301,7 +2339,8 @@ exports.allOrganizations = [
         Donate: 'https://www.balletx.org/ways-to-support/',
         Membership: 'https://www.balletx.org/join-balletx-beyond/',
         Keywords: 'Dance, Ballet, Performing Arts',
-        Mission: 'BalletX produces original choreography that expands the vocabulary of classical dance for all audiences.',
+        Mission:
+            'BalletX produces original choreography that expands the vocabulary of classical dance for all audiences.',
     },
     {
         Name: 'Barefoot Artists',
@@ -2388,7 +2427,7 @@ exports.allOrganizations = [
         Mission:
             'The John Bartram Association’s mission is to protect and enhance the landmark Bartram’s Garden and House; advance the Bartram legacy of discovery, gardening, and art; and inspire audiences of all ages to care for the natural world.',
         Description:
-            'Bartram’s Garden is a 50-acre National Historic Landmark, operated by the John Bartram Association in cooperation with Philadelphia Parks and Recreation. It is a destination and an outdoor classroom, living laboratory, and membership organization for ever-expanding audiences―over 95,000 each year and counting.\r\n\r\nWe invite you to come here to learn, connect, celebrate, and discover a shared, greener future!\r\n\r\nIn March 2017, the Board of the John Bartram Association approved River Garden Vision 2025, an ambitious strategic and master site plan that establishes five priorities for a sustainable future:\r\n\r\nHorticulture: Carrying on our botanical heritage, leading the way in the propagation of the Bartram plant collection, and reestablishing healthy land and river ecosystems to showcase best practices in conservation and watershed management.\r\nHistory: Balancing preservation with access, preserving and protecting our historic and natural resources to the highest level of stewardship, while demonstrating the relevance of the Bartram legacy in a 21st century urban riverfront community.\r\nCommunity and Education: Engaging and empowering our stakeholders through site-based educational programs and personal experiences that draw inspiration from the Bartram traditions of curiosity, natural wonder, and self-learning.\r\nAgriculture and Food Sovereignty: Foster cultural exchange in our neighborhood using our roots in farming to explore food culture, deepen our community’s relationship with the land, their food, and each other, providing an inclusive and welcoming place for people to develop tools for self-reliance through food sovereignty.\r\nEnduring Sustainability: Sharing a love of nature with generations to come by building capacity and leadership through collaboration, innovation, and the advancement of our vision as a premier urban river garden.',
+            'Bartram’s Garden is a 50-acre National Historic Landmark, operated by the John Bartram Association in cooperation with Philadelphia Parks and Recreation. It is a destination and an outdoor classroom, living laboratory, and membership organization for ever-expanding audiences―over 95,000 each year and counting.\r\n\r\nWe invite you to come here to learn, connect, celebrate, and discover a shared, greener future!\r\n\r\nIn March 2017, the Membership of the John Bartram Association approved River Garden Vision 2025, an ambitious strategic and master site plan that establishes five priorities for a sustainable future:\r\n\r\nHorticulture: Carrying on our botanical heritage, leading the way in the propagation of the Bartram plant collection, and reestablishing healthy land and river ecosystems to showcase best practices in conservation and watershed management.\r\nHistory: Balancing preservation with access, preserving and protecting our historic and natural resources to the highest level of stewardship, while demonstrating the relevance of the Bartram legacy in a 21st century urban riverfront community.\r\nCommunity and Education: Engaging and empowering our stakeholders through site-based educational programs and personal experiences that draw inspiration from the Bartram traditions of curiosity, natural wonder, and self-learning.\r\nAgriculture and Food Sovereignty: Foster cultural exchange in our neighborhood using our roots in farming to explore food culture, deepen our community’s relationship with the land, their food, and each other, providing an inclusive and welcoming place for people to develop tools for self-reliance through food sovereignty.\r\nEnduring Sustainability: Sharing a love of nature with generations to come by building capacity and leadership through collaboration, innovation, and the advancement of our vision as a premier urban river garden.',
     },
     {
         Name: 'Beacon Theatre Productions',
@@ -2511,7 +2550,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/bftp.sep/?ref=br_rs',
         LinkedIn: 'https://www.linkedin.com/company/ben-franklin-technology-partners-of-southeastern-pennsylvania/',
         Newsletter: 'https://www.sep.benfranklin.org/',
-        Blog: 'https://www.sep.benfranklin.org/resources/news-and-publications/, https://www.sep.benfranklin.org/resources/blog/',
+        Blog:
+            'https://www.sep.benfranklin.org/resources/news-and-publications/, https://www.sep.benfranklin.org/resources/blog/',
         Keywords: 'Entrepreneurs, Technology, Startup',
         Mission:
             'We stimulate entrepreneurial potential, economic growth and innovation in Southeastern Pennsylvania by providing the Capital, Counsel and Connections that accelerate the formation and growth of both technology-driven enterprises and partnerships that create sustainable employment opportunities and spur the development, commercialization and adoption of advanced technologies.',
@@ -2637,7 +2677,8 @@ exports.allOrganizations = [
         Address: '1500 Walnut St # 1107',
         ImpactAreas: 'Sports and Recreation, Public Health',
         Zip: 19102,
-        Contact: 'https://mail.google.com/mail/u/0/?view=cm&fs=1&su=News&body=https%3A%2F%2Fbicyclecoalition.org%2Fnews%2F&ui=2&tf=1',
+        Contact:
+            'https://mail.google.com/mail/u/0/?view=cm&fs=1&su=News&body=https%3A%2F%2Fbicyclecoalition.org%2Fnews%2F&ui=2&tf=1',
         ServiceArea: 'Philadelphia',
         Events: 'https://bicyclecoalition.org/events/',
         Twitter: 'https://twitter.com/bcgp',
@@ -2664,7 +2705,8 @@ exports.allOrganizations = [
         Contact: 'info@thebigbackyard.net',
         ServiceArea: 'Mt. Airy',
         Facebook: 'https://www.facebook.com/thebigbackyardnurseryschool/',
-        Donate: 'https://www.paypal.com/donate?token=pTKqq-uX4RRNmeYGz4yujsH0RqLXohO3_4Mk6Q5QL-aWdtcHS2RxWpRCt7qvUrw_eccYh9KnkVOUj7-E',
+        Donate:
+            'https://www.paypal.com/donate?token=pTKqq-uX4RRNmeYGz4yujsH0RqLXohO3_4Mk6Q5QL-aWdtcHS2RxWpRCt7qvUrw_eccYh9KnkVOUj7-E',
         Keywords: 'Preschool, Early Childhood Education, Summer Camp',
         Mission:
             'The Mission of The Big Backyard is to provide a neighborhood, affordable, inclusive cooperative preschool, where the spirit of every child is appreciated and nurtured. Play is valued as a learning opportunity, and parents, teachers and children work together to build a model of community. It provides a safe, loving, joyful early childhood experience.',
@@ -2734,7 +2776,8 @@ exports.allOrganizations = [
         Blog: 'https://bikeandbuild.org/about/news/',
         Membership: 'https://bikeandbuild.org/apply/#i-am-interested',
         Keywords: 'Affordable Housing, Civic Engagement',
-        Mission: 'Through service-oriented cycling trips, Bike & Build benefits affordable housing and empowers young adults for a lifetime of service and civic engagement.',
+        Mission:
+            'Through service-oriented cycling trips, Bike & Build benefits affordable housing and empowers young adults for a lifetime of service and civic engagement.',
         Description:
             'Bike & Build engages young adults in service-oriented cycling trips to raise awareness for the affordable housing cause. It is a once-in-a-lifetime experience that fosters a sustained connection to community. We advocate for the need for affordable housing in thousands of communities across the country.',
     },
@@ -2935,10 +2978,11 @@ exports.allOrganizations = [
         Keywords: 'Mentorship, Life Skills',
         Mission:
             'The Blues Babe Foundation is a North Philadelphia based launch pad for young brilliance. Our programs are rooted in cultivating academic and artistic success in youth coming from the most underserved communities of North Philadelphia and Camden.',
-        Description: 'We offer scholarship & mentoring programs for students that show the aptitude and commitment to their education.',
+        Description:
+            'We offer scholarship & mentoring programs for students that show the aptitude and commitment to their education.',
     },
     {
-        Name: 'Board of Rabbis of Greater Philadelphia',
+        Name: 'Membership of Rabbis of Greater Philadelphia',
         OrganizationType: 'Religious',
         Website: 'https://www.borphilly.org/',
         Address: '2100 Arch Street',
@@ -2969,7 +3013,8 @@ exports.allOrganizations = [
         Impact: 'http://booksthroughbars.org/volunteer/',
         Donate: 'http://booksthroughbars.org/donate/',
         Keywords: 'Incarcerated, Books',
-        Mission: 'Our work aims to reverse the devastating effects that injustice and incarceration has on individuals, families and communities.',
+        Mission:
+            'Our work aims to reverse the devastating effects that injustice and incarceration has on individuals, families and communities.',
         Description:
             'Located Philadelphia, Pennsylvania, Books Through Bars is an all-volunteer non-profit organization. We believe systemic social, educational, and economic inequality leads to relentless cycles of crime and mass incarceration. \r\n\r\nOur work is three-fold:\r\n\r\nBooks: We distribute free books and educational materials to prisoners in seven states. We send them to anyone who asks, as long as their prison accepts books.\r\nKnowledge: The educational materials we send—often to people who otherwise have little no access to them—support prisoner education. \r\nChange: Our work fosters transformation within and outside prison walls. We receive hundreds of letters each year from prisoners telling us how the books they received changed them for the better.',
     },
@@ -3007,7 +3052,7 @@ exports.allOrganizations = [
         Mission:
             'The Bustleton Bengals Youth Club is a non-profit organization whose mission is to help build strong character through working with others and maximizing potential as responsible citizens and leaders.',
         Description:
-            "The Bustleton Bengals Club is a non-profit youth athletic organization that has been teaching the values of athletics, sportsmanship and community since 1956.  The governing body, the Board of Directors, it's coaches and many other participants that see to the task of organizing and running each function are all VOLUNTEERS . This spirit of community is what makes our club work and also encourages our youth as we believe in leading by example!",
+            "The Bustleton Bengals Club is a non-profit youth athletic organization that has been teaching the values of athletics, sportsmanship and community since 1956.  The governing body, the Membership of Directors, it's coaches and many other participants that see to the task of organizing and running each function are all VOLUNTEERS . This spirit of community is what makes our club work and also encourages our youth as we believe in leading by example!",
     },
     {
         Name: 'Casa Soccer League',
@@ -3025,9 +3070,11 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UC19eGxVJCFlL5OV-LJeInVg',
         Newsletter: 'http://www.phillysoccer.org/pages/aboutus',
         Impact: 'http://www.phillysoccer.org/pages/volunteers',
-        Donate: 'https://www.paypal.com/donate?token=IM1LncEjpZ8zexhgfGi1cRiKuWlQxM-LwQymcI2nyCqLW3MbfXrfCSEVrPmFVK_NDMA6PPcs9voyHIDG',
+        Donate:
+            'https://www.paypal.com/donate?token=IM1LncEjpZ8zexhgfGi1cRiKuWlQxM-LwQymcI2nyCqLW3MbfXrfCSEVrPmFVK_NDMA6PPcs9voyHIDG',
         Keywords: 'Soccer, Sports',
-        Mission: 'Providing the Philadelphia area with competitive, high quality, organized soccer at an affordable rate.',
+        Mission:
+            'Providing the Philadelphia area with competitive, high quality, organized soccer at an affordable rate.',
         Description:
             'Casa Soccer League is a 501(c)(3), volunteer-led non-profit organization that provides the Philadelphia area with competitive, high quality, organized soccer at an affordable rate. Founded in 2005 with just a handful of teams, the CASA community has swelled to over 10,000 members across 300 registered teams in 2019, growing into the largest independent amateur soccer league in the USA. We are all about great fun and good competition rolled into one. CASA, Spanish for "house," is truly a house league, solely managed by dedicated volunteers who provide their assistance and time throughout the year. We endeavor to foster the growth of the sport and advance amateur soccer in both the local and national areas.',
     },
@@ -3045,7 +3092,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/PhiladelphiaCFA',
         LinkedIn: 'https://www.linkedin.com/company/philadelphia-center-for-architecture?trk=biz-companies-cym',
         RSS: 'https://www.philadelphiacfa.org/feeds/designfeed.xml',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001bNPGfRV9BKwuIyIkpZoVaXn2kJk-42oRmnTuGnOX6VubPGx8cZmdHZ6xFzHHRM-SJbGXFLKoHk2zM6W_Nj60tQCHEwPTWvKz0YF4beit43c%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001bNPGfRV9BKwuIyIkpZoVaXn2kJk-42oRmnTuGnOX6VubPGx8cZmdHZ6xFzHHRM-SJbGXFLKoHk2zM6W_Nj60tQCHEwPTWvKz0YF4beit43c%3D',
         Impact: 'https://www.philadelphiacfa.org/volunteer',
         Donate: 'https://www.paypal.com/paypalme/CFADdonations?locale.x=en_US',
         Blog: 'https://www.philadelphiacfa.org/blog/categories',
@@ -3063,14 +3111,16 @@ exports.allOrganizations = [
         ImpactAreas: 'Children, Sports and Recreation',
         Zip: 19118,
         Contact: 'chysportsclubgalfriday@gmail.com',
-        ServiceArea: 'Germantown, Roxborough, Oak Lane, Whitemarsh, Erdenheim, Lafayette Hill, Wyndmoor, Flourtown, Oreland, Chestnut Hill',
+        ServiceArea:
+            'Germantown, Roxborough, Oak Lane, Whitemarsh, Erdenheim, Lafayette Hill, Wyndmoor, Flourtown, Oreland, Chestnut Hill',
         Events: 'https://www.chysc.org/page/show/5500415-events',
         Twitter: 'http://twitter.com/@CHYSCBaseball',
         Facebook: 'https://www.facebook.com/chysc/',
         RSS: 'https://www.chysc.org/event/rss_instructions?tags=2017083%2C5500397',
         Blog: 'https://www.chysc.org/in-the-news',
         Keywords: 'Baseball, Basketball, Soccer, Lacrosse, Sports',
-        Mission: 'Providing recreational baseball, basketball, soccer, and lacrosse activities as an avenue for youths to learn and participate in sports in an organized setting.',
+        Mission:
+            'Providing recreational baseball, basketball, soccer, and lacrosse activities as an avenue for youths to learn and participate in sports in an organized setting.',
         Description:
             'The Chestnut Hill Youth Sports Club (CHYSC) was founded in 1962 as The Chestnut Hill Fathers Club. The club name was changed in 2001 to better reflect the mission of the club.  We are a community organization of over fifteen hundred families devoted to providing team sports for our children. Although the large majority of our members are from Mt.Airy and Chestnut Hill, they also reside in various nearby communities including Germantown, Roxborough, Oak Lane, Whitemarsh, Erdenheim, Lafayette Hill, Wyndmoor, Flourtown and Oreland. Men, women, parents and non-parents, of all ages and ethnic, racial and social backgrounds volunteer to coach the teams, run the leagues, and administer the club. Their time and dedication benefit an equally diverse group of thirteen hundred children who live or go to school in the Northwest Philadelphia community.',
     },
@@ -3127,7 +3177,8 @@ exports.allOrganizations = [
         Newsletter: 'https://fairmount-soccer-association.constantcontactsites.com/',
         Donate: 'https://fairmount-soccer-association.constantcontactsites.com/support',
         Keywords: 'Soccer, Sports',
-        Mission: 'To teach the physical and mental skills required in an atmosphere of inclusion and sportsmanship to encourage lifelong participation and love of soccer.',
+        Mission:
+            'To teach the physical and mental skills required in an atmosphere of inclusion and sportsmanship to encourage lifelong participation and love of soccer.',
         Description:
             'Established in 1995, Fairmount Soccer Association is a non-profit youth soccer club serving the city of Philadelphia. We offer Fall, Winter, and Spring in-house and travel programs.',
     },
@@ -3142,7 +3193,8 @@ exports.allOrganizations = [
         ServiceArea: 'Frankford',
         Twitter: 'https://twitter.com/fkdchargers',
         Facebook: 'https://www.facebook.com/frankford.chargers?fref=ts&ref=br_tf',
-        Donate: 'https://www.paypal.com/donate?token=bxAGj7vwO4nyMGy6uhdKieklgbYaaEGju6sARRsC_rSKMOi1n0hi3p07Lv1Ocl40RPn1BB7a6Z9bVxZ5',
+        Donate:
+            'https://www.paypal.com/donate?token=bxAGj7vwO4nyMGy6uhdKieklgbYaaEGju6sARRsC_rSKMOi1n0hi3p07Lv1Ocl40RPn1BB7a6Z9bVxZ5',
         Keywords: 'Sports, Mentorship',
         Mission:
             'The Frankford Chargers Sports and Mentoring Association (FCSMA) is a non-profit agency whose primary goal is to expand the limited choices and resources of our community’s youth by offering productive and wholesome athletic opportunities',
@@ -3160,7 +3212,8 @@ exports.allOrganizations = [
         ServiceArea: 'Overbrook, Carrol Park',
         Events: 'https://www.boostcdc.com/events.html',
         Keywords: 'Anti-Violence, Mentorship, Tutoring, Summer Camp',
-        Mission: 'To improve the Quality of life of the residences in the Overbrook Carroll Park Community. We operate on the premises "As the individual grows, so grows the neighborhood.',
+        Mission:
+            'To improve the Quality of life of the residences in the Overbrook Carroll Park Community. We operate on the premises "As the individual grows, so grows the neighborhood.',
         Description:
             'A primary focus is to address at risk and under-served youth with time proven tools essential to enhancing the quality of life for youth in the BOOST CDC catchment area. Some issues that have been identified as community epidemics include drug activity, drug abuse, illiteracy, conflict resolution, lack of community standards, lack of career preparation, and a lack of employment readiness. BOOST CDC will address these issues in the hope of interrupting the continuous cycle of senseless violence',
     },
@@ -3179,7 +3232,8 @@ exports.allOrganizations = [
         Impact: 'https://afaho.org/contact-us',
         Blog: 'https://afaho.org/news-%26-updates',
         Keywords: 'African, Caribbean, Immigrants, Refugees',
-        Mission: "AFAHO's work aims to promote independence and self-sufficiency and improve healthcare outcomes among our target population",
+        Mission:
+            "AFAHO's work aims to promote independence and self-sufficiency and improve healthcare outcomes among our target population",
         Description:
             'AFAHO provides culturally & linguistically sensitive health, human, and educational services to African and Caribbean immigrants/refugees.\r\n\r\nWe strengthen community health culture and facilitate social integration through the utilization of a unique peer support model. We strongly believe that despite the adjustment difficulties some immigrants and refugees face, they have the wisdom, strength, skills, resources and cultural influences to enrich the cultural tapestry and contribute to the development of the communities they reside in (as has been well documented). Unique to the services provided by AFAHO over the past decade is the perimeter on which the agency is finding its clients: refugees, asylees and immigrants living with one or more of the following co-morbid social and health-related conditions: isolation, poverty, stigma, domestic and sexual violence, cultural and language barriers, chronic and infectious diseases, ,behavioral health problems, caring for dependent children and/or elderly parents, housing instability, food insecurities, joblessness, fear of navigating complex health and social services systems and lack of job skills.',
     },
@@ -3241,7 +3295,8 @@ exports.allOrganizations = [
         Impact: 'https://www.bgcphila.org/volunteer/',
         Donate: 'https://www.bgcphila.org/donate/',
         Keywords: 'Mentorship, Literacy, Career Development, STEM',
-        Mission: 'Mission\r\nTo enable all young people, especially those who need us most, to reach their full potential as productive, caring, responsible citizens.',
+        Mission:
+            'Mission\r\nTo enable all young people, especially those who need us most, to reach their full potential as productive, caring, responsible citizens.',
         Description:
             'Boys & Girls Clubs of Philadelphia have been serving youth in Philadelphia’s most impoverished communities for over 133 years. Our Clubs provide a variety of services to youth including preschool, after-school, and teen programming.',
     },
@@ -3383,7 +3438,8 @@ exports.allOrganizations = [
         Contact: 'http://www.brithsholom.com/contact.php',
         ServiceArea: 'Philadelphia',
         Keywords: 'Low Income',
-        Mission: 'The foundation provides low income housing under the us dept of housing and urban development programs to the elderly.',
+        Mission:
+            'The foundation provides low income housing under the us dept of housing and urban development programs to the elderly.',
         Description:
             'Brith Sholom House is a non-profit rental community for seniors (age requirement 62 and up). Conveniently located in Bala Cynwyd, this friendly community is within blocks of world-class art museums, theaters, concerts, fine dining and shopping. With excellent accommodations, comprehensive services and amenities.',
     },
@@ -3404,7 +3460,8 @@ exports.allOrganizations = [
         Donate: 'https://www.broadstreetministry.org/donate-now/',
         Blog: 'https://www.broadstreetministry.org/blog/',
         Keywords: 'Church, Reentry, Low Income, Legal Services',
-        Mission: 'We transform our city, our institutions, and ourselves when we embrace the individual needs of our most vulnerable sisters & brothers.',
+        Mission:
+            'We transform our city, our institutions, and ourselves when we embrace the individual needs of our most vulnerable sisters & brothers.',
         Description:
             'In 2005, Broad Street Ministry was formed as an alternative church community. BSM seeks to be dynamic in its expression of worship, embracing those both on the margins of faith and those who have enjoyed the embrace of the church.\r\n\r\nBSM also welcomes into its body not just those who are on the margins of faith but those who are on the margins of society. Here, a member of a prestigious private club worships alongside a person experiencing homelessness. The gay and lesbian activist passes the peace with the Pentecostal lay preacher. The possessor of a PhD. in theology prays alongside the summa cum laude graduate of the School of Hard Knocks. Churches should regularly feature this kind of diversity but in our experience—they seldom do. We believe that diversity of belief, skin tone and life circumstance strengthens our witness as a Christian community—and we work hard to extend it. We worship weekly at 4pm.BSM tries to be faithful to Christ’s call to gather together all who can hear his voice.',
     },
@@ -3507,7 +3564,8 @@ exports.allOrganizations = [
         Newsletter: 'https://www.bushfiretheatre.org/donations-and-sponsorship',
         Membership: 'https://www.bushfiretheatre.org/membership',
         Keywords: 'Performing Arts, African American, Literacy, Arts Education, Playwrights',
-        Mission: 'We are dedicated to providing a performing arts experience featuring the works of African American playwrights and a resident ensemble of actors.',
+        Mission:
+            'We are dedicated to providing a performing arts experience featuring the works of African American playwrights and a resident ensemble of actors.',
         Description:
             'Bushfire Theatre of Performing Arts, is a non-profit company founded in 1977. We are dedicated to offering greater opportunities to African American professional and non-professional actors, playwrights, directors and other theatre personnel.﻿ Our Youth Arts Education Program supports children and adolescents through the arts and literacy.',
     },
@@ -3537,7 +3595,8 @@ exports.allOrganizations = [
         ServiceArea: 'Fishtown',
         Events: 'https://www.bymysideparenting.org/apps/calendar/',
         Facebook: 'https://www.facebook.com/By-My-Side-Parenting-35428403686/',
-        Donate: 'https://www.paypal.com/webapps/shoppingcart?flowlogging_id=4c6f3fd144779&mfid=1610824797853_4c6f3fd144779#/checkout/openButton',
+        Donate:
+            'https://www.paypal.com/webapps/shoppingcart?flowlogging_id=4c6f3fd144779&mfid=1610824797853_4c6f3fd144779#/checkout/openButton',
         Keywords: 'Parenting, Families',
         Mission:
             "Our mission is to provide all families with a warm and welcoming environment in which they can enhance their children's lives through age appropriate play while simultaneously providing a welcoming community where families can connect and expand their parenting village.",
@@ -3600,7 +3659,8 @@ exports.allOrganizations = [
         Donate: 'https://casaphiladelphia.org/donate/',
         Blog: 'https://casaphiladelphia.org/category/blog/, https://casaphiladelphia.org/category/news/',
         Keywords: 'Foster Care, Child Advocate',
-        Mission: 'CASA of Philadelphia trains and supports community volunteers to advance the welfare of children in foster care through effective advocacy.',
+        Mission:
+            'CASA of Philadelphia trains and supports community volunteers to advance the welfare of children in foster care through effective advocacy.',
         Description:
             'Philadelphia County’s CASA volunteer advocacy program recruits, trains, and supervises volunteers to monitor the individual needs of each child or sibling group both in and out of the courtroom to ensure they receive needed support and services. As the “eyes and ears for the court,” CASA volunteers carefully review health and education records, interview foster parents, parents, doctors, teachers and therapists, and provide a complete picture of the child to the court. CASA volunteers ensure that services are provided so that children make faster progress toward placement in a permanent, loving home with parents, relatives, or an adoptive family.',
     },
@@ -3686,7 +3746,8 @@ exports.allOrganizations = [
         Donate: 'https://give2.chop.edu/give/241805/#!/donation/checkout?utm_source=main_nav',
         Blog: 'https://www.chop.edu/newsroom',
         Keywords: 'Pediatrics, Research, Hospital, Family Care',
-        Mission: "Children's Hospital of Philadelphia (CHOP) is the nation's first hospital devoted exclusively to the care of children.",
+        Mission:
+            "Children's Hospital of Philadelphia (CHOP) is the nation's first hospital devoted exclusively to the care of children.",
         Description:
             "Since our start in 1855, CHOP has been the birthplace for countless breakthroughs and dramatic firsts in pediatric medicine. Built on a foundation of delivering safe, high-quality, family-centered care, the Hospital has fostered medical discoveries and innovations that have improved pediatric healthcare and saved countless children’s lives. Today, families facing complex conditions come to CHOP from all over the world, and our compassionate care and innovation has repeatedly earned us a spot on the U.S. News & World Report's Honor Roll of the nation's best children's hospitals.",
     },
@@ -3706,7 +3767,8 @@ exports.allOrganizations = [
         Donate: 'https://www.comhar.org/donate',
         Blog: 'https://www.comhar.org/blog',
         Keywords: 'Latino, Outpatient, Recovery',
-        Mission: 'To provide health and human services that empower individuals, families and communities to live healthier, self-determined lives.',
+        Mission:
+            'To provide health and human services that empower individuals, families and communities to live healthier, self-determined lives.',
         Description:
             'At COMHAR, inspiring hope, building self-confidence, encouraging independence and becoming integrated as part of a community are pillars of our service delivery model.\r\n\r\nFrom these early beginnings, COMHAR has grown and formed into a comprehensive human services organization by implementing community centers, community living arrangements, co-occurring behavioral health and addiction programs, services for the Latino community, services supporting individuals with HIV/Aids, and children and family services. Today, our services are offered in the Philadelphia, Montgomery and Northampton County communities, in homes, community centers and schools helping over 11,000 individuals each year. We provide a full array of recovery-oriented and quality-focused services.  Our services are diverse, from outpatient treatment, to day support and residential programs, to workshops, in order to bring support to persons where they are and in ways that support their individual recovery.\r\n\r\nOur services are delivered in homes, schools and throughout the community at 7 office locations along with over 100 residential sites.  COMHAR now has over 700 dedicated staff providing person-centered care to more than 11,000 individuals each year.',
     },
@@ -3909,7 +3971,8 @@ exports.allOrganizations = [
         Donate: 'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=H465AWMUDM2LC&source=url',
         Membership: 'https://cancersupportphiladelphia.org/how-to-join/',
         Keywords: 'Cancer, Support',
-        Mission: 'To ensure that all people impacted by cancer are empowered by knowledge, strengthened by action, and sustained by community.',
+        Mission:
+            'To ensure that all people impacted by cancer are empowered by knowledge, strengthened by action, and sustained by community.',
         Description:
             'The Cancer Support Community Greater Philadelphia offers more than 150 programs each month — all provided free of charge — for men, women, and children whose lives have been affected by cancer. Please see our program calendar for a complete list of our programs this month.  Support and Networking Groups allow our members to meet others with similar diagnoses and experiences. These groups offer the chance to share stories, connect with others and obtain resources specific to their cancer diagnoses and experiences.',
     },
@@ -3951,7 +4014,8 @@ exports.allOrganizations = [
         Donate: 'http://www.teamfoster.org/campaign/the-6th-annual-foster-100/',
         Blog: 'https://www.teamfoster.org/news/',
         Keywords: 'Rehabilitation, Recovery, Service Dogs',
-        Mission: '#WEARETEAMFOSTER\r\nOur mission is to honor Erick Foster’s memory and raise awareness and money for our wounded veterans.',
+        Mission:
+            '#WEARETEAMFOSTER\r\nOur mission is to honor Erick Foster’s memory and raise awareness and money for our wounded veterans.',
         Description:
             'Team Foster is a 501(c)(3) tax-exempt non-profit dedicated to supporting and rehabilitating injured combat veterans. Team Foster raises money to partner service dogs with tri-state area veterans suffering from combat-related disabilities including post-traumatic stress disorder (PTSD) and traumatic brain injury (TBI). We ensure these dogs are obtained, cared for, and provided a special training team—all at no cost to our veterans.\r\n\r\nThe U.S. military nor the VA nor the government provide funding or support for service dogs for veterans. While service dogs are vital tools in rehabilitation and recovery, they are also expensive and resource intensive. One service dog can take two years and more than $25,000 to properly prepare to partner. Team Foster raises money to provide trained service dogs at no cost to local veterans #NoHeroLeftBehind.',
     },
@@ -4038,7 +4102,8 @@ exports.allOrganizations = [
         Contact: 'ndoolittle@schnader.com',
         ServiceArea: 'Philadelphia',
         Keywords: 'Grants, Foundation',
-        Mission: 'The Caroline Alexander Buck Foundation strives to improve the quality of life for children in the greater Philadelphia metropolitan area.',
+        Mission:
+            'The Caroline Alexander Buck Foundation strives to improve the quality of life for children in the greater Philadelphia metropolitan area.',
         Description:
             'The Caroline Alexander Buck foundation is an independent private foundation that was funded more than 50 years ago by Caroline A. Churchman in memory of her mother.  Since its creation in 1960, the Foundation has been devoted to its mission of expanding services and opportunities available to children in the greater Philadelphia metropolitan area. \r\n\r\nThe Foundation focuses on programs that provide educational opportunities and support to children from preschool through high school.  In addition, the Foundation focuses on programs that provide necessary social services support to children and their families.  By supporting these programs, the Foundation seeks to encourage children to become productive and engaged members of their communities.',
     },
@@ -4075,7 +4140,8 @@ exports.allOrganizations = [
         Impact: 'https://www.carpentershall.org/volunteer',
         Donate: 'https://interland3.donorperfect.net/weblink/WebLink.aspx?name=E340582&id=1',
         Keywords: 'Event Venue, Historical Landmark',
-        Mission: "The Mission of The Carpenters' Company of the City and County of Philadelphia to preserve and maintain historic Carpenters' Hall.",
+        Mission:
+            "The Mission of The Carpenters' Company of the City and County of Philadelphia to preserve and maintain historic Carpenters' Hall.",
         Description:
             "Carpenters' Hall is a treasure in historic Philadelphia. It hosted the First Continental Congress in 1774 and was home to Franklin's Library Company, The American Philosophical Society, and the First and Second Banks of the United States.  Carpenters' Hall is the official birthplace of the Commonwealth of Pennsylvania and a key meeting place in the early history of the United States.\r\n\r\nCompleted in 1775, the two-story brick meeting hall was built for and still privately owned by the Carpenters' Company of the City and County of Philadelphia, the country's oldest extant craft guild. The First Continental Congress met here in 1774 and it was the location of the Pennsylvania Provincial Conference in June 1776. Their proceedings officially declared the Province of Pennsylvania's independence from the British Empire and established the Commonwealth of Pennsylvania, mobilized the Pennsylvania militia for the American Revolutionary War, set up the machinery for the Pennsylvania Provincial Convention which framed the Pennsylvania Constitution of 1776, and enabled the United States Declaration of Independence to proceed. It was briefly occupied in 1777 by the British Army during the war.\r\n\r\nThe site was designated a National Historic Landmark on April 15, 1970.",
     },
@@ -4108,7 +4174,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/pages/Cathedral-of-Faith-Church-of-The-Living-God/776896322374402',
         Youtube: 'https://youtube.com/cathedraloffaithclg',
         Keywords: 'Christianity, Church',
-        Mission: 'We are to set an example as true Christian believers and share the love of Jesus Christ; extending the free gift of salvation to everyone.',
+        Mission:
+            'We are to set an example as true Christian believers and share the love of Jesus Christ; extending the free gift of salvation to everyone.',
         Description:
             'Our desire is not for another building open on Sundays only, but a place for positive holistic progress and spiritual growth.  The vision is not to build or have a building for "church as usual".  We, at Cathedral of Faith Church envision the following for God’s House:\r\n\r\n- A welcoming place that is open to all, for all to celebrate our gracious God. \r\n\r\n- A sanctuary for the needy that would offer food, clothing and counseling to obtain shelter.\r\n\r\n- A place that is open seven days a week offering noon-day prayer for everybody, every day. \r\n\r\n- A place to train the unemployed useable skills to obtain gainful employment.\r\n\r\n- A place for seniors to mentor young people and give guidance for their life’s journey. \r\n\r\n- A place that is available for other ministries to come and elevate their ministry objectives.\r\n\r\nThis will be God’s house where he will get non-stop glory from all who will enter its doors.',
     },
@@ -4123,7 +4190,8 @@ exports.allOrganizations = [
         ServiceArea: 'Northeast Philadelphia',
         Events: 'http://ccs-cua.org/events/',
         Twitter: 'https://twitter.com/CCS_CUA4',
-        Facebook: 'https://www.facebook.com/Catholic-Community-Services-CCS-Strengthening-Families-Uniting-Communities-273321089517185/',
+        Facebook:
+            'https://www.facebook.com/Catholic-Community-Services-CCS-Strengthening-Families-Uniting-Communities-273321089517185/',
         Instagram: 'https://www.instagram.com/ccs_cua4/',
         Keywords: 'Christianity, Catholicism, Case Management',
         Mission:
@@ -4161,7 +4229,8 @@ exports.allOrganizations = [
         Donate: 'https://cssphiladelphia.org/donate/',
         Blog: 'https://cssphiladelphia.org/category/general-news/',
         Keywords: 'Legal Services, Adoption, Prenatal, Parenting, Refugee Resettlement',
-        Mission: 'Catholic Social Services of the Archdiocese of Philadelphia continues the work of Jesus by affirming, assisting and advocating for individuals, families, and communities.',
+        Mission:
+            'Catholic Social Services of the Archdiocese of Philadelphia continues the work of Jesus by affirming, assisting and advocating for individuals, families, and communities.',
         Description:
             'At Catholic Social Services we provide help and create hope for over 3,100 people every day. Our network of programs offers support to those who need it most. Every day we help the homeless & hungry, at-risk youth, struggling families & single parents. We help immigrants, refugees, neglected children and those with intellectual disabilities.',
     },
@@ -4180,7 +4249,8 @@ exports.allOrganizations = [
         Donate: 'https://ceasefirepa.salsalabs.org/holidaygiving/index.html',
         Blog: 'https://www.ceasefirepa.org/updates/',
         Keywords: 'Gun Violence, Advocacy, Policy',
-        Mission: 'The mission of CeaseFirePA is to end the epidemic of gun violence across the Commonwealth and our country through education, coalition building, and advocacy.',
+        Mission:
+            'The mission of CeaseFirePA is to end the epidemic of gun violence across the Commonwealth and our country through education, coalition building, and advocacy.',
         Description:
             'CeaseFirePA is a trusted voice and resource for the public, the media, and policy makers on gun violence and gun violence prevention.  We want Pennsylvanians to consistently identify gun violence prevention as a top concern, and have leaders and public policy makers give this issue the attention it deserves.\r\n\r\nGun violence is a critical public health issue in Pennsylvania. Pennsylvania suffers more than 1400 gun deaths every year, whether by homicide, suicide or unintentional shootings. PA is  one of a growing number of states where we have more gun deaths than deaths due to automobile accidents.  Our Resource page has fact and stat sheets about gun violence in PA, domestic violence and guns and suicide and firearms.\r\n\r\nConsistent with national data, about 2/3 of  the gun deaths in Pennsylvania are suicides. To learn more about why suicide is a critical part of our gun violence problem, click here.\r\n\r\nClearly, we have a serious problem that demands systemic solutions, focused on regulation, policy, enforcement, economics, education and public health.  Our work focuses on policies related to access to and regulation of firearms, but we also engage in efforts and partnerships to address the other facets required to solve this problem.',
     },
@@ -4295,7 +4365,8 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/ccra_philly',
         Youtube: 'https://www.youtube.com/channel/UCgDUwFshGHZaW75hforsHcQ/featured',
         RSS: 'https://www.centercityresidents.org/publications/RSS',
-        Newsletter: 'https://visitor.constantcontact.com/manage/optin?v=001qv8C0zYblRk-Yr1M9Od0dDVb8UJTj-yNy9F1x-wrFwYtQHnTZTsXDy0EZiAaah02-tq4ku8nZbvA8hugCRq9BbpBRJDAL2Dz',
+        Newsletter:
+            'https://visitor.constantcontact.com/manage/optin?v=001qv8C0zYblRk-Yr1M9Od0dDVb8UJTj-yNy9F1x-wrFwYtQHnTZTsXDy0EZiAaah02-tq4ku8nZbvA8hugCRq9BbpBRJDAL2Dz',
         Donate: 'https://www.centercityresidents.org/donate',
         Blog: 'https://www.centercityresidents.org/publications',
         Membership: 'https://www.centercityresidents.org/membershipMaster',
@@ -4318,7 +4389,8 @@ exports.allOrganizations = [
         Newsletter: 'https://contemporarymussar.org/',
         Donate: 'https://secure.lglforms.com/form_engine/s/Vg5egVhugIfvUGnUrb8pIQ',
         Keywords: 'Mussar, Spirituality, Culture, Judaism',
-        Mission: 'The Center for Contemporary Mussar, based in Philadelphia, offers online classes in Mussar texts, theology, and practice to students across the world.',
+        Mission:
+            'The Center for Contemporary Mussar, based in Philadelphia, offers online classes in Mussar texts, theology, and practice to students across the world.',
         Description:
             'Explore this ancient and innovative way to invoke your highest self in service, invigorate your relationships, and repair the world.\r\n\r\nThe Center for Contemporary Mussar was launched in August 2017, as an independent non-profit organization, after more than 15 years as a synagogue-based program (The Mussar Leadership Program), under the intellectual leadership of Rabbi Ira Stone and Dr. Beulah Trey, a psychologist and group dynamics expert.\r\n\r\nWe offer introductory and continuing classes that focus on Mussar texts, theology and practice. Students commit for a semester at a time; a complete curriculum is offered over a period of four years.',
     },
@@ -4332,7 +4404,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/vradvocate/',
         Keywords: 'Advocacy, Law, Policy',
-        Mission: 'The Pennsylvania Client Assistance Program is dedicated to ensuring that the rehabilitation system in Pennsylvania is open and responsive to your needs.',
+        Mission:
+            'The Pennsylvania Client Assistance Program is dedicated to ensuring that the rehabilitation system in Pennsylvania is open and responsive to your needs.',
         Description:
             'CAP is an advocacy program for people with disabilities administered by the Center for Disability Law & Policy.​  CAP helps people who are seeking services from the Office of Vocational Rehabilitation, Blindness and Visual Services, Centers for Independent Living and other programs funded under the Rehabilitation Act of 1973.\r\n\r\nCAP help is provided to you at no charge, regardless of income.   CAP is Independent from OVR and Centers for Independent Living.  CAP will ADVISE,INFORM,ASSIST and ADVOCATE on behalf of the individual needs of our clients!',
     },
@@ -4405,7 +4478,8 @@ exports.allOrganizations = [
         Contact: 'https://www.carie.org/contact/',
         ServiceArea: 'Philadelphia',
         Twitter: 'https://twitter.com/center4advocacy',
-        Facebook: 'https://www.facebook.com/Center-for-Advocacy-for-the-Rights-and-Interests-of-the-Elderly-141827525833438/',
+        Facebook:
+            'https://www.facebook.com/Center-for-Advocacy-for-the-Rights-and-Interests-of-the-Elderly-141827525833438/',
         Instagram: 'https://www.instagram.com/cariephiladelphia/',
         Youtube: 'https://www.youtube.com/user/Center4Advocacy',
         Newsletter: 'https://www.carie.org/',
@@ -4413,7 +4487,8 @@ exports.allOrganizations = [
         Donate: 'https://www.carie.org/donate/',
         Blog: 'https://www.carie.org/get-involved/news-events/',
         Keywords: 'Advocacy, Elder Care',
-        Mission: 'To promote the well-being, rights, and autonomy of older adults through advocacy, education, and action.',
+        Mission:
+            'To promote the well-being, rights, and autonomy of older adults through advocacy, education, and action.',
         Description:
             'CARIE’s programs extend to the entire state of Pennsylvania and beyond. CARIE is a leader in providing direct assistance to the elderly, their families, and professionals in the aging field. Through telephone contacts and site visits to Philadelphia-area long term care facilities, the agency assists older people and their caregivers to assess needs, identify service resources, and make the necessary connections to resolve elder care issues.',
     },
@@ -4433,7 +4508,8 @@ exports.allOrganizations = [
         Donate: 'http://www.goodlands.org/donate.html',
         Blog: 'http://www.goodlands.org/centro-blog',
         Keywords: 'Dance, Puerto Rico, Latino, Summer Camp',
-        Mission: 'We are a 501(c)3 nonprofit with a mission to promote resilience in young people through educational enrichment and engagement with the arts and Latino cultures.',
+        Mission:
+            'We are a 501(c)3 nonprofit with a mission to promote resilience in young people through educational enrichment and engagement with the arts and Latino cultures.',
         Description:
             'We achieve this mission through our after school program, summer camp, and flagship program, “The Goodlands®.”  Centro uses photography, poetry, Bomba (traditional Puerto Rican dance, percussion, and singing), and mural making to assist young people in the Fairhill community to find their voice and creatively express themselves through the arts.\r\n​\r\nCentro’s goal is to offer experiences to Fairhill’s young people that contribute to their success in and out of school. \r\nCentro reaches its goals by: 1) utilizing the project-based learning (PBL) method to engage children in arts and Latino cultural programming; 2) offering homework help; and 3) engaging children’s families and community in programming.\r\n\r\nToday Fairhill is still one of Philadelphia’s most depressed and dangerous neighborhoods: 60% of Fairhill’s residents live below the poverty level; more than 50% of Fairhill’s children do not graduate from high school; and drugs sales are a Fairhill industry. Currently Centro serves more than 100 elementary and middle school children annually and maintains a waiting list. Parents rely on Centro as a safe haven for their children, a resource to help their children understand their homework, and a creative and encouraging environment for their children’s social and emotional growth. Centro’s services are as important now as they were in 1995.',
     },
@@ -4448,7 +4524,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelhpia',
         Twitter: 'https://twitter.com/_challah4hunger',
         Facebook: 'https://www.facebook.com/challahforhunger/',
-        Newsletter: 'https://docs.google.com/forms/u/0/d/12qg_neZ8lX_TFuknX35uawL3-ucLXhnb-9IwwlROfcE/viewform?edit_requested=true',
+        Newsletter:
+            'https://docs.google.com/forms/u/0/d/12qg_neZ8lX_TFuknX35uawL3-ucLXhnb-9IwwlROfcE/viewform?edit_requested=true',
         Impact: 'https://challahforhunger.org/get-involved/',
         Donate: 'https://donate.challahforhunger.org/give/222734/#!/donation/checkout',
         Blog: 'https://challahforhunger.org/news/',
@@ -4563,7 +4640,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/home?status=About+https%3A%2F%2Fchestnuthillpa.com%2Fabout%2F',
         Facebook: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchestnuthillpa.com%2Fabout%2F',
         Instagram: 'https://instagram.com/chestnuthill_pa/',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001D5z3cl58IfBr3raitO65Jo_sRETfKCA9kSuFe6kWxoaGQiH-bAQ1xSyzQRHpu2yMwd7suaiaKknMF0jsTq2SOW0JwJoO80k6EUcRfJqlDgI%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001D5z3cl58IfBr3raitO65Jo_sRETfKCA9kSuFe6kWxoaGQiH-bAQ1xSyzQRHpu2yMwd7suaiaKknMF0jsTq2SOW0JwJoO80k6EUcRfJqlDgI%3D',
         Blog: 'https://chestnuthillpa.com/happenings-on-the-hill/',
         Keywords: 'Marketing, Membership Organization, Business District',
         Mission:
@@ -4597,11 +4675,14 @@ exports.allOrganizations = [
         Contact: 'cefepahannah@comcast.net',
         ServiceArea: 'Philadelphia',
         Events: 'http://cefphiladelphia.org/?page_id=16',
-        Twitter: 'https://twitter.com/intent/tweet?source=http://cefphiladelphia.org/?page_id=293&text=Contact%20Us:http://cefphiladelphia.org/?page_id=293',
-        Facebook: 'https://www.facebook.com/pages/Child-Evangelism-Fellowship-of-Philadelphia-County-Inc/194216807262362',
+        Twitter:
+            'https://twitter.com/intent/tweet?source=http://cefphiladelphia.org/?page_id=293&text=Contact%20Us:http://cefphiladelphia.org/?page_id=293',
+        Facebook:
+            'https://www.facebook.com/pages/Child-Evangelism-Fellowship-of-Philadelphia-County-Inc/194216807262362',
         Donate: 'http://cefphiladelphia.org/?page_id=148',
         Keywords: 'Gospel, Bible Club, Day Camp, Christian',
-        Mission: 'Child Evangelism Fellowship of Philadelphia County, Inc. is a nondenominational, parachurch ministry with the goal of reaching unsaved children with the truth of the Gospel.',
+        Mission:
+            'Child Evangelism Fellowship of Philadelphia County, Inc. is a nondenominational, parachurch ministry with the goal of reaching unsaved children with the truth of the Gospel.',
         Description:
             'Welcome! Located in north Philly, CEF of Philadelphia is a chapter of Child Evangelism Fellowship of Eastern Pa ministering to the city of Philadelphia through bible clubs, release time classes, and Day Camp. We have a deep love for the children of Philadelphia and pray that each person will hear of the love of Jesus. CEF of Philadelphia is a non-denominational organization whose sole purpose is to evangelize the youngest members of our community.\r\n\r\nAt Child Evangelism Fellowship of Philadelphia county, our focus is on the kids and we strive to bring Christ centered ministries to many areas of Philadelphia during and after the school year.',
     },
@@ -4612,7 +4693,7 @@ exports.allOrganizations = [
         Address: '4525 N COLORADO ST',
         ImpactAreas: 'Arts, Education, Children',
         Zip: 19140,
-        Contact: 'Board@childinnersense.org',
+        Contact: 'Membership@childinnersense.org',
         ServiceArea: 'Philadelphia',
         Twitter: 'https://twitter.com/ChildInnerSense',
         Facebook: 'https://www.facebook.com/pg/childinnersenseeduartsrec/about/',
@@ -4711,7 +4792,8 @@ exports.allOrganizations = [
         Donate: 'https://cli.org/donate-2/',
         Blog: 'https://cli.org/blog/',
         Keywords: 'Literacy, Teachers, Reading, Writing',
-        Mission: 'Children\'s literacy initiative ("cli") is a non-profit that works with teachers to transform instruction so that children can become powerful readers, writers and thinkers.',
+        Mission:
+            'Children\'s literacy initiative ("cli") is a non-profit that works with teachers to transform instruction so that children can become powerful readers, writers and thinkers.',
         Description:
             'Learning to read is a strong predictor of a student’s future academic achievement.\r\n\r\nA teacher’s literacy instruction plays the most critical role in a student’s reading development, but many teachers fail to receive adequate training in this area.\r\n\r\nBy helping educators learn high-impact instructional strategies and nurturing dynamic professional learning communities, CLI builds lasting capacity in teachers and principals over time.\r\n\r\nCLI works with district partners to create sustainable organizational processes that continue the trajectory of improvement in schools. Building a teacher’s instructional expertise impacts student learning over the course of a teacher’s career.',
     },
@@ -4726,7 +4808,8 @@ exports.allOrganizations = [
         ServiceArea: 'Lower Northeast Philadelphia',
         Facebook: 'https://www.facebook.com/Childrens-Play-Care-Center-219410851427659/',
         Keywords: 'Preschool, Early Learning',
-        Mission: 'The purpose of the organization is to provide childcare and educational services to children of low income residents of inner city famlies.',
+        Mission:
+            'The purpose of the organization is to provide childcare and educational services to children of low income residents of inner city famlies.',
         Description:
             'Our childcare centers offer the finest in secure facilities for children aged infant through school age. Our preschool curriculum provides developmentally-appropriate learning opportunities that encourage your child to be confident, successful, life-long learners. The early years are critical to your child’s positive growth and development as they are eager to learn new skills, experience challenging opportunities, socialize in a positive environment and be encouraged in their new strengths and talents. We hope your whole family will enjoy our centers and the friends you will make here.',
     },
@@ -4785,7 +4868,8 @@ exports.allOrganizations = [
         Donate: 'http://www.jubileefund.org/contribute/',
         Blog: 'http://www.jubileefund.org/blog-and-helpful-information/',
         Keywords: 'Scholarship, Low Income',
-        Mission: 'Children’s Jubilee Fund provides K-12 scholarships for low-income, city students to attend christian schools.',
+        Mission:
+            'Children’s Jubilee Fund provides K-12 scholarships for low-income, city students to attend christian schools.',
         Description:
             'For more than a decade, Children’s Jubilee Fund has invested in the lives and futures of low-income students in the Philadelphia region. The lives those investments have touched can be seen today through the stories of our current and former Jubilee students. Through Children’s Jubilee Fund, together we can continue to invest in students’ futures.',
     },
@@ -4803,7 +4887,8 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/childspacecenters/',
         Donate: 'https://childspacedaycarecenters.org/donation/',
         Keywords: 'Daycare, Musicians, Yoga',
-        Mission: 'To provide child care services for the general public in order to enable individuals to be gainfully employed, to attend school/training, or to actively seek employment.',
+        Mission:
+            'To provide child care services for the general public in order to enable individuals to be gainfully employed, to attend school/training, or to actively seek employment.',
         Description:
             'Childspace was created to provide a new model for the delivery of child care services.  Recognizing that quality jobs for child care workers was an essential, but often overlooked, building block for centers seeking to provide the highest quality of care, Childspace was founded as a worker-cooperative.  Childspace is nationally recognized for its highly successful quality job/quality care business model.\r\n\r\nWhile learning is quality classrooms is fun, Childspace also brings special teachers to all centers on a weekly rotation.  Special teachers include a musician from the community who plays guitar and sings with the children; a yoga instructor who teaches children to find calm while they are learning new movements; and a farmer to support the children in growing and harvesting fresh vegetables and flowers.  \r\n\r\nAs of today, Childspace has created 57 living-wage jobs and serves 210 families in its three centers. Learn more about a rewarding career at Childspace.',
     },
@@ -4846,7 +4931,8 @@ exports.allOrganizations = [
         Impact: 'https://www.clcphila.org/get-involved/volunteer-opportunities/',
         Donate: 'https://www.clcphila.org/get-involved/donation/',
         Keywords: 'Christian, Legal',
-        Mission: 'Our mission is to do justice with the love of God by advocating for those in need in the Philadelphia area.',
+        Mission:
+            'Our mission is to do justice with the love of God by advocating for those in need in the Philadelphia area.',
         Description:
             'We are an urban legal ministry which seeks to address injustice and poverty in partnership with existing inner city host ministries by bringing volunteer attorneys into neighborhoods where their services are most needed.\r\n\r\nWe invite clients to come to places of safety in their own neighborhood to meet one-on-one with an attorney for a free one hour consultation. Clients are given sound advice, counsel and direction. Often we provide pro-se coaching in matters clients can handle without representation. We offer clients who qualify with a pro-bono or reduced fee referral to one of our referral attorneys. We also offer spiritual care to clients, both at and after clinic, to those who are interested. We try to offer the love of Jesus to everyone, and seek to help them in any way we can. We have become a lighthouse and a bridge in at-risk neighborhoods, a lighthouse they can come to out of troubled waters, and a bridge to a community of hope, that will care for them. We desire to be part of healing and revival in the city, as we bring diverse people together, urban and suburban, from all churches and racial backgrounds, for a common cause.\r\n\r\nAt our clinics, we handle all types of legal matters including, but not limited to criminal record expungements, wills and powers of attorney.',
     },
@@ -4860,7 +4946,8 @@ exports.allOrganizations = [
         Contact: 'info@royfoundation.org',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/ChristinaTylerRoyFoundation/',
-        Donate: 'https://www.paypal.com/donate?token=z36aPnG5AtYgd9OnaqJ-xLjkWgyG0VE4m38soH0q4oLXGIoqnROISl-G1q2qxmLiKuF5DSXNmjJV60FA',
+        Donate:
+            'https://www.paypal.com/donate?token=z36aPnG5AtYgd9OnaqJ-xLjkWgyG0VE4m38soH0q4oLXGIoqnROISl-G1q2qxmLiKuF5DSXNmjJV60FA',
         Keywords: 'Foundation, Grants, Families',
         Mission:
             'Guided by Christina and Tyler’s love of family and desire for children of their own, our non-profit organization assists families in times of need. While remaining flexible in our approach, we raise money to support charities focused on providing comfort, relief, and security for children and their families',
@@ -4921,7 +5008,8 @@ exports.allOrganizations = [
         Blog: 'https://cdiphila.org/blog',
         Membership: 'https://cdiphila.org/membership',
         Keywords: 'Diplomat, Diplomacy, Foreign Relations, Global, Delegations',
-        Mission: 'We showcase the best of Philadelphia and make global connections for our citizens; inspiring Philadelphia to be a global city and be globally recognized.',
+        Mission:
+            'We showcase the best of Philadelphia and make global connections for our citizens; inspiring Philadelphia to be a global city and be globally recognized.',
         Description:
             "Citizen Diplomacy International is a nonprofit organization that empowers Philadelphians to represent our city and the United States through person-to-person diplomacy. We believe that personal interactions help shape U.S. foreign relations, have an impact on our national security and the United States’ reputation around the world.\r\n\r\nOur network of volunteer Citizen Diplomats welcomes nearly 1300 international visitors every year to Philadelphia on high school exchange programs, professional exchange programs and trade missions.\r\n\r\nWe partner with the Department of State and the City of Philadelphia to host international delegations and show them all of the great things that Philadelphia's world famous for - which is more than just cheesesteaks.\r\n\r\nInternational exchange contributes to the world's growth and stability and enriches Philadelphia with a deeper understanding of world cultures and ideas.\r\n\r\nA more civil, peaceful and prosperous world starts with you.\r\nBe a Citizen Diplomat.",
     },
@@ -4958,7 +5046,8 @@ exports.allOrganizations = [
         Twitter: 'https://www.facebook.com/CitizensCrimeCommission/',
         Facebook: 'https://www.facebook.com/CitizensCrimeCommission/',
         Keywords: 'Legal, Criminal Justice, Safety',
-        Mission: 'Our mission is to improve the quality of life of citizens in the Delaware Valley with ongoing outreach, community programs, and the latest safety and security initiatives.',
+        Mission:
+            'Our mission is to improve the quality of life of citizens in the Delaware Valley with ongoing outreach, community programs, and the latest safety and security initiatives.',
         Description:
             'The Citizens Crime Commission has developed programs assisting SEPTA, CIGNA, RITE-AID, and other large and small corporations concerned with security, safety, and loss prevention issues. We developed the Philadelphia Prisons System Internal Affairs Division and Equal Employment Opportunity unit and regularly critique their work to ensure that quality procedures are followed and reports are complete, correct and concise.\r\n\r\nOur flagship program, the TIPLINE, is an outgrowth of the national CRIMESTOPPERS program and is designed to assist law enforcement in apprehending criminals and also deals with quality of life issues. The TIPLINE was initiated in 1986, and has operated 24 hours a day, 7 days a week ever since. Our TIPLINE uses live, trained operators exclusively. We don’t use answering machines or recordings, ever.',
     },
@@ -5146,7 +5235,8 @@ exports.allOrganizations = [
         Donate: 'https://clementinemontessori.org/community/donate/',
         Blog: 'https://clementinemontessori.org/whats-happening/',
         Keywords: 'Montessori',
-        Mission: "Using classical Montessori principles and incorporating modern methods, we strive to realize each child's potential in a supportive and challenging setting.",
+        Mission:
+            "Using classical Montessori principles and incorporating modern methods, we strive to realize each child's potential in a supportive and challenging setting.",
         Description:
             'Clementine Montessori is a small school in a big city. Located in Center City Philadelphia, we offer Montessori preschool and kindergarten programs for children from 2 years 9 months to 6 years of age.\r\n\r\nMuch like children themselves, every school has its own unique personality. Tucked away from the busyness of big city life, Clementine Montessori students explore the world at their own pace and with their own purpose. Our teachers guide children to observe, discover, and question. In our child-centered community, parents are partners in their child’s education.',
     },
@@ -5161,7 +5251,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://www.cliveden.org/ecwd_calendar/events-calendar/',
         Facebook: 'https://www.facebook.com/TheCliveden',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001eGoVMtmIZbu2LiDVQZ6l2b43bbb5SK0ZIpxyYT7I37dGASAp1HARkyHd6T7cgbVAM_pq--DzDrsrhXivt4Ox3Fy8AVTLSnp-ytthrRnKWGM%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001eGoVMtmIZbu2LiDVQZ6l2b43bbb5SK0ZIpxyYT7I37dGASAp1HARkyHd6T7cgbVAM_pq--DzDrsrhXivt4Ox3Fy8AVTLSnp-ytthrRnKWGM%3D',
         Donate: 'https://www.cliveden.org/supporting-cliveden/',
         Blog: 'https://www.cliveden.org/category/news-and-press-releases/',
         Keywords: 'Historic Site, Revolutionary War',
@@ -5181,7 +5272,8 @@ exports.allOrganizations = [
         Donate: 'https://www.comhar.org/donate',
         Blog: 'https://www.comhar.org/blog',
         Keywords: 'Latino, Behvaioral Health, Family Services, Community',
-        Mission: 'To provide health and human services that empower individuals, families and communities to live healthier, self-determined live.',
+        Mission:
+            'To provide health and human services that empower individuals, families and communities to live healthier, self-determined live.',
         Description:
             'COMHAR has grown and formed into a comprehensive human services organization by implementing community centers, community living arrangements, co-occurring behavioral health and addiction programs, services for the Latino community, services supporting individuals with HIV/Aids, and children and family services. Today, our services are offered in the Philadelphia, Montgomery and Northampton County communities, in homes, community centers and schools helping over 11,000 individuals each year. We provide a full array of recovery-oriented and quality-focused services.  Our services are diverse, from outpatient treatment, to day support and residential programs, to workshops, in order to bring support to persons where they are and in ways that support their individual recovery.\r\n\r\nWith over 700 staff members, COMHAR is dedicated to our mission of providing services to support persons in their recovery and empower them on their journey.',
     },
@@ -5236,7 +5328,8 @@ exports.allOrganizations = [
         Newsletter: 'https://codedbykids.com/',
         Donate: 'https://www.classy.org/campaign/donate-page/c257597',
         Keywords: 'Technology, Coding, Mentorship',
-        Mission: 'Our mission is to prepare underrepresented young people to succeed as tech and innovation leaders through project-based learning and mentorship.',
+        Mission:
+            'Our mission is to prepare underrepresented young people to succeed as tech and innovation leaders through project-based learning and mentorship.',
         Description:
             'Coded by Kids provides young people between the ages of 8 and 18, from underrepresented groups with software development, digital design, computer science, and tech startup-focused entrepreneurship education programs.\r\n\r\nThere is significant social and economic inequity created when people from underrepresented groups aren’t able to participate in the tech and innovation economies. We use tech and innovation education to fight that inequity. Through our work, we now have students attending college majoring in tech and computer science-related majors, some are working for us, and others are trying to launch startups.',
     },
@@ -5340,7 +5433,7 @@ exports.allOrganizations = [
         Mission:
             'The Committee of Seventy is a nonpartisan civic leadership organization that advances representative, ethical and effective government in Philadelphia and Pennsylvania through citizen engagement and public policy advocacy.',
         Description:
-            'In this century, we have led the fight to defend campaign financing limits, established a city Board of Ethics and made lobbying (and the spending associated with it) a matter of public record. Our wars against pay-to-play politics and officeholder pension grabs helped to turn the ideas of better government and fair elections into a movement. And we continue to be the go-to organization for trustworthy background and analysis on issues related to Philadelphia’s political culture and its government. We have broadened our scope and expanded our mission in recent years, but we have never lost sight of why we were created in 1904: “To keep watch and ward over the public interests.”',
+            'In this century, we have led the fight to defend campaign financing limits, established a city Membership of Ethics and made lobbying (and the spending associated with it) a matter of public record. Our wars against pay-to-play politics and officeholder pension grabs helped to turn the ideas of better government and fair elections into a movement. And we continue to be the go-to organization for trustworthy background and analysis on issues related to Philadelphia’s political culture and its government. We have broadened our scope and expanded our mission in recent years, but we have never lost sight of why we were created in 1904: “To keep watch and ward over the public interests.”',
     },
     {
         Name: 'Committee on Sustainability Assessment',
@@ -5403,7 +5496,8 @@ exports.allOrganizations = [
         Donate: 'https://www.thecommonmarket.org/donate',
         Blog: 'https://www.thecommonmarket.org/about/press',
         Keywords: 'Farms, Local, Sustainable',
-        Mission: 'Our mission is to connect communities with good food from sustainable family farms. We strive to improve food security, farm viability, and community and ecological health.',
+        Mission:
+            'Our mission is to connect communities with good food from sustainable family farms. We strive to improve food security, farm viability, and community and ecological health.',
         Description:
             "The Common Market Mid-Atlantic is a mission-driven distributor of sustainable, local farm foods. We connect institutions and communities with good food from over 200 producers in Pennsylvania, New Jersey, New York, Delaware, Maryland, and Virginia.\r\n\r\nWe provide specific grower information when you place an order, and it's printed on every invoice and every case of food so you know exactly how the food is grown and where it's coming from.",
     },
@@ -5421,7 +5515,8 @@ exports.allOrganizations = [
         Donate: 'https://www.cychoirs.org/donate/',
         Blog: 'https://www.cychoirs.org/category/mediareleases/, https://www.cychoirs.org/category/printonline/',
         Keywords: 'Performing Arts, Music, Choir',
-        Mission: 'Our mission is to transform the lives of young people through the power of making music together …one song at a time.',
+        Mission:
+            'Our mission is to transform the lives of young people through the power of making music together …one song at a time.',
         Description:
             'Commonwealth Youthchoirs (CY) is a Philadelphia-based nonprofit organization with a mission to transform the lives of young people through the power of making music together … one song at a time.\r\n\r\nCY’s core focus is to provide Singers with outstanding choral music education and unique performance opportunities both here in the U.S. and across the globe.',
     },
@@ -5457,7 +5552,8 @@ exports.allOrganizations = [
         Keywords: 'CDFI, STEM, Science, Technology, Engineering, Math,',
         Mission:
             'A mission to assist women and girls increase their equity stakes (shares of wealth) in the broader economy by:\r\n-  Encouraging her to align her education with STEM (science, technology, engineering and mathematics) careers - blended with habit-of-health and the medicine of compassion  \r\n -  Assisting her to build and accumulate growth and productive assets that increase in values, overtime;" and finally,\r\n-  Inspiring her to lift other women and girls',
-        Description: 'Since 1998, CCA has helped organize CDFIs and STEM education projects in the Philadelphia, Pennsylvania and the West African regions.',
+        Description:
+            'Since 1998, CCA has helped organize CDFIs and STEM education projects in the Philadelphia, Pennsylvania and the West African regions.',
     },
     {
         Name: 'Community Care of the Northeast',
@@ -5545,7 +5641,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://www.cchss.org/events',
         Keywords: 'Substance Abuse, Case Management',
-        Mission: 'Our mission is to provide comprehensive mental health and educational services to adults and children.',
+        Mission:
+            'Our mission is to provide comprehensive mental health and educational services to adults and children.',
         Description:
             "Our services are designed to be holistic, geographically accessible, culturally sensitive, and coordinated with other related service systems, both formal and informal. Community Council has a long history of providing mental health services to Philadelphia residents and is one of the City of Philadelphia's original 12 Base Service Units. We provide a range of mental health and substance abuse direct services and case management. The organization has a diverse staff of 400 that deliver evidenced based services in a culturally competent manner.",
     },
@@ -5587,7 +5684,8 @@ exports.allOrganizations = [
         LinkedIn:
             'https://www.linkedin.com/company/11031000?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A11031000%2Cidx%3A2-1-2%2CtarId%3A1486007618619%2Ctas%3Abelmont%20charter%20',
         Donate: 'https://www.belmontcharternetwork.org/donate/',
-        Blog: 'https://www.belmontcharternetwork.org/blog/, https://www.belmontcharternetwork.org/category/school-news/',
+        Blog:
+            'https://www.belmontcharternetwork.org/blog/, https://www.belmontcharternetwork.org/category/school-news/',
         Keywords: 'Charter School',
         Mission: 'Our purpose is to promote the academic, social and emotional well-being of each child.',
         Description:
@@ -5609,7 +5707,8 @@ exports.allOrganizations = [
         Donate: 'https://cisworks.org/donate/',
         Blog: 'https://cisworks.org/blog/',
         Keywords: 'Employment, Job Shadowing, Internships, Job Placement',
-        Mission: 'Our mission is to empower people with disabilities through individualized employment opportunities that foster self-sustainability, equality, and community.',
+        Mission:
+            'Our mission is to empower people with disabilities through individualized employment opportunities that foster self-sustainability, equality, and community.',
         Description:
             'CIS provides expert employment services to people with disabilities. Since 1991, CIS has helped thousands of people achieve their employment goals.\r\n\r\nSupported Employment is an evidence-based practice of helping people with disabilities succeed in the work environment. CIS works with each jobseeker individually to set them up for employment success.',
     },
@@ -5627,7 +5726,8 @@ exports.allOrganizations = [
         Blog: 'https://keystone-k.org/updates/',
         Membership: 'https://keystone-k.org/join/',
         Keywords: 'Kosher, Certification',
-        Description: 'The Keystone-K proudly certifies a wide variety of quality establishments across the Greater Philadelphia area.',
+        Description:
+            'The Keystone-K proudly certifies a wide variety of quality establishments across the Greater Philadelphia area.',
     },
     {
         Name: 'Community Learning Center',
@@ -5667,7 +5767,8 @@ exports.allOrganizations = [
         Donate: 'https://clsphila.org/give/',
         Blog: 'https://clsphila.org/news/',
         Keywords: 'Low Income, Legal Services, Advocacy, Social Work',
-        Mission: 'Our mission is to fight poverty, challenge systems that perpetuate injustice, and change lives through cutting-edge advocacy and exceptional legal representation.',
+        Mission:
+            'Our mission is to fight poverty, challenge systems that perpetuate injustice, and change lives through cutting-edge advocacy and exceptional legal representation.',
         Description:
             'Founded in 1966 by the Philadelphia Bar Association, Community Legal Services (CLS) has provided free civil legal assistance to more than one million low-income Philadelphians. Approximately 10,000 clients were represented by CLS in the past year. CLS assists clients when they face the threat of losing their homes, incomes, health care, and even their families. CLS attorneys and other staff provide a full range of legal services, from individual representation to administrative advocacy to class action litigation, as well as community education and social work. CLS is nationally recognized as a model legal services program',
     },
@@ -5950,9 +6051,11 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/cosacosaartatlarge/',
         Newsletter: 'http://www.cosacosa.org/contact.html',
         Impact: 'https://www.volunteermatch.org/search/org26238.jsp',
-        Donate: 'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=232613697&vlrStratCode=BmRiA5hWY%2bS%2fGvmSbRQuFGoRxpM2f9M0KsysOzdbNEISwEbeKJWM9WMYL0tEWy1Q',
+        Donate:
+            'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=232613697&vlrStratCode=BmRiA5hWY%2bS%2fGvmSbRQuFGoRxpM2f9M0KsysOzdbNEISwEbeKJWM9WMYL0tEWy1Q',
         Keywords: 'Public Art, Civic Engagement',
-        Mission: 'COSACOSA art at large, Inc. creates new public art specific to the concerns of Philadelphia neighborhoods in direct, long-term collaboration with city residents.',
+        Mission:
+            'COSACOSA art at large, Inc. creates new public art specific to the concerns of Philadelphia neighborhoods in direct, long-term collaboration with city residents.',
         Description:
             "COSACOSA art at large, Inc. is a non-profit organization creating new public art specific to the concerns of Philadelphia neighborhoods in direct, long-term collaboration with city residents. COSACOSA reasserts art's original role as a catalyst for community dialogue, creative cooperation, and positive change. Since 1990, COSACOSA projects have brought together thousands of citizens of diverse backgrounds and differing abilities to learn about art, about each other, and about how to work together.",
     },
@@ -5972,7 +6075,8 @@ exports.allOrganizations = [
         Newsletter: 'https://councilforrelationships.org/',
         Impact: 'https://councilforrelationships.org/support/',
         Donate: 'https://councilforrelationships.org/support/donate/',
-        Blog: 'https://councilforrelationships.org/home/about-us/news/, https://councilforrelationships.org/research-resources/resources/expert-voices/blog/',
+        Blog:
+            'https://councilforrelationships.org/home/about-us/news/, https://councilforrelationships.org/research-resources/resources/expert-voices/blog/',
         Keywords: 'Behavioral Health, Therapy',
         Mission:
             'Council for Relationships is a nonprofit organization with a mission to help people from all walks of life improve their important relationships by providing exemplary therapy, educating and training clinicians in the family systems approach, and advancing the behavioral health field through research.',
@@ -6044,7 +6148,8 @@ exports.allOrganizations = [
         Donate: 'https://www.covenanthousepa.org/how-you-can-help/donate/secure-giving',
         Blog: 'https://www.covenanthousepa.org/news',
         Keywords: 'Advocacy, Youth Homelessness, Human Trafficking',
-        Mission: 'Our work is guided by a mission to serve youth with absolute respect and unconditional love... to help kids who are suffering... and to protect and safeguard all children in need.',
+        Mission:
+            'Our work is guided by a mission to serve youth with absolute respect and unconditional love... to help kids who are suffering... and to protect and safeguard all children in need.',
         Description:
             "We've been opening our doors to homeless kids since 1972 – now standing as a powerful human rights movement for vulnerable youth in 31 cities across six countries.\r\n\r\nFor more than four decades, Covenant House has helped transform and save the lives of more than a million homeless, runaway and trafficked young people. We offer housing and support services to young people in need – currently reaching 74,000 youth every year.",
     },
@@ -6101,7 +6206,8 @@ exports.allOrganizations = [
         Donate: 'https://crossroadsphilly.org/donate/',
         Blog: 'https://crossroadsphilly.org/news-events/',
         Keywords: 'Summer Camp, Life Skills, Family Services, Food Distribution',
-        Mission: 'Evangelize, disciple, and demonstrate the Gospel in word and deed to the people of the Fairhill community and beyond.',
+        Mission:
+            'Evangelize, disciple, and demonstrate the Gospel in word and deed to the people of the Fairhill community and beyond.',
         Description:
             'Crossroads’ heart is with children and youth—providing them with a safe place to meet for recreation, socializing, food, and hearing Bible stories.  Four generations of Fairhill neighbors have come to Crossroads, so that some children today are the great-grandchildren of the original “Crossroads kids.”',
     },
@@ -6180,7 +6286,8 @@ exports.allOrganizations = [
         Donate: 'https://www.curtis.edu/Giving2/why-give/',
         Blog: 'https://www.curtis.edu/news/',
         Keywords: 'Music, Performing Arts, Orchestra, Opera, Chamber Music',
-        Mission: 'The Curtis Institute of Music educates and trains exceptionally gifted young musicians to engage a local and global community through the highest level of artistry.',
+        Mission:
+            'The Curtis Institute of Music educates and trains exceptionally gifted young musicians to engage a local and global community through the highest level of artistry.',
         Description:
             'For nearly a century Curtis has provided each member of its small student body with an unparalleled education alongside musical peers, distinguished by a “learn by doing” philosophy and personalized attention from a faculty that includes a high proportion of actively performing musicians. To ensure that admissions are based solely on artistic promise, Curtis makes an investment in each admitted student so that no tuition is charged for their studies.\r\n\r\nCurtis students hone their craft through more than 200 orchestra, opera, and solo and chamber music offerings and programs that bring arts access and education to the community. This real-world training allows these extraordinary young musicians to join the front rank of performers, composers, conductors, and musical leaders, making a profound impact on music onstage and in their communities.',
     },
@@ -6220,7 +6327,8 @@ exports.allOrganizations = [
         Newsletter: 'https://www.thedp.com/page/contact',
         Donate: 'https://www.thedp.com/page/donate',
         Keywords: 'Journalism, Publication, Student Journalism',
-        Mission: 'The daily pennsylvanian exists to inform the penn community of relevant news and opinion while providing a training vehicle for students.',
+        Mission:
+            'The daily pennsylvanian exists to inform the penn community of relevant news and opinion while providing a training vehicle for students.',
         Description:
             "The Daily Pennsylvanian is the University of Pennsylvania's independent student media organization. We cover news and sports from the University of Pennsylvania and from around the Philadelphia metro area.\r\n\r\nThe Daily Pennsylvanian is the independent student newspaper of the University of Pennsylvania. About 116 mornings each school year, Penn students, faculty and staff turn to the DP as their source of campus and city news and sports coverage. The Daily Pennsylvanian exists to inform the Penn community of relevant news and opinion while providing a training vehicle for students.",
     },
@@ -6240,7 +6348,8 @@ exports.allOrganizations = [
         Donate: 'http://danceiquail.org/general/donate/',
         Blog: 'http://danceiquail.org/blog/, http://danceiquail.org/press/',
         Keywords: 'Dance, Performing Arts, Social Justice',
-        Mission: 'Dance Iquail uses the art of dance as a conduit for combating issues of social injustice primarily experienced by the disadvantaged.',
+        Mission:
+            'Dance Iquail uses the art of dance as a conduit for combating issues of social injustice primarily experienced by the disadvantaged.',
         Description:
             'Dance Iquail is a 21st century cutting edge dance company that was birthed to not only educate and empower talented dancers and the audience alike, but also to bring positive influence to inner city youth through education and community awareness.\r\n\r\nDance Iquail seeks to enhance the level of appreciation of dance in a spirit of excellence by embracing and pushing the talents of deserving, yet under-recognized dance artists. Founder, Iquail, experienced the injustice and politics in dance during his youth, and decided to make a stand by forming a company that would not only break such cultural and ethnic barriers, but also provide window of countless opportunities for aspiring dancers to be employed in a stable and secure environment.',
     },
@@ -6279,7 +6388,8 @@ exports.allOrganizations = [
         Donate: 'https://secure.givelively.org/donate/dancing-classrooms-philly',
         Blog: 'https://dancingclassroomsphilly.org/events/',
         Keywords: 'Dance, Ballroom',
-        Mission: 'Dancing Classrooms Philly’s mission is to foster self-esteem, social awareness and joy in children by providing the opportunity to learn and perform ballroom dance.',
+        Mission:
+            'Dancing Classrooms Philly’s mission is to foster self-esteem, social awareness and joy in children by providing the opportunity to learn and perform ballroom dance.',
         Description:
             'Through our ballroom dance instruction, we help to improve the climate of school communities across the Philadelphia region by building confidence in students, breaking down social barriers, and inspiring respect for all individuals. We envision transformative arts programs in all school communities that nurture creativity, build confidence, and promote a culture of mutual respect and well-being.',
     },
@@ -6296,7 +6406,8 @@ exports.allOrganizations = [
         Impact: 'https://www.dancingwiththestudents.org/dancing-queens/',
         Donate: 'https://www.dancingwiththestudents.org/donate/',
         Keywords: 'Dance, Performing Arts, Ballroom',
-        Mission: 'Dancing with the Students, a 501 (c) (3) non-profit organization, offers ballroom dancing to students in schools in underserved areas, with no budget for the arts.',
+        Mission:
+            'Dancing with the Students, a 501 (c) (3) non-profit organization, offers ballroom dancing to students in schools in underserved areas, with no budget for the arts.',
         Description:
             'Today, Dancing with the Students is a successful local Philadelphia community program. Our students have shown their dancing talents and performed all over Philadelphia. They will continue to share the joy that dancing has brought to their lives.\r\n\r\nOur program teaches students from grade 4 through high school.\r\nWe have two professional teachers for each class, to meet the needs of the students and model the dance steps.  For live teaching in schools, the students compete with other students in their class, not other schools. For virtual classes, all students are engaged in the history, affect and styles of the four dances.\r\n\r\nWe have performed for the Philadelphia Phillies, the Philadelphia Sixers, the Charity Ball (2009, 2010) and we were one of ten groups to dance at the Festival of Francis when Pope Francis visited Philadelphia.',
     },
@@ -6334,10 +6445,11 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://danieljorens.org/#calendar',
         Facebook: 'https://www.facebook.com/danieljorensfoundation/',
-        Donate: 'https://www.paypal.com/donate?token=A77iuAr_NzUtlehbyXm_O0eA9DdWTPlS7zFOA0VR2kzR_WOdYt5aWOk2LQ5oI-2L7cnIunr7GGyvq5Nd',
+        Donate:
+            'https://www.paypal.com/donate?token=A77iuAr_NzUtlehbyXm_O0eA9DdWTPlS7zFOA0VR2kzR_WOdYt5aWOk2LQ5oI-2L7cnIunr7GGyvq5Nd',
         Keywords: 'Substance Abuse, Drug Addiction',
         Mission:
-            'The Foundation was organized in January of 2017, two months after Daniel passed. A 501(c)(3) status was registered in Pennsylvania and Florida and a Board of Directors was appointed. Its goals are to spread awareness to all communities of the growing epidemic and how to combat and destigmatize it, to offer advice to families struggling with a family member currently afflicted, to console families who have lost a loved one to the disease and ultimately, to raise monies to assist in the operation of the Daniel J. Orens Center for Life, a collaborative of several non-profit organizations operating a resource center for returning citizens located in Wynnefield Pa.',
+            'The Foundation was organized in January of 2017, two months after Daniel passed. A 501(c)(3) status was registered in Pennsylvania and Florida and a Membership of Directors was appointed. Its goals are to spread awareness to all communities of the growing epidemic and how to combat and destigmatize it, to offer advice to families struggling with a family member currently afflicted, to console families who have lost a loved one to the disease and ultimately, to raise monies to assist in the operation of the Daniel J. Orens Center for Life, a collaborative of several non-profit organizations operating a resource center for returning citizens located in Wynnefield Pa.',
         Description:
             'The Foundation provides educational presentations at school districts, college campuses, community groups and prison systems at no cost to the hosting entity. All officers, directors, advisors and fundraising committee members donate their time, effort and expertise.\r\n\r\nThrough monies generated from fundraisers and general contributions from benevolent donors, the Foundation will play an integral role to provide assistance and guidance for those struggling with the battle of drug addiction. We believe that with the help and support of others, the Foundation along with the Center for Life will help save lives and restore families. The further we can spread Dan’s message, the more people we can help and the more lives we can save. We will continue our tireless efforts to assure that Dan’s amazing, caring and unique magnetism lives on as an Inspiration from Beyond to all.',
     },
@@ -6377,11 +6489,12 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UCtKJ2WjRGErr_OO3sdb_0dw?view_as=subscriber',
         Newsletter: 'https://www.darrendaultonfoundation.org/',
         Impact: 'https://www.darrendaultonfoundation.org/get-involved',
-        Donate: 'https://www.paypal.com/donate/?cmd=_donations&business=thedarrendaultonfoundation@gmail.com&item_name=Darren%20Daulton%20Foundation&currency_code=USD',
+        Donate:
+            'https://www.paypal.com/donate/?cmd=_donations&business=thedarrendaultonfoundation@gmail.com&item_name=Darren%20Daulton%20Foundation&currency_code=USD',
         Keywords: 'Cancer, Brain Tumor, Financial Assistance',
         Mission: 'Providing financial assistance to those who suffer from malignant primary brain tumors',
         Description:
-            'In 2013, Darren was diagnosed with Glioblastoma (GBM), an aggressive form of brain cancer. Rather than giving into the disease, Darren sought to help others by forming The Darren Daulton Foundation with his wife Amanda. The Darren Daulton Foundation was born out of Darren’s love and inspiration for serving and helping others. The Foundation serves as an extension of Darren’s love for people. The way in which he lived every day.\r\n\r\nWe have all been impacted by Darren one way or another. Whether you were a baseball player, a close friend or a devoted fan, Darren treated you like family. Even with all the fanfare and publicity that surrounded Darren, at the core he was humble and put others before himself. This is why he chose to use his notoriety to bring awareness and funding to this disease.\r\n\r\nAfter a courageous battle, Darren passed away from his bout with cancer on August 6, 2017.  Although Darren is no longer with us, his spirit lives on through the Foundation, which is committed to providing financial assistance to those who suffer from malignant primary brain tumors. The Board of Directors, together with Amanda Daulton, vow to continue supporting those who are affected by this devastating disease and raising awareness for brain cancer.\r\n\r\nSince its inception the Darren Daulton Foundation has granted over $250,000.00 to more than 100 people',
+            'In 2013, Darren was diagnosed with Glioblastoma (GBM), an aggressive form of brain cancer. Rather than giving into the disease, Darren sought to help others by forming The Darren Daulton Foundation with his wife Amanda. The Darren Daulton Foundation was born out of Darren’s love and inspiration for serving and helping others. The Foundation serves as an extension of Darren’s love for people. The way in which he lived every day.\r\n\r\nWe have all been impacted by Darren one way or another. Whether you were a baseball player, a close friend or a devoted fan, Darren treated you like family. Even with all the fanfare and publicity that surrounded Darren, at the core he was humble and put others before himself. This is why he chose to use his notoriety to bring awareness and funding to this disease.\r\n\r\nAfter a courageous battle, Darren passed away from his bout with cancer on August 6, 2017.  Although Darren is no longer with us, his spirit lives on through the Foundation, which is committed to providing financial assistance to those who suffer from malignant primary brain tumors. The Membership of Directors, together with Amanda Daulton, vow to continue supporting those who are affected by this devastating disease and raising awareness for brain cancer.\r\n\r\nSince its inception the Darren Daulton Foundation has granted over $250,000.00 to more than 100 people',
     },
     {
         Name: "Dawn's Place",
@@ -6395,7 +6508,8 @@ exports.allOrganizations = [
         Twitter: 'http://www.twitter.com/ahomefordawn',
         Facebook: 'https://www.facebook.com/AHomeForDawn',
         Youtube: 'http://www.youtube.com/AHomeForDawn',
-        LinkedIn: 'http://www.linkedin.com/groups/Dawns-Place-aka-Home-Dawn-4435287?home=&gid=4435287&trk=anet_ug_hm&goback=%2Egmp_4435287',
+        LinkedIn:
+            'http://www.linkedin.com/groups/Dawns-Place-aka-Home-Dawn-4435287?home=&gid=4435287&trk=anet_ug_hm&goback=%2Egmp_4435287',
         Newsletter: 'https://www.ahomefordawn.org/index.php',
         Impact: 'https://www.ahomefordawn.org/ihelp.php#volunteer',
         Donate: 'https://www.ahomefordawn.org/ihelp.php#donate',
@@ -6435,7 +6549,8 @@ exports.allOrganizations = [
         Donate: 'https://deeprootscs.org/about-us/support/',
         Blog: 'https://deeprootscs.org/news/',
         Keywords: 'Charter School',
-        Mission: 'Deep Roots Charter School’s (DRCS) mission is to teach disciplined learners and to empower them to grow and serve in their community, in college and beyond.',
+        Mission:
+            'Deep Roots Charter School’s (DRCS) mission is to teach disciplined learners and to empower them to grow and serve in their community, in college and beyond.',
         Description:
             'Each and every individual in our school community, from student to leadership, will engage in deliberate practice, and value this as the path to excellence. Our service-learning model will be discipline based; it will require students to have a presence in the community, and reflect on their experiences regularly. We want to empower our students to uncover their unique gifts and talents, and apply them towards an outward purpose about which they are passionate.',
     },
@@ -6495,9 +6610,11 @@ exports.allOrganizations = [
         RSS: 'https://www.delawareriverwaterfront.com/footer/articles?feed=rss',
         Newsletter: 'https://www.delawareriverwaterfront.com/contact/join-the-mailing-list',
         Donate: 'https://www.delawareriverwaterfront.com/about/donate',
-        Blog: 'https://www.delawareriverwaterfront.com/footer/articles, https://www.delawareriverwaterfront.com/footer/press-room',
+        Blog:
+            'https://www.delawareriverwaterfront.com/footer/articles, https://www.delawareriverwaterfront.com/footer/press-room',
         Keywords: 'Waterfront',
-        Mission: 'The fundamental purpose of DRWC is to design, develop and manage the central Delaware River waterfront in Philadelphia between Oregon and Allegheny Avenues.',
+        Mission:
+            'The fundamental purpose of DRWC is to design, develop and manage the central Delaware River waterfront in Philadelphia between Oregon and Allegheny Avenues.',
         Description:
             'The Delaware River Waterfront Corporation (DRWC) is a 501(c)3 nonprofit corporation organized exclusively for the benefit of the City of Philadelphia and its citizens. DRWC acts as the steward of the Delaware River waterfront to provide a benefit to all of the citizens and visitors of the City. \r\n\r\nDRWC intends to transform the central Delaware River waterfront into a vibrant destination location for recreational, cultural, and commercial activities for the residents and visitors of Philadelphia. DRWC will serve as a catalyst for high quality investment in public parks, trails, maritime, residential, retail, hotel and other improvements that create a vibrant amenity, extending Philadelphia to the river’s edge.',
     },
@@ -6638,11 +6755,13 @@ exports.allOrganizations = [
         Instagram: 'https://instagram.com/dvsfairs?igshid=166salf99ldsh',
         Youtube: 'https://www.youtube.com/user/DVSFairs',
         LinkedIn: 'https://www.linkedin.com/company/delaware-valley-science-fairs-inc-',
-        Newsletter: 'https://visitor.constantcontact.com/manage/optin?v=001MoTBZWHN0asL-98sEnASNtQgakhMH02oKigOLe4n7gpnzEKb6GdyAclGTxANYkZxuUGOfuHgmmHP7bFsK7vL8fWB3MQx-PUt',
+        Newsletter:
+            'https://visitor.constantcontact.com/manage/optin?v=001MoTBZWHN0asL-98sEnASNtQgakhMH02oKigOLe4n7gpnzEKb6GdyAclGTxANYkZxuUGOfuHgmmHP7bFsK7vL8fWB3MQx-PUt',
         Impact: 'https://www.dvsf.org/volunteer',
         Donate: 'https://www.dvsf.org/donate-1',
         Keywords: 'Science Fair, Research, STEM',
-        Mission: 'The purpose of the Fairs is to connect these hard working and inventive young minds with professionals in their fields.',
+        Mission:
+            'The purpose of the Fairs is to connect these hard working and inventive young minds with professionals in their fields.',
         Description:
             'Delaware Valley Science Fairs, Inc. (DVSF) is a forum for middle and high school students to display to display scientific research and engineering projects that they have completed.  During the fair the competitors will be interviewed and have their research evaluated. The primary goals are that the students will gain some insight into new directions for their research, learn new ways of thinking, and, in some cases, be connected with people who could help bring a potential product to market. All of this takes the form of a competition with winners receiving recognition, scholarships, and monetary prizes, as well as a chance to compete in the Regeneron International Science and Engineering Fair.\r\n\r\nMany of our competitors go on to some of the top colleges and universities followed by careers in STEM. Many of our past competitors have credited the work that they did for DVSF and the feedback that they received from our judges with starting them on their path. It has been proven that the "inquiry-based hands-on" approach to learning STEM is effective. In fact, "inquiry" is now a top priority in the state educational standards for Pennsylvania, New Jersey, and Delaware. \r\n\r\n​',
     },
@@ -6743,7 +6862,8 @@ exports.allOrganizations = [
         Donate: 'https://www.dignityhousing.org/donate',
         Blog: 'https://www.dignityhousing.org/blog',
         Keywords: 'Low Income',
-        Mission: 'Dignity Housing’s mission is to break the cycle of homelessness and poverty that confronts low-income families and individuals in Philadelphia.',
+        Mission:
+            'Dignity Housing’s mission is to break the cycle of homelessness and poverty that confronts low-income families and individuals in Philadelphia.',
         Description:
             'We provide affordable housing, promote self-sufficiency, and create opportunities. We work to fulfill our mission through the provision of transitional and long-term housing in combination with supportive services that create opportunities and promote self-sufficiency.\r\n\r\nDignity Housing is the first housing and supportive services program in the nation to be founded and guided by homeless people and activists.  Since 1988, Dignity has provided both quality affordable housing and supportive services to thousands of people – primarily single African American women and their children. Dignity has cultivated an individualized services approach to meeting the complex needs of homeless individuals and families.  Dignity currently manages an inventory of 58 units of transitional and long-term supportive housing concentrated in Northwest Philadelphia.',
     },
@@ -6778,7 +6898,8 @@ exports.allOrganizations = [
         Impact: 'https://www.disabledinaction.com/get-involved',
         Donate: 'https://www.paypal.com/paypalme/DisabledInAction',
         Blog: 'https://www.disabledinaction.com/news',
-        Mission: 'Disabled in Action of Pennsylvania (DIA) is an organization of disabled people who work to make civil rights for those with all disabilities a reality.',
+        Mission:
+            'Disabled in Action of Pennsylvania (DIA) is an organization of disabled people who work to make civil rights for those with all disabilities a reality.',
         Description:
             "Disabled In Action of Pennsylvania founded in 1973 is one of the States and Country's oldest and most successful cross disability advocacy. It’s an advocacy group run and controlled by people with disability and allies. We campaign for access to everything in our community and needed resources that allow us to remain in the community. We work with all disabled people regardless of disability or age. We do not provide services but work with Disabled people in our community to increase services and access to a larger community and battle barriers to our participant. Through the years, we have been involved in countless advocacy efforts that have led to improvements to our community but there is always more to do.",
     },
@@ -6920,7 +7041,8 @@ exports.allOrganizations = [
         Zip: 19119,
         Contact: 'info@drumcliff.org',
         ServiceArea: 'Philadelphia',
-        Description: 'The Drumcliff Foundation has supported improvement projects in Philadelphia’s neighborhoods for almost two decades.',
+        Description:
+            'The Drumcliff Foundation has supported improvement projects in Philadelphia’s neighborhoods for almost two decades.',
     },
     {
         Name: 'Dutton Road Veterinary Clinic',
@@ -6969,7 +7091,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/Victoria4EMIR',
         Facebook: 'https://www.facebook.com/EMIR-Healing-Center-821311167900523/',
         Impact: 'http://emirphilly.org/contact/volunteer/',
-        Donate: 'https://www.paypal.com/donate?token=S2NGlGRxN-mNzfUv4Z98GogCrVpu349hP3F25sPX26a0PoXXReoufgfocLXu4OMct9QIa9oDOSOZqv0X',
+        Donate:
+            'https://www.paypal.com/donate?token=S2NGlGRxN-mNzfUv4Z98GogCrVpu349hP3F25sPX26a0PoXXReoufgfocLXu4OMct9QIa9oDOSOZqv0X',
         Blog: 'https://emirphilly.org/community-outreach/',
         Keywords: 'Trauma, Advocacy, Healing',
         Mission: 'To treat the trauma to promote healing through education and emotional support.',
@@ -6991,7 +7114,8 @@ exports.allOrganizations = [
         Donate: 'https://donate.hakuapp.com/donations/new?event=017c2351a588dfcade4d',
         Blog: 'https://www.eaglesautismchallenge.org/in-the-news/',
         Keywords: 'Autism, Research',
-        Mission: 'The Eagles Autism Challenge is dedicated to raising funds for innovative research and programs to help unlock the mystery of autism.',
+        Mission:
+            'The Eagles Autism Challenge is dedicated to raising funds for innovative research and programs to help unlock the mystery of autism.',
         Description:
             'By providing the necessary resources to doctors and scientists at leading institutions, we will be able to assist those currently affected by autism as well as future generations. Our event aims to inspire and engage the community, so together, we can provide much needed support to make a lasting impact in the field of autism.',
     },
@@ -7006,7 +7130,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Donate: 'https://www.eaglescharitablefoundation.org/donate/',
         Keywords: 'Vision Care',
-        Mission: 'Using our unique platform to benefit children in the areas of health and education in the Greater Philadelphia area.',
+        Mission:
+            'Using our unique platform to benefit children in the areas of health and education in the Greater Philadelphia area.',
         Description:
             'Since 1995, Eagles Charitable Foundation (ECF) has served more than one million children in the region. Formally known as Eagles Youth Partnership, our efforts continue to include comprehensive vision care by providing free eye exams and glasses to children in our communities who need it most.',
     },
@@ -7099,7 +7224,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://www.discoveryphila.org/calendar-of-events?view=calendar&month=01-2021',
         Impact: 'https://www.discoveryphila.org/volunteers',
-        Donate: 'https://www.paypal.com/donate?token=GX1Npulig033vAYKmChWtVOIPW75uvTWCPRqfvlkZIuS2vLsrHduYpxAIJu1z0lERvMpy6BzhfKY1WJH',
+        Donate:
+            'https://www.paypal.com/donate?token=GX1Npulig033vAYKmChWtVOIPW75uvTWCPRqfvlkZIuS2vLsrHduYpxAIJu1z0lERvMpy6BzhfKY1WJH',
         Blog: 'https://www.discoveryphila.org/press',
         Keywords: 'Outward Bound, Conservation, Local Ecosystem, Wildlife',
         Mission:
@@ -7125,7 +7251,7 @@ exports.allOrganizations = [
         Keywords: 'Community Revitalization, Local Businesses, Commercial Corridor',
         Mission: 'To improve the economic development of the east passyunk district of the city of philadelphia.',
         Description:
-            "East Passyunk Avenue Business Improvement District is a non-profit organization dedicated to the revitalization of one of Philadelphia's longest-standing commercial corridors. EPABID was established in 2002 and its Board of Directors meets regularly to oversee its programs, including capital and facade improvement projects, marketing and promotions, special events, business recruitment and retention, and clean and green initiatives.\r\n\r\nLocated just a few minutes from Center City Philadelphia, East Passyunk Avenue is home to over 150 independently owned businesses, ranging from unique boutiques offering hand-made wares and fashion to fine dining in a relaxed atmosphere and the world-famous “Cheesesteak Corner.”",
+            "East Passyunk Avenue Business Improvement District is a non-profit organization dedicated to the revitalization of one of Philadelphia's longest-standing commercial corridors. EPABID was established in 2002 and its Membership of Directors meets regularly to oversee its programs, including capital and facade improvement projects, marketing and promotions, special events, business recruitment and retention, and clean and green initiatives.\r\n\r\nLocated just a few minutes from Center City Philadelphia, East Passyunk Avenue is home to over 150 independently owned businesses, ranging from unique boutiques offering hand-made wares and fashion to fine dining in a relaxed atmosphere and the world-famous “Cheesesteak Corner.”",
     },
     {
         Name: 'East Passyunk Crossing Civic Association',
@@ -7165,7 +7291,8 @@ exports.allOrganizations = [
         Youtube: 'http://www.youtube.com/channel/UCA3MXPKCtEydhAUQx1vfsxg',
         Newsletter: 'https://www.easterseals.com/sepa/',
         Impact: 'https://www.easterseals.com/sepa/get-involved/',
-        Donate: 'https://secure.easterseals.com/site/Donation2?idb=1508485314&df_id=18021&mfc_pref=T&18021.donation=form1&set.DonationLevel=37610&widget=TRUE&set.OptionalRepeat=FALSE',
+        Donate:
+            'https://secure.easterseals.com/site/Donation2?idb=1508485314&df_id=18021&mfc_pref=T&18021.donation=form1&set.DonationLevel=37610&widget=TRUE&set.OptionalRepeat=FALSE',
         Blog: 'https://easterseals-sepa.com/',
         Keywords: 'Advocacy, Veterans, Autism, Adult Day Care',
         Mission:
@@ -7184,9 +7311,11 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://ep-act.org/Events',
         Twitter: 'https://twitter.com/EP_ACT',
-        Facebook: 'https://www.facebook.com/pages/Eastern-Pennsylvania-Alliance-for-Clean-Transportation/738154572940807?sk=timeline',
+        Facebook:
+            'https://www.facebook.com/pages/Eastern-Pennsylvania-Alliance-for-Clean-Transportation/738154572940807?sk=timeline',
         Youtube: 'https://www.youtube.com/channel/UCwITceYAdROs5-KqahnJ_Rw',
-        LinkedIn: 'https://www.linkedin.com/company/eastern-pennsylvania-alliance-for-clean-transportation?trk=biz-companies-cym',
+        LinkedIn:
+            'https://www.linkedin.com/company/eastern-pennsylvania-alliance-for-clean-transportation?trk=biz-companies-cym',
         Newsletter: 'https://ep-act.org/',
         Impact: 'https://ep-act.org/Membership',
         Donate: 'https://ep-act.org/donate',
@@ -7213,7 +7342,8 @@ exports.allOrganizations = [
         Donate: 'https://www.paypal.com/auth/validatecaptcha',
         Blog: 'https://www.hobypaeast.org/blank',
         Keywords: 'Leadership Development',
-        Mission: 'To inspire and develop our global community of youth and volunteers to a life dedicated to leadership, service and innovation.',
+        Mission:
+            'To inspire and develop our global community of youth and volunteers to a life dedicated to leadership, service and innovation.',
         Description:
             "With over 50 years of service, Hugh O'Brian Youth Leadership (HOBY) lets young people make a difference and become positive catalysts for change. As the nation's foremost youth leadership development organization and with more than 345,000 alumni, HOBY is respected worldwide.\r\n\r\nPennsylvania East Hugh O'Brian Youth Leadership's (HOBY) empowers high school sophomores to utilize their leadership skills to better their homes, schools and communities. Students attend a seminar at Villanova University in June. During this seminar students participate in leadership activities, meet leaders, and develop leadership talents, while making an impact in the community. The seminar curriculum is based on the Social Change Model of Leadership and develops leadership from three perspectives: Personal Leadership, Group Leadership, and Leadership for Society.",
     },
@@ -7261,7 +7391,8 @@ exports.allOrganizations = [
         Keywords: 'Victorian, Tours, Gardens',
         Mission:
             'Our mission is to showcase Victorian-era Philadelphia through the architecture, grounds/gardens, and collections; and to educate, entertain and inspire the public through onsite educational programming, tours, theatre productions and lectures.',
-        Description: 'Enjoy live Victorian Theatre events, unique programs and workshops, or a tour of the 17-room Victorian house and gardens for a unique glimpse into our past.',
+        Description:
+            'Enjoy live Victorian Theatre events, unique programs and workshops, or a tour of the 17-room Victorian house and gardens for a unique glimpse into our past.',
     },
     {
         Name: 'eClose Institute',
@@ -7375,9 +7506,11 @@ exports.allOrganizations = [
         ImpactAreas: 'Children, Education',
         Zip: 19132,
         ServiceArea: 'Philadelphia',
-        Facebook: 'https://www.facebook.com/The-Educational-Advocates-Reaching-Todays-Hardworking-Students-Inc-EARTHS-122268337814131/',
+        Facebook:
+            'https://www.facebook.com/The-Educational-Advocates-Reaching-Todays-Hardworking-Students-Inc-EARTHS-122268337814131/',
         Newsletter: 'https://earthsinc.org/contact-us',
-        Donate: 'https://www.paypal.com/webapps/hermes?token=6GB608320A551342E&useraction=commit&rm=0&mfid=1612048167918_c6651608292a8',
+        Donate:
+            'https://www.paypal.com/webapps/hermes?token=6GB608320A551342E&useraction=commit&rm=0&mfid=1612048167918_c6651608292a8',
         Keywords: 'Math, Literacy',
         Mission:
             "The Educational Advocates Reaching Today's Hardworking Students, Inc. (EARTHS) are on a mission to: \r\n\r\neducate underserved students,\r\nempower impoverished parents and families and\r\nenlighten vulnerable communities.",
@@ -7438,7 +7571,7 @@ exports.allOrganizations = [
         Membership: 'https://esaaphiladelphia.wixsite.com/esaa/membership',
         Keywords: 'Catholic, Elementary School',
         Mission:
-            "The vision of this organization is to build a strong future for Catholic Elementary Education in the Archdiocese of Philadelphia. Therefore, the Elementary School Administrators' Executive Board will offer opportunities for ongoing dialogue and professional development for elementary administrators in their leadership responsibilities. The ESAA board will strive to be a supportive presence to all administrators.",
+            "The vision of this organization is to build a strong future for Catholic Elementary Education in the Archdiocese of Philadelphia. Therefore, the Elementary School Administrators' Executive Membership will offer opportunities for ongoing dialogue and professional development for elementary administrators in their leadership responsibilities. The ESAA board will strive to be a supportive presence to all administrators.",
     },
     {
         Name: 'Eleone Dance Theatre',
@@ -7473,7 +7606,8 @@ exports.allOrganizations = [
         Donate: 'https://www.ebpsf.org/donate',
         Blog: 'https://www.ebpsf.org/news',
         Keywords: 'Scholarships, College',
-        Mission: 'Our mission is to provide college scholarships to deserving graduating seniors of Overbrook High School, located in Philadelphia, PA.',
+        Mission:
+            'Our mission is to provide college scholarships to deserving graduating seniors of Overbrook High School, located in Philadelphia, PA.',
         Description: 'We build a community of support around our scholars to ensure their success.',
     },
     {
@@ -7489,7 +7623,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/EmmanuelAdvanc',
         Facebook: 'https://www.facebook.com/pages/Emmanuel-Advancement-Center/907120939332209',
         Impact: 'https://www.emmanueladvancementcenter.org/get-involved/3070164',
-        Donate: 'https://www.paypal.com/donate?token=5qN7oJBCa9tXp4ZfR7ZRGIoLpMnWkN4buRUlLeYp_bwlGctYCBHHnljLqXnsuifbKljW9UJfdMiNXrXX',
+        Donate:
+            'https://www.paypal.com/donate?token=5qN7oJBCa9tXp4ZfR7ZRGIoLpMnWkN4buRUlLeYp_bwlGctYCBHHnljLqXnsuifbKljW9UJfdMiNXrXX',
         Keywords: 'Mentorship',
         Mission:
             'Through comprehensive direct services, we help to develop the well-being of people in the areas of education, career planning, mentoring, health and wellness. By building bridges with appropriate resources opportunities are provided to create a better path in life.',
@@ -7530,7 +7665,8 @@ exports.allOrganizations = [
         Donate:
             'https://donate.firstgiving.com/secure/donate/7d85dc1e-2023-11e0-a279-4061860da51d/9e89e9ca-4753-4825-afd9-4def73e6e2a1?parentPath=https://enchantmenttheatre.org/donate/?preview_id=17&preview_nonce=32526423eb&preview=true&_thumbnail_id=2361',
         Keywords: 'Performing Arts, Storytelling, Theater',
-        Mission: 'Enchantment Theatre Company’s mission is to inspire children to dream, explore, think, and connect through imaginative storytelling onstage and in the classroom.',
+        Mission:
+            'Enchantment Theatre Company’s mission is to inspire children to dream, explore, think, and connect through imaginative storytelling onstage and in the classroom.',
         Description:
             'For more than 35 years, Enchantment Theatre Company has created original theatre for young audiences and families. The imaginative telling of new and classic fables, myths, and legends set to classical or original music inspires, challenges, and enriches our audience – onstage, in the classroom, and in the community.\r\n\r\nWe bring stories to life in a way that encourages children to dream about who they are and may become, to explore story from different perspectives, to think using inductive reasoning, and to connect to other people and ideas. Our programs encourage children to question and explore how to live in a complex world so that they grow up healthier, smarter, and kinder.',
     },
@@ -7552,7 +7688,8 @@ exports.allOrganizations = [
         Donate: 'https://www.ecasavesenergy.org/donate',
         Blog: 'https://www.ecasavesenergy.org/blog',
         Keywords: 'Conservation, Sustainble Energy, Low Income',
-        Mission: "ECA's mission is to help people conserve energy and to promote a sustainable and socially equitable energy future for all.",
+        Mission:
+            "ECA's mission is to help people conserve energy and to promote a sustainable and socially equitable energy future for all.",
         Description:
             "Each year, ECA accomplishes the following for low income families in Philadelphia:\r\n\r\nWeatherize approximately 400 homes\r\n\r\nRepair or replace 5,000 heaters\r\n\r\nProvide energy counseling and utility bill payment assistance for more than 6,000 families through our 15 Neighborhood Energy Centers\r\n\r\nConducts do-it-yourself home weatherization workshops for 2,000 families\r\n\r\nEach year, through ECA's nationally accredited IREC, ESCO, EPA, and American Red Cross programs, we train and credential 500 men and women, including veterans and returning citizens, whose diversity reflects the city we serve, for high demand, clean energy careers with a bright future. These include: BPI Building Energy Analyst, BPI WHASI, Solar Installer, Commercial HVAC, EPA Lead Safety, and OSHA 10.\r\n\r\nThe total carbon emissions that ECA averts through this work is 41,444.80 metric tons each year.",
     },
@@ -7569,9 +7706,11 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/TECCDC',
         Instagram: 'https://www.instagram.com/TECWestPhilly',
         LinkedIn: 'https://www.linkedin.com/company/the-enterprise-center/',
-        Donate: 'https://www.paypal.com/donate?token=LQF6apPorklTAZNrldQguorQufPS2crD2Fz2Cvdpu-q9fSzet77Ew7G9BvtGq-EPACknxGDWCOMasXeD',
+        Donate:
+            'https://www.paypal.com/donate?token=LQF6apPorklTAZNrldQguorQufPS2crD2Fz2Cvdpu-q9fSzet77Ew7G9BvtGq-EPACknxGDWCOMasXeD',
         Keywords: 'Entrepreneurs, Minority Business Owners, Capital',
-        Mission: 'Our mission is to cultivate and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
+        Mission:
+            'Our mission is to cultivate and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
         Description:
             "The Enterprise Center has a rich and diverse practice supporting minority entrepreneurs and under-resourced communities spanning more than three decades. Our clients and partners trust us to advise and deliver on transformative economic development connected to minority business growth cycles and community wealth-building initiatives.\r\nWe invest in people and projects at the heart of business and communities in the belief that aligning capital with expertise is the strongest pathway to economic wealth and prosperity.\r\n\r\nWe operate a dedicated team model. Each team functions as an entrepreneurial group, managing a strategy that works with clients where they are, coordinates with partners, and invests capital where needed. Teams are responsible for their goals and outcomes though the entire project and investment life cycle and are directly accountable for performance. Each team is led by an executive overseeing talent responsible for working with our clients, partners, and communities. This proven approach builds trust and alignment with clients' needs and community objectives.",
     },
@@ -7672,7 +7811,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/EqualityForum',
         Instagram: 'http://instagram.com/equalityforum',
         Youtube: 'http://www.youtube.com/user/equalityforum',
-        Donate: 'https://www.paypal.com/donate/?token=ajX7rnDzFLGEo1fYN0RrIDZ3-kMCWRD05SZMBMqqMSUrWlx0IFD3sxHu4f9Z7_IVXU2jmG&country.x=US&locale.x=US',
+        Donate:
+            'https://www.paypal.com/donate/?token=ajX7rnDzFLGEo1fYN0RrIDZ3-kMCWRD05SZMBMqqMSUrWlx0IFD3sxHu4f9Z7_IVXU2jmG&country.x=US&locale.x=US',
         Blog: 'https://www.equalityforum.com/news',
         Keywords: 'LGBT History Month, Lesbian, Gay, Docmentaries',
         Mission:
@@ -7809,7 +7949,8 @@ exports.allOrganizations = [
         Donate: 'https://www.evoluerhouse.org/donate',
         Blog: 'https://www.evoluerhouse.org/news',
         Keywords: 'Empowerment, Workforce Development, Leadership',
-        Mission: 'We are on a mission to help produce strong female leadership in the workforce and in society, by investing in young women and girls and their collective well-being and power.',
+        Mission:
+            'We are on a mission to help produce strong female leadership in the workforce and in society, by investing in young women and girls and their collective well-being and power.',
         Description:
             'The Evoluer House, an innovative and dynamic nonprofit organization, delivers evidence-based empowerment programs that help girls to envision a future devoid of disadvantages and filled with possibilities. The target population is girls of color in Philadelphia aged 13 to 18, who are experiencing a unique set of social and emotional challenges and barriers to success. Our curriculums are designed to promote emotional, mental, and social well-being, to equip girls with the tools they need to become college-bound and career-ready, and break the cycle of intergenerational poverty. Evoluer House provides a safe community for girls to share experiences and learn both from and alongside one another.',
     },
@@ -7848,7 +7989,8 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UCRn2Psoqn7fblwivfIYCpKA',
         Newsletter: 'https://lp.constantcontactpages.com/su/l0UuLZ8/news',
         Donate: 'https://fabricworkshopandmuseum.org/support/donate/',
-        Blog: 'https://fabricworkshopandmuseum.org/press/press-room/?_ga=2.248571975.1743174319.1612057333-630217239.1612057333&doing_wp_cron=1612057601.1828880310058593750000#press-releases',
+        Blog:
+            'https://fabricworkshopandmuseum.org/press/press-room/?_ga=2.248571975.1743174319.1612057333-630217239.1612057333&doing_wp_cron=1612057601.1828880310058593750000#press-releases',
         Membership: 'https://fabricworkshopandmuseum.org/support/membership/',
         Keywords: 'Museum, Exhibitions, Contemporary Art, Visual Arts',
         Mission:
@@ -7888,7 +8030,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/fairfoodphilly/',
         Keywords: 'Local Farmers, Family Farms, Sustainability, Local Food',
-        Mission: 'Fair food is dedicated to bringing locally grown food to the marketplace and to promoting a humane, sustainable agriculture system for the greater philadelphia region.',
+        Mission:
+            'Fair food is dedicated to bringing locally grown food to the marketplace and to promoting a humane, sustainable agriculture system for the greater philadelphia region.',
         Description:
             'Fair Food connects local farmers to wholesale buyers and consumers. The Fair Food Farmstand in Reading Terminal Market sells products from 90+ area farms.\r\n\r\nFair Food has been uniting local farmers with businesses and consumers for over a decade. We promote the importance of family farms and create a year-round marketplace for fresh, local and humane food products in the Greater Philadelphia region. We provide an assortment of programs and services that contribute to a strong and sustainable local food system. Supporting farmers, connecting consumers, educating the public and celebrating the joys of local food.',
     },
@@ -7907,7 +8050,8 @@ exports.allOrganizations = [
         Donate: 'http://fairhousingrights.org/donate/',
         Blog: 'http://fairhousingrights.org/publications/',
         Keywords: 'Fair Housing',
-        Mission: 'The Mission of the Fair Housing Rights Center in Southeastern Pennsylvania (FHRC) is to ensure equal access to housing opportunities to all persons.',
+        Mission:
+            'The Mission of the Fair Housing Rights Center in Southeastern Pennsylvania (FHRC) is to ensure equal access to housing opportunities to all persons.',
         Description:
             'The Fair Housing Rights Center in Southeastern Pennyslvania (FHRC) was originally organized in 1990 to address the problem of housing discrimination in Montgomery County. FHRC was founded by Dr. Mari K. Fielder, a professor and mother who realized the need for fair housing advocacy for women with children, and Marlene Craven, a disability rights advocate. In May of 2007, FHRC changed its name from the Fair Housing Council of Montgomery County to the Fair Housing Rights Center in Southeastern Pennsylvania to more accurately reflect the geographic area reached.\r\n\r\nFHRC works cooperatively and collectively with other fair housing agencies to provide innovative and effective services to the public for the prevention and elimination of housing discrimination throughout the Greater Philadelphia region.',
     },
@@ -7923,7 +8067,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/fairmountcdc',
         Facebook: 'https://www.facebook.com/fairmountcdc',
         Instagram: 'https://www.instagram.com/fairmountcdc/',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001dIwt-snT0UDS1gBvmtZ7VaAD3KrjB9ATADCJDsOa_AK00m95duqJjH16EpP35D57d59f2ej9jNynWxdhZerrHpVxrn-MSAMP_tKQMGaBjZI%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001dIwt-snT0UDS1gBvmtZ7VaAD3KrjB9ATADCJDsOa_AK00m95duqJjH16EpP35D57d59f2ej9jNynWxdhZerrHpVxrn-MSAMP_tKQMGaBjZI%3D',
         Donate: 'https://www.fairmountcdc.org/donate',
         Blog: 'https://www.fairmountcdc.org/blog',
         Keywords: 'Real Estate Development, Neighborhood Planning',
@@ -7949,7 +8094,8 @@ exports.allOrganizations = [
         Impact: 'https://myphillypark.org/support/volunteer/',
         Donate: 'https://myphillypark.org/support/donate/',
         Blog: 'https://myphillypark.org/news/news-page/,',
-        Membership: 'https://myphillypark.org/support/become-a-member/, https://myphillypark.org/explore/my-philly-park-blog/',
+        Membership:
+            'https://myphillypark.org/support/become-a-member/, https://myphillypark.org/explore/my-philly-park-blog/',
         Keywords: 'Preservation, Conservation',
         Mission:
             'Fairmount Park Conservancy exists to champion Philadelphia’s parks. We lead capital projects and historic preservation efforts, foster neighborhood park stewardship, attract and leverage investments, and develop innovative programs throughout the 10,200 acres that include Fairmount Park and more than 200 neighborhood parks around the city.',
@@ -7988,7 +8134,8 @@ exports.allOrganizations = [
         Newsletter: 'http://www.fast-foundation.com/',
         Donate: 'http://www.fast-foundation.com/donate',
         Keywords: 'Resource Hub, Literacy, Career Development, Recidivism, Financial Stability',
-        Mission: 'To create a better way of life for families by helping to strengthen family core values, gain access to education, and improve financial health.',
+        Mission:
+            'To create a better way of life for families by helping to strengthen family core values, gain access to education, and improve financial health.',
         Description:
             'F.A.S.T. is a non-profit organization which provides personal development and empowerment resources through networking and coordinated assistance with local agencies. We are a resource hub with special interest in literacy, career development, financial stability, and recidivism prevention.',
     },
@@ -8039,7 +8186,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/fathersdayrallycommittee/',
         Donate: 'https://fathersrally.com/sponsorship-opportunities/',
         Keywords: 'Black Fathers',
-        Mission: "The Mission of the Father's Day Rally Committee, Inc. (FDRC) is to promote positive action and interaction among individuals, specifically fathers.",
+        Mission:
+            "The Mission of the Father's Day Rally Committee, Inc. (FDRC) is to promote positive action and interaction among individuals, specifically fathers.",
         Description:
             "For 29 years, the Father's Day Rally Committee (FDRC) has made a continued effort to shine a positive light on fathers across the region. \r\n\r\nHonoring the great work these fathers do that often goes unnoticed due to negative stereotypes held among African-American father figures.",
     },
@@ -8079,8 +8227,10 @@ exports.allOrganizations = [
         Donate: 'https://www.feastofjustice.org/aaa',
         Blog: 'https://www.feastofjustice.org/blog',
         Keywords: 'SNAP, Food Distribution',
-        Mission: 'Addressing Hunger, Meeting Needs, and Inspiring Hope as we work for Abundant Justice in Northeast Philadelphia and beyond.',
-        Description: 'Feast of Justice is a 501(c)3 nonprofit dedicated to feeding and transforming those in need in our community of northeast Philadelphia',
+        Mission:
+            'Addressing Hunger, Meeting Needs, and Inspiring Hope as we work for Abundant Justice in Northeast Philadelphia and beyond.',
+        Description:
+            'Feast of Justice is a 501(c)3 nonprofit dedicated to feeding and transforming those in need in our community of northeast Philadelphia',
     },
     {
         Name: 'Federation Housing',
@@ -8097,7 +8247,8 @@ exports.allOrganizations = [
         Donate: 'https://www.federationhousing.org/contribute',
         Blog: 'https://www.federationhousing.org/news',
         Keywords: 'Low Income, Affordable Hosing, Independent Living',
-        Mission: 'Providing much-needed affordable housing communities and services that empower low-and-moderate-income seniors to live independently and with an enhanced quality of life.',
+        Mission:
+            'Providing much-needed affordable housing communities and services that empower low-and-moderate-income seniors to live independently and with an enhanced quality of life.',
         Description:
             'Federation Housing develops and manages quality, affordable, independent living communities for low and moderate income seniors. Founded in 1970, the non-profit organization addresses a dire need in the Philadelphia region, where one in five seniors lives below the poverty line. While Jewish-affiliated, Federation Housing welcomes people of all faiths and currently serves as home to more than 1,500 seniors in 11 rental communities located across Philadelphia, Bucks and Montgomery Counties. The organization is unique in the extensive support services it provides to residents, including meals, transportation, visiting nurse, onsite social workers, and a broad array of social, cultural, educational, recreational and intergenerational enrichment programs.',
     },
@@ -8157,7 +8308,8 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/thefidget_space/',
         Donate: 'https://www.thefidget.org/donate',
         Keywords: 'Performing Arts, Music, Dance, Experimental',
-        Mission: 'Central to Fidget’s mission is decreasing the distance between art and life, between theory and practice.',
+        Mission:
+            'Central to Fidget’s mission is decreasing the distance between art and life, between theory and practice.',
         Description:
             'Founded in 2008, Fidget is a platform for the work of Megan Bridge (choreographer) and Peter Price (composer/video art), who bring in additional collaborators depending on the needs of each project. Bridge and Price have created more than twenty original works that involve live performance, sound, and visual design. Fidget’s work has toured throughout the US and internationally in France, Germany, Poland, South Africa, Bulgaria, Colombia, Austria, and Switzerland. Click here to view a map of touring locations!\r\n\r\nIn 2009, Bridge and Price opened Fidget Space, a warehouse live/work space and experimental performance venue in Kensington, Philadelphia.\r\n\r\nLegacy and historicity is an important aspect of Fidget’s work. The company has cultivated relationships with master artists in its lineage in experimental American performing arts, for example with the John Cage Trust, with composer Robert Ashley, with electronic musician Bruce Haack, and with choreographers Lucinda Childs, Steve Paxton, and Lisa Nelson.',
     },
@@ -8319,7 +8471,8 @@ exports.allOrganizations = [
         Donate: 'https://fishtown.nationbuilder.com/donate',
         Blog: 'https://www.fishtown.org/news',
         Keywords: 'Advocacy, Zoning, Safety, Planning',
-        Mission: '​​Connect Fishtown neighbors, preserve Fishtown’s unique character, and honor our community’s shared vision for its future.',
+        Mission:
+            '​​Connect Fishtown neighbors, preserve Fishtown’s unique character, and honor our community’s shared vision for its future.',
         Description:
             'The Fishtown Neighbors Association is a registered 501c3 non-profit organization and the Registered Community Organization (RCO) that serves the needs of the Fishtown/19125 neighborhood of Philadelphia (see FNA boundaries below). Formed in 2001 by a dedicated group of neighborhood volunteers seeking to improve and unify the community, the FNA has continued to serve the community for over a decade.',
     },
@@ -8397,7 +8550,8 @@ exports.allOrganizations = [
         Blog: 'https://fleisher.org/blog/',
         Membership: 'https://fleisher.org/support/membership/',
         Keywords: 'Accessibility, Community Art',
-        Mission: 'The mission of the Fleisher Art Memorial is to make art accessible to everyone, regardless of economic means, background, or artistic experience.',
+        Mission:
+            'The mission of the Fleisher Art Memorial is to make art accessible to everyone, regardless of economic means, background, or artistic experience.',
         Description:
             'Fleisher is a prominent and thriving community arts center, celebrated as one of the first in the nation. Fleisher serves over 16,000 annually, with 1,702 young people attending our tuition-free classes and low-cost workshops, 3,820 adults taking free and low-cost classes and workshops, 358 children and youth being served in public schools and community centers throughout Southeast Philadelphia, and 8,430 visitors to our galleries annually.\r\n\r\nFounded in 1898, we are one of the country’s oldest nonprofit community art schools and are committed to advancing the vision of our founder, Samuel S. Fleisher, who believed that art is one of society’s greatest assets and equalizers, and from the doorway of his Graphic Sketch Club, “invited the world to come and learn art.”',
     },
@@ -8414,7 +8568,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/FolkArtsCulturalTreasuresCharterSchool',
         RSS: 'https://www.factschool.org/en/feed/rss/',
         Impact: 'https://www.factschool.org/en/family-caregiver-resources/volunteering-at-facts/',
-        Donate: 'https://www.paypal.com/donate?token=enZiSBPJCbV_XdH_l6dEEf0nEI4b-zrF1mbKTtUeQb-7zp1qbHeApRqIr-IKiwhYE-i0awBP3KVskiZG',
+        Donate:
+            'https://www.paypal.com/donate?token=enZiSBPJCbV_XdH_l6dEEf0nEI4b-zrF1mbKTtUeQb-7zp1qbHeApRqIr-IKiwhYE-i0awBP3KVskiZG',
         Blog: 'https://www.factschool.org/en/news/',
         Keywords: 'Charter School, Asian, Immigrant, Refugee',
         Mission:
@@ -8547,7 +8702,8 @@ exports.allOrganizations = [
         Donate: 'https://www.thefire.org/donate/',
         Blog: 'https://www.thefire.org/news-and-media/',
         Keywords: 'Free Speech, Religious Liberty',
-        Mission: 'The Foundation for Individual Rights in Education’s mission is to defend and sustain the individual rights of students and faculty members at America’s colleges and universities.',
+        Mission:
+            'The Foundation for Individual Rights in Education’s mission is to defend and sustain the individual rights of students and faculty members at America’s colleges and universities.',
         Description:
             'The rights FIRE focuses on include freedom of speech, freedom of association, due process, legal equality, religious liberty, and sanctity of conscience—the essential qualities of liberty. FIRE educates students, faculty, alumni, trustees, and the public about the threats to these rights on our campuses, and provides the means to preserve them.',
     },
@@ -8585,7 +8741,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Donate: 'https://neurovirologyfoundation.org/donate.php',
         Keywords: 'Research, Science, Sponsorships',
-        Mission: 'The Foundation for NeuroVirology is dedicated to expanding the boundaries of knowledge of neurovirology through a worldwide exchange of ideas and research.',
+        Mission:
+            'The Foundation for NeuroVirology is dedicated to expanding the boundaries of knowledge of neurovirology through a worldwide exchange of ideas and research.',
         Description:
             'The Foundation is dedicated to promoting education and the global exchange of research in neurovirology through sponsorship of graduate and post-graduate participation in scholarly activities, as well as supporting educational platforms for dissemination of scientific knowledge in the field.\r\n\r\nGraduate, post-graduate scholars, and junior faculty who demonstrate excellence in the field of neurovirology will be the recipients of awards (from the Foundation) to travel to and participate in activities sponsored by various scientific organizations, including the International Society for NeuroVirology (ISNV). Our scientific review board and officers will determine the selections.',
     },
@@ -8608,7 +8765,8 @@ exports.allOrganizations = [
         Donate: 'https://www.foxchase.org/giving',
         Blog: 'https://www.foxchase.org/blog',
         Keywords: 'Cancer, Science, Research',
-        Mission: 'To prevail over cancer, marshaling heart and mind in bold scientific discovery, pioneering prevention, and compassionate care.',
+        Mission:
+            'To prevail over cancer, marshaling heart and mind in bold scientific discovery, pioneering prevention, and compassionate care.',
         Description:
             'Fox Chase Cancer Center, part of the Temple University Health System, is committed to clinical excellence, research expertise, and community health. These initiatives earned us a National Cancer Institute (NCI) designation as one of the first comprehensive cancer centers in the country and one of only 51 in the nation to earn this full designation by the federal government’s principal agency for cancer research and training.\r\n\r\nAt Fox Chase, we diagnose and treat every kind of cancer and offer patients state-of-the-art and best practice treatments as well as clinical trials to cure their cancer.\r\n\r\nToday, Fox Chase conducts a broad array of nationally competitive basic, translational, and clinical research, with special programs in cancer prevention, detection, survivorship, and community outreach.',
     },
@@ -8640,9 +8798,11 @@ exports.allOrganizations = [
         Contact: 'mail@francisvillendc.org',
         ServiceArea: 'Francisville',
         Facebook: 'https://www.facebook.com/pg/FrancisvilleNews/about/?ref=page_internal',
-        Instagram: 'https://www.instagram.com/artsonridge19130/?fbclid=IwAR0HezExDdsc0kpc0qfVDx3ahk5o8oRhwlb30ZC6MFCt0IoQDGADWuW4Ai4',
+        Instagram:
+            'https://www.instagram.com/artsonridge19130/?fbclid=IwAR0HezExDdsc0kpc0qfVDx3ahk5o8oRhwlb30ZC6MFCt0IoQDGADWuW4Ai4',
         Youtube: 'https://www.youtube.com/playlist?list=PLjyPVG8-Cwn-mDA1lpM5BowCtB-BucsV_',
-        Newsletter: 'https://www.instagram.com/artsonridge19130/?fbclid=IwAR0HezExDdsc0kpc0qfVDx3ahk5o8oRhwlb30ZC6MFCt0IoQDGADWuW4Ai4',
+        Newsletter:
+            'https://www.instagram.com/artsonridge19130/?fbclid=IwAR0HezExDdsc0kpc0qfVDx3ahk5o8oRhwlb30ZC6MFCt0IoQDGADWuW4Ai4',
         Impact: 'https://www.francisvillendc.org/become-a-volunteer',
         Donate: 'https://www.francisvillendc.org/support-opportunities',
         Keywords: 'Revitalization, Zoning, Pool',
@@ -8682,7 +8842,8 @@ exports.allOrganizations = [
         Zip: 19123,
         Contact: 'contact@frankiesworld.com',
         ServiceArea: 'Philadelphia',
-        Facebook: 'http://www.facebook.com/pages/Frankies-World-Foundation-Medical-Daycare/156331461053674?v=wall&ref=ts',
+        Facebook:
+            'http://www.facebook.com/pages/Frankies-World-Foundation-Medical-Daycare/156331461053674?v=wall&ref=ts',
         Instagram: 'https://www.instagram.com/frankiesworldonpoplar/',
         LinkedIn: 'https://www.linkedin.com/company/35719659/',
         Newsletter: 'https://frankiesworld.us20.list-manage.com/subscribe?u=51ad59243dc8984b0bb9a3a43&id=9a53580765',
@@ -8709,7 +8870,7 @@ exports.allOrganizations = [
         Mission:
             'To establish a HAPPY and NURTURING environment that both promotes and cultivates a positive learning experience for our children. By involving staff, students, and parents we plan to create a challenging and supportive school where our students can learn and grow.',
         Description:
-            'Franklin Towne Charter Elementary School proudly opened our doors in 2009. It was the direct outgrowth of our sister school, Franklin Towne Charter High. In 2007 Chief Executive Officer, Mr. Venditti, along with Chief Academic Officer, Mr. Field, began expansion plans. In 2008 our elementary charter was granted by the School Reform Commission and a team of gifted educators and community stakeholders quickly went to work on designing the school that we are all so proud to call home.\r\n\r\nDuring our first two years of operation we offered a world-class education to 300 students in grades 3, 4 and 5 at our high school campus. In 2010 we added an addition 100 students to offer 3rd through 6th grade opportunities. During these two years we were building our forever home in the heart of the Bridesburg community at 4259 Richmond Street. During these two years the Franklin Towne Administration and Board of Directors transformed an abandoned and dangerous lot and turned it into a state-of-the-art educational facility that offers opportunities to over 900 students in grades Kindergarten through 8th.',
+            'Franklin Towne Charter Elementary School proudly opened our doors in 2009. It was the direct outgrowth of our sister school, Franklin Towne Charter High. In 2007 Chief Executive Officer, Mr. Venditti, along with Chief Academic Officer, Mr. Field, began expansion plans. In 2008 our elementary charter was granted by the School Reform Commission and a team of gifted educators and community stakeholders quickly went to work on designing the school that we are all so proud to call home.\r\n\r\nDuring our first two years of operation we offered a world-class education to 300 students in grades 3, 4 and 5 at our high school campus. In 2010 we added an addition 100 students to offer 3rd through 6th grade opportunities. During these two years we were building our forever home in the heart of the Bridesburg community at 4259 Richmond Street. During these two years the Franklin Towne Administration and Membership of Directors transformed an abandoned and dangerous lot and turned it into a state-of-the-art educational facility that offers opportunities to over 900 students in grades Kindergarten through 8th.',
     },
     {
         Name: 'Franklin Towne Charter High School',
@@ -8761,7 +8922,8 @@ exports.allOrganizations = [
         Contact: 'fmp@freemigrate.org',
         ServiceArea: 'Philadelphia',
         Events: 'https://freemigrationproject.org/events/',
-        Twitter: 'https://twitter.com/Free_Migration?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Afree_migration&ref_url=https%3A%2F%2Ffreemigrationproject.org%2Fblogs%2F',
+        Twitter:
+            'https://twitter.com/Free_Migration?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3Afree_migration&ref_url=https%3A%2F%2Ffreemigrationproject.org%2Fblogs%2F',
         Facebook: 'https://www.facebook.com/FreeMigration/',
         Newsletter: 'https://freemigrationproject.org/email-list/',
         Donate: 'https://freemigrationproject.org/donate/',
@@ -8781,7 +8943,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Donate: 'https://www.freeyourtime.org/make-a-donation/',
         Keywords: 'Transportation, Companionship',
-        Mission: 'Free Your Time Senior Errand Service, Inc.’s mission is to enhance the quality of life for seniors over the age of 62 and disabled veterans.',
+        Mission:
+            'Free Your Time Senior Errand Service, Inc.’s mission is to enhance the quality of life for seniors over the age of 62 and disabled veterans.',
         Description:
             'We want to restore human dignity for both elderly and disabled veterans by providing basic companionship services and transportation assistance to meet their physical and emotional needs.  Free Your Time Senior Errand Service, Inc. encourages you to visit the About Us to learn more about our founder and the ways you can make a difference by participating in our senior/veteran outreach programs.',
     },
@@ -8867,12 +9030,13 @@ exports.allOrganizations = [
         Zip: 19102,
         ServiceArea: 'Philadelphia',
         Events: 'https://friendschildcare.org/events/',
-        Donate: 'https://www.paypal.com/donate?token=-NktjCV6KZV7ict1kzCwmH1k4xKn885cn_7ryh1YJyBppQ0275NJ4UPVQjglHhQaBWPqhuZY68jPzfh3',
+        Donate:
+            'https://www.paypal.com/donate?token=-NktjCV6KZV7ict1kzCwmH1k4xKn885cn_7ryh1YJyBppQ0275NJ4UPVQjglHhQaBWPqhuZY68jPzfh3',
         Keywords: 'Childcare, Quaker',
         Mission:
             'Friends Child Care Center is guided by the Quaker belief that there is that of God in every person. This belief inspires and informs everyday life at the Center while it affirms the individual value of each child, teacher and parent. The approach to learning is broad but simple: children learn to get along with other people as they experience the rewards of learning what they want to know.',
         Description:
-            'FCCC provides an enriching environment of love, security and community for children between the ages of 3 months and Kindergarten. Through age-appropriate experiences, our children learn respect for others, self-confidence and social skills. They develop curiosity about the world and learn to appreciate people who are different from them. The children grow emotionally, physically, socially and cognitively. They build a foundation of competence and confidence that prepares them for everyday situations and, ultimately, for school.\r\n\r\nFriends Child Care Center provides quality child care for young children whose parents are Friends Center employees or live/work in the Philadelphia area. We strive to reflect the cultural and economic diversity of our urban community. We encourage young children in their ability to be caring, curious, responsible beings.\r\n\r\nWe wholeheartedly embrace this mission for our institution, and we affirm our responsibility as a Board to provide leadership and governance so that Friends Child Care Center can continue to thrive, while remaining responsive to the dynamic external environment and living faithfully by our mission.',
+            'FCCC provides an enriching environment of love, security and community for children between the ages of 3 months and Kindergarten. Through age-appropriate experiences, our children learn respect for others, self-confidence and social skills. They develop curiosity about the world and learn to appreciate people who are different from them. The children grow emotionally, physically, socially and cognitively. They build a foundation of competence and confidence that prepares them for everyday situations and, ultimately, for school.\r\n\r\nFriends Child Care Center provides quality child care for young children whose parents are Friends Center employees or live/work in the Philadelphia area. We strive to reflect the cultural and economic diversity of our urban community. We encourage young children in their ability to be caring, curious, responsible beings.\r\n\r\nWe wholeheartedly embrace this mission for our institution, and we affirm our responsibility as a Membership to provide leadership and governance so that Friends Child Care Center can continue to thrive, while remaining responsive to the dynamic external environment and living faithfully by our mission.',
     },
     {
         Name: 'Friends Council on Education',
@@ -8929,7 +9093,8 @@ exports.allOrganizations = [
         Donate: 'https://friendsfiduciary.org/charitable-services/',
         Blog: 'https://friendsfiduciary.org/news/',
         Keywords: 'Quaker, Investment Management',
-        Mission: 'Guided by Quaker principles, values and testimonies, Friends Fiduciary provides prudent, cost-effective management of financial assets for Friends organizations.',
+        Mission:
+            'Guided by Quaker principles, values and testimonies, Friends Fiduciary provides prudent, cost-effective management of financial assets for Friends organizations.',
         Description:
             'We are a Quaker non-profit organization providing cost effective, professional socially responsible investment management services exclusively to Friends meetings, churches, schools and organizations.\r\n\r\nFC manages over $480 Million in co-mingled funds for 380 constituents across the country. Friends Fiduciary is a manager of managers, selecting best in class investment managers, who implement Quaker socially responsible investment criteria for specific asset classes.',
     },
@@ -8966,9 +9131,10 @@ exports.allOrganizations = [
         Donate: 'https://www.friendsjournal.org/donate/',
         Membership: 'https://www.friendsjournal.org/subscribe/',
         Keywords: 'Quaker',
-        Mission: 'Friends Journal is published by Friends Publishing Corporation. Our mission is to communicate Quaker experience in order to connect and deepen spiritual lives',
+        Mission:
+            'Friends Journal is published by Friends Publishing Corporation. Our mission is to communicate Quaker experience in order to connect and deepen spiritual lives',
         Description:
-            'Today, Friends Journal’s staff works in the historic Young Smyth Field building in Center City Philadelphia (a plaque in the lobby notes that our office was once the Quaker Maid Stocking Factory), with a staff of nine and the assistance of volunteers and  interns. Our readership is located in all 50 states and 43 foreign countries. The magazine is published in print 11 times per year and continuously online, with an annual membership fee of $55. Postage and handling charges of $11 per year apply to subscriptions shipped outside North America. Single copies are available for $6.00 plus shipping. The Friends Publishing Corporation Board of Trustees represents a diverse cross‐section of North American Quakers. With an annual operating budget of $1,077,923, we rely on the generous support of supporting members. Donations account for over 50 percent of our budget and make our wide outreach possible.',
+            'Today, Friends Journal’s staff works in the historic Young Smyth Field building in Center City Philadelphia (a plaque in the lobby notes that our office was once the Quaker Maid Stocking Factory), with a staff of nine and the assistance of volunteers and  interns. Our readership is located in all 50 states and 43 foreign countries. The magazine is published in print 11 times per year and continuously online, with an annual membership fee of $55. Postage and handling charges of $11 per year apply to subscriptions shipped outside North America. Single copies are available for $6.00 plus shipping. The Friends Publishing Corporation Membership of Trustees represents a diverse cross‐section of North American Quakers. With an annual operating budget of $1,077,923, we rely on the generous support of supporting members. Donations account for over 50 percent of our budget and make our wide outreach possible.',
     },
     {
         Name: 'Friends Select',
@@ -9057,7 +9223,7 @@ exports.allOrganizations = [
         Mission:
             'Established in May 2002, the Friends of Father Judge High School, Inc. is a Pennsylvania nonprofit corporation with Officers and Directors who fundraise on behalf of Father Judge High School.',
         Description:
-            'Since its formation “The Friends” has raised funds necessary to make improvements to the school campus, and to fund the academic programs that complement the traditional curriculum. “The Friends” endeavors to fulfill the operational requests of the the school President and Administration, and relies on the President’s Advisory Board for careful evaluations and recommendations for action.',
+            'Since its formation “The Friends” has raised funds necessary to make improvements to the school campus, and to fund the academic programs that complement the traditional curriculum. “The Friends” endeavors to fulfill the operational requests of the the school President and Administration, and relies on the President’s Advisory Membership for careful evaluations and recommendations for action.',
     },
     {
         Name: 'Friends of FDR Park',
@@ -9088,7 +9254,8 @@ exports.allOrganizations = [
         Zip: 19121,
         ServiceArea: 'Philadelphia',
         Newsletter: 'https://us13.list-manage.com/subscribe?u=4587c76ac9bf222dacb640b8e&id=87e1b5765a',
-        Donate: 'https://www.paypal.com/webapps/hermes?token=3GB04233FF672825E&useraction=commit&mfid=1612474144964_ed7d66b84383f',
+        Donate:
+            'https://www.paypal.com/webapps/hermes?token=3GB04233FF672825E&useraction=commit&mfid=1612474144964_ed7d66b84383f',
         Keywords: 'Fundraising, College Access, STEM',
         Mission:
             'Friends of Carver High School of Engineering and Science was created to support school improvement and the academic achievement of Carver HSES students. Our mission includes promoting increased alumni, community and parent involvement, and raising funds and resources for the maintenance and creation of programs that enhance the academic experience of students.',
@@ -9240,7 +9407,8 @@ exports.allOrganizations = [
         Contact: 'laruejim@comcast.net',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/MwangazaTZ/',
-        Newsletter: 'https://mwangazapartnership.us11.list-manage.com/subscribe?u=8bcc775bef0bb91901306d5fd&id=55aa8167c2',
+        Newsletter:
+            'https://mwangazapartnership.us11.list-manage.com/subscribe?u=8bcc775bef0bb91901306d5fd&id=55aa8167c2',
         Impact: 'https://www.mwangazapartnership.org/volunteer',
         Donate: 'https://www.mwangazapartnership.org/donate-index-impact',
         Keywords: 'Global, Lutheran, Tanzania',
@@ -9284,7 +9452,8 @@ exports.allOrganizations = [
         Blog: 'https://penntreatypark.org/2018-events-and-news/',
         Membership: 'https://penntreatypark.org/about/join-the-friends/',
         Keywords: 'Preservation, Park, Historic',
-        Mission: 'The Friends of Penn Treaty Park is a community organization dedicated to preserving and enhancing the beauty and usefulness of historic Penn Treaty Park.',
+        Mission:
+            'The Friends of Penn Treaty Park is a community organization dedicated to preserving and enhancing the beauty and usefulness of historic Penn Treaty Park.',
         Description:
             'After years of informal volunteer efforts, a small group of community-minded citizens had a vision of a safer and cleaner Penn Treaty Park. In 2005, we created a grass-roots effort to preserve and promote the park as a positive green space for family and community.\r\n\r\nThe Friends of Penn Treaty Park began by overseeing refurbishments of park monuments, as well as the addition of new benches and playground equipment. We have been able to cover the cost of the replacement of the Treaty tree and decorative fencing around it. We are working on funding future improvements, including lighting and enhancements to the children’s area.\r\n\r\nToday, we have grown into a regional community of members and volunteers dedicated to protecting and enhancing the park. In order to continue to keep the park in tip-top shape and improve it, we need our friends to continue to support our efforts through membership contributions. As Fairmount Park Commission receives less funds than it has in previous years, Penn Treaty Park’s support will also suffer. That is where your membership contribution comes in. If you have any questions about ways to get involved in t',
     },
@@ -9394,7 +9563,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/FriendsofUNIFAT',
         Facebook: 'https://www.facebook.com/groups/FriendsofUNIFAT/',
         Impact: 'http://friendsofunifat.org/getinvolved/',
-        Donate: 'https://www.paypal.com/donate?token=JnG7s_Yp_YAbCeVHutjQC-0aB3g0mBTvQh-TGHYVFdluEgLlDvrJb3Geig0FukX2ga1pef6pxovR_GCn',
+        Donate:
+            'https://www.paypal.com/donate?token=JnG7s_Yp_YAbCeVHutjQC-0aB3g0mBTvQh-TGHYVFdluEgLlDvrJb3Geig0FukX2ga1pef6pxovR_GCn',
         Keywords: 'Global, Uganda',
         Mission:
             'Friends of UNIFAT is a 501 (c) (3) non-profit organization committed to supporting the educational and peace building initiatives for UNIFAT - a private primary school located in Gulu, Uganda in East Africa.',
@@ -9414,7 +9584,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/FriendsofVizo/',
         Instagram: 'https://www.instagram.com/friendsofvizo',
         Impact: 'http://www.vizobvm.org/Get-Involved/',
-        Donate: 'https://www.paypal.com/donate?token=fxwFwbA2jXP4i6LZeDfeJSdkkXrBVo0A7p3TnW5fgJdfJNh3XGbzZJYKIMH-0noWU1y1TceGpLdvxqpA',
+        Donate:
+            'https://www.paypal.com/donate?token=fxwFwbA2jXP4i6LZeDfeJSdkkXrBVo0A7p3TnW5fgJdfJNh3XGbzZJYKIMH-0noWU1y1TceGpLdvxqpA',
         Keywords: 'Catholic',
         Mission:
             'Visitation B.V.M School is a beacon of hope to the families of our diverse community. Through fostering positive relationships we bring about unity in our diversity. Through addressing the unique needs of the whole child, recognizing each as a gift from God we instill in our students a recognition not only of their giftedness but the giftedness of each person. We provide them with the tools and inspiration to be people of faith, life-long learners, and responsible global citizens.',
@@ -9432,7 +9603,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'http://fourchaplains.org/events/',
         Facebook: 'https://www.facebook.com/fourchaplains.org/',
-        Donate: 'https://www.paypal.com/donate/?token=RrEql4WOREQ6TTYAXwtG4DV5ZnhZdbLNc3vrz1eHqGKTxZ7bY0TP5hh72i4Iz5jdbHGE_Im5UmRtvl7L&locale.x=US',
+        Donate:
+            'https://www.paypal.com/donate/?token=RrEql4WOREQ6TTYAXwtG4DV5ZnhZdbLNc3vrz1eHqGKTxZ7bY0TP5hh72i4Iz5jdbHGE_Im5UmRtvl7L&locale.x=US',
         Blog: 'http://fourchaplains.org/news-blog/',
         Membership: 'http://fourchaplains.org/join/',
         Keywords: 'Chapel',
@@ -9475,7 +9647,8 @@ exports.allOrganizations = [
         Donate: 'https://www.therailpark.org/donate/',
         Blog: 'https://www.therailpark.org/news/',
         Keywords: 'Park',
-        Mission: 'Friends of the rail park was founded to cultivate visions, advocate for, and ultimately manage a continous three-mile linear park and recreation path in Philadelphia.',
+        Mission:
+            'Friends of the rail park was founded to cultivate visions, advocate for, and ultimately manage a continous three-mile linear park and recreation path in Philadelphia.',
         Description:
             'The Rail Park is a vision that’s revitalizing three miles of unused rail lines into a usable, beautiful, public space for all. The first phase is complete—filled with pathways, greenery, and bench swings with amazing city views.',
     },
@@ -9499,7 +9672,8 @@ exports.allOrganizations = [
         Blog: 'https://fringearts.com/blog/',
         Membership: 'https://fringearts.com/membership/',
         Keywords: 'Performing Arts, Festival, Contemporary Arts',
-        Mission: 'FringeArts presents world-class, contemporary performing arts that challenge convention and inspire new ways of thinking.',
+        Mission:
+            'FringeArts presents world-class, contemporary performing arts that challenge convention and inspire new ways of thinking.',
         Description:
             'FringeArts is Philadelphia’s home for contemporary performance, presenting progressive, world-class art that expands the imagination and boldly defies expectations. Our programming exposes audiences to genre-defying performances and installations by accomplished and emerging innovators who push the boundaries of art-making and redefine the artistic landscape worldwide.\r\n\r\nEach September, the organization presents the annual Fringe Festival, a 3-week celebration that fills the city’s neighborhoods with more than 1,000 curated and independently produced performances. Year-round, FringeArts presents an equally compelling line up of performances at its state-of-the-art venue on the Delaware River Waterfront—a renovated historic building that also houses La Peg Restaurant & Bar and Haas Biergarten.  This line up includes Blue Heaven Comedy Festival in February, High Pressure Fire Service—a series of new works by local artists—running March through June, Hand to Hand Circus Festival in the summer, and additional programming for late night and outdoor events in Haas Biergarten throughout the year.\r\n\r\nAs a catalyst for cultural and community development, and a destination that brings artists and audiences together, FringeArts is central to the city’s vibrant arts community and the enrichment of the lives of those who reside, work, and visit here.',
     },
@@ -9576,7 +9750,8 @@ exports.allOrganizations = [
         Impact: 'https://garcesfoundation.org/volunteer-1',
         Donate: 'https://garcesfoundation.org/donatehome',
         Keywords: 'Latino, Spanish Speaking, English Language Learners, Foundation, Grants',
-        Mission: 'The Garces Foundation is committed to helping South Philadelphia’s underserved immigrant community get access to healthcare and educational services.',
+        Mission:
+            'The Garces Foundation is committed to helping South Philadelphia’s underserved immigrant community get access to healthcare and educational services.',
         Description:
             'The Garces Foundation is committed to helping South Philadelphia’s underserved immigrant community get access to healthcare and educational services. Considerable health disparities between White populations and Latino immigrants persist, a problem that is exacerbated among those especially those with limited English proficiency. Philadelphia’s Spanish-speaking immigrants face significant linguistic and cultural barriers to obtaining health insurance and accessing healthcare.\r\n\r\nConsiderable health disparities between White populations and Latino immigrants persist, a problem that is exacerbated among those especially those with limited English proficiency. Philadelphia’s Spanish-speaking immigrants face significant linguistic and cultural barriers to obtaining health insurance and accessing healthcare.',
     },
@@ -9599,7 +9774,8 @@ exports.allOrganizations = [
         Keywords: 'Diabetes, Science, Research, Advocacy',
         Mission:
             'The Diabetes Education And Research Center Provides Funding To Organizations For Effective Patient Education Programs So That Diabetics And/Or Their Families Are Knowledgeable About The Disease And Proper Methods For Treatment, Control, And The Elimination Of Complications And Research Related To Diabetes And Associated Problems.',
-        Description: 'Since 1967, DERC has been providing education and patient advocacy for the people of the Greater Philadelphia Area.',
+        Description:
+            'Since 1967, DERC has been providing education and patient advocacy for the people of the Greater Philadelphia Area.',
     },
     {
         Name: 'Gaudenzia',
@@ -9658,7 +9834,8 @@ exports.allOrganizations = [
         Impact: 'https://genpa.org/about-gsp/gsp-volunteer-team/',
         Membership: 'https://genpa.org/membership-login/join/',
         Keywords: 'Research',
-        Mission: 'Our mission is to provide leadership and support in promoting genealogy through education, preservation, and access to Pennsylvania-related genealogical information.',
+        Mission:
+            'Our mission is to provide leadership and support in promoting genealogy through education, preservation, and access to Pennsylvania-related genealogical information.',
         Description:
             'Founded in 1892 as a non-profit organization, the Genealogical Society of Pennsylvania (GSP) was among the first in the United States to recognize the value of collecting and preserving the vital and personal records of those ancestors whose lives now comprise our American History.\r\n\r\nGSP is committed to preserving and publishing previously unpublished primary sources. The continuing dedication to this service enables the Society to make an increasingly significant contribution to the cultural life of our city, state, and country.',
     },
@@ -9674,10 +9851,12 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/generationsonli',
         Facebook: 'https://www.facebook.com/gol2000/?fref=ts',
         Youtube: 'https://www.youtube.com/watch?v=EhbLoGDsMr4',
-        Donate: 'https://www.paypal.com/donate?token=J5DR4R5HjJBFedAIuhEKQDdx1C1OO-px-2bBOFnF29jMahaE6C8D6YAw5fzyZWj8iAHEnsSEkq46qn92',
+        Donate:
+            'https://www.paypal.com/donate?token=J5DR4R5HjJBFedAIuhEKQDdx1C1OO-px-2bBOFnF29jMahaE6C8D6YAw5fzyZWj8iAHEnsSEkq46qn92',
         Blog: 'https://www.generationsonline.com/index.php',
         Keywords: 'Digital Literacy',
-        Mission: 'Generations On Line is dedicated to enhancing communication among generations by fostering and promoting digital literacy to seniors.',
+        Mission:
+            'Generations On Line is dedicated to enhancing communication among generations by fostering and promoting digital literacy to seniors.',
         Description:
             'Generations on Line (GoL) sets out to simplify these tools in order to foster and promote Internet literacy, access, and skills to the elderly and overcome their fear of the new electronic media. We created, tested, and developed on-screen tutorials that guide a senior step-by step with age-friendly instructions in large type and plain English, respectfully and clearly.\r\n \r\nWe provide PC and tablet training in two ways — to institutions and to individuals. For institutions that serve seniors, we offer a web-based version of both the tablet and PC training programs. The tablet training, pioneered with the Philadelphia Corporation for Aging and funded by the Pennsylvania Department on Aging, is a comprehensive program called a Sip & Swipe Café®. We have served nearly 2000 facilities, including assisted living and retirement centers, HUD subsidized housing, senior centers and public libraries.\r\n\r\nFor individuals, caregivers, and families, we provide our tablet training through apps in both the Apple App store and Android Google Play store. We also have developed tutorials that simplify the Internet for seniors seeking specific tasks — from the Medicare Part D Plan Finder to the Social Security website. We pioneered a Workforce Development training program for institutions that helps retirees who need to learn how to find part-time employment online, as newspaper ads disappear and most applications require digital submission.',
     },
@@ -9745,7 +9924,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/glifecenter/',
         Instagram: 'https://www.instagram.com/glec19144/?hl=en',
         Youtube: 'http://www.youtube.com/user/Wix',
-        Donate: 'https://www.paypal.com/donate?token=6JBKa0TbwFh-nu-l63m7Ah5qeOjssktTI-gCtL-oDSmzT6K8hmVzn_qctSA0TPQdvq3TqcuUfYNOB91x',
+        Donate:
+            'https://www.paypal.com/donate?token=6JBKa0TbwFh-nu-l63m7Ah5qeOjssktTI-gCtL-oDSmzT6K8hmVzn_qctSA0TPQdvq3TqcuUfYNOB91x',
         Membership: 'https://www.glifecenter.org/membership-rates',
         Keywords: 'Pool, Aquatics, Fitness, Sauna',
         Mission:
@@ -9819,9 +9999,11 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/thegesuschool',
         Facebook: 'https://www.facebook.com/gesuschool',
         LinkedIn: 'https://www.linkedin.com/company/gesu-school',
-        Newsletter: 'https://visitor.r20.constantcontact.com/manage/optin?v=001nxNUBQroFr2NfOWjs9i7hAGItncKVS3O5SncozmGLdTQVpkxISuQ7B6StD3Z_osp-mEVFp_TLE0P0XF9HrOtTOUp5Ro2OrwMMiEJo-dkGsE%3D',
+        Newsletter:
+            'https://visitor.r20.constantcontact.com/manage/optin?v=001nxNUBQroFr2NfOWjs9i7hAGItncKVS3O5SncozmGLdTQVpkxISuQ7B6StD3Z_osp-mEVFp_TLE0P0XF9HrOtTOUp5Ro2OrwMMiEJo-dkGsE%3D',
         Donate: 'https://www.gesuschool.org/donate',
-        Blog: 'https://www.gesuschool.org/news-events/gesu-blog, https://www.gesuschool.org/news-events/gesu-in-the-news',
+        Blog:
+            'https://www.gesuschool.org/news-events/gesu-blog, https://www.gesuschool.org/news-events/gesu-in-the-news',
         Keywords: 'Catholic, Jesuit',
         Mission:
             'Inspired by the Jesuit and IHM traditions of social justice, faith, creative hope, and love, Gesu School helps students to transcend all forms of poverty by providing a comprehensive, innovative education. We empower our students to develop their strengths, overcome challenges, and become positive, engaged members of the community and the world.',
@@ -9862,7 +10044,7 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/GirardCollege/',
         Donate: 'https://www.girardcollege.edu/support/',
         Blog: 'https://www.girardcollege.edu/news/',
-        Keywords: 'Scholarships, Boarding School, Underserved Communities',
+        Keywords: 'Scholarships, Membershiping School, Underserved Communities',
         Mission:
             'Girard College is a full-scholarship boarding school that fosters intellectual curiosity, social development and emotional growth in academically focused students from underserved communities. We ensure every student the opportunity and the means to achieve excellence and preparation for advanced education through purposeful academic and residential programs.',
         Description:
@@ -9879,7 +10061,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/girlsjusticePHL',
         Facebook: 'https://www.facebook.com/GirlsJusticeLeague/?ref=your_pages',
         Instagram: 'http://instagram.com/girlsjusticephl',
-        Donate: 'https://www.paypal.com/donate?token=K8fWeVxjylW30vTts05yY_rWafhGGnv9vIw6_niUBFsldq5Da4jnXVWD23gEydulvw8UROWnkWnsGTRx',
+        Donate:
+            'https://www.paypal.com/donate?token=K8fWeVxjylW30vTts05yY_rWafhGGnv9vIw6_niUBFsldq5Da4jnXVWD23gEydulvw8UROWnkWnsGTRx',
         Blog: 'http://girlsjusticeleague.org/blog',
         Keywords: 'Empowerment, Social Justice',
         Mission:
@@ -9906,7 +10089,8 @@ exports.allOrganizations = [
         Donate: 'https://www.girlsrockphilly.org/donate',
         Blog: 'https://www.girlsrockphilly.org/blog',
         Keywords: 'Music, Advocacy, Expression',
-        Mission: 'Girls Rock Philly is a youth-centered music organization dedicated to building an intergenerational community of girls, women, and trans and gender-expansive people.',
+        Mission:
+            'Girls Rock Philly is a youth-centered music organization dedicated to building an intergenerational community of girls, women, and trans and gender-expansive people.',
         Description:
             'Through the practice of fearless expression, artistic experimentation, and collaboration, we build the confidence and leadership skills needed to transform ourselves and our communities. Our staff, volunteers, and participants foster a joyful culture of creativity, critical thinking, and collective care in order to build a more safe and equitable world.',
     },
@@ -9949,7 +10133,8 @@ exports.allOrganizations = [
         Impact: 'https://girlsincpa-nj.org/take-action/volunteer/, https://girlsincpa-nj.org/take-action/advocacy/',
         Donate: 'https://girlsincpa-nj.org/donate/',
         Keywords: 'Advocacy, Equal Opportunity',
-        Mission: 'Our mission is to inspire all girls to be strong, smart, and bold, through direct service and advocacy.',
+        Mission:
+            'Our mission is to inspire all girls to be strong, smart, and bold, through direct service and advocacy.',
         Description:
             'Girls Inc. delivers life-changing programs and experiences that equip girls to overcome serious barriers to grow up strong, smart, and bold.\r\n\r\nIn partnership with schools and at Girls Inc. centers, we focus on the development of the whole girl. She learns to value herself, take risks, and discover and develop her inherent strengths. The combination of long-lasting mentoring relationships, a pro-girl environment, and research-based programs equip girls to navigate gender, economic, and social barriers, and grow up healthy, educated, and independent. Informed by girls and their families, we also advocate for legislation and policies to increase opportunities and rights for all girls.',
     },
@@ -9970,7 +10155,8 @@ exports.allOrganizations = [
         Donate: 'https://www.gotrphiladelphia.org/Donate',
         Blog: 'https://www.gotrphiladelphia.org/News',
         Keywords: 'Running',
-        Mission: 'We inspire girls to be joyful, healthy and confident using a fun, experience-based curriculum which creatively integrates running.',
+        Mission:
+            'We inspire girls to be joyful, healthy and confident using a fun, experience-based curriculum which creatively integrates running.',
         Description:
             'At Girls on the Run we inspire ALL girls to build confidence and make intentional decisions, while fostering care and compassion for self and others. Trained coaches use physical activity and dynamic discussions to build social, emotional and physical skills in every girl while encouraging healthy habits for life.',
     },
@@ -10076,7 +10262,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/GFSSPhilly/',
         Instagram: 'https://www.instagram.com/goodfamilyss/',
         Keywords: 'Home Healthcare',
-        Mission: 'The mission is to provide education and high-quality services to allow individuals to live healthy, satisfying lives free from restraint.',
+        Mission:
+            'The mission is to provide education and high-quality services to allow individuals to live healthy, satisfying lives free from restraint.',
         Description:
             "Good Family Support Services (GFSS) offers quality in-home care services for families just like yours. Our services provide just the right mix of care that preserve your loved ones' independence, helps to maintain their in-home safety, and enhance their quality of living. Our caregivers are carefully screened and trained to provide excellent care, and to engage clients as active participants in their own care. GFSS serves primarily Medicaid recipients.\r\n\r\nIt doesn't matter if its just a few hours a day, or full time care, Good Family Support Services will work with your family to schedule the maximum amount of care to meet you or your loved ones specific needs, assuring their safety and well being. Service will vary depending on the individuals need for assistance. Our individualized centered approach aimed at keeping the elderly and disabled active in the community allows us to carry out our mission.",
     },
@@ -10098,7 +10285,8 @@ exports.allOrganizations = [
         Newsletter: 'https://www.phillymediators.org/about-gsmp/',
         Donate: 'https://www.phillymediators.org/donate/',
         Keywords: 'Mediation, Conflict Resolution',
-        Mission: 'Our mission is to encourage peace, reconciliation, and social justice and empower individuals to resolve conflicts.',
+        Mission:
+            'Our mission is to encourage peace, reconciliation, and social justice and empower individuals to resolve conflicts.',
         Description:
             "The Good Shepherd Mediation Program, established in 1984, is a neighborhood justice center located in the Museum Area of Philadelphia. People in conflict come to the Mediation Program to resolve their disputes through mediation.\r\n\r\nAfter nearly 100 years of service to delinquent/dependent youth, Good Shepherd Corporation phased out its youth residential programs. In 1982, a needs assessment of the 14th and 35th police districts in Northwest Philadelphia was conducted to identify community concerns. It became apparent that crime and violence resulting from escalating, unresolved disputes - particularly involving youth - were the social problems about which community residents were most concerned. In 1984, Good Shepherd Neighborhood House was established as Philadelphia's first neighborhood justice center, serving the 14th and 35th police districts. Good Shepherd Mediation Program currently offers mediation, and training and consulting services to the Greater Philadelphia area. In 2016, the Mediation Program moved to the Museum area to be more centrally located.\r\n\r\nGood Shepherd uses a voluntary mediation process designed to resolve interpersonal and community conflicts peacefully.",
     },
@@ -10160,7 +10348,8 @@ exports.allOrganizations = [
         LinkedIn: 'https://www.linkedin.com/company/great-dames-inc/',
         Newsletter:
             'https://visitor.r20.constantcontact.com/manage/optin?v=001nMM2VZu5hBRcuDISFF2qI04O0Q1-km8dvEuuZHQ5FEclcCNLeMfliZWCJR7P38rzgSYUQUW6AQ18natGdQIrosS6XOUyxKQAmGU3CyBVf8oEoZhogU9k-zTWudXfZ1vqNsxDCJy2WugaCetevgXVYuOH66trQglTiKP0ix-Qfpo%3D',
-        Donate: 'https://www.paypal.com/donate/?token=Zwt3DBO9R5qz4m9hq1I7lWlx0w2ndsLbUVC8ZjQUEDVJ13hgJ7xCkyB8YBrpJfWhUL9Qhm&country.x=US&locale.x=US',
+        Donate:
+            'https://www.paypal.com/donate/?token=Zwt3DBO9R5qz4m9hq1I7lWlx0w2ndsLbUVC8ZjQUEDVJ13hgJ7xCkyB8YBrpJfWhUL9Qhm&country.x=US&locale.x=US',
         Blog: 'https://www.greatdames.com/latest-news',
         Membership: 'https://www.greatdames.com/join',
         Keywords: 'Mentorship, Empowerment',
@@ -10203,7 +10392,8 @@ exports.allOrganizations = [
         Impact: 'https://www.gpasspa.org/volunteer.html',
         Donate: 'https://www.gpasspa.org/Donate.html',
         Keywords: 'Food Bank, Asia, Energy Assistance, Housing Services',
-        Mission: 'The mission statement is the Greater Philadelphia Asian Social Service Center (GPASS) is to create a community diversified area for the Community.',
+        Mission:
+            'The mission statement is the Greater Philadelphia Asian Social Service Center (GPASS) is to create a community diversified area for the Community.',
         Description:
             'GPASS was founded in 1993 for the purpose of advocating equal rights, goods and services for an under-served, multi-cultural population.  To that end, we began to provide information, referrals and direct services to those in need.  The Logan/Olney, North Kensington, Germantown, Lawndale and Hunting Park areas have many first and second generation immigrants experiencing difficulties adjusting to American culture and society, and GPASS has been helping these communities cope with these problems since its inception.  GPASS has been providing counselors who speak English, Korean, Vietnamese, Chinese, Cambodian and Spanish for clients who are at a disadvantage due to language barriers and cultural differences since it began and continues to do so.',
     },
@@ -10220,7 +10410,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/gpbch',
         Facebook: 'https://www.facebook.com/GPBCH',
         LinkedIn: 'https://www.linkedin.com/company/gpbch/',
-        Donate: 'https://www.paypal.com/donate?token=YCBqz92DzI3MskdTTTgsbi4jSma3HuHwSzYg8gIlHFTbIESuL7WKLxJz5nzEhyxB2szppVKCbju6nUfl',
+        Donate:
+            'https://www.paypal.com/donate?token=YCBqz92DzI3MskdTTTgsbi4jSma3HuHwSzYg8gIlHFTbIESuL7WKLxJz5nzEhyxB2szppVKCbju6nUfl',
         Blog: 'https://www.gpbch.org/articles/',
         Membership: 'https://www.gpbch.org/membership/',
         Keywords: 'Community Health, Affordable Care',
@@ -10249,7 +10440,8 @@ exports.allOrganizations = [
         Donate: 'http://www.hungercoalition.org/give',
         Blog: 'http://www.hungercoalition.org/blog, http://www.hungercoalition.org/in-the-press',
         Keywords: 'Advocacy, Nutrition',
-        Mission: 'Founded in 1996, the Greater Philadelphia Coalition Against Hunger strives to build a community where all people have the food they need to lead healthy lives.',
+        Mission:
+            'Founded in 1996, the Greater Philadelphia Coalition Against Hunger strives to build a community where all people have the food they need to lead healthy lives.',
         Description:
             'The Coalition connects people with food assistance programs and nutrition education; provides resources to a network of food pantries; and educates the public and policymakers about responsible solutions that prevent people from going hungry.',
     },
@@ -10271,7 +10463,8 @@ exports.allOrganizations = [
         Blog: 'https://www.philaculture.org/about/press-room',
         Membership: 'https://www.philaculture.org/member/join',
         Keywords: 'Grants, Advocacy',
-        Mission: 'We lead, strengthen and amplify the voices of a cultural community that ignites creativity, inspires people and is essential for a healthy region.',
+        Mission:
+            'We lead, strengthen and amplify the voices of a cultural community that ignites creativity, inspires people and is essential for a healthy region.',
         Description:
             'We believe Greater Philadelphia is defined by its arts and culture sector: Our cultural organizations, artists, and proud history of creative expression are a crucial part of our identity, vitality, and economic growth. As a membership and service organization working on behalf of this sector, we believe in supporting the growth of arts organizations and their audiences; working to keep the arts in schools; preserving the diverse cultural activities in our communities; and empowering arts and cultural organizations to make a difference in our neighborhoods.\r\n\r\nSince 1972, we have played a key role in ensuring the health and vitality of arts and culture in Greater Philadelphia. In 1991, we helped establish the Philadelphia Cultural Fund (PCF); In 2008, we worked to re-establish a stronger Office of Arts, Culture, and the Creative Economy (OACCE); In 2009, we led the successful statewide battle to defeat the proposed “arts tax”; and in 2014, we successfully advocated for increasing the budget for PCF grantmaking programs, including restoring Youth Arts Enrichment Grants which provide project support for arts-education programs serving K-12 students in the Philadelphia School District.',
     },
@@ -10313,7 +10506,8 @@ exports.allOrganizations = [
         Donate: 'https://charity.gofundme.com/o/en/campaign/gphcc',
         Membership: 'https://www.philahispanicchamber.org/membership.html',
         Keywords: 'Hispanic, Advocacy',
-        Mission: 'To develop, promote and advocate for Hispanic business in the Greater Philadelphia region while encouraging the advancement and economic growth of the Hispanic community.',
+        Mission:
+            'To develop, promote and advocate for Hispanic business in the Greater Philadelphia region while encouraging the advancement and economic growth of the Hispanic community.',
         Description:
             'Established in 1990, the Greater Philadelphia Hispanic Chamber of Commerce (GPHCC) is a not-for-profit organization devoted to promoting the advancement and economic growth of Hispanic businesses and professionals in the greater Philadelphia region. We accomplish this through educational programs, and a broad range of services and special events. The GPHCC proactively serves a diverse membership—consisting of entrepreneurs, Latino businesses, Latino professionals, corporations and government—with the overriding goal of helping these critical constituencies capitalize on the many opportunities their diversity, enhanced by our Latino multicultural mix, offers.',
     },
@@ -10473,9 +10667,11 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/greentreks',
         Facebook: 'https://www.facebook.com/GreenTreks/',
         Youtube: 'http://www.youtube.com/greentreks',
-        Donate: 'https://www.paypal.com/donate?token=L_kYGmAsY1_-FauuiHwwPeOuXCMelM1B412glZVBTlAxf_1l1o_1ojelKIEgeMv9F155KvouGQEE3Jix',
+        Donate:
+            'https://www.paypal.com/donate?token=L_kYGmAsY1_-FauuiHwwPeOuXCMelM1B412glZVBTlAxf_1l1o_1ojelKIEgeMv9F155KvouGQEE3Jix',
         Keywords: 'Video, Sustainability, Climate Change, Water Quality',
-        Mission: 'GreenTreks is a non-profit video production and educational organization that highlights environmental solutions to inspire actions within our community.',
+        Mission:
+            'GreenTreks is a non-profit video production and educational organization that highlights environmental solutions to inspire actions within our community.',
         Description:
             'We are an award-winning, non-profit video production and educational organization that highlights environmental solutions to inspire actions within our community. We work on the big issues like sustainability, water quality, climate change, air pollution, and more — but we do it in ways that mean something to you.\r\n\r\nOur stories are highly-personal and action-oriented. We aim to help people answer the classic environmental question, “What Can One Person Do?”\r\n\r\nOur documentaries look at the Big Picture, but through the lens of the individual. We highlight people who have seen a problem and taken a hands-on approach to solving it.',
     },
@@ -10491,7 +10687,8 @@ exports.allOrganizations = [
         Donate: 'https://www.groovefund.org/support-the-groove-fund/',
         Blog: 'https://www.groovefund.org/category/news-updates/',
         Keywords: 'Scholarship',
-        Mission: 'A Scholarship Awards Program to support our colleges and universities in North America and institutions of higher education in Africa.',
+        Mission:
+            'A Scholarship Awards Program to support our colleges and universities in North America and institutions of higher education in Africa.',
         Description:
             'The Groove Fund Inc. was organized for purposes of educational philanthropy. In particular, the solicitation and distribution of scholarship award funds to college students who are pursuing coursework that leads to a degree at an accredited college or university.\r\n\r\nThe Groove Fund Inc. places particular emphasis on awarding scholarships to young black men.',
     },
@@ -10515,7 +10712,8 @@ exports.allOrganizations = [
         Impact: 'https://www.guidingstar.org/volunteer',
         Donate: 'https://www.guidingstar.org/donations',
         Keywords: 'Counseling, Pregnancy,',
-        Mission: 'Guiding Star Ministries (GSM) Maternity Home provides shelter and assistance to pregnant women and their children',
+        Mission:
+            'Guiding Star Ministries (GSM) Maternity Home provides shelter and assistance to pregnant women and their children',
         Description:
             'Guiding Star Ministries is a home for single pregnant women and their children located in Philadelphia. Through counseling, group meetings, and a nurturing faith-based environment, we try to help our residents work toward total independence. During their stay, mothers must pursue employment or education. Our aim for every resident is to build a solid foundation of faith and responsibility that will help them become successful.',
     },
@@ -10535,7 +10733,8 @@ exports.allOrganizations = [
         Newsletter: 'https://www.gunnarmontana.com/',
         Donate: 'https://www.aplos.com/aws/give/GunnarMontanaProductions/general',
         Keywords: 'Visual Arts, Performing Arts, Choreography',
-        Mission: 'Gunnar Montana Productions is a 501c3 non-profit organization that brings cutting edge, avant-garde performing and visual arts to communities across the region.',
+        Mission:
+            'Gunnar Montana Productions is a 501c3 non-profit organization that brings cutting edge, avant-garde performing and visual arts to communities across the region.',
         Description:
             'Gunnar Montana is a Philadelphia-based choreographer and performance artist whose work has appeared in festivals across the region, including the Philadelphia FringeArts Festival and ThinkFest, as well as in several venues across the City. Infusing movement and visual arts, Gunnar’s work refuses to be defined. His artistry as a whole is an array of visual art installations, prop-based choreography, set design, costume design, transformation of atmosphere, and innovative movement, concepts, and ideas.',
     },
@@ -10557,7 +10756,8 @@ exports.allOrganizations = [
         Donate: 'https://www.hacecdc.org/donate/',
         Blog: 'https://www.hacecdc.org/news-media/, https://www.hacecdc.org/news/press-releases/',
         Keywords: 'Affordable Housing, Home Ownership, Credit, Housing Services',
-        Mission: 'Since 1982, HACE builds just and equitable neighborhoods for residents and small businesses of Eastern North Philadelphia.',
+        Mission:
+            'Since 1982, HACE builds just and equitable neighborhoods for residents and small businesses of Eastern North Philadelphia.',
         Description:
             'We build neighborhoods of choice by developing affordable housing and commercial spaces, providing supportive services, engaging residents and stakeholders, and supporting small businesses to grow the neighborhood’s economic base and increase job opportunities to nurture the community’s rich cultural diversity.\r\n\r\nHACE’s goal is to make its core neighborhoods a place of choice for a mixed income, ethnically diverse population. Our neighborhood plan focuses the organization to address the concerns of the community through a comprehensive strategy that defines tangible projects and programs into manageable geographical boundaries.',
     },
@@ -10704,7 +10904,8 @@ exports.allOrganizations = [
         Impact: 'https://hand2paw.org/volunteer/',
         Donate: 'https://hand2paw.org/donate/',
         Keywords: 'Job Training,',
-        Mission: 'Hand2Paw’s mission is to provide job training to young adults in need while enhancing resilience, compassion, and connection with people, animals and the community.',
+        Mission:
+            'Hand2Paw’s mission is to provide job training to young adults in need while enhancing resilience, compassion, and connection with people, animals and the community.',
         Description:
             'Hand2Paw empowers young adults to take charge of their lives, learn real marketable skills, and pursue fulfilling employment through working with animals. Through our internship program, we provide paid job training to at-risk teens in Philadelphia, allowing them the opportunity to gain meaningful job skills and enter the workforce as confident and competent adults, while also providing fuller, more meaningful lives for local shelter animals.',
     },
@@ -10739,7 +10940,8 @@ exports.allOrganizations = [
         Donate: 'https://histcs.org/product/harambee-school-fund/',
         Blog: 'https://histcs.org/news/',
         Keywords: 'Charter School',
-        Mission: 'Our mission is to educate students to succeed as global citizens with a clear awareness of “who I am, where I am from, where I am going, and how I get there.”',
+        Mission:
+            'Our mission is to educate students to succeed as global citizens with a clear awareness of “who I am, where I am from, where I am going, and how I get there.”',
         Description:
             'Harambee is a K-8 charter school serving over 500 students residing in Philadelphia and the surrounding area. As a public school, Harambee is open to all Pennsylvania students, with priority given to Philadelphia residents and siblings of current students',
     },
@@ -10844,7 +11046,8 @@ exports.allOrganizations = [
         LinkedIn: 'https://www.linkedin.com/company/health-federation-of-philadelphia',
         Blog: 'https://healthfederation.org/news-room',
         Keywords: 'Community Health, Underserved, Health Centers, Healthcare Access',
-        Mission: 'The mission of the Health Federation of Philadelphia is to improve access to and quality of health and human services for underserved and vulnerable populations.',
+        Mission:
+            'The mission of the Health Federation of Philadelphia is to improve access to and quality of health and human services for underserved and vulnerable populations.',
         Description:
             'The Health Federation of Philadelphia serves as a keystone supporting a network of Community Health Centers as well as the broader base of public and private-sector organizations that deliver health and human services to vulnerable populations. We take a collaborative approach to promoting health by:\r\n\r\nImproving access to and quality of health care.\r\nIdentifying, testing and implementing solutions to health disparities.\r\nProviding training and technical assistance to help other organizations operate more efficiently and effectively.',
     },
@@ -10862,7 +11065,8 @@ exports.allOrganizations = [
         Impact: 'https://www.hpcpa.org/support-hpc/volunteer',
         Donate: 'https://www.hpcpa.org/give',
         Keywords: 'Advocacy, Chronic Disease',
-        Mission: "HPC's mission is to promote health, and prevent and manage chronic diseases, especially among vulnerable populations, through community-based outreach, education, and advocacy.",
+        Mission:
+            "HPC's mission is to promote health, and prevent and manage chronic diseases, especially among vulnerable populations, through community-based outreach, education, and advocacy.",
         Description:
             'Health Promotion Council of Southeastern Pennsylvania, Inc., a nonprofit corporation, was founded in 1981 to implement community-based hypertension education and control programs. Known then as Southeastern Pennsylvania High Blood Pressure Control Program and funded by the Pennsylvania Department of Health, it was as part of a national hypertension control effort organized by the National Heart Blood and Lung Institute (NHLBI).  When NHLBI disease control efforts broadened to include cholesterol and tobacco control, HPC took on these additional disease prevention concerns and changed its name accordingly.',
     },
@@ -10891,7 +11095,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://www.healthshareexchange.org/events',
         Twitter: 'https://twitter.com/HealthShareExch',
-        Facebook: 'https://www.facebook.com/pages/HealthShare-Exchange-of-Southeastern-Pennsylvania-Inc/511253512309109',
+        Facebook:
+            'https://www.facebook.com/pages/HealthShare-Exchange-of-Southeastern-Pennsylvania-Inc/511253512309109',
         Instagram: 'https://instagram.com/healthshareexch',
         Youtube: 'https://www.youtube.com/user/HealthShareExchange',
         LinkedIn: 'https://www.linkedin.com/company/healthshare-exchange',
@@ -10985,7 +11190,8 @@ exports.allOrganizations = [
         Zip: 19123,
         Contact: 'helpinghandphilly@gmail.com',
         ServiceArea: 'Philadelphia',
-        Donate: 'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=236393317&vlrStratCode=pDi9tobh9oRWzZMDFMSPyg1vnmQN4jQZi58eGRledr3UJ43ehM9S6OivIXEgJwXp',
+        Donate:
+            'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=236393317&vlrStratCode=pDi9tobh9oRWzZMDFMSPyg1vnmQN4jQZi58eGRledr3UJ43ehM9S6OivIXEgJwXp',
         Keywords: 'Meals, After School',
         Mission:
             'Our mission is to be involved with the homeless men and women of the city. We will provide for and spiritually counsel them. We are also involved with the impoverished citizens that live in the community on the perimeter of the Mission.',
@@ -11001,7 +11207,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/HeroThrillShow/',
         Keywords: 'Children, Scholarship, LEO',
-        Mission: 'The mission of the hero thrill show is to raise money to pay for the college tuition for children of philadelphia police officers and/or firefighters killed in the line of duty.',
+        Mission:
+            'The mission of the hero thrill show is to raise money to pay for the college tuition for children of philadelphia police officers and/or firefighters killed in the line of duty.',
     },
     {
         Name: 'Hillel at Drexel University',
@@ -11054,9 +11261,11 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/HIMIO.org/?fref=ts',
         Instagram: 'https://www.instagram.com/himio_org/',
         Newsletter: 'https://www.himio.org/',
-        Donate: 'https://www.paypal.com/donate?token=3__UrXoAZg66Y8d9bJM03dUBipdvWo12UeD1ob6xmZWzdAK0Lv1wkB87WkXIzPMWIjnIJoHTrRs6kDdp',
+        Donate:
+            'https://www.paypal.com/donate?token=3__UrXoAZg66Y8d9bJM03dUBipdvWo12UeD1ob6xmZWzdAK0Lv1wkB87WkXIzPMWIjnIJoHTrRs6kDdp',
         Keywords: 'Entrepreneurship',
-        Mission: 'We provide educational programs and resources for the community to get clarity, knowledge, training, exposure and understanding that is necessary in today’s competitive world.',
+        Mission:
+            'We provide educational programs and resources for the community to get clarity, knowledge, training, exposure and understanding that is necessary in today’s competitive world.',
         Description:
             'Our weekly Entrepreneurship program provides the community with direct access to various business professionals who ignite their entrepreneurial spirit by sharing personal stories and discussing valuable business insight.',
     },
@@ -11200,14 +11409,16 @@ exports.allOrganizations = [
         Blog: 'https://hsp.org/blogs',
         Membership: 'https://www.portal.hsp.org/become-a-friend',
         Keywords: 'Genealogy',
-        Mission: 'HSP’s mission is to make history relevant and exhilarating to all by creating access and delivering content for 21st century audiences.',
+        Mission:
+            'HSP’s mission is to make history relevant and exhilarating to all by creating access and delivering content for 21st century audiences.',
         Description:
             'The Historical Society of Pennsylvania, founded in 1824, is one of the nation’s largest archives of historical documents. We are proud to serve as Philadelphia’s Library of American History, with over 21 million manuscripts, books, and graphic images encompassing centuries of US history. HSP serves more than 4,000 on-site researchers annually and millions more around the globe who use its online resources. HSP is also a leading center for the documentation and study of ethnic communities and immigrant experiences in the 20th century, and one of the largest family history libraries in the country. Through educator workshops, research opportunities, public programs and lectures throughout the year, we strive to make history relevant and exhilarating to all.',
     },
     {
         Name: 'Holly Street Neighbors Community Garden',
         OrganizationType: 'Non-Profit',
-        Website: 'https://hollystreetneighborscommunitygarden.com/?fbclid=IwAR24llZzA_uoLjuH8z3cS5S4Uh5e-r3G_ynL4ADS7_77WgN3ilmwp6D5sY4',
+        Website:
+            'https://hollystreetneighborscommunitygarden.com/?fbclid=IwAR24llZzA_uoLjuH8z3cS5S4Uh5e-r3G_ynL4ADS7_77WgN3ilmwp6D5sY4',
         Address: '323 N Holly St.',
         ImpactAreas: 'Community Development, Crime and Public Safety',
         Zip: 19104,
@@ -11217,7 +11428,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/HollyStreetGarden/',
         Blog: 'https://hollystreetneighborscommunitygarden.com/all-news/',
         Keywords: 'Memorial, Neighborhood Garden, Gun Violence',
-        Mission: 'The Holly Street Neighbors Community Garden is committed to creating greener, safer communities, and the fight to end gun violence.',
+        Mission:
+            'The Holly Street Neighbors Community Garden is committed to creating greener, safer communities, and the fight to end gun violence.',
         Description:
             "The Holly Street Neighbors Community Garden is a living memorial to honor its founder Winnie Harris. We commemorate her dedication to grow food organically. Our strength comes from love. We're committed to driving change that leads to greener, better educated communities, free of gun violence.",
     },
@@ -11229,7 +11441,8 @@ exports.allOrganizations = [
         Contact: 'information@houseofgodclg.org',
         ServiceArea: 'Philadelphia',
         Facebook: 'http://www.facebook.com/clgpgt',
-        Donate: 'https://www.paypal.com/donate?token=I4HXW2sYkuzvBDGhq-5kdJLjrD0RZVrr1p37fconk46h-DLRIVfnj3SbTLnOP5oiqEbwkxkCbyasI6RC',
+        Donate:
+            'https://www.paypal.com/donate?token=I4HXW2sYkuzvBDGhq-5kdJLjrD0RZVrr1p37fconk46h-DLRIVfnj3SbTLnOP5oiqEbwkxkCbyasI6RC',
         Keywords: 'Christianity, Church',
         Mission:
             'The House of God, which is the Church of the Living God, the Pillar and Ground of the Truth will strive to teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: teaching them to observe all things whatsoever Jesus has commanded.   We seek to preach the gospel of Jesus Christ to the poor in spirit, to heal the broken-hearted, to proclaim liberty to the spiritually oppressed and to offer recovery of sight to the spiritually blind.  We endeavor to proclaim the acceptable year of the Lord and the day of vengeance of our God.  And we will comfort and console all who mourn.',
@@ -11249,7 +11462,8 @@ exports.allOrganizations = [
         Newsletter: 'http://www.littlesistersofthepoorphiladelphia.org/register/',
         Impact: 'http://www.littlesistersofthepoorphiladelphia.org/volunteer/',
         Donate: 'http://www.littlesistersofthepoorphiladelphia.org/donations/',
-        Blog: 'http://www.littlesistersofthepoorphiladelphia.org/news-and-events/, http://www.littlesistersofthepoorphiladelphia.org/blog/',
+        Blog:
+            'http://www.littlesistersofthepoorphiladelphia.org/news-and-events/, http://www.littlesistersofthepoorphiladelphia.org/blog/',
         Keywords: 'Chapel, Free Meals, Christianity',
         Mission:
             'Continuing the work of Saint Jeanne Jugan, our MISSION is to offer the neediest elderly of every race and religion a home where they will be welcomed as Christ, cared for as family and accompanied with dignity until God calls them to himself.',
@@ -11272,7 +11486,8 @@ exports.allOrganizations = [
         Donate: 'https://www.haplegal.org/donate/',
         Blog: 'https://www.haplegal.org/happenings/',
         Keywords: 'Legal Services',
-        Mission: 'To provide free civil legal services and advocacy to reduce the frequency and duration of homelessness in Philadelphia.',
+        Mission:
+            'To provide free civil legal services and advocacy to reduce the frequency and duration of homelessness in Philadelphia.',
         Description:
             'Established in 1990, the Homeless Advocacy Project (HAP) is the only legal services organization dedicated to providing direct civil legal services to  individuals and families experiencing homelessness in Philadelphia. HAP also advocates for the needs of the City’s homeless population, promoting positive changes in policies that impact those needs.\r\n\r\nHAP partners with over 40 law firms, corporate legal departments, and law schools to meet the civil legal needs of our clients. To date, HAP’s partners have provided free legal assistance valued at more than $98 million to over 57,000 clients. HAP continues to explore additional partnerships to meet increasing client need.',
     },
@@ -11299,7 +11514,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/Homemaker-Service-of-the-Metropolitan-Area-Inc-762058997170197/',
         Keywords: 'Financial Services, Home Services',
-        Mission: 'Our mission is to provide high quality service so that you or your loved one can live safely and comfortably at home.',
+        Mission:
+            'Our mission is to provide high quality service so that you or your loved one can live safely and comfortably at home.',
         Description:
             'Founded by the United Way in 1968, HSMA assists disabled and elderly individuals residing in the Philadelphia metropolitan area with remaining in the comfort and safety of their homes while having the highest possible levels of independent function.',
     },
@@ -11432,7 +11648,8 @@ exports.allOrganizations = [
         Donate: 'https://www.hpcaphilly.org/donate/',
         Blog: 'https://www.hpcaphilly.org/news/',
         Keywords: 'Christianity, Low Income',
-        Mission: 'Our mission is to provide a quality, affordable, Christian education that celebrates a diverse community and leads children to know and serve the Lord.',
+        Mission:
+            'Our mission is to provide a quality, affordable, Christian education that celebrates a diverse community and leads children to know and serve the Lord.',
         Description:
             'HPCA provides quality, Christian education to at-risk children from low-income families.  We maintain a very low tuition with a good scholarship program so that Christian education can be accessible to the poor in our community.  We have tutoring for students who enter the school behind their grade level.  Our students have made great progress academically since implementing the Foundations & Frameworks material into our overall curriculum in 2006.  And since most of our students are not raised in Christian homes, we do all we can to train them up in the ways of the Lord.  Many of them have heard the gospel of Jesus Christ for the first time at HPCA and have come to know the Lord.  Some students have been influential in bringing their parents to church.  \r\n\r\nWe serve approximately 200 children, pre-kindergarten through eighth grade.  We are members of PACS (Philadelphia Association of Christian Schools) and the Street School Network.  We are accredited by the Middle States Commission on Elementary Education.',
     },
@@ -11462,7 +11679,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/Ian-Yaes-In-Touch-1443498559203049/',
         Keywords: 'Emotional Support, Hospital Services',
-        Mission: 'Enhancing the emotional and social health of children with special needs and mental health issues through creative art...and homeless outreach.',
+        Mission:
+            'Enhancing the emotional and social health of children with special needs and mental health issues through creative art...and homeless outreach.',
         Description:
             "Ian-Yae's In Touch gives back to the communities, hospitals, children centers, and families that have children suffering from special needs and any illness or disease that a child may have through (prayer, our talent, and our time). We are dedicated to enhancing the emotional, social, and spiritual health of children with special needs, disabilities, illnesses, and mental health issues through creative art. We are here to help children and families cope with medical treatment, diagnosis, and hospitalization through play, preparation education and self-expression. We provide recreational activities and play opportunities in group and one-on-one sessions by providing a comfortable accepting non-threatening environment. We visit hospitals, children centers, shelters, amongst other places to do such activities as scrap booking, journal making, sand art, picture frames or boxes, beading, reading, writing, building objects, Tye-dye, key chain making, painting/decorating wooden and ceramic pieces, making your own t-shirt, canvas bags, pillowcases, and hats just to name a few",
     },
@@ -11496,7 +11714,8 @@ exports.allOrganizations = [
         Keywords: 'Literacy, English Language Learners',
         Mission:
             'The Mission of the IHM Center for Literacy is to teach English language skills to the multi-ethnic, non-English speaking adult immigrant populations in Northeast and Southwest Philadelphia and thus enable them to integrate more comfortably and confidently into American life and work.',
-        Description: 'The IHM Center for Literacy supports a  rich diversity of cultures, ​languages and educational backgrounds.',
+        Description:
+            'The IHM Center for Literacy supports a  rich diversity of cultures, ​languages and educational backgrounds.',
     },
     {
         Name: 'Images of the Motherland Interactive Theatre',
@@ -11508,7 +11727,8 @@ exports.allOrganizations = [
         Contact: 'imagesofthemotherland@yahoo.com',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/ImagesOfTheMotherland/',
-        Donate: 'https://www.paypal.com/donate?token=Lg47RJIyT2mpiq-cwpcrzxaoKz7VRGXquROIM0G8kcq6vs6p-g4i6qqyULOUYG9cv4GLcFiARonBja_f',
+        Donate:
+            'https://www.paypal.com/donate?token=Lg47RJIyT2mpiq-cwpcrzxaoKz7VRGXquROIM0G8kcq6vs6p-g4i6qqyULOUYG9cv4GLcFiARonBja_f',
         Keywords: 'Performing Arts, Storytelling, Heritage, Africa, Drama',
         Mission:
             'The Mission of "Images of the Motherland: Interactive Theatre" is to educate and expand public awareness and appreciation of West and North African Traditions through authentic presentations of drama, art, music dance, and storytelling; to create "living history".',
@@ -11631,7 +11851,8 @@ exports.allOrganizations = [
         Keywords: 'Charter School',
         Mission:
             'Independence Charter School West (ICS-West) is a community-based K-6 public charter school of academic excellence, located in South-West Philadelphia and serving a diverse community of learners. ICS-West provides an intellectually-stimulating curriculum with a global focus designed to develop independent, thoughtful global citizens. We emphasize second language acquisition and integrate arts, ideas, and histories from around the world.',
-        Description: 'ICS West is a tuition-free public school, providing intellectually stimulating curriculum and Spanish Language study, designed to develop global citizens.',
+        Description:
+            'ICS West is a tuition-free public school, providing intellectually stimulating curriculum and Spanish Language study, designed to develop global citizens.',
     },
     {
         Name: 'Independence Foundation',
@@ -11642,7 +11863,8 @@ exports.allOrganizations = [
         Zip: 19102,
         ServiceArea: 'Philadelphia',
         Keywords: 'Foundation, Grants',
-        Mission: 'The Foundation’s mission is to support organizations that provide services to people who do not ordinarily have access to them.',
+        Mission:
+            'The Foundation’s mission is to support organizations that provide services to people who do not ordinarily have access to them.',
         Description:
             'The Independence Foundation is a private, not-for-profit philanthropic organization serving Philadelphia and its surrounding Pennsylvania counties.  With a strong focus on health, the Foundation invests in people and programs that enrich the life experiences of the residents of the Philadelphia area. In addition to health care, the Foundation extends its funding to human services, legal aid and arts & culture, building on the belief that a region that promotes physical well-being, provides equal access to services, values justice, and appreciates the arts will thrive for generations to come.',
     },
@@ -11655,7 +11877,8 @@ exports.allOrganizations = [
         Zip: 19106,
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/independencehallassociation',
-        Mission: 'The Independence Hall Association (IHA) was founded in 1942 to spearhead the creation of Independence National Historical Park.',
+        Mission:
+            'The Independence Hall Association (IHA) was founded in 1942 to spearhead the creation of Independence National Historical Park.',
         Description:
             'We are written into the enabling legislation of the Park and stand as an independent group of private concerned citizens overseeing and being consulted on matters concerning the Park.\r\n\r\nWe helped in the effort to reconstruct the Declaration House, we donated the statue of the Signer, standing across the street from the Independence Hall group of buildings, and we encouraged development of guidebooks for Philadelphia.\r\n\r\nToday the IHA through its website ushistory.org is one of the preeminent providers of online US history, from the pre-colonial era to the present with additional online educational presentations on American Government, Ancient Civilizations and other people, places and events in US history. We are proud to be used as source material in hundreds of public, private and home schools in the US and abroad. In all we do, we seek to educate and motivate an informed citizenry that can shape the future.',
     },
@@ -11747,7 +11970,8 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/InfinityTrackClub',
         Youtube: 'https://www.youtube.com/channel/UCYjavVR-X2psIUubEaQKgNw',
         Keywords: 'Running, Track, Cross Country',
-        Description: 'Track Club for boys and girls ages 5-18.  Infinity track club participates in Cross County, Indoor and Outdoor Meets.',
+        Description:
+            'Track Club for boys and girls ages 5-18.  Infinity track club participates in Cross County, Indoor and Outdoor Meets.',
     },
     {
         Name: 'Inglis',
@@ -11767,7 +11991,8 @@ exports.allOrganizations = [
         Donate: 'https://www.inglis.org/donate',
         Blog: 'https://www.inglis.org/about-us/our-story/news/latest',
         Keywords: 'Emotional Well Being, Long Term Care, Physical Disabilities',
-        Mission: "Founded nearly a century and a half ago, Inglis' mission is to enable people with disabilities — and those who care for them — to achieve their goals and live life to the fullest.",
+        Mission:
+            "Founded nearly a century and a half ago, Inglis' mission is to enable people with disabilities — and those who care for them — to achieve their goals and live life to the fullest.",
         Description:
             'Inglis Community Based Services offers comprehensive programs that support the physical, emotional, and spiritual well-being of individuals with disabilities living independently in the community.  Inglis House is a specialized skilled-nursing long-term care community based in Philadelphia.  Founded in 1877, we specialize in services to non-geriatric adults with severe neurodegenerative physical disabilities resulting in paraplegia and quadriplegia.',
     },
@@ -11862,7 +12087,8 @@ exports.allOrganizations = [
         Zip: 19130,
         Contact: 'michagary@gmail.com',
         ServiceArea: 'Philadelphia',
-        Donate: 'https://www.paypal.com/donate?token=B_Zg0otzW3R2auroMRf1RgZrT_tr6OOKbM8xq5i_yGQ-SIw7PNYWkUB0MvbMllV2ajV90moHKRH3HDJw',
+        Donate:
+            'https://www.paypal.com/donate?token=B_Zg0otzW3R2auroMRf1RgZrT_tr6OOKbM8xq5i_yGQ-SIw7PNYWkUB0MvbMllV2ajV90moHKRH3HDJw',
         Keywords: 'Lacrosse, Mentorship',
         Mission:
             'The idea of Inner City Lacrosse is to bring collegiate lacrosse players together with inner city kids to teach them lacrosse, mentor them academically, and coach them through adolescence, while collegiate players participate in service learning, teaching, mentoring and being ambassadors for the sport of lacrosse.',
@@ -11894,7 +12120,8 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/InspiriTec-197887493591018/',
         Youtube: 'https://www.youtube.com/user/InspiriTec',
-        LinkedIn: 'https://www.linkedin.com/company/103477?trk=vsrp_companies_cluster_name&trkInfo=VSRPsearchId%3A686751031462898657759%2CVSRPtargetId%3A103477%2CVSRPcmpt%3Acompanies_cluster',
+        LinkedIn:
+            'https://www.linkedin.com/company/103477?trk=vsrp_companies_cluster_name&trkInfo=VSRPsearchId%3A686751031462898657759%2CVSRPtargetId%3A103477%2CVSRPcmpt%3Acompanies_cluster',
         Newsletter: 'https://www.inspiritec.org/who-we-are/contact-us/',
         Donate: 'https://www.inspiritec.org/donate/',
         Blog: 'https://www.inspiritec.org/news-views/',
@@ -11938,9 +12165,11 @@ exports.allOrganizations = [
         Contact: 'ifedoc05@yahoo.com',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/IFEDOC/',
-        Donate: 'https://www.paypal.com/donate/?token=SuT32rudPeC1SsFXiK-zA8HVuuDJtaXeDWJ8rmeX99E-B9qS_Mt3NULeraHY-wVlubQALyHfKg8dUMKH&locale.x=US',
+        Donate:
+            'https://www.paypal.com/donate/?token=SuT32rudPeC1SsFXiK-zA8HVuuDJtaXeDWJ8rmeX99E-B9qS_Mt3NULeraHY-wVlubQALyHfKg8dUMKH&locale.x=US',
         Keywords: 'Tutoring, Scholarships, Preschool',
-        Mission: 'The Institute for the Economic Development of Children  operates with a core mandate to educate children/youth into adults who are economically self-sufficient.',
+        Mission:
+            'The Institute for the Economic Development of Children  operates with a core mandate to educate children/youth into adults who are economically self-sufficient.',
         Description: 'We are a licensed preschool in Philadelphia teaching children to develop a love for learning.',
     },
     {
@@ -11980,7 +12209,8 @@ exports.allOrganizations = [
         Donate: 'https://intercommunityaction.org/support-us/',
         Blog: 'https://intercommunityaction.org/news-events/',
         Keywords: 'Behavioral Health, Developmental Disabilities, Aging Services',
-        Mission: 'Interact helps people live fulfilling lives by providing resources for aging, behavioral health, and intellectual and developmental disabilities.',
+        Mission:
+            'Interact helps people live fulfilling lives by providing resources for aging, behavioral health, and intellectual and developmental disabilities.',
         Description:
             'For over 40 years, Intercommunity Action, Inc. (Interact) has provided assistance to help people live successfully in the community. Interact was established in 1969 as a private, not-for-profit, community-based organization designed to meet the human services needs of the residents of the Andorra, Roxborough, Manayunk, Wissahickon, East Falls, and Nicetown neighborhoods of Northwest Philadelphia. While most of our services benefit the residents of these communities, our programs have grown to reach across Philadelphia and its surrounding counties.',
     },
@@ -11997,7 +12227,8 @@ exports.allOrganizations = [
         Donate: 'https://ifsinc.org/donate/',
         Blog: 'https://ifsinc.org/news/',
         Keywords: 'Behavioral Health, Culturally Sensitive',
-        Mission: 'We stabilize, strengthen, and unite families, individuals and diverse communities through an array of culturally relevant human services, using public and private partnerships.',
+        Mission:
+            'We stabilize, strengthen, and unite families, individuals and diverse communities through an array of culturally relevant human services, using public and private partnerships.',
         Description:
             'Intercultural Family Services, Inc. (Intercultural) is an independent non-profit 501 (c)(3) human services agency founded in 1979. Since this time we have been committed to serving the needs of children and families in the Greater Philadelphia area.\r\n\r\nThrough a broad array of culturally competent, collaborative, family-centered programs, we empower the people we serve with the ability to meet the challenges of everyday life and to build a firm foundation for a bright future. We look forward to forging stronger, more creative, and new partnerships in the public and private sectors.',
     },
@@ -12189,7 +12420,8 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/isaasports',
         Facebook: 'https://www.facebook.com/isaa.athleteinc?fref=nf',
         Instagram: 'https://instagram.com/isaasports/',
-        Donate: 'https://www.paypal.com/donate/?token=hZwgWASpCc4IYdkOV6GsAcr5TrVWIooWZyJ1p66k0DAlUxxh6srKSjd1b1aeqXNp_49VTAVjZW6owk0v&locale.x=US',
+        Donate:
+            'https://www.paypal.com/donate/?token=hZwgWASpCc4IYdkOV6GsAcr5TrVWIooWZyJ1p66k0DAlUxxh6srKSjd1b1aeqXNp_49VTAVjZW6owk0v&locale.x=US',
         Keywords: 'Nutrition, Student Athlete',
         Mission:
             'The mission of the ISAA is to implement proven and successful concepts in the areas of academics, athletic development, personal growth, social awareness and fitness & nutrition to comprehensively prepare today’s pre-collegiate student-athletes who desire to become a successful collegiate student-athlete and ultimately a productive member of society.',
@@ -12233,7 +12465,8 @@ exports.allOrganizations = [
         Donate: 'https://www.paypal.com/us/fundraiser/charity/1480117',
         Blog: 'http://www.icpic.co/blog/',
         Keywords: 'Islam, African American, Legacy, Heritage, Museum',
-        Mission: 'Our primary purpose is to preserve the African American Muslim rich cultural heritage and legacy to pass on to future generations.',
+        Mission:
+            'Our primary purpose is to preserve the African American Muslim rich cultural heritage and legacy to pass on to future generations.',
         Description:
             'The New Africa Center/ Muslim American Museum and Archive opened its doors in June of 2005 located at 4243 Lancaster Avenue in Philadelphia, PA where the general public and Islamic communities can see exhibits and learn about Islamic history. We also offer school presentations, Open Mic Jams Sessions, an Artist Showcase once a month, workshops and summer youth learning.',
     },

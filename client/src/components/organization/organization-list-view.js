@@ -19,7 +19,7 @@ const OrganizationListView = (props) => {
                                 className="special-btn special-card"
                                 key={i}
                                 onClick={() => {
-                                    props.gotoOrganizationDetails(org.userId);
+                                    props.gotoOrganizationDetails(org._id);
                                 }}
                             >
                                 <Card.Img
@@ -37,7 +37,7 @@ const OrganizationListView = (props) => {
                                 {/* <Card.Footer></Card.Footer> */}
                             </Card>
                         );
-                    } else return <></>;
+                    }
                 })}
             </CardColumns>
         );

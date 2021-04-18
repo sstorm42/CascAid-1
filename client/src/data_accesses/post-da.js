@@ -10,7 +10,7 @@ class PostDA {
     };
     get_post_by_id = (postId) => {
         return axios
-            .get(APIPaths.getPostById + postId, APIPaths.apiConfig())
+            .get(APIPaths.getPostById(postId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
@@ -22,7 +22,7 @@ class PostDA {
     };
     update_post_by_id = (postId, post) => {
         return axios
-            .put(APIPaths.updatePostById + postId, post, APIPaths.apiConfig())
+            .put(APIPaths.updatePostById(postId), post, APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
@@ -33,6 +33,7 @@ class PostDA {
             .catch((err) => err.response.data);
     };
     get_list_by_filter = (filter) => {
+        console.log('🚀 ~ file: post-da.js ~ line 36 ~ PostDA ~ filter', filter);
         let queryString = '?';
         for (let t in filter) {
             if (filter[t]) {
@@ -43,6 +44,7 @@ class PostDA {
                 queryString += '&';
             }
         }
+        console.log(APIPaths.getAllPosts + queryString.slice(0, -1));
         return axios
             .get(APIPaths.getAllPosts + queryString.slice(0, -1), APIPaths.apiConfig())
             .then((response) => response.data)
@@ -59,12 +61,12 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_all_suggestions = () => {
-        return axios
-            .get(APIPaths.getAllPostSuggestions, APIPaths.apiConfig())
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
+    // get_all_suggestions = () => {
+    //     return axios
+    //         .get(APIPaths.getallsu, APIPaths.apiConfig())
+    //         .then((response) => response.data)
+    //         .catch((err) => err.response.data);
+    // };
 
     like_post = (postId) => {
         console.log(APIPaths.apiConfig());

@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { InputRender, CreatableMultiSelectRender, MultiSelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { allServiceAreaTypes } from '../../constants/service-area-types';
-import { organizationHeaders } from '../../constants/step-headers';
+import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
 const ServiceInfoForm = (props) => {
     const submitting = props.submitting;
     const editMode = props.editMode;
@@ -18,7 +18,9 @@ const ServiceInfoForm = (props) => {
                             <h4>{organizationHeaders[3].header}</h4>
                         ) : (
                             <div>
-                                <p>Step {organizationHeaders[3].stepNo} of 5</p>
+                                <p>
+                                    Step {organizationHeaders[3].stepNo} of {totalOrganizationStep}
+                                </p>
                                 <ProgressBar now={organizationHeaders[3].percent} />
                                 <br />
                                 <h4>{organizationHeaders[3].header}</h4>

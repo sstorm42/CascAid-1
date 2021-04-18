@@ -148,7 +148,7 @@ export const DownArrowButtonRender = (props) => {
 
 export const ReadButtonRender = (props) => {
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Mark as unread' })}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Mark as Read' })}>
             <Button className="actionButton" variant="outline-info" size="sm" {...props}>
                 <VscMailRead />
             </Button>
@@ -158,7 +158,7 @@ export const ReadButtonRender = (props) => {
 
 export const UnreadButtonRender = (props) => {
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Mark as Read' })}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Mark as Unread' })}>
             <Button className="actionButton" variant="outline-info" size="sm" {...props}>
                 <IoMailUnreadOutline />
             </Button>

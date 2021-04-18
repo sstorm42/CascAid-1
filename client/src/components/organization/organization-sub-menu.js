@@ -24,7 +24,12 @@ const SideMenu = (props) => {
         const basicInfo = organization.basicInfo;
         return (
             <>
-                <Image className="left-image" src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultOrganizationProfilePicture} width="100%" thumbnail />
+                <Image
+                    className="left-image"
+                    src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultOrganizationProfilePicture}
+                    width="100%"
+                    thumbnail
+                />
                 {follows ? (
                     <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to unfollow</Tooltip>}>
                         <Button
@@ -54,10 +59,10 @@ const SideMenu = (props) => {
                 )}
                 <Collapsible trigger="MENU" className="special-btn">
                     <ListGroup>
-                        {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization.userId))}
+                        {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization._id))}
                         {RenderListButtonItem('Message', '')}
-                        {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
-                        {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization.userId, 'event'))}
+                        {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
+                        {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
                         {RenderListButtonItem('Feed')}
                     </ListGroup>
                 </Collapsible>

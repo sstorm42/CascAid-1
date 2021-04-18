@@ -3,7 +3,8 @@ import { Field } from 'redux-form';
 import { InputRenderWithLargeLabel, CheckBoxRender, SelectRender, TextRender, CreatableMultiSelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { allInvolvementTypes } from '../../constants/involvement-types';
-import { individualHeaders } from '../../constants/step-headers';
+import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
+
 const ProfileStep3 = (props) => {
     const submitting = props.submitting;
     const editMode = props.editMode;
@@ -12,28 +13,28 @@ const ProfileStep3 = (props) => {
         <Container className="saLoginForm">
             <Row>
                 <Col></Col>
-                <Col lg="8" className="sign-ing-form">
+                <Col lg="10" className="sign-ing-form">
                     <form onSubmit={props.handleOnSubmit}>
                         <br />
                         {editMode ? (
                             <h4>Involvement Information</h4>
                         ) : (
                             <div>
-                                <p>Step {individualHeaders[3].stepNo} of 5</p>
+                                <p>
+                                    Step {individualHeaders[3].stepNo} of {totalIndividualStep}
+                                </p>
                                 <ProgressBar now={individualHeaders[3].percent} />
                                 <br />
                                 <h4>{individualHeaders[3].header}</h4>
                             </div>
                         )}
                         <Field name="impactAreas" component={CreatableMultiSelectRender} label="Impact area of interest" col1={4} col2={8} options={allImpactAreas} zIndex={2000} />
-                        {/* <label>Tell us a bit about what you currently do!</label> */}
+
                         <label>Community Involvement</label>
                         <Field name="communityInvolvement" type="text" component={TextRender} label="Tell us a bit about what you currently do!" col1={12} col2={12} />
-
                         <Field id="volunteerOpportunity" name="volunteerOpportunity" type="checkbox" component={CheckBoxRender} label="I am looking for Volunteer Opportunities" col1={6} col2={6} />
-
                         <Field id="project" name="project" component={CheckBoxRender} type="checkbox" label="I am looking for Projects" col1={6} col2={6} />
-                        <Field id="boardMembership" name="boardMembership" component={CheckBoxRender} type="checkbox" label="I am looking for Board Membership" col1={6} col2={6} />
+                        <Field id="lookingForBoardMembership" name="lookingForBoardMembership" component={CheckBoxRender} type="checkbox" label="I am looking for Board Membership" col1={6} col2={6} />
                         <Field id="committees" name="committees" component={CheckBoxRender} type="checkbox" label="I am looking for Committees/Advisory Boards" col1={6} col2={6} />
                         <Field
                             id="availabilityPerWeek"

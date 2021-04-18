@@ -6,7 +6,8 @@ import { Container, Row, Col, ProgressBar, Button, Modal, Image } from 'react-bo
 import { countries, states } from '../../constants/country-and-state';
 import { allGenders } from '../../constants/genders';
 import { allRaces } from '../../constants/races';
-import { individualHeaders } from '../../constants/step-headers';
+import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
+import ProfilePictureUploader from '../../components/user/profile-picture-changer';
 import { date } from '../../actions/validate';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
@@ -20,6 +21,7 @@ const BasicInfoForm = (props) => {
     return (
         <Container className="saLoginForm">
             <Modal
+                style={{ zIndex: 10000 }}
                 show={infoModal}
                 onHide={() => {
                     setInfoModal(false);
@@ -50,7 +52,9 @@ const BasicInfoForm = (props) => {
                             <h4>Basic Information</h4>
                         ) : (
                             <div>
-                                <p>Step {individualHeaders[2].stepNo} of 5</p>
+                                <p>
+                                    Step {individualHeaders[2].stepNo} of {totalIndividualStep}
+                                </p>
                                 <ProgressBar now={individualHeaders[2].percent} />
                                 <br />
                                 <h4>{individualHeaders[2].header}</h4>
@@ -178,14 +182,10 @@ const BasicInfoForm = (props) => {
                         <Row>
                             <Col className="right-align">{props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}</Col>
                             <Col>
-                                <div className="custom-file">
-                                    <input type="file" className="custom-file-input" id="inputGroupFile02" onChange={props.handlePictureUpload} />
-                                    <label className="custom-file-label" htmlFor="inputGroupFile02">
-                                        Choose profile picture
-                                    </label>
-                                </div>
+                                <ProfilePictureUploader profilePicture={props.profilePicture} handlePictureUpload={props.handlePictureUpload} setProfilePicture={props.setProfilePicture} />
                             </Col>
                         </Row>
+
                         <br />
                         <Row>
                             <Col sm="6"></Col>

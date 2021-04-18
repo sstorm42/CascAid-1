@@ -12,7 +12,6 @@ const DisplayPost = (props) => {
             if (user && user._id) {
                 setUserId(user._id);
             }
-
             setLoading(true);
             props.dispatch(getPostById(postId));
             setLoading(false);

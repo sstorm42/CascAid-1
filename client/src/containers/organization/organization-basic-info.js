@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/organization-action';
+import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/user-action';
 import { NotificationManager } from 'react-notifications';
 import OrganizationBasicInfoForm from '../../components/organization/organization-basic-info-form';
 import { organizationCompleteServiceInfoPage } from '../../constants/route-paths';
@@ -23,10 +23,12 @@ const BasicInfo = (props) => {
         props.dispatch(getAllOrganizationTypes());
     };
     const handleSetResponse = () => {
+        console.log('RESPONSE', props.setBasicInfoResponse);
         const { success, message } = props.setBasicInfoResponse;
         if (success) {
             NotificationManager.success(message, 'success');
-            if (!editMode) {
+            const url = window.location.pathname;
+            if (url.split('/')[1] !== 'edit') {
                 props.history.push(organizationCompleteServiceInfoPage);
                 props.dispatch(clearBasicInfo());
             }
@@ -48,6 +50,9 @@ const BasicInfo = (props) => {
         const url = window.location.pathname;
         if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
+        return () => {
+            props.dispatch(clearBasicInfo());
+        };
     }, [props.auth]);
     useEffect(() => {
         handleGetResponse();
@@ -90,6 +95,7 @@ const BasicInfo = (props) => {
                     onSubmit(event);
                 })}
                 profilePicture={profilePicture}
+                setProfilePicture={setProfilePicture}
                 handlePictureUpload={handlePictureUpload}
                 stateAndCountry={stateAndCountry}
                 allOrganizationTypes={props.getAllOrganizationTypesResponse.success ? props.getAllOrganizationTypesResponse.organizationTypes : []}
@@ -97,8 +103,8 @@ const BasicInfo = (props) => {
         );
 };
 const mapStateToProps = (state) => {
-    const getBasicInfoResponse = state.Organization.getBasicInfo;
-    const setBasicInfoResponse = state.Organization.setBasicInfo;
+    const getBasicInfoResponse = state.User.getBasicInfo;
+    const setBasicInfoResponse = state.User.setBasicInfo;
     const getAllOrganizationTypesResponse = state.OrganizationType.getAllOrganizationTypes;
     let initialValues = {};
     if (getBasicInfoResponse.success) {

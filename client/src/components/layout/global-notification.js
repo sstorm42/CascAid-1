@@ -3,7 +3,7 @@ import NotificationBadge from 'react-notification-badge';
 import { Effect } from 'react-notification-badge';
 import { Button, Badge, NavDropdown, Image, Row, Container, Col } from 'react-bootstrap';
 import * as RoutePath from '../../constants/route-paths';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { BsBellFill } from 'react-icons/bs';
@@ -29,6 +29,10 @@ const RenderBellIcon = (props) => {
         </Button>
     );
 };
+const PostTitleRender = (title) => {
+    if (title && title.length > 50) return title.substr(0, 50) + '...';
+    else return title;
+};
 const NotificationRender = (props) => {
     const notification = props.notification;
     console.log('🚀 ~ file: global-notification.js ~ line 31 ~ NotificationRender ~ notification', notification);
@@ -53,6 +57,8 @@ const NotificationRender = (props) => {
                             ? getTitleByType(notification.type, notification.senderName)
                             : notification.title}
                     </p>
+                    <small className="gray-text">{PostTitleRender(notification.postTitle)}</small>
+                    <br />
                     <small className="notification-time">{moment(notification.createdAt).format('LLL')}</small>
                 </Col>
             </Row>
@@ -86,10 +92,21 @@ const GlobalNotification = (props) => {
         });
     }, []);
     return (
-        <NavDropdown title={<RenderBellIcon count={props.getNotificationCountResponse.success ? props.getNotificationCountResponse.total : 0} />} id="basic-nav-dropdown" alignRight={true}>
+        <NavDropdown
+            title={<RenderBellIcon count={props.getNotificationCountResponse.success ? props.getNotificationCountResponse.total : 0} />}
+            id="basic-nav-dropdown"
+            alignRight={true}
+        >
             <SampleNotificationsRender allNotifications={props.getNotificationResponse.success ? props.getNotificationResponse.notifications : []} />
             <NavDropdown.Divider />
-            <Link to={RoutePath.ManageNotificationsPage}>SEE ALL</Link>
+            <NavDropdown.Item
+                onClick={() => {
+                    props.history.push(RoutePath.ManageNotificationsPage);
+                }}
+            >
+                SEE ALL
+            </NavDropdown.Item>
+            {/* <Link to={}>SEE ALL</Link> */}
         </NavDropdown>
     );
     //
@@ -103,4 +120,4 @@ const mapStateToProps = (state) => {
         getNotificationCountResponse,
     };
 };
-export default connect(mapStateToProps, null)(GlobalNotification);
+export default connect(mapStateToProps, null)(withRouter(GlobalNotification));

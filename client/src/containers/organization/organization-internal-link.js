@@ -63,8 +63,8 @@ const InternalLink = (props) => {
 };
 const mapStateToProps = (state) => {
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
-    const getInternalLinkResponse = state.Organization.getInternalLink;
-    const setInternalLinkResponse = state.Organization.setInternalLink;
+    const getInternalLinkResponse = state.User.getInternalLink;
+    const setInternalLinkResponse = state.User.setInternalLink;
     let initialValues = {};
 
     if (getInternalLinkResponse.success) {

@@ -5,9 +5,9 @@ const { allowIfLoggedIn, grantAccess } = require('../middlewares/access-control'
 post.get('/', PostController.getAll);
 post.get('/feed', allowIfLoggedIn, PostController.getAllFeeds);
 post.get('/suggestions', allowIfLoggedIn, PostController.getAllSuggestions);
-post.get('/:postId', allowIfLoggedIn, grantAccess('read', 'post'), PostController.getOne);
-post.post('/', allowIfLoggedIn, grantAccess('create', 'post'), PostController.createOne);
-post.put('/:postId', allowIfLoggedIn, grantAccess('update', 'post'), PostController.updateOne);
+post.get('/:postId', allowIfLoggedIn, PostController.getOne);
+post.post('/', allowIfLoggedIn, PostController.createOne);
+post.put('/:postId', allowIfLoggedIn, PostController.updateOne);
 post.delete('/:postId', allowIfLoggedIn, grantAccess('delete', 'post'), PostController.deleteOne);
 
 // INTERESTS

@@ -38,6 +38,7 @@ export const clearPost = () => {
 };
 
 export const getAllPostsByFilter = (filter) => {
+    console.log('🚀 ~ file: post-action.js ~ line 41 ~ getAllPostsByFilter ~ filter', filter);
     let filters = { ...filter };
     if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
     if (filters.postTypes && filters.postTypes.length > 0) filters.postTypes = filters.postTypes.map((type) => type.value);

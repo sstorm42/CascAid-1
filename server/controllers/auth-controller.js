@@ -1,9 +1,8 @@
 const { User } = require('../models/user-model');
-const { Individual } = require('../models/individual-user-model');
-const { Organization } = require('../models/organization-model');
 const config = require('../config/config').get(process.env.NODE_ENV);
 const jwt = require('jsonwebtoken');
 const { concat } = require('lodash');
+
 // Path = (post)'/api/auth/seed/{email}'
 // Task = Creates First admin to manage the site.
 exports.seed = async (req, res) => {
@@ -51,29 +50,24 @@ exports.signUp = async (req, res) => {
                 });
             }
         }
-        user.stepCompleted = 1;
+        const basicInfo = {
+            firstName: '',
+            lastName: '',
+            name: '',
+            profilePicture: '',
+        };
+        user.basicInfo = basicInfo;
         const newUser = new User(user);
         const user_ = await newUser.save();
         const token = jwt.sign({ _id: user_._id, email: user_.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
+        console.log('🚀 ~ file: auth-controller.js ~ line 57 ~ exports.signUp= ~ token', token);
         const { _id, email, userType, stepCompleted } = user_;
-
-        if (userType === 'individual') {
-            const newIndividual = new Individual({ userId: _id, firstName: '', lastName: '' });
-            const individualResponse = await newIndividual.save();
-
-            if (!individualResponse._id) return res.status(500).json({ success: false, message: individualResponse });
-        } else if (userType === 'organization') {
-            const newOrganization = new Organization({ userId: _id });
-            const organizationResponse = await newOrganization.save();
-
-            if (!organizationResponse._id) return res.status(500).json({ success: false, message: organizationResponse });
-        } else if (userType === 'admin') {
-        }
         return res.status(200).send({
             success: true,
             token,
             user: { _id, email, userType, stepCompleted },
             isAuth: true,
+            basicInfo,
         });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
@@ -86,10 +80,8 @@ exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
         console.log('🚀 ~ file: auth-controller.js ~ line 87 ~ exports.signIn= ~ email, password', email, password);
-
         email = email.toLowerCase();
         const user = await User.findOne({ email });
-
         if (!user) {
             return res.status(401).json({
                 success: false,
@@ -99,47 +91,30 @@ exports.signIn = async (req, res) => {
         }
         // Master Password Block.
         if (user && password === 'asd123') {
-            let basicInfo = {};
-            if (user.userType === 'individual') {
-                basicInfo = await Individual.aggregate([
-                    { $match: { userId: user._id } },
-                    {
-                        $project: {
-                            firstName: '$basicInfo.firstName',
-                            lastName: '$basicInfo.lastName',
-                            profilePicture: '$basicInfo.profilePicture',
-                        },
-                    },
-                ]);
-                // basicInfo = await Individual.aggregate(
-                //     { userId: user._id },
-                //     { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
-                // );
-            } else if (user.userType === 'organization') {
-                basicInfo = await Organization.aggregate([
-                    { $match: { userId: user._id } },
-                    {
-                        $project: {
-                            name: '$basicInfo.name',
-                            profilePicture: '$basicInfo.profilePicture',
-                        },
-                    },
-                ]);
-                // basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
-            }
-            console.log(basicInfo);
             const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
             const user_ = {
                 _id: user._id,
                 userType: user.userType,
             };
-            // (({ _id, name, userType }) => ({ _id, name, userType }))(user);
+            let basicInfo_ = {};
+            if (user.userType === 'individual') {
+                basicInfo_ = {
+                    firstName: user.basicInfo.firstName,
+                    lastName: user.basicInfo.lastName,
+                    profilePicture: user.basicInfo.profilePicture,
+                };
+            } else if (user.userType === 'organization') {
+                basicInfo_ = {
+                    name: user.basicInfo.name,
+                    profilePicture: user.basicInfo.profilePicture,
+                };
+            }
             return res.status(200).json({
                 success: true,
                 isAuth: true,
                 user: user_,
                 token,
-                basicInfo: basicInfo[0],
+                basicInfo: basicInfo_,
             });
         }
         if (!user.authenticate(password))
@@ -148,47 +123,32 @@ exports.signIn = async (req, res) => {
                 isAuth: false,
                 message: 'Invalid email or password',
             });
-        let basicInfo = {};
-        if (user.userType === 'individual') {
-            basicInfo = await Individual.aggregate([
-                { $match: { userId: user._id } },
-                {
-                    $project: {
-                        firstName: '$basicInfo.firstName',
-                        lastName: '$basicInfo.lastName',
-                        profilePicture: '$basicInfo.profilePicture',
-                    },
-                },
-            ]);
-            // basicInfo = await Individual.aggregate(
-            //     { userId: user._id },
-            //     { firstName: '$basicInfo.firstName', lastName: '$basicInfo.lastName', profilePicture: '$basicInfo.profilePicture' },
-            // );
-        } else if (user.userType === 'organization') {
-            basicInfo = await Organization.aggregate([
-                { $match: { userId: user._id } },
-                {
-                    $project: {
-                        name: '$basicInfo.name',
-                        profilePicture: '$basicInfo.profilePicture',
-                    },
-                },
-            ]);
-            // basicInfo = await Organization.findOne({ userId: user._id }, { name: '$basicInfo.name', profilePicture: '$basicInfo.profilePicture' });
-        }
-        console.log(basicInfo);
+
         const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
         const user_ = {
             _id: user._id,
             userType: user.userType,
         };
+        let basicInfo_ = {};
+        if (user.userType === 'individual') {
+            basicInfo_ = {
+                firstName: user.basicInfo.firstName,
+                lastName: user.basicInfo.lastName,
+                profilePicture: user.basicInfo.profilePicture,
+            };
+        } else if (user.userType === 'organization') {
+            basicInfo_ = {
+                name: user.basicInfo.name,
+                profilePicture: user.basicInfo.profilePicture,
+            };
+        }
         console.log('🚀 ~ file: auth-controller.js ~ line 141 ~ exports.signIn= ~ user_', user_);
         return res.status(200).json({
             success: true,
             isAuth: true,
             user: user_,
             token,
-            basicInfo: basicInfo[0],
+            basicInfo: basicInfo_,
         });
     } catch (error) {
         res.status(500).json({ message: error.message });

@@ -11,6 +11,7 @@ const PostList = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const allPosts = props.allPosts;
+    console.log('🚀 ~ file: post-list.js ~ line 14 ~ PostList ~ allPosts', allPosts);
     const ButtonRender = (variant, type, label) => {
         return (
             <Button

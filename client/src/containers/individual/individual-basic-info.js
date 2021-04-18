@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/individual-action';
+import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/user-action';
 import { NotificationManager } from 'react-notifications';
 import IndividualBasicInfoForm from '../../components/individual/individual-basic-info-form';
 import { individualCompleteInvolvementPage } from '../../constants/route-paths';
-// import { getLanguagesByValues } from '../../constants/languages';
 import { getAllLanguagesByUser } from '../../actions/language-action';
 import { getAllSkillsByUser } from '../../actions/skill-action';
 import { getRacesByValues } from '../../constants/races';
@@ -68,7 +67,7 @@ const BasicInfo = (props) => {
             profilePicture: profilePicture,
             races: values.races && values.races.length > 0 ? values.races.map((race) => race.value) : [],
         };
-
+        console.log('🚀 ~ file: individual-basic-info.js ~ line 66 ~ onSubmit ~ user', user);
         props.dispatch(setBasicInfo(props.auth.user._id, user));
         setLoading(false);
     };
@@ -89,25 +88,27 @@ const BasicInfo = (props) => {
     if (loading) return <LoadingAnim />;
     else
         return (
-            <IndividualBasicInfoForm
-                editMode={editMode}
-                handleOnSubmit={props.handleSubmit((event) => {
-                    onSubmit(event);
-                })}
-                profilePicture={profilePicture}
-                handlePictureUpload={handlePictureUpload}
-                stateAndCountry={stateAndCountry}
-                allSkills={props.getSkillResponse.success ? props.getSkillResponse.skills : []}
-                allLanguages={props.getLanguageResponse.success ? props.getLanguageResponse.languages : []}
-            />
+            <>
+                <IndividualBasicInfoForm
+                    editMode={editMode}
+                    handleOnSubmit={props.handleSubmit((event) => {
+                        onSubmit(event);
+                    })}
+                    profilePicture={profilePicture}
+                    setProfilePicture={setProfilePicture}
+                    handlePictureUpload={handlePictureUpload}
+                    stateAndCountry={stateAndCountry}
+                    allSkills={props.getSkillResponse.success ? props.getSkillResponse.skills : []}
+                    allLanguages={props.getLanguageResponse.success ? props.getLanguageResponse.languages : []}
+                />
+            </>
         );
 };
 const mapStateToProps = (state) => {
-    console.log('ST', state);
     const getSkillResponse = state.Skill.getSkillsByUser;
     const getLanguageResponse = state.Language.getLanguagesByUser;
-    const getBasicInfoResponse = state.Individual.getBasicInfo;
-    const setBasicInfoResponse = state.Individual.setBasicInfo;
+    const getBasicInfoResponse = state.User.getBasicInfo;
+    const setBasicInfoResponse = state.User.setBasicInfo;
     let initialValues = {};
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;

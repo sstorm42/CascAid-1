@@ -1,8 +1,7 @@
 const { Post } = require('../models/post-model');
-const { Organization } = require('../models/organization-model');
-const { Individual } = require('../models/individual-user-model');
 const { Follow } = require('../models/follow-model');
 const { Interest } = require('../models/interest-model');
+const { User } = require('../models/user-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
 const RESPONSES = require('../responses/post-response');
 const mongoose = require('mongoose');
@@ -16,13 +15,21 @@ exports.createOne = async (req, res) => {
 
         post.images = saveImageSchemaOnServer(post.images);
         if (post.skills && post.skills.length > 0) {
-            const { success, newSkills } = await SkillController.convertObjectToId(post.creatorId, 'organization', post.skills);
+            const { success, newSkills } = await SkillController.convertObjectToId(
+                post.creatorId,
+                'organization',
+                post.skills,
+            );
             if (success) post.skills = newSkills;
             else return res.status(400).send({ success: false, message: 'Skills can not be saved' });
         }
 
         if (post.impactAreas && post.impactAreas.length > 0) {
-            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(post.creatorId, 'organization', post.impactAreas);
+            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(
+                post.creatorId,
+                'organization',
+                post.impactAreas,
+            );
             if (success) post.impactAreas = newImpactAreas;
             else return res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
         }
@@ -43,10 +50,13 @@ exports.getOne = async (req, res) => {
     try {
         const postId = req.params.postId;
 
-        const post = await Post.findById(postId).populate('impactAreas', { _id: 1, label: 1, value: 1 }).populate('skills', { _id: 1, label: 1, value: 1 });
+        const post = await Post.findById(postId)
+            .populate('impactAreas', { _id: 1, label: 1, value: 1 })
+            .populate('skills', { _id: 1, label: 1, value: 1 });
         if (post) {
-            const organizations = await Organization.find({ userId: post.creatorId }, { basicInfo: 1, userId: 1 });
-            if (organizations && organizations.length > 0) res.status(200).send({ success: true, message: 'Post found', post, organization: organizations[0] });
+            const users = await User.find({ _id: post.creatorId }, { basicInfo: 1 });
+            if (users && users.length > 0)
+                res.status(200).send({ success: true, message: 'Post found', post, organization: users[0] });
             else res.status(200).send({ success: false, post });
         } else {
             res.status(404).send({ success: false, message: 'Post not found' });
@@ -58,6 +68,7 @@ exports.getOne = async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
+        console.log('QUERY', req.query);
         const title = req.query.title ? JSON.parse(req.query.title) : '';
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
         const fullAddress = req.query.fullAddress ? JSON.parse(req.query.fullAddress) : '';
@@ -95,14 +106,19 @@ exports.getAll = async (req, res) => {
 
             dateCondition = {
                 $or: [
-                    { $and: [{ startDateTime: { $gte: new Date(startDate) } }, { endDateTime: { $lte: new Date(endDate) } }] },
+                    {
+                        $and: [
+                            { startDateTime: { $gte: new Date(startDate) } },
+                            { endDateTime: { $lte: new Date(endDate) } },
+                        ],
+                    },
                     { startDateTime: { $lte: new Date(startDate) } },
                     { endDateTime: { $gte: new Date(endDate) } },
                 ],
             };
         }
 
-        match['isActive'] = isActive;
+        // match['isActive'] = isActive;
 
         let aggregateOptions = [];
         // const lookUp1 = {
@@ -147,6 +163,8 @@ exports.getAll = async (req, res) => {
             postType: 1,
             impactAreaNames: 1,
             address: 1,
+            isActive: 1,
+            isDeleted: 1,
         };
         aggregateOptions.push({ $match: { $and: [match, dateCondition] } }, ...lookUps, { $project: project });
 
@@ -164,18 +182,28 @@ exports.updateOne = async (req, res) => {
         const postId = req.params.postId;
 
         const post = req.body;
+
         post.images = saveImageSchemaOnServer(post.images);
         if (post.skills && post.skills.length > 0) {
-            const { success, newSkills } = await SkillController.convertObjectToId(post.creatorId, 'organization', post.skills);
+            const { success, newSkills } = await SkillController.convertObjectToId(
+                post.creatorId,
+                'organization',
+                post.skills,
+            );
             if (success) post.skills = newSkills;
             else return res.status(400).send({ success: false, message: 'Skills can not be saved' });
         }
 
         if (post.impactAreas && post.impactAreas.length > 0) {
-            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(post.creatorId, 'organization', post.impactAreas);
+            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(
+                post.creatorId,
+                'organization',
+                post.impactAreas,
+            );
             if (success) post.impactAreas = newImpactAreas;
             else return res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
         }
+        console.log('post', post.isActive);
         if (post.keywords) post.keywords = post.keywords.map((key) => key.label);
 
         const updatedPost = await Post.findOneAndUpdate(
@@ -185,6 +213,7 @@ exports.updateOne = async (req, res) => {
             { $set: post },
             { new: true },
         );
+        console.log('🚀 ~ file: post-controller.js ~ line 216 ~ exports.updateOne= ~ updatedPost', updatedPost);
 
         if (!updatedPost)
             return res.status(401).send({
@@ -197,6 +226,7 @@ exports.updateOne = async (req, res) => {
                 message: 'Post updated successfully.',
             });
     } catch (err) {
+        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -331,7 +361,11 @@ exports.cancelLike = async (req, res) => {
             },
         );
         if (interest) {
-            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Like });
+            const notification = await NotificationController.deleteOne({
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Like,
+            });
             return res.status(200).send({ success: true, message: 'Like removed', liked: true });
         } else return res.status(200).send({ success: false, message: 'Like can not be removed', liked: false });
     } catch (err) {
@@ -388,7 +422,11 @@ exports.cancelInterested = async (req, res) => {
             },
         );
         if (interest) {
-            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Interest });
+            const notification = await NotificationController.deleteOne({
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Interest,
+            });
             return res.status(200).send({ success: true, message: 'Interest removed', liked: true });
         } else return res.status(200).send({ success: false, message: 'Interest can not be removed', liked: false });
     } catch (err) {
@@ -444,7 +482,11 @@ exports.cancelGoing = async (req, res) => {
             },
         );
         if (interest) {
-            const notification = await NotificationController.deleteOne({ senderId: userId, postId, ...NotificationResponse.Descriptions.Going });
+            const notification = await NotificationController.deleteOne({
+                senderId: userId,
+                postId,
+                ...NotificationResponse.Descriptions.Going,
+            });
             return res.status(200).send({ success: true, message: 'Going removed', liked: true });
         } else return res.status(200).send({ success: false, message: 'Going can not be removed', liked: false });
     } catch (err) {
@@ -464,3 +506,5 @@ exports.cancelGoing = async (req, res) => {
 //     const postId = req.params.postId;
 //     const interests = await Interest.aggregate({})
 // };
+exports.getAllByUser = async (req, res) => {};
+exports.getAllSuggestions = async (req, res) => {};

@@ -4,7 +4,7 @@ import { CheckBoxRender, SelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import { allActivityTypes } from '../../constants/privacy-activity-types';
 import { allSearchTypes } from '../../constants/privacy-search-types';
-import { individualHeaders } from '../../constants/step-headers';
+import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
 const PrivacyForm = (props) => {
     const editMode = props.editMode;
     const submitting = props.submitting;
@@ -19,7 +19,9 @@ const PrivacyForm = (props) => {
                             <h4>Privacy Information</h4>
                         ) : (
                             <div>
-                                <p>Step {individualHeaders[4].stepNo} of 5</p>
+                                <p>
+                                    Step {individualHeaders[4].stepNo} of {totalIndividualStep}
+                                </p>
                                 <ProgressBar now={individualHeaders[4].percent} />
                                 <br />
                                 <h4>{individualHeaders[4].header}</h4>

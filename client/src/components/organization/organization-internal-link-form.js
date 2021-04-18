@@ -2,7 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { SwitchRender, SelectRender, InputRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { organizationHeaders } from '../../constants/step-headers';
+import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
 const InternalLinkForm = (props) => {
     const submitting = props.submitting;
 
@@ -15,7 +15,9 @@ const InternalLinkForm = (props) => {
                         <br />
 
                         <div>
-                            <p>Step {organizationHeaders[4].stepNo} of 5</p>
+                            <p>
+                                Step {organizationHeaders[4].stepNo} of {totalOrganizationStep}
+                            </p>
                             <ProgressBar now={organizationHeaders[4].percent} />
                             <br />
                             <h4>{organizationHeaders[4].header}</h4>

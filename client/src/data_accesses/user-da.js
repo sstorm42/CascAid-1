@@ -1,91 +1,103 @@
 import axios from 'axios';
 import * as APIPaths from '../constants/api-paths';
 class UserDA {
-    user_signup = (user) => {
+    get_basic_info = (userId) => {
         return axios
-            .post(APIPaths.userSignUp, user)
+            .get(APIPaths.getBasicInfo(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    set_basic_info = (userId, basicInfo) => {
+        return axios
+            .put(APIPaths.setBasicInfo(userId), basicInfo, APIPaths.apiConfig())
             .then((response) => {
                 return response.data;
             })
             .catch((err) => err.response.data);
     };
-    user_signin = (user) => {
+    get_involvement = (userId) => {
         return axios
-            .post(APIPaths.userSignIn, user)
+            .get(APIPaths.getInvolvement(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    set_involvement = (userId, involvement) => {
+        return axios
+            .put(APIPaths.setInvolvement(userId), involvement, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_privacy = (userId) => {
+        return axios
+            .get(APIPaths.getPrivacy(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    set_privacy = (userId, privacy) => {
+        return axios
+            .put(APIPaths.setPrivacy(userId), privacy, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_service_info = (userId) => {
+        return axios
+            .get(APIPaths.getServiceInfo(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    set_service_info = (userId, serviceInfo) => {
+        return axios
+            .put(APIPaths.setServiceInfo(userId), serviceInfo, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_internal_link = (userId) => {
+        return axios
+            .get(APIPaths.getInternalLink(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    set_internal_links = (userId, internalLink) => {
+        return axios
+            .put(APIPaths.setInternalLink(userId), internalLink, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_user_public_info = (userId) => {
+        console.log(APIPaths.getUserPublicInfo(userId));
+        return axios
+            .get(APIPaths.getUserPublicInfo(userId), APIPaths.apiConfig())
             .then((response) => {
-                console.log('🚀 ~ file: user-da.js ~ line 16 ~ UserDA ~ .then ~ response', response);
+                return response.data;
+            })
+            .catch((err) => err.response.data);
+    };
+    get_all_users = (filter) => {
+        let queryString = '?';
 
-                return response.data;
-            })
-            .catch((err) => err.response.data);
-    };
-    user_signout = () => {
-        return axios
-            .post(APIPaths.userSignOut)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    create_new_user = (user) => {
-        return axios
-            .post(APIPaths.createOneUser, user)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    delete_user = (userId) => {
-        return axios
-            .delete(APIPaths.deleteOneUser + userId)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    update_user = (userId, step, user, model) => {
-        return axios
-            .put(APIPaths.updateUser + userId, { user, step, model }, APIPaths.apiConfig())
-            .then((response) => {
-                return response.data;
-            })
-            .catch((err) => {
-                return err.response.data;
-            });
-    };
-
-    get_all_users = (userType) => {
-        let queryString = '';
-        if (userType && (userType === 'organization' || userType === 'individual')) {
-            queryString += '?userType=' + userType;
+        for (let t in filter) {
+            if (filter[t]) {
+                console.log(t);
+                queryString += t.toString();
+                queryString += '=';
+                queryString += JSON.stringify(filter[t]);
+                queryString += '&';
+            }
         }
+        console.log('QR', queryString);
         return axios
-            .get(APIPaths.getAllUsers + queryString)
+            .get(APIPaths.getAllUsers + queryString.slice(0, -1), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_user = (userId) => {
+    get_all_suggested_users = (userId, userType) => {
+        console.log(APIPaths.getAllSuggestedUsers(userId, userType));
         return axios
-            .get(APIPaths.getOneUser + userId, APIPaths.apiConfig())
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    user_auth = () => {
-        return axios
-            .get(APIPaths.userAuth)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    change_password = (userId, passwords) => {
-        return axios
-            .put(APIPaths.changePassword + userId + '/password', passwords)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    recover_password = (email) => {
-        return axios
-            .post(APIPaths.recoverPassword, email)
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
-    };
-    reset_password = (userId, token, passwords) => {
-        return axios
-            .post(APIPaths.resetPassword + userId + '/reset/' + token, passwords)
-            .then((response) => response.data)
+            .get(APIPaths.getAllSuggestedUsers(userId, userType), APIPaths.apiConfig())
+            .then((response) => {
+                console.log(response);
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
 }

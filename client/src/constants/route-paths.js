@@ -28,10 +28,13 @@ export const eventSearchPage = '/search/event';
 export const individualCompleteBasicInfoPage = '/complete/individual/basic-info';
 export const individualCompleteInvolvementPage = '/complete/individual/involvement';
 export const individualCompletePrivacyPage = '/complete/individual/privacy';
+export const individualCompleteMembership = '/complete/individual/membership';
+export const individualCompleteSuggestions = '/complete/individual/suggestions';
 
 export const individualEditBasicInfoPage = '/edit/individual/basic-info';
 export const individualEditInvolvementPage = '/edit/individual/involvement';
 export const individualEditPrivacyPage = '/edit/individual/privacy';
+export const individualEditMembership = '/edit/individual/membership';
 
 export const individualDetailsPage = '/individual/details/:userId';
 export const individualListPage = '/individual/all';

@@ -11,7 +11,13 @@ const NotificationList = (props) => {
             <Row>
                 <Col className="parent-page">
                     <Row>
-                        <Col sm="6">{allNotifications && allNotifications.length > 0 ? <h4>{allNotifications.length} Notifications Found</h4> : <h4>No Notification Found</h4>}</Col>
+                        <Col sm="6">
+                            {allNotifications && allNotifications.length > 0 ? (
+                                <h4>{allNotifications.length} Notifications Found</h4>
+                            ) : (
+                                <h4>No Notification Found</h4>
+                            )}
+                        </Col>
                     </Row>
                     <br />
                     {allNotifications &&
@@ -21,7 +27,7 @@ const NotificationList = (props) => {
                                 <ListGroup horizontal="xl" className="my-1" key={i} style={{ width: '100%' }}>
                                     {/* <ListGroup.Item className="col-sm-2"></ListGroup.Item> */}
                                     <ListGroup.Item
-                                        className="col-sm-6"
+                                        className="col-sm-8"
                                         action
                                         onClick={() => {
                                             props.handleGoToNotificationDetails(notification);
@@ -30,7 +36,11 @@ const NotificationList = (props) => {
                                         <Row>
                                             <Col sm="2">
                                                 <Image
-                                                    src={notification.userType === 'individual' ? notification.senderProfilePicture : notification.senderOrgProfilePicture}
+                                                    src={
+                                                        notification.userType === 'individual'
+                                                            ? notification.senderProfilePicture
+                                                            : notification.senderOrgProfilePicture
+                                                    }
                                                     width="40"
                                                     thumbnail
                                                     className="notification-image"
@@ -41,7 +51,10 @@ const NotificationList = (props) => {
                                                     {notification.isRead ? (
                                                         notification.userType === 'individual' ? (
                                                             notification.senderFirstName ? (
-                                                                getTitleByType(notification.type, notification.senderFirstName + ' ' + notification.senderLastName)
+                                                                getTitleByType(
+                                                                    notification.type,
+                                                                    notification.senderFirstName + ' ' + notification.senderLastName,
+                                                                )
                                                             ) : (
                                                                 notification.title
                                                             )
@@ -54,7 +67,10 @@ const NotificationList = (props) => {
                                                         <b>
                                                             {notification.userType === 'individual'
                                                                 ? notification.senderFirstName
-                                                                    ? getTitleByType(notification.type, notification.senderFirstName + ' ' + notification.senderLastName)
+                                                                    ? getTitleByType(
+                                                                          notification.type,
+                                                                          notification.senderFirstName + ' ' + notification.senderLastName,
+                                                                      )
                                                                     : notification.title
                                                                 : notification.senderName
                                                                 ? getTitleByType(notification.type, notification.senderName)
@@ -62,6 +78,8 @@ const NotificationList = (props) => {
                                                         </b>
                                                     )}
                                                 </h6>
+                                                {notification.postTitle}
+                                                <br />
                                                 <small>{moment(notification.createdAt).format('LLLL')}</small>
                                             </Col>
                                         </Row>

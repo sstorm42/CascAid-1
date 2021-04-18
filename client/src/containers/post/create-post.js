@@ -6,7 +6,7 @@ import LoadingAnim from '../../components/form_template/loading-anim';
 import { getPostById, createPost, updatePostById, clearPost } from '../../actions/post-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { getAllSkillsByUser } from '../../actions/skill-action';
-import { getServiceInfo } from '../../actions/organization-action';
+import { getServiceInfo } from '../../actions/user-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
@@ -252,7 +252,7 @@ const mapStateToProps = (state) => {
     const getSkillResponse = state.Skill.getSkillsByUser;
     const getPostResponse = state.Post.getPost;
     const setPostResponse = state.Post.setPost;
-    const getServiceInfoResponse = state.Organization.getServiceInfo;
+    const getServiceInfoResponse = state.User.getServiceInfo;
     let initialValues = {};
     if (getPostResponse.success) {
         initialValues = getPostResponse.post;

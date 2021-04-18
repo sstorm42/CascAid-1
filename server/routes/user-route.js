@@ -1,31 +1,41 @@
 const user = require('express').Router();
 const UserController = require('../controllers/user-controller');
+const PostController = require('../controllers/post-controller');
+const ImpactAreaController = require('../controllers/impact-area-controller');
+const SkillController = require('../controllers/skill-controller');
+const LanguageController = require('../controllers/language-controller');
+
 const userValidation = require('../middlewares/validators/user-validator');
 const validate = require('../middlewares/validators/validate');
 const { grantAccess, allowIfLoggedIn } = require('../middlewares/access-control');
-const IndividualController = require('../controllers/individual-controller');
-const OrganizationController = require('../controllers/organization-controller');
-
-const individualRoutes = require('./individual-route');
-const organizationRoutes = require('./organization-route');
-
-user.use('/individual', individualRoutes);
-user.use('/organization', organizationRoutes);
 
 user.get('/email/:email', UserController.checkEmailExist);
 
-user.get('/', allowIfLoggedIn, grantAccess('read', 'user'), UserController.index);
-
-user.get('/:userId', allowIfLoggedIn, UserController.show);
-
-user.post('/', userValidation.setUser, validate, allowIfLoggedIn, grantAccess('create', 'user'), UserController.store);
-
-user.put('/:userId', allowIfLoggedIn, UserController.update);
-
-user.delete('/:userId', allowIfLoggedIn, grantAccess('delete', 'user'), UserController.destroy);
-
 user.get('/search/:name', UserController.searchByName);
 
-user.post('/seed/organizations', UserController.seedOrganization);
-user.get('/seed/organizations', UserController.seedOrganization);
+user.get('/:userId/basic-info', allowIfLoggedIn, grantAccess('read', 'user'), UserController.getBasicInfo);
+user.get('/:userId/involvement', allowIfLoggedIn, grantAccess('read', 'user'), UserController.getInvolvement);
+user.get('/:userId/privacy', allowIfLoggedIn, grantAccess('read', 'user'), UserController.getPrivacy);
+user.get('/:userId/service-info', allowIfLoggedIn, grantAccess('read', 'user'), UserController.getServiceInfo);
+user.get('/:userId/internal-link', allowIfLoggedIn, grantAccess('read', 'user'), UserController.getInternalLink);
+
+user.put('/:userId/basic-info', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setBasicInfo);
+user.put('/:userId/involvement', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setInvolvement);
+user.put('/:userId/privacy', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setPrivacy);
+user.put('/:userId/service-info', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setServiceInfo);
+user.put('/:userId/internal-link', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setInternalLink);
+
+user.get('/', allowIfLoggedIn, grantAccess('read-public', 'user'), UserController.getAll);
+user.get('/:userId/public-info', allowIfLoggedIn, grantAccess('read-public', 'user'), UserController.getPublicInfo);
+
+user.get('/:userId/suggestions', allowIfLoggedIn, UserController.getAllSuggestions);
+
+user.post('/seed', UserController.seedUsers);
+user.get('/:userId/posts/suggestions', allowIfLoggedIn, PostController.getAllSuggestions);
+
+// OTHER CONTROLLERS
+user.get('/:userId/posts', allowIfLoggedIn, PostController.getAllByUser);
+user.get('/:userId/impact-areas', allowIfLoggedIn, ImpactAreaController.getAllByUser);
+user.get('/:userId/languages', allowIfLoggedIn, LanguageController.getAllByUser);
+user.get('/:userId/skills', allowIfLoggedIn, SkillController.getAllByUser);
 module.exports = user;

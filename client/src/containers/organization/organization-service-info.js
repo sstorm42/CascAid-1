@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import { getServiceInfo, setServiceInfo, clearServiceInfo } from '../../actions/organization-action';
+import { getServiceInfo, setServiceInfo, clearServiceInfo } from '../../actions/user-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import { NotificationManager } from 'react-notifications';
@@ -74,9 +74,10 @@ const ServiceInfo = (props) => {
         );
 };
 const mapStateToProps = (state) => {
+    console.log('ST', state);
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
-    const getServiceInfoResponse = state.Organization.getServiceInfo;
-    const setServiceInfoResponse = state.Organization.setServiceInfo;
+    const getServiceInfoResponse = state.User.getServiceInfo;
+    const setServiceInfoResponse = state.User.setServiceInfo;
     const getOrganizationTypesResponse = state.OrganizationType.getAllOrganizationTypes;
     let initialValues = {};
 

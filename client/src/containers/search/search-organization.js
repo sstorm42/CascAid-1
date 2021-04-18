@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 import OrganizationListView from '../../components/organization/organization-list-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllOrganizationsByFilter } from '../../actions/organization-action';
+import { getAllUsers } from '../../actions/user-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import SearchMenu from '../../components/search/search-menu';
 import FilterOrganization from '../../components/search/filter-organization';
@@ -58,7 +58,7 @@ const SearchOrganization = (props) => {
     };
     const handleOnApplyFilter = () => {
         setLoading(true);
-        props.dispatch(getAllOrganizationsByFilter(filter));
+        props.dispatch(getAllUsers({ ...filter, userType: 'organization' }));
         setLoading(false);
         setActivePage(1);
         console.log('FFF', filter);
@@ -121,7 +121,7 @@ const SearchOrganization = (props) => {
                                     linkClass="page-link"
                                     activePage={activePage}
                                     itemsCountPerPage={30}
-                                    totalItemsCount={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations.length : 0}
+                                    totalItemsCount={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.users.length : 0}
                                     pageRangeDisplayed={5}
                                     onChange={(page) => {
                                         setActivePage(page);
@@ -129,7 +129,9 @@ const SearchOrganization = (props) => {
                                 />
                                 <OrganizationListView
                                     allOrganizations={
-                                        props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations.slice((activePage - 1) * 30, activePage * 30 - 1) : []
+                                        props.getAllOrganizationsResponse.success
+                                            ? props.getAllOrganizationsResponse.users.slice((activePage - 1) * 30, activePage * 30 - 1)
+                                            : []
                                     }
                                     gotoOrganizationDetails={gotoOrganizationDetails}
                                 />
@@ -137,7 +139,7 @@ const SearchOrganization = (props) => {
                         )}
                         {viewType === 'map' && (
                             <OrganizationMapView
-                                allOrganizations={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.allOrganizations : []}
+                                allOrganizations={props.getAllOrganizationsResponse.success ? props.getAllOrganizationsResponse.users : []}
                                 gotoOrganizationDetails={gotoOrganizationDetails}
                                 zoom={8}
                                 currentLocation={currentLocation}
@@ -149,9 +151,10 @@ const SearchOrganization = (props) => {
         );
 };
 const mapStateToProps = (state) => {
+    console.log(state);
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
     const getOrganizationTypeResponse = state.OrganizationType.getAllOrganizationTypes;
-    const getAllOrganizationsResponse = state.Organization.getAllOrganizations;
+    const getAllOrganizationsResponse = state.User.getAllUsers;
     return {
         getImpactAreaResponse,
         getAllOrganizationsResponse,

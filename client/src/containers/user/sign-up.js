@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SignUpForm from '../../components/user/sign-up-form';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { userSignUp, clearUser, authenticate, printLocalStorage } from '../../actions';
+import { userSignUp, authenticate, printLocalStorage } from '../../actions';
 import { validate } from '../../actions/validate';
 import asyncValidate from '../../actions/asyncValidate';
 import LoadingAnim from '../../components/form_template/loading-anim';
@@ -50,7 +50,7 @@ class SignUp extends Component {
         }
     }
     componentWillUnmount = () => {
-        this.props.dispatch(clearUser());
+        // this.props.dispatch(clearUser());
     };
     render() {
         const { submitting } = this.props;

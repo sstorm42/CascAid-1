@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
 import { SelectRender, InputRender, DatePickerRender, TextRender, MultiSelectRender } from '../form_template/input-render';
-
+import ProfilePictureUploader from '../../components/user/profile-picture-changer';
 import { Container, Row, Col, ProgressBar, Button, Image } from 'react-bootstrap';
 import { countries, states } from '../../constants/country-and-state';
-import { organizationHeaders } from '../../constants/step-headers';
+import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
 
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
@@ -26,7 +26,9 @@ const BasicInfoForm = (props) => {
                             <h4>Basic Information</h4>
                         ) : (
                             <div>
-                                <p>Step {organizationHeaders[2].stepNo} of 5</p>
+                                <p>
+                                    Step {organizationHeaders[2].stepNo} of {totalOrganizationStep}
+                                </p>
                                 <ProgressBar now={organizationHeaders[2].percent} />
                                 <br />
                                 <h4>{organizationHeaders[2].header}</h4>
@@ -57,18 +59,42 @@ const BasicInfoForm = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="mission" type="text" component={TextRender} label="Mission" placeholder="Your organization mission..." col1={2} col2={10} />
+                                <Field
+                                    name="mission"
+                                    type="text"
+                                    component={TextRender}
+                                    label="Mission"
+                                    placeholder="Your organization mission..."
+                                    col1={2}
+                                    col2={10}
+                                />
                             </Col>
                         </Row>
                         <br />
                         <Row>
                             <Col>
-                                <Field name="description" type="text" component={TextRender} label="Description" placeholder="Your organization mission..." col1={2} col2={10} />
+                                <Field
+                                    name="description"
+                                    type="text"
+                                    component={TextRender}
+                                    label="Description"
+                                    placeholder="Your organization mission..."
+                                    col1={2}
+                                    col2={10}
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="organizationTypes" component={MultiSelectRender} label="Organization Type" col1={3} col2={9} options={allOrganizationTypes} zIndex={2000} />
+                                <Field
+                                    name="organizationTypes"
+                                    component={MultiSelectRender}
+                                    label="Organization Type"
+                                    col1={3}
+                                    col2={9}
+                                    options={allOrganizationTypes}
+                                    zIndex={2000}
+                                />
                             </Col>
                         </Row>
 
@@ -128,6 +154,19 @@ const BasicInfoForm = (props) => {
                             </Col>
                         </Row>
                         <Row>
+                            <Col className="right-align">
+                                {props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}
+                            </Col>
+                            <Col>
+                                <ProfilePictureUploader
+                                    profilePicture={props.profilePicture}
+                                    handlePictureUpload={props.handlePictureUpload}
+                                    setProfilePicture={props.setProfilePicture}
+                                />
+                            </Col>
+                        </Row>
+                        {/* <Row>
+
                             <Col className="right-align">{props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}</Col>
                             <Col>
                                 <div className="custom-file">
@@ -137,7 +176,7 @@ const BasicInfoForm = (props) => {
                                     </label>
                                 </div>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <br />
                         <Row>
                             <Col sm="6"></Col>

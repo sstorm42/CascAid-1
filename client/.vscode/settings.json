@@ -1,3 +1,7 @@
 {
-    "workbench.colorTheme": "Tomorrow Night Blue"
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "editor.fontLigatures": null,
+    "editor.tokenColorCustomizations": {
+        "comments": "#00ff00"
+    }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PostList from '../../components/post/post-list';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { connect } from 'react-redux';
-import { getAllPostsByOrganization } from '../../actions/organization-action';
+import { getAllPostsByFilter } from '../../actions/post-action';
 import * as RoutePaths from '../../constants/route-paths';
 const ManagePosts = (props) => {
     const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ const ManagePosts = (props) => {
     useEffect(() => {
         const getInitialInfo = (userId) => {
             setLoading(true);
-            props.dispatch(getAllPostsByOrganization(userId));
+            props.dispatch(getAllPostsByFilter({ creatorId: userId }));
             setLoading(false);
         };
         const user = props.auth.user;
@@ -34,7 +34,7 @@ const ManagePosts = (props) => {
     else {
         return (
             <PostList
-                allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.posts : []}
+                allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
                 handleGoToPostEdit={handleGoToPostEdit}
                 handleGoToPostDetails={handleGoToPostDetails}
                 handleGoToPostCreate={handleGoToPostCreate}

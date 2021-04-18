@@ -27,7 +27,7 @@ const IndividualDetails = (props) => {
         );
 };
 const mapStateToProps = (state) => {
-    const getPublicInfoResponse = state.Individual.getPublicInfo;
+    const getPublicInfoResponse = state.User.getPublicInfo;
 
     return {
         getPublicInfoResponse,

@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import HomePostFeeds from '../../components/home/home-post-feeds';
 import HomeOrganizationSuggestions from '../../components/home/home-suggestions';
-import { getHomeFeed, getAllPostSuggestions } from '../../actions/post-action';
-import { getAllOrganizationSuggestions } from '../../actions/organization-action';
+import { getHomeFeed } from '../../actions/post-action';
+import { getAllSuggestedUsers } from '../../actions/user-action';
 import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
 import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 const Home = (props) => {
@@ -16,12 +16,11 @@ const Home = (props) => {
             const user = props.auth.user;
             setUserId(user._id);
             props.dispatch(getHomeFeed());
-            props.dispatch(getAllPostSuggestions());
-            props.dispatch(getAllOrganizationSuggestions());
+            props.dispatch(getAllSuggestedUsers(user._id, 'organization'));
             setLoading(false);
         };
 
-        getInitialInfo(props.match.params.postId);
+        getInitialInfo();
     }, []);
     const handleGotoPostDetails = (postType, postId) => {
         props.history.push(postDetailsPage(postType, postId));
@@ -77,7 +76,11 @@ const Home = (props) => {
                         </Col>
                         <Col md="4">
                             <HomeOrganizationSuggestions
-                                allOrganizations={props.OrganizationSuggestionResponse && props.OrganizationSuggestionResponse.success ? props.OrganizationSuggestionResponse.allOrganizations : []}
+                                allOrganizations={
+                                    props.OrganizationSuggestionResponse && props.OrganizationSuggestionResponse.success
+                                        ? props.OrganizationSuggestionResponse.users
+                                        : []
+                                }
                             />
                         </Col>
                     </Row>
@@ -90,7 +93,7 @@ const mapStateToProps = (state) => {
     console.log(state);
     const homeFeedResponse = state.Post.homeFeed;
     const PostSuggestionResponse = state.Post.getAllSuggestions;
-    const OrganizationSuggestionResponse = state.Organization.getAllSuggestions;
+    const OrganizationSuggestionResponse = state.User.getAllSuggestedUsers;
     return { homeFeedResponse, PostSuggestionResponse, OrganizationSuggestionResponse };
 };
 export default connect(mapStateToProps, null)(Home);

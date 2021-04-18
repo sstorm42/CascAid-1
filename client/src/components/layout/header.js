@@ -8,28 +8,25 @@ import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } fr
 import Avatar from 'react-avatar';
 import GlobalNotification from './global-notification';
 import { get } from '../../actions';
+const GetNameAndProfilePicture = (userType, basicInfo) => {
+    let name = '';
+    let profilePicture = '';
+    if (userType === 'individual') {
+        name = basicInfo.firstName ? basicInfo.firstName + ' ' : '';
+        name += basicInfo.lastName ? basicInfo.lastName + ' ' : '';
+        profilePicture = basicInfo.profilePicture || defaultIndividualProfilePicture;
+    } else if (userType === 'organization') {
+        name = basicInfo.name ? basicInfo.name : '';
+        profilePicture = basicInfo.profilePicture || defaultOrganizationProfilePicture;
+    }
+
+    return { name, profilePicture };
+};
 const Header = (props) => {
     const isAuth = props.isAuth || false;
 
     if (isAuth && props.user._id) {
-        // const username = props.user.name;
-        // const userId = props.user._id;
-        const basicInfo = props.basicInfo;
-        console.log('basicInfo', basicInfo);
-        let name = '';
-        if (props.user.userType === 'individual') {
-            name = basicInfo.firstName + ' ' + basicInfo.lastName || 'USER';
-        } else if (props.user.userType === 'organization') {
-            name = basicInfo.name || 'USER';
-        }
-
-        let profilePicture = '';
-        if (props.user.userType === 'individual') {
-            profilePicture = basicInfo.profilePicture || defaultIndividualProfilePicture;
-        }
-        if (props.user.userType === 'organization') {
-            profilePicture = basicInfo.profilePicture || defaultOrganizationProfilePicture;
-        }
+        const { name, profilePicture } = GetNameAndProfilePicture(props.user.userType, props.basicInfo);
         return (
             <div className="header">
                 <Navbar bg="primary" variant="dark" expand="lg">

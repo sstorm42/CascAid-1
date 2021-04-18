@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import { getPrivacy, setPrivacy, clearPrivacy } from '../../actions/individual-action';
+import { getPrivacy, setPrivacy, clearPrivacy } from '../../actions/user-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
 import IndividualPrivacyForm from '../../components/individual/individual-privacy-form';
-import { individualCompleteInvolvementPage, homePage } from '../../constants/route-paths';
+import { individualCompleteInvolvementPage, individualCompleteMembership } from '../../constants/route-paths';
 const Privacy = (props) => {
     const [editMode, setEditMode] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const Privacy = (props) => {
             NotificationManager.success(message, 'success');
             if (!editMode) {
                 props.dispatch(clearPrivacy());
-                props.history.push(homePage);
+                props.history.push(individualCompleteMembership);
             }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
@@ -69,8 +69,8 @@ const Privacy = (props) => {
 };
 const mapStateToProps = (state) => {
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
-    const getPrivacyResponse = state.Individual.getPrivacy;
-    const setPrivacyResponse = state.Individual.setPrivacy;
+    const getPrivacyResponse = state.User.getPrivacy;
+    const setPrivacyResponse = state.User.setPrivacy;
     let initialValues = {};
 
     if (getPrivacyResponse.success) {
