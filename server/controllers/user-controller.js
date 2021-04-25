@@ -550,13 +550,13 @@ exports.seedUsers = async (req, res) => {
 
             if (user.userType === 'individual') {
                 let individual = await Individual.findOne({
-                    userId: user._id,
+                    userId: user._id.toString(),
                 });
                 console.log('🚀 ~ file: user-controller.js ~ line 555 ~ exports.seedUsers= ~ individual', individual);
                 if (individual && individual._id) {
                     console.log('IND', individual._id);
                     let update = await User.updateOne(
-                        { _id: individual.userId },
+                        { _id: ObjectId(individual.userId) },
                         {
                             $set: {
                                 basicInfo: individual.basicInfo,
