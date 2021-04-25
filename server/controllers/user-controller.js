@@ -547,7 +547,7 @@ exports.seedUsers = async (req, res) => {
         const users = await User.find();
         for (let i = 0; i < users.length; i++) {
             let user = users[i];
-            console.log(user);
+
             if (user.userType === 'individual') {
                 let individual = await Individual.findOne({
                     userId: user._id,
@@ -558,8 +558,8 @@ exports.seedUsers = async (req, res) => {
                         {
                             $set: {
                                 basicInfo: individual.basicInfo,
-                                involvement: individual.involvement,
-                                privacy: individual.privacy,
+                                // involvement: individual.involvement,
+                                // privacy: individual.privacy,
                             },
                         },
                     );
