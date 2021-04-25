@@ -550,9 +550,10 @@ exports.seedUsers = async (req, res) => {
 
             if (user.userType === 'individual') {
                 let individual = await Individual.findOne({
-                    userId: user._id,
+                    userId: individual.userId,
                 });
                 if (individual && individual._id) {
+                    console.log('IND', individual._id);
                     let update = await User.updateOne(
                         { _id: user._id },
                         {
