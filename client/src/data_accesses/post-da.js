@@ -44,16 +44,11 @@ class PostDA {
                 queryString += '&';
             }
         }
-        console.log(APIPaths.getAllPosts + queryString.slice(0, -1));
+
         return axios
             .get(APIPaths.getAllPosts + queryString.slice(0, -1), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
-        // const params = `?title=${title}&impactAreas=${JSON.stringify(impactAreas)}`;
-        // return axios
-        //     .get(APIPaths.getAllPosts + params, APIPaths.apiConfig())
-        //     .then((response) => response.data)
-        //     .catch((err) => err.response.data);
     };
     get_home_feed = () => {
         return axios
@@ -110,6 +105,13 @@ class PostDA {
     cancel_going_post = (postId) => {
         return axios
             .post(APIPaths.cancelGoingPost(postId), {}, APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+
+    get_all_committed_persons = (postId, type) => {
+        return axios
+            .get(APIPaths.getAllCommittedPersons(postId, type), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

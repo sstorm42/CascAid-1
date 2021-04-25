@@ -21,7 +21,7 @@ const ManageNotifications = (props) => {
     const handleGoToNotificationDetails = (notification) => {
         const type = notification.type;
         if (['like', 'interest', 'going'].includes(type)) {
-            props.history.push(RoutePaths.postDetailsPage(notification.postType, notification.postId));
+            props.history.push(RoutePaths.postDetailsPage(notification.postId.postType, notification.postId._id));
         } else {
             props.history.push(RoutePaths.userDetailsPage(notification.userType, notification.senderId));
         }

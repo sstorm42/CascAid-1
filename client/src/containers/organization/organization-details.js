@@ -68,6 +68,7 @@ const OrganizationDetails = (props) => {
                         <Row>
                             <Col className="right-align" sm="2">
                                 <SideSubMenu
+                                    activePage="About"
                                     organization={props.getPublicInfoResponse && props.getPublicInfoResponse.success ? props.getPublicInfoResponse.user : {}}
                                     handleFollowClick={handleFollowClick}
                                     handleUnfollowClick={handleUnfollowClick}
@@ -78,6 +79,9 @@ const OrganizationDetails = (props) => {
                             <Col sm="9" className="left-border">
                                 <DetailsView
                                     organization={props.getPublicInfoResponse && props.getPublicInfoResponse.success ? props.getPublicInfoResponse.user : {}}
+                                    memberships={
+                                        props.getPublicInfoResponse && props.getPublicInfoResponse.success ? props.getPublicInfoResponse.memberships : []
+                                    }
                                     handleFollowClick={handleFollowClick}
                                     handleUnfollowClick={handleUnfollowClick}
                                     follows={follows}

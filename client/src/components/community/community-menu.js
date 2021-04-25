@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import { communityFollowerListPage, communityFollowingListPage, communityFriendListPage, communityRequestListPage } from '../../constants/route-paths';
 const CommunityMenu = (props) => {
     const selected = props.selected;

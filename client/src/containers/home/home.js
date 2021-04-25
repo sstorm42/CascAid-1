@@ -1,27 +1,75 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { followUser } from '../../actions/follow-action';
+import {
+    cancelGoingPost,
+    cancelInterestedPost,
+    cancelLikePost,
+    changePostInterest,
+    getAllCommittedPersons,
+    getHomeFeed,
+    goingPost,
+    interestedPost,
+    likePost,
+} from '../../actions/post-action';
+import { getAllSuggestedUsers } from '../../actions/user-action';
+import LoadingAnim from '../../components/form_template/loading-anim';
 import HomePostFeeds from '../../components/home/home-post-feeds';
 import HomeOrganizationSuggestions from '../../components/home/home-suggestions';
-import { getHomeFeed } from '../../actions/post-action';
-import { getAllSuggestedUsers } from '../../actions/user-action';
+import CommittedPersonsModal from '../../components/post/committed-persons-list';
 import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
-import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 const Home = (props) => {
     const [loading, setLoading] = useState(false);
+    const [committedModal, setCommittedModal] = useState(false);
+    const [committedLoading, setCommittedLoading] = useState(false);
+    const [committedList, setCommittedList] = useState([]);
+    const [cards, setCards] = useState({});
     const [userId, setUserId] = useState('');
+
+    const handleFollowOrganization = (organizationId) => {
+        let cards_ = cards;
+        cards_[organizationId] = false;
+        setCards({ ...cards_ });
+        console.log({ followerId: userId, followingId: organizationId });
+        props.dispatch(followUser({ followerId: userId, followingId: organizationId }));
+    };
+    const handleClickCommittedButtons = (postId, type) => {
+        console.log('🚀 ~ file: home.js ~ line 20 ~ handleClickCommittedButtons ~ postId, type', postId, type);
+        setCommittedLoading(true);
+        getAllCommittedPersons(postId, type).then((response) => {
+            console.log('🚀 ~ file: home.js ~ line 22 ~ getAllCommittedPersons ~ response', response);
+            setCommittedModal(true);
+            setCommittedLoading(false);
+            if (response.success) {
+                setCommittedList(response.users);
+            } else {
+                alert('User List Not Found');
+            }
+        });
+    };
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
             const user = props.auth.user;
             setUserId(user._id);
             props.dispatch(getHomeFeed());
-            props.dispatch(getAllSuggestedUsers(user._id, 'organization'));
+            props.dispatch(getAllSuggestedUsers(user._id, 'organization', 20));
             setLoading(false);
         };
-
         getInitialInfo();
     }, []);
+    useEffect(() => {
+        const { success } = props.OrganizationSuggestionResponse;
+        if (success) {
+            let cards = {};
+            const users = props.OrganizationSuggestionResponse.users;
+            for (let i = 0; i < users.length; i++) {
+                cards[users[i]._id] = true;
+            }
+            setCards({ ...cards });
+        }
+    }, [props.OrganizationSuggestionResponse]);
     const handleGotoPostDetails = (postType, postId) => {
         props.history.push(postDetailsPage(postType, postId));
     };
@@ -55,39 +103,51 @@ const Home = (props) => {
         props.dispatch(cancelGoingPost(postId));
         props.dispatch(changePostInterest(postId, userId, 'ungoing'));
     };
-    return (
-        <Container>
-            <Row>
-                <Col className="parent-page-home">
-                    <Row>
-                        <Col md="8">
-                            <HomePostFeeds
-                                handleGotoPostDetails={handleGotoPostDetails}
-                                handleGotoOrganizationDetails={handleGotoOrganizationDetails}
-                                allPosts={props.homeFeedResponse.success ? props.homeFeedResponse.allPosts : []}
-                                handleLikePost={handleLikePost}
-                                handleCancelLikePost={handleCancelLikePost}
-                                handleInterestedPost={handleInterestedPost}
-                                handleCancelInterestedPost={handleCancelInterestedPost}
-                                handleGoingPost={handleGoingPost}
-                                handleCancelGoingPost={handleCancelGoingPost}
-                                userId={userId}
-                            />
-                        </Col>
-                        <Col md="4">
-                            <HomeOrganizationSuggestions
-                                allOrganizations={
-                                    props.OrganizationSuggestionResponse && props.OrganizationSuggestionResponse.success
-                                        ? props.OrganizationSuggestionResponse.users
-                                        : []
-                                }
-                            />
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
-    );
+    if (loading) return <LoadingAnim />;
+    else {
+        return (
+            <Container>
+                <CommittedPersonsModal
+                    committedModal={committedModal}
+                    committedLoading={committedLoading}
+                    committedList={committedList}
+                    setCommittedModal={setCommittedModal}
+                />
+                <Row>
+                    <Col className="parent-page-home">
+                        <Row>
+                            <Col md="8">
+                                <HomePostFeeds
+                                    handleGotoPostDetails={handleGotoPostDetails}
+                                    handleGotoOrganizationDetails={handleGotoOrganizationDetails}
+                                    allPosts={props.homeFeedResponse.success ? props.homeFeedResponse.allPosts : []}
+                                    handleLikePost={handleLikePost}
+                                    handleCancelLikePost={handleCancelLikePost}
+                                    handleInterestedPost={handleInterestedPost}
+                                    handleCancelInterestedPost={handleCancelInterestedPost}
+                                    handleGoingPost={handleGoingPost}
+                                    handleCancelGoingPost={handleCancelGoingPost}
+                                    userId={userId}
+                                    handleClickCommittedButtons={handleClickCommittedButtons}
+                                />
+                            </Col>
+                            <Col md="4">
+                                <HomeOrganizationSuggestions
+                                    allOrganizations={
+                                        props.OrganizationSuggestionResponse && props.OrganizationSuggestionResponse.success
+                                            ? props.OrganizationSuggestionResponse.users
+                                            : []
+                                    }
+                                    cards={cards}
+                                    handleFollowOrganization={handleFollowOrganization}
+                                />
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
 };
 const mapStateToProps = (state) => {
     console.log(state);

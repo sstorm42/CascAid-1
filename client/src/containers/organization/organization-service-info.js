@@ -7,7 +7,7 @@ import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import { NotificationManager } from 'react-notifications';
 import OrganizationServiceInfoForm from '../../components/organization/organization-service-info-form';
-import { homePage, organizationCompleteBasicInfoPage, organizationCompleteInternalLinkPage } from '../../constants/route-paths';
+import { homePage, organizationCompleteBasicInfoPage, organizationCompleteMembershipPage } from '../../constants/route-paths';
 
 const ServiceInfo = (props) => {
     const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ const ServiceInfo = (props) => {
         if (success) {
             NotificationManager.success(message, 'success');
             if (!editMode) {
-                props.history.push(homePage);
+                props.history.push(organizationCompleteMembershipPage);
                 props.dispatch(clearServiceInfo());
             }
         } else if (success === false) NotificationManager.error(message, 'Failed');
@@ -56,7 +56,7 @@ const ServiceInfo = (props) => {
         props.history.push(organizationCompleteBasicInfoPage);
     };
     const handleSkipButton = () => {
-        props.history.push(homePage);
+        props.history.push(organizationCompleteMembershipPage);
     };
     if (loading) return <LoadingAnim />;
     else

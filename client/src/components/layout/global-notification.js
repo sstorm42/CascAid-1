@@ -35,30 +35,25 @@ const PostTitleRender = (title) => {
 };
 const NotificationRender = (props) => {
     const notification = props.notification;
+    const sender = notification.senders[0].userId;
+    const userType = sender.userType;
+    let name = '';
+    if (userType === 'individual') name = sender.basicInfo.firstName + ' ' + sender.basicInfo.lastName;
+    else if (userType === 'organization') name = sender.basicInfo.name;
+    const profilePicture = sender.basicInfo.profilePicture;
+    const more = notification.senders.length - 1;
     console.log('🚀 ~ file: global-notification.js ~ line 31 ~ NotificationRender ~ notification', notification);
     return (
         <NavDropdown.Item className="notification-row">
             <Row>
                 <Col sm="2">
-                    <Image
-                        src={notification.userType === 'individual' ? notification.senderProfilePicture : notification.senderOrgProfilePicture}
-                        width="40"
-                        thumbnail
-                        className="notification-image"
-                    />
+                    <Image src={profilePicture} width="40" thumbnail className="notification-image" />
                 </Col>
                 <Col sm="10">
                     <p className="notification-title">
-                        {notification.userType === 'individual'
-                            ? notification.senderFirstName
-                                ? getTitleByType(notification.type, notification.senderFirstName + ' ' + notification.senderLastName)
-                                : notification.title
-                            : notification.senderName
-                            ? getTitleByType(notification.type, notification.senderName)
-                            : notification.title}
+                        {notification.isRead ? getTitleByType(notification.type, name, more) : <b>{getTitleByType(notification.type, name, more)}</b>}
                     </p>
-                    <small className="gray-text">{PostTitleRender(notification.postTitle)}</small>
-                    <br />
+
                     <small className="notification-time">{moment(notification.createdAt).format('LLL')}</small>
                 </Col>
             </Row>
@@ -68,7 +63,7 @@ const NotificationRender = (props) => {
 const SampleNotificationsRender = (props) => {
     const allNotifications = props.allNotifications;
     return (
-        <Container style={{ width: 400, padding: 0 }}>
+        <Container style={{ width: 500, padding: 0 }}>
             {allNotifications.map((notification, i) => {
                 return <NotificationRender key={i} notification={notification} />;
             })}

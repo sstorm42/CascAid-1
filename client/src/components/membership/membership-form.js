@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { individualHeaders } from '../../constants/step-headers';
+import { individualHeaders, organizationHeaders, totalIndividualStep, totalOrganizationStep } from '../../constants/step-headers';
 import MembershipModal from './membership-modal';
 import MembershipList from './membership-list';
 const MembershipForm = (props) => {
@@ -8,6 +8,7 @@ const MembershipForm = (props) => {
     const [membershipModal, setMembershipModal] = useState(false);
     const [mode, setMode] = useState('create');
     const memberships = props.memberships;
+    const userType = props.userType;
     return (
         <Container className="saLoginForm">
             <MembershipModal
@@ -23,19 +24,30 @@ const MembershipForm = (props) => {
                 submitMembership={props.submitMembership}
             />
             <Row>
-                <Col></Col>
-                <Col md="10" className="sign-ing-form">
+                <Col className="sign-ing-form">
                     <br />
                     {editMode ? (
-                        <h4>Privacy Information</h4>
-                    ) : (
+                        <h4>Membership Information</h4>
+                    ) : userType === 'individual' ? (
                         <div>
-                            <p>Step {individualHeaders[5].stepNo} of 6</p>
+                            <p>
+                                Step {individualHeaders[5].stepNo} of {totalIndividualStep}
+                            </p>
                             <ProgressBar now={individualHeaders[5].percent} />
                             <br />
                             <h4>{individualHeaders[5].header}</h4>
                         </div>
+                    ) : (
+                        <div>
+                            <p>
+                                Step {organizationHeaders[4].stepNo} of {totalOrganizationStep}
+                            </p>
+                            <ProgressBar now={organizationHeaders[4].percent} />
+                            <br />
+                            <h4>{organizationHeaders[4].header}</h4>
+                        </div>
                     )}
+
                     <br />
                     <Button
                         variant="outline-primary"
@@ -48,7 +60,13 @@ const MembershipForm = (props) => {
                         Add New Membership
                     </Button>
                     <br />
-                    <MembershipList memberships={memberships} />
+                    <MembershipList
+                        memberships={memberships}
+                        userType={userType}
+                        handleAcceptMembership={props.handleAcceptMembership}
+                        handleRejectMembership={props.handleRejectMembership}
+                        handleDeleteMembership={props.handleDeleteMembership}
+                    />
                     <div style={{ height: 100 }} />
                     <Row>
                         <Col sm="6">
@@ -73,14 +91,13 @@ const MembershipForm = (props) => {
                                         props.handleSkipButton();
                                     }}
                                 >
-                                    Skip
+                                    Continue
                                 </Button>
                             )}
                         </Col>
                     </Row>
                     <br />
                 </Col>
-                <Col></Col>
             </Row>
         </Container>
     );

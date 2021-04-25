@@ -6,18 +6,21 @@ import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 import * as RoutePath from '../../constants/route-paths';
 const SideMenu = (props) => {
     const organization = props.organization;
+    const activePage = props.activePage;
     console.log(organization);
     const follows = props.follows;
     const RenderListButtonItem = (label, path) => {
         return (
-            <ListGroup.Item
+            <Button
+                variant={label === activePage ? 'primary' : 'outline-primary'}
+                size="sm"
                 className="list-button"
                 onClick={() => {
                     props.gotoPage(path);
                 }}
             >
                 {label}
-            </ListGroup.Item>
+            </Button>
         );
     };
     if (organization._id) {
@@ -57,15 +60,14 @@ const SideMenu = (props) => {
                         </Button>
                     </OverlayTrigger>
                 )}
-                <Collapsible trigger="MENU" className="special-btn">
-                    <ListGroup>
-                        {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization._id))}
-                        {RenderListButtonItem('Message', '')}
-                        {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
-                        {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
-                        {RenderListButtonItem('Feed')}
-                    </ListGroup>
-                </Collapsible>
+                <hr />
+                {/* <Collapsible trigger="MENU" className="special-btn"> */}
+                {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization._id))}
+                {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
+                {RenderListButtonItem('Message', '')}
+                {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
+                {RenderListButtonItem('Feed')}
+                {/* </Collapsible> */}
             </>
         );
     } else return <></>;

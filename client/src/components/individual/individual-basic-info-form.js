@@ -8,7 +8,7 @@ import { allGenders } from '../../constants/genders';
 import { allRaces } from '../../constants/races';
 import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
 import ProfilePictureUploader from '../../components/user/profile-picture-changer';
-import { date } from '../../actions/validate';
+import { date, required } from '../../actions/validate';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
     const editMode = props.editMode;
@@ -71,10 +71,10 @@ const BasicInfoForm = (props) => {
                         )}
                         <Row>
                             <Col>
-                                <Field name="firstName" type="text" component={InputRender} label="First Name" placeholder="John" />
+                                <Field name="firstName" type="text" component={InputRender} label="First Name" placeholder="John" validate={[required]} />
                             </Col>
                             <Col>
-                                <Field name="lastName" type="text" component={InputRender} label="Last Name" placeholder="Doe" />
+                                <Field name="lastName" type="text" component={InputRender} label="Last Name" placeholder="Doe" validate={[required]} />
                             </Col>
                         </Row>
                         <Row>
@@ -115,12 +115,28 @@ const BasicInfoForm = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="languages" component={CreatableMultiSelectRender} label="Language Fluency" col1={2} col2={10} options={props.allLanguages} zIndex={2000} />
+                                <Field
+                                    name="languages"
+                                    component={CreatableMultiSelectRender}
+                                    label="Language Fluency"
+                                    col1={2}
+                                    col2={10}
+                                    options={props.allLanguages}
+                                    zIndex={2000}
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <Field name="skills" component={CreatableMultiSelectRender} label="Skills" col1={2} col2={10} options={props.allSkills} zIndex={1000} />
+                                <Field
+                                    name="skills"
+                                    component={CreatableMultiSelectRender}
+                                    label="Skills"
+                                    col1={2}
+                                    col2={10}
+                                    options={props.allSkills}
+                                    zIndex={1000}
+                                />
                             </Col>
                         </Row>
 
@@ -140,7 +156,7 @@ const BasicInfoForm = (props) => {
                                 <Field name="address.city" type="text" component={InputRender} label="City" placeholder="" />
                             </Col>
                             <Col>
-                                <Field name="address.code" type="text" component={InputRender} label="ZIP Code" placeholder="1234..." />
+                                <Field name="address.code" type="text" component={InputRender} label="ZIP Code" placeholder="1234..." validate={[required]} />
                             </Col>
                         </Row>
                         <Row>
@@ -180,9 +196,15 @@ const BasicInfoForm = (props) => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col className="right-align">{props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}</Col>
+                            <Col className="right-align">
+                                {props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}
+                            </Col>
                             <Col>
-                                <ProfilePictureUploader profilePicture={props.profilePicture} handlePictureUpload={props.handlePictureUpload} setProfilePicture={props.setProfilePicture} />
+                                <ProfilePictureUploader
+                                    profilePicture={props.profilePicture}
+                                    handlePictureUpload={props.handlePictureUpload}
+                                    setProfilePicture={props.setProfilePicture}
+                                />
                             </Col>
                         </Row>
 

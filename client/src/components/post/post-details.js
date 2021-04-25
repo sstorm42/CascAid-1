@@ -3,6 +3,7 @@ import { Container, Row, Col, Image, Button, Badge } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
+import { interestTypes } from '../../constants/interest-types';
 import moment from 'moment';
 import {
     TagWithLabelRender,
@@ -15,24 +16,28 @@ import {
     BooleanRender,
     KeywordsRender,
 } from '../form_template/details-render';
-import { LikeButtonRender, GoingButtonRender } from '../form_template/buttons-render';
+import { LikeButtonRender, GoingButtonRender, InterestedButtonRender } from '../form_template/buttons-render';
 import PostMapView from './post-map-view';
 import * as RoutePath from '../../constants/route-paths';
 import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
 const DisplayPost = (props) => {
     const post = props.post;
+    console.log('🚀 ~ file: post-details.js ~ line 24 ~ DisplayPost ~ post', post);
     const userId = props.userId;
-    const organization = props.organization;
     const fields = postTypeFields[post.postType];
-    if (post && post._id && organization) {
-        console.log(organization.basicInfo);
-        const name = organization.basicInfo && organization.basicInfo.name ? organization.basicInfo.name : 'Organization Name Not Found';
-        const profilePicture = organization.basicInfo && organization.basicInfo.profilePicture ? organization.basicInfo.profilePicture : defaultOrganizationProfilePicture;
+    if (post && post._id) {
+        const name = post.organizationName ? post.organizationName : 'Organization Name Not Found';
+        const profilePicture = post.organizationProfilePicture ? post.organizationProfilePicture : defaultOrganizationProfilePicture;
+        // const interests = post.interests;
+        const committed = post.interests.filter((i) => i.userId === userId)[0];
+        console.log('🚀 ~ file: post-details.js ~ line 32 ~ DisplayPost ~ committed', committed);
+        let liked = post.interests.filter((interest) => interest.liked).length;
+        let interested = post.interests.filter((interest) => interest.interested).length;
+        let going = post.interests.filter((interest) => interest.going).length;
         return (
             <Container>
                 <Row>
-                    <Col></Col>
-                    <Col md="10" className="parent-page">
+                    <Col className="parent-page">
                         {post.creatorId === userId && (
                             <Row>
                                 <Col>
@@ -68,7 +73,7 @@ const DisplayPost = (props) => {
                                 <Avatar src={profilePicture} round size="50" />
                             </Col>
                             <Col sm="8">
-                                <Link to={'/organization/details/' + organization.userId}>
+                                <Link to={'/organization/details/' + post.creatorId}>
                                     {' '}
                                     <h6>{name}</h6>
                                 </Link>
@@ -77,13 +82,13 @@ const DisplayPost = (props) => {
                         </Row>
                         <br />
                         <Row>
-                            <Col>{ImpactAreasRender('', post.impactAreas)}</Col>
+                            <Col>{ImpactAreasRender('', post.impactAreaNames)}</Col>
                         </Row>
                         <hr />
                         {fields.skills && (
                             <>
                                 <Row>
-                                    <Col>{TagWithLabelRender('', post.skills)}</Col>
+                                    <Col>{TagWithLabelRender('', post.skillNames)}</Col>
                                 </Row>
                                 <hr />
                             </>
@@ -94,7 +99,9 @@ const DisplayPost = (props) => {
                                     {post.startDateTime && <Col>{InfoRender('Start Time', moment(post.startDateTime).format('LLLL'))}</Col>}
                                     {post.endDateTime && <Col>{InfoRender('End Time', moment(post.endDateTime).format('LLLL'))}</Col>}
                                 </Row>
-                                <Row>{post.expectedRequiredHours && <Col>{InfoRender('Expected Required Time', post.expectedRequiredHours + ' Hour')}</Col>}</Row>
+                                <Row>
+                                    {post.expectedRequiredHours && <Col>{InfoRender('Expected Required Time', post.expectedRequiredHours + ' Hour')}</Col>}
+                                </Row>
                                 {post.startDateTime || post.endDateTime ? <hr /> : ''}
                             </>
                         )}
@@ -116,11 +123,19 @@ const DisplayPost = (props) => {
                         )}
 
                         <Row>
-                            <Col>{DescriptionRender('', post.description)}</Col>
+                            {fields.address && post.address && post.address.latitude && post.address.longitude && (
+                                <Col md={4}>
+                                    <PostMapView allPosts={[post]} zoom={16} />
+                                </Col>
+                            )}
+                            <Col>
+                                {DescriptionRender('', post.description)}
+                                <hr />
+                                {KeywordsRender('Keywords', post.keywords)}
+                            </Col>
+                            <hr />
                         </Row>
-                        <Row>
-                            <Col>{KeywordsRender('Keywords', post.keywords)}</Col>
-                        </Row>
+
                         {fields.requiredItems && (
                             <Row>
                                 <Col>{RequiredItemsRender(post.requiredItems)}</Col>
@@ -128,33 +143,112 @@ const DisplayPost = (props) => {
                         )}
                         <Row>
                             <Col>{ImageAndDescriptionRender(post.images)}</Col>
+                            <hr />
                         </Row>
-                        <hr />
-                        {fields.address && post.address && post.address.latitude && post.address.longitude && (
-                            <Row>
-                                <Col>
-                                    <PostMapView allPosts={[post]} zoom={16} />
-                                </Col>
-                            </Row>
-                        )}
+
                         <div style={{ height: 50 }} />
                         <Row>
                             <Col>
-                                <LikeButtonRender
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                />
+                                {interestTypes[post.postType].like ? (
+                                    committed && committed.liked ? (
+                                        <LikeButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelLikePost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <LikeButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleLikePost(post._id);
+                                            }}
+                                        />
+                                    )
+                                ) : (
+                                    <></>
+                                )}
                                 &nbsp;
-                                <GoingButtonRender
-                                    onClick={() => {
-                                        alert('YET TO DEVELOP');
-                                    }}
-                                />
+                                {interestTypes[post.postType].interested ? (
+                                    committed && committed.interested ? (
+                                        <InterestedButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelInterestedPost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <InterestedButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleInterestedPost(post._id);
+                                            }}
+                                        />
+                                    )
+                                ) : (
+                                    <></>
+                                )}
+                                &nbsp;
+                                {interestTypes[post.postType].going ? (
+                                    committed && committed.going ? (
+                                        <GoingButtonRender
+                                            complete={true}
+                                            onClick={() => {
+                                                props.handleCancelGoingPost(post._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <GoingButtonRender
+                                            complete={false}
+                                            onClick={() => {
+                                                props.handleGoingPost(post._id);
+                                            }}
+                                        />
+                                    )
+                                ) : (
+                                    <></>
+                                )}
+                                &nbsp;
+                            </Col>
+                            <Col className="right-align">
+                                {interestTypes[post.postType].like && liked > 0 && (
+                                    <Button
+                                        variant="outline-primary"
+                                        size="sm"
+                                        onClick={() => {
+                                            props.handleClickCommittedButtons(post._id, 'liked');
+                                        }}
+                                    >
+                                        {liked} Liked
+                                    </Button>
+                                )}
+                                &nbsp;
+                                {interestTypes[post.postType].interested && interested > 0 && (
+                                    <Button
+                                        variant="outline-secondary"
+                                        size="sm"
+                                        onClick={() => {
+                                            props.handleClickCommittedButtons(post._id, 'interested');
+                                        }}
+                                    >
+                                        {interested} Interested
+                                    </Button>
+                                )}
+                                &nbsp;
+                                {interestTypes[post.postType].going && going > 0 && (
+                                    <Button
+                                        variant="outline-info"
+                                        size="sm"
+                                        onClick={() => {
+                                            props.handleClickCommittedButtons(post._id, 'going');
+                                        }}
+                                    >
+                                        {going} Going
+                                    </Button>
+                                )}
                             </Col>
                         </Row>
                     </Col>
-                    <Col></Col>
                 </Row>
             </Container>
         );

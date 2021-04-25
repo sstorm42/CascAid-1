@@ -4,6 +4,8 @@ const { ImpactArea } = require('../models/impact-area-model');
 const { OrganizationType } = require('../models/organization-type-model');
 const { Individual } = require('../models/individual-user-model');
 const { Organization } = require('../models/organization-model');
+const { Follow } = require('../models/follow-model');
+const { Membership } = require('../models/membership-model');
 const UserResponse = require('../responses/user-response');
 const ImpactAreaController = require('./impact-area-controller');
 const SkillController = require('./skill-controller');
@@ -378,8 +380,69 @@ exports.getPublicInfo = async (req, res) => {
             .populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 })
             .populate('involvement.impactAreas', { _id: 1, label: 1, value: 1 })
             .populate('basicInfo.organizationTypes', { _id: 1, label: 1, value: 1 });
+        const options = {
+            status: 'accepted',
+        };
+        let match = {
+            status: 'accepted',
+        };
+        if (user.userType === 'individual') {
+            match['individualId'] = ObjectId(userId);
+        } else if (user.userType === 'organization') {
+            match['organizationId'] = ObjectId(userId);
+        }
+
+        const lookUps = [
+            {
+                $lookup: {
+                    from: 'users',
+                    localField: 'individualId',
+                    foreignField: '_id',
+                    as: 'individual',
+                },
+            },
+            {
+                $lookup: {
+                    from: 'users',
+                    localField: 'organizationId',
+                    foreignField: '_id',
+                    as: 'organization',
+                },
+            },
+        ];
+        const membershipProjects = {
+            _id: 1,
+            individualId: 1,
+            organizationId: 1,
+            status: 1,
+            membershipType: 1,
+            requestedBy: 1,
+            startTime: 1,
+            endTime: 1,
+            isCurrent: 1,
+            isActive: 1,
+            isDeleted: 1,
+            createdAt: 1,
+        };
+        const project = {
+            ...membershipProjects,
+            individual: { $arrayElemAt: ['$individual', 0] },
+            organization: { $arrayElemAt: ['$organization', 0] },
+        };
+        const projectWind = {
+            ...membershipProjects,
+            individualFirstName: '$individual.basicInfo.firstName',
+            individualLastName: '$individual.basicInfo.lastName',
+            individualProfilePicture: '$individual.basicInfo.profilePicture',
+            organizationName: '$organization.basicInfo.name',
+            organizationProfilePicture: '$organization.basicInfo.profilePicture',
+        };
+
+        const aggregateOptions = [];
+        aggregateOptions.push({ $match: match }, ...lookUps, { $project: project }, { $project: projectWind });
+        const memberships = await Membership.aggregate(aggregateOptions);
         console.log(user);
-        if (user._id) return res.status(200).send({ ...UserResponse.UserFound, user });
+        if (user._id) return res.status(200).send({ ...UserResponse.UserFound, user, memberships });
         else return res.status(404).send(UserResponse.UserNotFound);
     } catch (err) {
         console.log(err.message);
@@ -389,6 +452,9 @@ exports.getPublicInfo = async (req, res) => {
 
 exports.getAllSuggestions = async (req, res) => {
     try {
+        let limit = 100;
+        if (req.query.limit) limit = JSON.parse(req.query.limit);
+        console.log(limit);
         const userId = req.user._id;
         const userType = req.query.userType;
         let impactAreas = [];
@@ -402,14 +468,25 @@ exports.getAllSuggestions = async (req, res) => {
             }
             address = user.basicInfo.address;
         }
-        console.log(impactAreas);
-        console.log(address);
+        let followingIds = [];
+        const follows = await Follow.find({ followerId: req.params.userId });
+
+        if (follows && follows.length > 0) {
+            // console.log(follows)
+            // const followings = follows.toObject();
+            followingIds = follows.map((following) => following.followingId);
+        }
+
+        console.log('🚀 ~ file: user-controller.js ~ line 410 ~ exports.getAllSuggestions= ~ follows', followingIds);
+
         let match1 = {};
         let match2 = {};
         if (impactAreas && impactAreas.length > 0) {
+            match1['_id'] = { $nin: followingIds };
             match1['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
         }
         if (address) {
+            match1['_id'] = { $nin: followingIds };
             if (address.code) match2['basicInfo.address.code'] = { $regex: address.code, $options: 'i' };
             if (address.city) match2['basicInfo.address.city'] = { $regex: address.city, $options: 'i' };
         }
@@ -453,13 +530,14 @@ exports.getAllSuggestions = async (req, res) => {
             match = {
                 $or: [match1, match2],
             };
-        console.log('Coming here');
-        aggregateOptions.push({ $match: match }, ...lookUps, { $project: project });
+
+        aggregateOptions.push({ $match: match }, ...lookUps, { $project: project }, { $limit: limit });
         const users = await User.aggregate(aggregateOptions);
 
         if (users) return res.status(200).send({ ...UserResponse.UserFound, users });
         else return res.status(404).send(UserResponse.UserNotFound);
     } catch (err) {
+        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };

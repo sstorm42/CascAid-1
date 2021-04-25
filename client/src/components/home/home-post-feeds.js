@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import { Container, Row, Col, Image, Button, Modal, Badge } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { FaThumbsUp, FaLocationArrow, FaHeart } from 'react-icons/fa';
+import { interestTypes } from '../../constants/interest-types';
 import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../form_template/buttons-render';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
@@ -10,10 +10,6 @@ const HomePostFeed = (props) => {
     const userId = props.userId;
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = (interestType, postId) => {
-        setShow(true);
-    };
     const posts = props.allPosts;
     let interest = {};
 
@@ -43,7 +39,11 @@ const HomePostFeed = (props) => {
                                 <Col>
                                     <Row>
                                         <Col sm="1">
-                                            <Avatar src={post.organizationProfilePicture ? post.organizationProfilePicture[0] : defaultOrganizationProfilePicture} rounded={3} size="50" />
+                                            <Avatar
+                                                src={post.organizationProfilePicture ? post.organizationProfilePicture[0] : defaultOrganizationProfilePicture}
+                                                rounded={3}
+                                                size="50"
+                                            />
                                         </Col>
                                         <Col sm="8">
                                             <h6
@@ -110,86 +110,98 @@ const HomePostFeed = (props) => {
 
                             <Row>
                                 <Col>
-                                    {interest.liked ? (
-                                        <LikeButtonRender
-                                            complete={true}
-                                            onClick={() => {
-                                                props.handleCancelLikePost(post._id);
-                                            }}
-                                        />
+                                    {interestTypes[post.postType].like ? (
+                                        interest.liked ? (
+                                            <LikeButtonRender
+                                                complete={true}
+                                                onClick={() => {
+                                                    props.handleCancelLikePost(post._id);
+                                                }}
+                                            />
+                                        ) : (
+                                            <LikeButtonRender
+                                                complete={false}
+                                                onClick={() => {
+                                                    props.handleLikePost(post._id);
+                                                }}
+                                            />
+                                        )
                                     ) : (
-                                        <LikeButtonRender
-                                            complete={false}
-                                            onClick={() => {
-                                                props.handleLikePost(post._id);
-                                            }}
-                                        />
+                                        <></>
                                     )}
                                     &nbsp;
-                                    {interest.interested ? (
-                                        <InterestedButtonRender
-                                            complete={true}
-                                            onClick={() => {
-                                                props.handleCancelInterestedPost(post._id);
-                                            }}
-                                        />
+                                    {interestTypes[post.postType].interested ? (
+                                        interest.interested ? (
+                                            <InterestedButtonRender
+                                                complete={true}
+                                                onClick={() => {
+                                                    props.handleCancelInterestedPost(post._id);
+                                                }}
+                                            />
+                                        ) : (
+                                            <InterestedButtonRender
+                                                complete={false}
+                                                onClick={() => {
+                                                    props.handleInterestedPost(post._id);
+                                                }}
+                                            />
+                                        )
                                     ) : (
-                                        <InterestedButtonRender
-                                            complete={false}
-                                            onClick={() => {
-                                                props.handleInterestedPost(post._id);
-                                            }}
-                                        />
+                                        <></>
                                     )}
                                     &nbsp;
-                                    {interest.going ? (
-                                        <GoingButtonRender
-                                            complete={true}
-                                            onClick={() => {
-                                                props.handleCancelGoingPost(post._id);
-                                            }}
-                                        />
+                                    {interestTypes[post.postType].going ? (
+                                        interest.going ? (
+                                            <GoingButtonRender
+                                                complete={true}
+                                                onClick={() => {
+                                                    props.handleCancelGoingPost(post._id);
+                                                }}
+                                            />
+                                        ) : (
+                                            <GoingButtonRender
+                                                complete={false}
+                                                onClick={() => {
+                                                    props.handleGoingPost(post._id);
+                                                }}
+                                            />
+                                        )
                                     ) : (
-                                        <GoingButtonRender
-                                            complete={false}
-                                            onClick={() => {
-                                                props.handleGoingPost(post._id);
-                                            }}
-                                        />
+                                        <></>
                                     )}
                                     &nbsp;
                                 </Col>
                                 <Col className="right-align">
-                                    {liked > 0 && (
+                                    {interestTypes[post.postType].like && liked > 0 && (
                                         <Button
                                             variant="outline-primary"
                                             size="sm"
                                             onClick={() => {
-                                                handleShow('like', post._id);
+                                                props.handleClickCommittedButtons(post._id, 'liked');
                                             }}
                                         >
                                             {liked} Liked
                                         </Button>
                                     )}
                                     &nbsp;
-                                    {interested > 0 && (
+                                    {interestTypes[post.postType].interested && interested > 0 && (
                                         <Button
                                             variant="outline-secondary"
                                             size="sm"
                                             onClick={() => {
-                                                handleShow('interest', post._id);
+                                                props.handleClickCommittedButtons(post._id, 'interested');
                                             }}
                                         >
                                             {interested} Interested
                                         </Button>
                                     )}
                                     &nbsp;
-                                    {going > 0 && (
+                                    {interestTypes[post.postType].going && going > 0 && (
                                         <Button
                                             variant="outline-info"
                                             size="sm"
                                             onClick={() => {
-                                                handleShow('going', post._id);
+                                                props.handleClickCommittedButtons(post._id, 'going');
                                             }}
                                         >
                                             {going} Going

@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container, Image, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Container, Image, Table, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import moment from 'moment';
+import { getMembershipStatusByValue, getMembershipByValue } from '../../constants/membership-types';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-
+import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
+const TimeRender = (time) => {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return `${months[time.month]}-${time.year}`;
+};
 const DetailsView = (props) => {
     const organization = props.organization;
+    const memberships = props.memberships;
+    console.log('🚀 ~ file: organization-details-view.js ~ line 9 ~ DetailsView ~ memberships', memberships);
     const follows = props.follows;
     const infoRender = (label, value) => {
         if (value) {
@@ -92,7 +99,34 @@ const DetailsView = (props) => {
                 {infoRender('Phone', basicInfo.phone)}
                 {infoRender('EIN', basicInfo.ein)}
                 {infoRender('Address', addressMaker(basicInfo.address))}
-
+                <b>Memberships</b>
+                <Table>
+                    <thead></thead>
+                    <tbody>
+                        {memberships.map((membership, i) => {
+                            const name = membership.individualFirstName + ' ' + membership.individualLastName;
+                            const profilePicture = membership.individualProfilePicture ? membership.individualProfilePicture : defaultIndividualProfilePicture;
+                            return (
+                                <tr key={i}>
+                                    <td>
+                                        <Image src={profilePicture} style={{ height: 32, width: 32 }} thumbnail />
+                                    </td>
+                                    <td>{name}</td>
+                                    <td>{getMembershipByValue(membership.membershipType)}</td>
+                                    <td>{TimeRender(membership.startTime)}</td>
+                                    <td>{membership.isCurrent}</td>
+                                    {membership.isCurrent ? (
+                                        <td>
+                                            <Badge variant="primary">Current Member</Badge>
+                                        </td>
+                                    ) : (
+                                        <td>{TimeRender(membership.endTime)}</td>
+                                    )}
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </Table>
                 <hr />
                 <div style={{ height: 25 }} />
                 {keywordsRender('Service Areas', serviceInfo.serviceAreas)}

@@ -43,7 +43,7 @@ class MembershipDA {
 
     delete_membership = (membershipId) => {
         return axios
-            .put(APIPaths.deleteMembership(membershipId), APIPaths.apiConfig())
+            .delete(APIPaths.deleteMembership(membershipId), APIPaths.apiConfig())
             .then((response) => {
                 return response.data;
             })
@@ -51,7 +51,7 @@ class MembershipDA {
     };
     accept_membership = (membershipId) => {
         return axios
-            .put(APIPaths.acceptMembership(membershipId), APIPaths.apiConfig())
+            .put(APIPaths.acceptMembership(membershipId), {}, APIPaths.apiConfig())
             .then((response) => {
                 return response.data;
             })
@@ -59,7 +59,7 @@ class MembershipDA {
     };
     reject_membership = (membershipId) => {
         return axios
-            .put(APIPaths.rejectMembership(membershipId), APIPaths.apiConfig())
+            .put(APIPaths.rejectMembership(membershipId), {}, APIPaths.apiConfig())
             .then((response) => {
                 return response.data;
             })

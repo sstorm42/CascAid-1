@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import Select from 'react-select';
 import Pagination from 'react-js-pagination';
+import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
 import FilterEvent from '../../components/search/filter-event';
 import { allSearchablePostTypes } from '../../constants/post-types';
@@ -18,6 +19,7 @@ const SearchEvent = (props) => {
     const [activePage, setActivePage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
+    const [userId, setUserId] = useState('');
     const [filter, setFilter] = useState({
         title: '',
         impactAreas: [],
@@ -69,11 +71,40 @@ const SearchEvent = (props) => {
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
+            const user = props.auth.user;
+            setUserId(user._id);
             props.dispatch(getAllGlobalImpactAreas());
             setLoading(false);
         };
         getInitialInfo();
     }, []);
+    const handleLikePost = (postId) => {
+        props.dispatch(likePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'like'));
+    };
+    const handleCancelLikePost = (postId) => {
+        props.dispatch(cancelLikePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'unlike'));
+    };
+
+    const handleInterestedPost = (postId) => {
+        props.dispatch(interestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'interested'));
+    };
+    const handleCancelInterestedPost = (postId) => {
+        console.log('🚀 ~ file: home.js ~ line 46 ~ handleCancelInterestedPost ~ postId', postId);
+        props.dispatch(cancelInterestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'uninterested'));
+    };
+
+    const handleGoingPost = (postId) => {
+        props.dispatch(goingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'going'));
+    };
+    const handleCancelGoingPost = (postId) => {
+        props.dispatch(cancelGoingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'ungoing'));
+    };
     if (loading) return <LoadingAnim />;
     return (
         <Container>
@@ -127,15 +158,28 @@ const SearchEvent = (props) => {
                             />
                             <EventListView
                                 // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
-                                allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                                allPosts={
+                                    props.getAllPostsResponse.success
+                                        ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1)
+                                        : []
+                                }
                                 gotoPostDetails={gotoPostDetails}
+                                userId={userId}
+                                handleLikePost={handleLikePost}
+                                handleCancelLikePost={handleCancelLikePost}
+                                handleInterestedPost={handleInterestedPost}
+                                handleCancelInterestedPost={handleCancelInterestedPost}
+                                handleGoingPost={handleGoingPost}
+                                handleCancelGoingPost={handleCancelGoingPost}
                             />
                         </>
                     )}
                     {viewType === 'map' && (
                         <EventMapView
                             // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
-                            allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                            allPosts={
+                                props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []
+                            }
                             zoom={6}
                             currentLocation={currentLocation}
                         />

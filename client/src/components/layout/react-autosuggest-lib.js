@@ -48,7 +48,7 @@ class App extends React.Component {
             <div
                 style={{ width: '100%' }}
                 onClick={() => {
-                    this.props.history.push(`/${suggestion.userType}/details/${suggestion.userId}`);
+                    this.props.history.push(`/${suggestion.userType}/details/${suggestion._id}`);
                 }}
             >
                 {suggestion.userType === 'individual' && <small className="suggestion-text">{this.cutOffName(this.individualNameRender(suggestion))}</small>}

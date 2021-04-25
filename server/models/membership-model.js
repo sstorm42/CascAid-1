@@ -12,6 +12,7 @@ const membershipSchema = mongoose.Schema(
         requestedBy: { type: String, enum: ['individual', 'organization'] },
         startTime: { type: monthYearSchema },
         endTime: { type: monthYearSchema },
+        isCurrent: { type: Boolean, default: false },
         isActive: { type: Boolean, default: true },
         isDeleted: { type: Boolean, default: false },
     },

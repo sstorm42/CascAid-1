@@ -14,10 +14,51 @@ const initialState = {
     going: {},
     cancelGoing: {},
 };
+const changePostInterest = (post_, { postId, userId, type }) => {
+    let post = post_.post;
+    if (!post) return post_;
+    let interests = post.interests || [];
+    let exists = false;
+    for (let j = 0; j < interests.length; j++) {
+        if (interests[j].userId === userId) {
+            exists = true;
+            if (type === 'like') {
+                interests[j].liked = true;
+            } else if (type === 'unlike') {
+                interests[j].liked = false;
+            } else if (type === 'interested') {
+                interests[j].interested = true;
+            } else if (type === 'uninterested') {
+                interests[j].interested = false;
+            } else if (type === 'going') {
+                interests[j].going = true;
+            } else if (type === 'ungoing') {
+                interests[j].going = false;
+            }
+        }
+    }
+    if (!exists) {
+        interests.push({
+            userId,
+            postId,
+            liked: type === 'like' ? true : false,
+            interested: type === 'interested' ? true : false,
+            going: type === 'going' ? true : false,
+        });
+    }
+    post.interests = interests;
+    return {
+        post: post,
+        success: true,
+        message: 'Post interest changed',
+    };
+};
 
-const changePostInterest = (posts, { postId, userId, type }) => {
+const changePostsInterest = (posts, { postId, userId, type }) => {
     console.log('🚀 ~ file: post-reducer.js ~ line 19 ~ changePostInterest ~ posts, { postId, userId, type }', posts, { postId, userId, type });
+    if (!posts) return posts;
     let posts_ = posts.allPosts;
+    if (!posts_ || (posts_ && posts_.length < 1)) return posts;
     for (let i = 0; i < posts_.length; i++) {
         if (posts_[i]._id === postId) {
             let interests = posts_[i].interests || [];
@@ -92,7 +133,12 @@ const PostReducer = (state = initialState, action) => {
         case Types.CANCEL_GOING_POST:
             return { ...state, cancelGoing: action.payload };
         case Types.CHANGE_POST_INTEREST:
-            return { ...state, homeFeed: changePostInterest(state.homeFeed, action.payload) };
+            return {
+                ...state,
+                homeFeed: changePostsInterest(state.homeFeed, action.payload),
+                getAllPosts: changePostsInterest(state.getAllPosts, action.payload),
+                getPost: changePostInterest(state.getPost, action.payload),
+            };
         default:
             return { ...state };
     }

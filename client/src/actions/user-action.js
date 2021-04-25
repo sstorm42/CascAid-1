@@ -120,9 +120,9 @@ export const getAllUsers = (filter) => {
 };
 
 // SUGGESTIONS
-export const getAllSuggestedUsers = (userId, userType) => {
+export const getAllSuggestedUsers = (userId, userType, limit) => {
     return {
         type: Types.GET_ALL_SUGGESTED_USERS,
-        payload: UserDA.get_all_suggested_users(userId, userType),
+        payload: UserDA.get_all_suggested_users(userId, userType, limit),
     };
 };

@@ -20,4 +20,6 @@ post.post('/:postId/cancel-interested', allowIfLoggedIn, PostController.cancelIn
 post.post('/:postId/going', allowIfLoggedIn, PostController.going);
 post.post('/:postId/cancel-going', allowIfLoggedIn, PostController.cancelGoing);
 
+post.get('/:postId/committed/', allowIfLoggedIn, PostController.getAllCommitted);
+post.get('/:postId/committed/:userId', allowIfLoggedIn, PostController.getCommitted);
 module.exports = post;

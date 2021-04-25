@@ -6,6 +6,7 @@ import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart }
 import { BiDetail } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
+import { FiUserCheck, FiUserX } from 'react-icons/fi';
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
         {props.title ? props.title : 'NA'}
@@ -90,27 +91,33 @@ export const SendButtonRender = (props) => {
 };
 
 export const LikeButtonRender = (props) => {
+    const toolTipTitle = props.complete ? 'Unlike' : 'Like';
+    const className = props.complete ? 'filled-like-btn' : '';
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: props.complete ? 'Unlike' : 'Like' })}>
-            <Button className="actionButton" variant="outline-primary" className={props.complete ? 'filled-like-btn' : ''} size="sm" {...props}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
+            <Button className="actionButton" variant="outline-primary" className={className} size="sm" {...props}>
                 <FaThumbsUp />
             </Button>
         </OverlayTrigger>
     );
 };
 export const InterestedButtonRender = (props) => {
+    const toolTipTitle = props.complete ? 'Uninterested' : 'Interested';
+    const className = props.complete ? 'filled-interest-btn' : '';
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: props.complete ? 'Uninterested' : 'Interested' })}>
-            <Button className="actionButton" variant="outline-secondary" className={props.complete ? 'filled-interest-btn' : ''} size="sm" {...props}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
+            <Button className="actionButton" variant="outline-secondary" className={className} size="sm" {...props}>
                 <FaHeart />
             </Button>
         </OverlayTrigger>
     );
 };
 export const GoingButtonRender = (props) => {
+    const toolTipTitle = props.complete ? 'Not going' : 'Going';
+    const className = props.complete ? 'filled-going-btn' : '';
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: props.complete ? 'Not going' : 'Going' })}>
-            <Button className="actionButton" variant="outline-info" className={props.complete ? 'filled-going-btn' : ''} size="sm" {...props}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
+            <Button className="actionButton" variant="outline-info" className={className} size="sm" {...props}>
                 <FaLocationArrow />
             </Button>
         </OverlayTrigger>
@@ -161,6 +168,25 @@ export const UnreadButtonRender = (props) => {
         <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Mark as Unread' })}>
             <Button className="actionButton" variant="outline-info" size="sm" {...props}>
                 <IoMailUnreadOutline />
+            </Button>
+        </OverlayTrigger>
+    );
+};
+
+export const AcceptButtonRender = (props) => {
+    return (
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Accept' })}>
+            <Button className="actionButton" variant="success" size="sm" {...props}>
+                <FiUserCheck />
+            </Button>
+        </OverlayTrigger>
+    );
+};
+export const RejectButtonRender = (props) => {
+    return (
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Reject' })}>
+            <Button className="actionButton" variant="danger" size="sm" {...props}>
+                <FiUserX />
             </Button>
         </OverlayTrigger>
     );

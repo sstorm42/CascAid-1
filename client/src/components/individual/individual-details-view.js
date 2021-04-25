@@ -1,10 +1,6 @@
 import React from 'react';
-import { Container, Image, Row, Col, Badge } from 'react-bootstrap';
-import moment from 'moment';
+import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { getLanguagesByValues } from '../../constants/languages';
-import { getRacesByValues } from '../../constants/races';
-import { getGenderByValue } from '../../constants/genders';
 import { defaultIndividualProfilePicture } from '../../constants/default-images';
 const DetailsView = (props) => {
     const individual = props.individual;
@@ -74,7 +70,12 @@ const DetailsView = (props) => {
             <Container>
                 <Row>
                     <Col className="right-align" sm="2">
-                        <Image className="left-image" src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultIndividualProfilePicture} width="100%" thumbnail />
+                        <Image
+                            className="left-image"
+                            src={basicInfo.profilePicture ? basicInfo.profilePicture : defaultIndividualProfilePicture}
+                            width="100%"
+                            thumbnail
+                        />
                     </Col>
                     <Col sm="9" className="left-border">
                         <h3>{basicInfo.firstName + ' ' + basicInfo.lastName}</h3>

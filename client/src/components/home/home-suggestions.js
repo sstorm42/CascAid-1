@@ -6,10 +6,12 @@ import { FollowButtonRender } from '../../components/form_template/buttons-rende
 import { BsFillExclamationDiamondFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
+import { CSSTransition } from 'react-transition-group';
+import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 const HomeSuggestions = (props) => {
     const organizations = props.allOrganizations;
     console.log('🚀 ~ file: home-suggestions.js ~ line 11 ~ HomeSuggestions ~ organizations', organizations);
-
+    const cards = props.cards;
     const popover = (
         <Popover id="popover-basic">
             <Popover.Title as="h4">Suggestions</Popover.Title>
@@ -41,65 +43,95 @@ const HomeSuggestions = (props) => {
             <br />
             {organizations.map((org, i) => {
                 return (
-                    <div key={i} className="post-box">
-                        <Row>
-                            <Col>
-                                <Row>
-                                    <Col sm="2">
-                                        <Avatar src={org.profilePicture ? org.profilePicture : defaultOrganizationProfilePicture} round={5} size={30} />
-                                    </Col>
-                                    <Col sm="10">
-                                        <Link to={`/organization/details/${org._id}`}>
-                                            {' '}
-                                            <h6>{org.name}</h6>
-                                        </Link>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                {org.organizationTypes &&
-                                    org.organizationTypes.length > 0 &&
-                                    org.organizationTypes.map((type, i) => {
-                                        return (
-                                            <Badge variant="info" className="badge-single-small" key={i}>
-                                                {type.label}
-                                            </Badge>
-                                        );
-                                    })}
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                {org.impactAreas &&
-                                    org.impactAreas.length > 0 &&
-                                    org.impactAreas.map((area, i) => {
-                                        return (
-                                            <Badge variant="light" className="badge-single-small impact-area-badge" key={i}>
-                                                {area.label}
-                                            </Badge>
-                                        );
-                                    })}
-                            </Col>
-                        </Row>
-                        {org.address ? (
+                    <CSSTransition
+                        in={cards[org._id]}
+                        timeout={{
+                            enter: 0,
+                            exit: 2000,
+                        }}
+                        unmountOnExit
+                        classNames="my-node"
+                        key={i}
+                    >
+                        <div className="post-box">
                             <Row>
                                 <Col>
-                                    <small>{org.address.street1 + ', ' + org.address.street2 + ', ' + org.address.city + ', ' + org.address.code}</small>
+                                    <Row>
+                                        <Col sm="2">
+                                            <Avatar src={org.profilePicture ? org.profilePicture : defaultOrganizationProfilePicture} round={5} size={30} />
+                                        </Col>
+                                        <Col sm="10">
+                                            <Link to={`/organization/details/${org._id}`}>
+                                                {' '}
+                                                <h6>{org.name}</h6>
+                                            </Link>
+                                        </Col>
+                                    </Row>
                                 </Col>
                             </Row>
-                        ) : (
-                            <></>
-                        )}
-                        <br />
-                        <Row>
-                            <Col>
-                                <FollowButtonRender />
-                                &nbsp;
-                            </Col>
-                        </Row>
-                    </div>
+                            <Row>
+                                <Col>
+                                    {org.organizationTypes &&
+                                        org.organizationTypes.length > 0 &&
+                                        org.organizationTypes.map((type, i) => {
+                                            return (
+                                                <Badge variant="info" className="badge-single-small" key={i}>
+                                                    {type.label}
+                                                </Badge>
+                                            );
+                                        })}
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    {org.impactAreas &&
+                                        org.impactAreas.length > 0 &&
+                                        org.impactAreas.map((area, i) => {
+                                            return (
+                                                <Badge variant="light" className="badge-single-small impact-area-badge" key={i}>
+                                                    {area.label}
+                                                </Badge>
+                                            );
+                                        })}
+                                </Col>
+                            </Row>
+                            {org.address ? (
+                                <Row>
+                                    <Col>
+                                        <small>{org.address.street1 + ', ' + org.address.street2 + ', ' + org.address.city + ', ' + org.address.code}</small>
+                                    </Col>
+                                </Row>
+                            ) : (
+                                <></>
+                            )}
+                            <br />
+                            <Row>
+                                <Col>
+                                    {/* <FollowButtonRender />
+                                    &nbsp; */}
+                                    {cards[org._id] ? (
+                                        <FollowButtonRender
+                                            className="details-follow-btn"
+                                            onClick={() => {
+                                                props.handleFollowOrganization(org._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <Button
+                                            size="sm"
+                                            variant="outline-info"
+                                            className="details-following-btn"
+                                            onClick={() => {
+                                                props.handleUnfollowClick();
+                                            }}
+                                        >
+                                            <RiUserFollowFill /> Following
+                                        </Button>
+                                    )}
+                                </Col>
+                            </Row>
+                        </div>
+                    </CSSTransition>
                 );
             })}
         </div>

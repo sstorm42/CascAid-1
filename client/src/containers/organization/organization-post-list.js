@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 import EventListView from '../../components/event/event-card-view';
 import { getUserPublicInfo } from '../../actions/user-action';
 import { getAllPostsByFilter } from '../../actions/post-action';
@@ -12,7 +13,7 @@ import { postDetailsPage } from '../../constants/route-paths';
 const SearchEvent = (props) => {
     const [loading, setLoading] = useState(false);
     const [follows, setFollows] = useState(false);
-
+    const [userId, setUserId] = useState('');
     const gotoPostDetails = (postType, postId) => {
         props.history.push(postDetailsPage(postType, postId));
     };
@@ -20,9 +21,10 @@ const SearchEvent = (props) => {
         const getInitialInfo = () => {
             setLoading(true);
             console.log('Came here');
-            const userId = props.match.params.userId;
-            props.dispatch(getUserPublicInfo(userId));
+            const organizationId = props.match.params.userId;
+            props.dispatch(getUserPublicInfo(organizationId));
             const user = props.auth.user;
+            setUserId(user._id);
             const postType = props.match.params.postType;
             props.dispatch(checkIfFollower(user._id, props.match.params.userId));
             setLoading(false);
@@ -76,6 +78,33 @@ const SearchEvent = (props) => {
     const gotoPage = (url) => {
         props.history.push(url);
     };
+    const handleLikePost = (postId) => {
+        props.dispatch(likePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'like'));
+    };
+    const handleCancelLikePost = (postId) => {
+        props.dispatch(cancelLikePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'unlike'));
+    };
+
+    const handleInterestedPost = (postId) => {
+        props.dispatch(interestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'interested'));
+    };
+    const handleCancelInterestedPost = (postId) => {
+        console.log('🚀 ~ file: home.js ~ line 46 ~ handleCancelInterestedPost ~ postId', postId);
+        props.dispatch(cancelInterestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'uninterested'));
+    };
+
+    const handleGoingPost = (postId) => {
+        props.dispatch(goingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'going'));
+    };
+    const handleCancelGoingPost = (postId) => {
+        props.dispatch(cancelGoingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'ungoing'));
+    };
     if (loading) return <LoadingAnim />;
     return (
         <Container>
@@ -84,6 +113,7 @@ const SearchEvent = (props) => {
                     <Row>
                         <Col className="right-align" sm="2">
                             <SideSubMenu
+                                activePage="Impacts"
                                 organization={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.user : {}}
                                 handleFollowClick={handleFollowClick}
                                 handleUnfollowClick={handleUnfollowClick}
@@ -97,6 +127,13 @@ const SearchEvent = (props) => {
                             <EventListView
                                 allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
                                 gotoPostDetails={gotoPostDetails}
+                                userId={userId}
+                                handleLikePost={handleLikePost}
+                                handleCancelLikePost={handleCancelLikePost}
+                                handleInterestedPost={handleInterestedPost}
+                                handleCancelInterestedPost={handleCancelInterestedPost}
+                                handleGoingPost={handleGoingPost}
+                                handleCancelGoingPost={handleCancelGoingPost}
                             />
                         </Col>
                     </Row>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
+import { Container, Row, Col, Nav } from 'react-bootstrap';
 import OrganizationListView from '../../components/organization/organization-list-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllUsers } from '../../actions/user-action';

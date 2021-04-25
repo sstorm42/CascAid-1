@@ -20,11 +20,23 @@ exports.UpdateFailed = {
     message: 'Notification is not updated successfully',
 };
 
+exports.Types = {
+    FriendRequest: 'friend-request',
+    FriendAccept: 'friend-accept',
+    Follow: 'follow',
+    Like: 'like',
+    Interest: 'interest',
+    Going: 'going',
+    MembershipRequest: 'membership-request',
+    MembershipAccept: 'membership-accept',
+};
 exports.Descriptions = {
-    FriendRequest: { type: 'friend-request', title: 'You have got a new friend request' },
-    FriendAccept: { type: 'friend-accept', title: 'You have a new friend' },
-    Follow: { type: 'follow', title: 'You have got a new Follower' },
-    Like: { type: 'like', title: 'Someone liked your post' },
-    Interest: { type: 'interest', title: 'Someone is interested at your post' },
-    Going: { type: 'going', title: 'Someone shall be going at your post' },
+    FriendRequest: { type: 'friend-request' },
+    FriendAccept: { type: 'friend-accept' },
+    Follow: { type: 'follow' },
+    Like: { type: 'like' },
+    Interest: { type: 'interest' },
+    Going: { type: 'going' },
+    MembershipRequest: { type: 'membership-request' },
+    MembershipAccept: { type: 'membership-accept' },
 };

@@ -41,6 +41,9 @@ const Involvement = (props) => {
         const url = window.location.pathname;
         if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
+        return () => {
+            props.dispatch(clearInvolvement());
+        };
     }, [props.auth]);
 
     // MEMBERSHIP

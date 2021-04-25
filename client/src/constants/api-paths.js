@@ -76,7 +76,8 @@ export const checkIfFollower = (followerId, followingId) => serverAddress + `/ap
 
 // HOME
 export const getAllFeedPosts = serverAddress + `/api/posts/feed`;
-export const getAllSuggestedUsers = (userId, userType) => serverAddress + `/api/users/${userId}/suggestions${userType ? `?userType=${userType}` : ''}`;
+export const getAllSuggestedUsers = (userId, userType, limit) =>
+    serverAddress + `/api/users/${userId}/suggestions${userType ? `?userType=${userType}` : ''}${limit ? `&limit=${limit}` : ``}`;
 
 // export const getAllOrganizationSuggestions = serverAddress + '/api/users/suggestions';
 // export const getAllSuggestedPosts = (userId) => serverAddress + '/api/posts/suggestions';
@@ -90,6 +91,8 @@ export const cancelInterestPost = (postId) => serverAddress + `/api/posts/${post
 
 export const goingPost = (postId) => serverAddress + `/api/posts/${postId}/going`;
 export const cancelGoingPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-going`;
+
+export const getAllCommittedPersons = (postId, type) => serverAddress + `/api/posts/${postId}/committed/?interestType=${type}`;
 
 // NOTIFICATION
 export const getNotificationsCount = (onlyNew) => serverAddress + `/api/notifications/count${onlyNew ? '?onlyNew=true' : ''}`;

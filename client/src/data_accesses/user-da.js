@@ -90,10 +90,10 @@ class UserDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_all_suggested_users = (userId, userType) => {
-        console.log(APIPaths.getAllSuggestedUsers(userId, userType));
+    get_all_suggested_users = (userId, userType, limit) => {
+        // console.log(APIPaths.getAllSuggestedUsers(userId, userType,limit));
         return axios
-            .get(APIPaths.getAllSuggestedUsers(userId, userType), APIPaths.apiConfig())
+            .get(APIPaths.getAllSuggestedUsers(userId, userType, limit), APIPaths.apiConfig())
             .then((response) => {
                 console.log(response);
                 return response.data;

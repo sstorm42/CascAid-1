@@ -3,12 +3,15 @@ const { Follow } = require('../models/follow-model');
 const { Interest } = require('../models/interest-model');
 const { User } = require('../models/user-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
+const ObjectId = require('mongoose').Types.ObjectId;
 const RESPONSES = require('../responses/post-response');
 const mongoose = require('mongoose');
 const ImpactAreaController = require('./impact-area-controller');
 const SkillController = require('./skill-controller');
 const NotificationController = require('./notification-controller');
 const NotificationResponse = require('../responses/notification-response');
+const LOOKUPS = require('./lookup-collection');
+const PROJECTS = require('./project-collection');
 exports.createOne = async (req, res) => {
     try {
         let post = req.body;
@@ -48,16 +51,24 @@ exports.createOne = async (req, res) => {
 
 exports.getOne = async (req, res) => {
     try {
-        const postId = req.params.postId;
+        const match = {
+            _id: ObjectId(req.params.postId),
+        };
+        const lookUps = [
+            LOOKUPS.post_organization,
+            LOOKUPS.post_impactAreas,
+            LOOKUPS.post_skills,
+            LOOKUPS.post_interests,
+        ];
+        const project = PROJECTS.post_get_one;
 
-        const post = await Post.findById(postId)
-            .populate('impactAreas', { _id: 1, label: 1, value: 1 })
-            .populate('skills', { _id: 1, label: 1, value: 1 });
-        if (post) {
-            const users = await User.find({ _id: post.creatorId }, { basicInfo: 1 });
-            if (users && users.length > 0)
-                res.status(200).send({ success: true, message: 'Post found', post, organization: users[0] });
-            else res.status(200).send({ success: false, post });
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: match }, ...lookUps, { $project: project });
+
+        const allPosts = await Post.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: post-controller.js ~ line 69 ~ exports.getOne= ~ allPosts', allPosts.length);
+        if (allPosts && allPosts.length > 0) {
+            res.status(200).send({ success: true, message: 'Post found', post: allPosts[0] });
         } else {
             res.status(404).send({ success: false, message: 'Post not found' });
         }
@@ -121,51 +132,9 @@ exports.getAll = async (req, res) => {
         // match['isActive'] = isActive;
 
         let aggregateOptions = [];
-        // const lookUp1 = {
-        //     from: 'organizations',
-        //     localField: 'creatorId',
-        //     foreignField: 'userId',
-        //     as: 'organization',
-        // };
-        // const lookUp2 = {
-        //     $lookup: {
-        //         from: 'impactareas',
-        //         localField: 'impactAreas',
-        //         foreignField: '_id',
-        //         as: 'impactAreaNames',
-        //     },
-        // };
-        const lookUps = [
-            {
-                $lookup: {
-                    from: 'organizations',
-                    localField: 'creatorId',
-                    foreignField: 'userId',
-                    as: 'organization',
-                },
-            },
-            {
-                $lookup: {
-                    from: 'impactareas',
-                    localField: 'impactAreas',
-                    foreignField: '_id',
-                    as: 'impactAreaNames',
-                },
-            },
-        ];
-        const project = {
-            _id: 1,
-            title: 1,
-            images: 1,
-            description: 1,
-            organizationName: '$organization.basicInfo.name',
-            creatorId: 1,
-            postType: 1,
-            impactAreaNames: 1,
-            address: 1,
-            isActive: 1,
-            isDeleted: 1,
-        };
+
+        const lookUps = [LOOKUPS.post_organization, LOOKUPS.post_impactAreas, LOOKUPS.post_interests];
+        const project = PROJECTS.post_get_all;
         aggregateOptions.push({ $match: { $and: [match, dateCondition] } }, ...lookUps, { $project: project });
 
         const allPosts = await Post.aggregate(aggregateOptions);
@@ -180,9 +149,7 @@ exports.getAll = async (req, res) => {
 exports.updateOne = async (req, res) => {
     try {
         const postId = req.params.postId;
-
         const post = req.body;
-
         post.images = saveImageSchemaOnServer(post.images);
         if (post.skills && post.skills.length > 0) {
             const { success, newSkills } = await SkillController.convertObjectToId(
@@ -245,38 +212,10 @@ exports.getAllFeeds = async (req, res) => {
         let match = {};
         match['creatorId'] = { $in: allFollowingOrganizations.map((follow) => follow.followingId) };
         const lookUps = [
-            {
-                $lookup: {
-                    from: 'organizations',
-                    localField: 'creatorId',
-                    foreignField: 'userId',
-                    as: 'organization',
-                },
-            },
-            {
-                $lookup: {
-                    from: 'impactareas',
-                    localField: 'impactAreas',
-                    foreignField: '_id',
-                    as: 'impactAreaNames',
-                },
-            },
-            {
-                $lookup: {
-                    from: 'skills',
-                    localField: 'skills',
-                    foreignField: '_id',
-                    as: 'skillNames',
-                },
-            },
-            {
-                $lookup: {
-                    from: 'interests',
-                    localField: '_id',
-                    foreignField: 'postId',
-                    as: 'interests',
-                },
-            },
+            LOOKUPS.post_organization,
+            LOOKUPS.post_impactAreas,
+            LOOKUPS.post_skills,
+            LOOKUPS.post_interests,
         ];
         const project = {
             _id: 1,
@@ -330,14 +269,15 @@ exports.like = async (req, res) => {
         );
         if (interest) {
             const post = await Post.findOne({ _id: postId });
-            NotificationController.createOne({
-                userId: post.creatorId,
-                senderId: userId,
-                postId,
-                ...NotificationResponse.Descriptions.Like,
-                isRead: false,
-                isActive: true,
-            });
+            NotificationController.createOne(post.creatorId, userId, NotificationResponse.Types.Like, postId);
+            // NotificationController.createOne({
+            //     userId: post.creatorId,
+            //     senderId: userId,
+            //     postId,
+            //     ...NotificationResponse.Descriptions.Like,
+            //     isRead: false,
+            //     isActive: true,
+            // });
             return res.status(200).send({ success: true, message: 'Like done', liked: true });
         } else return res.status(200).send({ success: false, message: 'Like can not be done', liked: false });
     } catch (err) {
@@ -348,7 +288,6 @@ exports.cancelLike = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
-        console.log('unlike', userId, postId);
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -360,10 +299,11 @@ exports.cancelLike = async (req, res) => {
                 upsert: true,
             },
         );
+
         if (interest) {
             const notification = await NotificationController.deleteOne({
-                senderId: userId,
-                postId,
+                senderId: ObjectId(userId),
+                postId: ObjectId(postId),
                 ...NotificationResponse.Descriptions.Like,
             });
             return res.status(200).send({ success: true, message: 'Like removed', liked: true });
@@ -391,14 +331,7 @@ exports.interested = async (req, res) => {
         );
         if (interest) {
             const post = await Post.findOne({ _id: postId });
-            NotificationController.createOne({
-                userId: post.creatorId,
-                senderId: userId,
-                postId,
-                ...NotificationResponse.Descriptions.Interest,
-                isRead: false,
-                isActive: true,
-            });
+            NotificationController.createOne(post.creatorId, userId, NotificationResponse.Types.Interest, postId);
             return res.status(200).send({ success: true, message: 'Interest done', interested: true });
         } else return res.status(200).send({ success: false, message: 'Interest can not be done', interested: false });
     } catch (err) {
@@ -451,14 +384,7 @@ exports.going = async (req, res) => {
         );
         if (interest) {
             const post = await Post.findOne({ _id: postId });
-            NotificationController.createOne({
-                userId: post.creatorId,
-                senderId: userId,
-                postId,
-                ...NotificationResponse.Descriptions.Going,
-                isRead: false,
-                isActive: true,
-            });
+            NotificationController.createOne(post.creatorId, userId, NotificationResponse.Types.Going, postId);
             return res.status(200).send({ success: true, message: 'Going done', going: true });
         } else return res.status(200).send({ success: false, message: 'Going can not be done', going: false });
     } catch (err) {
@@ -494,6 +420,54 @@ exports.cancelGoing = async (req, res) => {
     }
 };
 
+exports.getAllCommitted = async (req, res) => {
+    try {
+        const interestType = req.query.interestType ? req.query.interestType : null;
+        const options = {
+            postId: ObjectId(req.params.postId),
+        };
+        if (interestType) {
+            options[interestType] = true;
+        }
+        console.log(options);
+        const lookup = {
+            $lookup: {
+                from: 'users',
+                localField: 'userId',
+                foreignField: '_id',
+                as: 'user',
+            },
+        };
+        const project = {
+            _id: 1,
+            postId: 1,
+            userId: 1,
+            user: { $arrayElemAt: ['$user', 0] },
+        };
+        const project2 = {
+            _id: 1,
+            postId: 1,
+            userId: 1,
+            userType: '$user.userType',
+            userName: '$user.basicInfo.name',
+            userFirstName: '$user.basicInfo.firstName',
+            userLastName: '$user.basicInfo.lastName',
+            userProfilePicture: '$user.basicInfo.profilePicture',
+        };
+        // const users = await Interest.find(options).populate('userId', { _id: 1, userType: 1, basicInfo: 1 });
+        const aggregateOptions = [];
+
+        aggregateOptions.push({ $match: options }, lookup, { $project: project }, { $project: project2 });
+
+        const users = await Interest.aggregate(aggregateOptions);
+        console.log(users);
+        if (users) return res.status(200).send({ success: true, users });
+    } catch (error) {
+        console.log(error.message);
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+exports.getCommitted = async (req, res) => {};
 // exports.countLikes = async (req, res) => {};
 // exports.countInterests = async (req, res) => {};
 // exports.countGoings = async (req, res) => {};

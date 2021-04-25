@@ -28,13 +28,13 @@ export const eventSearchPage = '/search/event';
 export const individualCompleteBasicInfoPage = '/complete/individual/basic-info';
 export const individualCompleteInvolvementPage = '/complete/individual/involvement';
 export const individualCompletePrivacyPage = '/complete/individual/privacy';
-export const individualCompleteMembership = '/complete/individual/membership';
-export const individualCompleteSuggestions = '/complete/individual/suggestions';
+export const individualCompleteMembershipPage = '/complete/individual/membership';
+export const individualCompleteSuggestionsPage = '/complete/individual/suggestions';
 
 export const individualEditBasicInfoPage = '/edit/individual/basic-info';
 export const individualEditInvolvementPage = '/edit/individual/involvement';
 export const individualEditPrivacyPage = '/edit/individual/privacy';
-export const individualEditMembership = '/edit/individual/membership';
+export const individualEditMembershipPage = '/edit/individual/membership';
 
 export const individualDetailsPage = '/individual/details/:userId';
 export const individualListPage = '/individual/all';
@@ -43,10 +43,12 @@ export const individualListPage = '/individual/all';
 export const organizationCompleteBasicInfoPage = '/complete/organization/basic-info';
 export const organizationCompleteServiceInfoPage = '/complete/organization/service-info';
 export const organizationCompleteInternalLinkPage = '/complete/organization/internal-link';
+export const organizationCompleteMembershipPage = '/complete/organization/membership';
 
 export const organizationEditBasicInfoPage = '/edit/organization/basic-info';
 export const organizationEditServiceInfoPage = '/edit/organization/service-info';
 export const organizationEditInternalLinkPage = '/edit/organization/internal-link';
+export const organizationEditMembershipPage = '/edit/organization/membership';
 
 export const organizationDetailsPage = '/organization/details/:userId';
 export const organizationListPage = '/user/organization/all';

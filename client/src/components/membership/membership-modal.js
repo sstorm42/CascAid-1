@@ -9,6 +9,7 @@ import { defaultOrganizationProfilePicture } from '../../constants/default-image
 const MembershipModal = (props) => {
     const [startTime, setStartTime] = useState(new Date());
     const [endTime, setEndTime] = useState(new Date());
+    const membership = props.membership;
     const membershipModal = props.membershipModal;
     const setMembershipModal = props.setMembershipModal;
     const mode = props.mode;
@@ -25,32 +26,6 @@ const MembershipModal = (props) => {
             ),
         };
     });
-    const sampleOptions = [
-        {
-            value: 'me',
-            label: (
-                <Row>
-                    <Col sm={1}>
-                        <img src="https://picsum.photos/100/100" height="30px" width="30px" />
-                    </Col>
-                    <Col>Chocolate</Col>
-                </Row>
-            ),
-            flagPath: 'https://picsum.photos/100/100',
-        },
-        {
-            value: 'rs',
-            label: (
-                <Row>
-                    <Col sm={1}>
-                        <img src="https://picsum.photos/100/100" height="30px" width="30px" />
-                    </Col>
-                    <Col>Chocolate</Col>
-                </Row>
-            ),
-            flagPath: 'https://picsum.photos/100/100',
-        },
-    ];
 
     return (
         <Modal
@@ -71,8 +46,9 @@ const MembershipModal = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col style={{ zIndex: 400 }}>
                             <AsyncSelect
+                                placeholder="Type at least 3 letter"
                                 cacheOptions
                                 loadOptions={props.promiseOptions}
                                 onChange={(value) => {
@@ -88,7 +64,7 @@ const MembershipModal = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
+                        <Col style={{ zIndex: 300 }}>
                             <Select
                                 options={allMembershipTypes}
                                 onChange={(value) => {
@@ -101,9 +77,11 @@ const MembershipModal = (props) => {
                     <Row>
                         <Col>
                             <label>Start Time</label>
+                            <br />
+                            <br />
                         </Col>
 
-                        <Col>
+                        <Col style={{ zIndex: 200 }}>
                             <DatePicker
                                 className="form-control"
                                 selected={startTime}
@@ -117,26 +95,46 @@ const MembershipModal = (props) => {
                             />
                         </Col>
                     </Row>
-                    <br />
-                    <Row>
-                        <Col>
-                            <label>End Time</label>
-                        </Col>
 
+                    <Row class="form-group">
+                        <Col sm={6}>Is Current Member?</Col>
                         <Col>
-                            <DatePicker
-                                className="form-control"
-                                selected={endTime}
-                                onChange={(date) => {
-                                    setEndTime(date);
-                                    props.handleMembershipInfoChange('endTime', date);
-                                }}
-                                dateFormat="MM/yyyy"
-                                showMonthYearPicker
-                                showFullMonthYearPicker
-                            />
+                            <div class="custom-control custom-switch" style={{ zIndex: 100 }}>
+                                <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="customSwitch1"
+                                    checked={membership.isCurrent}
+                                    onChange={() => {
+                                        props.handleMembershipInfoChange('isCurrent', !membership.isCurrent);
+                                    }}
+                                />
+                                <label class="custom-control-label" for="customSwitch1"></label>
+                            </div>
                         </Col>
                     </Row>
+                    <br />
+                    {!membership.isCurrent && (
+                        <Row>
+                            <Col>
+                                <label>End Time</label>
+                            </Col>
+
+                            <Col>
+                                <DatePicker
+                                    className="form-control"
+                                    selected={endTime}
+                                    onChange={(date) => {
+                                        setEndTime(date);
+                                        props.handleMembershipInfoChange('endTime', date);
+                                    }}
+                                    dateFormat="MM/yyyy"
+                                    showMonthYearPicker
+                                    showFullMonthYearPicker
+                                />
+                            </Col>
+                        </Row>
+                    )}
                     <br />
                 </Container>
             </Modal.Body>

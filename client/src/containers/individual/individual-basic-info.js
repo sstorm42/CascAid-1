@@ -52,6 +52,9 @@ const BasicInfo = (props) => {
         const url = window.location.pathname;
         if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
+        return () => {
+            props.dispatch(clearBasicInfo());
+        };
     }, [props.auth]);
     useEffect(() => {
         handleGetResponse();
@@ -113,7 +116,8 @@ const mapStateToProps = (state) => {
     if (getBasicInfoResponse.success) {
         initialValues = getBasicInfoResponse.basicInfo;
         if (initialValues) {
-            if (initialValues.races && initialValues.races.length > 0 && typeof initialValues.races[0] === 'string') initialValues.races = getRacesByValues(initialValues.races);
+            if (initialValues.races && initialValues.races.length > 0 && typeof initialValues.races[0] === 'string')
+                initialValues.races = getRacesByValues(initialValues.races);
             if (initialValues.address && !initialValues.address.country) {
                 initialValues.address.country = 'US';
             } else if (!initialValues.address) {

@@ -110,3 +110,6 @@ export const cancelGoingPost = (postId) => {
         payload: PostDA.cancel_going_post(postId),
     };
 };
+export const getAllCommittedPersons = (postId, type) => {
+    return PostDA.get_all_committed_persons(postId, type);
+};

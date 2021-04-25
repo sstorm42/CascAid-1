@@ -6,7 +6,7 @@ import { getPrivacy, setPrivacy, clearPrivacy } from '../../actions/user-action'
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
 import IndividualPrivacyForm from '../../components/individual/individual-privacy-form';
-import { individualCompleteInvolvementPage, individualCompleteMembership } from '../../constants/route-paths';
+import { individualCompleteInvolvementPage, individualCompleteMembershipPage } from '../../constants/route-paths';
 const Privacy = (props) => {
     const [editMode, setEditMode] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const Privacy = (props) => {
             NotificationManager.success(message, 'success');
             if (!editMode) {
                 props.dispatch(clearPrivacy());
-                props.history.push(individualCompleteMembership);
+                props.history.push(individualCompleteMembershipPage);
             }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     };
@@ -37,6 +37,9 @@ const Privacy = (props) => {
         const url = window.location.pathname;
         if (url.split('/')[1] === 'edit') setEditMode(true);
         getInitialInfo();
+        return () => {
+            props.dispatch(clearPrivacy());
+        };
     }, [props.auth]);
     useEffect(() => {
         handleGetResponse();

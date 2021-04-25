@@ -245,20 +245,22 @@ export const RequiredItemsRender = (items) => {
     } else return <label>No required items found!</label>;
 };
 export const KeywordsRender = (label, keywords) => {
-    return (
-        <Row>
-            <Col md="3">
-                <b>{label}</b>
-            </Col>
-            <Col md="9">
-                {keywords.map((key, i) => {
-                    return (
-                        <Badge variant="primary" key={i} className="badge-single">
-                            {key}
-                        </Badge>
-                    );
-                })}
-            </Col>
-        </Row>
-    );
+    if (keywords && keywords.length > 0) {
+        return (
+            <Row>
+                <Col md="3">
+                    <b>{label}</b>
+                </Col>
+                <Col md="9">
+                    {keywords.map((key, i) => {
+                        return (
+                            <Badge variant="primary" key={i} className="badge-single">
+                                {key}
+                            </Badge>
+                        );
+                    })}
+                </Col>
+            </Row>
+        );
+    } else return <></>;
 };

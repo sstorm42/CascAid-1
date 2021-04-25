@@ -5,6 +5,7 @@ import { ReadButtonRender, UnreadButtonRender, DeleteButtonRender } from '../for
 import moment from 'moment';
 const NotificationList = (props) => {
     const allNotifications = props.allNotifications;
+    console.log('🚀 ~ file: notification-list.js ~ line 8 ~ NotificationList ~ allNotifications', allNotifications);
 
     return (
         <Container>
@@ -23,6 +24,13 @@ const NotificationList = (props) => {
                     {allNotifications &&
                         allNotifications.length > 0 &&
                         allNotifications.map((notification, i) => {
+                            const sender = notification.senders[0].userId;
+                            const userType = sender.userType;
+                            let name = '';
+                            if (userType === 'individual') name = sender.basicInfo.firstName + ' ' + sender.basicInfo.lastName;
+                            else if (userType === 'organization') name = sender.basicInfo.name;
+                            const profilePicture = sender.basicInfo.profilePicture;
+                            const more = notification.senders.length - 1;
                             return (
                                 <ListGroup horizontal="xl" className="my-1" key={i} style={{ width: '100%' }}>
                                     {/* <ListGroup.Item className="col-sm-2"></ListGroup.Item> */}
@@ -35,50 +43,17 @@ const NotificationList = (props) => {
                                     >
                                         <Row>
                                             <Col sm="2">
-                                                <Image
-                                                    src={
-                                                        notification.userType === 'individual'
-                                                            ? notification.senderProfilePicture
-                                                            : notification.senderOrgProfilePicture
-                                                    }
-                                                    width="40"
-                                                    thumbnail
-                                                    className="notification-image"
-                                                />
+                                                <Image src={profilePicture} width="40" thumbnail className="notification-image" />
                                             </Col>
                                             <Col sm="10">
                                                 <h6>
                                                     {notification.isRead ? (
-                                                        notification.userType === 'individual' ? (
-                                                            notification.senderFirstName ? (
-                                                                getTitleByType(
-                                                                    notification.type,
-                                                                    notification.senderFirstName + ' ' + notification.senderLastName,
-                                                                )
-                                                            ) : (
-                                                                notification.title
-                                                            )
-                                                        ) : notification.senderName ? (
-                                                            getTitleByType(notification.type, notification.senderName)
-                                                        ) : (
-                                                            notification.title
-                                                        )
+                                                        getTitleByType(notification.type, name, more)
                                                     ) : (
-                                                        <b>
-                                                            {notification.userType === 'individual'
-                                                                ? notification.senderFirstName
-                                                                    ? getTitleByType(
-                                                                          notification.type,
-                                                                          notification.senderFirstName + ' ' + notification.senderLastName,
-                                                                      )
-                                                                    : notification.title
-                                                                : notification.senderName
-                                                                ? getTitleByType(notification.type, notification.senderName)
-                                                                : notification.title}
-                                                        </b>
+                                                        <b>{getTitleByType(notification.type, name, more)}</b>
                                                     )}
                                                 </h6>
-                                                {notification.postTitle}
+                                                {notification.postId && notification.postId.title}
                                                 <br />
                                                 <small>{moment(notification.createdAt).format('LLLL')}</small>
                                             </Col>

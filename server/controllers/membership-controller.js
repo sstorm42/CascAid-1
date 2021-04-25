@@ -57,7 +57,7 @@ exports.getAll = async (req, res) => {
         let match = {};
         if (individualId) match['individualId'] = mongoose.Types.ObjectId(individualId);
         if (organizationId) match['organizationId'] = mongoose.Types.ObjectId(organizationId);
-        console.log('🚀 ~ file: membership-controller.js ~ line 62 ~ exports.getAll= ~ match', match);
+
         const lookUps = [
             {
                 $lookup: {
@@ -85,6 +85,7 @@ exports.getAll = async (req, res) => {
             requestedBy: 1,
             startTime: 1,
             endTime: 1,
+            isCurrent: 1,
             isActive: 1,
             isDeleted: 1,
             createdAt: 1,
@@ -96,7 +97,6 @@ exports.getAll = async (req, res) => {
         };
         const projectWind = {
             ...membershipProjects,
-
             individualFirstName: '$individual.basicInfo.firstName',
             individualLastName: '$individual.basicInfo.lastName',
             individualProfilePicture: '$individual.basicInfo.profilePicture',
@@ -117,6 +117,7 @@ exports.getAll = async (req, res) => {
 exports.acceptOne = async (req, res) => {
     try {
         const membershipId = req.params.membershipId;
+        console.log('🚀 ~ file: membership-controller.js ~ line 121 ~ exports.acceptOne= ~ membershipId', membershipId);
         const updatedMembership = await Membership.findOneAndUpdate(
             { _id: membershipId },
             { $set: { status: 'accepted' } },

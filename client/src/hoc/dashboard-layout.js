@@ -7,12 +7,9 @@ import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { withRouter } from 'react-router-dom';
 import { FaHome, FaSearch, FaConnectdevelop, FaCalendarAlt, FaUserCog, FaEnvelope, FaNewspaper } from 'react-icons/fa';
-import { BsFilePost } from 'react-icons/bs';
+
 import * as RoutePath from '../constants/route-paths';
 class DashboardLayout extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
     individualSideNav = () => {
         return (
             <SideNav
@@ -67,6 +64,9 @@ class DashboardLayout extends Component {
                         </NavItem>
                         <NavItem eventKey={RoutePath.individualEditPrivacyPage}>
                             <NavText>Privacy</NavText>
+                        </NavItem>
+                        <NavItem eventKey={RoutePath.individualEditMembershipPage}>
+                            <NavText>Membership</NavText>
                         </NavItem>
                         <NavItem eventKey={RoutePath.userCommonSettingsPage}>
                             <NavText>Account Settings</NavText>
@@ -134,9 +134,9 @@ class DashboardLayout extends Component {
                         <NavItem eventKey={RoutePath.organizationEditServiceInfoPage}>
                             <NavText>Service Information</NavText>
                         </NavItem>
-                        {/* <NavItem eventKey={RoutePath.organizationEditInternalLinkPage}>
-                <NavText>Internal Link</NavText>
-            </NavItem> */}
+                        <NavItem eventKey={RoutePath.organizationEditMembershipPage}>
+                            <NavText>Membership</NavText>
+                        </NavItem>
                         <NavItem eventKey={RoutePath.userCommonSettingsPage}>
                             <NavText>Account Settings</NavText>
                         </NavItem>
