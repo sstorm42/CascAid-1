@@ -553,37 +553,38 @@ exports.seedUsers = async (req, res) => {
                     userId: user._id,
                 });
                 if (individual && individual._id) {
-                    let update = await User.findOneAndUpdate(
+                    let update = await User.updateOne(
                         { _id: user._id },
                         {
                             $set: {
                                 basicInfo: individual.basicInfo,
-                                // involvement: individual.involvement,
-                                // privacy: individual.privacy,
+                                involvement: individual.involvement,
+                                privacy: individual.privacy,
                             },
                         },
                     );
                     console.log('🚀 ~ file: user-controller.js ~ line 566 ~ exports.seedUsers= ~ update', update);
                     if (!update) return res.status(401).send({ success: false, update });
                 }
-            } else if (user.userType === 'organization') {
-                let organization = await Organization.findOne({
-                    userId: user._id,
-                });
-                if (organization && organization._id) {
-                    let update = await User.findOneAndUpdate(
-                        { _id: user._id },
-                        {
-                            $set: {
-                                basicInfo: organization.basicInfo,
-                                serviceInfo: organization.serviceInfo,
-                                internalLink: organization.internalLink,
-                            },
-                        },
-                    );
-                    if (!update) return res.status(401).send({ success: false, update });
-                }
             }
+            // else if (user.userType === 'organization') {
+            //     let organization = await Organization.findOne({
+            //         userId: user._id,
+            //     });
+            //     if (organization && organization._id) {
+            //         let update = await User.findOneAndUpdate(
+            //             { _id: user._id },
+            //             {
+            //                 $set: {
+            //                     basicInfo: organization.basicInfo,
+            //                     serviceInfo: organization.serviceInfo,
+            //                     internalLink: organization.internalLink,
+            //                 },
+            //             },
+            //         );
+            //         if (!update) return res.status(401).send({ success: false, update });
+            //     }
+            // }
         }
         return res.status(200).send({ success: true, users, totalUsers: users.length });
     } catch (err) {
