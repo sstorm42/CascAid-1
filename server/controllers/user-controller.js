@@ -587,8 +587,9 @@ exports.seedUsers = async (req, res) => {
             //     }
             // }
         }
-        return res.status(200).send({ success: true, users, totalUsers: users.length });
+        return res.status(200).send({ success: true, totalUsers: users.length });
     } catch (err) {
+        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
