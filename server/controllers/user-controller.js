@@ -563,6 +563,7 @@ exports.seedUsers = async (req, res) => {
                             },
                         },
                     );
+                    console.log('🚀 ~ file: user-controller.js ~ line 566 ~ exports.seedUsers= ~ update', update);
                     if (!update) return res.status(401).send({ success: false, update });
                 }
             } else if (user.userType === 'organization') {
