@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
 const EmitNotification = (userId) => {
-    console.log('🚀 ~ file: notification-controller.js ~ line 5 ~ EmitNotification ~ userId', userId);
+    console.log(
+        '🚀 ~ file: notification-controller.js ~ line 5 ~ EmitNotification ~ userId',
+        'Notification_' + userId.toString(),
+    );
     global.io.emit('Notification_' + userId.toString(), 'NewNotification');
 };
 
@@ -33,11 +36,15 @@ exports.createOne = async (userId, senderId, NotificationType, postId) => {
             upsert: true,
         },
     );
+    console.log(
+        '🚀 ~ file: notification-controller.js ~ line 39 ~ exports.createOne= ~ foundNotification',
+        foundNotification,
+    );
     if (!foundNotification) {
         return false;
     }
-    if (foundNotification._id) {
-        EmitNotification(data.userId);
+    if (foundNotification) {
+        EmitNotification(userId);
         return true;
     }
 };
@@ -47,11 +54,45 @@ exports.createFalse = async (req, res) => {
     res.status(200).send({ ...NotificationResponse.NotificationsFound });
 };
 
-exports.deleteOne = async ({ senderId, postId, type }) => {
-    const notification = await Notification.findOneAndDelete({ senderId, postId, type }, { _id: 1 });
-    console.log('🚀 ~ file: notification-controller.js ~ line 30 ~ exports.deleteOne ~ notification', notification);
-    if (notification) return true;
-    else return false;
+exports.deleteOne = async (userId, senderId, NotificationType, postId) => {
+    const foundNotification = await Notification.findOneAndUpdate(
+        {
+            userId,
+            type: NotificationType,
+            postId,
+        },
+        {
+            $pull: {
+                senders: {
+                    userId: senderId,
+                },
+            },
+            $set: {
+                isActive: true,
+                notificationTime: new Date().toJSON(),
+            },
+        },
+        {
+            new: true,
+        },
+    );
+    console.log(
+        '🚀 ~ file: notification-controller.js ~ line 80 ~ exports.createOne= ~ foundNotification',
+        foundNotification,
+    );
+    if (!foundNotification) {
+        return false;
+    }
+    if (foundNotification) {
+        if (foundNotification.senders && foundNotification.senders.length === 0) {
+            const deleteNotification = await Notification.findOneAndDelete({ userId, type: NotificationType, postId });
+            if (deleteNotification) {
+                // EmitNotification(userId);
+                return true;
+            }
+        }
+        return true;
+    }
 };
 
 exports.getAll = async (req, res) => {

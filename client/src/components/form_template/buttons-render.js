@@ -1,12 +1,15 @@
 import React from 'react';
-import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger, Dropdown } from 'react-bootstrap';
 import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
 import { RiUserFollowLine } from 'react-icons/ri';
 import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart } from 'react-icons/fa';
 import { BiDetail } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
-import { FiUserCheck, FiUserX } from 'react-icons/fi';
+import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
+import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser } from 'react-icons/ai';
+import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
+
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
         {props.title ? props.title : 'NA'}
@@ -189,5 +192,81 @@ export const RejectButtonRender = (props) => {
                 <FiUserX />
             </Button>
         </OverlayTrigger>
+    );
+};
+
+export const AddFriendshipButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-primary" className="add-friend-btn" {...props}>
+            <AiOutlineUserAdd /> Add Friend
+        </Button>
+    );
+};
+export const AcceptFriendshipButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" className="add-friend-btn" {...props}>
+            <AiOutlineUserAdd /> Accept Friend
+        </Button>
+    );
+};
+export const RejectFriendshipButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-danger" className="add-friend-btn" {...props}>
+            <AiOutlineUserDelete /> Reject Friend
+        </Button>
+    );
+};
+export const DeleteFriendshipButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-primary" className="delete-friend-btn" {...props}>
+            <AiOutlineUserDelete /> Cancel Request
+        </Button>
+    );
+};
+export const FollowUserButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-info" className="details-follow-btn" {...props}>
+            <RiUserFollowFill /> Follow
+        </Button>
+    );
+};
+export const UnfollowUserButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-info" className="details-following-btn" {...props}>
+            <RiUserFollowFill /> Following
+        </Button>
+    );
+};
+export const FriendDropdownRender = (props) => {
+    const handleUnfriendButton = props.handleUnfriendButton;
+    const handleUnfollowButton = props.handleUnfollowButton;
+    const handleFollowButton = props.handleFollowButton;
+    const follows = props.follows;
+    return (
+        <Dropdown>
+            <Dropdown.Toggle variant="outline-primary" id="dropdown-basic" size="sm" className="add-friend-btn">
+                <FiUserCheck />
+                &nbsp; Friends
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+                <Dropdown.Item onClick={handleUnfriendButton}>
+                    <FiUserMinus />
+                    &nbsp; Unfriend
+                </Dropdown.Item>
+                <Dropdown.Divider />
+                {follows ? (
+                    <Dropdown.Item onClick={handleUnfollowButton}>
+                        <FiUserX />
+                        &nbsp; Unfollow
+                    </Dropdown.Item>
+                ) : (
+                    <Dropdown.Item onClick={handleFollowButton}>
+                        <FiUserPlus />
+                        &nbsp; Follow
+                    </Dropdown.Item>
+                )}
+            </Dropdown.Menu>
+        </Dropdown>
     );
 };

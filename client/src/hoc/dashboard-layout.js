@@ -68,9 +68,9 @@ class DashboardLayout extends Component {
                         <NavItem eventKey={RoutePath.individualEditMembershipPage}>
                             <NavText>Membership</NavText>
                         </NavItem>
-                        <NavItem eventKey={RoutePath.userCommonSettingsPage}>
+                        {/* <NavItem eventKey={RoutePath.userCommonSettingsPage}>
                             <NavText>Account Settings</NavText>
-                        </NavItem>
+                        </NavItem> */}
                     </NavItem>
                 </SideNav.Nav>
             </SideNav>
@@ -137,9 +137,9 @@ class DashboardLayout extends Component {
                         <NavItem eventKey={RoutePath.organizationEditMembershipPage}>
                             <NavText>Membership</NavText>
                         </NavItem>
-                        <NavItem eventKey={RoutePath.userCommonSettingsPage}>
+                        {/* <NavItem eventKey={RoutePath.userCommonSettingsPage}>
                             <NavText>Account Settings</NavText>
-                        </NavItem>
+                        </NavItem> */}
                     </NavItem>
                 </SideNav.Nav>
             </SideNav>

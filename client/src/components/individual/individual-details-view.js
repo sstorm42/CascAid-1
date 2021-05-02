@@ -2,10 +2,23 @@ import React from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
 import { defaultIndividualProfilePicture } from '../../constants/default-images';
+import {
+    AddFriendshipButtonRender,
+    FollowUserButtonRender,
+    DeleteFriendshipButtonRender,
+    AcceptFriendshipButtonRender,
+    RejectFriendshipButtonRender,
+    UnfollowUserButtonRender,
+    FriendDropdownRender,
+} from '../form_template/buttons-render';
 const DetailsView = (props) => {
     const individual = props.individual;
+    const friendship = props.friendship;
+    const userId = props.userId;
+    const individualUserId = props.individualUserId;
+    const follows = props.follows;
+    console.log('🚀 ~ file: individual-details-view.js ~ line 19 ~ DetailsView ~ follows', friendship);
     const infoRender = (label, value) => {
-        console.log(label, value);
         if (value)
             return (
                 <Row>
@@ -28,7 +41,6 @@ const DetailsView = (props) => {
     };
 
     const tagsRender = (label, tags) => {
-        console.log('🚀 ~ file: individual-details-view.js ~ line 48 ~ tagsRender ~ tags', tags);
         return (
             <Row>
                 <Col md="3">
@@ -60,9 +72,9 @@ const DetailsView = (props) => {
         return fullAddress;
     };
 
-    if (individual._id) {
+    if (individual._id && individual.userType === 'individual') {
+        console.log('🚀 ~ file: individual-details-view.js ~ line 76 ~ DetailsView ~ individual', individual);
         const basicInfo = individual.basicInfo;
-        console.log('🚀 ~ file: individual-details-view.js ~ line 63 ~ DetailsView ~ basicInfo', basicInfo);
         const involvement = individual.involvement;
         const impactAreas = involvement.impactAreas;
         const skills = basicInfo.skills;
@@ -76,6 +88,58 @@ const DetailsView = (props) => {
                             width="100%"
                             thumbnail
                         />
+                        <hr />
+                        {props.friendAndFollowFlag && (
+                            <>
+                                {!friendship._id && (
+                                    <AddFriendshipButtonRender
+                                        onClick={() => {
+                                            props.handleCreateFriendship();
+                                        }}
+                                    />
+                                )}
+                                {friendship.status === 'pending' ? (
+                                    <>
+                                        {friendship.senderId === userId ? (
+                                            <DeleteFriendshipButtonRender
+                                                onClick={() => {
+                                                    props.handleDeleteFriendship(friendship._id);
+                                                }}
+                                            />
+                                        ) : (
+                                            <>
+                                                <AcceptFriendshipButtonRender
+                                                    onClick={() => {
+                                                        props.handleAcceptFriendship(friendship._id);
+                                                    }}
+                                                />
+                                                <RejectFriendshipButtonRender
+                                                    onClick={() => {
+                                                        props.handleRejectFriendship(friendship._id);
+                                                    }}
+                                                />
+                                            </>
+                                        )}
+                                    </>
+                                ) : (
+                                    <></>
+                                )}
+                                {friendship.status === 'accepted' && (
+                                    <FriendDropdownRender
+                                        handleUnfriendButton={() => {
+                                            props.handleDeleteFriendship(friendship._id);
+                                        }}
+                                        handleUnfollowButton={() => {
+                                            props.handleUnfollowUser();
+                                        }}
+                                        handleFollowButton={() => {
+                                            props.handleFollowUser();
+                                        }}
+                                        follows={follows}
+                                    />
+                                )}
+                            </>
+                        )}
                     </Col>
                     <Col sm="9" className="left-border">
                         <h3>{basicInfo.firstName + ' ' + basicInfo.lastName}</h3>

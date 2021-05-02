@@ -270,6 +270,17 @@ tr td:last-child {
     margin-top: 10px;
     font-weight: bold;
 }
+.add-friend-btn {
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.delete-friend-btn {
+    background-color: #96fcff;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
 .details-following-btn {
     width: 100%;
     margin-top: 10px;

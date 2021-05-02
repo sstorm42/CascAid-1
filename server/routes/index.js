@@ -10,6 +10,7 @@ const post = require('./post-route');
 const skill = require('./skill-route');
 const notification = require('./notification-route');
 const membership = require('./membership-route');
+const friendship = require('./friendship-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -22,6 +23,7 @@ routes.use('/posts', post);
 routes.use('/skills', skill);
 routes.use('/notifications', notification);
 routes.use('/memberships', membership);
+routes.use('/friendships', friendship);
 
 const connected = {
     success: true,

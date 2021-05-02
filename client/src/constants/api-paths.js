@@ -108,3 +108,11 @@ export const getAllMemberships = serverAddress + `/api/memberships/`;
 export const deleteMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}`;
 export const acceptMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}/accept`;
 export const rejectMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}/reject`;
+
+// FRIENDSHIP
+export const createFriendship = serverAddress + `/api/friendships/`;
+export const acceptFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}/accept`;
+export const rejectFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}/reject`;
+export const deleteFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}`;
+export const checkIfFriends = (userId, friendId) => serverAddress + `/api/friendships/${userId}/${friendId}`;
+export const getAllFriendships = (userId) => serverAddress + `/api/friendships/${userId}`;

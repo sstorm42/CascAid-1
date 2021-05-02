@@ -11,6 +11,7 @@ import Skill from './skill-reducer';
 import Language from './language-reducer';
 import Notification from './notification-reducer';
 import Membership from './membership-reducer';
+import Friendship from './friendship-reducer';
 
 const rootReducer = combineReducers({
     form: formReducer,
@@ -24,6 +25,6 @@ const rootReducer = combineReducers({
     Skill,
     Language,
     Membership,
+    Friendship,
 });
-
 export default rootReducer;

@@ -31,6 +31,7 @@ const NotificationList = (props) => {
                             else if (userType === 'organization') name = sender.basicInfo.name;
                             const profilePicture = sender.basicInfo.profilePicture;
                             const more = notification.senders.length - 1;
+                            const postType = notification.postId && notification.postId.postType ? notification.postId.postType : '';
                             return (
                                 <ListGroup horizontal="xl" className="my-1" key={i} style={{ width: '100%' }}>
                                     {/* <ListGroup.Item className="col-sm-2"></ListGroup.Item> */}
@@ -48,9 +49,9 @@ const NotificationList = (props) => {
                                             <Col sm="10">
                                                 <h6>
                                                     {notification.isRead ? (
-                                                        getTitleByType(notification.type, name, more)
+                                                        getTitleByType(notification.type, name, more, postType)
                                                     ) : (
-                                                        <b>{getTitleByType(notification.type, name, more)}</b>
+                                                        <b>{getTitleByType(notification.type, name, more, postType)}</b>
                                                     )}
                                                 </h6>
                                                 {notification.postId && notification.postId.title}

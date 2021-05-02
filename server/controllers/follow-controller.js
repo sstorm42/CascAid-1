@@ -12,7 +12,10 @@ exports.followUser = async (req, res) => {
 
         const follow_ = await follow.save();
         if (!follow_) res.status(200).send({ success: false, follow: follow_ });
-        else if (follow_) res.status(200).send({ success: true, follow: follow_ });
+        else if (follow_) {
+            NotificationController.createOne(followingId, followerId, NotificationResponse.Types.Follow, null);
+            res.status(200).send({ success: true, follow: follow_ });
+        }
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }
@@ -24,8 +27,12 @@ exports.unfollowUser = async (req, res) => {
             followerId: followerId,
             followingId: followingId,
         });
+        console.log('🚀 ~ file: follow-controller.js ~ line 27 ~ exports.unfollowUser= ~ follow', follow);
         if (!follow) res.status(200).send({ success: false, follow: follow });
-        else if (follow) res.status(200).send({ success: true, follow: follow });
+        else if (follow) {
+            NotificationController.deleteOne(followingId, followerId, NotificationResponse.Types.Follow, null);
+            res.status(200).send({ success: true, follow: follow });
+        }
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

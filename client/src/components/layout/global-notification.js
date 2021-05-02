@@ -14,6 +14,7 @@ import { getNotificationsCount, getTopNotifications, getTitleByType } from '../.
 import useSound from 'use-sound';
 
 const socket = openSocket(serverAddress, { transports: ['websocket', 'polling', 'flashsocket'] });
+console.log('🚀 ~ file: global-notification.js ~ line 17 ~ socket', socket);
 
 const RenderBellIcon = (props) => {
     const count = props.count;
@@ -35,6 +36,7 @@ const PostTitleRender = (title) => {
 };
 const NotificationRender = (props) => {
     const notification = props.notification;
+
     const sender = notification.senders[0].userId;
     const userType = sender.userType;
     let name = '';
@@ -42,6 +44,7 @@ const NotificationRender = (props) => {
     else if (userType === 'organization') name = sender.basicInfo.name;
     const profilePicture = sender.basicInfo.profilePicture;
     const more = notification.senders.length - 1;
+    const postType = notification.postId && notification.postId.postType ? notification.postId.postType : '';
     console.log('🚀 ~ file: global-notification.js ~ line 31 ~ NotificationRender ~ notification', notification);
     return (
         <NavDropdown.Item className="notification-row">
@@ -51,7 +54,11 @@ const NotificationRender = (props) => {
                 </Col>
                 <Col sm="10">
                     <p className="notification-title">
-                        {notification.isRead ? getTitleByType(notification.type, name, more) : <b>{getTitleByType(notification.type, name, more)}</b>}
+                        {notification.isRead ? (
+                            getTitleByType(notification.type, name, more, postType)
+                        ) : (
+                            <b>{getTitleByType(notification.type, name, more, postType)}</b>
+                        )}
                     </p>
 
                     <small className="notification-time">{moment(notification.createdAt).format('LLL')}</small>
@@ -76,8 +83,9 @@ const GlobalNotification = (props) => {
         const user = props.user;
         props.dispatch(getNotificationsCount(true));
         props.dispatch(getTopNotifications());
-
-        socket.on('Notification_' + user._id, (success) => {
+        console.log('🚀 ~ file: global-notification.js ~ line 87 ~ socket.on ~ success', 'Notification_' + user._id);
+        socket.on('Notification_' + user._id.toString(), (success) => {
+            console.log('🚀 ~ file: global-notification.js ~ line 87 ~ socket.on ~ success', success);
             if (success === 'NewNotification') {
                 const audioEl = document.getElementsByClassName('audio-element')[0];
                 audioEl.play();

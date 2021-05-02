@@ -84,7 +84,7 @@ const DetailsView = (props) => {
         }
         return fullAddress;
     };
-    if (organization._id) {
+    if (organization._id && organization.userType === 'organization') {
         const basicInfo = organization.basicInfo;
         const serviceInfo = organization.serviceInfo;
         const impactAreas = serviceInfo.impactAreas;
