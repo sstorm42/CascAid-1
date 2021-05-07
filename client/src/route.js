@@ -249,13 +249,13 @@ const Routes = () => {
             <LayoutRoute
                 path={RoutePath.communityFollowerListPage}
                 exact
-                component={UserAuthCheck(CommunityFollowers, individualAndAdminRoles, true)}
+                component={UserAuthCheck(CommunityFollowers, allRoles, true)}
                 layout={DashboardLayout}
             />
             <LayoutRoute
                 path={RoutePath.communityFollowingListPage}
                 exact
-                component={UserAuthCheck(CommunityFollowings, individualAndAdminRoles, true)}
+                component={UserAuthCheck(CommunityFollowings, allRoles, true)}
                 layout={DashboardLayout}
             />
             <LayoutRoute

@@ -1,7 +1,9 @@
 const { Follow } = require('../models/follow-model');
 const NotificationController = require('./notification-controller');
 const NotificationResponse = require('../responses/notification-response');
-
+const ObjectId = require('mongoose').Types.ObjectId;
+const LOOKUPS = require('./lookup-collection');
+const PROJECTS = require('./project-collection');
 exports.followUser = async (req, res) => {
     try {
         const { followerId, followingId } = req.body;
@@ -38,20 +40,44 @@ exports.unfollowUser = async (req, res) => {
     }
 };
 exports.getAllFollower = async (req, res) => {
-    const userId = req.params.userId;
-    const followers = await Follow.find({
-        followingId: userId,
-    });
-    if (!followers) res.status(200).send({ success: false, followers: [], totalFollowers: 0 });
-    else if (followers) res.status(200).send({ success: true, followers, totalFollowers: followers.length });
+    try {
+        const userId = req.params.userId;
+        const aggregateOptions = [];
+        const match = {
+            followingId: ObjectId(userId),
+        };
+
+        aggregateOptions.push({ $match: match });
+        aggregateOptions.push(LOOKUPS.follow_follower);
+        aggregateOptions.push(PROJECTS.follow_get_all_follower);
+        const followers = await Follow.aggregate(aggregateOptions);
+
+        if (!followers) res.status(200).send({ success: false, followers: [], totalFollowers: 0 });
+        else if (followers) res.status(200).send({ success: true, followers, totalFollowers: followers.length });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ success: false, message: err.message });
+    }
 };
 exports.getAllFollowing = async (req, res) => {
-    const userId = req.params.userId;
-    const followings = await Follow.find({
-        followerId: userId,
-    });
-    if (!followings) res.status(200).send({ success: false, followings: [], totalFollowings: 0 });
-    else if (followings) res.status(200).send({ success: true, followings, totalFollowings: followings.length });
+    try {
+        const userId = req.params.userId;
+        const aggregateOptions = [];
+        const match = {
+            followerId: ObjectId(userId),
+        };
+
+        aggregateOptions.push({ $match: match });
+        aggregateOptions.push(LOOKUPS.follow_following);
+        aggregateOptions.push(PROJECTS.follow_get_all_following);
+        const followings = await Follow.aggregate(aggregateOptions);
+
+        if (!followings) res.status(200).send({ success: false, followings: [], totalFollowings: 0 });
+        else if (followings) res.status(200).send({ success: true, followings, totalFollowings: followings.length });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send({ success: false, message: err.message });
+    }
 };
 exports.CheckIfFollower = async (req, res) => {
     try {

@@ -19,13 +19,14 @@ class FollowDA {
     };
     get_all_followers = (userId) => {
         return axios
-            .post(APIPaths.getAllFollower(userId), APIPaths.apiConfig())
+            .get(APIPaths.getAllFollower(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
     get_all_followings = (userId) => {
+        console.log(APIPaths.getAllFollowing(userId));
         return axios
-            .post(APIPaths.getAllFollower(userId), APIPaths.apiConfig())
+            .get(APIPaths.getAllFollowing(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

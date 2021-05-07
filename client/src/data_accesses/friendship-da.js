@@ -32,11 +32,17 @@ class FriendshipDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-    get_all_friendships = (userId) => {
+    get_all_friendships = (userId, status) => {
         return axios
-            .get(APIPaths.getAllFriendships(userId), APIPaths.apiConfig())
-            .then((response) => response.data)
-            .catch((err) => err.response.data);
+            .get(APIPaths.getAllFriendships(userId, status), APIPaths.apiConfig())
+            .then((response) => {
+                // console.log('🚀 ~ file: friendship-da.js ~ line 39 ~ FriendshipDA ~ .then ~ response', response);
+                return response.data;
+            })
+            .catch((err) => {
+                // console.log('Error', err.response);
+                return err.response.data;
+            });
     };
 }
 export default new FriendshipDA();

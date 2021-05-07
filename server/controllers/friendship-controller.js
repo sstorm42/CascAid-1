@@ -4,7 +4,8 @@ const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
 const NotificationController = require('./notification-controller');
 const NotificationResponse = require('../responses/notification-response');
-
+const ObjectId = require('mongoose').Types.ObjectId;
+const { options } = require('../routes/friendship-route');
 exports.createOne = async (req, res) => {
     try {
         const friendship = new Friendship({ ...req.body, status: 'pending' });
@@ -110,12 +111,25 @@ exports.checkIfFriends = async (req, res) => {
 exports.getAll = async (req, res) => {
     try {
         const userId = req.params.userId;
-
-        const friendships = await Friendship.find({
-            $or: [{ senderId: userId }, { receiverId: userId }],
-        });
+        console.log('🚀 ~ file: friendship-controller.js ~ line 113 ~ exports.getAll= ~ userId', userId);
+        const status = req.query.status;
+        let match = {
+            $or: [{ senderId: ObjectId(userId) }, { receiverId: ObjectId(userId) }],
+        };
+        if (status) {
+            match = {
+                $and: [match, { status: status }],
+            };
+        }
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: match });
+        aggregateOptions.push(LOOKUPS.friendship_sender);
+        aggregateOptions.push(LOOKUPS.friendship_receiver);
+        aggregateOptions.push(PROJECTS.friendship_get_all);
+        const friendships = await Friendship.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: friendship-controller.js ~ line 124 ~ exports.getAll= ~ friendships', friendships);
         if (!friendships) return res.status(401).send({ ...RESPONSE.NotFound });
-        else res.status(401).send({ ...RESPONSE.Found, friendships: friendships });
+        else res.status(200).send({ ...RESPONSE.Found, friendships: friendships });
     } catch (err) {
         return res.status(500).send(RESPONSE.Error(err));
     }
@@ -123,6 +137,7 @@ exports.getAll = async (req, res) => {
 exports.deleteOne = async (req, res) => {
     try {
         const friendshipId = req.params.friendshipId;
+
         console.log('🚀 ~ file: friendship-controller.js ~ line 94 ~ exports.deleteOne ~ friendshipId', friendshipId);
         const deletedFriendship = await Friendship.findOneAndDelete({ _id: friendshipId });
         if (!deletedFriendship) return res.status({ ...RESPONSE.NotDeleted });

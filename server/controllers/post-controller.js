@@ -231,6 +231,8 @@ exports.getAllFeeds = async (req, res) => {
             address: 1,
             createdAt: 1,
             interests: 1,
+            startDateTime: 1,
+            endDateTime: 1,
         };
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match }, ...lookUps, { $sort: { createdAt: -1 } }, { $project: project });

@@ -6,6 +6,7 @@ import { interestTypes } from '../../constants/interest-types';
 import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../form_template/buttons-render';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
+
 const HomePostFeed = (props) => {
     const userId = props.userId;
     const [show, setShow] = useState(false);
@@ -35,13 +36,14 @@ const HomePostFeed = (props) => {
                             >
                                 {post.title.toUpperCase()}
                             </h5>
+
                             <Row>
                                 <Col>
                                     <Row>
                                         <Col sm="1">
                                             <Avatar
                                                 src={post.organizationProfilePicture ? post.organizationProfilePicture[0] : defaultOrganizationProfilePicture}
-                                                rounded={3}
+                                                round="5px"
                                                 size="50"
                                             />
                                         </Col>
@@ -82,6 +84,19 @@ const HomePostFeed = (props) => {
                                         );
                                     })}
                                 </Col>
+                            </Row>
+
+                            <Row>
+                                {post.startDateTime && (
+                                    <Col sm={6}>
+                                        From <b>{moment(post.startDateTime).format('LLLL')}</b>
+                                    </Col>
+                                )}
+                                {post.endDateTime && (
+                                    <Col sm={6} className="right-align">
+                                        To <b>{moment(post.endDateTime).format('LLLL')}</b>
+                                    </Col>
+                                )}
                             </Row>
                             <br />
                             <Row

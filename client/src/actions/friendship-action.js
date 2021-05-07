@@ -32,9 +32,9 @@ export const checkIfFriends = (userId, friendId) => {
         payload: FriendshipDA.check_if_friends(userId, friendId),
     };
 };
-export const getAllFriendships = (userId) => {
+export const getAllFriendships = (userId, status) => {
     return {
         type: Types.GET_ALL_FRIENDSHIPS,
-        payload: FriendshipDA.get_all_friendships(userId),
+        payload: FriendshipDA.get_all_friendships(userId, status),
     };
 };

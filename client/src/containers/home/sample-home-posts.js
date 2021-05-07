@@ -140,7 +140,7 @@ const SamplePosts = (props) => {
                             <Col>
                                 <Row>
                                     <Col sm="1">
-                                        <Avatar src={defaultOrganizationProfilePicture} round={5} size="50" />
+                                        <Avatar src={defaultOrganizationProfilePicture} round="5px" size="50" />
                                     </Col>
                                     <Col sm="8">
                                         <Link to={'/organization/details/'}>

@@ -22,6 +22,14 @@
     /* transform: translate(-50%, -50%); */
     font-size: 20px;
 }
+.image-text-top-left-small {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    /* transform: translate(-50%, -50%); */
+    font-size: 14px;
+    border-radius: 3px;
+}
 .ppl-liked-list {
     width: '100%';
     margin-bottom: 5px;

@@ -43,16 +43,6 @@ exports.searchByName = async (req, res) => {
         const name = req.params.name;
         let users = await User.aggregate([
             {
-                $match: {
-                    $or: [
-                        { 'basicInfo.firstName': { $regex: name, $options: 'i' } },
-                        { 'basicInfo.lastName': { $regex: name, $options: 'i' } },
-                        { 'basicInfo.name': { $regex: name, $options: 'i' } },
-                    ],
-                },
-            },
-
-            {
                 $project: {
                     userType: 1,
                     firstName: '$basicInfo.firstName',
@@ -60,8 +50,34 @@ exports.searchByName = async (req, res) => {
                     profilePicture: '$basicInfo.profilePicture',
                     name: '$basicInfo.name',
                     userType: 1,
+                    concatName: { $concat: ['$basicInfo.firstName', '$basicInfo.lastName'] },
+                    concatNameWithSpace: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] },
                 },
             },
+            {
+                $match: {
+                    $or: [
+                        { name: { $regex: name, $options: 'i' } },
+                        { concatName: { $regex: name, $options: 'i' } },
+                        { concatNameWithSpace: { $regex: name, $options: 'i' } },
+
+                        // { 'basicInfo.firstName': { $regex: name, $options: 'i' } },
+                        // { 'basicInfo.lastName': { $regex: name, $options: 'i' } },
+                        // { 'basicInfo.name': { $regex: name, $options: 'i' } },
+                    ],
+                },
+            },
+
+            // {
+            //     $project: {
+            //         userType: 1,
+            //         firstName: '$basicInfo.firstName',
+            //         lastName: '$basicInfo.lastName',
+            //         profilePicture: '$basicInfo.profilePicture',
+            //         name: '$basicInfo.name',
+            //         userType: 1,
+            //     },
+            // },
             {
                 $group: {
                     _id: '$userType',

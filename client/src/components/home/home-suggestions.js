@@ -58,7 +58,7 @@ const HomeSuggestions = (props) => {
                                 <Col>
                                     <Row>
                                         <Col sm="2">
-                                            <Avatar src={org.profilePicture ? org.profilePicture : defaultOrganizationProfilePicture} round={5} size={30} />
+                                            <Avatar src={org.profilePicture ? org.profilePicture : defaultOrganizationProfilePicture} round="5px" size={30} />
                                         </Col>
                                         <Col sm="10">
                                             <Link to={`/organization/details/${org._id}`}>

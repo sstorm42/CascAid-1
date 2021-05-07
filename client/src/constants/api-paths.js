@@ -70,8 +70,8 @@ export const getAllPostsByUser = (userId) => serverAddress + `/api/users/${userI
 export const followUser = serverAddress + `/api/follows/follow`;
 export const unfollowUser = serverAddress + `/api/follows/unfollow`;
 
-export const getAllFollower = (userId) => serverAddress + `/api/follows/follower/${userId}`;
-export const getAllFollowing = (userId) => serverAddress + `/api/follows/following/${userId}`;
+export const getAllFollower = (userId) => serverAddress + `/api/follows/followers/${userId}`;
+export const getAllFollowing = (userId) => serverAddress + `/api/follows/followings/${userId}`;
 export const checkIfFollower = (followerId, followingId) => serverAddress + `/api/follows/${followerId}/${followingId}`;
 
 // HOME
@@ -115,4 +115,4 @@ export const acceptFriendship = (friendshipId) => serverAddress + `/api/friendsh
 export const rejectFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}/reject`;
 export const deleteFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}`;
 export const checkIfFriends = (userId, friendId) => serverAddress + `/api/friendships/${userId}/${friendId}`;
-export const getAllFriendships = (userId) => serverAddress + `/api/friendships/${userId}`;
+export const getAllFriendships = (userId, status) => serverAddress + `/api/friendships/${userId}${status ? `?status=${status}` : ''}`;
