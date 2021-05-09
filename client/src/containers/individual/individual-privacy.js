@@ -79,7 +79,11 @@ const mapStateToProps = (state) => {
     if (getPrivacyResponse.success) {
         initialValues = getPrivacyResponse.privacy;
     }
-
+    if (initialValues._id) {
+    } else {
+        initialValues.isEmailSearchable = true;
+        initialValues.isUserSearchable = true;
+    }
     return {
         getImpactAreaResponse,
         initialValues,

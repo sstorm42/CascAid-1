@@ -10,6 +10,7 @@ import * as RoutePaths from '../../constants/route-paths';
 const CommunityFriends = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
+    const [userType, setUserType] = useState('');
     useEffect(() => {
         const getInitialInfo = (userId) => {
             console.log('Calling API');
@@ -20,6 +21,7 @@ const CommunityFriends = (props) => {
         const user = props.auth.user;
         if (user && user._id) {
             setUserId(user._id);
+            setUserType(user.userType);
             getInitialInfo(user._id);
         }
     }, []);
@@ -32,7 +34,7 @@ const CommunityFriends = (props) => {
             <Container>
                 <Row className="parent-page">
                     <Col>
-                        <CommunityMenu selected="friend" />
+                        <CommunityMenu selected="friend" userType={userType} />
                         <hr />
                         <FriendsList
                             friendships={props.getAllFriendshipResponse ? props.getAllFriendshipResponse.friendships : []}

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import NotificationBadge from 'react-notification-badge';
 import { Effect } from 'react-notification-badge';
 import { Button, Badge, NavDropdown, Image, Row, Container, Col } from 'react-bootstrap';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePaths from '../../constants/route-paths';
 import { Link, withRouter } from 'react-router-dom';
 import moment from 'moment';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
@@ -10,7 +10,8 @@ import { BsBellFill } from 'react-icons/bs';
 import openSocket from 'socket.io-client';
 import { serverAddress } from '../../constants/api-paths';
 import { connect } from 'react-redux';
-import { getNotificationsCount, getTopNotifications, getTitleByType } from '../../actions/notification-action';
+import { getNotificationsCount, getTopNotifications, getTitleByType, updateNotification, updateNotificationLocal } from '../../actions/notification-action';
+
 import useSound from 'use-sound';
 
 const socket = openSocket(serverAddress, { transports: ['websocket', 'polling', 'flashsocket'] });
@@ -34,9 +35,28 @@ const PostTitleRender = (title) => {
     if (title && title.length > 50) return title.substr(0, 50) + '...';
     else return title;
 };
-const NotificationRender = (props) => {
-    const notification = props.notification;
 
+const NotificationRender = (props) => {
+    const handleGoToNotificationDetails = (notification) => {
+        const type = notification.type;
+        if (['like', 'interest', 'going'].includes(type)) {
+            props.history.push(RoutePaths.postDetailsPage(notification.postId.postType, notification.postId._id));
+        } else if (type === 'friend-request') {
+            props.history.push(RoutePaths.communityRequestListPage);
+        } else if (type === 'friend-accept') {
+            props.history.push(RoutePaths.communityFriendListPage);
+        } else if (type === 'follow') {
+            props.history.push(RoutePaths.communityFollowerListPage);
+        } else if (type === 'membership-request') {
+        } else if (type === 'membership-accept') {
+        } else {
+            props.history.push(RoutePaths.userDetailsPage(notification.userType, notification.senderId));
+        }
+        const notificationId = notification._id;
+        props.dispatch(updateNotification(notificationId, { isRead: true }));
+        props.dispatch(updateNotificationLocal(notificationId, true));
+    };
+    const notification = props.notification;
     const sender = notification.senders[0].userId;
     const userType = sender.userType;
     let name = '';
@@ -47,7 +67,12 @@ const NotificationRender = (props) => {
     const postType = notification.postId && notification.postId.postType ? notification.postId.postType : '';
     console.log('🚀 ~ file: global-notification.js ~ line 31 ~ NotificationRender ~ notification', notification);
     return (
-        <NavDropdown.Item className="notification-row">
+        <NavDropdown.Item
+            className="notification-row"
+            onClick={() => {
+                handleGoToNotificationDetails(notification);
+            }}
+        >
             <Row>
                 <Col sm="2">
                     <Image src={profilePicture} width="40" thumbnail className="notification-image" />
@@ -72,7 +97,7 @@ const SampleNotificationsRender = (props) => {
     return (
         <Container style={{ width: 500, padding: 0 }}>
             {allNotifications.map((notification, i) => {
-                return <NotificationRender key={i} notification={notification} />;
+                return <NotificationRender key={i} notification={notification} history={props.history} dispatch={props.dispatch} />;
             })}
         </Container>
     );
@@ -100,11 +125,15 @@ const GlobalNotification = (props) => {
             id="basic-nav-dropdown"
             alignRight={true}
         >
-            <SampleNotificationsRender allNotifications={props.getNotificationResponse.success ? props.getNotificationResponse.notifications : []} />
+            <SampleNotificationsRender
+                allNotifications={props.getNotificationResponse.success ? props.getNotificationResponse.notifications : []}
+                history={props.history}
+                dispatch={props.dispatch}
+            />
             <NavDropdown.Divider />
             <NavDropdown.Item
                 onClick={() => {
-                    props.history.push(RoutePath.ManageNotificationsPage);
+                    props.history.push(RoutePaths.ManageNotificationsPage);
                 }}
             >
                 SEE ALL

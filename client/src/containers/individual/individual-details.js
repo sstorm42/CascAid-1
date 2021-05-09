@@ -29,12 +29,12 @@ const IndividualDetails = (props) => {
             senderId: userId,
             receiverId: props.match.params.userId,
         };
-        props.dispatch(followUser({ followerId: userId, followingId: props.match.params.userId }));
+        // props.dispatch(followUser({ followerId: userId, followingId: props.match.params.userId }));
         props.dispatch(createFriendship(friendship));
     };
     const handleAcceptFriendship = (friendshipId) => {
         props.dispatch(acceptFriendship(friendshipId));
-        props.dispatch(followUser({ followerId: userId, followingId: props.match.params.userId }));
+        // props.dispatch(followUser({ followerId: userId, followingId: props.match.params.userId }));
     };
     const handleRejectFriendship = (friendshipId) => {
         props.dispatch(rejectFriendship(friendshipId));

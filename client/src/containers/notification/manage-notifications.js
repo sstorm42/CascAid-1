@@ -22,9 +22,20 @@ const ManageNotifications = (props) => {
         const type = notification.type;
         if (['like', 'interest', 'going'].includes(type)) {
             props.history.push(RoutePaths.postDetailsPage(notification.postId.postType, notification.postId._id));
+        } else if (type === 'friend-request') {
+            props.history.push(RoutePaths.communityRequestListPage);
+        } else if (type === 'friend-accept') {
+            props.history.push(RoutePaths.communityFriendListPage);
+        } else if (type === 'follow') {
+            props.history.push(RoutePaths.communityFollowerListPage);
+        } else if (type === 'membership-request') {
+        } else if (type === 'membership-accept') {
         } else {
             props.history.push(RoutePaths.userDetailsPage(notification.userType, notification.senderId));
         }
+        const notificationId = notification._id;
+        props.dispatch(updateNotification(notificationId, { isRead: true }));
+        props.dispatch(updateNotificationLocal(notificationId, true));
     };
 
     const handleNotificationRead = (notificationId) => {

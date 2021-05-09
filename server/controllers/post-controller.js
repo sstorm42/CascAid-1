@@ -81,6 +81,8 @@ exports.getAll = async (req, res) => {
     try {
         console.log('QUERY', req.query);
         const title = req.query.title ? JSON.parse(req.query.title) : '';
+        const creatorId = req.query.creatorId ? JSON.parse(req.query.creatorId) : '';
+
         const impactAreas = req.query.impactAreas ? JSON.parse(req.query.impactAreas) : [];
         const fullAddress = req.query.fullAddress ? JSON.parse(req.query.fullAddress) : '';
         const postTypes = req.query.postTypes ? JSON.parse(req.query.postTypes) : [];
@@ -91,6 +93,13 @@ exports.getAll = async (req, res) => {
         let match = {};
         if (title && title.length > 0) {
             match['title'] = { $regex: title, $options: 'i' };
+        }
+        if (creatorId && creatorId.length > 0) {
+            console.log(
+                '🚀 ~ file: post-controller.js ~ line 85 ~ exports.getAll= ~ creatorId',
+                mongoose.Types.ObjectId(creatorId),
+            );
+            match['creatorId'] = mongoose.Types.ObjectId(creatorId.toString());
         }
         if (impactAreas && impactAreas.length > 0) {
             match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };

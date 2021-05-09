@@ -16,7 +16,7 @@ const FollowingList = (props) => {
     if (followings && followings.length > 0) {
         return (
             <>
-                <h4>Total {followings.length} Following Found</h4>
+                {/* <h4>Total {followings.length} Following Found</h4> */}
                 <br />
                 <CardColumns className="five-columns">
                     {followings.map((following, i) => {

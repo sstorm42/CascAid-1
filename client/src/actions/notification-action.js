@@ -34,6 +34,14 @@ export const updateNotificationLocal = (notificationId, isRead) => {
     };
 };
 
+const getPostTypeName = {
+    event: 'Event',
+    project: 'Project',
+    volunteering: 'Volunteering Opportunity',
+    'in-kind': 'In-Kind Opportunity',
+    general: 'Post',
+    advocacy: 'Advocacy',
+};
 export const getTitleByType = (type, senderName, more, postType = 'post') => {
     // if (type === 'friend-request') return `${senderName} sent you a friend request.`;
     // else if (type === 'friend-accept') return `${senderName} accepted your friend request.`;
@@ -50,8 +58,8 @@ export const getTitleByType = (type, senderName, more, postType = 'post') => {
     if (type === 'friend-request') title += ` sent you a friend request.`;
     else if (type === 'friend-accept') title += ` accepted your friend request.`;
     else if (type === 'follow') title += ` is following you.`;
-    else if (type === 'like') title += `  liked your ${postType}.`;
-    else if (type === 'interest') title += ` is interested in your ${postType}.`;
-    else if (type === 'going') title += ` is going to your ${postType}.`;
+    else if (type === 'like') title += `  liked your ${getPostTypeName[postType]}.`;
+    else if (type === 'interest') title += ` is interested in your ${getPostTypeName[postType]}.`;
+    else if (type === 'going') title += ` is going to your ${getPostTypeName[postType]}.`;
     return title;
 };

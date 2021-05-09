@@ -9,28 +9,38 @@ const SampleOrgList = (props) => {
     if (friendships && friendships.length > 0) {
         return (
             <>
-                <h4>Total {friendships.length} Friend Found</h4>
+                {/* <h4>Total {friendships.length} Friend Found</h4> */}
                 <br />
                 <CardColumns className="five-columns">
                     {friendships.map((friendship, i) => {
                         let name = '';
                         let profilePicture = defaultIndividualProfilePicture;
+                        let friendId = '';
                         if (friendship.senderId === userId) {
                             name = friendship.receiverFirstName + ' ' + friendship.receiverLastName;
                             profilePicture = friendship.receiverProfilePicture;
+                            friendId = friendship.receiverId;
                         } else if (friendship.receiverId === userId) {
                             name = friendship.senderFirstName + ' ' + friendship.senderLastName;
                             profilePicture = friendship.senderProfilePicture;
+                            friendId = friendship.senderId;
                         }
                         return (
                             <Card>
-                                <Card.Img variant="top" src={profilePicture} />
-                                <Card.Body className="justify-text">
+                                <Card.Img
+                                    variant="top"
+                                    src={profilePicture}
+                                    onClick={() => {
+                                        handleGotoUserDetails(friendId);
+                                    }}
+                                />
+                                <Card.Body
+                                    onClick={() => {
+                                        handleGotoUserDetails(friendId);
+                                    }}
+                                >
                                     <Card.Title>{name}</Card.Title>
                                 </Card.Body>
-                                <Card.Footer>
-                                    <small className="text-muted">YET TO DISCUSS</small>
-                                </Card.Footer>
                             </Card>
                         );
                     })}

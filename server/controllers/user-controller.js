@@ -314,6 +314,7 @@ exports.getAll = async (req, res) => {
     try {
         // Getting all query values
         const query = req.query;
+        console.log('🚀 ~ file: user-controller.js ~ line 317 ~ exports.getAll= ~ query', query);
         const userType = query.userType ? JSON.parse(query.userType) : '';
         const organizationTypes = query.organizationTypes ? JSON.parse(query.organizationTypes) : [];
         const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];

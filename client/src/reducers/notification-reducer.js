@@ -8,18 +8,20 @@ const initialState = {
 };
 
 const toggleNotificationRead = (response, { notificationId, isRead }) => {
-    // console.log('🚀 ~ file: notification-reducer.js ~ line 11 ~ toggleNotificationRead ~ notifications, notificationId, isRead', notifications, notificationId, isRead);
-    let notifications = response.notifications;
-
-    for (let i = 0; i < notifications.length; i++) {
-        if (notifications[i]._id === notificationId) {
-            notifications[i].isRead = isRead;
+    console.log('🚀 ~ file: notification-reducer.js ~ line 11 ~ toggleNotificationRead ~ notifications, notificationId, isRead', response);
+    const { success } = response;
+    if (success) {
+        let notifications = response.notifications;
+        for (let i = 0; i < notifications.length; i++) {
+            if (notifications[i]._id === notificationId) {
+                notifications[i].isRead = isRead;
+            }
         }
-    }
-    return {
-        ...response,
-        notifications,
-    };
+        return {
+            ...response,
+            notifications,
+        };
+    } else return response;
 };
 
 const NotificationReducer = (state = initialState, action) => {
@@ -34,7 +36,11 @@ const NotificationReducer = (state = initialState, action) => {
         case Types.SET_NOTIFICATION:
             return { ...state, setNotification: action.payload };
         case Types.SET_NOTIFICATION_LOCAL:
-            return { ...state, getAllNotifications: toggleNotificationRead(state.getAllNotifications, action.payload) };
+            return {
+                ...state,
+                getAllNotifications: toggleNotificationRead(state.getAllNotifications, action.payload),
+                getTopNotifications: toggleNotificationRead(state.getTopNotifications, action.payload),
+            };
 
         default:
             return state;

@@ -97,7 +97,8 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Discover</NavText>
                     </NavItem>
-                    <NavItem eventKey="/">
+
+                    <NavItem eventKey={RoutePath.communityFollowerListPage}>
                         <NavIcon>
                             <FaConnectdevelop size={24} />
                         </NavIcon>

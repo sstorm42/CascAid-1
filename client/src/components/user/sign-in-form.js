@@ -23,7 +23,14 @@ const SignInForm = (props) => {
 
                         <br />
 
-                        <Field name="email" type="text" component={SaInputRender} placeholder="example@example.com" label="Email" validate={[required, email, stringRange6To256]} />
+                        <Field
+                            name="email"
+                            type="text"
+                            component={SaInputRender}
+                            placeholder="example@example.com"
+                            label="Email"
+                            validate={[required, email, stringRange6To256]}
+                        />
                         <Field name="password" type="password" component={SaInputRender} label="Password" validate={[required, stringRange6To100]} />
                         <br />
                         <Row>
@@ -32,9 +39,7 @@ const SignInForm = (props) => {
                                     SIGN IN
                                 </Button>
                             </Col>
-                            <Col sm="6">
-                                <Link to={RoutePath.forgotPasswordPage}>Forgot your password?</Link>
-                            </Col>
+                            <Col sm="6">{/* <Link to={RoutePath.forgotPasswordPage}>Forgot your password?</Link> */}</Col>
                         </Row>
 
                         <p>

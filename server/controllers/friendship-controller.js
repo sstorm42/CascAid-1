@@ -1,4 +1,5 @@
 const { Friendship } = require('../models/friendship-model');
+const { Follow } = require('../models/follow-model');
 const RESPONSE = require('../responses/friendship-response');
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
@@ -19,6 +20,12 @@ exports.createOne = async (req, res) => {
                 NotificationResponse.Types.FriendRequest,
                 null,
             );
+            const follow = new Follow({
+                followerId: friendship.senderId,
+                followingId: friendship.receiverId,
+            });
+
+            const follow_ = await follow.save();
             res.status(401).send({ ...RESPONSE.Created, friendship: friendship_ });
         }
     } catch (err) {
@@ -55,6 +62,12 @@ exports.acceptOne = async (req, res) => {
                 NotificationResponse.Types.FriendRequest,
                 null,
             );
+            const follow = new Follow({
+                followerId: updatedFriendship.receiverId,
+                followingId: updatedFriendship.senderId,
+            });
+
+            const follow_ = await follow.save();
             res.status(401).send({ ...RESPONSE.Updated, friendship: updatedFriendship });
         }
     } catch (err) {

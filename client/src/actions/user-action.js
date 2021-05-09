@@ -111,11 +111,13 @@ export const getUserPublicInfo = (userId) => {
 // GET ALL USERS
 export const getAllUsers = (filter) => {
     let filters = { ...filter };
+
     if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
     if (filters.organizationTypes && filters.organizationTypes.length > 0) filters.organizationTypes = filters.organizationTypes.map((type) => type._id);
+    console.log('🚀 ~ file: user-action.js ~ line 114 ~ getAllUsers ~ filters', filters);
     return {
         type: Types.GET_ALL_USERS,
-        payload: UserDA.get_all_users(filter),
+        payload: UserDA.get_all_users(filters),
     };
 };
 

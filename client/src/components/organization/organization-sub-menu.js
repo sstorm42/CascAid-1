@@ -63,7 +63,7 @@ const SideMenu = (props) => {
                 <hr />
                 {/* <Collapsible trigger="MENU" className="special-btn"> */}
                 {RenderListButtonItem('About', RoutePath.userDetailsPage('organization', organization._id))}
-                {RenderListButtonItem('Impacts', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
+                {RenderListButtonItem('Impact', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
                 {RenderListButtonItem('Message', '')}
                 {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
                 {RenderListButtonItem('Feed')}

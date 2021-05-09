@@ -10,6 +10,7 @@ import * as RoutePaths from '../../constants/route-paths';
 const CommunityFollowings = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
+    const [userType, setUserType] = useState('');
     const [cards, setCards] = useState({});
     useEffect(() => {
         const getInitialInfo = (userId) => {
@@ -21,6 +22,7 @@ const CommunityFollowings = (props) => {
         const user = props.auth.user;
         if (user && user._id) {
             setUserId(user._id);
+            setUserType(user.userType);
             getInitialInfo(user._id);
         }
     }, []);
@@ -49,7 +51,7 @@ const CommunityFollowings = (props) => {
             <Container>
                 <Row className="parent-page">
                     <Col>
-                        <CommunityMenu selected="following" />
+                        <CommunityMenu selected="following" userType={userType} />
                         <hr />
                         <FollowingsList
                             followings={props.getAllFollowingsResponse ? props.getAllFollowingsResponse.followings : []}
