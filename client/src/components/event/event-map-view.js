@@ -32,7 +32,7 @@ const PostRender = ({ post }) => {
             </Link>
             {post.organizationName && post.organizationName.length > 0 && (
                 <Link to={RoutePath.userDetailsPage('organization', post.creatorId)}>
-                    <h6 style={{ color: 'cadetblue' }}>{post.organizationName[0]}</h6>
+                    <h6 style={{ color: 'cadetblue' }}>{post.organizationName}</h6>
                 </Link>
             )}
             {ImpactAreasRender('', post.impactAreaNames)}

@@ -6,6 +6,7 @@ import { interestTypes } from '../../constants/interest-types';
 import { getPostTypeByValue } from '../../constants/post-types';
 import { ImpactAreasRender, InfoRender } from '../form_template/details-render';
 import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../form_template/buttons-render';
+
 const EventListView = (props) => {
     const userId = props.userId;
     const allPosts = props.allPosts;
@@ -34,7 +35,6 @@ const EventListView = (props) => {
                                         props.gotoPostDetails(post.postType, post._id);
                                     }}
                                 >
-                                    {/* <Image src={post.images && post.images.length > 0 ? post.images[0].path : defaultEventPicture} style={{ width: '100%', height: 'auto' }} /> */}
                                     <Card.Img
                                         variant="top"
                                         src={post.images && post.images.length > 0 ? post.images[0].path : defaultEventPicture}
@@ -43,7 +43,6 @@ const EventListView = (props) => {
                                     <Badge variant="primary" className="image-text-top-left">
                                         {getPostTypeByValue(post.postType)[0].label}
                                     </Badge>
-                                    {/* <div className="image-text-top-left">{getPostTypeByValue(post.postType)[0].label}</div> */}
                                 </div>
 
                                 <Card.Body

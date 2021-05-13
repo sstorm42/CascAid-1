@@ -10,7 +10,7 @@ import DashboardLayout from './hoc/dashboard-layout';
 import UserAuthCheck from './hoc/auth';
 import HomePage from './containers/home/home';
 import SearchOrganization from './containers/search/search-organization';
-import SearchEvent from './containers/search/search-event';
+import SearchCommunityActivity from './containers/search/search-community-activity';
 
 import IndividualBasicInfo from './containers/individual/individual-basic-info';
 import IndividualInvolvement from './containers/individual/individual-involvement';
@@ -172,7 +172,12 @@ const Routes = () => {
             />
             <LayoutRoute path={RoutePath.homePage} exact component={UserAuthCheck(HomePage, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.organizationSearchPage} exact component={UserAuthCheck(SearchOrganization, allRoles, true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventSearchPage} exact component={UserAuthCheck(SearchEvent, allRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute
+                path={RoutePath.communityActivitySearchPage}
+                exact
+                component={UserAuthCheck(SearchCommunityActivity, allRoles, true)}
+                layout={DashboardLayout}
+            />
             <LayoutRoute path="/messages" exact component={UserAuthCheck(Messages, allRoles, true)} layout={DashboardLayout} />
             {/* POST */}
             {/* <LayoutRoute path={RoutePath.newsManagePage} exact component={UserAuthCheck(ManageNews, ['organization'], true)} layout={DashboardLayout} /> */}

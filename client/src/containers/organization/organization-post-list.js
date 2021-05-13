@@ -9,11 +9,17 @@ import SideSubMenu from '../../components/organization/organization-sub-menu';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import PostTypeMenu from '../../components/organization/organization-post-menu';
+import PostFilter from '../../components/organization/organization-post-filter';
 import { postDetailsPage } from '../../constants/route-paths';
+
 const SearchEvent = (props) => {
     const [loading, setLoading] = useState(false);
     const [follows, setFollows] = useState(false);
     const [userId, setUserId] = useState('');
+    const [allPosts, setAllPosts] = useState([]);
+    const [filters, setFilters] = useState({
+        topNeed: false,
+    });
     const gotoPostDetails = (postType, postId) => {
         props.history.push(postDetailsPage(postType, postId));
     };
@@ -44,6 +50,11 @@ const SearchEvent = (props) => {
             setFollows(props.getCheckIfFollowerResponse.follows);
         }
     }, [props.getCheckIfFollowerResponse]);
+    const handleSetFilter = (name, value) => {
+        const filters_ = filters;
+        filters_[name] = value;
+        setFilters({ ...filters_ });
+    };
     const handleFollowClick = () => {
         setLoading(true);
         const user = props.auth.user;
@@ -75,6 +86,24 @@ const SearchEvent = (props) => {
             // NotificationManager.success('Server connection error', 'failed');
         }
     }, [props.getUnfollowResponse]);
+    useEffect(() => {
+        const { success } = props.getAllPostsResponse;
+        if (success) {
+            let allFilteredPosts = props.getAllPostsResponse.allPosts;
+
+            if (filters) {
+                if (filters.topNeed) {
+                    allFilteredPosts = allFilteredPosts.filter((post) => post.topNeed === true);
+                } else {
+                    allFilteredPosts = props.getAllPostsResponse.allPosts;
+                }
+            }
+            console.log('🚀 ~ file: organization-post-list.js ~ line 93 ~ useEffect ~ allFilteredPosts', allFilteredPosts);
+            setAllPosts([...allFilteredPosts]);
+        } else {
+            setAllPosts([]);
+        }
+    }, [props.getAllPostsResponse, filters]);
     const gotoPage = (url) => {
         props.history.push(url);
     };
@@ -124,8 +153,10 @@ const SearchEvent = (props) => {
                         <Col sm="9" className="left-border">
                             <PostTypeMenu selected={props.match.params.postType} userId={props.match.params.userId} />
                             <hr />
+                            <PostFilter filters={filters} handleSetFilter={handleSetFilter} />
                             <EventListView
-                                allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
+                                // allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
+                                allPosts={allPosts}
                                 gotoPostDetails={gotoPostDetails}
                                 userId={userId}
                                 handleLikePost={handleLikePost}

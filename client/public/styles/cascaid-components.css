@@ -14,3 +14,9 @@
 
 .tiny-badge {
 }
+.form-check-input {
+    transform: scale(1.5);
+}
+.form-check-label {
+    margin-left: 5px;
+}

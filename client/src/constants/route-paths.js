@@ -20,7 +20,7 @@ export const notFoundPage = '*';
 // New
 // export const completeUserProfile = '/user/complete-profile';
 export const organizationSearchPage = '/search/organization';
-export const eventSearchPage = '/search/event';
+export const communityActivitySearchPage = '/search/community-activity';
 
 // BREAKING DOWN
 

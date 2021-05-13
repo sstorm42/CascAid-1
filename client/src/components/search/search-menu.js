@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
+import { organizationSearchPage, communityActivitySearchPage } from '../../constants/route-paths';
 const SearchMenu = (props) => {
     const selected = props.selected;
     return (
         <Nav variant="pills" activeKey={selected}>
             <Nav.Item sz="sm">
-                <Nav.Link eventKey="organization" href="/search/organization">
+                <Nav.Link eventKey="organization" href={organizationSearchPage}>
                     Organization
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item sz="sm">
-                <Nav.Link eventKey="event" href="/search/event">
+                <Nav.Link eventKey="event" href={communityActivitySearchPage}>
                     Community Activity
                 </Nav.Link>
             </Nav.Item>

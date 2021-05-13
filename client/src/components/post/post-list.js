@@ -79,22 +79,12 @@ const PostList = (props) => {
                     <br />
                     {allPosts && allPosts.length > 0 && (
                         <Table striped bordered hover>
-                            {/* <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th></th>
-                                    <th>Title</th>
-                                    <th>Created At</th>
-                                    <th>Active</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead> */}
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Post Type</th>
                                     <th>Title</th>
-                                    <th>Created At</th>
+                                    <th>Created On</th>
                                     <th>Published</th>
                                     <th>Action</th>
                                 </tr>
