@@ -64,7 +64,7 @@ const HomePostFeed = (props) => {
                             </Row>
                             <Row>
                                 <Col>
-                                    {post.impactAreaNames.map((area, i) => {
+                                    {post.impactAreas.map((area, i) => {
                                         return (
                                             <Badge variant="light" className="badge-single-small impact-area-badge" key={i}>
                                                 {area.label}
@@ -76,13 +76,14 @@ const HomePostFeed = (props) => {
 
                             <Row>
                                 <Col>
-                                    {post.skillNames.map((skill, i) => {
-                                        return (
-                                            <Badge variant="light" className="badge-single-small skill-badge" key={i}>
-                                                {skill.label}
-                                            </Badge>
-                                        );
-                                    })}
+                                    {post.skills &&
+                                        post.skills.map((skill, i) => {
+                                            return (
+                                                <Badge variant="light" className="badge-single-small skill-badge" key={i}>
+                                                    {skill.label}
+                                                </Badge>
+                                            );
+                                        })}
                                 </Col>
                             </Row>
 

@@ -88,7 +88,8 @@ exports.getAll = async (req, res) => {
         const postTypes = req.query.postTypes ? JSON.parse(req.query.postTypes) : [];
         let startDate = req.query.startDate ? JSON.parse(req.query.startDate) : '';
         let endDate = req.query.endDate ? JSON.parse(req.query.endDate) : '';
-        const isActive = req.query.isActive ? JSON.parse(req.query.isActive) : true;
+        const isActive = req.query.isActive ? JSON.parse(req.query.isActive) : '';
+        const topNeed = req.query.topNeed ? JSON.parse(req.query.topNeed) : '';
         const keyword = req.query.keyword ? JSON.parse(req.query.keyword) : '';
         let match = {};
         if (title && title.length > 0) {
@@ -112,6 +113,9 @@ exports.getAll = async (req, res) => {
         }
         if (fullAddress && fullAddress.length > 0) {
             match['address.fullAddress'] = { $regex: fullAddress, $options: 'i' };
+        }
+        if (topNeed !== '') {
+            match['topNeed'] = topNeed;
         }
         let dateCondition = {};
         if (startDate && endDate) {
@@ -147,6 +151,7 @@ exports.getAll = async (req, res) => {
         aggregateOptions.push({ $match: { $and: [match, dateCondition] } }, ...lookUps, { $project: project });
 
         const allPosts = await Post.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: post-controller.js ~ line 154 ~ exports.getAll= ~ allPosts', allPosts.length);
 
         if (allPosts) return res.status(200).send({ ...RESPONSES.PostFound, allPosts });
         else return res.status(404).send(RESPONSES.PostNotFound);
@@ -220,6 +225,7 @@ exports.getAllFeeds = async (req, res) => {
         const allFollowingOrganizations = await Follow.find({ followerId: userId });
         let match = {};
         match['creatorId'] = { $in: allFollowingOrganizations.map((follow) => follow.followingId) };
+        match['isActive'] = true;
         const lookUps = [
             LOOKUPS.post_organization,
             LOOKUPS.post_impactAreas,
@@ -235,8 +241,8 @@ exports.getAllFeeds = async (req, res) => {
             organizationProfilePicture: '$organization.basicInfo.profilePicture',
             creatorId: 1,
             postType: 1,
-            impactAreaNames: 1,
-            skillNames: 1,
+            impactAreas: 1,
+            skills: 1,
             address: 1,
             createdAt: 1,
             interests: 1,

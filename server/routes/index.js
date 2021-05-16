@@ -11,6 +11,7 @@ const skill = require('./skill-route');
 const notification = require('./notification-route');
 const membership = require('./membership-route');
 const friendship = require('./friendship-route');
+const endorsement = require('./endorsement-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -24,6 +25,7 @@ routes.use('/skills', skill);
 routes.use('/notifications', notification);
 routes.use('/memberships', membership);
 routes.use('/friendships', friendship);
+routes.use('/endorsements', endorsement);
 
 const connected = {
     success: true,

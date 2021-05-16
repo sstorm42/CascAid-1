@@ -2,13 +2,15 @@ import React from 'react';
 import { Button, Tooltip, OverlayTrigger, Dropdown } from 'react-bootstrap';
 import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
 import { RiUserFollowLine } from 'react-icons/ri';
-import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart } from 'react-icons/fa';
+import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart, FaHandsHelping } from 'react-icons/fa';
 import { BiDetail } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
 import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
 import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser } from 'react-icons/ai';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
+import { BsCardList } from 'react-icons/bs';
+import { TiThList } from 'react-icons/ti';
 
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -55,9 +57,11 @@ export const SaveButtonRender = (props) => {
 
 export const ListButtonRender = (props) => {
     return (
-        <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
-            Go to list
-        </Button>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Delete' })}>
+            <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
+                <TiThList />
+            </Button>
+        </OverlayTrigger>
     );
 };
 
@@ -268,5 +272,13 @@ export const FriendDropdownRender = (props) => {
                 )}
             </Dropdown.Menu>
         </Dropdown>
+    );
+};
+
+export const EndorseUserButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" className="details-follow-btn" {...props}>
+            <FaHandsHelping /> Endorse
+        </Button>
     );
 };

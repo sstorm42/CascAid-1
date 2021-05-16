@@ -6,6 +6,7 @@ const { Individual } = require('../models/individual-user-model');
 const { Organization } = require('../models/organization-model');
 const { Follow } = require('../models/follow-model');
 const { Membership } = require('../models/membership-model');
+
 const UserResponse = require('../responses/user-response');
 const ImpactAreaController = require('./impact-area-controller');
 const SkillController = require('./skill-controller');
@@ -15,6 +16,8 @@ const ObjectId = require('mongoose').Types.ObjectId;
 const { allOrganizations } = require('../static_data/sample-organizations');
 const { writeLocalJsonFile, getRandomPassword } = require('../utils/library');
 const { allServiceAreaTypes } = require('../static_data/service-area-types');
+const { updatedOrganizations } = require('../static_data/updated-orgs');
+const validator = require('email-validator');
 
 // @route GET api/user/email/{email}
 // @desc Check for existing email
@@ -606,6 +609,105 @@ exports.seedUsers = async (req, res) => {
             // }
         }
         return res.status(200).send({ success: true, totalUsers: users.length });
+    } catch (err) {
+        console.log('ERR', err.message);
+        return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.deleteMultipleUsers = async (req, res) => {
+    try {
+        const userType = req.query.userType;
+        const deletedUsers = await User.deleteMany({
+            userType,
+        });
+        if (deletedUsers) {
+            return res.status(200).send({ success: true, deletedUsers });
+        } else return res.status(401).send({ success: false, deletedUsers });
+    } catch (err) {
+        console.log('ERR', err.message);
+        return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.seedNew = async (req, res) => {
+    try {
+        let orgs = [];
+        const ttlUsers = updatedOrganizations.length;
+        const organizationTypes = await OrganizationType.find({});
+        let orgTypeObject = {};
+        for (let i = 0; i < organizationTypes.length; i++) {
+            orgTypeObject[organizationTypes[i].value] = organizationTypes[i]._id;
+        }
+        const impactAreas = await ImpactArea.find({});
+        let impactAreaObject = {};
+        for (let i = 0; i < impactAreas.length; i++) {
+            impactAreaObject[impactAreas[i].value] = impactAreas[i]._id;
+            impactAreaObject[impactAreas[i].label] = impactAreas[i]._id;
+        }
+        for (let i = 0; i < ttlUsers; i++) {
+            let organization = updatedOrganizations[i];
+            let email = organization.Contact;
+            if (email) {
+                email = email.toLocaleLowerCase();
+                let userFound = await User.find({ email: email });
+                if (userFound && userFound.length > 0) continue;
+                else {
+                    let password = getRandomPassword();
+                    orgs.push({
+                        email,
+                        password,
+                    });
+                    let user = new User({
+                        email: email,
+                        password: password,
+                        userType: 'organization',
+                        basicInfo: {
+                            name: organization.Name,
+                            phone: '',
+                            profilePicture: '',
+                            coverPicture: '',
+                            mission: organization.Mission,
+                            website: organization.Website,
+                            contactEmail: organization.Contact,
+                            organizationTypes: organization.OrganizationType
+                                ? organization.OrganizationType.split(', ').map((type) => orgTypeObject[type])
+                                : [],
+                            description: organization.Description,
+                            address: {
+                                street1: organization.Address,
+                                street2: '',
+                                city: '',
+                                state: '',
+                                country: 'US',
+                                code: organization.Zip,
+                            },
+                        },
+                        serviceInfo: {
+                            serviceAreaTypes: [],
+                            serviceAreas: organization.ServiceArea ? organization.ServiceArea.split(',') : [],
+                            impactAreas: organization.ImpactAreas
+                                ? organization.ImpactAreas.split(', ').map((area) => impactAreaObject[area])
+                                : [],
+                            donationLink: organization.Donate,
+                            newsLetterLink: organization.NewsLetter,
+                            keywords: organization.Keywords ? organization.Keywords.split(',') : [],
+                        },
+                        internalLink: {
+                            eventLink: organization.Events,
+                            rssLink: organization.RSS,
+                            blogLink: organization.Blog,
+                        },
+                    });
+                    let user_ = await user.save();
+                    if (!user_) {
+                        return res.status(500).send({ success: false, message: 'Organization failed to save:', user });
+                    }
+                }
+            }
+        }
+        // writeLocalJsonFile(orgs, 'organizations');
+        res.status(200).send({ success: true, orgs });
     } catch (err) {
         console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });

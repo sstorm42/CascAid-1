@@ -14,7 +14,8 @@ import { defaultCurrentLocation } from '../../constants/default-user-information
 import FilterEvent from '../../components/search/filter-event';
 import { allSearchablePostTypes } from '../../constants/post-types';
 import { postDetailsPage } from '../../constants/route-paths';
-const SearchEvent = (props) => {
+
+const SearchCommunityActivity = (props) => {
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
     const [loading, setLoading] = useState(false);
@@ -24,20 +25,26 @@ const SearchEvent = (props) => {
         title: '',
         impactAreas: [],
         postTypes: allSearchablePostTypes,
-        startDate: new Date(),
-        endDate: new Date(),
+        // startDate: new Date(),
+        // endDate: new Date(),
+        startDate: '',
+        endDate: '',
         fullAddress: '',
         keyword: '',
+        topNeed: false,
     });
     const resetFilter = () => {
         setFilter({
             title: '',
             impactAreas: [],
             postTypes: allSearchablePostTypes,
-            startDate: new Date(),
-            endDate: new Date(),
+            // startDate: new Date(),
+            // endDate: new Date(),
+            startDate: '',
+            endDate: '',
             fullAddress: '',
             keyword: '',
+            topNeed: false,
         });
     };
     useEffect(() => {
@@ -176,7 +183,6 @@ const SearchEvent = (props) => {
                     )}
                     {viewType === 'map' && (
                         <EventMapView
-                            // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
                             allPosts={
                                 props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []
                             }
@@ -192,12 +198,10 @@ const SearchEvent = (props) => {
 const mapStateToProps = (state) => {
     console.log(state);
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
-    // const getAllEventsResponse = state.Event.getAllEvents;
     const getAllPostsResponse = state.Post.getAllPosts;
     return {
         getImpactAreaResponse,
-        // getAllEventsResponse,
         getAllPostsResponse,
     };
 };
-export default connect(mapStateToProps, null)(SearchEvent);
+export default connect(mapStateToProps, null)(SearchCommunityActivity);

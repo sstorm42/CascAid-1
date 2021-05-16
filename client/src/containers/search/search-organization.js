@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import OrganizationListView from '../../components/organization/organization-list-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
+import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
 import { getAllUsers } from '../../actions/user-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import SearchMenu from '../../components/search/search-menu';
@@ -13,10 +14,12 @@ import Pagination from 'react-js-pagination';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
 
 const SearchOrganization = (props) => {
+    const [userId, setUserId] = useState();
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
     const [activePage, setActivePage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
+    const [followObject, setFollowObject] = useState({});
     const [filter, setFilter] = useState({
         name: '',
         impactAreas: [],
@@ -38,6 +41,17 @@ const SearchOrganization = (props) => {
             }
         });
     }, []);
+    useEffect(() => {
+        const { success } = props.getAllFollowingsResponse;
+        if (success) {
+            let followObject_ = {};
+            const followings = props.getAllFollowingsResponse.followings;
+            for (let i = 0; i < followings.length; i++) {
+                followObject_[followings[i].followingId] = true;
+            }
+            setFollowObject({ ...followObject_ });
+        }
+    }, [props.getAllFollowingsResponse]);
     const resetFilter = () => {
         setFilter({
             name: '',
@@ -50,7 +64,6 @@ const SearchOrganization = (props) => {
         });
     };
     const changeFilter = (key, value) => {
-        console.log('🚀 ~ file: search-organization.js ~ line 53 ~ changeFilter ~ key, value', key, value);
         let filter_ = filter;
         filter[key] = value;
         console.log(filter_);
@@ -59,6 +72,9 @@ const SearchOrganization = (props) => {
     const handleOnApplyFilter = () => {
         setLoading(true);
         props.dispatch(getAllUsers({ ...filter, userType: 'organization' }));
+        if (userId) {
+            props.dispatch(getAllFollowings(userId));
+        }
         setLoading(false);
         setActivePage(1);
         console.log('FFF', filter);
@@ -66,9 +82,25 @@ const SearchOrganization = (props) => {
     const gotoOrganizationDetails = (userId) => {
         props.history.push(`/organization/details/${userId}`);
     };
+    const handleFollowUser = (followingId) => {
+        props.dispatch(followUser({ followerId: userId, followingId }));
+        let followObject_ = followObject;
+        followObject_[followingId] = true;
+        setFollowObject({ ...followObject_ });
+    };
+    const handleUnfollowUser = (followingId) => {
+        props.dispatch(unfollowUser({ followerId: userId, followingId }));
+        let followObject_ = followObject;
+        followObject_[followingId] = false;
+        setFollowObject({ ...followObject_ });
+    };
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
+            const user = props.auth.user;
+            if (user && user._id) {
+                setUserId(user._id);
+            }
             props.dispatch(getAllGlobalImpactAreas());
             props.dispatch(getAllOrganizationTypes());
             setLoading(false);
@@ -91,6 +123,7 @@ const SearchOrganization = (props) => {
                             filter={filter}
                             organizationTypes={props.getOrganizationTypeResponse?.success ? props.getOrganizationTypeResponse.organizationTypes : []}
                             impactAreas={props.getImpactAreaResponse?.success ? props.getImpactAreaResponse.impactAreas : []}
+                            submitting={props.submitting}
                         />
                     </Col>
                     <Col lg={8}>
@@ -134,6 +167,9 @@ const SearchOrganization = (props) => {
                                             : []
                                     }
                                     gotoOrganizationDetails={gotoOrganizationDetails}
+                                    followObject={followObject}
+                                    handleFollowUser={handleFollowUser}
+                                    handleUnfollowUser={handleUnfollowUser}
                                 />
                             </>
                         )}
@@ -143,6 +179,9 @@ const SearchOrganization = (props) => {
                                 gotoOrganizationDetails={gotoOrganizationDetails}
                                 zoom={8}
                                 currentLocation={currentLocation}
+                                followObject={followObject}
+                                handleFollowUser={handleFollowUser}
+                                handleUnfollowUser={handleUnfollowUser}
                             />
                         )}
                     </Col>
@@ -155,10 +194,12 @@ const mapStateToProps = (state) => {
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
     const getOrganizationTypeResponse = state.OrganizationType.getAllOrganizationTypes;
     const getAllOrganizationsResponse = state.User.getAllUsers;
+    const getAllFollowingsResponse = state.Follow.getAllFollowings;
     return {
         getImpactAreaResponse,
         getAllOrganizationsResponse,
         getOrganizationTypeResponse,
+        getAllFollowingsResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchOrganization);

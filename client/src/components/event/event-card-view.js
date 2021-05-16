@@ -56,7 +56,7 @@ const EventListView = (props) => {
                                         <small>{descriptionRender(post.description)}</small>
                                     </Card.Text>
 
-                                    {ImpactAreasRender('', post.impactAreaNames)}
+                                    {ImpactAreasRender('', post.impactAreas)}
                                     <br />
                                     {post.address && InfoRender('', post.address.fullAddress)}
                                     <br />

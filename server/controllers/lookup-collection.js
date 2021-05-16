@@ -12,7 +12,7 @@ exports.post_impactAreas = {
         from: 'impactareas',
         localField: 'impactAreas',
         foreignField: '_id',
-        as: 'impactAreaNames',
+        as: 'impactAreas',
     },
 };
 exports.post_skills = {
@@ -20,7 +20,7 @@ exports.post_skills = {
         from: 'skills',
         localField: 'skills',
         foreignField: '_id',
-        as: 'skillNames',
+        as: 'skills',
     },
 };
 exports.post_interests = {
@@ -84,5 +84,23 @@ exports.follow_following = {
         localField: 'followingId',
         foreignField: '_id',
         as: 'following',
+    },
+};
+
+// ENDORSEMENT
+exports.endorsement_endorser = {
+    $lookup: {
+        from: 'users',
+        localField: 'endorserId',
+        foreignField: '_id',
+        as: 'endorser',
+    },
+};
+exports.endorsement_endorsee = {
+    $lookup: {
+        from: 'users',
+        localField: 'endorseeId',
+        foreignField: '_id',
+        as: 'endorsee',
     },
 };

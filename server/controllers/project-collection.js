@@ -16,8 +16,8 @@ exports.post_get_one = {
     organizationProfilePicture: { $arrayElemAt: ['$organization.basicInfo.profilePicture', 0] },
     creatorId: 1,
     postType: 1,
-    impactAreaNames: 1,
-    skillNames: 1,
+    impactAreas: 1,
+    skills: 1,
     address: 1,
     ...common,
     interests: 1,
@@ -35,7 +35,7 @@ exports.post_get_all = {
     organizationProfilePicture: { $arrayElemAt: ['$organization.basicInfo.profilePicture', 0] },
     creatorId: 1,
     postType: 1,
-    impactAreaNames: 1,
+    impactAreas: 1,
     address: 1,
     ...common,
     interests: 1,
@@ -104,5 +104,31 @@ exports.follow_get_all_follower = {
         followerFirstName: { $arrayElemAt: ['$follower.basicInfo.firstName', 0] },
         followerLastName: { $arrayElemAt: ['$follower.basicInfo.lastName', 0] },
         followerProfilePicture: { $arrayElemAt: ['$follower.basicInfo.profilePicture', 0] },
+    },
+};
+
+// ENDORSEMENT
+exports.endorsement_get_all_endorsee = {
+    $project: {
+        ...common,
+        endorserId: 1,
+        endorseeId: 1,
+        endorseeUserType: { $arrayElemAt: ['$endorsee.userType', 0] },
+        endorseeName: { $arrayElemAt: ['$endorsee.basicInfo.name', 0] },
+        endorseeFirstName: { $arrayElemAt: ['$endorsee.basicInfo.firstName', 0] },
+        endorseeLastName: { $arrayElemAt: ['$endorsee.basicInfo.lastName', 0] },
+        endorseeProfilePicture: { $arrayElemAt: ['$endorsee.basicInfo.profilePicture', 0] },
+    },
+};
+exports.endorsement_get_all_endorser = {
+    $project: {
+        ...common,
+        endorserId: 1,
+        endorseeId: 1,
+        endorserUserType: { $arrayElemAt: ['$endorser.userType', 0] },
+        endorserName: { $arrayElemAt: ['$endorser.basicInfo.name', 0] },
+        endorserFirstName: { $arrayElemAt: ['$endorser.basicInfo.firstName', 0] },
+        endorserLastName: { $arrayElemAt: ['$endorser.basicInfo.lastName', 0] },
+        endorserProfilePicture: { $arrayElemAt: ['$endorser.basicInfo.profilePicture', 0] },
     },
 };

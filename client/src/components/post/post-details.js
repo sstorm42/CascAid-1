@@ -82,13 +82,13 @@ const DisplayPost = (props) => {
                         </Row>
                         <br />
                         <Row>
-                            <Col>{ImpactAreasRender('', post.impactAreaNames)}</Col>
+                            <Col>{ImpactAreasRender('', post.impactAreas)}</Col>
                         </Row>
                         <hr />
                         {fields.skills && (
                             <>
                                 <Row>
-                                    <Col>{TagWithLabelRender('', post.skillNames)}</Col>
+                                    <Col>{TagWithLabelRender('', post.skills)}</Col>
                                 </Row>
                                 <hr />
                             </>

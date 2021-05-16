@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image, Nav, Button, Form } from 'react-bootstrap';
 import { allSearchablePostTypes } from '../../constants/post-types';
 import DatePicker from 'react-datepicker';
 const EventFilter = (props) => {
@@ -11,15 +11,37 @@ const EventFilter = (props) => {
             <input className="form-control" type="text" value={props.filter.title} onChange={(e) => props.changeFilter('title', e.target.value)} />
             <br />
             <label>Post Type</label>
-            <Select onChange={(value) => props.changeFilter('postTypes', value)} isMulti={true} options={allSearchablePostTypes} value={props.filter.postTypes} />
+            <Select
+                onChange={(value) => props.changeFilter('postTypes', value)}
+                isMulti={true}
+                options={allSearchablePostTypes}
+                value={props.filter.postTypes}
+            />
             <br />
             <label>Impact Area</label>
-            <Select onChange={(value) => props.changeFilter('impactAreas', value)} isMulti={true} options={props.impactAreas} value={props.filter.impactAreas} />
+            <Select
+                onChange={(value) => props.changeFilter('impactAreas', value)}
+                isMulti={true}
+                options={props.impactAreas}
+                value={props.filter.impactAreas}
+            />
             <br />
             <label>Start Date</label>
-            <DatePicker className="form-control custom-date-picker" onChange={(date) => props.changeFilter('startDate', date)} selected={props.filter.startDate} dateFormat="MM/dd/yyyy" />
+            <DatePicker
+                className="form-control custom-date-picker"
+                onChange={(date) => props.changeFilter('startDate', date)}
+                selected={props.filter.startDate}
+                dateFormat="MM/dd/yyyy"
+            />
+            <br />
+            <br />
             <label>End Date</label>
-            <DatePicker className="form-control custom-date-picker" onChange={(date) => props.changeFilter('endDate', date)} selected={props.filter.endDate} dateFormat="MM/dd/yyyy" />
+            <DatePicker
+                className="form-control custom-date-picker"
+                onChange={(date) => props.changeFilter('endDate', date)}
+                selected={props.filter.endDate}
+                dateFormat="MM/dd/yyyy"
+            />
             <br />
             <br />
             <label>Address</label>
@@ -34,6 +56,19 @@ const EventFilter = (props) => {
                     props.changeFilter('keyword', e.target.value);
                 }}
             />
+            <br />
+            <Form>
+                <Form.Group controlId="formBasicCheckbox">
+                    <Form.Check
+                        type="checkbox"
+                        label="Show Only Top Need"
+                        checked={props.filter.topNeed}
+                        onChange={() => {
+                            props.changeFilter('topNeed', !props.filter.topNeed);
+                        }}
+                    />
+                </Form.Group>
+            </Form>
             <div style={{ height: 50 }} />
             <Button
                 variant="outline-danger"

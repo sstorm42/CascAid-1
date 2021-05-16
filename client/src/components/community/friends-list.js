@@ -26,7 +26,7 @@ const SampleOrgList = (props) => {
                             friendId = friendship.senderId;
                         }
                         return (
-                            <Card>
+                            <Card className="special-btn">
                                 <Card.Img
                                     variant="top"
                                     src={profilePicture}

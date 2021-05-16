@@ -10,8 +10,9 @@ export const allPostTypes = [
 export const allSearchablePostTypes = [
     { id: 1, value: 'event', label: 'Event' },
     { id: 2, value: 'project', label: 'Project' },
-    { id: 3, value: 'volunteering', label: 'Volunteering' },
-    { id: 4, value: 'advocacy', label: 'Advocacy' },
+    { id: 3, value: 'general', label: 'General Post' },
+    { id: 4, value: 'volunteering', label: 'Volunteering' },
+    { id: 5, value: 'advocacy', label: 'Advocacy' },
 ];
 export const getPostTypeByValue = (value) => {
     return allPostTypes.filter((type) => type.value === value);
@@ -34,11 +35,48 @@ const fields = {
 };
 export const postTypeFields = {
     event: { title: 1, description: 1, images: 1, impactAreas: 1, startDateTime: 1, endDateTime: 1, address: 1, isActive: 1, keywords: 1 },
-    project: { title: 1, description: 1, images: 1, impactAreas: 1, skills: 1, expectedRequiredHours: 1, startDateTime: 1, endDateTime: 1, address: 1, isActive: 1, topNeed: 1, keywords: 1 },
+    project: {
+        title: 1,
+        description: 1,
+        images: 1,
+        impactAreas: 1,
+        skills: 1,
+        expectedRequiredHours: 1,
+        startDateTime: 1,
+        endDateTime: 1,
+        address: 1,
+        isActive: 1,
+        topNeed: 1,
+        keywords: 1,
+    },
     general: { title: 1, description: 1, images: 1, impactAreas: 1, isActive: 1, keywords: 1 },
-    volunteering: { title: 1, description: 1, images: 1, impactAreas: 1, skills: 1, startDateTime: 1, endDateTime: 1, address: 1, isActive: 1, topNeed: 1, keywords: 1 },
+    volunteering: {
+        title: 1,
+        description: 1,
+        images: 1,
+        impactAreas: 1,
+        skills: 1,
+        startDateTime: 1,
+        endDateTime: 1,
+        address: 1,
+        isActive: 1,
+        topNeed: 1,
+        keywords: 1,
+    },
     'in-kind': { title: 1, description: 1, images: 1, impactAreas: 1, requiredItems: 1, isActive: 1, topNeed: 1, keywords: 1 },
-    advocacy: { title: 1, description: 1, images: 1, petitionLink: 1, impactAreas: 1, topNeed: 1, startDateTime: 1, endDateTime: 1, address: 1, isActive: 1, keywords: 1 },
+    advocacy: {
+        title: 1,
+        description: 1,
+        images: 1,
+        petitionLink: 1,
+        impactAreas: 1,
+        topNeed: 1,
+        startDateTime: 1,
+        endDateTime: 1,
+        address: 1,
+        isActive: 1,
+        keywords: 1,
+    },
 };
 export const allPostTypeValues = ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'];
 export const allPostTypeLabels = ['Event', 'Project', 'General', 'Volunteering', 'In-Kind', 'Advocacy'];

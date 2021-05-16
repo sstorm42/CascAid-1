@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ListGroup, Image, Button, Modal } from 'react-bootstrap';
 import { getTitleByType } from '../../actions/notification-action';
-import { ReadButtonRender, UnreadButtonRender, DeleteButtonRender } from '../form_template/buttons-render';
+import { ReadButtonRender, UnreadButtonRender, DeleteButtonRender, ListButtonRender } from '../form_template/buttons-render';
 import moment from 'moment';
+import UserListModal from './user-list-modal';
 const NotificationList = (props) => {
     const allNotifications = props.allNotifications;
-    console.log('🚀 ~ file: notification-list.js ~ line 8 ~ NotificationList ~ allNotifications', allNotifications);
-
+    const TitleRender = (notification) => {};
+    const [userListModal, setUserListModal] = useState(false);
+    const [users, setUsers] = useState([]);
+    const handleListModal = (users, modal) => {
+        setUsers([...users]);
+        setUserListModal(modal);
+    };
     return (
         <Container>
             <Row>
+                <UserListModal userListModal={userListModal} users={users} setUserListModal={setUserListModal} />
                 <Col className="parent-page">
                     <Row>
                         <Col sm="6">
@@ -34,7 +41,6 @@ const NotificationList = (props) => {
                             const postType = notification.postId && notification.postId.postType ? notification.postId.postType : '';
                             return (
                                 <ListGroup horizontal="xl" className="my-1" key={i} style={{ width: '100%' }}>
-                                    {/* <ListGroup.Item className="col-sm-2"></ListGroup.Item> */}
                                     <ListGroup.Item
                                         className="col-sm-8"
                                         action
@@ -62,6 +68,12 @@ const NotificationList = (props) => {
                                     </ListGroup.Item>
 
                                     <ListGroup.Item className="col-sm-2">
+                                        <ListButtonRender
+                                            onClick={() => {
+                                                handleListModal(notification.senders, true);
+                                            }}
+                                        />
+                                        &nbsp;
                                         {notification.isRead ? (
                                             <UnreadButtonRender
                                                 onClick={() => {

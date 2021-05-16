@@ -2,17 +2,34 @@ import React from 'react';
 import Select from 'react-select';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 const SearchMenu = (props) => {
+    const submitting = props.submitting;
+    console.log('🚀 ~ file: filter-organization.js ~ line 6 ~ SearchMenu ~ submitting', submitting);
     console.log(props);
     return (
-        <>
+        <form
+            onSubmit={(e) => {
+                e.preventDefault();
+                props.handleOnApplyFilter();
+            }}
+        >
             <label>Organization Name</label>
             <input className="form-control" type="text" value={props.filter.name} onChange={(e) => props.changeFilter('name', e.target.value)} />
             <br />
             <label>Impact Area</label>
-            <Select onChange={(value) => props.changeFilter('impactAreas', value)} isMulti={true} options={props.impactAreas} value={props.filter.impactAreas} />
+            <Select
+                onChange={(value) => props.changeFilter('impactAreas', value)}
+                isMulti={true}
+                options={props.impactAreas}
+                value={props.filter.impactAreas}
+            />
             <br />
             <label>Organization Type</label>
-            <Select onChange={(value) => props.changeFilter('organizationTypes', value)} isMulti={true} options={props.organizationTypes} value={props.filter.organizationTypes} />
+            <Select
+                onChange={(value) => props.changeFilter('organizationTypes', value)}
+                isMulti={true}
+                options={props.organizationTypes}
+                value={props.filter.organizationTypes}
+            />
             <br />
             <label>Service Area</label>
             <input
@@ -47,6 +64,7 @@ const SearchMenu = (props) => {
             <br />
             <br />
             <Button
+                type="button"
                 variant="outline-danger"
                 size="sm"
                 onClick={() => {
@@ -57,15 +75,17 @@ const SearchMenu = (props) => {
             </Button>
             &nbsp;
             <Button
+                type="submit"
                 size="sm"
-                onClick={() => {
-                    props.handleOnApplyFilter();
-                }}
+                // onClick={() => {
+                //     props.handleOnApplyFilter();
+                // }}
+                disabled={submitting}
             >
                 Search
             </Button>
             <div style={{ height: 25 }} />
-        </>
+        </form>
     );
 };
 export default SearchMenu;

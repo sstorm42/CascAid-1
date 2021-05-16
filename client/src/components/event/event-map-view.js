@@ -35,7 +35,7 @@ const PostRender = ({ post }) => {
                     <h6 style={{ color: 'cadetblue' }}>{post.organizationName}</h6>
                 </Link>
             )}
-            {ImpactAreasRender('', post.impactAreaNames)}
+            {ImpactAreasRender('', post.impactAreas)}
             {InfoRender('', post.address.fullAddress)}
             <hr />
             <LikeButtonRender /> &nbsp;
