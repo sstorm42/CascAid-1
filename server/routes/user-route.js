@@ -39,6 +39,7 @@ user.get('/:userId/impact-areas', allowIfLoggedIn, ImpactAreaController.getAllBy
 user.get('/:userId/languages', allowIfLoggedIn, LanguageController.getAllByUser);
 user.get('/:userId/skills', allowIfLoggedIn, SkillController.getAllByUser);
 
+// SEED
 user.delete('/multiple', UserController.deleteMultipleUsers);
 user.post('/seed/updated', UserController.seedNew);
 module.exports = user;

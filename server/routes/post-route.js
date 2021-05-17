@@ -22,4 +22,7 @@ post.post('/:postId/cancel-going', allowIfLoggedIn, PostController.cancelGoing);
 
 post.get('/:postId/committed/', allowIfLoggedIn, PostController.getAllCommitted);
 post.get('/:postId/committed/:userId', allowIfLoggedIn, PostController.getCommitted);
+
+// SEED
+post.post('/seed', PostController.seedPosts);
 module.exports = post;

@@ -12,6 +12,7 @@ const NotificationController = require('./notification-controller');
 const NotificationResponse = require('../responses/notification-response');
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
+const { posts } = require('../static_data/sample-posts.js');
 exports.createOne = async (req, res) => {
     try {
         let post = req.body;
@@ -499,3 +500,33 @@ exports.getCommitted = async (req, res) => {};
 // };
 exports.getAllByUser = async (req, res) => {};
 exports.getAllSuggestions = async (req, res) => {};
+
+exports.seedPosts = async (req, res) => {
+    try {
+        const ttl = posts.length;
+        const users = await User.find({});
+        let userObject = {};
+        for (let i = 0; i < users.length; i++) {
+            userObject[users[i].email] = users[i]._id;
+        }
+        for (let i = 0; i < ttl; i++) {
+            let post_ = new Post({
+                title: posts[i].Title,
+                description: posts[i].Description,
+                postType: 'general',
+                creatorId: userObject[posts[i].orgEmail.toLowerCase()],
+                createdAt: posts[i].time,
+                updatedAt: posts[i].time,
+                isActive: true,
+                isDeleted: false,
+            });
+            const createdPost = await post_.save();
+            if (!createdPost) {
+                return res.status(401).send({ success: false, post_ });
+            }
+        }
+        return res.status(200).send({ success: true });
+    } catch (error) {
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
