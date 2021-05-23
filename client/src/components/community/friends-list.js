@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardColumns } from 'react-bootstrap';
 import { defaultIndividualProfilePicture } from '../../constants/default-images';
+import { MessageButtonRender } from '../form_template/buttons-render';
 const SampleOrgList = (props) => {
     const friendships = props.friendships;
     const userId = props.userId;
@@ -41,7 +42,13 @@ const SampleOrgList = (props) => {
                                 >
                                     <Card.Title>{name}</Card.Title>
                                 </Card.Body>
-                                <Card.Footer></Card.Footer>
+                                <Card.Footer>
+                                    <MessageButtonRender
+                                        onClick={() => {
+                                            props.handleOpenMessageModal({ userId: friendId, name });
+                                        }}
+                                    />
+                                </Card.Footer>
                             </Card>
                         );
                     })}

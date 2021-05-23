@@ -12,3 +12,16 @@ export const setMessage = (message) => {
         payload: ConversationDA.create_new_message(message),
     };
 };
+export const getAllConversationsByUser = (userId) => {
+    return {
+        type: Types.GET_ALL_CONVERSATIONS_BY_USER,
+        payload: ConversationDA.get_all_conversations_by_user(userId),
+    };
+};
+
+export const getConversation = (conversationId) => {
+    return {
+        type: Types.GET_CONVERSATION,
+        payload: ConversationDA.get_conversation(conversationId),
+    };
+};

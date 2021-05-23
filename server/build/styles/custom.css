@@ -288,6 +288,13 @@ tr td:last-child {
     font-weight: bold;
     color: white;
 }
+.details-endorsing-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #bdd8da;
+    font-weight: bold;
+    color: white;
+}
 .post-box {
     /* border: 0.01em solid gray; */
     background-color: white;

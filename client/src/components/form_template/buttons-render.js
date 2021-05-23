@@ -7,8 +7,8 @@ import { BiDetail } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
 import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
-import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser } from 'react-icons/ai';
-import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
+import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend } from 'react-icons/ai';
+import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/ri';
 import { BsCardList } from 'react-icons/bs';
 import { TiThList } from 'react-icons/ti';
 
@@ -291,10 +291,17 @@ export const CancelEndorseUserButtonRender = (props) => {
     );
 };
 
-export const SendNewMessageButtonRender = (props) => {
+export const MessageButtonRender = (props) => {
     return (
-        <Button size="sm" variant="outline-success" className="details-endorsing-btn" {...props}>
-            <FaHandsHelping /> Endorsing
+        <Button size="sm" variant="outline-success" {...props}>
+            <RiChat2Line /> Message
+        </Button>
+    );
+};
+export const SendMessageButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <AiOutlineSend /> Send
         </Button>
     );
 };

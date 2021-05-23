@@ -20,6 +20,28 @@ class ConversationDA {
                 return err.response.data;
             });
     };
+    get_all_conversations_by_user = (userId) => {
+        return axios
+            .get(APIPaths.getAllConversationsByUser(userId), APIPaths.apiConfig())
+            .then((response) => {
+                console.log('🚀 ~ file: conversation-da.js ~ line 27 ~ ConversationDA ~ .then ~ response', response);
+
+                return response.data;
+            })
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
+    };
+    get_conversation = (conversationId) => {
+        return axios
+            .get(APIPaths.getOneConversation(conversationId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
+    };
 }
 
 export default new ConversationDA();
