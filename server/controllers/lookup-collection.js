@@ -104,3 +104,39 @@ exports.endorsement_endorsee = {
         as: 'endorsee',
     },
 };
+
+// VIEW
+exports.view_user = {
+    $lookup: {
+        from: 'users',
+        localField: 'viewerId',
+        foreignField: '_id',
+        as: 'viewer',
+    },
+};
+exports.view_post = {
+    $lookup: {
+        from: 'posts',
+        localField: 'postId',
+        foreignField: '_id',
+        as: 'post',
+    },
+};
+
+// CONVERSATION
+exports.conversation_messages = {
+    $lookup: {
+        from: 'messages',
+        localField: '_id',
+        foreignField: 'conversationId',
+        as: 'messages',
+    },
+};
+exports.conversation_users = {
+    $lookup: {
+        from: 'users',
+        localField: 'members',
+        foreignField: '_id',
+        as: 'members',
+    },
+};

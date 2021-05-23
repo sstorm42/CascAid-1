@@ -57,7 +57,7 @@ export const SaveButtonRender = (props) => {
 
 export const ListButtonRender = (props) => {
     return (
-        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: 'Delete' })}>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: props.title ? props.title : 'List' })}>
             <Button className="actionButton" variant="outline-primary" size="sm" {...props}>
                 <TiThList />
             </Button>
@@ -279,6 +279,22 @@ export const EndorseUserButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" className="details-follow-btn" {...props}>
             <FaHandsHelping /> Endorse
+        </Button>
+    );
+};
+
+export const CancelEndorseUserButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" className="details-endorsing-btn" {...props}>
+            <FaHandsHelping /> Endorsing
+        </Button>
+    );
+};
+
+export const SendNewMessageButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" className="details-endorsing-btn" {...props}>
+            <FaHandsHelping /> Endorsing
         </Button>
     );
 };

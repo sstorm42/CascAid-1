@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Table, Dropdown, Modal } from 'react-bootstrap';
+import { Container, Image, Row, Col, Button, Table, Dropdown, Modal } from 'react-bootstrap';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { getPostTypeByValue } from '../../constants/post-types';
-import { EditButtonRender, DeleteButtonRender, DetailsButtonRender } from '../../components/form_template/buttons-render';
+import { EditButtonRender, DeleteButtonRender, DetailsButtonRender, ListButtonRender } from '../../components/form_template/buttons-render';
 import moment from 'moment';
 import * as RoutePaths from '../../constants/route-paths';
 import { FaPlus } from 'react-icons/fa';
@@ -11,7 +12,8 @@ const PostList = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const allPosts = props.allPosts;
-    console.log('🚀 ~ file: post-list.js ~ line 14 ~ PostList ~ allPosts', allPosts);
+    const viewers = props.viewers;
+    console.log('🚀 ~ file: post-list.js ~ line 14 ~ PostList ~ allPosts', viewers);
     const ButtonRender = (variant, type, label) => {
         return (
             <Button
@@ -32,6 +34,56 @@ const PostList = (props) => {
 
     return (
         <Container>
+            <Modal
+                show={props.viewerModal}
+                onHide={() => {
+                    props.setViewerModal(false);
+                }}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        Total {props.viewers.length} Viewer{props.viewer && props.viewer.length > 1 ? 's' : ''}
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {viewers &&
+                        viewers.length > 0 &&
+                        viewers.map((viewer, i) => {
+                            let name = '';
+                            let profilePicture = '';
+                            if (viewer.viewerUserType === 'individual') {
+                                name = viewer.viewerFirstName + ' ' + viewer.viewerLastName;
+                                profilePicture = viewer.viewerProfilePicture ? viewer.viewerProfilePicture : defaultIndividualProfilePicture;
+                            } else if (viewer.viewerUserType === 'organization') {
+                                name = viewer.viewerName;
+                                profilePicture = viewer.viewerProfilePicture ? viewer.viewerProfilePicture : defaultOrganizationProfilePicture;
+                            }
+                            return (
+                                <Container className="ppl-liked-list" key={i}>
+                                    <Row>
+                                        <Col sm={2}>
+                                            <Image src={profilePicture} thumbnail style={{ width: '100%', height: '100%' }} />
+                                        </Col>
+                                        <Col sm={6} className="v-middle">
+                                            {name}
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            );
+                        })}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button
+                        variant="secondary"
+                        onClick={() => {
+                            props.setViewerModal(false);
+                        }}
+                        size="sm"
+                    >
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Select Post Type</Modal.Title>
@@ -114,6 +166,13 @@ const PostList = (props) => {
                                                 <DeleteButtonRender
                                                     onClick={() => {
                                                         alert('Not developed yet');
+                                                    }}
+                                                />
+                                                &nbsp;
+                                                <ListButtonRender
+                                                    title="Viewer List"
+                                                    onClick={() => {
+                                                        props.handleViewerListShow(post._id);
                                                     }}
                                                 />
                                             </td>

@@ -2,6 +2,7 @@ const { Post } = require('../models/post-model');
 const { Follow } = require('../models/follow-model');
 const { Interest } = require('../models/interest-model');
 const { User } = require('../models/user-model');
+const { View } = require('../models/view-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
 const ObjectId = require('mongoose').Types.ObjectId;
 const RESPONSES = require('../responses/post-response');
@@ -69,6 +70,16 @@ exports.getOne = async (req, res) => {
         const allPosts = await Post.aggregate(aggregateOptions);
         console.log('🚀 ~ file: post-controller.js ~ line 69 ~ exports.getOne= ~ allPosts', allPosts.length);
         if (allPosts && allPosts.length > 0) {
+            const userId = req.user._id;
+            if (userId) {
+                const newView = await View.findOneAndUpdate(
+                    { viewerId: userId, postId: req.params.postId },
+                    {},
+                    { new: true, upsert: true },
+                );
+                console.log('🚀 ~ file: post-controller.js ~ line 74 ~ exports.getOne= ~ userId', userId, newView);
+            }
+
             res.status(200).send({ success: true, message: 'Post found', post: allPosts[0] });
         } else {
             res.status(404).send({ success: false, message: 'Post not found' });
@@ -526,6 +537,20 @@ exports.seedPosts = async (req, res) => {
             }
         }
         return res.status(200).send({ success: true });
+    } catch (error) {
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+
+// VIEWS
+exports.getAllViewers = async (req, res) => {
+    try {
+        const postId = req.params.postId;
+        const match = {
+            postId: ObjectId(postId),
+        };
+        const viewers = await View.aggregate([{ $match: match }, LOOKUPS.view_user, PROJECTS.view_get_all_viewers]);
+        return res.status(200).send({ success: true, message: 'All Viewers', viewers });
     } catch (error) {
         return res.status(501).send({ success: false, message: error.message });
     }

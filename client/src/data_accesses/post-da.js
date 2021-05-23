@@ -115,5 +115,12 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+
+    get_all_viewers_by_post = (postId) => {
+        return axios
+            .get(APIPaths.getAllViewersByPost(postId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new PostDA();

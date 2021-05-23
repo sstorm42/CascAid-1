@@ -113,3 +113,10 @@ export const cancelGoingPost = (postId) => {
 export const getAllCommittedPersons = (postId, type) => {
     return PostDA.get_all_committed_persons(postId, type);
 };
+
+export const getAllViewersByPost = (postId) => {
+    return {
+        type: Types.GET_ALL_VIEWERS_BY_POST,
+        payload: PostDA.get_all_viewers_by_post(postId),
+    };
+};

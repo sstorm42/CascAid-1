@@ -7,10 +7,15 @@ import SampleUsers from './sample-users';
 import FriendsList from '../../components/community/friends-list';
 import { getAllFriendships } from '../../actions/friendship-action';
 import * as RoutePaths from '../../constants/route-paths';
+import { setMessage } from '../../actions/conversation-action';
+import MessageModal from '../../components/conversation/message-modal';
+
 const CommunityFriends = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
     const [userType, setUserType] = useState('');
+    const [messageModal, setMessageModal] = useState(false);
+    const [messageReceiver, setMessageReceiver] = useState('');
     useEffect(() => {
         const getInitialInfo = (userId) => {
             console.log('Calling API');
@@ -28,10 +33,15 @@ const CommunityFriends = (props) => {
     const handleGotoUserDetails = (individualUserId) => {
         props.history.push(RoutePaths.userDetailsPage('individual', individualUserId));
     };
+    const handleOpenMessageModal = (user) => {
+        setMessageModal(true);
+        setMessageReceiver(user);
+    };
     if (loading) return <LoadingAnim />;
     else {
         return (
             <Container>
+                <MessageModal messageModal={messageModal} setMessageModal={setMessageModal} messageReceiver={messageReceiver} />
                 <Row className="parent-page">
                     <Col>
                         <CommunityMenu selected="friend" userType={userType} />
@@ -40,6 +50,7 @@ const CommunityFriends = (props) => {
                             friendships={props.getAllFriendshipResponse ? props.getAllFriendshipResponse.friendships : []}
                             userId={userId}
                             handleGotoUserDetails={handleGotoUserDetails}
+                            handleOpenMessageModal={handleOpenMessageModal}
                         />
                         {/* <SampleUsers /> */}
                     </Col>

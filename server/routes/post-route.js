@@ -25,4 +25,7 @@ post.get('/:postId/committed/:userId', allowIfLoggedIn, PostController.getCommit
 
 // SEED
 post.post('/seed', PostController.seedPosts);
+
+// VIEW
+post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewers);
 module.exports = post;

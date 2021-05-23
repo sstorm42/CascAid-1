@@ -116,3 +116,20 @@ export const rejectFriendship = (friendshipId) => serverAddress + `/api/friendsh
 export const deleteFriendship = (friendshipId) => serverAddress + `/api/friendships/${friendshipId}`;
 export const checkIfFriends = (userId, friendId) => serverAddress + `/api/friendships/${userId}/${friendId}`;
 export const getAllFriendships = (userId, status) => serverAddress + `/api/friendships/${userId}${status ? `?status=${status}` : ''}`;
+
+// ENDORSEMENT
+export const endorseUser = serverAddress + `/api/endorsements/endorse`;
+export const cancelEndorseUser = serverAddress + `/api/endorsements/cancel-endorse`;
+
+export const getAllEndorsers = (userId) => serverAddress + `/api/endorsements/endorsers/${userId}`;
+export const getAllEndorsees = (userId) => serverAddress + `/api/endorsements/endorsees/${userId}`;
+export const CheckIfEndorses = (endorserId, endorseeId) => serverAddress + `/api/endorsements/${endorserId}/${endorseeId}`;
+
+// VIEWER
+export const getAllViewersByPost = (postId) => serverAddress + `/api/posts/${postId}/viewers`;
+
+// CONVERSATION
+export const createConversation = serverAddress + `/api/conversations/`;
+export const getAllConversationsByUser = (userId) => serverAddress + `/api/conversations/user/${userId}`;
+export const getOneConversation = (conversationId) => serverAddress + `/api/conversations/${conversationId}`;
+export const createOneMessage = serverAddress + `/api/conversations/message`;

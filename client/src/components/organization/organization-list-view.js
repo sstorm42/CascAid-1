@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, CardColumns, Badge, Row, Col } from 'react-bootstrap';
 import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender } from '../form_template/buttons-render';
+import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render';
 const OrganizationListView = (props) => {
     const allOrganizations = props.allOrganizations;
     const followObject = props.followObject;
+    const endorseObject = props.endorseObject;
     const submitting = props.submitting;
 
     const descriptionRender = (description) => {
@@ -93,7 +94,19 @@ const OrganizationListView = (props) => {
                                         </Col>
 
                                         <Col sm={6}>
-                                            <EndorseUserButtonRender />
+                                            {endorseObject[org._id] ? (
+                                                <CancelEndorseUserButtonRender
+                                                    onClick={() => {
+                                                        props.handleCancelEndorseUser(org._id);
+                                                    }}
+                                                />
+                                            ) : (
+                                                <EndorseUserButtonRender
+                                                    onClick={() => {
+                                                        props.handleEndorseUser(org._id);
+                                                    }}
+                                                />
+                                            )}
                                         </Col>
                                     </Row>
                                 </Card.Footer>

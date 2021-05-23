@@ -72,6 +72,7 @@ const NotificationList = (props) => {
                                             onClick={() => {
                                                 handleListModal(notification.senders, true);
                                             }}
+                                            title="View List"
                                         />
                                         &nbsp;
                                         {notification.isRead ? (

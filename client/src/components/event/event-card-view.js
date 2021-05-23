@@ -61,18 +61,22 @@ const EventListView = (props) => {
                                     {post.address && InfoRender('', post.address.fullAddress)}
                                     <br />
                                     <small>
-                                        <Row style={{ marginBottom: 5 }}>
-                                            <Col sm={3}>FROM</Col>
-                                            <Col sm={9} className="right-align">
-                                                <b>{moment(post.startDateTime).format('MM/DD/y hh:mm:A')}</b>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={3}>TO</Col>
-                                            <Col sm={9} className="right-align">
-                                                <b>{moment(post.endDateTime).format('MM/DD/yy hh:mm:A')}</b>
-                                            </Col>
-                                        </Row>
+                                        {post.startDateTime && (
+                                            <Row style={{ marginBottom: 5 }}>
+                                                <Col sm={3}>FROM</Col>
+                                                <Col sm={9} className="right-align">
+                                                    <b>{moment(post.startDateTime).format('MM/DD/y hh:mm:A')}</b>
+                                                </Col>
+                                            </Row>
+                                        )}
+                                        {post.endDateTime && (
+                                            <Row>
+                                                <Col sm={3}>TO</Col>
+                                                <Col sm={9} className="right-align">
+                                                    <b>{moment(post.endDateTime).format('MM/DD/yy hh:mm:A')}</b>
+                                                </Col>
+                                            </Row>
+                                        )}
                                     </small>
                                 </Card.Body>
                                 <Card.Footer>

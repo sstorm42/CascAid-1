@@ -34,6 +34,8 @@ const DisplayPost = (props) => {
         let liked = post.interests.filter((interest) => interest.liked).length;
         let interested = post.interests.filter((interest) => interest.interested).length;
         let going = post.interests.filter((interest) => interest.going).length;
+        let mapView = false;
+        if (fields.address && post.address && post.address.latitude && post.address.longitude) mapView = true;
         return (
             <Container>
                 <Row>
@@ -123,11 +125,7 @@ const DisplayPost = (props) => {
                         )}
 
                         <Row>
-                            {fields.address && post.address && post.address.latitude && post.address.longitude && (
-                                <Col md={4}>
-                                    <PostMapView allPosts={[post]} zoom={16} />
-                                </Col>
-                            )}
+                            {mapView && <Col md={4}>{<PostMapView allPosts={[post]} zoom={16} />}</Col>}
                             <Col>
                                 {DescriptionRender('', post.description)}
                                 <hr />

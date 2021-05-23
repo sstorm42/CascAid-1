@@ -42,4 +42,6 @@ user.get('/:userId/skills', allowIfLoggedIn, SkillController.getAllByUser);
 // SEED
 user.delete('/multiple', UserController.deleteMultipleUsers);
 user.post('/seed/updated', UserController.seedNew);
+user.get('/zips', UserController.getAllZips);
+user.post('/setOnMap', UserController.setOnMap);
 module.exports = user;

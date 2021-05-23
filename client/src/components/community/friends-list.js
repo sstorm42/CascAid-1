@@ -41,6 +41,7 @@ const SampleOrgList = (props) => {
                                 >
                                     <Card.Title>{name}</Card.Title>
                                 </Card.Body>
+                                <Card.Footer></Card.Footer>
                             </Card>
                         );
                     })}

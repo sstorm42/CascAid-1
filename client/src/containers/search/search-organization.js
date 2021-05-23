@@ -3,6 +3,7 @@ import { Container, Row, Col, Nav } from 'react-bootstrap';
 import OrganizationListView from '../../components/organization/organization-list-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
+import { getAllEndorsees, endorseUser, cancelEndorseUser } from '../../actions/endorsement-action';
 import { getAllUsers } from '../../actions/user-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import SearchMenu from '../../components/search/search-menu';
@@ -20,6 +21,7 @@ const SearchOrganization = (props) => {
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
     const [followObject, setFollowObject] = useState({});
+    const [endorseObject, setEndorseObject] = useState({});
     const [filter, setFilter] = useState({
         name: '',
         impactAreas: [],
@@ -52,6 +54,17 @@ const SearchOrganization = (props) => {
             setFollowObject({ ...followObject_ });
         }
     }, [props.getAllFollowingsResponse]);
+    useEffect(() => {
+        const { success } = props.getAllEndorseesResponse;
+        if (success) {
+            let endorseObject_ = {};
+            const endorsees = props.getAllEndorseesResponse.endorsees;
+            for (let i = 0; i < endorsees.length; i++) {
+                endorseObject_[endorsees[i].endorseeId] = true;
+            }
+            setFollowObject({ ...endorseObject_ });
+        }
+    }, [props.getAllEndorseesResponse]);
     const resetFilter = () => {
         setFilter({
             name: '',
@@ -74,6 +87,7 @@ const SearchOrganization = (props) => {
         props.dispatch(getAllUsers({ ...filter, userType: 'organization' }));
         if (userId) {
             props.dispatch(getAllFollowings(userId));
+            props.dispatch(getAllEndorsees(userId));
         }
         setLoading(false);
         setActivePage(1);
@@ -94,6 +108,19 @@ const SearchOrganization = (props) => {
         followObject_[followingId] = false;
         setFollowObject({ ...followObject_ });
     };
+    const handleEndorseUser = (endorseeId) => {
+        props.dispatch(endorseUser({ endorserId: userId, endorseeId }));
+        let endorseObject_ = endorseObject;
+        endorseObject_[endorseeId] = true;
+        setEndorseObject({ ...endorseObject_ });
+    };
+    const handleCancelEndorseUser = (endorseeId) => {
+        props.dispatch(cancelEndorseUser({ endorserId: userId, endorseeId }));
+        let endorseObject_ = endorseObject;
+        endorseObject_[endorseeId] = false;
+        setEndorseObject({ ...endorseObject_ });
+    };
+
     useEffect(() => {
         const getInitialInfo = () => {
             setLoading(true);
@@ -170,6 +197,9 @@ const SearchOrganization = (props) => {
                                     followObject={followObject}
                                     handleFollowUser={handleFollowUser}
                                     handleUnfollowUser={handleUnfollowUser}
+                                    endorseObject={endorseObject}
+                                    handleEndorseUser={handleEndorseUser}
+                                    handleCancelEndorseUser={handleCancelEndorseUser}
                                 />
                             </>
                         )}
@@ -195,11 +225,13 @@ const mapStateToProps = (state) => {
     const getOrganizationTypeResponse = state.OrganizationType.getAllOrganizationTypes;
     const getAllOrganizationsResponse = state.User.getAllUsers;
     const getAllFollowingsResponse = state.Follow.getAllFollowings;
+    const getAllEndorseesResponse = state.Endorsement.getAllEndorsees;
     return {
         getImpactAreaResponse,
         getAllOrganizationsResponse,
         getOrganizationTypeResponse,
         getAllFollowingsResponse,
+        getAllEndorseesResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchOrganization);

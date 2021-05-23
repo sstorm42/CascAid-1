@@ -25,6 +25,7 @@ exports.post_get_one = {
     startDateTime: 1,
     endDateTime: 1,
     topNeed: 1,
+    requiredItems: 1,
 };
 exports.post_get_all = {
     _id: 1,
@@ -130,5 +131,19 @@ exports.endorsement_get_all_endorser = {
         endorserFirstName: { $arrayElemAt: ['$endorser.basicInfo.firstName', 0] },
         endorserLastName: { $arrayElemAt: ['$endorser.basicInfo.lastName', 0] },
         endorserProfilePicture: { $arrayElemAt: ['$endorser.basicInfo.profilePicture', 0] },
+    },
+};
+
+// VIEW
+exports.view_get_all_viewers = {
+    $project: {
+        ...common,
+        viewerId: 1,
+        postId: 1,
+        viewerUserType: { $arrayElemAt: ['$viewer.userType', 0] },
+        viewerName: { $arrayElemAt: ['$viewer.basicInfo.name', 0] },
+        viewerFirstName: { $arrayElemAt: ['$viewer.basicInfo.firstName', 0] },
+        viewerLastName: { $arrayElemAt: ['$viewer.basicInfo.lastName', 0] },
+        viewerProfilePicture: { $arrayElemAt: ['$viewer.basicInfo.profilePicture', 0] },
     },
 };

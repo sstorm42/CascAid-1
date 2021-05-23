@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PostList from '../../components/post/post-list';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { connect } from 'react-redux';
-import { getAllPostsByFilter } from '../../actions/post-action';
+import { getAllPostsByFilter, getAllViewersByPost } from '../../actions/post-action';
 import * as RoutePaths from '../../constants/route-paths';
+
 const ManagePosts = (props) => {
     const [loading, setLoading] = useState(false);
     const [filter, setFilter] = useState({
@@ -11,6 +12,8 @@ const ManagePosts = (props) => {
         title: '',
         isActive: 'both',
     });
+    const [viewerModal, setViewerModal] = useState(false);
+
     useEffect(() => {
         const getInitialInfo = (userId) => {
             setLoading(true);
@@ -30,6 +33,10 @@ const ManagePosts = (props) => {
     const handleGoToPostCreate = (postType) => {
         props.history.push(RoutePaths.postCreatePage(postType));
     };
+    const handleViewerListShow = (postId) => {
+        setViewerModal(true);
+        props.dispatch(getAllViewersByPost(postId));
+    };
     if (loading) return <LoadingAnim />;
     else {
         return (
@@ -39,16 +46,22 @@ const ManagePosts = (props) => {
                 handleGoToPostDetails={handleGoToPostDetails}
                 handleGoToPostCreate={handleGoToPostCreate}
                 filter={filter}
+                viewerModal={viewerModal}
+                setViewerModal={setViewerModal}
+                handleViewerListShow={handleViewerListShow}
+                viewers={props.getAllViewersResponse.success ? props.getAllViewersResponse.viewers : []}
             />
         );
     }
 };
 const mapStateToProps = (state) => {
     const getAllPostsResponse = state.Post.getAllPosts;
+    const getAllViewersResponse = state.Post.getAllViewersByPost;
     console.log('🚀 ~ file: manage-posts.js ~ line 21 ~ mapStateToProps ~ getAllPostsResponse', getAllPostsResponse);
 
     return {
         getAllPostsResponse,
+        getAllViewersResponse,
     };
 };
 export default connect(mapStateToProps, null)(ManagePosts);

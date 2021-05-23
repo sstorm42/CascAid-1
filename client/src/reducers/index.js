@@ -12,7 +12,8 @@ import Language from './language-reducer';
 import Notification from './notification-reducer';
 import Membership from './membership-reducer';
 import Friendship from './friendship-reducer';
-
+import Endorsement from './endorsement-reducer';
+import Conversation from './conversation-reducer';
 const rootReducer = combineReducers({
     form: formReducer,
     Auth,
@@ -26,5 +27,7 @@ const rootReducer = combineReducers({
     Language,
     Membership,
     Friendship,
+    Endorsement,
+    Conversation,
 });
 export default rootReducer;

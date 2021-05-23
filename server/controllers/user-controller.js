@@ -18,7 +18,7 @@ const { writeLocalJsonFile, getRandomPassword } = require('../utils/library');
 const { allServiceAreaTypes } = require('../static_data/service-area-types');
 const { updatedOrganizations } = require('../static_data/updated-orgs');
 const validator = require('email-validator');
-
+const axios = require('axios');
 // @route GET api/user/email/{email}
 // @desc Check for existing email
 exports.checkEmailExist = async (req, res) => {
@@ -708,6 +708,87 @@ exports.seedNew = async (req, res) => {
         }
         // writeLocalJsonFile(orgs, 'organizations');
         res.status(200).send({ success: true, orgs });
+    } catch (err) {
+        console.log('ERR', err.message);
+        return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAllZips = async (req, res) => {
+    try {
+        const ttlUsers = updatedOrganizations.length;
+        let zips = [];
+        let zipObject = {};
+        for (let i = 0; i < ttlUsers; i++) {
+            let zip = updatedOrganizations[i].Zip;
+            if (zip) {
+                if (zipObject[zip]) {
+                    zipObject[zip] = zipObject[zip] + 1;
+                } else {
+                    zips.push(zip);
+                    zipObject[zip] = 1;
+                }
+            }
+        }
+        return res.status(200).send({ success: true, zips, zipObject, ttlUsers, ttl: zips.length });
+    } catch (err) {
+        console.log('ERR', err.message);
+        return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.setOnMap = async (req, res) => {
+    try {
+        const ttlUsers = updatedOrganizations.length;
+        const notFoundOrg = [];
+        const foundOrg = [];
+        for (let i = 0; i < ttlUsers; i++) {
+            let org = updatedOrganizations[i];
+            if (org.Contact) {
+                console.log('🚀 ~ file: user-controller.js ~ line 748 ~ exports.setOnMap= ~ org.Contact', org.Contact);
+
+                const path = `http://api.positionstack.com/v1/forward?access_key=cd0f1a6397527f68a958186a6944d663&query=${org.Address},${org.Zip}`;
+                const dt = await axios.get(path).then(async (response) => {
+                    let data = response.data;
+                    data = data.data;
+                    if (data.length > 0) {
+                        for (let j = 0; j < data.length; j++) {
+                            if (data[j].locality === 'Philadelphia') {
+                                let latitude = data[j].latitude;
+                                let longitude = data[j].longitude;
+                                let updatedUser = await User.findOneAndUpdate(
+                                    {
+                                        email: org.Contact,
+                                    },
+                                    {
+                                        $set: {
+                                            'basicInfo.address.latitude': latitude,
+                                            'basicInfo.address.longitude': longitude,
+                                            'basicInfo.address.state': 'Pennsylvania',
+                                            'basicInfo.address.city': 'Philadelphia',
+                                            'basicInfo.address.country': 'UnitedStates',
+                                        },
+                                    },
+                                    {
+                                        new: true,
+                                    },
+                                );
+                                if (!updatedUser) {
+                                    notFoundOrg.push(org.Contact);
+                                } else {
+                                    foundOrg.push(org.Contact);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    // return res.status(200).send({ success: true, response: response.data });
+                });
+            }
+
+            // return res.status(200).send({ success: true, dt });
+        }
+        return res.status(200).send({ success: true, notFoundOrg, foundOrg });
     } catch (err) {
         console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });

@@ -20,10 +20,17 @@ auth.post('/sign-up', UserValidation.userSignUp, validate, AuthController.signUp
 auth.post('/sign-in', UserValidation.userSignIn, validate, AuthController.signIn);
 
 // Open API to sign out from the system
-auth.post('/sign-out', allowIfLoggedIn, AuthController.signOut);
+auth.post('/sign-out', AuthController.signOut);
 
 // API to change user password
-auth.put('/:userId/password', UserValidation.updatePassword, validate, allowIfLoggedIn, grantAccess('update', 'password'), AuthController.updatePassword);
+auth.put(
+    '/:userId/password',
+    UserValidation.updatePassword,
+    validate,
+    allowIfLoggedIn,
+    grantAccess('update', 'password'),
+    AuthController.updatePassword,
+);
 
 // API to recover user password using email
 auth.post('/recover', UserValidation.ValidEmail, validate, PasswordController.recover);
