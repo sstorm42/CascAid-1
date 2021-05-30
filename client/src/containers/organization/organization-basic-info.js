@@ -11,9 +11,13 @@ const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);
     const [profilePicture, setProfilePicture] = useState();
     const [editMode, setEditMode] = useState(false);
+    const [location, setLocation] = useState({
+        latitude: 0,
+        longitude: 0,
+    });
     const [stateAndCountry, setStateAndCountry] = useState({
         state: '',
-        country: 'US',
+        country: 'UnitedStates',
     });
     const getInitialInfo = () => {
         const user = props.auth.user;
@@ -43,6 +47,10 @@ const BasicInfo = (props) => {
                     state: basicInfo.address.state,
                     country: basicInfo.address.country,
                 });
+                setLocation({
+                    latitude: basicInfo.address.latitude,
+                    longitude: basicInfo.address.longitude,
+                });
             }
         }
     };
@@ -67,6 +75,11 @@ const BasicInfo = (props) => {
             ...values,
             profilePicture: profilePicture,
             organizationTypes: values.organizationTypes && values.organizationTypes.length > 0 ? values.organizationTypes.map((type) => type._id) : [],
+            address: {
+                ...values.address,
+                latitude: location.latitude,
+                longitude: location.longitude,
+            },
         };
 
         props.dispatch(setBasicInfo(props.auth.user._id, user));
@@ -90,6 +103,8 @@ const BasicInfo = (props) => {
     else
         return (
             <OrganizationBasicInfoForm
+                location={location}
+                setLocation={setLocation}
                 editMode={editMode}
                 handleOnSubmit={props.handleSubmit((event) => {
                     onSubmit(event);

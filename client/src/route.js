@@ -11,6 +11,7 @@ import UserAuthCheck from './hoc/auth';
 import HomePage from './containers/home/home';
 import SearchOrganization from './containers/search/search-organization';
 import SearchCommunityActivity from './containers/search/search-community-activity';
+import SearchUser from './containers/search/search-user';
 
 import IndividualBasicInfo from './containers/individual/individual-basic-info';
 import IndividualInvolvement from './containers/individual/individual-involvement';
@@ -28,7 +29,6 @@ import OrganizationMembership from './containers/organization/organization-membe
 
 // import OrganizationList from './containers/organization/organization-list';
 import OrganizationDetails from './containers/organization/organization-details';
-import Messages from './containers/message/messages';
 
 // POSTS
 import CreatePost from './containers/post/create-post';
@@ -45,6 +45,12 @@ import CommunityRequests from './containers/community/requests';
 
 //NOTIFICATION
 import ManageNotifications from './containers/notification/manage-notifications';
+
+// CONVERSATION
+import ManageConversations from './containers/conversation/manage-conversations';
+
+// CALENDER
+import PostCalenderView from './containers/calender/post-calender-view';
 
 const allRoles = ['individual', 'organization', 'admin'];
 const individualAndAdminRoles = ['individual', 'admin'];
@@ -178,7 +184,13 @@ const Routes = () => {
                 component={UserAuthCheck(SearchCommunityActivity, allRoles, true)}
                 layout={DashboardLayout}
             />
-            <LayoutRoute path="/messages" exact component={UserAuthCheck(Messages, allRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.userSearchByNamePage(':name')} exact component={UserAuthCheck(SearchUser, allRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute
+                path={RoutePath.ConversationPage(':conversationId')}
+                exact
+                component={UserAuthCheck(ManageConversations, allRoles, true)}
+                layout={DashboardLayout}
+            />
             {/* POST */}
             {/* <LayoutRoute path={RoutePath.newsManagePage} exact component={UserAuthCheck(ManageNews, ['organization'], true)} layout={DashboardLayout} /> */}
             <LayoutRoute path={RoutePath.postManagePage} exact component={UserAuthCheck(ManagePosts, ['organization'], true)} layout={DashboardLayout} />
@@ -269,6 +281,7 @@ const Routes = () => {
                 component={UserAuthCheck(CommunityRequests, individualAndAdminRoles, true)}
                 layout={DashboardLayout}
             />
+            <LayoutRoute path="/calender" exact component={UserAuthCheck(PostCalenderView, allRoles, true)} layout={DashboardLayout} />
         </Switch>
     );
 };

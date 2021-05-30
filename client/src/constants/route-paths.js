@@ -19,8 +19,10 @@ export const notFoundPage = '*';
 
 // New
 // export const completeUserProfile = '/user/complete-profile';
+// SEARCH
 export const organizationSearchPage = '/search/organization';
 export const communityActivitySearchPage = '/search/community-activity';
+export const userSearchByNamePage = (name) => `/search/user/${name}`;
 
 // BREAKING DOWN
 
@@ -73,20 +75,6 @@ export const getBasicInfoPageByUserType = (userType) => {
 // POSTS
 // export const newsManagePage = '/user/news';
 
-// // EVENTS
-// export const eventCreatePage = '/user/event/create';
-// export const eventEditPage = '/user/event/edit/';
-// export const eventListByOrganizationPage = '/user/event/all';
-// export const eventListPage = '/event/all';
-// export const eventDetailsPage = '/event/details/';
-
-// // PROJECTS
-// export const projectCreatePage = '/user/project/create';
-// export const projectEditPage = '/user/project/edit/';
-// export const projectListByOrganizationPage = '/user/project/all';
-// export const projectListPage = '/project/all';
-// export const projectDetailsPage = '/project/details/';
-
 // POSTS
 export const postCreatePage = (postType) => `/${postType}/create`;
 export const postEditPage = (postType, postId) => `/${postType}/edit/${postId}`;
@@ -95,12 +83,6 @@ export const postListPage = (postType) => `/${postType}/all`;
 export const postDetailsPage = (postType, postId) => `/${postType}/details/${postId}`;
 export const postManagePage = `/post/manage`;
 export const postListPageByOrganizationAndPostType = (userId, postType) => `/organization/${userId}/${postType}/all`;
-// VOLUNTEERING
-// export const volunteeringCreatePage = '/user/volunteering/create';
-// export const volunteeringEditPage = '/user/volunteering/edit/';
-// export const volunteeringListByOrganizationPage = '/user/volunteering/all';
-// export const volunteeringListPage = '/volunteering/all';
-// export const volunteeringDetailsPage = '/volunteering/details/';
 
 // COMMUNITY
 export const communityFriendListPage = '/community/friends';
@@ -110,3 +92,7 @@ export const communityRequestListPage = '/community/requests';
 
 // NOTIFICATION
 export const ManageNotificationsPage = '/notification/all';
+
+// Message
+export const ConversationPage = (conversationId) => `/conversation/${conversationId}`;
+export const ManageConversationPage = '/conversation/all';

@@ -4,11 +4,13 @@ import { defaultOrganizationProfilePicture } from '../../constants/default-image
 import Collapsible from 'react-collapsible';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 import * as RoutePath from '../../constants/route-paths';
+import { EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render.js';
 const SideMenu = (props) => {
     const organization = props.organization;
     const activePage = props.activePage;
     console.log(organization);
     const follows = props.follows;
+    const endorses = props.endorses;
     const RenderListButtonItem = (label, path) => {
         return (
             <Button
@@ -33,6 +35,7 @@ const SideMenu = (props) => {
                     width="100%"
                     thumbnail
                 />
+                <div style={{ height: 10 }} />
                 {follows ? (
                     <OverlayTrigger placement="bottom" overlay={<Tooltip>Click to unfollow</Tooltip>}>
                         <Button
@@ -59,6 +62,20 @@ const SideMenu = (props) => {
                             <RiUserFollowFill /> Follow
                         </Button>
                     </OverlayTrigger>
+                )}
+                <div style={{ height: 10 }} />
+                {endorses ? (
+                    <CancelEndorseUserButtonRender
+                        onClick={() => {
+                            props.handleCancelEndorseClick();
+                        }}
+                    />
+                ) : (
+                    <EndorseUserButtonRender
+                        onClick={() => {
+                            props.handleEndorseClick();
+                        }}
+                    />
                 )}
                 <hr />
                 {/* <Collapsible trigger="MENU" className="special-btn"> */}

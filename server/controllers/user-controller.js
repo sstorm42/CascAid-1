@@ -19,6 +19,9 @@ const { allServiceAreaTypes } = require('../static_data/service-area-types');
 const { updatedOrganizations } = require('../static_data/updated-orgs');
 const validator = require('email-validator');
 const axios = require('axios');
+const LOOKUPS = require('./lookup-collection');
+const PROJECTS = require('./project-collection');
+
 // @route GET api/user/email/{email}
 // @desc Check for existing email
 exports.checkEmailExist = async (req, res) => {
@@ -328,6 +331,7 @@ exports.getAll = async (req, res) => {
 
         // Converting query values into query string
         let match = {};
+        let nameMatch = {};
         if (userType && userType.length > 0) {
             match['userType'] = userType;
         }
@@ -340,7 +344,14 @@ exports.getAll = async (req, res) => {
             match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
         }
         if (name) {
-            match['basicInfo.name'] = { $regex: name, $options: 'i' };
+            // match['basicInfo.name'] = { $regex: name, $options: 'i' };
+            nameMatch = {
+                $or: [
+                    { 'basicInfo.firstName': { $regex: name, $options: 'i' } },
+                    { 'basicInfo.lastName': { $regex: name, $options: 'i' } },
+                    { 'basicInfo.name': { $regex: name, $options: 'i' } },
+                ],
+            };
         }
         if (keyword) {
             match['serviceInfo.keywords'] = { $regex: keyword, $options: 'i' };
@@ -362,26 +373,14 @@ exports.getAll = async (req, res) => {
 
         // Adding all LOOK-UPS
         const lookUps = [
-            {
-                $lookup: {
-                    from: 'organizationtypes',
-                    localField: 'basicInfo.organizationTypes',
-                    foreignField: '_id',
-                    as: 'organizationTypes',
-                },
-            },
-            {
-                $lookup: {
-                    from: 'impactareas',
-                    localField: 'serviceInfo.impactAreas',
-                    foreignField: '_id',
-                    as: 'impactAreas',
-                },
-            },
+            LOOKUPS.user_organizationTypes,
+            LOOKUPS.user_organization_impactAreas,
+            LOOKUPS.user_individual_impactAreas,
+            LOOKUPS.user_skills,
         ];
 
         let aggregateOptions = [];
-        aggregateOptions.push({ $match: { $and: [match, addressCondition] } }, ...lookUps);
+        aggregateOptions.push({ $match: { $and: [nameMatch, match, addressCondition] } }, ...lookUps);
 
         const users = await User.aggregate(aggregateOptions);
 
@@ -789,6 +788,25 @@ exports.setOnMap = async (req, res) => {
             // return res.status(200).send({ success: true, dt });
         }
         return res.status(200).send({ success: true, notFoundOrg, foundOrg });
+    } catch (err) {
+        console.log('ERR', err.message);
+        return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.updateUserCountry = async (req, res) => {
+    try {
+        const update = await User.updateMany(
+            {},
+            {
+                $set: {
+                    'basicInfo.address.state': 'Pennsylvania',
+                    'basicInfo.address.city': 'Philadelphia',
+                    'basicInfo.address.country': 'UnitedStates',
+                },
+            },
+        );
+        return res.status(200).send({ success: true, message: 'Updated' });
     } catch (err) {
         console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });

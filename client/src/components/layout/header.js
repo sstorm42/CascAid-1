@@ -7,6 +7,7 @@ import ReactAutoSuggest from './react-autosuggest-lib';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import Avatar from 'react-avatar';
 import GlobalNotification from './global-notification';
+import GlobalConversation from './global-conversation';
 import { get } from '../../actions';
 const GetNameAndProfilePicture = (userType, basicInfo) => {
     let name = '';
@@ -37,6 +38,8 @@ const Header = (props) => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
                             <ReactAutoSuggest />
+                            <div style={{ width: 25 }}></div>
+                            <GlobalConversation user={props.user} />
                             <GlobalNotification user={props.user} />
                             <NavDropdown title={<Avatar size="30" src={profilePicture} round="5px" />} id="basic-nav-dropdown" alignRight={true}>
                                 <NavDropdown.Item disabled={true}>Welcome, {name}</NavDropdown.Item>
@@ -45,6 +48,7 @@ const Header = (props) => {
                                     Sign out
                                 </Link>
                             </NavDropdown>
+                            <div style={{ width: 25 }}></div>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

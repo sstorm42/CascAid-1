@@ -140,3 +140,40 @@ exports.conversation_users = {
         as: 'members',
     },
 };
+
+// USER
+exports.user_organization_impactAreas = {
+    $lookup: {
+        from: 'impactareas',
+        localField: 'serviceInfo.impactAreas',
+        foreignField: '_id',
+        as: 'impactAreas',
+    },
+};
+
+exports.user_individual_impactAreas = {
+    $lookup: {
+        from: 'impactareas',
+        localField: 'involvement.impactAreas',
+        foreignField: '_id',
+        as: 'impactAreas',
+    },
+};
+
+exports.user_organizationTypes = {
+    $lookup: {
+        from: 'organizationtypes',
+        localField: 'basicInfo.organizationTypes',
+        foreignField: '_id',
+        as: 'organizationTypes',
+    },
+};
+
+exports.user_skills = {
+    $lookup: {
+        from: 'skills',
+        localField: 'basicInfo.skills',
+        foreignField: '_id',
+        as: 'skills',
+    },
+};

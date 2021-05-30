@@ -42,6 +42,15 @@ class ConversationDA {
                 return err.response.data;
             });
     };
+    get_conversations_count_by_user = (userId) => {
+        return axios
+            .get(APIPaths.getConversationCountByUser(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
+    };
 }
 
 export default new ConversationDA();

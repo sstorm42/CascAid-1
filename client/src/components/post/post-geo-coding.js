@@ -104,7 +104,9 @@ const SearchBoxRender = ({ panTo }) => {
         <Combobox onSelect={handleSelect}>
             <ComboboxInput style={searchBoxStyle} value={value} onChange={handleInput} disabled={!ready} placeholder="Search your location" />
             <ComboboxPopover>
-                <ComboboxList key={1}>{status === 'OK' && data.map(({ id, description }) => <ComboboxOption key={id + description} value={description} />)}</ComboboxList>
+                <ComboboxList key={1}>
+                    {status === 'OK' && data.map(({ id, description }) => <ComboboxOption key={id + description} value={description} />)}
+                </ComboboxList>
             </ComboboxPopover>
         </Combobox>
     );

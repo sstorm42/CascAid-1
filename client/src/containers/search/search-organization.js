@@ -62,7 +62,8 @@ const SearchOrganization = (props) => {
             for (let i = 0; i < endorsees.length; i++) {
                 endorseObject_[endorsees[i].endorseeId] = true;
             }
-            setFollowObject({ ...endorseObject_ });
+            console.log('🚀 ~ file: search-organization.js ~ line 64 ~ useEffect ~ endorseObject_', endorseObject_);
+            setEndorseObject({ ...endorseObject_ });
         }
     }, [props.getAllEndorseesResponse]);
     const resetFilter = () => {
@@ -86,8 +87,8 @@ const SearchOrganization = (props) => {
         setLoading(true);
         props.dispatch(getAllUsers({ ...filter, userType: 'organization' }));
         if (userId) {
-            props.dispatch(getAllFollowings(userId));
-            props.dispatch(getAllEndorsees(userId));
+            // props.dispatch(getAllFollowings(userId));
+            // props.dispatch(getAllEndorsees(userId));
         }
         setLoading(false);
         setActivePage(1);
@@ -127,9 +128,12 @@ const SearchOrganization = (props) => {
             const user = props.auth.user;
             if (user && user._id) {
                 setUserId(user._id);
+                props.dispatch(getAllFollowings(user._id));
+                props.dispatch(getAllEndorsees(user._id));
             }
             props.dispatch(getAllGlobalImpactAreas());
             props.dispatch(getAllOrganizationTypes());
+
             setLoading(false);
         };
         getInitialInfo();
@@ -212,6 +216,9 @@ const SearchOrganization = (props) => {
                                 followObject={followObject}
                                 handleFollowUser={handleFollowUser}
                                 handleUnfollowUser={handleUnfollowUser}
+                                endorseObject={endorseObject}
+                                handleEndorseUser={handleEndorseUser}
+                                handleCancelEndorseUser={handleCancelEndorseUser}
                             />
                         )}
                     </Col>

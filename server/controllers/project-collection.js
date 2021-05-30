@@ -147,3 +147,23 @@ exports.view_get_all_viewers = {
         viewerProfilePicture: { $arrayElemAt: ['$viewer.basicInfo.profilePicture', 0] },
     },
 };
+
+// CONVERSATION
+exports.conversation_get_all = {
+    $project: {
+        ...common,
+        name: 1,
+        // 'members.userType': '$members.userType',
+        // 'members.name': '$members.basicInfo.name',
+        // 'members.firstName': '$members.basicInfo.firstName',
+        // 'members.lastName': '$members.basicInfo.lastName',
+        // 'members.profilePicture': '$members.basicInfo.profilePicture',
+        'members._id': 1,
+        'members.userType': 1,
+        'members.basicInfo.name': 1,
+        'members.basicInfo.firstName': 1,
+        'members.basicInfo.lastName': 1,
+        'members.basicInfo.profilePicture': 1,
+        messages: 1,
+    },
+};

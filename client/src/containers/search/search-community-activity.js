@@ -14,6 +14,7 @@ import { defaultCurrentLocation } from '../../constants/default-user-information
 import FilterEvent from '../../components/search/filter-event';
 import { allSearchablePostTypes } from '../../constants/post-types';
 import { postDetailsPage } from '../../constants/route-paths';
+import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
 
 const SearchCommunityActivity = (props) => {
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
@@ -21,6 +22,7 @@ const SearchCommunityActivity = (props) => {
     const [loading, setLoading] = useState(false);
     const [viewType, setViewType] = useState('list');
     const [userId, setUserId] = useState('');
+    const [followingObject, setFollowingObject] = useState({});
     const [filter, setFilter] = useState({
         title: '',
         impactAreas: [],
@@ -81,10 +83,24 @@ const SearchCommunityActivity = (props) => {
             const user = props.auth.user;
             setUserId(user._id);
             props.dispatch(getAllGlobalImpactAreas());
+            props.dispatch(getAllFollowings(user._id));
             setLoading(false);
         };
         getInitialInfo();
     }, []);
+    useEffect(() => {
+        const { success } = props.getAllFollowingsResponse;
+        if (success) {
+            const cards = {};
+
+            const followings = props.getAllFollowingsResponse.followings;
+            for (let i = 0; i < followings.length; i++) {
+                cards[followings[i].followingId] = true;
+            }
+            setFollowingObject(cards);
+            console.log('🚀 ~ file: search-community-activity.js ~ line 95 ~ useEffect ~ cards', cards);
+        }
+    }, [props.getAllFollowingsResponse]);
     const handleLikePost = (postId) => {
         props.dispatch(likePost(postId));
         props.dispatch(changePostInterest(postId, userId, 'like'));
@@ -111,6 +127,22 @@ const SearchCommunityActivity = (props) => {
     const handleCancelGoingPost = (postId) => {
         props.dispatch(cancelGoingPost(postId));
         props.dispatch(changePostInterest(postId, userId, 'ungoing'));
+    };
+    const handleFollowClick = (followingId) => {
+        setLoading(true);
+        props.dispatch(followUser({ followerId: userId, followingId }));
+        const followings_ = followingObject;
+        followings_[followingId] = true;
+        setFollowingObject({ ...followings_ });
+        setLoading(false);
+    };
+    const handleUnfollowClick = (followingId) => {
+        setLoading(true);
+        props.dispatch(unfollowUser({ followerId: userId, followingId }));
+        const followings_ = followingObject;
+        followings_[followingId] = false;
+        setFollowingObject({ ...followings_ });
+        setLoading(false);
     };
     if (loading) return <LoadingAnim />;
     return (
@@ -178,16 +210,28 @@ const SearchCommunityActivity = (props) => {
                                 handleCancelInterestedPost={handleCancelInterestedPost}
                                 handleGoingPost={handleGoingPost}
                                 handleCancelGoingPost={handleCancelGoingPost}
+                                followingObject={followingObject}
+                                handleFollowClick={handleFollowClick}
+                                handleUnfollowClick={handleUnfollowClick}
                             />
                         </>
                     )}
                     {viewType === 'map' && (
                         <EventMapView
-                            allPosts={
-                                props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1) : []
-                            }
+                            allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
                             zoom={6}
                             currentLocation={currentLocation}
+                            gotoPostDetails={gotoPostDetails}
+                            userId={userId}
+                            handleLikePost={handleLikePost}
+                            handleCancelLikePost={handleCancelLikePost}
+                            handleInterestedPost={handleInterestedPost}
+                            handleCancelInterestedPost={handleCancelInterestedPost}
+                            handleGoingPost={handleGoingPost}
+                            handleCancelGoingPost={handleCancelGoingPost}
+                            followingObject={followingObject}
+                            handleFollowClick={handleFollowClick}
+                            handleUnfollowClick={handleUnfollowClick}
                         />
                     )}
                 </Col>
@@ -199,9 +243,15 @@ const mapStateToProps = (state) => {
     console.log(state);
     const getImpactAreaResponse = state.ImpactArea.getGlobalImpactAreas;
     const getAllPostsResponse = state.Post.getAllPosts;
+    const getAllFollowingsResponse = state.Follow.getAllFollowings;
+    const getFollowResponse = state.Follow.followUser;
+    const getUnfollowResponse = state.Follow.unfollowUser;
     return {
         getImpactAreaResponse,
         getAllPostsResponse,
+        getAllFollowingsResponse,
+        getFollowResponse,
+        getUnfollowResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchCommunityActivity);

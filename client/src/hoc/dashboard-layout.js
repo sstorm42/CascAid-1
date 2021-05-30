@@ -37,14 +37,14 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Community</NavText>
                     </NavItem>
-                    <NavItem eventKey="/">
+                    <NavItem eventKey="/calender">
                         <NavIcon>
                             <FaCalendarAlt size={24} />
                         </NavIcon>
                         <NavText>Calender</NavText>
                     </NavItem>
 
-                    <NavItem eventKey="/messages">
+                    <NavItem eventKey={RoutePath.ManageConversationPage}>
                         <NavIcon>
                             <FaEnvelope size={24} />
                         </NavIcon>
@@ -104,7 +104,7 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Community</NavText>
                     </NavItem>
-                    <NavItem eventKey="/">
+                    <NavItem eventKey="/calender">
                         <NavIcon>
                             <FaCalendarAlt size={24} />
                         </NavIcon>
@@ -117,7 +117,7 @@ class DashboardLayout extends Component {
                         </NavIcon>
                         <NavText>Posts</NavText>
                     </NavItem>
-                    <NavItem eventKey="/messages">
+                    <NavItem eventKey={RoutePath.ManageConversationPage}>
                         <NavIcon>
                             <FaEnvelope size={24} />
                         </NavIcon>

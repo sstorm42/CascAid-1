@@ -133,3 +133,4 @@ export const createConversation = serverAddress + `/api/conversations/`;
 export const getAllConversationsByUser = (userId) => serverAddress + `/api/conversations/user/${userId}`;
 export const getOneConversation = (conversationId) => serverAddress + `/api/conversations/${conversationId}`;
 export const createOneMessage = serverAddress + `/api/conversations/message`;
+export const getConversationCountByUser = (userId) => serverAddress + `/api/conversations/count/new/${userId}`;

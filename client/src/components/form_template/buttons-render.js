@@ -1,15 +1,15 @@
 import React from 'react';
-import { Button, Tooltip, OverlayTrigger, Dropdown } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger, Dropdown, DropdownButton } from 'react-bootstrap';
 import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
 import { RiUserFollowLine } from 'react-icons/ri';
 import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart, FaHandsHelping } from 'react-icons/fa';
-import { BiDetail } from 'react-icons/bi';
+import { BiDetail, BiDotsVertical } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
 import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
 import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend } from 'react-icons/ai';
 import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/ri';
-import { BsCardList } from 'react-icons/bs';
+import { BsCardList, BsPaperclip } from 'react-icons/bs';
 import { TiThList } from 'react-icons/ti';
 
 const renderTooltip = (props) => (
@@ -301,7 +301,35 @@ export const MessageButtonRender = (props) => {
 export const SendMessageButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <AiOutlineSend /> Send
+            <AiOutlineSend /> {props.buttonTitle}
         </Button>
+    );
+};
+export const MessageAttachmentButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <BsPaperclip /> {props.buttonTitle}
+        </Button>
+    );
+};
+
+export const OptionButtonRender = (props) => {
+    return (
+        <></>
+        // <DropdownButton size="sm" className="add-friend-btn dropdown-remove-arrow" title={<BiDotsVertical />} variant="light">
+        //     <Dropdown.Item size="sm" eventKey="1">
+        //         Delete
+        //     </Dropdown.Item>
+        // </DropdownButton>
+
+        // <Dropdown>
+        //     <Dropdown.Toggle variant="light" id="dropdown-basic" size="sm" className="add-friend-btn dropdown-remove-arrow">
+        //         <BiDotsVertical />
+        //     </Dropdown.Toggle>
+
+        //     <Dropdown.Menu variant="light">
+        //         <Dropdown.Item size="sm">Delete Conversation</Dropdown.Item>
+        //     </Dropdown.Menu>
+        // </Dropdown>
     );
 };

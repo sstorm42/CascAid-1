@@ -112,7 +112,7 @@ const GlobalNotification = (props) => {
         socket.on('Notification_' + user._id.toString(), (success) => {
             console.log('🚀 ~ file: global-notification.js ~ line 87 ~ socket.on ~ success', success);
             if (success === 'NewNotification') {
-                const audioEl = document.getElementsByClassName('audio-element')[0];
+                const audioEl = document.getElementsByClassName('audio-element-notification')[0];
                 audioEl.play();
                 props.dispatch(getNotificationsCount(true));
                 props.dispatch(getTopNotifications());

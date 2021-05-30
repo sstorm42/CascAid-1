@@ -6,6 +6,7 @@ const OrganizationListView = (props) => {
     const allOrganizations = props.allOrganizations;
     const followObject = props.followObject;
     const endorseObject = props.endorseObject;
+    console.log('🚀 ~ file: organization-list-view.js ~ line 9 ~ OrganizationListView ~ endorseObject', endorseObject);
     const submitting = props.submitting;
 
     const descriptionRender = (description) => {

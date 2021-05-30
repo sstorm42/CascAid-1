@@ -1,9 +1,9 @@
 .footer {
     text-align: center;
     background-color: #78c2ad !important;
-    min-height: 50px;
+    /* min-height: 20px; */
     color: white;
-    padding: 20px;
+    padding: 10px;
 }
 .sign-ing-form {
     border: 1px solid gray;

@@ -5,7 +5,7 @@ import ProfilePictureUploader from '../../components/user/profile-picture-change
 import { Container, Row, Col, ProgressBar, Button, Image } from 'react-bootstrap';
 import { countries, states } from '../../constants/country-and-state';
 import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
-
+import PostGeoCoding from '../post/post-geo-coding';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
     const allOrganizationTypes = props.allOrganizationTypes;
@@ -153,6 +153,14 @@ const BasicInfoForm = (props) => {
                                 </Field>
                             </Col>
                         </Row>
+
+                        <Row>
+                            <Col sm={4}>Location</Col>
+                            <Col sm={8}>
+                                <PostGeoCoding selectedLocation={props.location} handleLocationChange={props.setLocation} />
+                            </Col>
+                        </Row>
+                        <hr />
                         <Row>
                             <Col className="right-align">
                                 {props.profilePicture && <Image height="100" width="auto" src={props.profilePicture} rounded className="profile-picture" />}

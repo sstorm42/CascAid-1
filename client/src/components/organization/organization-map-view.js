@@ -4,6 +4,7 @@ import * as RoutePath from '../../constants/route-paths';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
 import { Button, Badge, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render';
 const libraries = ['places'];
 const mapContainerStyle = {
     height: '100vh',
@@ -46,6 +47,8 @@ const AllOrganizationOnMap = (props) => {
         mapRef.current = map;
     }, []);
     const mapRef = React.useRef();
+    const followObject = props.followObject;
+    const endorseObject = props.endorseObject;
     const addressMaker = (address) => {
         let fullAddress = '';
         if (address) {
@@ -145,15 +148,50 @@ const AllOrganizationOnMap = (props) => {
 
                             {/* {pairsRender('Organization Type', selected.basicInfo.organizationTypes)} */}
                             <br />
-                            <Button
-                                size="sm"
-                                variant="outline-primary"
-                                onClick={() => {
-                                    props.gotoOrganizationDetails(selected._id);
-                                }}
-                            >
-                                Go to Page
-                            </Button>
+
+                            <Row>
+                                <Col>
+                                    <Button
+                                        size="sm"
+                                        variant="outline-primary"
+                                        onClick={() => {
+                                            props.gotoOrganizationDetails(selected._id);
+                                        }}
+                                    >
+                                        Go to Page
+                                    </Button>
+                                </Col>
+                                <Col>
+                                    {followObject[selected._id] ? (
+                                        <UnfollowUserButtonRender
+                                            onClick={() => {
+                                                props.handleUnfollowUser(selected._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <FollowUserButtonRender
+                                            onClick={() => {
+                                                props.handleFollowUser(selected._id);
+                                            }}
+                                        />
+                                    )}
+                                </Col>
+                                <Col>
+                                    {endorseObject[selected._id] ? (
+                                        <CancelEndorseUserButtonRender
+                                            onClick={() => {
+                                                props.handleCancelEndorseUser(selected._id);
+                                            }}
+                                        />
+                                    ) : (
+                                        <EndorseUserButtonRender
+                                            onClick={() => {
+                                                props.handleEndorseUser(selected._id);
+                                            }}
+                                        />
+                                    )}
+                                </Col>
+                            </Row>
                         </Container>
                     </InfoWindow>
                 ) : null}

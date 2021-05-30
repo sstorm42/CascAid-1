@@ -166,7 +166,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     position: relative;
-    height: 500px;
+    height: 505px;
     overflow-y: scroll;
 }
 .thread-details {
@@ -267,7 +267,7 @@ tr td:last-child {
 }
 .details-follow-btn {
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-weight: bold;
 }
 .add-friend-btn {
@@ -283,14 +283,14 @@ tr td:last-child {
 }
 .details-following-btn {
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     background-color: #bdd8da;
     font-weight: bold;
     color: white;
 }
 .details-endorsing-btn {
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     background-color: #bdd8da;
     font-weight: bold;
     color: white;
@@ -386,4 +386,56 @@ tr td:last-child {
 }
 .center-align {
     text-align: center;
+}
+
+.dropdown-remove-arrow {
+    margin-top: 0px;
+}
+.dropdown-remove-arrow::after {
+    content: none !important;
+    margin-top: 0px;
+}
+.dropdown-toggle::after {
+    content: none !important;
+    margin-top: 0px;
+}
+
+.conversation-item:hover {
+    background-color: lightcyan;
+}
+.conversation-details {
+    position: relative;
+    height: 400px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.message-main {
+}
+.message-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    background-color: lightcyan;
+}
+.conversation-send-message {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    height: 100px;
+    overflow-y: scroll;
+}
+.message-text {
+    font-size: 14px;
+    color: gray;
+    font-weight: 500;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+.selected-conversation {
+    /* background-color: cyan; */
+    border-left: 5px solid cadetblue;
 }

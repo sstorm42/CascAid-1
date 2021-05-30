@@ -3,6 +3,7 @@ import Autosuggest from 'react-autosuggest';
 import { withRouter } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import { searchUsersByName } from '../../actions';
+import * as RoutePaths from '../../constants/route-paths';
 const individualNameRender = (individual) => {
     let name = individual.firstName ? individual.firstName + ' ' : '';
     name += individual.lastName ? individual.lastName : '';
@@ -89,7 +90,12 @@ class App extends React.Component {
             suggestions: [],
         });
     };
-
+    handleOnSubmit = () => {
+        // alert('SEARCH:' + this.state.value);
+        if (this.state.value && this.state.value.length > 0) {
+            this.props.history.push(RoutePaths.userSearchByNamePage(this.state.value));
+        }
+    };
     render() {
         const { value, suggestions } = this.state;
         const inputProps = {
@@ -99,7 +105,12 @@ class App extends React.Component {
         };
 
         return (
-            <Form inline>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    this.handleOnSubmit();
+                }}
+            >
                 <Autosuggest
                     multiSection={true}
                     suggestions={suggestions}
@@ -111,7 +122,7 @@ class App extends React.Component {
                     getSectionSuggestions={getSectionSuggestions}
                     inputProps={inputProps}
                 />
-            </Form>
+            </form>
         );
     }
 }

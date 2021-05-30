@@ -5,12 +5,14 @@ import moment from 'moment';
 import { interestTypes } from '../../constants/interest-types';
 import { getPostTypeByValue } from '../../constants/post-types';
 import { ImpactAreasRender, InfoRender } from '../form_template/details-render';
-import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../form_template/buttons-render';
+import { LikeButtonRender, InterestedButtonRender, GoingButtonRender, FollowButtonRender, UnfollowUserButtonRender } from '../form_template/buttons-render';
 
 const EventListView = (props) => {
     const userId = props.userId;
     const allPosts = props.allPosts;
-    console.log('🚀 ~ file: post-card-view.js ~ line 7 ~ EventListView ~ allPosts', allPosts);
+    const followingObject = props.followingObject;
+    console.log('🚀 ~ file: event-card-view.js ~ line 14 ~ EventListView ~ followingObject', followingObject);
+
     const descriptionRender = (description) => {
         if (description) {
             if (description.length < 101) return description;
@@ -18,6 +20,7 @@ const EventListView = (props) => {
         } else return 'No description available';
     };
     let interest = {};
+    // console.log('POST,', allPosts[0]);
     if (allPosts && allPosts.length > 0) {
         return (
             <CardColumns md="6">
@@ -80,66 +83,85 @@ const EventListView = (props) => {
                                     </small>
                                 </Card.Body>
                                 <Card.Footer>
-                                    {interestTypes[post.postType].like ? (
-                                        interest.liked ? (
-                                            <LikeButtonRender
-                                                complete={true}
-                                                onClick={() => {
-                                                    props.handleCancelLikePost(post._id);
-                                                }}
-                                            />
-                                        ) : (
-                                            <LikeButtonRender
-                                                complete={false}
-                                                onClick={() => {
-                                                    props.handleLikePost(post._id);
-                                                }}
-                                            />
-                                        )
-                                    ) : (
-                                        <></>
-                                    )}
-                                    &nbsp;
-                                    {interestTypes[post.postType].interested ? (
-                                        interest.interested ? (
-                                            <InterestedButtonRender
-                                                complete={true}
-                                                onClick={() => {
-                                                    props.handleCancelInterestedPost(post._id);
-                                                }}
-                                            />
-                                        ) : (
-                                            <InterestedButtonRender
-                                                complete={false}
-                                                onClick={() => {
-                                                    props.handleInterestedPost(post._id);
-                                                }}
-                                            />
-                                        )
-                                    ) : (
-                                        <></>
-                                    )}
-                                    &nbsp;
-                                    {interestTypes[post.postType].going ? (
-                                        interest.going ? (
-                                            <GoingButtonRender
-                                                complete={true}
-                                                onClick={() => {
-                                                    props.handleCancelGoingPost(post._id);
-                                                }}
-                                            />
-                                        ) : (
-                                            <GoingButtonRender
-                                                complete={false}
-                                                onClick={() => {
-                                                    props.handleGoingPost(post._id);
-                                                }}
-                                            />
-                                        )
-                                    ) : (
-                                        <></>
-                                    )}
-                                    &nbsp;
+                                    <Row>
+                                        <Col>
+                                            {interestTypes[post.postType].like ? (
+                                                interest.liked ? (
+                                                    <LikeButtonRender
+                                                        complete={true}
+                                                        onClick={() => {
+                                                            props.handleCancelLikePost(post._id);
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <LikeButtonRender
+                                                        complete={false}
+                                                        onClick={() => {
+                                                            props.handleLikePost(post._id);
+                                                        }}
+                                                    />
+                                                )
+                                            ) : (
+                                                <></>
+                                            )}
+                                            &nbsp;
+                                            {interestTypes[post.postType].interested ? (
+                                                interest.interested ? (
+                                                    <InterestedButtonRender
+                                                        complete={true}
+                                                        onClick={() => {
+                                                            props.handleCancelInterestedPost(post._id);
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <InterestedButtonRender
+                                                        complete={false}
+                                                        onClick={() => {
+                                                            props.handleInterestedPost(post._id);
+                                                        }}
+                                                    />
+                                                )
+                                            ) : (
+                                                <></>
+                                            )}
+                                            &nbsp;
+                                            {interestTypes[post.postType].going ? (
+                                                interest.going ? (
+                                                    <GoingButtonRender
+                                                        complete={true}
+                                                        onClick={() => {
+                                                            props.handleCancelGoingPost(post._id);
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <GoingButtonRender
+                                                        complete={false}
+                                                        onClick={() => {
+                                                            props.handleGoingPost(post._id);
+                                                        }}
+                                                    />
+                                                )
+                                            ) : (
+                                                <></>
+                                            )}
+                                            &nbsp;
+                                        </Col>
+                                        <Col>
+                                            {followingObject[post.creatorId] ? (
+                                                <UnfollowUserButtonRender
+                                                    onClick={() => {
+                                                        props.handleUnfollowClick(post.creatorId);
+                                                    }}
+                                                />
+                                            ) : (
+                                                <FollowButtonRender
+                                                    onClick={() => {
+                                                        props.handleFollowClick(post.creatorId);
+                                                    }}
+                                                />
+                                            )}
+                                        </Col>
+                                    </Row>
                                 </Card.Footer>
                             </Card>
                         );

@@ -71,6 +71,7 @@ exports.getAllFollowing = async (req, res) => {
         aggregateOptions.push(LOOKUPS.follow_following);
         aggregateOptions.push(PROJECTS.follow_get_all_following);
         const followings = await Follow.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: follow-controller.js ~ line 74 ~ exports.getAllFollowing= ~ followings', followings);
 
         if (!followings) res.status(200).send({ success: false, followings: [], totalFollowings: 0 });
         else if (followings) res.status(200).send({ success: true, followings, totalFollowings: followings.length });
