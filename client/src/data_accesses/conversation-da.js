@@ -12,6 +12,7 @@ class ConversationDA {
             });
     };
     create_new_message = (message) => {
+        console.log('🚀 ~ file: conversation-da.js ~ line 15 ~ ConversationDA ~ message', message);
         return axios
             .post(APIPaths.createOneMessage, message, APIPaths.apiConfig())
             .then((response) => response.data)

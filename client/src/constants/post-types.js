@@ -80,3 +80,26 @@ export const postTypeFields = {
 };
 export const allPostTypeValues = ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'];
 export const allPostTypeLabels = ['Event', 'Project', 'General', 'Volunteering', 'In-Kind', 'Advocacy'];
+export const getColorByPostType = (postType) => {
+    const colors = {
+        event: '#274e13',
+        project: '#0c343d',
+        general: '#1c4587',
+        volunteering: '#073763',
+        'in-kind': '#20124d',
+        advocacy: '#4c1130',
+    };
+    return colors[postType] ? colors[postType] : 'gray';
+};
+export const getPostTypeName = (value) => {
+    const postTypes = {
+        event: 'Event',
+        project: 'Project',
+        general: 'General Post',
+        volunteering: 'Volunteering',
+        'in-kind': 'In-Kind',
+        advocacy: 'Advocacy',
+    };
+    const name = postTypes[value] ? postTypes[value] : '';
+    return name;
+};

@@ -4,6 +4,7 @@ const { MessageUserEntity } = require('../models/message-user-entity-model');
 const ObjectId = require('mongoose').Types.ObjectId;
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
+const { saveImagesOnServer } = require('../utils/library');
 
 const EmitNewMessage = (userId) => {
     global.io.emit('Message_' + userId.toString(), 'NewMessage');
@@ -33,7 +34,7 @@ exports.createOneConversation = async (req, res) => {
             });
         }
     } catch (error) {
-        res.status(500).send({ success: false, message: err.message });
+        res.status(500).send({ success: false, message: error.message });
     }
 };
 
@@ -62,7 +63,7 @@ exports.getAllConversationsByUser = async (req, res) => {
             return res.status(200).send({ success: true, conversations, message: 'Conversations found' });
         } else return res.status(401).send({ success: false, message: 'Conversations not found' });
     } catch (error) {
-        res.status(500).send({ success: false, message: err.message });
+        res.status(500).send({ success: false, message: error.message });
     }
 };
 
@@ -84,7 +85,7 @@ exports.getOneConversation = async (req, res) => {
                 .send({ success: true, conversation: conversations[0], message: 'Conversation found' });
         } else return res.status(401).send({ success: false, message: 'Conversation not found' });
     } catch (error) {
-        res.status(500).send({ success: false, message: err.message });
+        res.status(500).send({ success: false, message: error.message });
     }
 };
 
@@ -95,8 +96,11 @@ exports.deleteOneConversation = async (req, res) => {};
 exports.createOneMessage = async (req, res) => {
     try {
         let message = req.body;
-        let conversationId = '';
 
+        let conversationId = '';
+        if (message.attachments && message.attachments.length > 0)
+            message.attachments = saveImagesOnServer(message.attachments);
+        console.log('🚀 ~ file: conversation-controller.js ~ line 99 ~ exports.createOneMessage= ~ message', message);
         if (!message.conversationId) {
             const foundConversation = await Conversation.findOne({
                 members: {
@@ -132,6 +136,7 @@ exports.createOneMessage = async (req, res) => {
             senderId: message.senderId,
             conversationId: message.conversationId,
             text: message.text,
+            attachments: message.attachments,
         });
         const createdMessage = await newMessage.save();
         if (createdMessage && createdMessage._id) {

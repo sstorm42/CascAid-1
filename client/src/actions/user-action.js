@@ -113,6 +113,7 @@ export const getAllUsers = (filter) => {
     let filters = { ...filter };
 
     if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
+    if (filters.skills && filters.skills.length > 0) filters.skills = filters.skills.map((skill) => skill._id);
     if (filters.organizationTypes && filters.organizationTypes.length > 0) filters.organizationTypes = filters.organizationTypes.map((type) => type._id);
     console.log('🚀 ~ file: user-action.js ~ line 114 ~ getAllUsers ~ filters', filters);
     return {
@@ -126,5 +127,13 @@ export const getAllSuggestedUsers = (userId, userType, limit) => {
     return {
         type: Types.GET_ALL_SUGGESTED_USERS,
         payload: UserDA.get_all_suggested_users(userId, userType, limit),
+    };
+};
+
+// NAME
+export const getAllUsersNames = () => {
+    return {
+        type: Types.GET_ALL_USERS_NAME,
+        payload: UserDA.get_all_users_name(),
     };
 };

@@ -6,7 +6,8 @@ const fs = require('fs');
 const moment = require('moment');
 const randomstring = require('randomstring');
 
-const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
+// const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
+const appDir = `http://localhost:3001/uploaded-images/`;
 const path2 = './uploaded_images/';
 
 exports.saveImagesOnServer = (imageArray) => {
@@ -45,7 +46,10 @@ exports.saveImageSchemaOnServer = (imageArray) => {
                 const optionalObj = { fileName: imageFileName, type: imageType };
 
                 base64ToImage(base64Str, path2, optionalObj);
-                newSavedImageArray.push({ path: appDir + imageFileName + '.' + imageType, description: item.description });
+                newSavedImageArray.push({
+                    path: appDir + imageFileName + '.' + imageType,
+                    description: item.description,
+                });
 
                 i++;
             } else {

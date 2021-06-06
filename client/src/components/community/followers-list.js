@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardColumns, Badge } from 'react-bootstrap';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { UnfollowUserButtonRender } from '../form_template/buttons-render';
+import { MessageButtonRender } from '../form_template/buttons-render';
 import { CSSTransition } from 'react-transition-group';
 const FollowerList = (props) => {
     const followers = props.followers;
@@ -63,7 +63,14 @@ const FollowerList = (props) => {
                                     >
                                         <Card.Title>{name}</Card.Title>
                                     </Card.Body>
-                                    <Card.Footer>{/* <small className="text-muted">YET TO DISCUSS</small> */}</Card.Footer>
+                                    <Card.Footer>
+                                        <MessageButtonRender
+                                            title="Message"
+                                            onClick={() => {
+                                                props.handleOpenMessageModal({ userId: follower.followerId, name });
+                                            }}
+                                        />
+                                    </Card.Footer>
                                 </Card>
                             </CSSTransition>
                         );

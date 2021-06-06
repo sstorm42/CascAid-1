@@ -6,7 +6,7 @@ import LoadingAnim from '../../components/form_template/loading-anim';
 import { getPostById, createPost, updatePostById, clearPost } from '../../actions/post-action';
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { getAllSkillsByUser } from '../../actions/skill-action';
-import { getServiceInfo } from '../../actions/user-action';
+import { getServiceInfo, getAllUsersNames } from '../../actions/user-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
@@ -18,6 +18,8 @@ const CreatePost = (props) => {
     const [requiredItems, setRequiredItems] = useState([]);
     const [editMode, setEditMode] = useState(false);
     const [isActive, setIsActive] = useState(true);
+    const [description, setDescription] = useState('');
+    const [usersName, setUsersName] = useState([]);
     const [location, setLocation] = useState({
         latitude: 0,
         longitude: 0,
@@ -26,6 +28,7 @@ const CreatePost = (props) => {
     useEffect(() => {
         if (props.getPostResponse.success) {
             console.log(props.getPostResponse.post);
+            setDescription(props.getPostResponse.post.description);
             setImages(props.getPostResponse.post.images);
             setRequiredItems(props.getPostResponse.post.requiredItems);
             if (props.getPostResponse.post.address) {
@@ -65,6 +68,7 @@ const CreatePost = (props) => {
         }
         let post = {
             ...values,
+
             postType: props.match.params.postType,
             creatorId: props.auth.user._id,
             images: images,
@@ -178,6 +182,7 @@ const CreatePost = (props) => {
             setLoading(true);
             props.dispatch(getPostById(postId));
             setLoading(false);
+            props.dispatch(getAllUsersNames());
         };
         const user = props.auth.user;
         if (user && user._id) {
@@ -215,11 +220,22 @@ const CreatePost = (props) => {
             }
         } else if (success === false) NotificationManager.error(message, 'Failed');
     }, [props.setPostResponse]);
+    useEffect(() => {
+        const { success } = props.getAllUsersNameResponse;
+        if (success) {
+            const users = props.getAllUsersNameResponse.users;
+            const usersName_ = users.map((u) => (u.type === 'individual' ? { id: u._id, display: u.concatNameWithSpace } : { id: u._id, display: u.name }));
 
+            setUsersName([...usersName_]);
+        }
+    }, [props.getAllUsersNameResponse]);
     if (loading) return <LoadingAnim />;
     else
         return (
             <PostForm
+                usersName={usersName}
+                description={description}
+                setDescription={setDescription}
                 postType={props.match.params.postType}
                 handleGoToManagePosts={handleGoToManagePosts}
                 handleImagePosition={handleImagePosition}
@@ -264,6 +280,7 @@ const mapStateToProps = (state) => {
         }
         console.log(initialValues);
     }
+    const getAllUsersNameResponse = state.User.getAllUsersName;
     return {
         getImpactAreaResponse,
         initialValues,
@@ -271,6 +288,7 @@ const mapStateToProps = (state) => {
         setPostResponse,
         getSkillResponse,
         getServiceInfoResponse,
+        getAllUsersNameResponse,
     };
 };
 export default connect(

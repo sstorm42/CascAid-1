@@ -52,6 +52,7 @@ export const getTitleByType = (type, senderName, more, postType = 'post') => {
     if (type === 'friend-request') title += ` sent you a friend request.`;
     else if (type === 'friend-accept') title += ` accepted your friend request.`;
     else if (type === 'follow') title += ` is following you.`;
+    else if (type === 'endorsement') title += ` is endorsing you.`;
     else if (type === 'like') title += `  liked your ${getPostTypeName[postType]}.`;
     else if (type === 'interest') title += ` is interested in your ${getPostTypeName[postType]}.`;
     else if (type === 'going') title += ` is going to your ${getPostTypeName[postType]}.`;

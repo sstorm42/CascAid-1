@@ -29,6 +29,7 @@ exports.Types = {
     Going: 'going',
     MembershipRequest: 'membership-request',
     MembershipAccept: 'membership-accept',
+    Endorsement: 'endorsement',
 };
 exports.Descriptions = {
     FriendRequest: { type: 'friend-request' },
@@ -39,4 +40,5 @@ exports.Descriptions = {
     Going: { type: 'going' },
     MembershipRequest: { type: 'membership-request' },
     MembershipAccept: { type: 'membership-accept' },
+    Endorsement: 'endorsement',
 };

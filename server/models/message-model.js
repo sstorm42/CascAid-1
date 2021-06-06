@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const messageSchema = mongoose.Schema(
     {
         senderId: {
@@ -17,6 +18,7 @@ const messageSchema = mongoose.Schema(
             required: true,
         },
         text: { type: String },
+        attachments: [{ type: String }],
     },
     { timestamps: true },
 );

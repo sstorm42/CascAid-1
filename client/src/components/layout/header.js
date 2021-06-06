@@ -23,6 +23,17 @@ const GetNameAndProfilePicture = (userType, basicInfo) => {
 
     return { name, profilePicture };
 };
+const StaticPagesListRender = (props) => {
+    return (
+        <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+                <Nav.Link href={RoutePath.aboutUsPage}>About Us</Nav.Link>
+                <Nav.Link href={RoutePath.privacyPolicyPage}>Privacy Policy</Nav.Link>
+                <Nav.Link href={RoutePath.contactUsPage}>Contact Us</Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
+    );
+};
 const Header = (props) => {
     const isAuth = props.isAuth || false;
 
@@ -35,6 +46,8 @@ const Header = (props) => {
                         <Image src="/images/logo/logo8.png" thumbnail rounded={10} style={{ height: '50px', width: 'auto', marginLeft: '64px' }} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <StaticPagesListRender />
+                    {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
                             <ReactAutoSuggest />
@@ -62,6 +75,7 @@ const Header = (props) => {
                         <Image src="/images/logo/logo8.png" thumbnail rounded={10} style={{ height: '50px', width: 'auto', marginLeft: '64px' }} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <StaticPagesListRender />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
                             <Link to={RoutePath.signInPage} className="nav-link">

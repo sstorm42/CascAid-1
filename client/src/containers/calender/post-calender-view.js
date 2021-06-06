@@ -1,13 +1,36 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Modal, Badge } from 'react-bootstrap';
 import { Calendar, momentLocalizer, dateFnsLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 import events from './posts';
+import { Link } from 'react-router-dom';
+import * as RoutePath from '../../constants/route-paths';
+import { connect } from 'react-redux';
+import { ImpactAreasRender, InfoRender } from '../../components/form_template/details-render';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { getColorByPostType, getPostTypeName } from '../../constants/post-types';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
+import {
+    LikeButtonRender,
+    InterestedButtonRender,
+    GoingButtonRender,
+    FollowButtonRender,
+    UnfollowUserButtonRender,
+} from '../../components/form_template/buttons-render';
+import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
+import {
+    cancelGoingPost,
+    cancelInterestedPost,
+    cancelLikePost,
+    changePostInterest,
+    getHomeFeed,
+    goingPost,
+    interestedPost,
+    likePost,
+} from '../../actions/post-action';
 const locales = {
     'en-US': require('date-fns/locale/en-US'),
 };
@@ -25,9 +48,9 @@ const localizer = dateFnsLocalizer({
 function Event({ event }) {
     return (
         <span
-            onClick={() => {
-                alert(event.id);
-            }}
+        // onClick={() => {
+        //     alert(event._id);
+        // }}
         >
             <strong>{event.title}</strong>
             {/* {event.desc && ':  ' + event.desc} */}
@@ -46,7 +69,7 @@ function EventAgenda({ event }) {
 const ColoredDateCellWrapper = ({ children }) =>
     React.cloneElement(React.Children.only(children), {
         style: {
-            backgroundColor: 'lightblue',
+            backgroundColor: 'white',
         },
     });
 const customSlotPropGetter = (date) => {
@@ -56,49 +79,32 @@ const customSlotPropGetter = (date) => {
         };
     else return {};
 };
-const post = {
-    type: 'EVENT',
-    title: 'Lorem ipsum dolor sit amet, conseur adipiscing elit.',
-    description: `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mi neque, euismod a odio in, iaculis laoreet lectus. Morbi imperdiet porttitor leo sed lacinia. Cras volutpat lectus nec magna sollicitudin ultrices. Vivamus vel molestie sem, vitae aliquam orci. Aliquam viverra diam at convallis laoreet. Maecenas sed aliquet tellus. Praesent imperdiet pulvinar orci, vitae ultricies mauris posuere vel. Fusce id ex magna.
-    
-    Aenean dapibus leo vitae condimentum tincidunt. Maecenas non erat eget dolor interdum sollicitudin. Aenean sed neque id arcu posuere faucibus nec ut tellus. Mauris sed risus eros. Pellentesque tincidunt risus a mi semper, at facilisis dui tincidunt. Mauris accumsan magna in nunc semper, ac auctor urna gravida. Donec feugiat dignissim magna. Nunc tempus luctus rhoncus. Suspendisse interdum vitae nunc vel faucibus. Nulla varius, nisi sit amet luctus maximus, urna velit luctus metus, ut pulvinar augue est sit amet augue. Phasellus venenatis suscipit eros, vitae scelerisque justo iaculis non. In in lectus congue risus vestibulum efficitur eu sit amet nisl. Sed varius nulla nec efficitur semper. In mattis magna vitae vehicula varius. Etiam mauris purus, facilisis mollis ex sit amet, interdum efficitur augue. Etiam dapibus vestibulum lacus vel pellentesque.
-    
-    Nunc eu lorem scelerisque nisi ornare interdum consequat nec libero. Phasellus ante quam, bibendum eu mattis vel, sollicitudin at mauris. Etiam dapibus a dui placerat suscipit. Donec blandit iaculis purus vitae fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis semper mattis. Sed eleifend augue in sem auctor blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
-};
-export default class BookingCalendar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            postModal: false,
-            post: {},
-        };
-    }
-    handlePostModal = (modalFlag) => {
-        this.setState({
-            postModal: modalFlag,
-        });
+
+const PostCalenderView = (props) => {
+    const [loading, setLoading] = useState(false);
+    const [userId, setUserId] = useState('');
+    const [postModal, setPostModal] = useState(false);
+    const [posts, setPosts] = useState([]);
+    const [post, setPost] = useState({});
+    const handlePostModal = (modalFlag) => {
+        setPostModal(modalFlag);
     };
-    handleChangePost = (post) => {
-        this.setState({
-            post: post,
-        });
+    const handleChangePost = (post) => {
+        setPost(post);
     };
-    setDates = () => {
-        events.map((event) => {
-            return events.push({
-                start: new Date(event.start),
-                end: new Date(event.end),
-                title: `${event.title})`,
-                allDay: true,
+    const setDates = () => {
+        posts.map((post) => {
+            return posts.push({
+                start: new Date(post.startDateTime),
+                end: new Date(post.endDateTime),
+                title: `${post.title})`,
             });
         });
-        return events;
+        return posts;
     };
-    eventStyleGetter = (event, start, end, isSelected) => {
-        var backgroundColor = '#' + event.hexColor;
+    const eventStyleGetter = (post, start, end, isSelected) => {
         var style = {
-            backgroundColor: 'red',
+            backgroundColor: getColorByPostType(post.postType),
             borderRadius: '0px',
             opacity: 0.8,
             color: 'white',
@@ -109,91 +115,133 @@ export default class BookingCalendar extends Component {
             style: style,
         };
     };
+    useEffect(() => {
+        const getInitialInfo = () => {
+            setLoading(true);
+            const user = props.auth.user;
+            setUserId(user._id);
+            props.dispatch(getHomeFeed());
+            setLoading(false);
+        };
+        getInitialInfo();
+    }, []);
+    const handleGotoPostDetails = (postType, postId) => {
+        props.history.push(postDetailsPage(postType, postId));
+    };
+    const handleGotoOrganizationDetails = (userId) => {
+        props.history.push(userDetailsPage('organization', userId));
+    };
+    const handleLikePost = (postId) => {
+        props.dispatch(likePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'like'));
+    };
+    const handleCancelLikePost = (postId) => {
+        props.dispatch(cancelLikePost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'unlike'));
+    };
 
-    render() {
-        return (
-            <Container className="parent-page">
-                <Modal
-                    style={{ zIndex: 10000 }}
-                    show={this.state.postModal}
-                    onHide={() => {
-                        this.handlePostModal(false);
-                    }}
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title>POST DETAILS</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <Row>
-                            <Col>
-                                <h4>
-                                    <Badge variant="dark">EVENT</Badge>
-                                </h4>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <h4>{post.title}</h4>
-                            </Col>
-                        </Row>
-                    </Modal.Body>
-                    <Modal.Footer></Modal.Footer>
-                </Modal>
-                <Row>
-                    <Col>
-                        <Calendar
-                            onShowMore={(events, date) => console.log(date)}
-                            localizer={localizer}
-                            events={events}
-                            startAccessor="start"
-                            endAccessor="end"
-                            style={{ height: 700 }}
-                            views={allViews}
-                            components={{
-                                event: Event,
-                                agenda: {
-                                    event: EventAgenda,
-                                },
-                                timeSlotWrapper: ColoredDateCellWrapper,
-                            }}
-                            onSelectEvent={(e) => {
-                                console.log(e);
-                                this.handleChangePost(e);
-                                this.handlePostModal(true);
-                            }}
-                            eventPropGetter={this.eventStyleGetter}
-                        />
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-}
+    const handleInterestedPost = (postId) => {
+        props.dispatch(interestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'interested'));
+    };
+    const handleCancelInterestedPost = (postId) => {
+        console.log('🚀 ~ file: home.js ~ line 46 ~ handleCancelInterestedPost ~ postId', postId);
+        props.dispatch(cancelInterestedPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'uninterested'));
+    };
 
-// const ColoredDateCellWrapper = ({ children }) =>
-//     React.cloneElement(React.Children.only(children), {
-//         style: {
-//             backgroundColor: 'lightblue',
-//         },
-//     });
-// const PostCalenderView = (props) => {
-//     return (
-//         <Container className="parent-page">
-//             POST CALENDER VIEW
-//             {/* <br />
-//             <Calendar
-//                 events={events}
-//                 views={allViews}
-//                 step={60}
-//                 showMultiDayTimes
-//                 // max={dates.add(dates.endOf(new Date(2015, 17, 1), 'day'), -1, 'hours')}
-//                 defaultDate={new Date(2015, 3, 1)}
-//                 components={{
-//                     timeSlotWrapper: ColoredDateCellWrapper,
-//                 }}
-//                 localizer={props.localizer}
-//             /> */}
-//         </Container>
-//     );
-// };
-// export default PostCalenderView;
+    const handleGoingPost = (postId) => {
+        props.dispatch(goingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'going'));
+    };
+    const handleCancelGoingPost = (postId) => {
+        props.dispatch(cancelGoingPost(postId));
+        props.dispatch(changePostInterest(postId, userId, 'ungoing'));
+    };
+    useEffect(() => {
+        const { success } = props.homeFeedResponse;
+
+        if (success) {
+            const allPosts = props.homeFeedResponse.allPosts;
+            if (allPosts && allPosts.length > 0) {
+                const allPosts_ = allPosts
+                    .filter((post) => post.startDateTime && post.endDateTime)
+                    .map((p) => {
+                        return { ...p, id: p._id.toString(), startDateTime: new Date(p.startDateTime), endDateTime: new Date(p.endDateTime), allDay: true };
+                    });
+                console.log('🚀 ~ file: post-calender-view.js ~ line 144 ~ useEffect ~ props.homeFeedResponse', allPosts_);
+                setPosts(allPosts_);
+            }
+        }
+    }, [props.homeFeedResponse]);
+    return (
+        <Container className="parent-page">
+            <Modal
+                style={{ zIndex: 10000, width: '1000px' }}
+                show={postModal}
+                onHide={() => {
+                    handlePostModal(false);
+                }}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>{getPostTypeName(post.postType)} Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Row className="special-btn">
+                        <Col>
+                            <Link to={RoutePath.postDetailsPage(post.postType, post._id)}>
+                                <h5 style={{ color: 'cadetblue' }}>{post.title}</h5>
+                            </Link>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>{ImpactAreasRender('', post.impactAreas)}</Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <small>{post.description}</small>
+                        </Col>
+                    </Row>
+                </Modal.Body>
+                <Modal.Footer>
+                    <LikeButtonRender />
+                    &nbsp;
+                    <InterestedButtonRender />
+                    &nbsp;
+                    <GoingButtonRender />
+                </Modal.Footer>
+            </Modal>
+            <Row>
+                <Col>
+                    <Calendar
+                        onShowMore={(events, date) => console.log(date)}
+                        localizer={localizer}
+                        events={posts}
+                        startAccessor="startDateTime"
+                        endAccessor="endDateTime"
+                        style={{ height: 700 }}
+                        views={allViews}
+                        components={{
+                            event: Event,
+                            agenda: {
+                                event: EventAgenda,
+                            },
+                            timeSlotWrapper: ColoredDateCellWrapper,
+                        }}
+                        onSelectEvent={(e) => {
+                            console.log(e);
+                            handleChangePost(e);
+                            handlePostModal(true);
+                        }}
+                        eventPropGetter={eventStyleGetter}
+                    />
+                </Col>
+            </Row>
+        </Container>
+    );
+};
+const mapStateToProps = (state) => {
+    const homeFeedResponse = state.Post.homeFeed;
+    return { homeFeedResponse };
+};
+export default connect(mapStateToProps, null)(PostCalenderView);

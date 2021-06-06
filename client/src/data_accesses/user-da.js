@@ -100,6 +100,15 @@ class UserDA {
             })
             .catch((err) => err.response.data);
     };
+    get_all_users_name = () => {
+        return axios
+            .get(APIPaths.getAllUsersName, APIPaths.apiConfig())
+            .then((response) => {
+                console.log(response);
+                return response.data;
+            })
+            .catch((err) => err.response.data);
+    };
 }
 
 export default new UserDA();

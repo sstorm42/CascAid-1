@@ -9,9 +9,12 @@ import Layout from './hoc/layout';
 import DashboardLayout from './hoc/dashboard-layout';
 import UserAuthCheck from './hoc/auth';
 import HomePage from './containers/home/home';
+
+// SEARCH
 import SearchOrganization from './containers/search/search-organization';
 import SearchCommunityActivity from './containers/search/search-community-activity';
 import SearchUser from './containers/search/search-user';
+import SearchIndividual from './containers/search/search-individual';
 
 import IndividualBasicInfo from './containers/individual/individual-basic-info';
 import IndividualInvolvement from './containers/individual/individual-involvement';
@@ -42,6 +45,7 @@ import CommunityFriends from './containers/community/friends';
 import CommunityFollowers from './containers/community/followers';
 import CommunityFollowings from './containers/community/followings';
 import CommunityRequests from './containers/community/requests';
+import CommunityEndorsers from './containers/community/endorsers';
 
 //NOTIFICATION
 import ManageNotifications from './containers/notification/manage-notifications';
@@ -51,6 +55,14 @@ import ManageConversations from './containers/conversation/manage-conversations'
 
 // CALENDER
 import PostCalenderView from './containers/calender/post-calender-view';
+
+// STATIC
+import AboutUs from './containers/home/about-us';
+import PrivacyPolicy from './containers/home/privacy-policy';
+import ContactUs from './containers/home/contact-us';
+
+// DASHBOARD
+import Dashboard from './containers/dashboard/dashboard';
 
 const allRoles = ['individual', 'organization', 'admin'];
 const individualAndAdminRoles = ['individual', 'admin'];
@@ -178,6 +190,7 @@ const Routes = () => {
             />
             <LayoutRoute path={RoutePath.homePage} exact component={UserAuthCheck(HomePage, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute path={RoutePath.organizationSearchPage} exact component={UserAuthCheck(SearchOrganization, allRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute path={RoutePath.individualSearchPage} exact component={UserAuthCheck(SearchIndividual, allRoles, true)} layout={DashboardLayout} />
             <LayoutRoute
                 path={RoutePath.communityActivitySearchPage}
                 exact
@@ -206,30 +219,7 @@ const Routes = () => {
                 component={UserAuthCheck(ManageNotifications, allRoles, true)}
                 layout={DashboardLayout}
             />
-            {/* EVENTS */}
-            {/* <LayoutRoute path={RoutePath.eventCreatePage} exact component={UserAuthCheck(CreateEvent, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventEditPage + ':eventId'} exact component={UserAuthCheck(CreateEvent, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventListByOrganizationPage} exact component={UserAuthCheck(ManageEvents, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventListPage} exact component={UserAuthCheck(ListingEvents, ['individual', 'organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.eventDetailsPage + ':eventId'} exact component={UserAuthCheck(DisplayEvent, allRoles, true)} layout={DashboardLayout} /> */}
-            {/* PROJECTS */}
-            {/* <LayoutRoute path={RoutePath.projectCreatePage} exact component={UserAuthCheck(CreateProject, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.projectEditPage + ':projectId'} exact component={UserAuthCheck(CreateProject, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.projectListByOrganizationPage} exact component={UserAuthCheck(ManageProjects, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.projectListPage} exact component={UserAuthCheck(ListingProjects, ['individual', 'organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.projectDetailsPage + ':projectId'} exact component={UserAuthCheck(DisplayProject, allRoles, true)} layout={DashboardLayout} /> */}
-            {/* POSTS */}
-            {/* <LayoutRoute path={RoutePath.postCreatePage} exact component={UserAuthCheck(CreatePost, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.postEditPage + ':postId'} exact component={UserAuthCheck(CreatePost, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.postListByOrganizationPage} exact component={UserAuthCheck(ManagePosts, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.postListPage} exact component={UserAuthCheck(ListingPosts, ['individual', 'organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.postDetailsPage + ':postId'} exact component={UserAuthCheck(DisplayPost, allRoles, true)} layout={DashboardLayout} /> */}
-            {/* VOLUNTEERING */}
-            {/* <LayoutRoute path={RoutePath.volunteeringCreatePage} exact component={UserAuthCheck(CreateVolunteering, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.volunteeringEditPage + ':volunteeringId'} exact component={UserAuthCheck(CreateVolunteering, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.volunteeringListByOrganizationPage} exact component={UserAuthCheck(ManageVolunteerings, ['organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.volunteeringListPage} exact component={UserAuthCheck(ListingVolunteerings, ['individual', 'organization'], true)} layout={DashboardLayout} />
-            <LayoutRoute path={RoutePath.volunteeringDetailsPage + ':volunteeringId'} exact component={UserAuthCheck(DisplayVolunteering, allRoles, true)} layout={DashboardLayout} /> */}
+
             {/* POSTS */}
             <LayoutRoute
                 path={RoutePath.postCreatePage(':postType')}
@@ -270,18 +260,30 @@ const Routes = () => {
                 layout={DashboardLayout}
             />
             <LayoutRoute
+                path={RoutePath.communityEndorserListPage}
+                exact
+                component={UserAuthCheck(CommunityEndorsers, allRoles, true)}
+                layout={DashboardLayout}
+            />
+            <LayoutRoute
                 path={RoutePath.communityFollowingListPage}
                 exact
                 component={UserAuthCheck(CommunityFollowings, allRoles, true)}
                 layout={DashboardLayout}
             />
             <LayoutRoute
-                path={RoutePath.communityRequestListPage}
+                path={RoutePath.communityRequestListPage(':requestType')}
                 exact
                 component={UserAuthCheck(CommunityRequests, individualAndAdminRoles, true)}
                 layout={DashboardLayout}
             />
             <LayoutRoute path="/calender" exact component={UserAuthCheck(PostCalenderView, allRoles, true)} layout={DashboardLayout} />
+            {/* STATIC */}
+            <LayoutRoute path={RoutePath.aboutUsPage} exact component={AboutUs} layout={Layout} />
+            <LayoutRoute path={RoutePath.privacyPolicyPage} exact component={PrivacyPolicy} layout={Layout} />
+            <LayoutRoute path={RoutePath.contactUsPage} exact component={ContactUs} layout={Layout} />
+            {/* DASHBOARD */}
+            <LayoutRoute path={RoutePath.dashboardPage} exact component={UserAuthCheck(Dashboard, organizationAndAdminRoles, true)} layout={DashboardLayout} />
         </Switch>
     );
 };

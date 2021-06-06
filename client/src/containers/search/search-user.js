@@ -48,7 +48,9 @@ const SearchUser = (props) => {
             </Row>
             <Row>
                 <Col>
-                    <UserList users={props.getAllUsersResponse.success ? props.getAllUsersResponse.users : []} />
+                    <UserList
+                        users={props.getAllUsersResponse.success ? props.getAllUsersResponse.users.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                    />
                 </Col>
             </Row>
         </Container>

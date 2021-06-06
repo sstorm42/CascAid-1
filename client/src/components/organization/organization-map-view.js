@@ -102,7 +102,12 @@ const AllOrganizationOnMap = (props) => {
                         }}
                     >
                         <Container>
-                            <Row>
+                            <Row
+                                className="special-btn "
+                                onClick={() => {
+                                    props.gotoOrganizationDetails(selected._id);
+                                }}
+                            >
                                 <Col>
                                     <h6>{selected.basicInfo.name}</h6>
                                 </Col>
@@ -161,6 +166,9 @@ const AllOrganizationOnMap = (props) => {
                                         Go to Page
                                     </Button>
                                 </Col>
+                            </Row>
+                            <br />
+                            <Row>
                                 <Col>
                                     {followObject[selected._id] ? (
                                         <UnfollowUserButtonRender

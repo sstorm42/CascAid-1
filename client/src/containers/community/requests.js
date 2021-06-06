@@ -7,11 +7,17 @@ import { acceptFriendship, rejectFriendship, deleteFriendship } from '../../acti
 import RequestList from '../../components/community/requests-list';
 import { getAllFriendships } from '../../actions/friendship-action';
 import * as RoutePaths from '../../constants/route-paths';
+import { communityRequestListPage } from '../../constants/route-paths';
+import { setMessage } from '../../actions/conversation-action';
+import MessageModal from '../../components/conversation/message-modal';
+import { NotificationManager } from 'react-notifications';
 const CommunityRequests = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
     const [userType, setUserType] = useState('');
     const [cards, setCards] = useState({});
+    const [messageModal, setMessageModal] = useState(false);
+    const [messageReceiver, setMessageReceiver] = useState('');
     useEffect(() => {
         const getInitialInfo = (userId) => {
             console.log('Calling API');
@@ -26,6 +32,26 @@ const CommunityRequests = (props) => {
             getInitialInfo(user._id);
         }
     }, []);
+    useEffect(() => {
+        const { success } = props.setMessageResponse;
+        if (success) {
+            NotificationManager.success('Message sent', 'success');
+        } else if (success === false) NotificationManager.error('Message is not sent', 'Failed');
+    }, [props.setMessageResponse]);
+    const handleOpenMessageModal = (user) => {
+        setMessageModal(true);
+        setMessageReceiver(user);
+    };
+    const handleSendNewMessage = (receiverId, text) => {
+        props.dispatch(
+            setMessage({
+                senderId: userId,
+                receiverId,
+                text,
+            }),
+        );
+        setMessageModal(false);
+    };
     useEffect(() => {
         const { success } = props.getAllFriendshipResponse;
         if (success) {
@@ -61,9 +87,29 @@ const CommunityRequests = (props) => {
     else {
         return (
             <Container>
+                <MessageModal
+                    messageModal={messageModal}
+                    setMessageModal={setMessageModal}
+                    messageReceiver={messageReceiver}
+                    handleSendNewMessage={handleSendNewMessage}
+                />
                 <Row className="parent-page">
                     <Col>
                         <CommunityMenu selected="request" userType={userType} />
+                        <hr />
+                        <Nav variant="pills" activeKey={props.match.params.requestType}>
+                            <Nav.Item size="sm">
+                                <Nav.Link eventKey="received" href={communityRequestListPage('received')}>
+                                    RECEIVED
+                                </Nav.Link>
+                            </Nav.Item>
+
+                            <Nav.Item sz="sm">
+                                <Nav.Link eventKey="sent" href={communityRequestListPage('sent')}>
+                                    SENT
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
                         <hr />
                         <RequestList
                             friendships={props.getAllFriendshipResponse ? props.getAllFriendshipResponse.friendships : []}
@@ -73,6 +119,8 @@ const CommunityRequests = (props) => {
                             handleRejectFriendship={handleRejectFriendship}
                             handleDeleteFriendship={handleDeleteFriendship}
                             cards={cards}
+                            requestType={props.match.params.requestType}
+                            handleOpenMessageModal={handleOpenMessageModal}
                         />
                         {/* <SampleUsers /> */}
                     </Col>
@@ -83,7 +131,8 @@ const CommunityRequests = (props) => {
 };
 const mapStateToProps = (state) => {
     const getAllFriendshipResponse = state.Friendship.getAllFriendships;
+    const setMessageResponse = state.Conversation.setMessage;
     console.log('🚀 ~ file: friends.js ~ line 41 ~ mapStateToProps ~ getAllFriendshipResponse', getAllFriendshipResponse);
-    return { getAllFriendshipResponse };
+    return { getAllFriendshipResponse, setMessageResponse };
 };
 export default connect(mapStateToProps, null)(CommunityRequests);

@@ -4,9 +4,10 @@ import { defaultOrganizationProfilePicture } from '../../constants/default-image
 import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render';
 const OrganizationListView = (props) => {
     const allOrganizations = props.allOrganizations;
+    console.log('🚀 ~ file: organization-list-view.js ~ line 7 ~ OrganizationListView ~ allOrganizations', allOrganizations);
     const followObject = props.followObject;
     const endorseObject = props.endorseObject;
-    console.log('🚀 ~ file: organization-list-view.js ~ line 9 ~ OrganizationListView ~ endorseObject', endorseObject);
+    console.log('🚀 ~ file: organization-list-view.js ~ line 9 ~ OrganizationListView ~ endorseObject', allOrganizations);
     const submitting = props.submitting;
 
     const descriptionRender = (description) => {

@@ -292,9 +292,10 @@ export const CancelEndorseUserButtonRender = (props) => {
 };
 
 export const MessageButtonRender = (props) => {
+    const buttonTitle = props.title;
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <RiChat2Line /> Message
+            <RiChat2Line /> {buttonTitle}
         </Button>
     );
 };
@@ -310,6 +311,19 @@ export const MessageAttachmentButtonRender = (props) => {
         <Button size="sm" variant="outline-success" {...props}>
             <BsPaperclip /> {props.buttonTitle}
         </Button>
+    );
+};
+export const HiddenFileInputRender = (props) => {
+    return (
+        <input
+            type="file"
+            ref={props.hiddenFileInput}
+            onChange={(e) => {
+                props.handleAttachmentUpload(e);
+            }}
+            style={{ display: 'none' }}
+            multiple={props.multiple ? props.multiple : false}
+        />
     );
 };
 

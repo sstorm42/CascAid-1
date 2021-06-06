@@ -15,6 +15,7 @@ const initialState = {
     setPrivacy: {},
     setServiceInfo: {},
     setInternalLink: {},
+    getAllUsersName: {},
 };
 const UserReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -56,6 +57,8 @@ const UserReducer = (state = initialState, action) => {
             return { ...state, getInternalLink: action.payload, setInternalLink: action.payload };
         case Types.GET_ALL_SUGGESTED_USERS:
             return { ...state, getAllSuggestedUsers: action.payload };
+        case Types.GET_ALL_USERS_NAME:
+            return { ...state, getAllUsersName: action.payload };
         default:
             return state;
     }

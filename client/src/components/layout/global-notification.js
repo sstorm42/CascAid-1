@@ -42,11 +42,13 @@ const NotificationRender = (props) => {
         if (['like', 'interest', 'going'].includes(type)) {
             props.history.push(RoutePaths.postDetailsPage(notification.postId.postType, notification.postId._id));
         } else if (type === 'friend-request') {
-            props.history.push(RoutePaths.communityRequestListPage);
+            props.history.push(RoutePaths.communityRequestListPage('received'));
         } else if (type === 'friend-accept') {
             props.history.push(RoutePaths.communityFriendListPage);
         } else if (type === 'follow') {
             props.history.push(RoutePaths.communityFollowerListPage);
+        } else if (type === 'endorsement') {
+            props.history.push(RoutePaths.communityEndorserListPage);
         } else if (type === 'membership-request') {
         } else if (type === 'membership-accept') {
         } else {

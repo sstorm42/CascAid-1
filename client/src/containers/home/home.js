@@ -21,11 +21,11 @@ import CommittedPersonsModal from '../../components/post/committed-persons-list'
 import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
 const Home = (props) => {
     const [loading, setLoading] = useState(false);
+    const [userId, setUserId] = useState('');
     const [committedModal, setCommittedModal] = useState(false);
     const [committedLoading, setCommittedLoading] = useState(false);
     const [committedList, setCommittedList] = useState([]);
     const [cards, setCards] = useState({});
-    const [userId, setUserId] = useState('');
 
     const handleFollowOrganization = (organizationId) => {
         let cards_ = cards;

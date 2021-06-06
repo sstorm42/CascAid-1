@@ -324,6 +324,7 @@ exports.getAll = async (req, res) => {
         const userType = query.userType ? JSON.parse(query.userType) : '';
         const organizationTypes = query.organizationTypes ? JSON.parse(query.organizationTypes) : [];
         const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
+        const skills = query.skills ? JSON.parse(query.skills) : [];
         const name = query.name ? JSON.parse(query.name) : '';
         const keyword = query.keyword ? JSON.parse(query.keyword) : '';
         const serviceArea = query.serviceArea ? JSON.parse(query.serviceArea) : '';
@@ -340,8 +341,23 @@ exports.getAll = async (req, res) => {
                 $in: organizationTypes.map((type) => ObjectId(type)),
             };
         }
+        console.log('TYPE', userType);
+        console.log('AREA', impactAreas);
         if (impactAreas && impactAreas.length > 0) {
-            match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+            if (userType === 'individual') {
+                console.log('individual called');
+                match['involvement.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+            } else if (userType === 'organization') {
+                console.log('organization called');
+                match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+            } else {
+                console.log('others called');
+                match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+                match['involvement.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+            }
+        }
+        if (skills && skills.length > 0) {
+            match['basicInfo.skills'] = { $in: skills.map((skill) => ObjectId(skill)) };
         }
         if (name) {
             // match['basicInfo.name'] = { $regex: name, $options: 'i' };
@@ -374,8 +390,7 @@ exports.getAll = async (req, res) => {
         // Adding all LOOK-UPS
         const lookUps = [
             LOOKUPS.user_organizationTypes,
-            LOOKUPS.user_organization_impactAreas,
-            LOOKUPS.user_individual_impactAreas,
+            userType === 'individual' ? LOOKUPS.user_individual_impactAreas : LOOKUPS.user_organization_impactAreas,
             LOOKUPS.user_skills,
         ];
 
@@ -383,6 +398,7 @@ exports.getAll = async (req, res) => {
         aggregateOptions.push({ $match: { $and: [nameMatch, match, addressCondition] } }, ...lookUps);
 
         const users = await User.aggregate(aggregateOptions);
+        console.log('🚀 ~ file: user-controller.js ~ line 402 ~ exports.getAll= ~ users', users);
 
         if (users) return res.status(200).send({ ...UserResponse.UserFound, users });
         else return res.status(404).send(UserResponse.UserNotFound);
@@ -810,5 +826,29 @@ exports.updateUserCountry = async (req, res) => {
     } catch (err) {
         console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getAllUsersName = async (req, res) => {
+    try {
+        const users = await User.aggregate([
+            {
+                $project: {
+                    userType: 1,
+                    firstName: '$basicInfo.firstName',
+                    lastName: '$basicInfo.lastName',
+                    profilePicture: '$basicInfo.profilePicture',
+                    name: '$basicInfo.name',
+                    userType: 1,
+                    concatName: { $concat: ['$basicInfo.firstName', '$basicInfo.lastName'] },
+                    concatNameWithSpace: { $concat: ['$basicInfo.firstName', ' ', '$basicInfo.lastName'] },
+                },
+            },
+        ]);
+        return res.status(200).send({ success: true, users });
+    } catch (error) {
+        console.log('ERR', error.message);
+
+        return res.status(500).send({ success: false, message: error.message });
     }
 };

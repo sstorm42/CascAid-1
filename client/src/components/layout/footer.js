@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const Footer = (props) => {
-    const lastBuild = new Date('Sat May 08 2021 05:13:39 GMT+0600 (Bangladesh Standard Time)');
+    const lastBuild = new Date('Sun Jun 06 2021 18:48:31 GMT+0600 (Bangladesh Standard Time)');
     return (
         <div className="footer">
             <h6>

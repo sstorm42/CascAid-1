@@ -3,6 +3,7 @@ import { Card, CardColumns, Badge } from 'react-bootstrap';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { UnfollowUserButtonRender } from '../form_template/buttons-render';
 import { CSSTransition } from 'react-transition-group';
+import { MessageButtonRender } from '../form_template/buttons-render';
 const FollowingList = (props) => {
     const followings = props.followings;
     const cards = props.cards;
@@ -67,6 +68,11 @@ const FollowingList = (props) => {
                                         <UnfollowUserButtonRender
                                             onClick={() => {
                                                 props.handleUnfollowUser(following._id, following.followingId);
+                                            }}
+                                        />
+                                        <MessageButtonRender
+                                            onClick={() => {
+                                                props.handleOpenMessageModal({ userId: following.followingId, name });
                                             }}
                                         />
                                     </Card.Footer>

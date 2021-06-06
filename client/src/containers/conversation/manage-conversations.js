@@ -21,6 +21,7 @@ import openSocket from 'socket.io-client';
 const socket = openSocket(serverAddress, { transports: ['websocket', 'polling', 'flashsocket'] });
 const Conversations = (props) => {
     const [messageText, setMessageText] = useState('');
+    const [attachments, setAttachments] = useState([]);
     const [userId, setUserId] = useState('');
     useEffect(() => {
         const user = props.auth.user;
@@ -49,14 +50,17 @@ const Conversations = (props) => {
         }
     }, [props.match.params.conversationId]);
     const onMessageSubmit = (text) => {
+        console.log(attachments);
         props.dispatch(
             setMessage({
                 senderId: userId,
                 conversationId: props.match.params.conversationId,
                 text,
+                attachments,
             }),
         );
         setMessageText('');
+        setAttachments([]);
         setMessageTextOnLS(props.match.params.conversationId, '');
     };
     const handleGoToConversationDetails = (conversationId) => {
@@ -115,6 +119,8 @@ const Conversations = (props) => {
                             onMessageSubmit={onMessageSubmit}
                             messageText={messageText}
                             setMessageText={setMessageText}
+                            attachments={attachments}
+                            setAttachments={setAttachments}
                             // messageText={messageText} setMessageText={setMessageText}
                         />
                     </Col>

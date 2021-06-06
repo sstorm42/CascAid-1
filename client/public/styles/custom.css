@@ -426,7 +426,7 @@ tr td:last-child {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 5px;
-    height: 100px;
+    height: 200px;
     overflow-y: scroll;
 }
 .message-text {
@@ -438,4 +438,26 @@ tr td:last-child {
 .selected-conversation {
     /* background-color: cyan; */
     border-left: 5px solid cadetblue;
+}
+.attachment-row {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border-top: 5px solid #585453;
+    background: #585453;
+    white-space: nowrap;
+    float: left;
+
+    margin-bottom: 10px;
+}
+.attachment-single {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border-top: none;
+    position: relative;
+    cursor: pointer;
+    margin-right: 5px;
+    white-space: nowrap;
+    background: #fff;
 }

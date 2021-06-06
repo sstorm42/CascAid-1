@@ -3,6 +3,7 @@ import { Card, CardColumns, Button } from 'react-bootstrap';
 import { defaultIndividualProfilePicture } from '../../constants/default-images';
 import { AcceptButtonRender, RejectButtonRender, DeleteFriendshipButtonRender } from '../form_template/buttons-render';
 import { CSSTransition } from 'react-transition-group';
+import { MessageButtonRender } from '../form_template/buttons-render';
 const FriendRequestList = (props) => {
     const friendships = props.friendships;
     const userId = props.userId;
@@ -11,13 +12,19 @@ const FriendRequestList = (props) => {
     const handleAcceptFriendship = props.handleAcceptFriendship;
     const handleRejectFriendship = props.handleRejectFriendship;
     const handleDeleteFriendship = props.handleDeleteFriendship;
+    const requestType = props.requestType;
     if (friendships && friendships.length > 0) {
         return (
             <>
-                {/* <h4>Total {friendships.length} Request Found</h4> */}
                 <br />
                 <CardColumns className="five-columns">
                     {friendships.map((friendship, i) => {
+                        if (requestType === 'received' && friendship.senderId === userId) {
+                            return <></>;
+                        }
+                        if (requestType === 'sent' && friendship.receiverId === userId) {
+                            return <></>;
+                        }
                         let name = '';
                         let profilePicture = defaultIndividualProfilePicture;
                         let friendId = '';
@@ -30,6 +37,7 @@ const FriendRequestList = (props) => {
                             profilePicture = friendship.senderProfilePicture;
                             friendId = friendship.senderId;
                         }
+                        profilePicture = profilePicture ? profilePicture : defaultIndividualProfilePicture;
                         return (
                             <CSSTransition
                                 in={cards[friendship._id]}
@@ -80,6 +88,12 @@ const FriendRequestList = (props) => {
                                                 />
                                             </>
                                         )}
+                                        &nbsp;
+                                        <MessageButtonRender
+                                            onClick={() => {
+                                                props.handleOpenMessageModal({ userId: friendId, name });
+                                            }}
+                                        />
                                     </Card.Footer>
                                 </Card>
                             </CSSTransition>

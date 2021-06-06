@@ -7,11 +7,36 @@ import SampleUsers from './sample-users';
 import FollowingsList from '../../components/community/followings-list';
 import { getAllFollowings, unfollowUser } from '../../actions/follow-action';
 import * as RoutePaths from '../../constants/route-paths';
+import { setMessage } from '../../actions/conversation-action';
+import MessageModal from '../../components/conversation/message-modal';
+import { NotificationManager } from 'react-notifications';
 const CommunityFollowings = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
     const [userType, setUserType] = useState('');
     const [cards, setCards] = useState({});
+    const [messageModal, setMessageModal] = useState(false);
+    const [messageReceiver, setMessageReceiver] = useState('');
+    useEffect(() => {
+        const { success } = props.setMessageResponse;
+        if (success) {
+            NotificationManager.success('Message sent', 'success');
+        } else if (success === false) NotificationManager.error('Message is not sent', 'Failed');
+    }, [props.setMessageResponse]);
+    const handleOpenMessageModal = (user) => {
+        setMessageModal(true);
+        setMessageReceiver(user);
+    };
+    const handleSendNewMessage = (receiverId, text) => {
+        props.dispatch(
+            setMessage({
+                senderId: userId,
+                receiverId,
+                text,
+            }),
+        );
+        setMessageModal(false);
+    };
     useEffect(() => {
         const getInitialInfo = (userId) => {
             console.log('Calling API');
@@ -49,6 +74,12 @@ const CommunityFollowings = (props) => {
     else {
         return (
             <Container>
+                <MessageModal
+                    messageModal={messageModal}
+                    setMessageModal={setMessageModal}
+                    messageReceiver={messageReceiver}
+                    handleSendNewMessage={handleSendNewMessage}
+                />
                 <Row className="parent-page">
                     <Col>
                         <CommunityMenu selected="following" userType={userType} />
@@ -59,6 +90,7 @@ const CommunityFollowings = (props) => {
                             handleGotoUserDetails={handleGotoUserDetails}
                             cards={cards}
                             handleUnfollowUser={handleUnfollowUser}
+                            handleOpenMessageModal={handleOpenMessageModal}
                         />
                     </Col>
                 </Row>
@@ -68,6 +100,7 @@ const CommunityFollowings = (props) => {
 };
 const mapStateToProps = (state) => {
     const getAllFollowingsResponse = state.Follow.getAllFollowings;
-    return { getAllFollowingsResponse };
+    const setMessageResponse = state.Conversation.setMessage;
+    return { getAllFollowingsResponse, setMessageResponse };
 };
 export default connect(mapStateToProps, null)(CommunityFollowings);

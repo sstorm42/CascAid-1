@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import PostImageList from './post-image-list';
-import { SelectRender, InputRender, InputRenderWithLargeLabel, DateTimePickerRender, TextRender, CheckBoxRender, CreatableMultiSelectRender } from '../form_template/input-render';
+import { MentionsInput, Mention } from 'react-mentions';
+
+import {
+    SelectRender,
+    InputRender,
+    InputRenderWithLargeLabel,
+    DateTimePickerRender,
+    TextRender,
+    CheckBoxRender,
+    CreatableMultiSelectRender,
+} from '../form_template/input-render';
 import PostGeoCoding from './post-geo-coding';
 import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
 import RequiredItemList from './required-item-list';
+let style = {
+    input: {
+        overflow: 'auto',
+        height: 200,
+        // zIndex: 5100,
+    },
+    highlighter: {
+        boxSizing: 'border-box',
+        overflow: 'hidden',
+        height: 200,
+        // zIndex: 5200,
+    },
+};
 const PostForm = (props) => {
     console.log(props);
+    const usersName = props.usersName;
+    const description = props.description;
+    const setDescription = props.setDescription;
     const allImpactAreas = props.allImpactAreas;
     const allSkills = props.allSkills;
     const images = props.images;
@@ -16,6 +42,7 @@ const PostForm = (props) => {
     const postType = props.postType;
     const postTypeLabel = getPostTypeByValue(postType)[0].label;
     const fields = postTypeFields[postType];
+
     return (
         <Container>
             <Row>
@@ -38,13 +65,65 @@ const PostForm = (props) => {
                             </Col>
                         </Row>
                         <br />
+                        <label>{description}</label>
                         {fields.title && <Field name="title" type="text" component={InputRender} label="Title" placeholder="Title..." />}
-                        {fields.startDateTime && <Field name="startDateTime" component={DateTimePickerRender} label="Start time" col1={4} col2={8} zIndex={6001} />}
+                        {fields.startDateTime && (
+                            <Field name="startDateTime" component={DateTimePickerRender} label="Start time" col1={4} col2={8} zIndex={6001} />
+                        )}
                         {fields.endDateTime && <Field name="endDateTime" component={DateTimePickerRender} label="End time" col1={4} col2={8} zIndex={6000} />}
-                        {fields.description && <Field name="description" type="text" component={TextRender} label="Description" placeholder="Description..." col1={4} col2={8} />}
-                        {fields.skills && <Field name="skills" component={CreatableMultiSelectRender} label="Skill" col1={4} col2={8} options={allSkills} zIndex={5000} menuPlacement="top" />}
+                        {fields.description && (
+                            <Field name="description" type="text" component={TextRender} label="Description" placeholder="Description..." col1={4} col2={8} />
+                            // <Row>
+                            //     <Col sm={4}>Description</Col>
+                            //     <Col sm={8}>
+                            //         <MentionsInput
+                            //             // className="form-control"
+                            //             value={description}
+                            //             onChange={(e) => {
+                            //                 setDescription(e.target.value);
+                            //             }}
+                            //             style={style}
+                            //             a11ySuggestionsListLabel={'Suggested mentions'}
+                            //         >
+                            //             <Mention
+                            //                 markup="@[__display__](user:__id__)"
+                            //                 trigger="@"
+                            //                 data={usersName}
+                            //                 renderSuggestion={(suggestion, search, highlightedDisplay) => <div className="user">{highlightedDisplay}</div>}
+                            //                 style={{
+                            //                     backgroundColor: '#cee4ee',
+                            //                 }}
+                            //             />
+                            //         </MentionsInput>
+                            //     </Col>
+
+                            //     <br />
+                            // </Row>
+                        )}
+                        <br />
+                        {fields.skills && (
+                            <Field
+                                name="skills"
+                                component={CreatableMultiSelectRender}
+                                label="Skill"
+                                col1={4}
+                                col2={8}
+                                options={allSkills}
+                                zIndex={5000}
+                                menuPlacement="top"
+                            />
+                        )}
                         {fields.keywords && (
-                            <Field name="keywords" type="text" component={CreatableMultiSelectRender} label="Keywords" col1={4} col2={8} placeholder="Add new keywords" zIndex={2000} />
+                            <Field
+                                name="keywords"
+                                type="text"
+                                component={CreatableMultiSelectRender}
+                                label="Keywords"
+                                col1={4}
+                                col2={8}
+                                placeholder="Add new keywords"
+                                zIndex={2000}
+                            />
                         )}
                         {fields.petitionLink && <Field name="petitionLink" type="text" component={InputRender} label="Petition Link" placeholder="" />}
                         {fields.impactAreas && (
@@ -63,11 +142,29 @@ const PostForm = (props) => {
                                         </Button>
                                     </Col>
                                 </Row>
-                                <Field name="impactAreas" component={CreatableMultiSelectRender} label="Impact areas" col1={4} col2={8} options={allImpactAreas} zIndex={4000} menuPlacement="top" />
+                                <Field
+                                    name="impactAreas"
+                                    component={CreatableMultiSelectRender}
+                                    label="Impact areas"
+                                    col1={4}
+                                    col2={8}
+                                    options={allImpactAreas}
+                                    zIndex={4000}
+                                    menuPlacement="top"
+                                />
                             </>
                         )}
                         {fields.expectedRequiredHours && (
-                            <Field name="expectedRequiredHours" component={InputRenderWithLargeLabel} type="number" unit="Hours" label="Expected Required Time" min={0} max={100} step={0.25} />
+                            <Field
+                                name="expectedRequiredHours"
+                                component={InputRenderWithLargeLabel}
+                                type="number"
+                                unit="Hours"
+                                label="Expected Required Time"
+                                min={0}
+                                max={100}
+                                step={0.25}
+                            />
                         )}
                         {fields.topNeed && <Field name="topNeed" type="checkbox" component={CheckBoxRender} label="Top Need" col1={4} col2={8} />}
                         {fields.requiredItems && (
@@ -119,7 +216,13 @@ const PostForm = (props) => {
                         <br />
                         {fields.address && (
                             <>
-                                {/* <Field name="address.fullAddress" type="text" component={InputRender} label="Full Address" placeholder="House, Road, Area, Sector, ZIP, City, State, Country..." /> */}
+                                <Field
+                                    name="address.fullAddress"
+                                    type="text"
+                                    component={InputRender}
+                                    label="Full Address"
+                                    placeholder="House, Road, Area, Sector, ZIP, City, State, Country..."
+                                />
                                 <Row>
                                     <Col sm={4}>Location</Col>
                                     <Col sm={8}>

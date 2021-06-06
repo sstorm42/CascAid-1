@@ -1,13 +1,19 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-import { communityFollowerListPage, communityFollowingListPage, communityFriendListPage, communityRequestListPage } from '../../constants/route-paths';
+import {
+    communityFollowerListPage,
+    communityFollowingListPage,
+    communityFriendListPage,
+    communityRequestListPage,
+    communityEndorserListPage,
+} from '../../constants/route-paths';
 const CommunityMenu = (props) => {
     const selected = props.selected;
     const userType = props.userType || 'NA';
     const menuByUserType = {
         individual: { friend: 1, request: 1, follower: 1, following: 1 },
-        admin: { friend: 1, request: 1, follower: 1, following: 1 },
-        organization: { follower: 1, following: 1 },
+        admin: { friend: 1, request: 1, follower: 1, following: 1, endorser: 1 },
+        organization: { follower: 1, following: 1, endorser: 1 },
         NA: {},
     };
     return (
@@ -21,7 +27,7 @@ const CommunityMenu = (props) => {
             )}
             {menuByUserType[userType].request && (
                 <Nav.Item sz="sm">
-                    <Nav.Link eventKey="request" href={communityRequestListPage}>
+                    <Nav.Link eventKey="request" href={communityRequestListPage('received')}>
                         Requests
                     </Nav.Link>
                 </Nav.Item>
@@ -37,6 +43,13 @@ const CommunityMenu = (props) => {
                 <Nav.Item sz="sm">
                     <Nav.Link eventKey="following" href={communityFollowingListPage}>
                         Followings
+                    </Nav.Link>
+                </Nav.Item>
+            )}
+            {menuByUserType[userType].endorser && (
+                <Nav.Item sz="sm">
+                    <Nav.Link eventKey="endorser" href={communityEndorserListPage}>
+                        Endorsers
                     </Nav.Link>
                 </Nav.Item>
             )}

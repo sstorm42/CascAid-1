@@ -39,6 +39,7 @@ export const setInvolvement = (userId) => serverAddress + `/api/users/${userId}/
 export const setPrivacy = (userId) => serverAddress + `/api/users/${userId}/privacy`;
 export const setServiceInfo = (userId) => serverAddress + `/api/users/${userId}/service-info`;
 export const setInternalLink = (userId) => serverAddress + `/api/users/${userId}/internal-link`;
+export const getAllUsersName = serverAddress + `/api/users/name/all`;
 
 // Impact Area
 export const getAllGlobalImpactAreas = serverAddress + `/api/impact-areas/global`;

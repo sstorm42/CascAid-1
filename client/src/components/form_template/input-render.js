@@ -5,6 +5,7 @@ import { Row, Col, InputGroup, FormControl } from 'react-bootstrap';
 import CreatableSelect from 'react-select/creatable';
 import Select from 'react-select';
 import moment from 'moment';
+import { MentionsInput, Mention } from 'react-mentions';
 
 export const InputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
     const className = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;
@@ -78,7 +79,16 @@ export const InputNumberRender = ({ input, label, type, placeholder, step, min, 
             <label className="col-sm-4 col-form-label">{label}</label>
             <div className="col-sm-8">
                 <div className="input-group">
-                    <input style={{ float: 'left' }} {...input} placeholder={placeholder} step={step} min={min} max={max} type={type} className="form-control" />
+                    <input
+                        style={{ float: 'left' }}
+                        {...input}
+                        placeholder={placeholder}
+                        step={step}
+                        min={min}
+                        max={max}
+                        type={type}
+                        className="form-control"
+                    />
                     <span className="InputNumberUnitSpan">{unit}</span>
                 </div>
                 {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
@@ -179,7 +189,14 @@ export const CreatableMultiSelectRender = ({ input, label, placeholder, options,
         <Row className={className}>
             <label className={'col-sm-' + col1}>{label}</label>
             <Col sm={col2} style={{ zIndex: zIndex }}>
-                <CreatableSelect {...input} onChange={(value) => input.onChange(value)} onBlur={() => input.onBlur(input.value)} options={options} isMulti={true} placeholder={placeholder} />
+                <CreatableSelect
+                    {...input}
+                    onChange={(value) => input.onChange(value)}
+                    onBlur={() => input.onBlur(input.value)}
+                    options={options}
+                    isMulti={true}
+                    placeholder={placeholder}
+                />
                 {touched && error && <span>{error}</span>}
             </Col>
         </Row>
@@ -208,8 +225,50 @@ export const DateTimePickerRender = ({ input, label, minDate, selectedDate, col1
         <div className="form-group row">
             <label className={'form-label col-sm-' + col1}>{label}</label>
             <div className={'col-sm-' + col2} style={{ zIndex: zIndex }}>
-                <DatePicker showTimeSelect className="form-control custom-date-picker" {...input} selected={selectedDate} minDate={minDate} dateFormat="MM/dd/yyyy h:mm aa" />
+                <DatePicker
+                    showTimeSelect
+                    className="form-control custom-date-picker"
+                    {...input}
+                    selected={selectedDate}
+                    minDate={minDate}
+                    dateFormat="MM/dd/yyyy h:mm aa"
+                />
                 {touched && error && <span>{error}</span>}
+            </div>
+        </div>
+    );
+};
+
+let style = {
+    input: {
+        overflow: 'auto',
+        height: 70,
+    },
+    highlighter: {
+        boxSizing: 'border-box',
+        overflow: 'hidden',
+        height: 70,
+    },
+};
+export const MentionAreaRender = ({ input, label, placeholder, type, col1, col2, suggestionList, meta: { touched, error, warning } }) => {
+    const className = `form-group row ${touched && error ? 'has-danger' : 'has-success'}`;
+    return (
+        <div className={className}>
+            <label className={'col-sm-' + col1}>{label}</label>
+            <div className={'col-sm-' + col2}>
+                <MentionsInput {...input} style={style} a11ySuggestionsListLabel={'Suggested mentions'}>
+                    <Mention
+                        markup="@[__display__](user:__id__)"
+                        trigger="@"
+                        data={suggestionList}
+                        renderSuggestion={(suggestion, search, highlightedDisplay) => <div className="user">{highlightedDisplay}</div>}
+                        style={{
+                            backgroundColor: '#cee4ee',
+                        }}
+                    />
+                </MentionsInput>
+                {/* <textarea placeholder={placeholder} rows="5" className="form-control" /> */}
+                {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
             </div>
         </div>
     );

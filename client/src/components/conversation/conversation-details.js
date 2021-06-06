@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import Avatar from 'react-avatar';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { OptionButtonRender, SendButtonRender, SendMessageButtonRender } from '../../components/form_template/buttons-render';
@@ -9,12 +9,32 @@ const MessageTextRender = (text) => {
     const textArray = text.split('\n');
     return textArray.map((text, i) => {
         return (
-            <div className="message-text">
+            <div className="message-text" key={i}>
                 {text}
                 <br />
             </div>
         );
     });
+};
+const MessageAttachmentRender = (images) => {
+    console.log('🚀 ~ file: conversation-details.js ~ line 20 ~ MessageAttachmentRender ~ images', images);
+    return (
+        <Row>
+            <Col>
+                {images.map((image, i) => {
+                    return (
+                        <Image
+                            key={i}
+                            src={image}
+                            style={{ height: '100px', width: '100px', resizeMode: 'contain', backgroundColor: 'white' }}
+                            thumbnail
+                            square
+                        />
+                    );
+                })}
+            </Col>
+        </Row>
+    );
 };
 const AlwaysScrollToBottom = () => {
     const elementRef = useRef();
@@ -38,8 +58,9 @@ const ThreadDetails = (props) => {
                 {' '}
                 <Container className="conversation-details">
                     {messages.map((message, i) => {
+                        console.log(message.attachments);
                         return (
-                            <Row className="message-main">
+                            <Row className="message-main" key={i}>
                                 <Col sm="1">
                                     {userId === message.senderId ? (
                                         <OptionButtonRender />
@@ -48,7 +69,10 @@ const ThreadDetails = (props) => {
                                     )}
                                 </Col>
                                 <Col sm="10">
-                                    <div className="message-box">{MessageTextRender(message.text)}</div>
+                                    <div className="message-box">
+                                        {MessageTextRender(message.text)}
+                                        {message.attachments && message.attachments.length > 0 && MessageAttachmentRender(message.attachments)}
+                                    </div>
                                     <small> {moment(message.createdAt).format('LLLL')}</small>
                                 </Col>
 
@@ -59,7 +83,6 @@ const ThreadDetails = (props) => {
                                         <OptionButtonRender />
                                     )}
                                 </Col>
-
                                 <br />
                             </Row>
                         );

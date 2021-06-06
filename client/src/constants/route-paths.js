@@ -23,7 +23,7 @@ export const notFoundPage = '*';
 export const organizationSearchPage = '/search/organization';
 export const communityActivitySearchPage = '/search/community-activity';
 export const userSearchByNamePage = (name) => `/search/user/${name}`;
-
+export const individualSearchPage = '/search/individual';
 // BREAKING DOWN
 
 // INDIVIDUAL
@@ -88,7 +88,8 @@ export const postListPageByOrganizationAndPostType = (userId, postType) => `/org
 export const communityFriendListPage = '/community/friends';
 export const communityFollowerListPage = '/community/followers';
 export const communityFollowingListPage = '/community/followings';
-export const communityRequestListPage = '/community/requests';
+export const communityRequestListPage = (requestType) => `/community/requests/${requestType ? requestType : 'received'}`;
+export const communityEndorserListPage = `/community/endorsers`;
 
 // NOTIFICATION
 export const ManageNotificationsPage = '/notification/all';
@@ -96,3 +97,11 @@ export const ManageNotificationsPage = '/notification/all';
 // Message
 export const ConversationPage = (conversationId) => `/conversation/${conversationId}`;
 export const ManageConversationPage = '/conversation/all';
+
+// STATIC
+export const aboutUsPage = `/about-us`;
+export const privacyPolicyPage = '/privacy-policy';
+export const contactUsPage = '/contact-us';
+
+// DASHBOARD
+export const dashboardPage = '/dashboard';

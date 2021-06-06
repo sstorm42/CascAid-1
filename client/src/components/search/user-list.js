@@ -1,13 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardColumns, Badge } from 'react-bootstrap';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-const UserList = (props) => {
-    const users = props.users;
-    const getUserTypeName = {
-        individual: 'INDIVIDUAL',
-        organization: 'ORGANIZATION',
-    };
-    const handleGotoUserDetails = props.handleGotoUserDetails;
+const getUserTypeName = {
+    individual: 'INDIVIDUAL',
+    organization: 'ORGANIZATION',
+};
+const UserListRender = ({ users, handleGotoUserDetails }) => {
     return (
         <CardColumns className="five-columns">
             {users.map((user, i) => {
@@ -30,7 +28,7 @@ const UserList = (props) => {
                                 src={profilePicture}
                                 alt="user"
                                 onClick={() => {
-                                    props.handleGotoUserDetails(user.followerUserType, user.followerId);
+                                    handleGotoUserDetails(user.followerUserType, user.followerId);
                                 }}
                             />
                             <Badge variant="primary" className="image-text-top-left-small">
@@ -40,7 +38,7 @@ const UserList = (props) => {
                         <Card.Body
                             className="special-btn"
                             onClick={() => {
-                                props.handleGotoUserDetails(user.followerUserType, user.followerId);
+                                handleGotoUserDetails(user.followerUserType, user.followerId);
                             }}
                         >
                             <Card.Title>{name}</Card.Title>
@@ -52,6 +50,36 @@ const UserList = (props) => {
                 );
             })}
         </CardColumns>
+    );
+};
+const UserList = (props) => {
+    const users = props.users;
+    const individuals = users.filter((user) => user.userType === 'individual');
+    const organizations = users.filter((user) => user.userType === 'organization');
+
+    const handleGotoUserDetails = props.handleGotoUserDetails;
+    return (
+        <>
+            {individuals && individuals.length > 0 ? (
+                <>
+                    <h4>INDIVIDUALS</h4>
+                    <hr />
+                    <UserListRender users={individuals} handleGotoUserDetails={handleGotoUserDetails} />
+                </>
+            ) : (
+                <></>
+            )}
+            <hr />
+            {organizations && organizations.length > 0 ? (
+                <>
+                    <h4>ORGANIZATIONS</h4>
+                    <hr />
+                    <UserListRender users={organizations} handleGotoUserDetails={handleGotoUserDetails} />
+                </>
+            ) : (
+                <></>
+            )}
+        </>
     );
 };
 export default UserList;
