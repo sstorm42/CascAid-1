@@ -4,7 +4,7 @@ const { MessageUserEntity } = require('../models/message-user-entity-model');
 const ObjectId = require('mongoose').Types.ObjectId;
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
-const { saveImagesOnServer } = require('../utils/library');
+const { saveImagesOnServer, saveAttachmentsOnServer } = require('../utils/library');
 
 const EmitNewMessage = (userId) => {
     global.io.emit('Message_' + userId.toString(), 'NewMessage');
@@ -98,8 +98,9 @@ exports.createOneMessage = async (req, res) => {
         let message = req.body;
 
         let conversationId = '';
+        if (message.images && message.images.length > 0) message.images = saveImagesOnServer(message.images);
         if (message.attachments && message.attachments.length > 0)
-            message.attachments = saveImagesOnServer(message.attachments);
+            message.attachments = saveAttachmentsOnServer(message.attachments);
         console.log('🚀 ~ file: conversation-controller.js ~ line 99 ~ exports.createOneMessage= ~ message', message);
         if (!message.conversationId) {
             const foundConversation = await Conversation.findOne({
@@ -136,6 +137,7 @@ exports.createOneMessage = async (req, res) => {
             senderId: message.senderId,
             conversationId: message.conversationId,
             text: message.text,
+            images: message.images,
             attachments: message.attachments,
         });
         const createdMessage = await newMessage.save();

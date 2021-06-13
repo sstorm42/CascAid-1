@@ -6,8 +6,8 @@ const fs = require('fs');
 const moment = require('moment');
 const randomstring = require('randomstring');
 
-const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
-// const appDir = `http://localhost:3001/uploaded-images/`;
+// const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
+const appDir = `http://localhost:3001/uploaded-images/`;
 const path2 = './uploaded_images/';
 
 exports.saveImagesOnServer = (imageArray) => {
@@ -32,6 +32,29 @@ exports.saveImagesOnServer = (imageArray) => {
     }
 
     return newSavedImageArray;
+};
+exports.saveAttachmentsOnServer = (attachments) => {
+    let i = 1;
+    let newSavedAttachments = [];
+    if (attachments.length > 0) {
+        attachments.map((file) => {
+            if (file && file.data) {
+                const base64Str = file.data;
+                const attachmentFileName = uuidv1() + uuidv4() + i.toString();
+                const attachmentType = file.extension;
+                const optionalObj = { fileName: attachmentFileName, type: attachmentType };
+
+                base64ToImage(base64Str, path2, optionalObj);
+                newSavedAttachments.push({ ...file, data: appDir + attachmentFileName + '.' + attachmentType });
+
+                i++;
+            } else {
+                newSavedAttachments.push(file);
+            }
+        });
+    }
+
+    return newSavedAttachments;
 };
 
 exports.saveImageSchemaOnServer = (imageArray) => {

@@ -32,6 +32,7 @@ import OrganizationMembership from './containers/organization/organization-membe
 
 // import OrganizationList from './containers/organization/organization-list';
 import OrganizationDetails from './containers/organization/organization-details';
+import OrganizationGallery from './containers/organization/organization-gallery';
 
 // POSTS
 import CreatePost from './containers/post/create-post';
@@ -284,6 +285,12 @@ const Routes = () => {
             <LayoutRoute path={RoutePath.contactUsPage} exact component={ContactUs} layout={Layout} />
             {/* DASHBOARD */}
             <LayoutRoute path={RoutePath.dashboardPage} exact component={UserAuthCheck(Dashboard, organizationAndAdminRoles, true)} layout={DashboardLayout} />
+            <LayoutRoute
+                path={RoutePath.organizationGalleryPage(':userType', ':userId')}
+                exact
+                component={UserAuthCheck(OrganizationGallery, organizationAndAdminRoles, true)}
+                layout={DashboardLayout}
+            />
         </Switch>
     );
 };

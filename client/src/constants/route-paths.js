@@ -54,7 +54,9 @@ export const organizationEditMembershipPage = '/edit/organization/membership';
 
 export const organizationDetailsPage = '/organization/details/:userId';
 export const organizationListPage = '/user/organization/all';
+
 export const userDetailsPage = (userType, userId) => `/${userType}/details/${userId}`;
+export const organizationGalleryPage = (userType, userId) => `/${userType}/${userId}/gallery`;
 
 // COMMON: (INDIVIDUAL+ORGANIZATION)
 export const userCommonSettingsPage = '/user/common/settings';

@@ -236,7 +236,7 @@ exports.getAllFeeds = async (req, res) => {
 
         const allFollowingOrganizations = await Follow.find({ followerId: userId });
         let match = {};
-        match['creatorId'] = { $in: allFollowingOrganizations.map((follow) => follow.followingId) };
+        match['creatorId'] = { $in: [...allFollowingOrganizations.map((follow) => follow.followingId), userId] };
         match['isActive'] = true;
         const lookUps = [
             LOOKUPS.post_organization,
@@ -551,6 +551,23 @@ exports.getAllViewers = async (req, res) => {
         };
         const viewers = await View.aggregate([{ $match: match }, LOOKUPS.view_user, PROJECTS.view_get_all_viewers]);
         return res.status(200).send({ success: true, message: 'All Viewers', viewers });
+    } catch (error) {
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+
+// GALLERY
+exports.getAllImages = async (req, res) => {
+    try {
+        const creatorId = req.params.userId;
+        const match = {};
+        match['creatorId'] = mongoose.Types.ObjectId(creatorId.toString());
+        const images = await Post.aggregate([
+            { $match: match },
+            { $unwind: '$images' },
+            { $project: PROJECTS.post_get_all_images },
+        ]);
+        return res.status(200).send({ success: true, message: 'All found images', images: images });
     } catch (error) {
         return res.status(501).send({ success: false, message: error.message });
     }

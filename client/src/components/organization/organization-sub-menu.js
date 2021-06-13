@@ -84,6 +84,7 @@ const SideMenu = (props) => {
                 {RenderListButtonItem('Message', '')}
                 {RenderListButtonItem('Followers', RoutePath.postListPageByOrganizationAndPostType(organization._id, 'event'))}
                 {RenderListButtonItem('Feed')}
+                {RenderListButtonItem('Gallery', RoutePath.organizationGalleryPage('organization', organization._id))}
                 {/* </Collapsible> */}
             </>
         );

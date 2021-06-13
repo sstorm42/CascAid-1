@@ -122,5 +122,11 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_gallery = (userId) => {
+        return axios
+            .get(APIPaths.getAllImages(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new PostDA();

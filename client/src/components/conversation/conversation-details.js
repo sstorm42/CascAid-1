@@ -16,8 +16,8 @@ const MessageTextRender = (text) => {
         );
     });
 };
-const MessageAttachmentRender = (images) => {
-    console.log('🚀 ~ file: conversation-details.js ~ line 20 ~ MessageAttachmentRender ~ images', images);
+const MessageImageRender = (images) => {
+    // console.log('🚀 ~ file: conversation-details.js ~ line 20 ~ MessageImageRender ~ images', images);
     return (
         <Row>
             <Col>
@@ -30,6 +30,24 @@ const MessageAttachmentRender = (images) => {
                             thumbnail
                             square
                         />
+                    );
+                })}
+            </Col>
+        </Row>
+    );
+};
+const MessageAttachmentRender = (attachments) => {
+    return (
+        <Row>
+            <Col>
+                {attachments.map((attachment, i) => {
+                    return (
+                        <div key={i}>
+                            <a download={attachment.fileName} className="special-btn attachment-single-file" href={attachment.data} target="blank">
+                                {attachment.fileName}
+                            </a>
+                            <br />
+                        </div>
                     );
                 })}
             </Col>
@@ -58,7 +76,7 @@ const ThreadDetails = (props) => {
                 {' '}
                 <Container className="conversation-details">
                     {messages.map((message, i) => {
-                        console.log(message.attachments);
+                        // console.log(message.attachments);
                         return (
                             <Row className="message-main" key={i}>
                                 <Col sm="1">
@@ -71,6 +89,7 @@ const ThreadDetails = (props) => {
                                 <Col sm="10">
                                     <div className="message-box">
                                         {MessageTextRender(message.text)}
+                                        {message.images && message.images.length > 0 && MessageImageRender(message.images)}
                                         {message.attachments && message.attachments.length > 0 && MessageAttachmentRender(message.attachments)}
                                     </div>
                                     <small> {moment(message.createdAt).format('LLLL')}</small>

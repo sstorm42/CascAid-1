@@ -443,16 +443,16 @@ tr td:last-child {
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
-    border-top: 5px solid #585453;
-    background: #585453;
+
+    background: #eee;
     white-space: nowrap;
     float: left;
 
     margin-bottom: 10px;
 }
 .attachment-single {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     display: inline-block;
     border-top: none;
     position: relative;
@@ -460,4 +460,32 @@ tr td:last-child {
     margin-right: 5px;
     white-space: nowrap;
     background: #fff;
+    border-radius: 5px;
+}
+.attachment-single-file-upload {
+    color: cadetblue;
+    font-size: 12px;
+}
+.attachment-single-file {
+    color: cadetblue;
+    font-size: 12px;
+}
+.attachment-single-file:hover {
+    text-decoration: underline;
+    color: cadetblue;
+}
+.delete-layover-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.message-file-preview {
+    position: relative;
+    float: left;
 }

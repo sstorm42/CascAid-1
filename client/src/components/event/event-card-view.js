@@ -10,6 +10,7 @@ import { LikeButtonRender, InterestedButtonRender, GoingButtonRender, FollowButt
 const EventListView = (props) => {
     const userId = props.userId;
     const allPosts = props.allPosts;
+    const followOrganizationButton = props.followOrganizationButton;
     const followingObject = props.followingObject;
     console.log('🚀 ~ file: event-card-view.js ~ line 14 ~ EventListView ~ followingObject', followingObject);
 
@@ -146,21 +147,23 @@ const EventListView = (props) => {
                                             )}
                                             &nbsp;
                                         </Col>
-                                        <Col>
-                                            {followingObject[post.creatorId] ? (
-                                                <UnfollowUserButtonRender
-                                                    onClick={() => {
-                                                        props.handleUnfollowClick(post.creatorId);
-                                                    }}
-                                                />
-                                            ) : (
-                                                <FollowButtonRender
-                                                    onClick={() => {
-                                                        props.handleFollowClick(post.creatorId);
-                                                    }}
-                                                />
-                                            )}
-                                        </Col>
+                                        {followOrganizationButton && (
+                                            <Col>
+                                                {followingObject[post.creatorId] ? (
+                                                    <UnfollowUserButtonRender
+                                                        onClick={() => {
+                                                            props.handleUnfollowClick(post.creatorId);
+                                                        }}
+                                                    />
+                                                ) : (
+                                                    <FollowButtonRender
+                                                        onClick={() => {
+                                                            props.handleFollowClick(post.creatorId);
+                                                        }}
+                                                    />
+                                                )}
+                                            </Col>
+                                        )}
                                     </Row>
                                 </Card.Footer>
                             </Card>

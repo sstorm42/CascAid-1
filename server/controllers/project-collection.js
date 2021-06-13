@@ -44,6 +44,13 @@ exports.post_get_all = {
     endDateTime: 1,
 };
 
+exports.post_get_all_images = {
+    _id: 1,
+    title: 1,
+    images: 1,
+    postType: 1,
+};
+
 // NOTIFICATION
 exports.notification_get_all = {
     userId: 1,

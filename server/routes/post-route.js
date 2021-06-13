@@ -28,4 +28,7 @@ post.post('/seed', PostController.seedPosts);
 
 // VIEW
 post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewers);
+
+// GALLERY
+post.get('/gallery/user/:userId', PostController.getAllImages);
 module.exports = post;

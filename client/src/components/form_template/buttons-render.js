@@ -3,7 +3,7 @@ import { Button, Tooltip, OverlayTrigger, Dropdown, DropdownButton } from 'react
 import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
 import { RiUserFollowLine } from 'react-icons/ri';
 import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart, FaHandsHelping } from 'react-icons/fa';
-import { BiDetail, BiDotsVertical } from 'react-icons/bi';
+import { BiDetail, BiDotsVertical, BiImageAdd } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
 import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
@@ -11,6 +11,7 @@ import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend } f
 import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/ri';
 import { BsCardList, BsPaperclip } from 'react-icons/bs';
 import { TiThList } from 'react-icons/ti';
+import { ImCross } from 'react-icons/im';
 
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -313,17 +314,32 @@ export const MessageAttachmentButtonRender = (props) => {
         </Button>
     );
 };
+export const MessageImageUploadButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <BiImageAdd /> {props.buttonTitle}
+        </Button>
+    );
+};
 export const HiddenFileInputRender = (props) => {
     return (
         <input
+            accept={props.accept}
             type="file"
-            ref={props.hiddenFileInput}
+            ref={props.hiddenInputRef}
             onChange={(e) => {
-                props.handleAttachmentUpload(e);
+                props.handleUpload(e);
             }}
             style={{ display: 'none' }}
             multiple={props.multiple ? props.multiple : false}
         />
+    );
+};
+export const DeleteAttachmentButtonRender = (props) => {
+    return (
+        <Button variant="danger" size="sm" className="delete-layover-btn" {...props}>
+            <ImCross size="10" />
+        </Button>
     );
 };
 

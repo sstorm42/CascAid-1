@@ -142,7 +142,7 @@ const SearchEvent = (props) => {
                     <Row>
                         <Col className="right-align" sm="2">
                             <SideSubMenu
-                                activePage="Impacts"
+                                activePage="Impact"
                                 organization={props.getPublicInfoResponse.success ? props.getPublicInfoResponse.user : {}}
                                 handleFollowClick={handleFollowClick}
                                 handleUnfollowClick={handleUnfollowClick}
@@ -165,6 +165,7 @@ const SearchEvent = (props) => {
                                 handleCancelInterestedPost={handleCancelInterestedPost}
                                 handleGoingPost={handleGoingPost}
                                 handleCancelGoingPost={handleCancelGoingPost}
+                                followOrganizationButton={false}
                             />
                         </Col>
                     </Row>

@@ -66,7 +66,7 @@ export const updatePostById = (postId) => serverAddress + `/api/posts/${postId}`
 export const deletePostById = (postId) => serverAddress + `/api/posts/${postId}`;
 export const getAllPosts = serverAddress + `/api/posts`;
 export const getAllPostsByUser = (userId) => serverAddress + `/api/users/${userId}/posts`;
-
+export const getAllImages = (userId) => serverAddress + `/api/posts/gallery/user/${userId}`;
 // FOLLOW
 export const followUser = serverAddress + `/api/follows/follow`;
 export const unfollowUser = serverAddress + `/api/follows/unfollow`;

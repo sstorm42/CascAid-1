@@ -120,3 +120,10 @@ export const getAllViewersByPost = (postId) => {
         payload: PostDA.get_all_viewers_by_post(postId),
     };
 };
+
+export const getGallery = (userId) => {
+    return {
+        type: Types.GET_GALLERY,
+        payload: PostDA.get_gallery(userId),
+    };
+};

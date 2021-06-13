@@ -22,7 +22,7 @@ const ThreadDetails = (props) => {
     const messages = conversation.messages;
     const userId = props.userId;
 
-    console.log('🚀 ~ file: sample-thread-details.js ~ line 5 ~ ThreadDetails ~ conversation', conversation);
+    // console.log('🚀 ~ file: sample-thread-details.js ~ line 5 ~ ThreadDetails ~ conversation', conversation);
 
     if (messages && messages.length > 0) {
         let memberObject = {};

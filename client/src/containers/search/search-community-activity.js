@@ -213,6 +213,7 @@ const SearchCommunityActivity = (props) => {
                                 followingObject={followingObject}
                                 handleFollowClick={handleFollowClick}
                                 handleUnfollowClick={handleUnfollowClick}
+                                followOrganizationButton={true}
                             />
                         </>
                     )}

@@ -14,6 +14,7 @@ const initialState = {
     going: {},
     cancelGoing: {},
     getAllViewersByPost: {},
+    getGallery: {},
 };
 const changePostInterest = (post_, { postId, userId, type }) => {
     let post = post_.post;
@@ -142,6 +143,8 @@ const PostReducer = (state = initialState, action) => {
             };
         case Types.GET_ALL_VIEWERS_BY_POST:
             return { ...state, getAllViewersByPost: action.payload };
+        case Types.GET_GALLERY:
+            return { ...state, getGallery: action.payload };
         default:
             return { ...state };
     }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Modal, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Badge, Button } from 'react-bootstrap';
+import { FiHelpCircle } from 'react-icons/fi';
 import { Calendar, momentLocalizer, dateFnsLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import events from './posts';
@@ -13,6 +14,7 @@ import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
+import CalenderFilter from '../../components/post/calender-filter';
 import {
     LikeButtonRender,
     InterestedButtonRender,
@@ -34,10 +36,9 @@ import {
 const locales = {
     'en-US': require('date-fns/locale/en-US'),
 };
-// let allViews = Object.keys(Views).map((k) => Views[k]);
 
-// const localizer = momentLocalizer(moment);
-const allViews = ['month', 'day'];
+const allViews = Object.keys(Views).map((k) => Views[k]);
+
 const localizer = dateFnsLocalizer({
     format,
     parse,
@@ -82,6 +83,7 @@ const customSlotPropGetter = (date) => {
 
 const PostCalenderView = (props) => {
     const [loading, setLoading] = useState(false);
+    const [infoModal, setInfoModal] = useState(false);
     const [userId, setUserId] = useState('');
     const [postModal, setPostModal] = useState(false);
     const [posts, setPosts] = useState([]);
@@ -102,6 +104,7 @@ const PostCalenderView = (props) => {
         });
         return posts;
     };
+
     const eventStyleGetter = (post, start, end, isSelected) => {
         var style = {
             backgroundColor: getColorByPostType(post.postType),
@@ -178,6 +181,38 @@ const PostCalenderView = (props) => {
         <Container className="parent-page">
             <Modal
                 style={{ zIndex: 10000, width: '1000px' }}
+                show={infoModal}
+                onHide={() => {
+                    setInfoModal(false);
+                }}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Calender Information</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>
+                        Posts are associated with different colors for different types. Colors and Post types are mentioned here.
+                        <li style={{ color: 'white', backgroundColor: '#274e13', fontWeight: 'bold' }}>EVENT</li>
+                        <li style={{ color: 'white', backgroundColor: '#0c343d', fontWeight: 'bold' }}>PROJECT</li>
+                        <li style={{ color: 'white', backgroundColor: '#1c4587', fontWeight: 'bold' }}>GENERAL POST</li>
+                        <li style={{ color: 'white', backgroundColor: '#073763', fontWeight: 'bold' }}>VOLUNTEERING</li>
+                        <li style={{ color: 'white', backgroundColor: '#20124d', fontWeight: 'bold' }}>IN-KIND</li>
+                        <li style={{ color: 'white', backgroundColor: '#4c1130', fontWeight: 'bold' }}>ADVOCACY</li>
+                    </p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button
+                        size="sm"
+                        onClick={() => {
+                            setInfoModal(false);
+                        }}
+                    >
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal
+                style={{ zIndex: 10000, width: '1000px' }}
                 show={postModal}
                 onHide={() => {
                     handlePostModal(false);
@@ -212,7 +247,24 @@ const PostCalenderView = (props) => {
                 </Modal.Footer>
             </Modal>
             <Row>
-                <Col>
+                <Col className="right-align">
+                    <Button
+                        size="sm"
+                        variant="outline-primary"
+                        onClick={() => {
+                            setInfoModal(true);
+                        }}
+                    >
+                        <FiHelpCircle />
+                    </Button>
+                </Col>
+            </Row>
+            <hr />
+            <Row>
+                <Col md={4}>
+                    <CalenderFilter />
+                </Col>
+                <Col md={8}>
                     <Calendar
                         onShowMore={(events, date) => console.log(date)}
                         localizer={localizer}
