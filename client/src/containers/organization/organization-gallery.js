@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, CardColumns } from 'react-bootstrap';
 import Gallery from 'react-photo-gallery';
-import ImageModalRender from '../../components/form_template/image-modal-render';
+import { PostImageModalRender } from '../../components/form_template/image-modal-render';
 import OrganizationSideMenu from './organization-side-menu';
 import { getGallery } from '../../actions/post-action';
 import { connect } from 'react-redux';
@@ -13,9 +13,11 @@ const OrganizationGallery = (props) => {
     const [image, setImage] = useState('');
 
     useEffect(() => {
+        alert('Came here');
         const getInitialInfo = () => {
             setLoading(true);
             const organizationId = props.match.params.userId;
+            console.log('🚀 ~ file: organization-gallery.js ~ line 19 ~ getInitialInfo ~ organizationId', organizationId);
             props.dispatch(getGallery(organizationId));
             setLoading(false);
         };
@@ -34,7 +36,7 @@ const OrganizationGallery = (props) => {
                             <OrganizationSideMenu activePage="Gallery" {...props} />
                         </Col>
                         <Col sm="9" className="left-border">
-                            <ImageModalRender
+                            <PostImageModalRender
                                 imageDetailsModal={imageDetailsModal}
                                 setImageDetailsModal={setImageDetailsModal}
                                 image={image}

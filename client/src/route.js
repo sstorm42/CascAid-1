@@ -65,9 +65,16 @@ import ContactUs from './containers/home/contact-us';
 // DASHBOARD
 import Dashboard from './containers/dashboard/dashboard';
 
+// CULTIVATION
+import ManageCultivation from './containers/cultivation/manage-cultivation';
+import CreateCultivation from './containers/cultivation/create-cultivation';
+import DisplayCultivation from './containers/cultivation/display-cultivation';
+
+// ROLES
 const allRoles = ['individual', 'organization', 'admin'];
 const individualAndAdminRoles = ['individual', 'admin'];
 const organizationAndAdminRoles = ['organization', 'admin'];
+
 // const adminRoles = ['admin'];
 const Routes = () => {
     return (
@@ -288,7 +295,33 @@ const Routes = () => {
             <LayoutRoute
                 path={RoutePath.organizationGalleryPage(':userType', ':userId')}
                 exact
-                component={UserAuthCheck(OrganizationGallery, organizationAndAdminRoles, true)}
+                component={UserAuthCheck(OrganizationGallery, allRoles, true)}
+                layout={DashboardLayout}
+            />
+
+            {/* CULTIVATION */}
+            <LayoutRoute
+                path={RoutePath.cultivationManagePage}
+                exact
+                component={UserAuthCheck(ManageCultivation, organizationAndAdminRoles, true)}
+                layout={DashboardLayout}
+            />
+            <LayoutRoute
+                path={RoutePath.cultivationCreatePage}
+                exact
+                component={UserAuthCheck(CreateCultivation, organizationAndAdminRoles, true)}
+                layout={DashboardLayout}
+            />
+            <LayoutRoute
+                path={RoutePath.cultivationEditPage(':cultivationId')}
+                exact
+                component={UserAuthCheck(CreateCultivation, organizationAndAdminRoles, true)}
+                layout={DashboardLayout}
+            />
+            <LayoutRoute
+                path={RoutePath.cultivationDetailsPage(':cultivationId')}
+                exact
+                component={UserAuthCheck(DisplayCultivation, organizationAndAdminRoles, true)}
                 layout={DashboardLayout}
             />
         </Switch>

@@ -177,3 +177,13 @@ exports.user_skills = {
         as: 'skills',
     },
 };
+
+// CULTIVATION
+exports.cultivation_users = {
+    $lookup: {
+        from: 'users',
+        localField: 'users',
+        foreignField: '_id',
+        as: 'users',
+    },
+};

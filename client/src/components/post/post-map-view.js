@@ -1,8 +1,12 @@
 import React from 'react';
+import { Badge, Container, Row, Col } from 'react-bootstrap';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import * as RoutePath from '../../constants/route-paths';
-
+import { getPostTypeByValue } from '../../constants/post-types';
 import { Link } from 'react-router-dom';
+import { ImpactAreasRender, InfoRender } from '../form_template/details-render';
+import { interestTypes } from '../../constants/interest-types';
+import { LikeButtonRender, InterestedButtonRender, GoingButtonRender, FollowButtonRender, UnfollowUserButtonRender } from '../form_template/buttons-render';
 const libraries = ['places'];
 const mapContainerStyle = {
     height: '100vh',
@@ -17,6 +21,109 @@ const options = {
 let center = {
     lat: 43.6532,
     lng: -79.3832,
+};
+const PostRender = (props) => {
+    const { post, followingObject, userId } = props;
+    let interest = {};
+    let filter = post.interests.filter((interest) => interest.userId === userId);
+    if (filter && filter.length > 0) interest = filter[0];
+    return (
+        <Container className="post-map-box">
+            <h6>
+                <Badge variant="primary">{getPostTypeByValue(post.postType)[0].label}</Badge>
+            </h6>
+            <Link to={RoutePath.postDetailsPage(post.postType, post._id)}>
+                <h5 style={{ color: 'cadetblue' }}>{post.title}</h5>
+            </Link>
+            {post.organizationName && post.organizationName.length > 0 && (
+                <Link to={RoutePath.userDetailsPage('organization', post.creatorId)}>
+                    <h6 style={{ color: 'cadetblue' }}>{post.organizationName}</h6>
+                </Link>
+            )}
+            {ImpactAreasRender('', post.impactAreas)}
+            {InfoRender('', post.address.fullAddress)}
+            <hr />
+            <Row>
+                <Col>
+                    {interestTypes[post.postType].like ? (
+                        interest.liked ? (
+                            <LikeButtonRender
+                                complete={true}
+                                onClick={() => {
+                                    props.handleCancelLikePost(post._id);
+                                }}
+                            />
+                        ) : (
+                            <LikeButtonRender
+                                complete={false}
+                                onClick={() => {
+                                    props.handleLikePost(post._id);
+                                }}
+                            />
+                        )
+                    ) : (
+                        <></>
+                    )}
+                    &nbsp;
+                    {interestTypes[post.postType].interested ? (
+                        interest.interested ? (
+                            <InterestedButtonRender
+                                complete={true}
+                                onClick={() => {
+                                    props.handleCancelInterestedPost(post._id);
+                                }}
+                            />
+                        ) : (
+                            <InterestedButtonRender
+                                complete={false}
+                                onClick={() => {
+                                    props.handleInterestedPost(post._id);
+                                }}
+                            />
+                        )
+                    ) : (
+                        <></>
+                    )}
+                    &nbsp;
+                    {interestTypes[post.postType].going ? (
+                        interest.going ? (
+                            <GoingButtonRender
+                                complete={true}
+                                onClick={() => {
+                                    props.handleCancelGoingPost(post._id);
+                                }}
+                            />
+                        ) : (
+                            <GoingButtonRender
+                                complete={false}
+                                onClick={() => {
+                                    props.handleGoingPost(post._id);
+                                }}
+                            />
+                        )
+                    ) : (
+                        <></>
+                    )}
+                    &nbsp;
+                </Col>
+                <Col>
+                    {followingObject[post.creatorId] ? (
+                        <UnfollowUserButtonRender
+                            onClick={() => {
+                                props.handleUnfollowClick(post.creatorId);
+                            }}
+                        />
+                    ) : (
+                        <FollowButtonRender
+                            onClick={() => {
+                                props.handleFollowClick(post.creatorId);
+                            }}
+                        />
+                    )}
+                </Col>
+            </Row>
+        </Container>
+    );
 };
 const AllPostOnMap = (props) => {
     const { isLoaded, loadError } = useLoadScript({
@@ -76,15 +183,7 @@ const AllPostOnMap = (props) => {
                             setSelected(null);
                         }}
                     >
-                        <div>
-                            <h2>Post</h2>
-                            <b>Title: </b>
-                            {selected.title}
-
-                            <br />
-                            {/* <Link to={RoutePath.postDetailsPage + selected._id}>Details</Link> */}
-                            <Link to={RoutePath.postDetailsPage('post', selected._id)}>Details</Link>
-                        </div>
+                        <PostRender post={selected} {...props} />
                     </InfoWindow>
                 ) : null}
             </GoogleMap>

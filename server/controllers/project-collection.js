@@ -174,3 +174,19 @@ exports.conversation_get_all = {
         messages: 1,
     },
 };
+
+// CULTIVATION
+exports.cultivation_get_one = {
+    $project: {
+        ...common,
+        title: 1,
+        description: 1,
+        creatorId: 1,
+        'users._id': 1,
+        'users.userType': 1,
+        'users.basicInfo.name': 1,
+        'users.basicInfo.firstName': 1,
+        'users.basicInfo.lastName': 1,
+        'users.basicInfo.profilePicture': 1,
+    },
+};

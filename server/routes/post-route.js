@@ -25,6 +25,8 @@ post.get('/:postId/committed/:userId', allowIfLoggedIn, PostController.getCommit
 
 // SEED
 post.post('/seed', PostController.seedPosts);
+post.post('/seedCalenderPosts', PostController.seedCalenderPosts);
+post.post('/seedUpdatedPosts', PostController.seedUpdatedPosts);
 
 // VIEW
 post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewers);

@@ -12,7 +12,11 @@ const requiredItemSchema = mongoose.Schema(
 const postSchema = mongoose.Schema(
     {
         title: { type: String },
-        postType: { type: String, enum: ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'], default: 'general' },
+        postType: {
+            type: String,
+            enum: ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'],
+            default: 'general',
+        },
         description: { type: String },
         images: [{ type: imageSchema }],
         creatorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -25,6 +29,8 @@ const postSchema = mongoose.Schema(
         requiredItems: [{ type: requiredItemSchema }],
         topNeed: { type: Boolean, default: false },
         petitionLink: { type: String, default: '' },
+        postURL: { type: String, default: '' },
+        contact: { type: String, default: '' },
         keywords: [{ type: String }],
         isActive: { type: Boolean, default: false },
         isDeleted: { type: Boolean, default: false },

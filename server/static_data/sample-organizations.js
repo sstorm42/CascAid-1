@@ -34,8 +34,7 @@ exports.allOrganizations = [
         Contact: 'james.j.harding@drexel.edu',
         ServiceArea: '11th Street Corridor',
         Facebook: 'http://www.facebook.com/sheller11thstreet',
-        Donate:
-            'https://secureia.drexel.edu/s/1683/form/16/form.aspx?sid=1683&gid=2&pgid=477&cid=1122&dids=278.340&sort=1&bledit=1&_gl=1*15chs7l*_ga*MTUwMTkyNzI3OC4xNjA5Njk5Mzg2*_ga_6KJ1PNLE19*MTYwOTY5OTM4NS4xLjAuMTYwOTY5OTM4NS42MA..',
+        Donate: 'https://secureia.drexel.edu/s/1683/form/16/form.aspx?sid=1683&gid=2&pgid=477&cid=1122&dids=278.340&sort=1&bledit=1&_gl=1*15chs7l*_ga*MTUwMTkyNzI3OC4xNjA5Njk5Mzg2*_ga_6KJ1PNLE19*MTYwOTY5OTM4NS4xLjAuMTYwOTY5OTM4NS42MA..',
         Keywords: 'Hospital, Nurse Managed',
         Mission:
             'The mission of the Stephen and Sandra Sheller 11th Street Family Health Services is to provide quality, comprehensive health services to the clients it serves, with special attention to vulnerable people and residents of public housing units in the 11th Street Corridor. In addition to its direct services mission, 11th Street provides an exemplary model of nurse-managed, community-based care for the education of health professions students and for faculty practice.',
@@ -159,7 +158,7 @@ exports.allOrganizations = [
         Donate: 'https://charity.gofundme.com/o/en/donate-widget/13933',
         Keywords: 'Community Center',
         Mission:
-            'Our House is a community space that holds workshops, programs, and events that cultivate and celebrate creative and cultural expression in our community.',
+            'Our House is a community space that holds workshops, programs, and events that cultivation and celebrate creative and cultural expression in our community.',
         Description:
             'Founded  in 2017,  Our House Culture Center is a 501(c)(3) non-profit organization located in the Historic Germantown area of Philadelphia.  We are dedicated to providing a safe space for community members to connect, create, and celebrate one another.   Our spaces are utilized in collaboration with creatives, community members, and organizations to develop programs and events that help us connect and grow as a community.  We exist because we believe our community is incredibly rich with creativity, because celebration is paramount, and because our communities deserve quality programs and safe spaces to gather.  To that end, we have hosted over 300 programs and events',
     },
@@ -598,8 +597,7 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/ACANA.Philadelphia/',
         Impact: 'https://acanaus.org/get-involved/',
-        Donate:
-            'https://www.paypal.com/donate/?cmd=_donations&business=96NQKW9C4RMQ6&lc=US&item_name=African%20Cultural%20Allicance%20of%20North%20America&item_number=5521&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted',
+        Donate: 'https://www.paypal.com/donate/?cmd=_donations&business=96NQKW9C4RMQ6&lc=US&item_name=African%20Cultural%20Allicance%20of%20North%20America&item_number=5521&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted',
         Keywords: 'African, International, Refugees, Immigrants, Culture',
         Mission:
             'The mission of ACANA is to help refugees, immigrant families and all other residents of Philadelphia access legal, health and other social services with a special focus on women, children, youth and the elderly in their resettlement process in Pennsylvania. ACANA also produces and presents African cultural performances and recording artists to create an awareness of African arts and culture. To this end, we strive to promote the preservation of cultural values as well as support artists’ efforts to promote their own vocations in their new environment.',
@@ -954,7 +952,7 @@ exports.allOrganizations = [
         Membership: 'https://www.memberplanet.com/Groups/GroupJoinLoginNew.aspx?ISPUB=true&invitee=x7sw26152u64l',
         Keywords: 'Alumni, School, Women',
         Mission:
-            'The mission of the Association shall be to perpetuate the ideals and promote the welfare of the Philadelphia High School for Girls, to further and protect the interests of the Association and its members, to cultivate fellowship and helpfulness among them and to advance in every way all efforts looking to the enlargement and enhancement of opportunities for women.',
+            'The mission of the Association shall be to perpetuate the ideals and promote the welfare of the Philadelphia High School for Girls, to further and protect the interests of the Association and its members, to cultivation fellowship and helpfulness among them and to advance in every way all efforts looking to the enlargement and enhancement of opportunities for women.',
         Description:
             'Twenty-five courageous, farsighted women signed our Charter. The objectives of the organization as given in the constitution are “the cultivation of social relations among the graduates, the promotion of the best interests of the school, and the furthering in every way of all efforts looking to the enlargement of opportunities for women.”\r\n\r\nThroughout the years the Alumnae Association has been interested in the school and the welfare of its faculty and students. The extreme care that every administration has taken of the funds derived from that famous 1891 Bazaar has given us a sound investment program today. It enables us to maintain an exceptional scholarship program: Numerous alumnae each year receive generous tuition support at colleges and universities. We also give Commencement prizes and tuition grants. Since 1963 we have contributed thousands of dollars as well as books to the GHS library. We donate to school funds and publications. In 1984 we began to subsidize the cost of Advanced Placement examinations taken by qualified seniors. Our support today ranges from capital projects like the installation of a dance floor and statue restoration, to student activities like the robotics team and academic competitions, to subsidies for graduation festivities. In 2001, we finished production of a video history of Girls’ High that highlighted events of our school’s sesquicentennial year in 1998.\r\n\r\nNow over 4,800 financial members strong, as the alumnae association celebrates its 125th anniversary, we take pride in our heritage, and eagerly anticipate the challenges that lie ahead. Join us, in supporting our enduring tradition of excellence!',
     },
@@ -979,7 +977,7 @@ exports.allOrganizations = [
         Membership: 'https://securelb.imodules.com/s/1816/16/interior.aspx?sid=1816&gid=2&pgid=8&cid=46',
         Keywords: 'PCOM, Osteopathy, Medicine, Alumni',
         Mission:
-            'The mission of the Alumni Association is to promote the interest and welfare of PCOM, cultivate communication and foster relationships among all graduates, students, administration, faculty and staff of PCOM, and provide a medium for the expression of the sentiment of the alumni.',
+            'The mission of the Alumni Association is to promote the interest and welfare of PCOM, cultivation communication and foster relationships among all graduates, students, administration, faculty and staff of PCOM, and provide a medium for the expression of the sentiment of the alumni.',
         Description:
             'On September 8, 1902, graduates of the first classes of Philadelphia College and Infirmary of Osteopathy (PCIO), which would later become known as Philadelphia College of Osteopathic Medicine (PCOM), held a meeting with the idea “to promote the prosperity and extend the influence of Alumni and their Alma Mater, and to encourage a high standard of Osteopathic education and practice.”\r\n\r\nOver 100 years later the Alumni Association is an integral part of the College, offering scholarships, awards, mentorship, as well as social events to connect alumni and students.\r\n\r\nPCOM Alumni Association is comprised of alumni, residents and students from all PCOM programs.  The Association is led by an Executive Council that includes the positions of:  President, President-Elect, Secretary, Awards Committee Chair, Nominating Committee Chair, and Past President.  The Association also includes three other councils:  DO Council, Professional Careers Council (focusing on the unique needs of the graduate programs) and Trainee Council (for current students and residents).',
     },
@@ -1121,8 +1119,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/AHTheatre.org/',
         Instagram: 'http://instagram.com/americanhistoricaltheatre',
         Newsletter: 'https://www.ahtheatre.org/get-our-newsletter',
-        Donate:
-            'https://secure.squarespace.com/checkout/donate?donatePageId=5b034c496d2a735b97f0fa07&ss_cid=d77fceeb-2159-407b-925a-676513606b90&ss_cvisit=1609890984974&ss_cvr=1c0fcab2-b2de-47f1-b9aa-8d7e0516565d%7C1609890983904%7C1609890983904%7C1609890983904%7C1',
+        Donate: 'https://secure.squarespace.com/checkout/donate?donatePageId=5b034c496d2a735b97f0fa07&ss_cid=d77fceeb-2159-407b-925a-676513606b90&ss_cvisit=1609890984974&ss_cvr=1c0fcab2-b2de-47f1-b9aa-8d7e0516565d%7C1609890983904%7C1609890983904%7C1609890983904%7C1',
         Keywords: 'Performances, Actor, Historian',
         Mission: 'Our Actor/Historians educate, entertain and inspire through Living History.',
         Description:
@@ -1216,8 +1213,7 @@ exports.allOrganizations = [
         Events: 'https://www.belmontmansion.org/news_events_belmont.html',
         Twitter: 'http://twitter.com/#!/BelmontURM',
         Facebook: 'http://www.facebook.com/belmontmansionurm',
-        Donate:
-            'https://www.paypal.com/donate?token=8S_ivIGcfSn_cQquwSJmE9qHFOb9NXGCo1uWjTI-P0xPA5iXxaeuS6O2yUZpvZOjclt68_KIAv1lOHNf',
+        Donate: 'https://www.paypal.com/donate?token=8S_ivIGcfSn_cQquwSJmE9qHFOb9NXGCo1uWjTI-P0xPA5iXxaeuS6O2yUZpvZOjclt68_KIAv1lOHNf',
         Keywords: 'Event Venue, Historic Site, Women, African-American, Fine Arts, Dance, Music',
         Mission:
             "The American Women's Heritage Society was founded in November 1986 to maintain and restore Belmont Mansion, an eighteenth century house in Fairmount Park in Philadelphia, PA.",
@@ -1273,7 +1269,7 @@ exports.allOrganizations = [
         Mission:
             'Amparo de la Niñez, Inc. is a non-profit 501(c)(3) dedicated to promoting the well-being of children ages 4 through 12 years in order to prepare them for the challenges and opportunities of adolescence and adulthood. We achieve our mission by offering innovative programs designed to meet the cultural, spiritual, educational, physical and social needs of children and their families.',
         Description:
-            'We offer secular and non-secular youth-targeted programs that:\r\n\r\n· cultivate moral values grounded in love, respect, trust and generosity;\r\n\r\n· foster the emotional and spiritual connections needed to build inner-strength and a positive self-esteem;\r\n\r\n· strengthen capacities for sound decision-making and self-reliance in the face of hardship;\r\n\r\n· encourage cultural and linguistic ties to familial heritage and roots;\r\n\r\n· promote creativity and artistic expression;\r\n\r\n· provide education addressing physical health and fitness.',
+            'We offer secular and non-secular youth-targeted programs that:\r\n\r\n· cultivation moral values grounded in love, respect, trust and generosity;\r\n\r\n· foster the emotional and spiritual connections needed to build inner-strength and a positive self-esteem;\r\n\r\n· strengthen capacities for sound decision-making and self-reliance in the face of hardship;\r\n\r\n· encourage cultural and linguistic ties to familial heritage and roots;\r\n\r\n· promote creativity and artistic expression;\r\n\r\n· provide education addressing physical health and fitness.',
     },
     {
         Name: 'Angels in Motion',
@@ -1287,8 +1283,7 @@ exports.allOrganizations = [
             'Northeast Philadelphia, North Philadelphia, Grays Ferry, Upper Darby, West Philadelphia, South Philadephia',
         Facebook: 'https://www.facebook.com/groups/AIMAngelInMotion/',
         Impact: 'https://aimangelsinmotion.org/donate/,https://aimangelsinmotion.org/volunteer/',
-        Donate:
-            'https://www.paypal.com/donate?token=GxC9iHCe5-tJ4t01BKCS-sUI51jWjERTdyJ3YMtP_kkKVbum-42MXGf7d63WInFVgr4QlO-EntUFMrIJ',
+        Donate: 'https://www.paypal.com/donate?token=GxC9iHCe5-tJ4t01BKCS-sUI51jWjERTdyJ3YMtP_kkKVbum-42MXGf7d63WInFVgr4QlO-EntUFMrIJ',
         Blog: 'https://aimangelsinmotion.org/aim-in-the-news/',
         Keywords: 'Addiction',
         Mission: 'Changing the way those suffering with the disease of addiction are treated, one life at a time.',
@@ -2550,8 +2545,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/bftp.sep/?ref=br_rs',
         LinkedIn: 'https://www.linkedin.com/company/ben-franklin-technology-partners-of-southeastern-pennsylvania/',
         Newsletter: 'https://www.sep.benfranklin.org/',
-        Blog:
-            'https://www.sep.benfranklin.org/resources/news-and-publications/, https://www.sep.benfranklin.org/resources/blog/',
+        Blog: 'https://www.sep.benfranklin.org/resources/news-and-publications/, https://www.sep.benfranklin.org/resources/blog/',
         Keywords: 'Entrepreneurs, Technology, Startup',
         Mission:
             'We stimulate entrepreneurial potential, economic growth and innovation in Southeastern Pennsylvania by providing the Capital, Counsel and Connections that accelerate the formation and growth of both technology-driven enterprises and partnerships that create sustainable employment opportunities and spur the development, commercialization and adoption of advanced technologies.',
@@ -2705,8 +2699,7 @@ exports.allOrganizations = [
         Contact: 'info@thebigbackyard.net',
         ServiceArea: 'Mt. Airy',
         Facebook: 'https://www.facebook.com/thebigbackyardnurseryschool/',
-        Donate:
-            'https://www.paypal.com/donate?token=pTKqq-uX4RRNmeYGz4yujsH0RqLXohO3_4Mk6Q5QL-aWdtcHS2RxWpRCt7qvUrw_eccYh9KnkVOUj7-E',
+        Donate: 'https://www.paypal.com/donate?token=pTKqq-uX4RRNmeYGz4yujsH0RqLXohO3_4Mk6Q5QL-aWdtcHS2RxWpRCt7qvUrw_eccYh9KnkVOUj7-E',
         Keywords: 'Preschool, Early Childhood Education, Summer Camp',
         Mission:
             'The Mission of The Big Backyard is to provide a neighborhood, affordable, inclusive cooperative preschool, where the spirit of every child is appreciated and nurtured. Play is valued as a learning opportunity, and parents, teachers and children work together to build a model of community. It provides a safe, loving, joyful early childhood experience.',
@@ -3070,8 +3063,7 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UC19eGxVJCFlL5OV-LJeInVg',
         Newsletter: 'http://www.phillysoccer.org/pages/aboutus',
         Impact: 'http://www.phillysoccer.org/pages/volunteers',
-        Donate:
-            'https://www.paypal.com/donate?token=IM1LncEjpZ8zexhgfGi1cRiKuWlQxM-LwQymcI2nyCqLW3MbfXrfCSEVrPmFVK_NDMA6PPcs9voyHIDG',
+        Donate: 'https://www.paypal.com/donate?token=IM1LncEjpZ8zexhgfGi1cRiKuWlQxM-LwQymcI2nyCqLW3MbfXrfCSEVrPmFVK_NDMA6PPcs9voyHIDG',
         Keywords: 'Soccer, Sports',
         Mission:
             'Providing the Philadelphia area with competitive, high quality, organized soccer at an affordable rate.',
@@ -3193,8 +3185,7 @@ exports.allOrganizations = [
         ServiceArea: 'Frankford',
         Twitter: 'https://twitter.com/fkdchargers',
         Facebook: 'https://www.facebook.com/frankford.chargers?fref=ts&ref=br_tf',
-        Donate:
-            'https://www.paypal.com/donate?token=bxAGj7vwO4nyMGy6uhdKieklgbYaaEGju6sARRsC_rSKMOi1n0hi3p07Lv1Ocl40RPn1BB7a6Z9bVxZ5',
+        Donate: 'https://www.paypal.com/donate?token=bxAGj7vwO4nyMGy6uhdKieklgbYaaEGju6sARRsC_rSKMOi1n0hi3p07Lv1Ocl40RPn1BB7a6Z9bVxZ5',
         Keywords: 'Sports, Mentorship',
         Mission:
             'The Frankford Chargers Sports and Mentoring Association (FCSMA) is a non-profit agency whose primary goal is to expand the limited choices and resources of our community’s youth by offering productive and wholesome athletic opportunities',
@@ -3275,7 +3266,7 @@ exports.allOrganizations = [
         Donate: 'https://www.boyslatin.org/donate',
         Keywords: 'Latin, Brotherhood, Charter School',
         Mission:
-            'We prepare boys for success in college and beyond, using as our foundation a classical Latin education, the positive influence of brotherhood, and rich relationships. We are a community that values and cultivates critical thinking, personal responsibility, emotional intelligence, and character development.',
+            'We prepare boys for success in college and beyond, using as our foundation a classical Latin education, the positive influence of brotherhood, and rich relationships. We are a community that values and cultivations critical thinking, personal responsibility, emotional intelligence, and character development.',
         Description:
             'Boys’ Latin of Philadelphia is a collaborative community of motivated students, supportive families, and dedicated educators.  The school serves as a national college-preparatory model for educating boys by nurturing personal responsibility, emotional intelligence, and character development.  We empower students to understand their voice and increase their fortitude, shaping scholars who are successful in college and beyond.\r\n\r\nBoys’ Latin of Philadelphia first opened its doors in West Philadelphia in 2007, offering an innovative value proposition: to provide a world-class college preparatory academic program for historically underserved boys. Now, a decade later, the vision has come to fruition. Each and every day, our students grow within a safe and supportive environment with dedicated teachers who challenge them to meet their full potential. High expectations plus high levels of support yield results. We educate boys and graduate men. Our students matriculate into, persist through, and graduate from college at rates that far surpass city and national averages. Boys’ Latin alumni now live, work, and lead positive change in cities across the country.',
     },
@@ -3595,8 +3586,7 @@ exports.allOrganizations = [
         ServiceArea: 'Fishtown',
         Events: 'https://www.bymysideparenting.org/apps/calendar/',
         Facebook: 'https://www.facebook.com/By-My-Side-Parenting-35428403686/',
-        Donate:
-            'https://www.paypal.com/webapps/shoppingcart?flowlogging_id=4c6f3fd144779&mfid=1610824797853_4c6f3fd144779#/checkout/openButton',
+        Donate: 'https://www.paypal.com/webapps/shoppingcart?flowlogging_id=4c6f3fd144779&mfid=1610824797853_4c6f3fd144779#/checkout/openButton',
         Keywords: 'Parenting, Families',
         Mission:
             "Our mission is to provide all families with a warm and welcoming environment in which they can enhance their children's lives through age appropriate play while simultaneously providing a welcoming community where families can connect and expand their parenting village.",
@@ -4946,8 +4936,7 @@ exports.allOrganizations = [
         Contact: 'info@royfoundation.org',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/ChristinaTylerRoyFoundation/',
-        Donate:
-            'https://www.paypal.com/donate?token=z36aPnG5AtYgd9OnaqJ-xLjkWgyG0VE4m38soH0q4oLXGIoqnROISl-G1q2qxmLiKuF5DSXNmjJV60FA',
+        Donate: 'https://www.paypal.com/donate?token=z36aPnG5AtYgd9OnaqJ-xLjkWgyG0VE4m38soH0q4oLXGIoqnROISl-G1q2qxmLiKuF5DSXNmjJV60FA',
         Keywords: 'Foundation, Grants, Families',
         Mission:
             'Guided by Christina and Tyler’s love of family and desire for children of their own, our non-profit organization assists families in times of need. While remaining flexible in our approach, we raise money to support charities focused on providing comfort, relief, and security for children and their families',
@@ -5192,7 +5181,7 @@ exports.allOrganizations = [
         Membership: 'https://public.theclaystudio.org/public/membership',
         Keywords: 'Classes, Studio, Artists',
         Mission:
-            'We are a preeminent space where artists from across the country and around the world cultivate their careers. We are a vital, perennial resource for local schoolchildren. And we are a welcoming family where people from all walks of life discover and nurture their creativity. We are artists and makers, teachers and students, innovators and visionaries. Together, we are a force for good',
+            'We are a preeminent space where artists from across the country and around the world cultivation their careers. We are a vital, perennial resource for local schoolchildren. And we are a welcoming family where people from all walks of life discover and nurture their creativity. We are artists and makers, teachers and students, innovators and visionaries. Together, we are a force for good',
         Description:
             'The Clay Studio inspires curiosity and discovery around the art and craft of clay, drawing together students, artists, and an engaged public into a welcoming community. Every day, in our classrooms, studios, galleries, and neighborhoods, we deepen the connection between people and clay with the highest quality programs and exhibitions. Founded in 1974, The Clay Studio continues in the belief that shared creativity, so fundamental to humanity, is a critical force for good.',
     },
@@ -5390,7 +5379,7 @@ exports.allOrganizations = [
         Mission:
             'The Collegium Institute is a vibrant intellectual community devoted to fostering the Catholic intellectual tradition, and the liberal tradition of humane studies more broadly, within the University of Pennsylvania community.',
         Description:
-            'Founded by faculty, alumni, students, & friends of the University of Pennsylvania, the Collegium Institute is an independent, academic community with a catholic vision: that is, it draws mainstream learning into conversation with the Catholic intellectual tradition & cultivates reflection on the catholic, or universal, questions that animate every human life.',
+            'Founded by faculty, alumni, students, & friends of the University of Pennsylvania, the Collegium Institute is an independent, academic community with a catholic vision: that is, it draws mainstream learning into conversation with the Catholic intellectual tradition & cultivations reflection on the catholic, or universal, questions that animate every human life.',
     },
     {
         Name: 'Commission on Graduates of Foreign Nursing Schools',
@@ -5684,8 +5673,7 @@ exports.allOrganizations = [
         LinkedIn:
             'https://www.linkedin.com/company/11031000?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A11031000%2Cidx%3A2-1-2%2CtarId%3A1486007618619%2Ctas%3Abelmont%20charter%20',
         Donate: 'https://www.belmontcharternetwork.org/donate/',
-        Blog:
-            'https://www.belmontcharternetwork.org/blog/, https://www.belmontcharternetwork.org/category/school-news/',
+        Blog: 'https://www.belmontcharternetwork.org/blog/, https://www.belmontcharternetwork.org/category/school-news/',
         Keywords: 'Charter School',
         Mission: 'Our purpose is to promote the academic, social and emotional well-being of each child.',
         Description:
@@ -6051,8 +6039,7 @@ exports.allOrganizations = [
         Instagram: 'https://www.instagram.com/cosacosaartatlarge/',
         Newsletter: 'http://www.cosacosa.org/contact.html',
         Impact: 'https://www.volunteermatch.org/search/org26238.jsp',
-        Donate:
-            'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=232613697&vlrStratCode=BmRiA5hWY%2bS%2fGvmSbRQuFGoRxpM2f9M0KsysOzdbNEISwEbeKJWM9WMYL0tEWy1Q',
+        Donate: 'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=232613697&vlrStratCode=BmRiA5hWY%2bS%2fGvmSbRQuFGoRxpM2f9M0KsysOzdbNEISwEbeKJWM9WMYL0tEWy1Q',
         Keywords: 'Public Art, Civic Engagement',
         Mission:
             'COSACOSA art at large, Inc. creates new public art specific to the concerns of Philadelphia neighborhoods in direct, long-term collaboration with city residents.',
@@ -6075,8 +6062,7 @@ exports.allOrganizations = [
         Newsletter: 'https://councilforrelationships.org/',
         Impact: 'https://councilforrelationships.org/support/',
         Donate: 'https://councilforrelationships.org/support/donate/',
-        Blog:
-            'https://councilforrelationships.org/home/about-us/news/, https://councilforrelationships.org/research-resources/resources/expert-voices/blog/',
+        Blog: 'https://councilforrelationships.org/home/about-us/news/, https://councilforrelationships.org/research-resources/resources/expert-voices/blog/',
         Keywords: 'Behavioral Health, Therapy',
         Mission:
             'Council for Relationships is a nonprofit organization with a mission to help people from all walks of life improve their important relationships by providing exemplary therapy, educating and training clinicians in the family systems approach, and advancing the behavioral health field through research.',
@@ -6445,8 +6431,7 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://danieljorens.org/#calendar',
         Facebook: 'https://www.facebook.com/danieljorensfoundation/',
-        Donate:
-            'https://www.paypal.com/donate?token=A77iuAr_NzUtlehbyXm_O0eA9DdWTPlS7zFOA0VR2kzR_WOdYt5aWOk2LQ5oI-2L7cnIunr7GGyvq5Nd',
+        Donate: 'https://www.paypal.com/donate?token=A77iuAr_NzUtlehbyXm_O0eA9DdWTPlS7zFOA0VR2kzR_WOdYt5aWOk2LQ5oI-2L7cnIunr7GGyvq5Nd',
         Keywords: 'Substance Abuse, Drug Addiction',
         Mission:
             'The Foundation was organized in January of 2017, two months after Daniel passed. A 501(c)(3) status was registered in Pennsylvania and Florida and a Membership of Directors was appointed. Its goals are to spread awareness to all communities of the growing epidemic and how to combat and destigmatize it, to offer advice to families struggling with a family member currently afflicted, to console families who have lost a loved one to the disease and ultimately, to raise monies to assist in the operation of the Daniel J. Orens Center for Life, a collaborative of several non-profit organizations operating a resource center for returning citizens located in Wynnefield Pa.',
@@ -6489,8 +6474,7 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UCtKJ2WjRGErr_OO3sdb_0dw?view_as=subscriber',
         Newsletter: 'https://www.darrendaultonfoundation.org/',
         Impact: 'https://www.darrendaultonfoundation.org/get-involved',
-        Donate:
-            'https://www.paypal.com/donate/?cmd=_donations&business=thedarrendaultonfoundation@gmail.com&item_name=Darren%20Daulton%20Foundation&currency_code=USD',
+        Donate: 'https://www.paypal.com/donate/?cmd=_donations&business=thedarrendaultonfoundation@gmail.com&item_name=Darren%20Daulton%20Foundation&currency_code=USD',
         Keywords: 'Cancer, Brain Tumor, Financial Assistance',
         Mission: 'Providing financial assistance to those who suffer from malignant primary brain tumors',
         Description:
@@ -6610,8 +6594,7 @@ exports.allOrganizations = [
         RSS: 'https://www.delawareriverwaterfront.com/footer/articles?feed=rss',
         Newsletter: 'https://www.delawareriverwaterfront.com/contact/join-the-mailing-list',
         Donate: 'https://www.delawareriverwaterfront.com/about/donate',
-        Blog:
-            'https://www.delawareriverwaterfront.com/footer/articles, https://www.delawareriverwaterfront.com/footer/press-room',
+        Blog: 'https://www.delawareriverwaterfront.com/footer/articles, https://www.delawareriverwaterfront.com/footer/press-room',
         Keywords: 'Waterfront',
         Mission:
             'The fundamental purpose of DRWC is to design, develop and manage the central Delaware River waterfront in Philadelphia between Oregon and Allegheny Avenues.',
@@ -6865,7 +6848,7 @@ exports.allOrganizations = [
         Mission:
             'Dignity Housing’s mission is to break the cycle of homelessness and poverty that confronts low-income families and individuals in Philadelphia.',
         Description:
-            'We provide affordable housing, promote self-sufficiency, and create opportunities. We work to fulfill our mission through the provision of transitional and long-term housing in combination with supportive services that create opportunities and promote self-sufficiency.\r\n\r\nDignity Housing is the first housing and supportive services program in the nation to be founded and guided by homeless people and activists.  Since 1988, Dignity has provided both quality affordable housing and supportive services to thousands of people – primarily single African American women and their children. Dignity has cultivated an individualized services approach to meeting the complex needs of homeless individuals and families.  Dignity currently manages an inventory of 58 units of transitional and long-term supportive housing concentrated in Northwest Philadelphia.',
+            'We provide affordable housing, promote self-sufficiency, and create opportunities. We work to fulfill our mission through the provision of transitional and long-term housing in combination with supportive services that create opportunities and promote self-sufficiency.\r\n\r\nDignity Housing is the first housing and supportive services program in the nation to be founded and guided by homeless people and activists.  Since 1988, Dignity has provided both quality affordable housing and supportive services to thousands of people – primarily single African American women and their children. Dignity has cultivationd an individualized services approach to meeting the complex needs of homeless individuals and families.  Dignity currently manages an inventory of 58 units of transitional and long-term supportive housing concentrated in Northwest Philadelphia.',
     },
     {
         Name: 'Dining Out for Life',
@@ -6934,7 +6917,7 @@ exports.allOrganizations = [
         Instagram: 'https://instagram.com/cecarts/',
         Donate: 'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LKJX7ZHPAT5NG&source=url',
         Mission:
-            'The mission of the Community Education Center is to cultivate a spirit of community by nurturing the creative efforts of individuals and organizations, and by fostering interaction between artists and audiences.',
+            'The mission of the Community Education Center is to cultivation a spirit of community by nurturing the creative efforts of individuals and organizations, and by fostering interaction between artists and audiences.',
         Description:
             'We provide artists with space to rehearse, teach, and perform, and we encourage all in the larger community to explore their creativity through classes and performance opportunities.',
     },
@@ -6952,8 +6935,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/DCSphila',
         Instagram: 'https://www.facebook.com/DCSphila',
         Newsletter: 'http://dcsphila.org/',
-        Donate:
-            'https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=Dc8dzPGn4-LCajFevTkh9CdtYP3MnkLdbsxfHoGITEHZCDU4MvDSCw1QIlO-7PrNPy8dvYgD8zLjStlv0Pzeu2sE5sFcP5W_q6OpXQTy0tHtylNvVnMw6DZMB8lQ_8SQk0PpduXvnt8gXUeZjQYbn0Heam5AJ0NNf1MEby9FW-Q=&ver=3',
+        Donate: 'https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=Dc8dzPGn4-LCajFevTkh9CdtYP3MnkLdbsxfHoGITEHZCDU4MvDSCw1QIlO-7PrNPy8dvYgD8zLjStlv0Pzeu2sE5sFcP5W_q6OpXQTy0tHtylNvVnMw6DZMB8lQ_8SQk0PpduXvnt8gXUeZjQYbn0Heam5AJ0NNf1MEby9FW-Q=&ver=3',
         Keywords: 'Low Income, Family Services',
         Mission:
             'It is the mission of Diversified Community Services to provide leadership and services that strengthens and coordinates the Point Breeze and surrounding communities’ efforts on behalf of children, youth and families, especially those that are most vulnerable.',
@@ -7091,8 +7073,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/Victoria4EMIR',
         Facebook: 'https://www.facebook.com/EMIR-Healing-Center-821311167900523/',
         Impact: 'http://emirphilly.org/contact/volunteer/',
-        Donate:
-            'https://www.paypal.com/donate?token=S2NGlGRxN-mNzfUv4Z98GogCrVpu349hP3F25sPX26a0PoXXReoufgfocLXu4OMct9QIa9oDOSOZqv0X',
+        Donate: 'https://www.paypal.com/donate?token=S2NGlGRxN-mNzfUv4Z98GogCrVpu349hP3F25sPX26a0PoXXReoufgfocLXu4OMct9QIa9oDOSOZqv0X',
         Blog: 'https://emirphilly.org/community-outreach/',
         Keywords: 'Trauma, Advocacy, Healing',
         Mission: 'To treat the trauma to promote healing through education and emotional support.',
@@ -7224,8 +7205,7 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'https://www.discoveryphila.org/calendar-of-events?view=calendar&month=01-2021',
         Impact: 'https://www.discoveryphila.org/volunteers',
-        Donate:
-            'https://www.paypal.com/donate?token=GX1Npulig033vAYKmChWtVOIPW75uvTWCPRqfvlkZIuS2vLsrHduYpxAIJu1z0lERvMpy6BzhfKY1WJH',
+        Donate: 'https://www.paypal.com/donate?token=GX1Npulig033vAYKmChWtVOIPW75uvTWCPRqfvlkZIuS2vLsrHduYpxAIJu1z0lERvMpy6BzhfKY1WJH',
         Blog: 'https://www.discoveryphila.org/press',
         Keywords: 'Outward Bound, Conservation, Local Ecosystem, Wildlife',
         Mission:
@@ -7291,8 +7271,7 @@ exports.allOrganizations = [
         Youtube: 'http://www.youtube.com/channel/UCA3MXPKCtEydhAUQx1vfsxg',
         Newsletter: 'https://www.easterseals.com/sepa/',
         Impact: 'https://www.easterseals.com/sepa/get-involved/',
-        Donate:
-            'https://secure.easterseals.com/site/Donation2?idb=1508485314&df_id=18021&mfc_pref=T&18021.donation=form1&set.DonationLevel=37610&widget=TRUE&set.OptionalRepeat=FALSE',
+        Donate: 'https://secure.easterseals.com/site/Donation2?idb=1508485314&df_id=18021&mfc_pref=T&18021.donation=form1&set.DonationLevel=37610&widget=TRUE&set.OptionalRepeat=FALSE',
         Blog: 'https://easterseals-sepa.com/',
         Keywords: 'Advocacy, Veterans, Autism, Adult Day Care',
         Mission:
@@ -7431,7 +7410,7 @@ exports.allOrganizations = [
         Blog: 'https://www.ecparenting.org/news/',
         Keywords: 'Family Services, Youth Development',
         Mission:
-            'By using the healthy parent-child relationship as the role model for all relationships, the mission of Educating Communities for Parenting is to provide parenting education and youth development programs that cultivate independence and responsibility in young people and families, break the cycle of child abuse and neglect, and build stronger communities.',
+            'By using the healthy parent-child relationship as the role model for all relationships, the mission of Educating Communities for Parenting is to provide parenting education and youth development programs that cultivation independence and responsibility in young people and families, break the cycle of child abuse and neglect, and build stronger communities.',
         Description:
             'Educating Communities for Parenting offers a variety of programs and services to nearly 500 clients annually at over 25 sites including traditional, alternative, charter, and disciplinary schools; foster care residences, homeless shelters, recovery facilities, and childcare centers.\r\n\r\nECP was founded in 1976 by Sara Park Scattergood who recognized that providing and supporting parenting education would have a lasting impact on generations of families in the future. Throughout the years, thousands of teachers, parents, children and youth have benefited from ECP’s programs. ECP reaches out to families from a wide cross-section of socio-economic backgrounds throughout the Greater Philadelphia area to teach them basic principles and values of parenting. These principles and values are not only necessary to become a good parent, they are critical to shaping a responsible society.\r\n\r\nThe foundation for all ECP programs is a researched-based curriculum originally developed in 1979 and continually updated to reflect new findings, evaluation feedback, and to meet the needs of new client populations. This curriculum has been used by organizations and workshops across the country. Because of Ms. Scattergood’s visionary leadership over 30 years ago, ECP has grown to become a leader in the field of parenting education providing services for nearly 2,000 students annually.',
     },
@@ -7509,8 +7488,7 @@ exports.allOrganizations = [
         Facebook:
             'https://www.facebook.com/The-Educational-Advocates-Reaching-Todays-Hardworking-Students-Inc-EARTHS-122268337814131/',
         Newsletter: 'https://earthsinc.org/contact-us',
-        Donate:
-            'https://www.paypal.com/webapps/hermes?token=6GB608320A551342E&useraction=commit&rm=0&mfid=1612048167918_c6651608292a8',
+        Donate: 'https://www.paypal.com/webapps/hermes?token=6GB608320A551342E&useraction=commit&rm=0&mfid=1612048167918_c6651608292a8',
         Keywords: 'Math, Literacy',
         Mission:
             "The Educational Advocates Reaching Today's Hardworking Students, Inc. (EARTHS) are on a mission to: \r\n\r\neducate underserved students,\r\nempower impoverished parents and families and\r\nenlighten vulnerable communities.",
@@ -7623,8 +7601,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/EmmanuelAdvanc',
         Facebook: 'https://www.facebook.com/pages/Emmanuel-Advancement-Center/907120939332209',
         Impact: 'https://www.emmanueladvancementcenter.org/get-involved/3070164',
-        Donate:
-            'https://www.paypal.com/donate?token=5qN7oJBCa9tXp4ZfR7ZRGIoLpMnWkN4buRUlLeYp_bwlGctYCBHHnljLqXnsuifbKljW9UJfdMiNXrXX',
+        Donate: 'https://www.paypal.com/donate?token=5qN7oJBCa9tXp4ZfR7ZRGIoLpMnWkN4buRUlLeYp_bwlGctYCBHHnljLqXnsuifbKljW9UJfdMiNXrXX',
         Keywords: 'Mentorship',
         Mission:
             'Through comprehensive direct services, we help to develop the well-being of people in the areas of education, career planning, mentoring, health and wellness. By building bridges with appropriate resources opportunities are provided to create a better path in life.',
@@ -7662,8 +7639,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/EnchantmentTheatre/',
         Instagram: 'https://www.instagram.com/enchantmenttheatre/',
         Youtube: 'https://www.youtube.com/user/EnchantmentTheatre/',
-        Donate:
-            'https://donate.firstgiving.com/secure/donate/7d85dc1e-2023-11e0-a279-4061860da51d/9e89e9ca-4753-4825-afd9-4def73e6e2a1?parentPath=https://enchantmenttheatre.org/donate/?preview_id=17&preview_nonce=32526423eb&preview=true&_thumbnail_id=2361',
+        Donate: 'https://donate.firstgiving.com/secure/donate/7d85dc1e-2023-11e0-a279-4061860da51d/9e89e9ca-4753-4825-afd9-4def73e6e2a1?parentPath=https://enchantmenttheatre.org/donate/?preview_id=17&preview_nonce=32526423eb&preview=true&_thumbnail_id=2361',
         Keywords: 'Performing Arts, Storytelling, Theater',
         Mission:
             'Enchantment Theatre Company’s mission is to inspire children to dream, explore, think, and connect through imaginative storytelling onstage and in the classroom.',
@@ -7706,11 +7682,10 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/TECCDC',
         Instagram: 'https://www.instagram.com/TECWestPhilly',
         LinkedIn: 'https://www.linkedin.com/company/the-enterprise-center/',
-        Donate:
-            'https://www.paypal.com/donate?token=LQF6apPorklTAZNrldQguorQufPS2crD2Fz2Cvdpu-q9fSzet77Ew7G9BvtGq-EPACknxGDWCOMasXeD',
+        Donate: 'https://www.paypal.com/donate?token=LQF6apPorklTAZNrldQguorQufPS2crD2Fz2Cvdpu-q9fSzet77Ew7G9BvtGq-EPACknxGDWCOMasXeD',
         Keywords: 'Entrepreneurs, Minority Business Owners, Capital',
         Mission:
-            'Our mission is to cultivate and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
+            'Our mission is to cultivation and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
         Description:
             "The Enterprise Center has a rich and diverse practice supporting minority entrepreneurs and under-resourced communities spanning more than three decades. Our clients and partners trust us to advise and deliver on transformative economic development connected to minority business growth cycles and community wealth-building initiatives.\r\nWe invest in people and projects at the heart of business and communities in the belief that aligning capital with expertise is the strongest pathway to economic wealth and prosperity.\r\n\r\nWe operate a dedicated team model. Each team functions as an entrepreneurial group, managing a strategy that works with clients where they are, coordinates with partners, and invests capital where needed. Teams are responsible for their goals and outcomes though the entire project and investment life cycle and are directly accountable for performance. Each team is led by an executive overseeing talent responsible for working with our clients, partners, and communities. This proven approach builds trust and alignment with clients' needs and community objectives.",
     },
@@ -7811,8 +7786,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/EqualityForum',
         Instagram: 'http://instagram.com/equalityforum',
         Youtube: 'http://www.youtube.com/user/equalityforum',
-        Donate:
-            'https://www.paypal.com/donate/?token=ajX7rnDzFLGEo1fYN0RrIDZ3-kMCWRD05SZMBMqqMSUrWlx0IFD3sxHu4f9Z7_IVXU2jmG&country.x=US&locale.x=US',
+        Donate: 'https://www.paypal.com/donate/?token=ajX7rnDzFLGEo1fYN0RrIDZ3-kMCWRD05SZMBMqqMSUrWlx0IFD3sxHu4f9Z7_IVXU2jmG&country.x=US&locale.x=US',
         Blog: 'https://www.equalityforum.com/news',
         Keywords: 'LGBT History Month, Lesbian, Gay, Docmentaries',
         Mission:
@@ -7906,7 +7880,7 @@ exports.allOrganizations = [
         Blog: 'https://www.esperanza.us/esperanzanews/',
         Keywords: 'Hispanic, Neighborhood Revitalization, Workforce Development',
         Mission:
-            'Driven by the Biblical mandate to serve “the least of these” we strengthen Hispanic communities. For more than 30 years, Esperanza has been empowering those on a pathway out of poverty in the Hunting Park section of North Philadelphia by offering programs that cultivate self-belief, grit, and knowledge acquisition, allowing clients and students to develop agency, voice, and influence over their own lives.',
+            'Driven by the Biblical mandate to serve “the least of these” we strengthen Hispanic communities. For more than 30 years, Esperanza has been empowering those on a pathway out of poverty in the Hunting Park section of North Philadelphia by offering programs that cultivation self-belief, grit, and knowledge acquisition, allowing clients and students to develop agency, voice, and influence over their own lives.',
         Description:
             'Esperanza is a faith-based nonprofit organization driven by the biblical mandate to "serve the least of these." We strengthen Hispanic communities through education, economic development, and advocacy.',
     },
@@ -7989,8 +7963,7 @@ exports.allOrganizations = [
         Youtube: 'https://www.youtube.com/channel/UCRn2Psoqn7fblwivfIYCpKA',
         Newsletter: 'https://lp.constantcontactpages.com/su/l0UuLZ8/news',
         Donate: 'https://fabricworkshopandmuseum.org/support/donate/',
-        Blog:
-            'https://fabricworkshopandmuseum.org/press/press-room/?_ga=2.248571975.1743174319.1612057333-630217239.1612057333&doing_wp_cron=1612057601.1828880310058593750000#press-releases',
+        Blog: 'https://fabricworkshopandmuseum.org/press/press-room/?_ga=2.248571975.1743174319.1612057333-630217239.1612057333&doing_wp_cron=1612057601.1828880310058593750000#press-releases',
         Membership: 'https://fabricworkshopandmuseum.org/support/membership/',
         Keywords: 'Museum, Exhibitions, Contemporary Art, Visual Arts',
         Mission:
@@ -8270,7 +8243,7 @@ exports.allOrganizations = [
         Mission:
             'Built on a foundation of Jewish values and traditions, we are committed to helping families access affordable child care; providing educational activities and working with parents to build a feeling of community within our centers.',
         Description:
-            'For over a century, FELS has been a leader in providing high quality, affordable child care and innovative programs.\r\n\r\nWhile our organization’s shape and focus have expanded over the years, we remain steadfast in our goal to provide the best foundation to the children and support the families we serve. FELS truly lives its motto, providing The best of everything, from the beginning.\r\n\r\nThe early education programs at Federation Early Learning Services’ centers celebrate independent exploration, cultural differences and natural curiosity, while promoting the knowledge, skills, and abilities that young children need to succeed as learners in the early childhood years and beyond. Our emphasis is on creating a play-based learning environment that encourages creative expression and STEM learning, while making children feel welcomed, valued and respected. In our early education programs, children cultivate friendships, ask questions, build essential skills, and find joy in learning.',
+            'For over a century, FELS has been a leader in providing high quality, affordable child care and innovative programs.\r\n\r\nWhile our organization’s shape and focus have expanded over the years, we remain steadfast in our goal to provide the best foundation to the children and support the families we serve. FELS truly lives its motto, providing The best of everything, from the beginning.\r\n\r\nThe early education programs at Federation Early Learning Services’ centers celebrate independent exploration, cultural differences and natural curiosity, while promoting the knowledge, skills, and abilities that young children need to succeed as learners in the early childhood years and beyond. Our emphasis is on creating a play-based learning environment that encourages creative expression and STEM learning, while making children feel welcomed, valued and respected. In our early education programs, children cultivation friendships, ask questions, build essential skills, and find joy in learning.',
     },
     {
         Name: 'Federation of Neighborhood Centers',
@@ -8311,7 +8284,7 @@ exports.allOrganizations = [
         Mission:
             'Central to Fidget’s mission is decreasing the distance between art and life, between theory and practice.',
         Description:
-            'Founded in 2008, Fidget is a platform for the work of Megan Bridge (choreographer) and Peter Price (composer/video art), who bring in additional collaborators depending on the needs of each project. Bridge and Price have created more than twenty original works that involve live performance, sound, and visual design. Fidget’s work has toured throughout the US and internationally in France, Germany, Poland, South Africa, Bulgaria, Colombia, Austria, and Switzerland. Click here to view a map of touring locations!\r\n\r\nIn 2009, Bridge and Price opened Fidget Space, a warehouse live/work space and experimental performance venue in Kensington, Philadelphia.\r\n\r\nLegacy and historicity is an important aspect of Fidget’s work. The company has cultivated relationships with master artists in its lineage in experimental American performing arts, for example with the John Cage Trust, with composer Robert Ashley, with electronic musician Bruce Haack, and with choreographers Lucinda Childs, Steve Paxton, and Lisa Nelson.',
+            'Founded in 2008, Fidget is a platform for the work of Megan Bridge (choreographer) and Peter Price (composer/video art), who bring in additional collaborators depending on the needs of each project. Bridge and Price have created more than twenty original works that involve live performance, sound, and visual design. Fidget’s work has toured throughout the US and internationally in France, Germany, Poland, South Africa, Bulgaria, Colombia, Austria, and Switzerland. Click here to view a map of touring locations!\r\n\r\nIn 2009, Bridge and Price opened Fidget Space, a warehouse live/work space and experimental performance venue in Kensington, Philadelphia.\r\n\r\nLegacy and historicity is an important aspect of Fidget’s work. The company has cultivationd relationships with master artists in its lineage in experimental American performing arts, for example with the John Cage Trust, with composer Robert Ashley, with electronic musician Bruce Haack, and with choreographers Lucinda Childs, Steve Paxton, and Lisa Nelson.',
     },
     {
         Name: 'Fifty Shades of Purple Against Bullying',
@@ -8568,8 +8541,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/FolkArtsCulturalTreasuresCharterSchool',
         RSS: 'https://www.factschool.org/en/feed/rss/',
         Impact: 'https://www.factschool.org/en/family-caregiver-resources/volunteering-at-facts/',
-        Donate:
-            'https://www.paypal.com/donate?token=enZiSBPJCbV_XdH_l6dEEf0nEI4b-zrF1mbKTtUeQb-7zp1qbHeApRqIr-IKiwhYE-i0awBP3KVskiZG',
+        Donate: 'https://www.paypal.com/donate?token=enZiSBPJCbV_XdH_l6dEEf0nEI4b-zrF1mbKTtUeQb-7zp1qbHeApRqIr-IKiwhYE-i0awBP3KVskiZG',
         Blog: 'https://www.factschool.org/en/news/',
         Keywords: 'Charter School, Asian, Immigrant, Refugee',
         Mission:
@@ -8868,7 +8840,7 @@ exports.allOrganizations = [
         Newsletter: 'https://es.franklintowne.org/towne_parents/newsletters',
         Keywords: 'Charter School',
         Mission:
-            'To establish a HAPPY and NURTURING environment that both promotes and cultivates a positive learning experience for our children. By involving staff, students, and parents we plan to create a challenging and supportive school where our students can learn and grow.',
+            'To establish a HAPPY and NURTURING environment that both promotes and cultivations a positive learning experience for our children. By involving staff, students, and parents we plan to create a challenging and supportive school where our students can learn and grow.',
         Description:
             'Franklin Towne Charter Elementary School proudly opened our doors in 2009. It was the direct outgrowth of our sister school, Franklin Towne Charter High. In 2007 Chief Executive Officer, Mr. Venditti, along with Chief Academic Officer, Mr. Field, began expansion plans. In 2008 our elementary charter was granted by the School Reform Commission and a team of gifted educators and community stakeholders quickly went to work on designing the school that we are all so proud to call home.\r\n\r\nDuring our first two years of operation we offered a world-class education to 300 students in grades 3, 4 and 5 at our high school campus. In 2010 we added an addition 100 students to offer 3rd through 6th grade opportunities. During these two years we were building our forever home in the heart of the Bridesburg community at 4259 Richmond Street. During these two years the Franklin Towne Administration and Membership of Directors transformed an abandoned and dangerous lot and turned it into a state-of-the-art educational facility that offers opportunities to over 900 students in grades Kindergarten through 8th.',
     },
@@ -9030,8 +9002,7 @@ exports.allOrganizations = [
         Zip: 19102,
         ServiceArea: 'Philadelphia',
         Events: 'https://friendschildcare.org/events/',
-        Donate:
-            'https://www.paypal.com/donate?token=-NktjCV6KZV7ict1kzCwmH1k4xKn885cn_7ryh1YJyBppQ0275NJ4UPVQjglHhQaBWPqhuZY68jPzfh3',
+        Donate: 'https://www.paypal.com/donate?token=-NktjCV6KZV7ict1kzCwmH1k4xKn885cn_7ryh1YJyBppQ0275NJ4UPVQjglHhQaBWPqhuZY68jPzfh3',
         Keywords: 'Childcare, Quaker',
         Mission:
             'Friends Child Care Center is guided by the Quaker belief that there is that of God in every person. This belief inspires and informs everyday life at the Center while it affirms the individual value of each child, teacher and parent. The approach to learning is broad but simple: children learn to get along with other people as they experience the rewards of learning what they want to know.',
@@ -9254,8 +9225,7 @@ exports.allOrganizations = [
         Zip: 19121,
         ServiceArea: 'Philadelphia',
         Newsletter: 'https://us13.list-manage.com/subscribe?u=4587c76ac9bf222dacb640b8e&id=87e1b5765a',
-        Donate:
-            'https://www.paypal.com/webapps/hermes?token=3GB04233FF672825E&useraction=commit&mfid=1612474144964_ed7d66b84383f',
+        Donate: 'https://www.paypal.com/webapps/hermes?token=3GB04233FF672825E&useraction=commit&mfid=1612474144964_ed7d66b84383f',
         Keywords: 'Fundraising, College Access, STEM',
         Mission:
             'Friends of Carver High School of Engineering and Science was created to support school improvement and the academic achievement of Carver HSES students. Our mission includes promoting increased alumni, community and parent involvement, and raising funds and resources for the maintenance and creation of programs that enhance the academic experience of students.',
@@ -9563,8 +9533,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/FriendsofUNIFAT',
         Facebook: 'https://www.facebook.com/groups/FriendsofUNIFAT/',
         Impact: 'http://friendsofunifat.org/getinvolved/',
-        Donate:
-            'https://www.paypal.com/donate?token=JnG7s_Yp_YAbCeVHutjQC-0aB3g0mBTvQh-TGHYVFdluEgLlDvrJb3Geig0FukX2ga1pef6pxovR_GCn',
+        Donate: 'https://www.paypal.com/donate?token=JnG7s_Yp_YAbCeVHutjQC-0aB3g0mBTvQh-TGHYVFdluEgLlDvrJb3Geig0FukX2ga1pef6pxovR_GCn',
         Keywords: 'Global, Uganda',
         Mission:
             'Friends of UNIFAT is a 501 (c) (3) non-profit organization committed to supporting the educational and peace building initiatives for UNIFAT - a private primary school located in Gulu, Uganda in East Africa.',
@@ -9584,8 +9553,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/FriendsofVizo/',
         Instagram: 'https://www.instagram.com/friendsofvizo',
         Impact: 'http://www.vizobvm.org/Get-Involved/',
-        Donate:
-            'https://www.paypal.com/donate?token=fxwFwbA2jXP4i6LZeDfeJSdkkXrBVo0A7p3TnW5fgJdfJNh3XGbzZJYKIMH-0noWU1y1TceGpLdvxqpA',
+        Donate: 'https://www.paypal.com/donate?token=fxwFwbA2jXP4i6LZeDfeJSdkkXrBVo0A7p3TnW5fgJdfJNh3XGbzZJYKIMH-0noWU1y1TceGpLdvxqpA',
         Keywords: 'Catholic',
         Mission:
             'Visitation B.V.M School is a beacon of hope to the families of our diverse community. Through fostering positive relationships we bring about unity in our diversity. Through addressing the unique needs of the whole child, recognizing each as a gift from God we instill in our students a recognition not only of their giftedness but the giftedness of each person. We provide them with the tools and inspiration to be people of faith, life-long learners, and responsible global citizens.',
@@ -9603,8 +9571,7 @@ exports.allOrganizations = [
         ServiceArea: 'Philadelphia',
         Events: 'http://fourchaplains.org/events/',
         Facebook: 'https://www.facebook.com/fourchaplains.org/',
-        Donate:
-            'https://www.paypal.com/donate/?token=RrEql4WOREQ6TTYAXwtG4DV5ZnhZdbLNc3vrz1eHqGKTxZ7bY0TP5hh72i4Iz5jdbHGE_Im5UmRtvl7L&locale.x=US',
+        Donate: 'https://www.paypal.com/donate/?token=RrEql4WOREQ6TTYAXwtG4DV5ZnhZdbLNc3vrz1eHqGKTxZ7bY0TP5hh72i4Iz5jdbHGE_Im5UmRtvl7L&locale.x=US',
         Blog: 'http://fourchaplains.org/news-blog/',
         Membership: 'http://fourchaplains.org/join/',
         Keywords: 'Chapel',
@@ -9648,7 +9615,7 @@ exports.allOrganizations = [
         Blog: 'https://www.therailpark.org/news/',
         Keywords: 'Park',
         Mission:
-            'Friends of the rail park was founded to cultivate visions, advocate for, and ultimately manage a continous three-mile linear park and recreation path in Philadelphia.',
+            'Friends of the rail park was founded to cultivation visions, advocate for, and ultimately manage a continous three-mile linear park and recreation path in Philadelphia.',
         Description:
             'The Rail Park is a vision that’s revitalizing three miles of unused rail lines into a usable, beautiful, public space for all. The first phase is complete—filled with pathways, greenery, and bench swings with amazing city views.',
     },
@@ -9690,8 +9657,7 @@ exports.allOrganizations = [
         Facebook: 'https://web.facebook.com/Front-Step-Inc-1031812650258955/',
         Youtube: 'https://frontstepphilly.org/#',
         Impact: 'https://frontstepphilly.org/index.php/get-involved/volunteer/',
-        Donate:
-            'https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbcNLqdf6UI3YpI2OtIrmR4oiYnTg5dP4O6rpX5QvPEWlBhHDN59kLZFffwKfYERpQmTio0-oDJwvhHj1_5YTgVA=&ver=3',
+        Donate: 'https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=wWsk24ZWJSTZKsGd1RMKlg0BDvsSG3VIWQCPJNNxD8upkiY7JlDavDsozUE7KG0nFx2NSo8LdUKGuGuF396vbcNLqdf6UI3YpI2OtIrmR4oiYnTg5dP4O6rpX5QvPEWlBhHDN59kLZFffwKfYERpQmTio0-oDJwvhHj1_5YTgVA=&ver=3',
         Blog: 'https://frontstepphilly.org/index.php/2019/05/15/frontstepnews/',
         Keywords: 'Mentorship',
         Mission:
@@ -9851,8 +9817,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/generationsonli',
         Facebook: 'https://www.facebook.com/gol2000/?fref=ts',
         Youtube: 'https://www.youtube.com/watch?v=EhbLoGDsMr4',
-        Donate:
-            'https://www.paypal.com/donate?token=J5DR4R5HjJBFedAIuhEKQDdx1C1OO-px-2bBOFnF29jMahaE6C8D6YAw5fzyZWj8iAHEnsSEkq46qn92',
+        Donate: 'https://www.paypal.com/donate?token=J5DR4R5HjJBFedAIuhEKQDdx1C1OO-px-2bBOFnF29jMahaE6C8D6YAw5fzyZWj8iAHEnsSEkq46qn92',
         Blog: 'https://www.generationsonline.com/index.php',
         Keywords: 'Digital Literacy',
         Mission:
@@ -9924,8 +9889,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/glifecenter/',
         Instagram: 'https://www.instagram.com/glec19144/?hl=en',
         Youtube: 'http://www.youtube.com/user/Wix',
-        Donate:
-            'https://www.paypal.com/donate?token=6JBKa0TbwFh-nu-l63m7Ah5qeOjssktTI-gCtL-oDSmzT6K8hmVzn_qctSA0TPQdvq3TqcuUfYNOB91x',
+        Donate: 'https://www.paypal.com/donate?token=6JBKa0TbwFh-nu-l63m7Ah5qeOjssktTI-gCtL-oDSmzT6K8hmVzn_qctSA0TPQdvq3TqcuUfYNOB91x',
         Membership: 'https://www.glifecenter.org/membership-rates',
         Keywords: 'Pool, Aquatics, Fitness, Sauna',
         Mission:
@@ -9983,7 +9947,7 @@ exports.allOrganizations = [
         Blog: 'https://germinationproject.com/press',
         Keywords: 'Farming, Fellowship, Mentorship',
         Mission:
-            'The Germination Project’s objective is not to sew the proverbial seeds of change, but to empower a new class of farmers. We do not insist that our fellows commit to any one particular cause or initiative; rather, the Germination Project’s intention is to provide the skills, insights, judgment and confidence to choose their own crops to cultivate. The Germination Project asks of its fellows only that they dream big and set out to change the world in proportionate measure.',
+            'The Germination Project’s objective is not to sew the proverbial seeds of change, but to empower a new class of farmers. We do not insist that our fellows commit to any one particular cause or initiative; rather, the Germination Project’s intention is to provide the skills, insights, judgment and confidence to choose their own crops to cultivation. The Germination Project asks of its fellows only that they dream big and set out to change the world in proportionate measure.',
         Description:
             'The Germination Project is creating a self-sustaining, and perpetuating ecosystem for Philadelphia’s next generation of leadership. The Germination Project seeks to catalyze and energize an elite cadre of ambitious young men and women, brought together by their talent, drive and commitment to putting their gifts into service for the benefit of our city, our nation, and wherever their vision and ambition may lead them.\r\n\r\nRecruiting the best and brightest 10th graders in the region—regardless of socioeconomic circumstance— into a dynamic and lasting fellowship, by helping our Fellows to develop strong, reciprocal relationships with the individuals, organizations and institutions already at the vanguard of the struggle for shared prosperity, the Germination Project offers a lifetime’s worth of opportunities in exchange for a promise by the Fellows to pay those opportunities forward.',
     },
@@ -10002,8 +9966,7 @@ exports.allOrganizations = [
         Newsletter:
             'https://visitor.r20.constantcontact.com/manage/optin?v=001nxNUBQroFr2NfOWjs9i7hAGItncKVS3O5SncozmGLdTQVpkxISuQ7B6StD3Z_osp-mEVFp_TLE0P0XF9HrOtTOUp5Ro2OrwMMiEJo-dkGsE%3D',
         Donate: 'https://www.gesuschool.org/donate',
-        Blog:
-            'https://www.gesuschool.org/news-events/gesu-blog, https://www.gesuschool.org/news-events/gesu-in-the-news',
+        Blog: 'https://www.gesuschool.org/news-events/gesu-blog, https://www.gesuschool.org/news-events/gesu-in-the-news',
         Keywords: 'Catholic, Jesuit',
         Mission:
             'Inspired by the Jesuit and IHM traditions of social justice, faith, creative hope, and love, Gesu School helps students to transcend all forms of poverty by providing a comprehensive, innovative education. We empower our students to develop their strengths, overcome challenges, and become positive, engaged members of the community and the world.',
@@ -10061,8 +10024,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/girlsjusticePHL',
         Facebook: 'https://www.facebook.com/GirlsJusticeLeague/?ref=your_pages',
         Instagram: 'http://instagram.com/girlsjusticephl',
-        Donate:
-            'https://www.paypal.com/donate?token=K8fWeVxjylW30vTts05yY_rWafhGGnv9vIw6_niUBFsldq5Da4jnXVWD23gEydulvw8UROWnkWnsGTRx',
+        Donate: 'https://www.paypal.com/donate?token=K8fWeVxjylW30vTts05yY_rWafhGGnv9vIw6_niUBFsldq5Da4jnXVWD23gEydulvw8UROWnkWnsGTRx',
         Blog: 'http://girlsjusticeleague.org/blog',
         Keywords: 'Empowerment, Social Justice',
         Mission:
@@ -10348,8 +10310,7 @@ exports.allOrganizations = [
         LinkedIn: 'https://www.linkedin.com/company/great-dames-inc/',
         Newsletter:
             'https://visitor.r20.constantcontact.com/manage/optin?v=001nMM2VZu5hBRcuDISFF2qI04O0Q1-km8dvEuuZHQ5FEclcCNLeMfliZWCJR7P38rzgSYUQUW6AQ18natGdQIrosS6XOUyxKQAmGU3CyBVf8oEoZhogU9k-zTWudXfZ1vqNsxDCJy2WugaCetevgXVYuOH66trQglTiKP0ix-Qfpo%3D',
-        Donate:
-            'https://www.paypal.com/donate/?token=Zwt3DBO9R5qz4m9hq1I7lWlx0w2ndsLbUVC8ZjQUEDVJ13hgJ7xCkyB8YBrpJfWhUL9Qhm&country.x=US&locale.x=US',
+        Donate: 'https://www.paypal.com/donate/?token=Zwt3DBO9R5qz4m9hq1I7lWlx0w2ndsLbUVC8ZjQUEDVJ13hgJ7xCkyB8YBrpJfWhUL9Qhm&country.x=US&locale.x=US',
         Blog: 'https://www.greatdames.com/latest-news',
         Membership: 'https://www.greatdames.com/join',
         Keywords: 'Mentorship, Empowerment',
@@ -10410,8 +10371,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/gpbch',
         Facebook: 'https://www.facebook.com/GPBCH',
         LinkedIn: 'https://www.linkedin.com/company/gpbch/',
-        Donate:
-            'https://www.paypal.com/donate?token=YCBqz92DzI3MskdTTTgsbi4jSma3HuHwSzYg8gIlHFTbIESuL7WKLxJz5nzEhyxB2szppVKCbju6nUfl',
+        Donate: 'https://www.paypal.com/donate?token=YCBqz92DzI3MskdTTTgsbi4jSma3HuHwSzYg8gIlHFTbIESuL7WKLxJz5nzEhyxB2szppVKCbju6nUfl',
         Blog: 'https://www.gpbch.org/articles/',
         Membership: 'https://www.gpbch.org/membership/',
         Keywords: 'Community Health, Affordable Care',
@@ -10667,8 +10627,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/greentreks',
         Facebook: 'https://www.facebook.com/GreenTreks/',
         Youtube: 'http://www.youtube.com/greentreks',
-        Donate:
-            'https://www.paypal.com/donate?token=L_kYGmAsY1_-FauuiHwwPeOuXCMelM1B412glZVBTlAxf_1l1o_1ojelKIEgeMv9F155KvouGQEE3Jix',
+        Donate: 'https://www.paypal.com/donate?token=L_kYGmAsY1_-FauuiHwwPeOuXCMelM1B412glZVBTlAxf_1l1o_1ojelKIEgeMv9F155KvouGQEE3Jix',
         Keywords: 'Video, Sustainability, Climate Change, Water Quality',
         Mission:
             'GreenTreks is a non-profit video production and educational organization that highlights environmental solutions to inspire actions within our community.',
@@ -10955,8 +10914,7 @@ exports.allOrganizations = [
         Contact: 'HCWT65@gmail.com',
         ServiceArea: 'Philadelphia',
         Youtube: 'https://www.youtube.com/watch?v=6Py3QzVSMyY&t=4s',
-        Donate:
-            'https://checkout.globalgatewaye4.firstdata.com/collect_payment_data?ant=3136cc7eafdf959620ed1d13677eda50&merchant=WSP-HAVE-bqyYWQDQMg&order=0a0e77e8cbbfa3c035c67571853f007f10d0dfb430576320e6e25d45c7c41732&t=1',
+        Donate: 'https://checkout.globalgatewaye4.firstdata.com/collect_payment_data?ant=3136cc7eafdf959620ed1d13677eda50&merchant=WSP-HAVE-bqyYWQDQMg&order=0a0e77e8cbbfa3c035c67571853f007f10d0dfb430576320e6e25d45c7c41732&t=1',
         Keywords: 'Global, Bible Clubs, Missionary',
         Description:
             'In the early development of the Have Christ Will Travel, Dr Jeter focused on evangelizing and enabling poorly supported missionaries in Africa and Haiti though documenting their needs and raising funds through various churches, denominations and individuals.\r\n\r\nOver the years the mission has expanded to developed church planting, primary and secondary schools, after school, bible clubs, bible camps, vacation bible clubs, missionary training institute, and a weekly radio broadcast.',
@@ -11190,8 +11148,7 @@ exports.allOrganizations = [
         Zip: 19123,
         Contact: 'helpinghandphilly@gmail.com',
         ServiceArea: 'Philadelphia',
-        Donate:
-            'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=236393317&vlrStratCode=pDi9tobh9oRWzZMDFMSPyg1vnmQN4jQZi58eGRledr3UJ43ehM9S6OivIXEgJwXp',
+        Donate: 'https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=236393317&vlrStratCode=pDi9tobh9oRWzZMDFMSPyg1vnmQN4jQZi58eGRledr3UJ43ehM9S6OivIXEgJwXp',
         Keywords: 'Meals, After School',
         Mission:
             'Our mission is to be involved with the homeless men and women of the city. We will provide for and spiritually counsel them. We are also involved with the impoverished citizens that live in the community on the perimeter of the Mission.',
@@ -11227,7 +11184,7 @@ exports.allOrganizations = [
         Blog: 'https://drexelhillel.com/news/',
         Keywords: 'Judiasm, Heritage, Kosher',
         Mission:
-            'Through innovative student-centered programming and initiatives, Drexel Hillel:\r\n\r\nCreates a welcoming community in which to gather, engage and grow\r\nEmpowers and inspires students to learn, lead and serve in order to bring about positive change in the world around them\r\nStrengthens each student’s connection to their Jewish heritage\r\nCultivates Jewish campus life',
+            'Through innovative student-centered programming and initiatives, Drexel Hillel:\r\n\r\nCreates a welcoming community in which to gather, engage and grow\r\nEmpowers and inspires students to learn, lead and serve in order to bring about positive change in the world around them\r\nStrengthens each student’s connection to their Jewish heritage\r\nCultivations Jewish campus life',
         Description:
             'At Drexel Hillel, Jewish life begins with the ambition of knowing every Jewish student by name and story, and the desire to build meaningful one-on-one relationships with each of those students. Our commitment to celebrating all modes of Jewish expression, practice and identity, allows us to then connect our students with the Jewish opportunities, teachings and communities that meet each student’s diverse needs and goals.\r\n\r\nWhether you are interested in getting involved in celebrating shabbat and holidays, pursuing social action projects through our tzedek initiatives, developing leadership skills through our internships and leadership retreats, exploring your spirituality, traveling to Israel, or engaging your Jewish story in another way, Drexel Hillel is here to take the journey with you. Explore our website, visit our facebook page, or schedule a coffee date with one of our staff members or student leaders to learn more about the ways to get involved and build your Jewish life at Drexel.',
     },
@@ -11261,8 +11218,7 @@ exports.allOrganizations = [
         Facebook: 'https://www.facebook.com/HIMIO.org/?fref=ts',
         Instagram: 'https://www.instagram.com/himio_org/',
         Newsletter: 'https://www.himio.org/',
-        Donate:
-            'https://www.paypal.com/donate?token=3__UrXoAZg66Y8d9bJM03dUBipdvWo12UeD1ob6xmZWzdAK0Lv1wkB87WkXIzPMWIjnIJoHTrRs6kDdp',
+        Donate: 'https://www.paypal.com/donate?token=3__UrXoAZg66Y8d9bJM03dUBipdvWo12UeD1ob6xmZWzdAK0Lv1wkB87WkXIzPMWIjnIJoHTrRs6kDdp',
         Keywords: 'Entrepreneurship',
         Mission:
             'We provide educational programs and resources for the community to get clarity, knowledge, training, exposure and understanding that is necessary in today’s competitive world.',
@@ -11441,8 +11397,7 @@ exports.allOrganizations = [
         Contact: 'information@houseofgodclg.org',
         ServiceArea: 'Philadelphia',
         Facebook: 'http://www.facebook.com/clgpgt',
-        Donate:
-            'https://www.paypal.com/donate?token=I4HXW2sYkuzvBDGhq-5kdJLjrD0RZVrr1p37fconk46h-DLRIVfnj3SbTLnOP5oiqEbwkxkCbyasI6RC',
+        Donate: 'https://www.paypal.com/donate?token=I4HXW2sYkuzvBDGhq-5kdJLjrD0RZVrr1p37fconk46h-DLRIVfnj3SbTLnOP5oiqEbwkxkCbyasI6RC',
         Keywords: 'Christianity, Church',
         Mission:
             'The House of God, which is the Church of the Living God, the Pillar and Ground of the Truth will strive to teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: teaching them to observe all things whatsoever Jesus has commanded.   We seek to preach the gospel of Jesus Christ to the poor in spirit, to heal the broken-hearted, to proclaim liberty to the spiritually oppressed and to offer recovery of sight to the spiritually blind.  We endeavor to proclaim the acceptable year of the Lord and the day of vengeance of our God.  And we will comfort and console all who mourn.',
@@ -11462,8 +11417,7 @@ exports.allOrganizations = [
         Newsletter: 'http://www.littlesistersofthepoorphiladelphia.org/register/',
         Impact: 'http://www.littlesistersofthepoorphiladelphia.org/volunteer/',
         Donate: 'http://www.littlesistersofthepoorphiladelphia.org/donations/',
-        Blog:
-            'http://www.littlesistersofthepoorphiladelphia.org/news-and-events/, http://www.littlesistersofthepoorphiladelphia.org/blog/',
+        Blog: 'http://www.littlesistersofthepoorphiladelphia.org/news-and-events/, http://www.littlesistersofthepoorphiladelphia.org/blog/',
         Keywords: 'Chapel, Free Meals, Christianity',
         Mission:
             'Continuing the work of Saint Jeanne Jugan, our MISSION is to offer the neediest elderly of every race and religion a home where they will be welcomed as Christ, cared for as family and accompanied with dignity until God calls them to himself.',
@@ -11601,7 +11555,7 @@ exports.allOrganizations = [
         Mission:
             'House of Chayah is a Christian non-profit organization that provides mentoring to youth and young adults. We also travel to minister to the needs of others through acts of service and the ministry of music.',
         Description:
-            'It is often said it takes a village to raise a child. From it’s very beginning, it has been the objective of House of Chayah to provide a welcoming and inspiring “village” established in the love of Christ, where children and young adults living in the inner-city can grow, learn, and prosper. With much success, we have seen, encouraged, and cultivated the promise of many young people who have gone on to be a testament of dedicated and faithful leadership.',
+            'It is often said it takes a village to raise a child. From it’s very beginning, it has been the objective of House of Chayah to provide a welcoming and inspiring “village” established in the love of Christ, where children and young adults living in the inner-city can grow, learn, and prosper. With much success, we have seen, encouraged, and cultivationd the promise of many young people who have gone on to be a testament of dedicated and faithful leadership.',
     },
     {
         Name: 'House of Umoja',
@@ -11727,8 +11681,7 @@ exports.allOrganizations = [
         Contact: 'imagesofthemotherland@yahoo.com',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/ImagesOfTheMotherland/',
-        Donate:
-            'https://www.paypal.com/donate?token=Lg47RJIyT2mpiq-cwpcrzxaoKz7VRGXquROIM0G8kcq6vs6p-g4i6qqyULOUYG9cv4GLcFiARonBja_f',
+        Donate: 'https://www.paypal.com/donate?token=Lg47RJIyT2mpiq-cwpcrzxaoKz7VRGXquROIM0G8kcq6vs6p-g4i6qqyULOUYG9cv4GLcFiARonBja_f',
         Keywords: 'Performing Arts, Storytelling, Heritage, Africa, Drama',
         Mission:
             'The Mission of "Images of the Motherland: Interactive Theatre" is to educate and expand public awareness and appreciation of West and North African Traditions through authentic presentations of drama, art, music dance, and storytelling; to create "living history".',
@@ -12013,7 +11966,7 @@ exports.allOrganizations = [
         Blog: 'https://inisnuatheatre.org/news',
         Keywords: 'Performing Arts, Theater, Ireland, England, Scotland',
         Mission:
-            'Our mission is to produce contemporary, provocative plays from Ireland, England, Scotland and Wales which reflect those cultures’ new identities in today’s world. Inis Nua also seeks to cultivate contemporary, provocative work from American playwrights who deal with the Irish-American, Welsh-American, Scottish-American and Anglo-American experience.',
+            'Our mission is to produce contemporary, provocative plays from Ireland, England, Scotland and Wales which reflect those cultures’ new identities in today’s world. Inis Nua also seeks to cultivation contemporary, provocative work from American playwrights who deal with the Irish-American, Welsh-American, Scottish-American and Anglo-American experience.',
         Description:
             'Based in Philadelphia, Inis Nua has been producing contemporary, exciting plays from Ireland, England, Scotland and Wales for over 15 years. We have produced 17 American premieres, 13 Philadelphia premieres and 1 world premiere. Inis Nua has been the recipient of 6 Barrymore Awards, including the prestigious June and Steve Wolfson Award for an Evolving Theatre Company (2014). Inis Nua garnered 13 Barrymore nominations for our most recent season (2018-2019).',
     },
@@ -12087,8 +12040,7 @@ exports.allOrganizations = [
         Zip: 19130,
         Contact: 'michagary@gmail.com',
         ServiceArea: 'Philadelphia',
-        Donate:
-            'https://www.paypal.com/donate?token=B_Zg0otzW3R2auroMRf1RgZrT_tr6OOKbM8xq5i_yGQ-SIw7PNYWkUB0MvbMllV2ajV90moHKRH3HDJw',
+        Donate: 'https://www.paypal.com/donate?token=B_Zg0otzW3R2auroMRf1RgZrT_tr6OOKbM8xq5i_yGQ-SIw7PNYWkUB0MvbMllV2ajV90moHKRH3HDJw',
         Keywords: 'Lacrosse, Mentorship',
         Mission:
             'The idea of Inner City Lacrosse is to bring collegiate lacrosse players together with inner city kids to teach them lacrosse, mentor them academically, and coach them through adolescence, while collegiate players participate in service learning, teaching, mentoring and being ambassadors for the sport of lacrosse.',
@@ -12165,8 +12117,7 @@ exports.allOrganizations = [
         Contact: 'ifedoc05@yahoo.com',
         ServiceArea: 'Philadelphia',
         Facebook: 'https://www.facebook.com/IFEDOC/',
-        Donate:
-            'https://www.paypal.com/donate/?token=SuT32rudPeC1SsFXiK-zA8HVuuDJtaXeDWJ8rmeX99E-B9qS_Mt3NULeraHY-wVlubQALyHfKg8dUMKH&locale.x=US',
+        Donate: 'https://www.paypal.com/donate/?token=SuT32rudPeC1SsFXiK-zA8HVuuDJtaXeDWJ8rmeX99E-B9qS_Mt3NULeraHY-wVlubQALyHfKg8dUMKH&locale.x=US',
         Keywords: 'Tutoring, Scholarships, Preschool',
         Mission:
             'The Institute for the Economic Development of Children  operates with a core mandate to educate children/youth into adults who are economically self-sufficient.',
@@ -12420,8 +12371,7 @@ exports.allOrganizations = [
         Twitter: 'https://twitter.com/isaasports',
         Facebook: 'https://www.facebook.com/isaa.athleteinc?fref=nf',
         Instagram: 'https://instagram.com/isaasports/',
-        Donate:
-            'https://www.paypal.com/donate/?token=hZwgWASpCc4IYdkOV6GsAcr5TrVWIooWZyJ1p66k0DAlUxxh6srKSjd1b1aeqXNp_49VTAVjZW6owk0v&locale.x=US',
+        Donate: 'https://www.paypal.com/donate/?token=hZwgWASpCc4IYdkOV6GsAcr5TrVWIooWZyJ1p66k0DAlUxxh6srKSjd1b1aeqXNp_49VTAVjZW6owk0v&locale.x=US',
         Keywords: 'Nutrition, Student Athlete',
         Mission:
             'The mission of the ISAA is to implement proven and successful concepts in the areas of academics, athletic development, personal growth, social awareness and fitness & nutrition to comprehensively prepare today’s pre-collegiate student-athletes who desire to become a successful collegiate student-athlete and ultimately a productive member of society.',

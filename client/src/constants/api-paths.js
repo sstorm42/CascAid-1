@@ -40,6 +40,7 @@ export const setPrivacy = (userId) => serverAddress + `/api/users/${userId}/priv
 export const setServiceInfo = (userId) => serverAddress + `/api/users/${userId}/service-info`;
 export const setInternalLink = (userId) => serverAddress + `/api/users/${userId}/internal-link`;
 export const getAllUsersName = serverAddress + `/api/users/name/all`;
+export const getAllIndividuals = serverAddress + `/api/users/individual`;
 
 // Impact Area
 export const getAllGlobalImpactAreas = serverAddress + `/api/impact-areas/global`;
@@ -135,3 +136,10 @@ export const getAllConversationsByUser = (userId) => serverAddress + `/api/conve
 export const getOneConversation = (conversationId) => serverAddress + `/api/conversations/${conversationId}`;
 export const createOneMessage = serverAddress + `/api/conversations/message`;
 export const getConversationCountByUser = (userId) => serverAddress + `/api/conversations/count/new/${userId}`;
+
+// CULTIVATION
+export const createOneCultivation = serverAddress + '/api/cultivations/';
+export const getAllCultivationsByUser = (userId) => serverAddress + `/api/cultivations/user/${userId}`;
+export const getOneCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}`;
+export const addOneUserToCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/add/user`;
+export const removeOneUserFromCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/remove/user`;

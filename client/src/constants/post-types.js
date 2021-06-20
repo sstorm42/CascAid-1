@@ -83,10 +83,10 @@ export const allPostTypeLabels = ['Event', 'Project', 'General', 'Volunteering',
 export const getColorByPostType = (postType) => {
     const colors = {
         event: '#274e13',
-        project: '#0c343d',
+        project: '#20124d',
         general: '#1c4587',
         volunteering: '#073763',
-        'in-kind': '#20124d',
+        'in-kind': '#0c343d',
         advocacy: '#4c1130',
     };
     return colors[postType] ? colors[postType] : 'gray';
@@ -103,3 +103,9 @@ export const getPostTypeName = (value) => {
     const name = postTypes[value] ? postTypes[value] : '';
     return name;
 };
+export const calenderPostTypeWithColor = [
+    { name: 'event', label: 'EVENT' },
+    { name: 'project', label: 'PROJECT' },
+    { name: 'volunteering', label: 'VOLUNTEERING' },
+    { name: 'advocacy', label: 'ADVOCACY' },
+];

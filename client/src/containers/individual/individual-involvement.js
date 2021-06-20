@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import { getInvolvement, setInvolvement, clearInvolvement } from '../../actions/user-action';
-import { getAllMemberships, setAllMemberships } from '../../actions/membership-action';
+
 import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
 import IndividualInvolvementForm from '../../components/individual/individual-involvement-form';
@@ -12,11 +12,10 @@ import { individualCompleteBasicInfoPage, individualCompletePrivacyPage } from '
 const Involvement = (props) => {
     const [loading, setLoading] = useState(false);
     const [editMode, setEditMode] = useState(false);
-    const [memberships, setMemberships] = useState([]);
+
     const getInitialInfo = () => {
         const user = props.auth.user;
         if (user && user._id) {
-            props.dispatch(getAllMemberships({ individualId: user._id }));
             props.dispatch(getAllImpactAreasByUser(user._id));
             props.dispatch(getInvolvement(user._id));
         }
@@ -46,19 +45,6 @@ const Involvement = (props) => {
         };
     }, [props.auth]);
 
-    // MEMBERSHIP
-    useEffect(() => {
-        if (props.getAllMembershipResponse.success) {
-            setMemberships(props.getAllMembershipResponse.memberships);
-        } else {
-            // NotificationManager.error(props.getAllMembershipResponse.message, 'Failed');
-        }
-    }, [props.getAllMembershipResponse]);
-    const addNewMembership = (membership) => {
-        let memberships_ = memberships;
-        memberships_.push(membership);
-        setMemberships([...memberships_]);
-    };
     useEffect(() => {
         handleGetResponse();
     }, [props.getInvolvementResponse]);
@@ -88,8 +74,6 @@ const Involvement = (props) => {
                 allImpactAreas={props.getImpactAreaResponse.success ? props.getImpactAreaResponse.impactAreas : []}
                 handleBackButton={handleBackButton}
                 handleSkipButton={handleSkipButton}
-                memberships={memberships}
-                addNewMembership={addNewMembership}
             />
         );
 };
@@ -97,7 +81,7 @@ const mapStateToProps = (state) => {
     const getImpactAreaResponse = state.ImpactArea.getImpactAreasByUser;
     const getInvolvementResponse = state.User.getInvolvement;
     const setInvolvementResponse = state.User.setInvolvement;
-    const getAllMembershipResponse = state.Membership.getAllMemberships;
+
     let initialValues = {};
 
     if (getInvolvementResponse.success) {
@@ -109,7 +93,6 @@ const mapStateToProps = (state) => {
         initialValues,
         getInvolvementResponse,
         setInvolvementResponse,
-        getAllMembershipResponse,
     };
 };
 export default connect(

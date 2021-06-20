@@ -110,6 +110,7 @@ class App extends React.Component {
                     e.preventDefault();
                     this.handleOnSubmit();
                 }}
+                style={{ marginTop: '8px' }}
             >
                 <Autosuggest
                     multiSection={true}

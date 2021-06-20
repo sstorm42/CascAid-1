@@ -78,11 +78,11 @@ export const getBasicInfoPageByUserType = (userType) => {
 // export const newsManagePage = '/user/news';
 
 // POSTS
-export const postCreatePage = (postType) => `/${postType}/create`;
-export const postEditPage = (postType, postId) => `/${postType}/edit/${postId}`;
-export const postListByOrganizationPage = (postType) => `/${postType}/all`;
-export const postListPage = (postType) => `/${postType}/all`;
-export const postDetailsPage = (postType, postId) => `/${postType}/details/${postId}`;
+export const postCreatePage = (postType) => `/post/${postType}/create`;
+export const postEditPage = (postType, postId) => `/post/${postType}/edit/${postId}`;
+export const postListByOrganizationPage = (postType) => `/post/${postType}/all`;
+export const postListPage = (postType) => `/post/${postType}/all`;
+export const postDetailsPage = (postType, postId) => `/post/${postType}/details/${postId}`;
 export const postManagePage = `/post/manage`;
 export const postListPageByOrganizationAndPostType = (userId, postType) => `/organization/${userId}/${postType}/all`;
 
@@ -107,3 +107,9 @@ export const contactUsPage = '/contact-us';
 
 // DASHBOARD
 export const dashboardPage = '/dashboard';
+
+// CULTIVATION
+export const cultivationManagePage = '/cultivation/manage';
+export const cultivationCreatePage = '/cultivation/create';
+export const cultivationDetailsPage = (cultivationId) => `/cultivation/${cultivationId}/details`;
+export const cultivationEditPage = (cultivationId) => `/cultivation/${cultivationId}/edit`;

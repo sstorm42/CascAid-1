@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
-import EventListView from '../../components/event/event-card-view';
+import PostListView from '../../components/post/post-card-view';
 import { getUserPublicInfo } from '../../actions/user-action';
 import { getAllPostsByFilter } from '../../actions/post-action';
 import { followUser, unfollowUser, checkIfFollower } from '../../actions/follow-action';
@@ -12,7 +12,7 @@ import PostTypeMenu from '../../components/organization/organization-post-menu';
 import PostFilter from '../../components/organization/organization-post-filter';
 import { postDetailsPage } from '../../constants/route-paths';
 
-const SearchEvent = (props) => {
+const OrganizationPostList = (props) => {
     const [loading, setLoading] = useState(false);
     const [follows, setFollows] = useState(false);
     const [userId, setUserId] = useState('');
@@ -154,7 +154,7 @@ const SearchEvent = (props) => {
                             <PostTypeMenu selected={props.match.params.postType} userId={props.match.params.userId} />
                             <hr />
                             <PostFilter filters={filters} handleSetFilter={handleSetFilter} />
-                            <EventListView
+                            <PostListView
                                 // allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
                                 allPosts={allPosts}
                                 gotoPostDetails={gotoPostDetails}
@@ -189,4 +189,4 @@ const mapStateToProps = (state) => {
         getAllPostsResponse,
     };
 };
-export default connect(mapStateToProps, null)(SearchEvent);
+export default connect(mapStateToProps, null)(OrganizationPostList);

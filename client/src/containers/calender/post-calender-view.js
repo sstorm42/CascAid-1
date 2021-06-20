@@ -9,7 +9,7 @@ import * as RoutePath from '../../constants/route-paths';
 import { connect } from 'react-redux';
 import { ImpactAreasRender, InfoRender } from '../../components/form_template/details-render';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { getColorByPostType, getPostTypeName } from '../../constants/post-types';
+import { getColorByPostType, getPostTypeName, calenderPostTypeWithColor } from '../../constants/post-types';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
@@ -33,6 +33,7 @@ import {
     interestedPost,
     likePost,
 } from '../../actions/post-action';
+
 const locales = {
     'en-US': require('date-fns/locale/en-US'),
 };
@@ -62,7 +63,7 @@ function Event({ event }) {
 function EventAgenda({ event }) {
     return (
         <span>
-            <em style={{ color: 'magenta' }}>{event.title}</em>
+            <em style={{ color: 'white' }}>{event.title}</em>
             {/* <p>{event.desc}</p> */}
         </span>
     );
@@ -111,8 +112,9 @@ const PostCalenderView = (props) => {
             borderRadius: '0px',
             opacity: 0.8,
             color: 'white',
-            border: '0px',
-            display: 'block',
+            borderRadius: '3px',
+            // border: '0px',
+            // display: 'block',
         };
         return {
             style: style,
@@ -170,7 +172,7 @@ const PostCalenderView = (props) => {
                 const allPosts_ = allPosts
                     .filter((post) => post.startDateTime && post.endDateTime)
                     .map((p) => {
-                        return { ...p, id: p._id.toString(), startDateTime: new Date(p.startDateTime), endDateTime: new Date(p.endDateTime), allDay: true };
+                        return { ...p, id: p._id.toString(), startDateTime: new Date(p.startDateTime), endDateTime: new Date(p.endDateTime) };
                     });
                 console.log('🚀 ~ file: post-calender-view.js ~ line 144 ~ useEffect ~ props.homeFeedResponse', allPosts_);
                 setPosts(allPosts_);
@@ -192,12 +194,13 @@ const PostCalenderView = (props) => {
                 <Modal.Body>
                     <p>
                         Posts are associated with different colors for different types. Colors and Post types are mentioned here.
-                        <li style={{ color: 'white', backgroundColor: '#274e13', fontWeight: 'bold' }}>EVENT</li>
-                        <li style={{ color: 'white', backgroundColor: '#0c343d', fontWeight: 'bold' }}>PROJECT</li>
-                        <li style={{ color: 'white', backgroundColor: '#1c4587', fontWeight: 'bold' }}>GENERAL POST</li>
-                        <li style={{ color: 'white', backgroundColor: '#073763', fontWeight: 'bold' }}>VOLUNTEERING</li>
-                        <li style={{ color: 'white', backgroundColor: '#20124d', fontWeight: 'bold' }}>IN-KIND</li>
-                        <li style={{ color: 'white', backgroundColor: '#4c1130', fontWeight: 'bold' }}>ADVOCACY</li>
+                        {calenderPostTypeWithColor.map((postType, i) => {
+                            return (
+                                <li key={i} className="calender-help-list-item" style={{ backgroundColor: getColorByPostType(postType.name) }}>
+                                    {postType.label}
+                                </li>
+                            );
+                        })}
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
@@ -261,10 +264,10 @@ const PostCalenderView = (props) => {
             </Row>
             <hr />
             <Row>
-                <Col md={4}>
+                {/* <Col md={4}>
                     <CalenderFilter />
-                </Col>
-                <Col md={8}>
+                </Col> */}
+                <Col>
                     <Calendar
                         onShowMore={(events, date) => console.log(date)}
                         localizer={localizer}

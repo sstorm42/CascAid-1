@@ -183,7 +183,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Community Center',
         Mission:
-            'Our House is a community space that holds workshops, programs, and events that cultivate and celebrate creative and cultural expression in our community.',
+            'Our House is a community space that holds workshops, programs, and events that cultivation and celebrate creative and cultural expression in our community.',
         Description:
             'Founded  in 2017,  Our House Culture Center is a 501(c)(3) non-profit organization located in the Historic Germantown area of Philadelphia.  We are dedicated to providing a safe space for community members to connect, create, and celebrate one another.   Our spaces are utilized in collaboration with creatives, community members, and organizations to develop programs and events that help us connect and grow as a community.  We exist because we believe our community is incredibly rich with creativity, because celebration is paramount, and because our communities deserve quality programs and safe spaces to gather.  To that end, we have hosted over 300 programs and events',
     },
@@ -1129,7 +1129,7 @@ exports.updatedOrganizations = [
         Membership: 'https://www.memberplanet.com/Groups/GroupJoinLoginNew.aspx?ISPUB=true&invitee=x7sw26152u64l',
         Keywords: 'Alumni, School, Women',
         Mission:
-            'The mission of the Association shall be to perpetuate the ideals and promote the welfare of the Philadelphia High School for Girls, to further and protect the interests of the Association and its members, to cultivate fellowship and helpfulness among them and to advance in every way all efforts looking to the enlargement and enhancement of opportunities for women.',
+            'The mission of the Association shall be to perpetuate the ideals and promote the welfare of the Philadelphia High School for Girls, to further and protect the interests of the Association and its members, to cultivation fellowship and helpfulness among them and to advance in every way all efforts looking to the enlargement and enhancement of opportunities for women.',
         Description:
             "Twenty-five courageous, farsighted women signed our Charter. The objectives of the organization as given in the constitution are 'the cultivation of social relations among the graduates, the promotion of the best interests of the school, and the furthering in every way of all efforts looking to the enlargement of opportunities for women.'\n\nThroughout the years the Alumnae Association has been interested in the school and the welfare of its faculty and students. The extreme care that every administration has taken of the funds derived from that famous 1891 Bazaar has given us a sound investment program today. It enables us to maintain an exceptional scholarship program: Numerous alumnae each year receive generous tuition support at colleges and universities. We also give Commencement prizes and tuition grants. Since 1963 we have contributed thousands of dollars as well as books to the GHS library. We donate to school funds and publications. In 1984 we began to subsidize the cost of Advanced Placement examinations taken by qualified seniors. Our support today ranges from capital projects like the installation of a dance floor and statue restoration, to student activities like the robotics team and academic competitions, to subsidies for graduation festivities. In 2001, we finished production of a video history of Girls' High that highlighted events of our school's sesquicentennial year in 1998.\n\nNow over 4,800 financial members strong, as the alumnae association celebrates its 125th anniversary, we take pride in our heritage, and eagerly anticipate the challenges that lie ahead. Join us, in supporting our enduring tradition of excellence!",
     },
@@ -1156,7 +1156,7 @@ exports.updatedOrganizations = [
         Membership: 'https://securelb.imodules.com/s/1816/16/interior.aspx?sid=1816&gid=2&pgid=8&cid=46',
         Keywords: 'PCOM, Osteopathy, Medicine, Alumni',
         Mission:
-            'The mission of the Alumni Association is to promote the interest and welfare of PCOM, cultivate communication and foster relationships among all graduates, students, administration, faculty and staff of PCOM, and provide a medium for the expression of the sentiment of the alumni.',
+            'The mission of the Alumni Association is to promote the interest and welfare of PCOM, cultivation communication and foster relationships among all graduates, students, administration, faculty and staff of PCOM, and provide a medium for the expression of the sentiment of the alumni.',
         Description:
             "On September 8, 1902, graduates of the first classes of Philadelphia College and Infirmary of Osteopathy (PCIO), which would later become known as Philadelphia College of Osteopathic Medicine (PCOM), held a meeting with the idea 'to promote the prosperity and extend the influence of Alumni and their Alma Mater, and to encourage a high standard of Osteopathic education and practice.'\n\nOver 100 years later the Alumni Association is an integral part of the College, offering scholarships, awards, Mentoring, as well as social events to connect alumni and students.\n\nPCOM Alumni Association is comprised of alumni, residents and students from all PCOM programs.  The Association is led by an Executive Council that includes the positions of:  President, President-Elect, Secretary, Awards Committee Chair, Nominating Committee Chair, and Past President.  The Association also includes three other councils:  DO Council, Professional Careers Council (focusing on the unique needs of the graduate programs) and Trainee Council (for current students and residents).",
     },
@@ -1482,7 +1482,7 @@ exports.updatedOrganizations = [
         Mission:
             "Amparo de la Ni'ez, Inc. is a non-profit 501(c)(3) dedicated to promoting the well-being of children ages 4 through 12 years in order to prepare them for the challenges and opportunities of adolescence and adulthood. We achieve our mission by offering innovative programs designed to meet the cultural, spiritual, educational, physical and social needs of children and their families.",
         Description:
-            "We offer secular and non-secular youth-targeted programs that:\n\n' cultivate moral values grounded in love, respect, trust and generosity;\n\n' foster the emotional and spiritual connections needed to build inner-strength and a positive self-esteem;\n\n' strengthen capacities for sound decision-making and self-reliance in the face of hardship;\n\n' encourage cultural and linguistic ties to familial heritage and roots;\n\n' promote creativity and artistic expression;\n\n' provide education addressing physical health and fitness.",
+            "We offer secular and non-secular youth-targeted programs that:\n\n' cultivation moral values grounded in love, respect, trust and generosity;\n\n' foster the emotional and spiritual connections needed to build inner-strength and a positive self-esteem;\n\n' strengthen capacities for sound decision-making and self-reliance in the face of hardship;\n\n' encourage cultural and linguistic ties to familial heritage and roots;\n\n' promote creativity and artistic expression;\n\n' provide education addressing physical health and fitness.",
     },
     {
         Name: 'Angels in Motion',
@@ -5809,7 +5809,7 @@ exports.updatedOrganizations = [
         Membership: 'https://public.theclaystudio.org/public/membership',
         Keywords: 'Classes, Studio, Artists',
         Mission:
-            'We are a preeminent space where artists from across the country and around the world cultivate their careers. We are a vital, perennial resource for local schoolchildren. And we are a welcoming family where people from all walks of life discover and nurture their creativity. We are artists and makers, teachers and students, innovators and visionaries. Together, we are a force for good',
+            'We are a preeminent space where artists from across the country and around the world cultivation their careers. We are a vital, perennial resource for local schoolchildren. And we are a welcoming family where people from all walks of life discover and nurture their creativity. We are artists and makers, teachers and students, innovators and visionaries. Together, we are a force for good',
         Description:
             'The Clay Studio inspires curiosity and discovery around the art and craft of clay, drawing together students, artists, and an engaged public into a welcoming community. Every day, in our classrooms, studios, galleries, and neighborhoods, we deepen the connection between people and clay with the highest quality programs and exhibitions. Founded in 1974, The Clay Studio continues in the belief that shared creativity, so fundamental to humanity, is a critical force for good.',
     },
@@ -6052,7 +6052,7 @@ exports.updatedOrganizations = [
         Mission:
             'The Collegium Institute is a vibrant intellectual community devoted to fostering the Catholic intellectual tradition, and the liberal tradition of humane studies more broadly, within the University of Pennsylvania community.',
         Description:
-            'Founded by faculty, alumni, students, & friends of the University of Pennsylvania, the Collegium Institute is an independent, academic community with a catholic vision: that is, it draws mainstream learning into conversation with the Catholic intellectual tradition & cultivates reflection on the catholic, or universal, questions that animate every human life.',
+            'Founded by faculty, alumni, students, & friends of the University of Pennsylvania, the Collegium Institute is an independent, academic community with a catholic vision: that is, it draws mainstream learning into conversation with the Catholic intellectual tradition & cultivations reflection on the catholic, or universal, questions that animate every human life.',
     },
     {
         Name: 'Commission on Graduates of Foreign Nursing Schools',
@@ -7641,7 +7641,7 @@ exports.updatedOrganizations = [
         Mission:
             "Dignity Housing's mission is to break the cycle of homelessness and poverty that confronts low-income families and individuals in Philadelphia.",
         Description:
-            "We provide affordable housing, promote self-sufficiency, and create opportunities. We work to fulfill our mission through the provision of transitional and long-term housing in combination with supportive services that create opportunities and promote self-sufficiency.\n\nDignity Housing is the first housing and supportive services program in the nation to be founded and guided by homeless people and activists.  Since 1988, Dignity has provided both quality affordable housing and supportive services to thousands of people ' primarily single African American women and their children. Dignity has cultivated an individualized services approach to meeting the complex needs of homeless individuals and families.  Dignity currently manages an inventory of 58 units of transitional and long-term supportive housing concentrated in Northwest Philadelphia.",
+            "We provide affordable housing, promote self-sufficiency, and create opportunities. We work to fulfill our mission through the provision of transitional and long-term housing in combination with supportive services that create opportunities and promote self-sufficiency.\n\nDignity Housing is the first housing and supportive services program in the nation to be founded and guided by homeless people and activists.  Since 1988, Dignity has provided both quality affordable housing and supportive services to thousands of people ' primarily single African American women and their children. Dignity has cultivationd an individualized services approach to meeting the complex needs of homeless individuals and families.  Dignity currently manages an inventory of 58 units of transitional and long-term supportive housing concentrated in Northwest Philadelphia.",
     },
     {
         Name: 'Dining Out for Life',
@@ -7746,7 +7746,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: '',
         Mission:
-            'The mission of the Community Education Center is to cultivate a spirit of community by nurturing the creative efforts of individuals and organizations, and by fostering interaction between artists and audiences.',
+            'The mission of the Community Education Center is to cultivation a spirit of community by nurturing the creative efforts of individuals and organizations, and by fostering interaction between artists and audiences.',
         Description:
             'We provide artists with space to rehearse, teach, and perform, and we encourage all in the larger community to explore their creativity through classes and performance opportunities.',
     },
@@ -8308,7 +8308,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Family Services, Youth Development',
         Mission:
-            'By using the healthy parent-child relationship as the role model for all relationships, the mission of Educating Communities for Parenting is to provide parenting education and youth development programs that cultivate independence and responsibility in young people and families, break the cycle of child abuse and neglect, and build stronger communities.',
+            'By using the healthy parent-child relationship as the role model for all relationships, the mission of Educating Communities for Parenting is to provide parenting education and youth development programs that cultivation independence and responsibility in young people and families, break the cycle of child abuse and neglect, and build stronger communities.',
         Description:
             "Educating Communities for Parenting offers a variety of programs and services to nearly 500 clients annually at over 25 sites including traditional, alternative, charter, and disciplinary schools; foster care residences, homeless shelters, recovery facilities, and childcare centers.\n\nECP was founded in 1976 by Sara Park Scattergood who recognized that providing and supporting parenting education would have a lasting impact on generations of families in the future. Throughout the years, thousands of teachers, parents, children and youth have benefited from ECP's programs. ECP reaches out to families from a wide cross-section of socio-economic backgrounds throughout the Greater Philadelphia area to teach them basic principles and values of parenting. These principles and values are not only necessary to become a good parent, they are critical to shaping a responsible society.\n\nThe foundation for all ECP programs is a researched-based curriculum originally developed in 1979 and continually updated to reflect new findings, evaluation feedback, and to meet the needs of new client populations. This curriculum has been used by organizations and workshops across the country. Because of Ms. Scattergood's visionary leadership over 30 years ago, ECP has grown to become a leader in the field of parenting education providing services for nearly 2,000 students annually.",
     },
@@ -8846,7 +8846,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Hispanic, Neighborhood Revitalization, Workforce Development',
         Mission:
-            "Driven by the Biblical mandate to serve 'the least of these' we strengthen Hispanic communities. For more than 30 years, Esperanza has been empowering those on a pathway out of poverty in the Hunting Park section of North Philadelphia by offering programs that cultivate self-belief, grit, and knowledge acquisition, allowing clients and students to develop agency, voice, and influence over their own lives.",
+            "Driven by the Biblical mandate to serve 'the least of these' we strengthen Hispanic communities. For more than 30 years, Esperanza has been empowering those on a pathway out of poverty in the Hunting Park section of North Philadelphia by offering programs that cultivation self-belief, grit, and knowledge acquisition, allowing clients and students to develop agency, voice, and influence over their own lives.",
         Description:
             'Esperanza is a faith-based nonprofit organization driven by the biblical mandate to "serve the least of these." We strengthen Hispanic communities through education, economic development, and advocacy.',
     },
@@ -9280,7 +9280,7 @@ exports.updatedOrganizations = [
         Mission:
             'Built on a foundation of Jewish values and traditions, we are committed to helping families access affordable child care; providing educational activities and working with parents to build a feeling of community within our centers.',
         Description:
-            "For over a century, FELS has been a leader in providing high quality, affordable child care and innovative programs.\n\nWhile our organization's shape and focus have expanded over the years, we remain steadfast in our goal to provide the best foundation to the children and support the families we serve. FELS truly lives its motto, providing The best of everything, from the beginning.\n\nThe early education programs at Federation Early Learning Services' centers celebrate independent exploration, cultural differences and natural curiosity, while promoting the knowledge, skills, and abilities that young children need to succeed as learners in the early childhood years and beyond. Our emphasis is on creating a play-based learning environment that encourages creative expression and STEM learning, while making children feel welcomed, valued and respected. In our early education programs, children cultivate friendships, ask questions, build essential skills, and find joy in learning.",
+            "For over a century, FELS has been a leader in providing high quality, affordable child care and innovative programs.\n\nWhile our organization's shape and focus have expanded over the years, we remain steadfast in our goal to provide the best foundation to the children and support the families we serve. FELS truly lives its motto, providing The best of everything, from the beginning.\n\nThe early education programs at Federation Early Learning Services' centers celebrate independent exploration, cultural differences and natural curiosity, while promoting the knowledge, skills, and abilities that young children need to succeed as learners in the early childhood years and beyond. Our emphasis is on creating a play-based learning environment that encourages creative expression and STEM learning, while making children feel welcomed, valued and respected. In our early education programs, children cultivation friendships, ask questions, build essential skills, and find joy in learning.",
     },
     {
         Name: 'Federation of Neighborhood Centers',
@@ -9334,7 +9334,7 @@ exports.updatedOrganizations = [
         Mission:
             "Central to Fidget's mission is decreasing the distance between art and life, between theory and practice.",
         Description:
-            "Founded in 2008, Fidget is a platform for the work of Megan Bridge (choreographer) and Peter Price (composer/video art), who bring in additional collaborators depending on the needs of each project. Bridge and Price have created more than twenty original works that involve live performance, sound, and visual design. Fidget's work has toured throughout the US and internationally in France, Germany, Poland, South Africa, Bulgaria, Colombia, Austria, and Switzerland.\n\nIn 2009, Bridge and Price opened Fidget Space, a warehouse live/work space and experimental performance venue in Kensington, Philadelphia.\n\nLegacy and historicity is an important aspect of Fidget's work. The company has cultivated relationships with master artists in its lineage in experimental American performing arts, for example with the John Cage Trust, with composer Robert Ashley, with electronic musician Bruce Haack, and with choreographers Lucinda Childs, Steve Paxton, and Lisa Nelson.",
+            "Founded in 2008, Fidget is a platform for the work of Megan Bridge (choreographer) and Peter Price (composer/video art), who bring in additional collaborators depending on the needs of each project. Bridge and Price have created more than twenty original works that involve live performance, sound, and visual design. Fidget's work has toured throughout the US and internationally in France, Germany, Poland, South Africa, Bulgaria, Colombia, Austria, and Switzerland.\n\nIn 2009, Bridge and Price opened Fidget Space, a warehouse live/work space and experimental performance venue in Kensington, Philadelphia.\n\nLegacy and historicity is an important aspect of Fidget's work. The company has cultivationd relationships with master artists in its lineage in experimental American performing arts, for example with the John Cage Trust, with composer Robert Ashley, with electronic musician Bruce Haack, and with choreographers Lucinda Childs, Steve Paxton, and Lisa Nelson.",
     },
     {
         Name: 'Filitalia Foundation',
@@ -10835,7 +10835,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Park',
         Mission:
-            'Friends of the rail park was founded to cultivate visions, advocate for, and ultimately manage a continuous three-mile linear park and recreation path in Philadelphia.',
+            'Friends of the rail park was founded to cultivation visions, advocate for, and ultimately manage a continuous three-mile linear park and recreation path in Philadelphia.',
         Description:
             "The Rail Park is a vision that's revitalizing three miles of unused rail lines into a usable, beautiful, public space for all. The first phase is complete'filled with pathways, greenery, and bench swings with amazing city views.",
     },
@@ -11213,7 +11213,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Farming, Fellowship, Mentoring',
         Mission:
-            "The Germination Project's objective is not to sew the proverbial seeds of change, but to empower a new class of farmers. We do not insist that our fellows commit to any one particular cause or initiative; rather, the Germination Project's intention is to provide the skills, insights, judgment and confidence to choose their own crops to cultivate. The Germination Project asks of its fellows only that they dream big and set out to change the world in proportionate measure.",
+            "The Germination Project's objective is not to sew the proverbial seeds of change, but to empower a new class of farmers. We do not insist that our fellows commit to any one particular cause or initiative; rather, the Germination Project's intention is to provide the skills, insights, judgment and confidence to choose their own crops to cultivation. The Germination Project asks of its fellows only that they dream big and set out to change the world in proportionate measure.",
         Description:
             "The Germination Project is creating a self-sustaining, and perpetuating ecosystem for Philadelphia's next generation of leadership. The Germination Project seeks to catalyze and energize an elite cadre of ambitious young men and women, brought together by their talent, drive and commitment to putting their gifts into service for the benefit of our city, our nation, and wherever their vision and ambition may lead them.\n\nRecruiting the best and brightest 10th graders in the region'regardless of socioeconomic circumstance' into a dynamic and lasting fellowship, by helping our Fellows to develop strong, reciprocal relationships with the individuals, organizations and institutions already at the vanguard of the struggle for shared prosperity, the Germination Project offers a lifetime's worth of opportunities in exchange for a promise by the Fellows to pay those opportunities forward.",
     },
@@ -12694,7 +12694,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Judaism, Heritage, Kosher',
         Mission:
-            "Through innovative student-centered programming and initiatives, Drexel Hillel:\n\nCreates a welcoming community in which to gather, engage and grow\nEmpowers and inspires students to learn, lead and serve in order to bring about positive change in the world around them\nStrengthens each student's connection to their Jewish heritage\nCultivates Jewish campus life",
+            "Through innovative student-centered programming and initiatives, Drexel Hillel:\n\nCreates a welcoming community in which to gather, engage and grow\nEmpowers and inspires students to learn, lead and serve in order to bring about positive change in the world around them\nStrengthens each student's connection to their Jewish heritage\nCultivations Jewish campus life",
         Description:
             "At Drexel Hillel, Jewish life begins with the ambition of knowing every Jewish student by name and story, and the desire to build meaningful one-on-one relationships with each of those students. Our commitment to celebrating all modes of Jewish expression, practice and identity, allows us to then connect our students with the Jewish opportunities, teachings and communities that meet each student's diverse needs and goals.\n\nWhether you are interested in getting involved in celebrating shabbat and holidays, pursuing social action projects through our tzedek initiatives, developing leadership skills through our internships and leadership retreats, exploring your spirituality, traveling to Israel, or engaging your Jewish story in another way, Drexel Hillel is here to take the journey with you. Explore our website, visit our Facebook page, or schedule a coffee date with one of our staff members or student leaders to learn more about the ways to get involved and build your Jewish life at Drexel.",
     },
@@ -13101,7 +13101,7 @@ exports.updatedOrganizations = [
         Mission:
             'House of Chayah is a Christian non-profit organization that provides mentoring to youth and young adults. We also travel to minister to the needs of others through acts of service and the ministry of music.',
         Description:
-            "\nIt is often said it takes a village to raise a child. From it's very beginning, it has been the objective of House of Chayah to provide a welcoming and inspiring 'village' established in the love of Christ, where children and young adults living in the inner-city can grow, learn, and prosper. With much success, we have seen, encouraged, and cultivated the promise of many young people who have gone on to be a testament of dedicated and faithful leadership.",
+            "\nIt is often said it takes a village to raise a child. From it's very beginning, it has been the objective of House of Chayah to provide a welcoming and inspiring 'village' established in the love of Christ, where children and young adults living in the inner-city can grow, learn, and prosper. With much success, we have seen, encouraged, and cultivationd the promise of many young people who have gone on to be a testament of dedicated and faithful leadership.",
     },
     {
         Name: 'House of Umoja',
@@ -15033,7 +15033,7 @@ exports.updatedOrganizations = [
         Mission:
             'We strive to provide a conducive environment for people to deepen their understanding and experience of meditation practice and Buddhist studies.',
         Description:
-            "KMC Philadelphia is a non-profit organization based in Philadelphia, PA and is a member of the New Kadampa Tradition ' International Kadampa Buddhist Union. This tradition is an international Mahayana Buddhist organization founded by the Buddhist Master, Venerable Geshe Kelsang Gyatso. The Center offers the study and meditation programs of Kadampa Buddhism, under the guidance of our Resident Teacher, Gen Kelsang Tenzin.\n\nKMC Philadelphia, holding classes throughout Philadelphia, was founded on the knowledge that it is possible for everyone to cultivate positive states of mind that will lead to calmness and inner peace. Meditation is the heart of Buddhist practice. Through meditation, we can gain deep insight into how to be happy and deal with life's challenges successfully.",
+            "KMC Philadelphia is a non-profit organization based in Philadelphia, PA and is a member of the New Kadampa Tradition ' International Kadampa Buddhist Union. This tradition is an international Mahayana Buddhist organization founded by the Buddhist Master, Venerable Geshe Kelsang Gyatso. The Center offers the study and meditation programs of Kadampa Buddhism, under the guidance of our Resident Teacher, Gen Kelsang Tenzin.\n\nKMC Philadelphia, holding classes throughout Philadelphia, was founded on the knowledge that it is possible for everyone to cultivation positive states of mind that will lead to calmness and inner peace. Meditation is the heart of Buddhist practice. Through meditation, we can gain deep insight into how to be happy and deal with life's challenges successfully.",
     },
     {
         Name: 'Kappa Alpha Psi Foundation',
@@ -15841,7 +15841,7 @@ exports.updatedOrganizations = [
         Keywords: 'Housing, Cooperative',
         Mission: 'Provide housing for low & moderate income individuals.',
         Description:
-            'The LCA (Life Center Association) cooperatively owns and holds in trust safe, stable at-cost housing for the long-term use of low to moderate income peoples in order to co-create a just, sustainable community in Philadelphia, PA. Our work cultivates local, non-hierarchical leadership, direct democracy, social justice organizing and housing justice rooted in the history of the Movement for a New Society.\n\nWe share educational resources with our community and neighborhood emphasizing cooperative principles and racial and economic justice. We work with/in other organizations and networks that pursue similar goals.',
+            'The LCA (Life Center Association) cooperatively owns and holds in trust safe, stable at-cost housing for the long-term use of low to moderate income peoples in order to co-create a just, sustainable community in Philadelphia, PA. Our work cultivations local, non-hierarchical leadership, direct democracy, social justice organizing and housing justice rooted in the history of the Movement for a New Society.\n\nWe share educational resources with our community and neighborhood emphasizing cooperative principles and racial and economic justice. We work with/in other organizations and networks that pursue similar goals.',
     },
     {
         Name: 'Lifeline Music Coalition',
@@ -16432,7 +16432,7 @@ exports.updatedOrganizations = [
         Mission:
             "Mt. Vernon Manor CDC's mission is to provide affordable housing opportunities; to encourage West Philadelphia residents to nurture caring families; and to champion a robust and sustainable environment and quality of life in West Philadelphia.",
         Description:
-            'MVMCDC strives to cultivate safe and accessible West Philly neighborhoods for both longtime and newly arrived residents by pursuing strategic projects and partnerships that advance affordable housing opportunities, cultivate green and open space, enhance economic mobility, and improve public health and safety in our communities. Our goal is to help residents realize a shared vision of equitable development without displacement and to ensure that our community remains diverse, inclusive, and welcoming to all.',
+            'MVMCDC strives to cultivation safe and accessible West Philly neighborhoods for both longtime and newly arrived residents by pursuing strategic projects and partnerships that advance affordable housing opportunities, cultivation green and open space, enhance economic mobility, and improve public health and safety in our communities. Our goal is to help residents realize a shared vision of equitable development without displacement and to ensure that our community remains diverse, inclusive, and welcoming to all.',
     },
     {
         Name: 'MaST Community Charter School',
@@ -16621,7 +16621,7 @@ exports.updatedOrganizations = [
         Mission:
             'Makom Community integrates daily afterschool enrichment, camp, and family learning experiences where we ignite joy for whole family Jewish learning.',
         Description:
-            "Makom Community is a Jewish enrichment center that creates family-centered Jewish experiences. We empower parents to build a Jewish life that is meaningful for their family. We welcome the excitement of children. And we strive to create an environment where it is safe for parents to learn alongside their children. We cultivate fluency and comfort in Jewish tradition through our joyful youth and family experiences. Not only is Makom Community a Jewish community committed to creating a more just world, we're also committed to building a Jewish community that is open to anyone who wants to engage with Jewish traditions alongside their family.",
+            "Makom Community is a Jewish enrichment center that creates family-centered Jewish experiences. We empower parents to build a Jewish life that is meaningful for their family. We welcome the excitement of children. And we strive to create an environment where it is safe for parents to learn alongside their children. We cultivation fluency and comfort in Jewish tradition through our joyful youth and family experiences. Not only is Makom Community a Jewish community committed to creating a more just world, we're also committed to building a Jewish community that is open to anyone who wants to engage with Jewish traditions alongside their family.",
     },
     {
         Name: 'Manayunk Roxborough Art Center',
@@ -18184,7 +18184,7 @@ exports.updatedOrganizations = [
         Mission:
             '?MUSIC THEATRE PHILLY is a new and vibrant professional training ground for young artists in theatre and dance, and is dedicated to the instruction of the arts for children through adults.',
         Description:
-            "Located in the heart of Center City, MTP's goal is to cultivate a creative, encouraging, and disciplined environment, while maintaining the integrity of Musical Theatre.\n\nOur programs are designed to build confidence, respect, and teamwork, while helping each individual find their personal voice through artistic training. Classes are divided by age which allows each group of students to feel confident that they are on the same playing field of development with their peers. Each class is specifically designed to fit our students and is customized for their skill and interest level.",
+            "Located in the heart of Center City, MTP's goal is to cultivation a creative, encouraging, and disciplined environment, while maintaining the integrity of Musical Theatre.\n\nOur programs are designed to build confidence, respect, and teamwork, while helping each individual find their personal voice through artistic training. Classes are divided by age which allows each group of students to feel confident that they are on the same playing field of development with their peers. Each class is specifically designed to fit our students and is customized for their skill and interest level.",
     },
     {
         Name: 'Musical Fund Society',
@@ -18854,7 +18854,7 @@ exports.updatedOrganizations = [
         Mission:
             "The Neighborhood Gardens Trust (NGT) is Philadelphia's neighborhood garden protector. We are a land trust dedicated to preserving and supporting community gardens and other shared open spaces across the city.",
         Description:
-            "NGT's work is grounded in the belief that an equitable and sustainable city is one in which all neighborhoods have vibrant green spaces for residents to cultivate food, flowers, and community.\n\nNGT works with self-organized gardeners, community organizations, property owners, and the City of Philadelphia to secure ownership or long-term leases for community-managed open spaces to prevent the threat of development or other reuse.\n\nNGT provides community gardeners with peace of mind that the open spaces they care for will protected for their continued use and for future generations.",
+            "NGT's work is grounded in the belief that an equitable and sustainable city is one in which all neighborhoods have vibrant green spaces for residents to cultivation food, flowers, and community.\n\nNGT works with self-organized gardeners, community organizations, property owners, and the City of Philadelphia to secure ownership or long-term leases for community-managed open spaces to prevent the threat of development or other reuse.\n\nNGT provides community gardeners with peace of mind that the open spaces they care for will protected for their continued use and for future generations.",
     },
     {
         Name: 'Neighborhood Progress Fund',
@@ -20201,7 +20201,7 @@ exports.updatedOrganizations = [
         Mission:
             'It is our mission to inspire people to creatively heal and express themselves through the varied forms of art.',
         Description:
-            'Some of the art forms we provide are Musical Arts, Visual Arts, Holistic Arts, Culinary Arts, Martial Arts, Cultural Arts, Literary Arts, Performing Arts as well as the Art of Gardening and Sustainable Design. We do this by providing authentic, real life experiences that teach the 21st century skills of communication, literacy, leadership, and problem solving through technology and the arts.\n\nIt is our vision to provide an inspirational space and programming which embraces and embodies positive values through the arts, education, cultural, and community engagement. Providing programs that facilitate holistic healing, foster environmental sustainability, cultivate collaborative partnerships, and promote collective growth and unity within the community.',
+            'Some of the art forms we provide are Musical Arts, Visual Arts, Holistic Arts, Culinary Arts, Martial Arts, Cultural Arts, Literary Arts, Performing Arts as well as the Art of Gardening and Sustainable Design. We do this by providing authentic, real life experiences that teach the 21st century skills of communication, literacy, leadership, and problem solving through technology and the arts.\n\nIt is our vision to provide an inspirational space and programming which embraces and embodies positive values through the arts, education, cultural, and community engagement. Providing programs that facilitate holistic healing, foster environmental sustainability, cultivation collaborative partnerships, and promote collective growth and unity within the community.',
     },
     {
         Name: 'One Day at a Time',
@@ -20335,7 +20335,7 @@ exports.updatedOrganizations = [
         Mission:
             'Opera Philadelphia is committed to embracing innovation and developing opera for the 21st century. Our mission:\n\nDelivering outstanding productions of traditional and new repertoire that engage our public and propel our genre forward\nIdentifying extraordinary artists, both established and emerging, and provide opportunities for them to create their most imaginative and inspired work\nPresenting innovative programming relevant to the multi-cultural Philadelphia region that broadens and diversifies the opera audience',
         Description:
-            "Since 1975, Opera Philadelphia has been Philadelphia's professional opera company, performing at the historic Academy of Music, the Kimmel Center's contemporary and intimate Perelman Theater, and across the city during our new annual festival, O, launching in the fall of 2017. The Opera strives to deliver outstanding productions of both traditional and exciting new works that resonate with the community; to identify, cultivate, and cast rising young talent alongside internationally-acclaimed singers; and to present innovative programs that educate, broaden, deepen, and diversify the opera audience, both in Philadelphia and beyond.",
+            "Since 1975, Opera Philadelphia has been Philadelphia's professional opera company, performing at the historic Academy of Music, the Kimmel Center's contemporary and intimate Perelman Theater, and across the city during our new annual festival, O, launching in the fall of 2017. The Opera strives to deliver outstanding productions of both traditional and exciting new works that resonate with the community; to identify, cultivation, and cast rising young talent alongside internationally-acclaimed singers; and to present innovative programs that educate, broaden, deepen, and diversify the opera audience, both in Philadelphia and beyond.",
     },
     {
         Name: 'Opportunities Industrialization Center of America',
@@ -20816,7 +20816,7 @@ exports.updatedOrganizations = [
         Mission:
             'The Painted Bride Art Center brings artists, who push the boundaries of how we experience art, together with audiences and communities, in order to foster critical insight, and encourage playful exchange, open minds, and dialogue.',
         Description:
-            "Painted Bride Art Center brings together artists, audiences and communities to push the boundaries of how we create and experience art. We cultivate an environment for critical dialog and playful exchange to transform lives and communities.\n\nPainted Bride Art Center has presented music, dance, and theater, as well as visual arts exhibitions in its two galleries. The Bride engages artists in outreach and workshop activities to elicit deeper, more meaningful dialogue with audiences and communities; some examples include ongoing residencies, public gallery talks where visual artists discuss creative process, post-performance meet-and-greets, and in-school presentations for students between Kindergarten and 12th grade.\n\nDeriving its name from its original location'a former bridal shop on South Street'Painted Bride Art Center began as an effort to challenge modern assumptions about art and give every artist the platform they deserved. Today, the Bride is an innovative, internationally-lauded arts institution that remains strongly rooted in its mission and the needs of Philadelphia's creative communities.",
+            "Painted Bride Art Center brings together artists, audiences and communities to push the boundaries of how we create and experience art. We cultivation an environment for critical dialog and playful exchange to transform lives and communities.\n\nPainted Bride Art Center has presented music, dance, and theater, as well as visual arts exhibitions in its two galleries. The Bride engages artists in outreach and workshop activities to elicit deeper, more meaningful dialogue with audiences and communities; some examples include ongoing residencies, public gallery talks where visual artists discuss creative process, post-performance meet-and-greets, and in-school presentations for students between Kindergarten and 12th grade.\n\nDeriving its name from its original location'a former bridal shop on South Street'Painted Bride Art Center began as an effort to challenge modern assumptions about art and give every artist the platform they deserved. Today, the Bride is an innovative, internationally-lauded arts institution that remains strongly rooted in its mission and the needs of Philadelphia's creative communities.",
     },
     {
         Name: 'Pakistani New Life Church',
@@ -21326,7 +21326,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Design, Research, Architecture, City Planning, Preservation',
         Mission:
-            'PennPraxis supports design action and thought leadership to advance inclusion, innovation, and impact in communities that design doesn\'t typically serve. PennPraxis does projects that demonstrate the power of interdisciplinary design, art, planning, and heritage preservation to respond to the major challenges of the built and natural environments, and the communities that inhabit them. Our projects strengthen the University of Pennsylvania\'s Weitzman School of Design as a school focused on high social impact design. We create opportunities "beyond the market" to help our students develop agency in the world, and we cultivate diversity among the next generation of leaders.',
+            'PennPraxis supports design action and thought leadership to advance inclusion, innovation, and impact in communities that design doesn\'t typically serve. PennPraxis does projects that demonstrate the power of interdisciplinary design, art, planning, and heritage preservation to respond to the major challenges of the built and natural environments, and the communities that inhabit them. Our projects strengthen the University of Pennsylvania\'s Weitzman School of Design as a school focused on high social impact design. We create opportunities "beyond the market" to help our students develop agency in the world, and we cultivation diversity among the next generation of leaders.',
         Description:
             "As the center for applied research, outreach, and practice at the Weitzman School, PennPraxis provides opportunities for multi-disciplinary student and faculty collaboration through fee-for-service projects and money we raise to support learning through practice. We pursue projects that are in line with mission and practice areas, or brought in through our faculty collaborators, whose expertise and areas of focus are as diverse as they are vast. PennPraxis' work draws on the Weitzman School's five departments and programs (Architecture, Landscape Architecture, City & Regional Planning, Historic Preservation, and Fine Arts). \n\nEach and every project we take on includes collaboration with diverse voices and expertise, both within the University and the communities in which we work. We work in Philadelphia, the surrounding region, and in other cities/regions across the globe. Each project includes collaboration with Weitzman School faculty, and partnerships with community organizations/liaisons in the areas in which we are working, to make sure that local expertise is central to project development from beginning to end. We understand that expertise comes as much from lived experience as it does from traditional education and practice.",
     },
@@ -21946,7 +21946,7 @@ exports.updatedOrganizations = [
         Mission:
             'The Pennsylvania School for the Deaf educates students to succeed by recognizing and developing individual strengths, building confidence, collaborating with families and communities in a nurturing, dynamic, and language-rich environment steeped in cultural awareness of Deaf, Hearing, and worldwide diversity.',
         Description:
-            "Welcome to the  Pennsylvania School for the Deaf! We are a Pre-K to 12th grade school located in the Germantown section of Philadelphia. We wish to recognize the responsibility entrusted to us to educate the deaf and hard-of-hearing in Southern Pennsylvania. We value our place in history, and pledge to uphold the legacy as leaders in the field of Deaf Education.\n\nHere at PSD, we are committed to providing a quality education for our students with a challenging, interactive and integrated curriculum, which is aligned with the Pennsylvania Common Core Standards, and each student has an individualized education plan to ensure they stay on track with national standards. Teachers use a fully immersive, bilingual approach to ensure each student attains fluency in American Sign Language and English. We offer a wide range of extracurricular classes as well as leadership and involvement opportunities to supplement every child's personal development.\n\nWe cultivate a dynamic, language-rich environment, which serves as a positive community model for children with hearing loss, and instills a positive self image.\n\nCome join our vibrant community, and share in our legacy!",
+            "Welcome to the  Pennsylvania School for the Deaf! We are a Pre-K to 12th grade school located in the Germantown section of Philadelphia. We wish to recognize the responsibility entrusted to us to educate the deaf and hard-of-hearing in Southern Pennsylvania. We value our place in history, and pledge to uphold the legacy as leaders in the field of Deaf Education.\n\nHere at PSD, we are committed to providing a quality education for our students with a challenging, interactive and integrated curriculum, which is aligned with the Pennsylvania Common Core Standards, and each student has an individualized education plan to ensure they stay on track with national standards. Teachers use a fully immersive, bilingual approach to ensure each student attains fluency in American Sign Language and English. We offer a wide range of extracurricular classes as well as leadership and involvement opportunities to supplement every child's personal development.\n\nWe cultivation a dynamic, language-rich environment, which serves as a positive community model for children with hearing loss, and instills a positive self image.\n\nCome join our vibrant community, and share in our legacy!",
     },
     {
         Name: 'Pennsylvania Society for the Advancement of the Deaf',
@@ -23100,7 +23100,7 @@ exports.updatedOrganizations = [
         Mission:
             'The Philadelphia Dance Company (PHILADANCO) presents the highest quality of professional dance performance and improves the skills of emerging and professional dancers and choreographers in a nurturing environment, while increasing the appreciation of dance among its many communities.',
         Description:
-            "The Philadelphia Dance Company?(PHILADANCO!)?is a nonprofit organization that presents the highest quality of professional dance performance and cultivates the skills of emerging and professional dancers and choreographers in a nurturing environment, while increasing the appreciation of dance among its many communities. Across the nation and around the world, PHILADANCO! is celebrated for its innovation, creativity and preservation of predominantly African-American traditions in dance. \n\nWith its home-base on Philadanco Way in West Philadelphia, PHILADANCO!? provides one of the nation's most innovative and successful dance training programs. A myriad of company support systems and intensive trainings enable dancers to hone their talent and refine their technical skills. Often described as 'a brilliant mix of miracle of skill, energy and artistry,' 'fascinating and thrilling,' and performers with  'virtuoso  physicality,' ? PHILADANCO!? dancers are among the best in the world. \n\nPHILADANCO! ?is a company representing a history of 'first' accomplishments. Building on this company tradition,? PHILADANCO!? laid the groundwork for the founding of  the?International Association of Blacks in Dance?(IABD), which is a service organization that addresses the needs of the African American dance community in a supportive environment, and produces an annual conference and festival.",
+            "The Philadelphia Dance Company?(PHILADANCO!)?is a nonprofit organization that presents the highest quality of professional dance performance and cultivations the skills of emerging and professional dancers and choreographers in a nurturing environment, while increasing the appreciation of dance among its many communities. Across the nation and around the world, PHILADANCO! is celebrated for its innovation, creativity and preservation of predominantly African-American traditions in dance. \n\nWith its home-base on Philadanco Way in West Philadelphia, PHILADANCO!? provides one of the nation's most innovative and successful dance training programs. A myriad of company support systems and intensive trainings enable dancers to hone their talent and refine their technical skills. Often described as 'a brilliant mix of miracle of skill, energy and artistry,' 'fascinating and thrilling,' and performers with  'virtuoso  physicality,' ? PHILADANCO!? dancers are among the best in the world. \n\nPHILADANCO! ?is a company representing a history of 'first' accomplishments. Building on this company tradition,? PHILADANCO!? laid the groundwork for the founding of  the?International Association of Blacks in Dance?(IABD), which is a service organization that addresses the needs of the African American dance community in a supportive environment, and produces an annual conference and festival.",
     },
     {
         Name: 'Philadelphia Dance Projects',
@@ -24043,7 +24043,7 @@ exports.updatedOrganizations = [
         Mission:
             'Physicians for Social Responsibility (PSR) Pennsylvania promotes social responsibility by protecting health, the environment and communities through education, training, direct service, and advocacy.',
         Description:
-            "PSR Pennsylvania is a public health, 501c3 non-profit organization which fulfills its mission through programs focused on health and the environment and working with youth. Comprised of a variety of health professionals, PSR Pennsylvania is uniquely equipped to speak to threats posed to public health in our region.  Our program directors have cultivated programs that are innovative, cost-effective and offer services and a voice to our community and the region that simply would not exist otherwise. Indeed, while phrases like 'First, do no harm,' sound good, in reality the bottom line is often considered the most important measure of progress or success.  Our programs are preventive in nature and seek to address upstream problems that are difficult to solve later on.",
+            "PSR Pennsylvania is a public health, 501c3 non-profit organization which fulfills its mission through programs focused on health and the environment and working with youth. Comprised of a variety of health professionals, PSR Pennsylvania is uniquely equipped to speak to threats posed to public health in our region.  Our program directors have cultivationd programs that are innovative, cost-effective and offer services and a voice to our community and the region that simply would not exist otherwise. Indeed, while phrases like 'First, do no harm,' sound good, in reality the bottom line is often considered the most important measure of progress or success.  Our programs are preventive in nature and seek to address upstream problems that are difficult to solve later on.",
     },
     {
         Name: 'Philadelphia Police Foundation',
@@ -24661,7 +24661,7 @@ exports.updatedOrganizations = [
         Mission:
             'To create coordinated systems which promote the attainment of academic achievement, economic opportunity and personal success.',
         Description:
-            "The Philadelphia Youth Network (PYN) creates education and employment opportunities for youth and young adults. We believe every young person deserves the chance to cultivate their talents and to achieve their dreams.\n\nTo make more opportunities available to youth and young adults, we:\nBuild systemic solutions that close gaps in youth serving systems.\nSupport and train youth-serving organizations to deliver high quality programs that develop academic and career readiness skills.\nEngage employers and system leaders to ensure that today's young people will be prepared to join tomorrow's workforce.\nDesign comprehensive service networks to prepare youth for successful futures in school, work and life.",
+            "The Philadelphia Youth Network (PYN) creates education and employment opportunities for youth and young adults. We believe every young person deserves the chance to cultivation their talents and to achieve their dreams.\n\nTo make more opportunities available to youth and young adults, we:\nBuild systemic solutions that close gaps in youth serving systems.\nSupport and train youth-serving organizations to deliver high quality programs that develop academic and career readiness skills.\nEngage employers and system leaders to ensure that today's young people will be prepared to join tomorrow's workforce.\nDesign comprehensive service networks to prepare youth for successful futures in school, work and life.",
     },
     {
         Name: 'PYO Music Institute',
@@ -25362,7 +25362,7 @@ exports.updatedOrganizations = [
         Mission:
             'Play On Philly provides underserved children in Philadelphia a transformative music education experience that develops and inspires the behaviors and personal skills needed for a successful life.',
         Description:
-            'Play On Philly (POP) provides high-quality music education to students, who would typically lack access, as a vehicle for life skills and academic achievement. We provide 2 hours of music instruction and ensemble practice every day after school and over 25 performance opportunities throughout the year. Students range from Kindergarten to 12th grade and are loaned an orchestral instrument at no cost. POP programming has proven results: our students score ten points higher on standardized tests and have improved behavior and study skills. We cultivate musical excellence, lifelong skills, and confidence.',
+            'Play On Philly (POP) provides high-quality music education to students, who would typically lack access, as a vehicle for life skills and academic achievement. We provide 2 hours of music instruction and ensemble practice every day after school and over 25 performance opportunities throughout the year. Students range from Kindergarten to 12th grade and are loaned an orchestral instrument at no cost. POP programming has proven results: our students score ten points higher on standardized tests and have improved behavior and study skills. We cultivation musical excellence, lifelong skills, and confidence.',
     },
     {
         Name: 'PlayPenn',
@@ -26705,7 +26705,7 @@ exports.updatedOrganizations = [
         Mission:
             'Research for Action (RFA) seeks to use research as the basis for the improvement of educational opportunities and outcomes for traditionally underserved students. Our work is designed to strengthen public schools and postsecondary institutions; provide research-based recommendations to policymakers, practitioners and the public at the local, state and national levels; and enrich the civic and community dialogue about public education.',
         Description:
-            "RFA is a Philadelphia-based, nonprofit education research organization. It was founded in 1992 by Drs. Eva Gold and Jolley Bruce Christman with a commitment to conducting education research that explored the complexities of education reform initiatives in Philadelphia, and provided education stakeholders with common-sense research to inform their initiatives. During that time, RFA produced seminal research that shaped urban education initiatives locally and nationally. See our publications page for more.\n\nRFA has continued to build on that strong tradition. In 2009, RFA came under the direction of its first executive director, Dr. Kathleen Shaw. During her tenure, RFA has achieved four-fold growth; hired and cultivated high-level quantitative research capacity to complement RFA's existing qualitative expertise; competed successfully for large, multi-year projects with major national organizations and foundations; developed the Pennsylvania Clearinghouse for Education Research (PACER), an initiative designed to respond to emerging education debates and discussions with nonpartisan, rigorous research and analysis; and, in partnership with the School District of Philadelphia, the city's charter sector, and its three major research universities, launched the Philadelphia Education Research Consortium (PERC).",
+            "RFA is a Philadelphia-based, nonprofit education research organization. It was founded in 1992 by Drs. Eva Gold and Jolley Bruce Christman with a commitment to conducting education research that explored the complexities of education reform initiatives in Philadelphia, and provided education stakeholders with common-sense research to inform their initiatives. During that time, RFA produced seminal research that shaped urban education initiatives locally and nationally. See our publications page for more.\n\nRFA has continued to build on that strong tradition. In 2009, RFA came under the direction of its first executive director, Dr. Kathleen Shaw. During her tenure, RFA has achieved four-fold growth; hired and cultivationd high-level quantitative research capacity to complement RFA's existing qualitative expertise; competed successfully for large, multi-year projects with major national organizations and foundations; developed the Pennsylvania Clearinghouse for Education Research (PACER), an initiative designed to respond to emerging education debates and discussions with nonpartisan, rigorous research and analysis; and, in partnership with the School District of Philadelphia, the city's charter sector, and its three major research universities, launched the Philadelphia Education Research Consortium (PERC).",
     },
     {
         Name: 'Richard Allen Preparatory Charter',
@@ -27484,7 +27484,7 @@ exports.updatedOrganizations = [
         Mission:
             'Located in the Crane Arts Building, Second State Press is a nonprofit 501(c)3 communal printmaking workshop whose mission is to foster the development of ideas and innovation in printmaking by providing artists with a professional, affordable, and supportive workspace.',
         Description:
-            'SSP advances the growth of a sustainable printmaking community by offering professional facilities through membership, affordable communal workspace for emerging and mid-career artists, educational print programming and professional development opportunities.\n\nSecond State Press provides artists with a professional studio with presses, basic tools and inks, workspace for designing and executing prints, and flat files to store work and materials. By providing artists with the appropriate space and facilities, we are encouraging printmakers to explore and cultivate new work and engage in artistic dialogue with fellow peers in the Philadelphia arts community.',
+            'SSP advances the growth of a sustainable printmaking community by offering professional facilities through membership, affordable communal workspace for emerging and mid-career artists, educational print programming and professional development opportunities.\n\nSecond State Press provides artists with a professional studio with presses, basic tools and inks, workspace for designing and executing prints, and flat files to store work and materials. By providing artists with the appropriate space and facilities, we are encouraging printmakers to explore and cultivation new work and engage in artistic dialogue with fellow peers in the Philadelphia arts community.',
     },
     {
         Name: 'Self',
@@ -28101,7 +28101,7 @@ exports.updatedOrganizations = [
         Mission:
             "SHEAR's mission is to foster the study of the early republican period among professional historians, students, and the general public. It upholds the highest intellectual standards of the historical profession and encourages the broad diffusion of historical insights through all appropriate channels, including schools, museums, libraries, electronic media, public programming, archives, and publications.",
         Description:
-            "Established in 1977, the Society for Historians of the Early American Republic (SHEAR) is an association of scholars dedicated to exploring the events and the meaning of United States history between 1776 and 1861. SHEAR's mission is to foster the study of the early republican period among professional historians, students, and the general public. It upholds the highest intellectual standards of the historical profession and encourages the broad diffusion of historical insights through all appropriate channels, including schools, museums, libraries, electronic media, public programming, archives, and publications. SHEAR cherishes a democratic ethos in scholarship and cultivates close, respectful, and productive exchanges between serious scholars at every level of experience and recognition. SHEAR membership is open to all; most members are professional historians employed in colleges, universities, museums, and historical parks and agencies, as well as independent scholars and graduate students.",
+            "Established in 1977, the Society for Historians of the Early American Republic (SHEAR) is an association of scholars dedicated to exploring the events and the meaning of United States history between 1776 and 1861. SHEAR's mission is to foster the study of the early republican period among professional historians, students, and the general public. It upholds the highest intellectual standards of the historical profession and encourages the broad diffusion of historical insights through all appropriate channels, including schools, museums, libraries, electronic media, public programming, archives, and publications. SHEAR cherishes a democratic ethos in scholarship and cultivations close, respectful, and productive exchanges between serious scholars at every level of experience and recognition. SHEAR membership is open to all; most members are professional historians employed in colleges, universities, museums, and historical parks and agencies, as well as independent scholars and graduate students.",
     },
     {
         Name: 'Society for Industrial and Applied Mathematics',
@@ -28557,7 +28557,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Charter School',
         Mission:
-            'Southwest Leadership Academy Charter School (SLACS) will develop leaders by empowering students to change the factors that define their reality. Students will develop the leadership skills necessary to drive complete community rejuvenation in Southwest Philadelphia. In developing these skills, students will cultivate an array of leadership components that they can apply to community change on a global scale.',
+            'Southwest Leadership Academy Charter School (SLACS) will develop leaders by empowering students to change the factors that define their reality. Students will develop the leadership skills necessary to drive complete community rejuvenation in Southwest Philadelphia. In developing these skills, students will cultivation an array of leadership components that they can apply to community change on a global scale.',
         Description:
             'Southwest Leadership Academy seeks to give students the ability to change their environment through the use of a single gender, leadership embedded educational model. Founded in Southwest Philadelphia, a fundamental vision for the initial school was serving that specific community. Through the rigorous educational environment, the school ultimately seeks to invigorate the community with the core values of integrity, scholarship, courage, concern and leadership. Academically, SLA has consistently met the standards provided by the state, and in certain years exceeded the expectation.  This happens through four core elements:',
     },
@@ -29391,7 +29391,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Preschool, Affordable, Outdoor',
         Mission:
-            "Summit Children's Program is a community of families and staff working together to provide a unique care experience for families of all backgrounds and circumstances. We encourage creativity; we cultivate a sense of respect for the community and the environment; we celebrate diversity and we foster a lifelong love of learning.",
+            "Summit Children's Program is a community of families and staff working together to provide a unique care experience for families of all backgrounds and circumstances. We encourage creativity; we cultivation a sense of respect for the community and the environment; we celebrate diversity and we foster a lifelong love of learning.",
         Description:
             'SCP is a non-profit, outdoor education focused pre school education program providing high-quality affordable care to families throughout northwest Philadelphia in the Mt. Airy section of the city. \n\nSCP serves children from age 18 months through 5 years in our Early Childhood Education program.\n\nOur School-Age Classroom (SAC) provides before and after care to K-3rd grade students who attend C.W. Henry School from the first day of school until the end of the school year.',
     },
@@ -30414,7 +30414,7 @@ exports.updatedOrganizations = [
         Membership: 'https://www.cfeva.org/membership/artist',
         Keywords: 'Artists, Visual Arts, Career Development',
         Mission:
-            "With a mission to cultivate, nurture, and advance the careers of emerging visual artists while simultaneously expanding opportunities for the public to discover and connect with art, CFEVA's services are designed to: raise the profile of Philadelphia's professional artists, foster artistic experimentation and innovation, and showcase how vibrant artistic communities boost cultural tourism and foster economic development",
+            "With a mission to cultivation, nurture, and advance the careers of emerging visual artists while simultaneously expanding opportunities for the public to discover and connect with art, CFEVA's services are designed to: raise the profile of Philadelphia's professional artists, foster artistic experimentation and innovation, and showcase how vibrant artistic communities boost cultural tourism and foster economic development",
         Description:
             'Through fellowships, residencies, educational outreach, exhibitions, professional development, and city-wide events, CFEVA provides artists with the tangible resources needed to develop viable and sustainable careers.',
     },
@@ -30604,7 +30604,7 @@ exports.updatedOrganizations = [
         Mission:
             "The City School's mission is to train students' minds, disciple their hearts and bring light to the city'one child at a time. Since 1978, our commitment to this mission has guided us as we prepare students to thrive in school, in college, at home, and in all of life.",
         Description:
-            "The City School is a PK-12 Christian school in the heart of Philadelphia. We are a diverse community of learners, dreamers, influencers, artists, athletes, and scholars. We range the spectrum of race and ethnicity, culture, socio-economic background, academic ability, and faith traditions.  We are a family of families.\n\nWe believe who you learn with matters. \n\nThe City School is rare because of the way we have cultivated socio-economic diversity in our community. And that benefits your child. Half of our families earn beyond 200% of the federal poverty line. Half earn less. This is intentional'we are deliberate about cultivating a community where students learn alongside people unlike themselves. Learning in a diverse community prepares your child for a lifetime of building relationships with people with different experiences and perspectives.",
+            "The City School is a PK-12 Christian school in the heart of Philadelphia. We are a diverse community of learners, dreamers, influencers, artists, athletes, and scholars. We range the spectrum of race and ethnicity, culture, socio-economic background, academic ability, and faith traditions.  We are a family of families.\n\nWe believe who you learn with matters. \n\nThe City School is rare because of the way we have cultivationd socio-economic diversity in our community. And that benefits your child. Half of our families earn beyond 200% of the federal poverty line. Half earn less. This is intentional'we are deliberate about cultivating a community where students learn alongside people unlike themselves. Learning in a diverse community prepares your child for a lifetime of building relationships with people with different experiences and perspectives.",
     },
     {
         Name: 'The College of Physicians of Philadelphia',
@@ -30737,7 +30737,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Business Services, Entrepreneurship',
         Mission:
-            'Our mission is to cultivate and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
+            'Our mission is to cultivation and invest in minority entrepreneurs to inspire working together for economic growth in communities.',
         Description:
             "The Enterprise Center has a rich and diverse practice supporting minority entrepreneurs and under-resourced communities spanning more than three decades. Our clients and partners trust us to advise and deliver on transformative economic development connected to minority business growth cycles and community wealth-building initiatives.\nWe invest in people and projects at the heart of business and communities in the belief that aligning capital with expertise is the strongest pathway to economic wealth and prosperity.\n\nWe operate a dedicated team model. Each team functions as an entrepreneurial group, managing a strategy that works with clients where they are, coordinates with partners, and invests capital where needed. Teams are responsible for their goals and outcomes though the entire project and investment life cycle and are directly accountable for performance. Each team is led by an executive overseeing talent responsible for working with our clients, partners, and communities. This proven approach builds trust and alignment with clients' needs and community objectives.",
     },
@@ -30981,7 +30981,7 @@ exports.updatedOrganizations = [
         Mission:
             'To provide inclusive social programs where children, teens, and young adults, both with and without disabilities, can build friendships.',
         Description:
-            'The Philly Friendship Circle connects teens and young adults to youth with special needs and their families through a full range of social offerings. Inspired by the power of genuine friendships, our youth cultivate understanding, kindness and responsibility while ensuring a caring and inclusive community.',
+            'The Philly Friendship Circle connects teens and young adults to youth with special needs and their families through a full range of social offerings. Inspired by the power of genuine friendships, our youth cultivation understanding, kindness and responsibility while ensuring a caring and inclusive community.',
     },
     {
         Name: 'The Childhood Resilience Foundation',
@@ -31651,7 +31651,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Performing Arts, Ballet, Dance',
         Mission:
-            "Pennsylvania Ballet's mission is to cultivate an enduring appreciation for dance through world-class performances, to inspire the next generation with exceptional education and professional training, and to connect with the community through meaningful and inclusive programming.",
+            "Pennsylvania Ballet's mission is to cultivation an enduring appreciation for dance through world-class performances, to inspire the next generation with exceptional education and professional training, and to connect with the community through meaningful and inclusive programming.",
         Description:
             "The company, founded in 1963 by George Balanchine prot'g'e, Barbara Weisberger, was established through a Ford Foundation initiative to develop regional professional dance companies. Pennsylvania Ballet performed in the national spotlight for the first time in 1968 at New York City Center. This highly successful debut led to the company's first performance of The Nutcracker (with a second act by George Balanchine) in 1968, as well as appearances on PBS's acclaimed 'Dance in America' series in 1977, and a decade of touring dates, including the company's Kennedy Center debut in 1979.\n\nIn 1982, Nederland Dans Theatre Co-Founder Benjamin Harkarvy was appointed artistic director of Pennsylvania Ballet. With strong European roots, Mr. Harkarvy expanded Pennsylvania Ballet's repertoire by introducing European contemporary choreography. Constantly pushing the boundaries and redefining standards, he knew how to draw people's attention, taking risks on young new choreographers.",
     },
@@ -32813,7 +32813,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Social Justice, Training, Activists, Organizers, Capacity Building',
         Mission:
-            'Training for Change cultivates, practices, and shares powerful training and group facilitation skills to support social justice movements.',
+            'Training for Change cultivations, practices, and shares powerful training and group facilitation skills to support social justice movements.',
         Description:
             "Training for Change is a training and capacity building organization for activists and organizers. We believe strong training and group facilitation is vital to movement building for social justice and radical change.\n\nSince 1992, we've supported groups taking direct action, building strong teams and organizations, and working at the grassroots. We train thousands of people each year in North America, and also internationally, across issues and sectors ' from campaign strategy retreats for anti-gentrification community groups, facilitation training for union leaders, to de-escalation skills for immigrant rights groups resisting deportation.",
     },
@@ -33460,7 +33460,7 @@ exports.updatedOrganizations = [
         Mission:
             "To accelerate commercialization of the region's most promising science and technology innovations, thereby promoting technology-based economic development, collaboration, education and the continuing redevelopment of the UCity Square campus in University City.",
         Description:
-            "We help to commercialize promising technology, convene people to inspire action, and cultivate talent for a 21st century workforce.\n\nIn the early 1960s, a group of leading academic and research institutions joined forces to help researchers and entrepreneurs convene, collaborate, and advance science and technology. In 1963, the University City Science Center, an independent non-profit organization, was born.\n\nWe've been at the forefront of the innovation economy ever since'bringing together academia, industry and capital'and as the needs of our community have evolved over the last 55+ years, so too have our offerings.\n\nBut our objective has remained constant: to help bright ideas become businesses and nurture a STEM workforce to support our 21st century economy'all while serving as a catalyst for economic growth in our region.",
+            "We help to commercialize promising technology, convene people to inspire action, and cultivation talent for a 21st century workforce.\n\nIn the early 1960s, a group of leading academic and research institutions joined forces to help researchers and entrepreneurs convene, collaborate, and advance science and technology. In 1963, the University City Science Center, an independent non-profit organization, was born.\n\nWe've been at the forefront of the innovation economy ever since'bringing together academia, industry and capital'and as the needs of our community have evolved over the last 55+ years, so too have our offerings.\n\nBut our objective has remained constant: to help bright ideas become businesses and nurture a STEM workforce to support our 21st century economy'all while serving as a catalyst for economic growth in our region.",
     },
     {
         Name: 'University of Pennsylvania Press',
@@ -34699,7 +34699,7 @@ exports.updatedOrganizations = [
         Mission:
             'Our mission is to raise funds, engage in activities, and coordinate events that will support the education, growth, and development of our children.',
         Description:
-            'William M. Meredith is a caring and collaborative community where students are empowered to own their educational experience through exploration and innovation. We cultivate reciprocal relationships between families, students, faculty, and staff. We encourage and foster a growth mindset for all members of our learning community.',
+            'William M. Meredith is a caring and collaborative community where students are empowered to own their educational experience through exploration and innovation. We cultivation reciprocal relationships between families, students, faculty, and staff. We encourage and foster a growth mindset for all members of our learning community.',
     },
     {
         Name: 'William Way LGBT Community Center',
@@ -35048,7 +35048,7 @@ exports.updatedOrganizations = [
         Mission:
             'To inspire and mobilize the community to invest in organizations and leaders that will advance the rights of and opportunities for women and girls, and achieve gender equality for all.',
         Description:
-            "For the past 40 years, Women's Way has been inspiring, mobilizing, and uniting organizations, generations, and individuals to cultivate high-impact philanthropy across the Greater Philadelphia region to accomplish gender equality for all.",
+            "For the past 40 years, Women's Way has been inspiring, mobilizing, and uniting organizations, generations, and individuals to cultivation high-impact philanthropy across the Greater Philadelphia region to accomplish gender equality for all.",
     },
     {
         Name: 'Woodmere Art Museum',
@@ -36397,7 +36397,7 @@ exports.updatedOrganizations = [
         Mission:
             "The garden's mission is to improve community health in three key ways:\nPhysically: By increasing access to fresh, organic produce and providing education in gardening techniques, nutrition, health, and food preparation.\nSocially: By cultivating a green space open to all where neighbors can relax, learn, and grow food together.\nEnvironmentally: By developing a sustainable local food system and recapturing food waste.",
         Description:
-            'Brewerytown Garden cultivates a productive, beautiful, and sustainable community garden using organic and environmentally friendly techniques. We create an environment where all generations and cultures work alongside one another, support and learn from one another, and enjoy events and celebrations together. We strive to introduce children to the joy of gardening, integrate the arts and foster creativity in all our programs, and above all promote gardening as a means of achieving good health and well-being.',
+            'Brewerytown Garden cultivations a productive, beautiful, and sustainable community garden using organic and environmentally friendly techniques. We create an environment where all generations and cultures work alongside one another, support and learn from one another, and enjoy events and celebrations together. We strive to introduce children to the joy of gardening, integrate the arts and foster creativity in all our programs, and above all promote gardening as a means of achieving good health and well-being.',
     },
     {
         Name: 'Broken Wings Literacy Center',
@@ -41080,7 +41080,7 @@ exports.updatedOrganizations = [
         Mission:
             'Sarva is a Sanskrit word, known in the yoga community to mean all, every, whole, or complete.  The mission of Sarva Y.O.G.A. Foundation or Sarva Youth Obtaining Great Achievements Foundation, is to empower ALL children through yoga... one pose at a time!',
         Description:
-            'We are a IRS registered 501 (c)(3) non-profit organization and we proudly offer FREE yoga classes and nutrition services for children in underserved schools nationwide! \n \nDriven by the need for social change, we have cultivated our vision to offer yoga as a tool to create empowered, intelligent, confident, creative, inspired youth leading the world towards sociocultural evolution! \n\nThe Sarva Y.O.G.A. Foundation program meets and exceeds U.S. national standards for quality Physical Education. Recognizing the effects of the obesity epidemic on children and the alarming lack of funding for physical education in public and charter schools, we have developed an easy to implement and tremendously beneficial model to keep kids active and healthy.\n\nIn addition to the multitude of physical benefits, students will experience greater awareness of their bodies and minds, increased compassion for themselves and others, improved self-confidence and self-control, and a greater ability to be focused on the present moment and the task or situation at hand. The benefits will extend beyond the individual students, into the classroom and entire school, and then out into the world.',
+            'We are a IRS registered 501 (c)(3) non-profit organization and we proudly offer FREE yoga classes and nutrition services for children in underserved schools nationwide! \n \nDriven by the need for social change, we have cultivationd our vision to offer yoga as a tool to create empowered, intelligent, confident, creative, inspired youth leading the world towards sociocultural evolution! \n\nThe Sarva Y.O.G.A. Foundation program meets and exceeds U.S. national standards for quality Physical Education. Recognizing the effects of the obesity epidemic on children and the alarming lack of funding for physical education in public and charter schools, we have developed an easy to implement and tremendously beneficial model to keep kids active and healthy.\n\nIn addition to the multitude of physical benefits, students will experience greater awareness of their bodies and minds, increased compassion for themselves and others, improved self-confidence and self-control, and a greater ability to be focused on the present moment and the task or situation at hand. The benefits will extend beyond the individual students, into the classroom and entire school, and then out into the world.',
     },
     {
         Name: 'Scene-N-Action Productions Company',
@@ -41105,7 +41105,7 @@ exports.updatedOrganizations = [
         Membership: '',
         Keywords: 'Performing Arts',
         Mission:
-            'As a nonprofit organization, our mission is to use the performing arts as a tool to cultivate talent, creativity and self enrichment: while simultaneously creating an inclusive community for youth both in-house and through outreach.',
+            'As a nonprofit organization, our mission is to use the performing arts as a tool to cultivation talent, creativity and self enrichment: while simultaneously creating an inclusive community for youth both in-house and through outreach.',
         Description: '',
     },
     {
@@ -43926,7 +43926,7 @@ exports.updatedOrganizations = [
         Keywords: '',
         Mission: '',
         Description:
-            'Organizing neighbors to cultivate a healthy, thriving community! Bordered by Lehigh, Allegheny, Front and Kensington.\nWe meet the first Thursday of every month at 6:30-7:30pm at the Kensington Storefront: 2774 Kensington Ave, Philadelphia, PA 19134',
+            'Organizing neighbors to cultivation a healthy, thriving community! Bordered by Lehigh, Allegheny, Front and Kensington.\nWe meet the first Thursday of every month at 6:30-7:30pm at the Kensington Storefront: 2774 Kensington Ave, Philadelphia, PA 19134',
     },
     {
         Name: 'Logan Square Neighborhood Association',
@@ -44749,7 +44749,7 @@ exports.updatedOrganizations = [
         Mission:
             'As an association, it is our intention to build community and ensure our neighborhood is a safe, vibrant, and inclusive environment for all.',
         Description:
-            'As an association we focus on:\nCommunity Building - Connecting neighbors with one another to cultivate a thriving community.\n\nHistoric Preservation - Preserving the unique character and heritage of Germantown.\n\nCity Connections - Cooperating with other similar organizations in the City of Philadelphia.\n\nCommunity Development - Providing a medium for identifying and developing community interests.',
+            'As an association we focus on:\nCommunity Building - Connecting neighbors with one another to cultivation a thriving community.\n\nHistoric Preservation - Preserving the unique character and heritage of Germantown.\n\nCity Connections - Cooperating with other similar organizations in the City of Philadelphia.\n\nCommunity Development - Providing a medium for identifying and developing community interests.',
     },
     {
         Name: 'West Philadelphians for Progressive Planning & Preservation',

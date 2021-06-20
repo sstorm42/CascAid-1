@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import Avatar from 'react-avatar';
+import { MessageImageModalRender } from '../form_template/image-modal-render';
 import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
 import { OptionButtonRender, SendButtonRender, SendMessageButtonRender } from '../../components/form_template/buttons-render';
 import moment from 'moment';
-import MessageForm from './message-form';
+
 const MessageTextRender = (text) => {
     const textArray = text.split('\n');
     return textArray.map((text, i) => {
@@ -16,26 +17,7 @@ const MessageTextRender = (text) => {
         );
     });
 };
-const MessageImageRender = (images) => {
-    // console.log('🚀 ~ file: conversation-details.js ~ line 20 ~ MessageImageRender ~ images', images);
-    return (
-        <Row>
-            <Col>
-                {images.map((image, i) => {
-                    return (
-                        <Image
-                            key={i}
-                            src={image}
-                            style={{ height: '100px', width: '100px', resizeMode: 'contain', backgroundColor: 'white' }}
-                            thumbnail
-                            square
-                        />
-                    );
-                })}
-            </Col>
-        </Row>
-    );
-};
+
 const MessageAttachmentRender = (attachments) => {
     return (
         <Row>
@@ -60,11 +42,38 @@ const AlwaysScrollToBottom = () => {
     return <div ref={elementRef} />;
 };
 const ThreadDetails = (props) => {
+    const [imageModal, setImageModal] = useState(false);
+    const [selectedImage, setSelectedImage] = useState('');
     const messagesEnd = React.createRef();
     const conversation = props.conversation;
     const members = conversation.members;
     const messages = conversation.messages;
     const userId = props.userId;
+
+    const MessageImageRender = (images) => {
+        return (
+            <Row>
+                <Col>
+                    {images.map((image, i) => {
+                        return (
+                            <Image
+                                onClick={() => {
+                                    setSelectedImage(image);
+                                    setImageModal(true);
+                                }}
+                                className="special-btn"
+                                key={i}
+                                src={image}
+                                style={{ height: '100px', width: '100px', resizeMode: 'contain', backgroundColor: 'white' }}
+                                thumbnail
+                                square
+                            />
+                        );
+                    })}
+                </Col>
+            </Row>
+        );
+    };
 
     if (messages && messages.length > 0) {
         let memberObject = {};
@@ -75,6 +84,7 @@ const ThreadDetails = (props) => {
             <>
                 {' '}
                 <Container className="conversation-details">
+                    <MessageImageModalRender imageModal={imageModal} setImageModal={setImageModal} image={selectedImage} />
                     {messages.map((message, i) => {
                         // console.log(message.attachments);
                         return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Image, Button } from 'react-bootstrap';
 import { GrDocumentDownload } from 'react-icons/gr';
 import moment from 'moment';
-const ImageModalRender = (props) => {
+export const PostImageModalRender = (props) => {
     const imageDetailsModal = props.imageDetailsModal;
     const image = props.image;
     if (image && image.images && image.images.path) {
@@ -55,4 +55,34 @@ const ImageModalRender = (props) => {
     } else return <></>;
 };
 
-export default ImageModalRender;
+export const MessageImageModalRender = (props) => {
+    const image = props.image;
+    const imageModal = props.imageModal;
+    const setImageModal = props.setImageModal;
+    if (image) {
+        return (
+            <Modal
+                show={imageModal}
+                size="xl"
+                style={{ zIndex: 10000 }}
+                onHide={() => {
+                    setImageModal(false);
+                }}
+                aria-labelledby="example-modal-sizes-title-lg"
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="example-modal-sizes-title-lg">Image</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Row>
+                        <Col sm={1}></Col>
+                        <Col sm={10}>
+                            <Image src={image} width={'100%'} />
+                        </Col>
+                        <Col sm={1}></Col>
+                    </Row>
+                </Modal.Body>
+            </Modal>
+        );
+    } else return <></>;
+};

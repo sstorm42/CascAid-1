@@ -7,7 +7,7 @@ import { getAllEndorsees, endorseUser, cancelEndorseUser } from '../../actions/e
 import { getAllUsers } from '../../actions/user-action';
 import { getAllOrganizationTypes } from '../../actions/organization-type-action';
 import SearchMenu from '../../components/search/search-menu';
-import FilterOrganization from '../../components/search/filter-organization';
+import OrganizationFilter from '../../components/search/organization-filters';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
 import OrganizationMapView from '../../components/organization/organization-map-view';
@@ -147,7 +147,7 @@ const SearchOrganization = (props) => {
                     <Col lg={4}>
                         <SearchMenu selected="organization" />
                         <hr />
-                        <FilterOrganization
+                        <OrganizationFilter
                             changeFilter={changeFilter}
                             resetFilter={resetFilter}
                             handleOnApplyFilter={handleOnApplyFilter}

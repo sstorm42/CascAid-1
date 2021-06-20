@@ -852,3 +852,63 @@ exports.getAllUsersName = async (req, res) => {
         return res.status(500).send({ success: false, message: error.message });
     }
 };
+
+exports.getAllIndividuals = async (req, res) => {
+    try {
+        // Getting all query values
+        const query = req.query;
+        console.log('🚀 ~ file: user-controller.js ~ line 860 ~ exports.getAllIndividuals= ~ query', query);
+
+        const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
+        const skills = query.skills ? JSON.parse(query.skills) : [];
+        const name = query.name ? JSON.parse(query.name) : '';
+        const onlyLookingForVolunteering = query.onlyLookingForVolunteering
+            ? JSON.parse(query.onlyLookingForVolunteering)
+            : '';
+        const onlyLookingForProject = query.onlyLookingForProject ? JSON.parse(query.onlyLookingForProject) : '';
+        const onlyLookingForMembership = query.onlyLookingForMembership
+            ? JSON.parse(query.onlyLookingForMembership)
+            : '';
+
+        // Converting query values into query string
+        let match = {};
+        let nameMatch = {};
+        match['userType'] = 'individual';
+        if (impactAreas && impactAreas.length > 0) {
+            match['involvement.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
+        }
+        if (skills && skills.length > 0) {
+            match['basicInfo.skills'] = { $in: skills.map((skill) => ObjectId(skill)) };
+        }
+        if (onlyLookingForVolunteering) {
+            match['involvement.lookingForVolunteeringOpportunity'] = onlyLookingForVolunteering;
+        }
+        if (onlyLookingForProject) {
+            match['involvement.lookingForProject'] = onlyLookingForProject;
+        }
+        if (onlyLookingForMembership) {
+            match['involvement.lookingForMembership'] = onlyLookingForMembership;
+        }
+        if (name) {
+            // match['basicInfo.name'] = { $regex: name, $options: 'i' };
+            nameMatch = {
+                $or: [
+                    { 'basicInfo.firstName': { $regex: name, $options: 'i' } },
+                    { 'basicInfo.lastName': { $regex: name, $options: 'i' } },
+                ],
+            };
+        }
+        // Adding all LOOK-UPS
+        const lookUps = [LOOKUPS.user_individual_impactAreas, LOOKUPS.user_skills];
+
+        let aggregateOptions = [];
+        aggregateOptions.push({ $match: { $and: [nameMatch, match] } }, ...lookUps);
+
+        const users = await User.aggregate(aggregateOptions);
+
+        if (users) return res.status(200).send({ ...UserResponse.UserFound, users });
+        else return res.status(404).send(UserResponse.UserNotFound);
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};

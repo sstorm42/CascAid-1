@@ -26,6 +26,7 @@ user.put('/:userId/service-info', allowIfLoggedIn, grantAccess('update', 'user')
 user.put('/:userId/internal-link', allowIfLoggedIn, grantAccess('update', 'user'), UserController.setInternalLink);
 
 user.get('/', allowIfLoggedIn, grantAccess('read-public', 'user'), UserController.getAll);
+user.get('/individual', allowIfLoggedIn, UserController.getAllIndividuals);
 user.get('/:userId/public-info', allowIfLoggedIn, grantAccess('read-public', 'user'), UserController.getPublicInfo);
 
 user.get('/:userId/suggestions', allowIfLoggedIn, UserController.getAllSuggestions);

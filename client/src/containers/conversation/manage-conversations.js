@@ -4,6 +4,7 @@ import ConversationList from '../../components/conversation/conversation-list';
 import { connect } from 'react-redux';
 import * as RoutePaths from '../../constants/route-paths';
 import ConversationDetails from '../../components/conversation/conversation-details';
+import { FileMaxSizeErrorModal } from '../../components/conversation/conversation-warnings';
 import {
     getAllConversationsByUser,
     getConversation,
@@ -14,7 +15,7 @@ import {
     removeAllMessagesOnLS,
 } from '../../actions/conversation-action';
 import { serverAddress } from '../../constants/api-paths';
-import MessageForm from '../../components/message/message-form';
+import MessageForm from '../../components/conversation/message-form';
 import useSound from 'use-sound';
 import openSocket from 'socket.io-client';
 
@@ -24,6 +25,7 @@ const Conversations = (props) => {
     const [images, setImages] = useState([]);
     const [attachments, setAttachments] = useState([]);
     const [userId, setUserId] = useState('');
+    const [fileSizeErrorModal, setFileSizeErrorModal] = useState(false);
     useEffect(() => {
         const user = props.auth.user;
         if (user && user._id) {
@@ -51,19 +53,36 @@ const Conversations = (props) => {
         }
     }, [props.match.params.conversationId]);
     const onMessageSubmit = (text) => {
-        props.dispatch(
-            setMessage({
-                senderId: userId,
-                conversationId: props.match.params.conversationId,
-                text,
-                images,
-                attachments,
-            }),
-        );
-        setMessageText('');
-        setImages([]);
-        setAttachments([]);
-        setMessageTextOnLS(props.match.params.conversationId, '');
+        let imagesSize = 0;
+        let attachmentsSize = 0;
+        for (let i = 0; i < images.length; i++) {
+            imagesSize += images[i].length;
+        }
+        imagesSize = imagesSize * 0.75;
+
+        for (let i = 0; i < attachments.length; i++) {
+            attachmentsSize += attachments[i].length;
+        }
+        attachmentsSize = attachmentsSize * 0.75;
+        const totalSize = imagesSize + attachmentsSize;
+        if (totalSize > 25 * 1024 * 1024) {
+            // setFileSizeErrorModal(true);
+            alert('Maximum 25 MB File can be send at a time.');
+        } else {
+            props.dispatch(
+                setMessage({
+                    senderId: userId,
+                    conversationId: props.match.params.conversationId,
+                    text,
+                    images,
+                    attachments,
+                }),
+            );
+            setMessageText('');
+            setImages([]);
+            setAttachments([]);
+            setMessageTextOnLS(props.match.params.conversationId, '');
+        }
     };
     const handleGoToConversationDetails = (conversationId) => {
         setMessageTextOnLS(props.match.params.conversationId, messageText);
@@ -72,6 +91,7 @@ const Conversations = (props) => {
     };
     return (
         <Container className="parent-page">
+            <FileMaxSizeErrorModal show={fileSizeErrorModal} setShow={setFileSizeErrorModal} />
             <Row>
                 <Col>
                     <label>

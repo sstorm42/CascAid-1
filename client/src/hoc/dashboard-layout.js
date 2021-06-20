@@ -7,7 +7,8 @@ import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { withRouter } from 'react-router-dom';
 import { FaHome, FaSearch, FaConnectdevelop, FaCalendarAlt, FaUserCog, FaEnvelope, FaNewspaper } from 'react-icons/fa';
-
+import { CgUserList } from 'react-icons/cg';
+import { FiDisc } from 'react-icons/fi';
 import * as RoutePath from '../constants/route-paths';
 class DashboardLayout extends Component {
     individualSideNav = () => {
@@ -96,6 +97,18 @@ class DashboardLayout extends Component {
                             <FaSearch size={24} />
                         </NavIcon>
                         <NavText>Discover</NavText>
+                    </NavItem>
+                    <NavItem eventKey={RoutePath.individualSearchPage}>
+                        <NavIcon>
+                            <FiDisc size={24} />
+                        </NavIcon>
+                        <NavText>Prospect</NavText>
+                    </NavItem>
+                    <NavItem eventKey={RoutePath.cultivationManagePage}>
+                        <NavIcon>
+                            <CgUserList size={24} />
+                        </NavIcon>
+                        <NavText>Cultivate List</NavText>
                     </NavItem>
 
                     <NavItem eventKey={RoutePath.communityFollowerListPage}>

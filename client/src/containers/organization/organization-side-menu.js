@@ -20,6 +20,7 @@ const OrganizationDetails = (props) => {
         props.dispatch(checkIfEndorses(user._id, userId));
     };
     useEffect(() => {
+        alert('DETAILS');
         getInitialInfo();
     }, [props.auth, props.match.params.userId]);
     useEffect(() => {

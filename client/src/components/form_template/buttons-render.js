@@ -7,12 +7,12 @@ import { BiDetail, BiDotsVertical, BiImageAdd } from 'react-icons/bi';
 import { IoMailUnreadOutline } from 'react-icons/io5';
 import { VscMailRead } from 'react-icons/vsc';
 import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
-import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend } from 'react-icons/ai';
+import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend, AiOutlinePlus } from 'react-icons/ai';
 import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/ri';
 import { BsCardList, BsPaperclip } from 'react-icons/bs';
 import { TiThList } from 'react-icons/ti';
 import { ImCross } from 'react-icons/im';
-
+import { CgUserAdd, CgUserRemove } from 'react-icons/cg';
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
         {props.title ? props.title : 'NA'}
@@ -361,5 +361,29 @@ export const OptionButtonRender = (props) => {
         //         <Dropdown.Item size="sm">Delete Conversation</Dropdown.Item>
         //     </Dropdown.Menu>
         // </Dropdown>
+    );
+};
+
+export const AddUserToCultivation = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <CgUserAdd /> {props.buttonTitle}
+        </Button>
+    );
+};
+
+export const RemoveUserFromCultivation = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <CgUserRemove /> {props.buttonTitle}
+        </Button>
+    );
+};
+
+export const AddButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-success" {...props}>
+            <AiOutlinePlus /> {props.buttonTitle}
+        </Button>
     );
 };

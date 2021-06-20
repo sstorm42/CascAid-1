@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardColumns, Badge, Row, Col } from 'react-bootstrap';
 import { defaultIndividualProfilePicture } from '../../constants/default-images';
-
+import { AddUserToCultivation } from '../form_template/buttons-render';
 const IndividualListView = (props) => {
     const allIndividuals = props.allIndividuals;
-
+    const showCultivationListModal = props.showCultivationListModal;
     const descriptionRender = (description) => {
         if (description) {
             if (description.length < 101) return description;
@@ -78,7 +78,14 @@ const IndividualListView = (props) => {
                                         <></>
                                     )}
                                 </Card.Body>
-                                <Card.Footer></Card.Footer>
+                                <Card.Footer>
+                                    <AddUserToCultivation
+                                        buttonTitle="Add To Cultivation List"
+                                        onClick={() => {
+                                            showCultivationListModal(ind._id);
+                                        }}
+                                    />
+                                </Card.Footer>
                             </Card>
                         );
                     }

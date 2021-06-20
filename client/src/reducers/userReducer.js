@@ -8,6 +8,7 @@ const initialState = {
 
     getUserPublicInfo: {},
     getAllUsers: {},
+    getAllIndividuals: {},
     getAllSuggestedUsers: {},
 
     setBasicInfo: {},
@@ -31,6 +32,8 @@ const UserReducer = (state = initialState, action) => {
             return { ...state, getInternalLink: action.payload };
         case Types.GET_ALL_USERS:
             return { ...state, getAllUsers: action.payload };
+        case Types.GET_ALL_INDIVIDUALS:
+            return { ...state, getAllIndividuals: action.payload };
         case Types.GET_USER_PUBLIC_INFO:
             return { ...state, getUserPublicInfo: action.payload };
 

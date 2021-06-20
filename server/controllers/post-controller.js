@@ -14,6 +14,8 @@ const NotificationResponse = require('../responses/notification-response');
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
 const { posts } = require('../static_data/sample-posts.js');
+const { SampleCalenderPosts } = require('../static_data/sample-calender-posts');
+const { updatedPosts } = require('../static_data/impacts-20-06');
 exports.createOne = async (req, res) => {
     try {
         let post = req.body;
@@ -568,6 +570,69 @@ exports.getAllImages = async (req, res) => {
             { $project: PROJECTS.post_get_all_images },
         ]);
         return res.status(200).send({ success: true, message: 'All found images', images: images });
+    } catch (error) {
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+
+exports.seedCalenderPosts = async (req, res) => {
+    try {
+        const posts = SampleCalenderPosts;
+        for (let i = 0; i < posts.length; i++) {
+            const post = posts[i];
+            if (post.startDateTime > post.endDateTime) {
+                post.creatorId = ObjectId(post.creatorId);
+                let temp = post.startDateTime;
+                post.startDateTime = post.endDateTime;
+
+                post.endDateTime = post.startDateTime;
+                let createdPost = new Post(post);
+                await createdPost.save();
+            }
+        }
+        return res.status(200).send({ success: true });
+    } catch (error) {
+        console.log(error.message);
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+
+exports.seedUpdatedPosts = async (req, res) => {
+    try {
+        const ttl = updatedPosts.length;
+        let didntfound = [];
+        const users = await User.find({});
+        let userObject = {};
+        for (let i = 0; i < users.length; i++) {
+            userObject[users[i].email] = users[i]._id;
+        }
+        for (let i = 0; i < ttl; i++) {
+            if (
+                ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'].includes(
+                    updatedPosts[i].PostType,
+                )
+            ) {
+                let post_ = new Post({
+                    title: updatedPosts[i].Title,
+                    description: updatedPosts[i].Description,
+                    postType: updatedPosts[i].PostType,
+                    creatorId: userObject[updatedPosts[i].OrganizationEmail.toLowerCase()],
+                    postURL: updatedPosts[i].URL,
+                    contact: updatedPosts[i].Contact,
+                    // topNeed: updatedPosts[i].TopNeed,
+                    keywords: updatedPosts[i].Keyword.split(', '),
+                    isActive: true,
+                    isDeleted: false,
+                });
+                const createdPost = await post_.save();
+                if (!createdPost) {
+                    return res.status(401).send({ success: false, post_ });
+                }
+            } else {
+                didntfound.push(updatedPosts[i]);
+            }
+        }
+        return res.status(200).send({ success: true, ttl: didntfound.length, didntfound });
     } catch (error) {
         return res.status(501).send({ success: false, message: error.message });
     }

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
-import EventListView from '../../components/event/event-card-view';
+import PostsCardView from '../../components/post/post-card-view';
 import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
 import { getAllPostsByFilter } from '../../actions/post-action';
-import EventMapView from '../../components/event/event-map-view';
+import PostsMapView from '../../components/post/post-map-view';
 import SearchMenu from '../../components/search/search-menu';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
@@ -11,7 +11,7 @@ import Select from 'react-select';
 import Pagination from 'react-js-pagination';
 import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
-import FilterEvent from '../../components/search/filter-event';
+import PostFilter from '../../components/search/post-filters';
 import { allSearchablePostTypes } from '../../constants/post-types';
 import { postDetailsPage } from '../../constants/route-paths';
 import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
@@ -62,7 +62,6 @@ const SearchCommunityActivity = (props) => {
         });
     }, []);
     const changeFilter = (key, value) => {
-        console.log('🚀 ~ file: search-event.js ~ line 49 ~ changeFilter ~ key, value', key, value);
         let filter_ = filter;
         filter[key] = value;
 
@@ -149,9 +148,9 @@ const SearchCommunityActivity = (props) => {
         <Container>
             <Row className="parent-page">
                 <Col lg={4}>
-                    <SearchMenu selected="event" />
+                    <SearchMenu selected="community-activity" />
                     <hr />
-                    <FilterEvent
+                    <PostFilter
                         changeFilter={changeFilter}
                         resetFilter={resetFilter}
                         handleOnApplyFilter={handleOnApplyFilter}
@@ -188,15 +187,13 @@ const SearchCommunityActivity = (props) => {
                                 linkClass="page-link"
                                 activePage={activePage}
                                 itemsCountPerPage={30}
-                                // totalItemsCount={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.length : 0}
                                 totalItemsCount={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts.length : 0}
                                 pageRangeDisplayed={5}
                                 onChange={(page) => {
                                     setActivePage(page);
                                 }}
                             />
-                            <EventListView
-                                // allEvents={props.getAllEventsResponse.success ? props.getAllEventsResponse.allEvents.slice((activePage - 1) * 30, activePage * 30 - 1) : []}
+                            <PostsCardView
                                 allPosts={
                                     props.getAllPostsResponse.success
                                         ? props.getAllPostsResponse.allPosts.slice((activePage - 1) * 30, activePage * 30 - 1)
@@ -218,7 +215,7 @@ const SearchCommunityActivity = (props) => {
                         </>
                     )}
                     {viewType === 'map' && (
-                        <EventMapView
+                        <PostsMapView
                             allPosts={props.getAllPostsResponse.success ? props.getAllPostsResponse.allPosts : []}
                             zoom={6}
                             currentLocation={currentLocation}

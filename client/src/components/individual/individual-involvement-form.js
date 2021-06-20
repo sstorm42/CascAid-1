@@ -28,14 +28,61 @@ const ProfileStep3 = (props) => {
                                 <h4>{individualHeaders[3].header}</h4>
                             </div>
                         )}
-                        <Field name="impactAreas" component={CreatableMultiSelectRender} label="Impact area of interest" col1={4} col2={8} options={allImpactAreas} zIndex={2000} />
+                        <Field
+                            name="impactAreas"
+                            component={CreatableMultiSelectRender}
+                            label="Impact area of interest"
+                            col1={4}
+                            col2={8}
+                            options={allImpactAreas}
+                            zIndex={2000}
+                        />
 
                         <label>Community Involvement</label>
-                        <Field name="communityInvolvement" type="text" component={TextRender} label="Tell us a bit about what you currently do!" col1={12} col2={12} />
-                        <Field id="volunteerOpportunity" name="volunteerOpportunity" type="checkbox" component={CheckBoxRender} label="I am looking for Volunteer Opportunities" col1={6} col2={6} />
-                        <Field id="project" name="project" component={CheckBoxRender} type="checkbox" label="I am looking for Projects" col1={6} col2={6} />
-                        <Field id="lookingForBoardMembership" name="lookingForBoardMembership" component={CheckBoxRender} type="checkbox" label="I am looking for Board Membership" col1={6} col2={6} />
-                        <Field id="committees" name="committees" component={CheckBoxRender} type="checkbox" label="I am looking for Committees/Advisory Boards" col1={6} col2={6} />
+                        <Field
+                            name="communityInvolvement"
+                            type="text"
+                            component={TextRender}
+                            label="Tell us a bit about what you currently do!"
+                            col1={12}
+                            col2={12}
+                        />
+                        <Field
+                            id="lookingForVolunteeringOpportunity"
+                            name="lookingForVolunteeringOpportunity"
+                            type="checkbox"
+                            component={CheckBoxRender}
+                            label="I am looking for Volunteer Opportunities"
+                            col1={6}
+                            col2={6}
+                        />
+                        <Field
+                            id="lookingForProject"
+                            name="lookingForProject"
+                            component={CheckBoxRender}
+                            type="checkbox"
+                            label="I am looking for Projects"
+                            col1={6}
+                            col2={6}
+                        />
+                        <Field
+                            id="lookingForMembership"
+                            name="lookingForMembership"
+                            component={CheckBoxRender}
+                            type="checkbox"
+                            label="I am looking for Board Membership"
+                            col1={6}
+                            col2={6}
+                        />
+                        <Field
+                            id="lookingForCommittee"
+                            name="lookingForCommittee"
+                            component={CheckBoxRender}
+                            type="checkbox"
+                            label="I am looking for Committees/Advisory Boards"
+                            col1={6}
+                            col2={6}
+                        />
                         <Field
                             id="availabilityPerWeek"
                             name="availabilityPerWeek"
@@ -46,7 +93,15 @@ const ProfileStep3 = (props) => {
                             step="1"
                             label="Average Weekly Hours Available"
                         />
-                        <Field id="typeOfInvolvement" name="typeOfInvolvement" type="text" component={SelectRender} label="I want the following type of involvement" col1={6} col2={6}>
+                        <Field
+                            id="typeOfInvolvement"
+                            name="typeOfInvolvement"
+                            type="text"
+                            component={SelectRender}
+                            label="I want the following type of involvement"
+                            col1={6}
+                            col2={6}
+                        >
                             {allInvolvementTypes.map((involvementType, i) => {
                                 return (
                                     <option key={involvementType.value} value={involvementType.value}>

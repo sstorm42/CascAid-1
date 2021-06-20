@@ -1457,7 +1457,7 @@ exports.posts = [
         Title: 'GOT STEM? - April 2021',
         time: '04/02/2021 09:12:13',
         Description:
-            'GOT STEM? April 2021 The Donald McKinney Center for STEM Education Monthly Newsletter THE MCKINNEY CENTER FOR STEM EDUCATION The McKinney Center is Hiring! The McKinney Center seeks a fulltime STEM Project Manager to bolster the academic achievement of K-12 students; to encourage students to pursue careers in STEM; to cultivate STEM-literate citizens; and to connect STEM education to environmental responsibility. The STEM Project Manager will design and deliver teacher training, and craft engag',
+            'GOT STEM? April 2021 The Donald McKinney Center for STEM Education Monthly Newsletter THE MCKINNEY CENTER FOR STEM EDUCATION The McKinney Center is Hiring! The McKinney Center seeks a fulltime STEM Project Manager to bolster the academic achievement of K-12 students; to encourage students to pursue careers in STEM; to cultivation STEM-literate citizens; and to connect STEM education to environmental responsibility. The STEM Project Manager will design and deliver teacher training, and craft engag',
     },
     {
         field1: '',
@@ -3340,7 +3340,7 @@ exports.posts = [
         Title: '? Special Guest, Gen Kelsang Norden at KMC Philadelphia ?',
         time: '03/29/2021 11:07:05',
         Description:
-            'Livestream Events THIS WEEKEND An Inspired and Fearless Life ONE Weekend, TWO Special Events! Saturday, April 3rd and Sunday, April 4th with special guest, Gen Kelsang Norden, Resident Teacher of Kadampa Meditation Center Georgia *via Zoom livestream* On-demand recordings of the weekend course will be available to view for 1 week until noon on April 11, 2021. Tune in to the presence of Buddha, and cultivate the strength and power of a loving heart. Gen Kelsang Norden, ordained as a Buddhist nun',
+            'Livestream Events THIS WEEKEND An Inspired and Fearless Life ONE Weekend, TWO Special Events! Saturday, April 3rd and Sunday, April 4th with special guest, Gen Kelsang Norden, Resident Teacher of Kadampa Meditation Center Georgia *via Zoom livestream* On-demand recordings of the weekend course will be available to view for 1 week until noon on April 11, 2021. Tune in to the presence of Buddha, and cultivation the strength and power of a loving heart. Gen Kelsang Norden, ordained as a Buddhist nun',
     },
     {
         field1: '',
@@ -5473,7 +5473,7 @@ exports.posts = [
         Title: '? Special Guest, Gen Kelsang Norden at KMC Philadelphia ?',
         time: '03/22/2021 11:40:27',
         Description:
-            'Livestream Events An Inspired and Fearless Life ONE Weekend, TWO Special Events! Saturday, April 3rd and Sunday, April 4th with special guest, Gen Kelsang Norden, Resident Teacher of Kadampa Meditation Center Georgia *via Zoom livestream* On-demand recordings of the weekend course will be available to view for 1 week until noon on April 11, 2021. Tune in to the presence of Buddha, and cultivate the strength and power of a loving heart. Gen Kelsang Norden, ordained as a Buddhist nun in 1994, has',
+            'Livestream Events An Inspired and Fearless Life ONE Weekend, TWO Special Events! Saturday, April 3rd and Sunday, April 4th with special guest, Gen Kelsang Norden, Resident Teacher of Kadampa Meditation Center Georgia *via Zoom livestream* On-demand recordings of the weekend course will be available to view for 1 week until noon on April 11, 2021. Tune in to the presence of Buddha, and cultivation the strength and power of a loving heart. Gen Kelsang Norden, ordained as a Buddhist nun in 1994, has',
     },
     {
         field1: '',
@@ -31133,7 +31133,7 @@ exports.posts = [
         Title: 'Join us for Sounds of Strength!',
         time: '05/04/2021 09:00:51',
         Description:
-            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us for a video premiere spotlighting the winds, brass, and percussion studios. Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivated in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and c',
+            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us for a video premiere spotlighting the winds, brass, and percussion studios. Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivationd in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and c',
     },
     {
         field1: '',
@@ -32527,7 +32527,7 @@ exports.posts = [
         Title: "You're Invited: Sounds of Strength",
         time: '05/01/2021 09:58:16',
         Description:
-            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, You are invited to join us for a video premiere spotlighting the winds, brass, and percussion studios. Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivated in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll he',
+            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, You are invited to join us for a video premiere spotlighting the winds, brass, and percussion studios. Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivationd in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll he',
     },
     {
         field1: '',
@@ -32889,7 +32889,7 @@ exports.posts = [
         Title: 'Register Now: Sounds of Strength!',
         time: '05/08/2021 14:00:03',
         Description:
-            "<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Register now for the video premiere spotlighting the winds, brass, and percussion studios! Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivated in Philadelphia. With Curtis front and center, you'll hear the orchestral and chamber m",
+            "<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Register now for the video premiere spotlighting the winds, brass, and percussion studios! Told through performances and interviews, Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivationd in Philadelphia. With Curtis front and center, you'll hear the orchestral and chamber m",
     },
     {
         field1: '',
@@ -35943,7 +35943,7 @@ exports.posts = [
         Title: 'Register Now: Sounds of Strength!',
         time: '05/12/2021 10:00:14',
         Description:
-            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us for the video premiere spotlighting the winds, brass, and percussion studios! Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivated in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and chamber music selections by Victor Ewald,',
+            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us for the video premiere spotlighting the winds, brass, and percussion studios! Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivationd in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and chamber music selections by Victor Ewald,',
     },
     {
         field1: '',
@@ -38178,7 +38178,7 @@ exports.posts = [
         Title: 'Join Us: Sounds of Strength!',
         time: '05/14/2021 09:00:27',
         Description:
-            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us tomorrow for the video premiere spotlighting the winds, brass, and percussion studios! Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivated in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and chamber music selections by Vict',
+            '<Sounds of Strength Premieres Saturday, May 15, 2 p.m. ET Available on demand through Monday, May 31 Dear Friends, Join us tomorrow for the video premiere spotlighting the winds, brass, and percussion studios! Sounds of Strength shares the vivid story of how faculty, students, and alumni develop their individual voices within the tapestry of instrumental sound cultivationd in Philadelphia. With the magic of Curtis front and center, you&rsquo;ll hear orchestral and chamber music selections by Vict',
     },
     {
         field1: '',

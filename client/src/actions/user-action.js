@@ -122,6 +122,17 @@ export const getAllUsers = (filter) => {
     };
 };
 
+// GET ALL INDIVIDUALS
+export const getAllIndividuals = (filter) => {
+    let filters = { ...filter };
+    if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
+    if (filters.skills && filters.skills.length > 0) filters.skills = filters.skills.map((skill) => skill._id);
+    return {
+        type: Types.GET_ALL_INDIVIDUALS,
+        payload: UserDA.get_all_individuals(filters),
+    };
+};
+
 // SUGGESTIONS
 export const getAllSuggestedUsers = (userId, userType, limit) => {
     return {

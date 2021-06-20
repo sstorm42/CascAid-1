@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const involvementSchema = mongoose.Schema(
     {
-        volunteerOpportunity: { type: Boolean, default: true, require: true },
+        lookingForVolunteeringOpportunity: { type: Boolean, default: true, require: true },
         communityInvolvement: { type: String },
         impactAreas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ImpactArea' }],
         availabilityPerWeek: { type: Number },
-        project: { type: Boolean, default: true, require: true },
-        lookingForMembershipMembership: { type: Boolean, default: true, require: true },
-        committees: { type: Boolean, default: true, require: true },
+        lookingForProject: { type: Boolean, default: true, require: true },
+        lookingForMembership: { type: Boolean, default: true, require: true },
+        lookingForCommittee: { type: Boolean, default: true, require: true },
         typeOfInvolvement: { type: String },
     },
     { timestamps: true },
