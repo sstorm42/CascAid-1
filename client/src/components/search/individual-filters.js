@@ -40,8 +40,8 @@ const FilterIndividual = (props) => {
             <Select onChange={(value) => props.changeFilter('skills', value)} isMulti={true} options={props.skills} value={props.filter.skills} />
             <br />
             <Form>
-                {/* {CheckBoxRender('onlyFollowers', 'Only Followers')}
-                {CheckBoxRender('onlyInteractedWithPosts', 'Only Interacted With My Posts')} */}
+                {CheckBoxRender('onlyFollowers', 'Only Followers')}
+                {/*{CheckBoxRender('onlyInteractedWithPosts', 'Only Interacted With My Posts')} */}
                 {CheckBoxRender('onlyLookingForVolunteering', 'Only Looking For Volunteerings')}
                 {CheckBoxRender('onlyLookingForProject', 'Only Looking For Projects')}
                 {CheckBoxRender('onlyLookingForMembership', 'Only Looking For memberships')}

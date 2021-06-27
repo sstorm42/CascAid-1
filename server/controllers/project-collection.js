@@ -26,6 +26,8 @@ exports.post_get_one = {
     endDateTime: 1,
     topNeed: 1,
     requiredItems: 1,
+    postURL: 1,
+    contact: 1,
 };
 exports.post_get_all = {
     _id: 1,

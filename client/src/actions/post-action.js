@@ -127,3 +127,14 @@ export const getGallery = (userId) => {
         payload: PostDA.get_gallery(userId),
     };
 };
+export const getAllCalendarPosts = (filter, userId) => {
+    let filters = { ...filter };
+    if (filters.impactAreas && filters.impactAreas.length > 0) filters.impactAreas = filters.impactAreas.map((area) => area._id);
+    if (filters.skills && filters.skills.length > 0) filters.skills = filters.skills.map((skill) => skill._id);
+    if (filters.postTypes && filters.postTypes.length > 0) filters.postTypes = filters.postTypes.map((type) => type.value);
+
+    return {
+        type: Types.GET_ALL_CALENDAR_POSTS,
+        payload: PostDA.get_all_calendar_posts(filters, userId),
+    };
+};

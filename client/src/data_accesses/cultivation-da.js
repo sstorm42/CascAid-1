@@ -13,6 +13,18 @@ class CultivationDA {
                 return err.response.data;
             });
     };
+    update_cultivation = (cultivationId, cultivation) => {
+        return axios
+            .put(APIPaths.updateOneCultivation(cultivationId), cultivation, APIPaths.apiConfig())
+            .then((response) => {
+                console.log('RES', response);
+                return response.data;
+            })
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
+    };
     get_cultivation_by_id = (cultivationId) => {
         console.log('🚀 ~ file: cultivation-da.js ~ line 17 ~ CultivationDA ~ cultivationId', cultivationId);
         return axios
@@ -38,9 +50,9 @@ class CultivationDA {
                 return err.response.data;
             });
     };
-    add_user_to_cultivation = (cultivationId, selectedUserId) => {
+    add_users_to_cultivation = (cultivationId, selectedUserId) => {
         return axios
-            .put(APIPaths.addOneUserToCultivation(cultivationId), { userId: selectedUserId }, APIPaths.apiConfig())
+            .put(APIPaths.addUsersToCultivation(cultivationId), { userId: selectedUserId }, APIPaths.apiConfig())
             .then((response) => {
                 console.log('RES', response);
                 return response.data;
@@ -50,6 +62,27 @@ class CultivationDA {
                 return err.response.data;
             });
     };
-    remove_user_from_cultivation = () => {};
+    remove_users_from_cultivation = (cultivationId, selectedUserId) => {
+        return axios
+            .put(APIPaths.removeUsersFromCultivation(cultivationId), { userId: selectedUserId }, APIPaths.apiConfig())
+            .then((response) => {
+                console.log('RES', response);
+                return response.data;
+            })
+            .catch((err) => {
+                console.log(err);
+                return err.response.data;
+            });
+    };
+    delete_cultivation = (cultivationId) => {
+        return axios
+            .delete(APIPaths.deleteOneCultivation(cultivationId), APIPaths.apiConfig())
+            .then((response) => {
+                return response.data;
+            })
+            .catch((err) => {
+                return err.response.data;
+            });
+    };
 }
 export default new CultivationDA();

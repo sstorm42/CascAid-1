@@ -14,6 +14,7 @@ const friendship = require('./friendship-route');
 const endorsement = require('./endorsement-route');
 const conversation = require('./conversation-route');
 const cultivation = require('./cultivation-route');
+const scheduler = require('./scheduler-route');
 
 routes.use('/users', user);
 routes.use('/auth', auth);
@@ -30,6 +31,7 @@ routes.use('/friendships', friendship);
 routes.use('/endorsements', endorsement);
 routes.use('/conversations', conversation);
 routes.use('/cultivations', cultivation);
+routes.use('/schedulers', scheduler);
 
 const connected = {
     success: true,

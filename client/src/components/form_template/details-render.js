@@ -19,6 +19,18 @@ export const DetailsInfoRowRender = ({ label, value }) => {
     } else return <Row />;
 };
 
+const BadgeRender = (badgeArray, variant, className) => {
+    return badgeArray.map((badge, i) => {
+        if (badge)
+            return (
+                <Badge variant={variant} key={i} className={'badge-single ' + className}>
+                    {badge.label}
+                </Badge>
+            );
+        else return <></>;
+    });
+};
+
 export const TagWithLabelRender = (label, tags) => {
     if (label && tags && tags.length > 0) {
         return (
@@ -28,34 +40,14 @@ export const TagWithLabelRender = (label, tags) => {
                         <b>{label}</b>
                     </Col>
                 )}
-                <Col md="9">
-                    {tags.map((tag, i) => {
-                        if (tag)
-                            return (
-                                <Badge variant="primary" key={i} className={'badge-single'}>
-                                    {tag.label}
-                                </Badge>
-                            );
-                        else return <></>;
-                    })}
-                </Col>
+                <Col md="9">{BadgeRender(tags, 'primary', '')}</Col>
             </Row>
         );
     }
     if (tags && tags.length > 0) {
         return (
             <Row>
-                <Col md="12">
-                    {tags.map((tag, i) => {
-                        if (tag)
-                            return (
-                                <Badge variant="primary" key={i} className={'badge-single'}>
-                                    {tag.label}
-                                </Badge>
-                            );
-                        else return <></>;
-                    })}
-                </Col>
+                <Col md="12">{BadgeRender(tags, 'primary', '')}</Col>
             </Row>
         );
     } else return <></>;
@@ -70,34 +62,14 @@ export const ImpactAreasRender = (label, areas) => {
                         <b>{label}</b>
                     </Col>
                 )}
-                <Col md="9">
-                    {areas.map((area, i) => {
-                        if (area)
-                            return (
-                                <Badge variant="primary" key={i} className={'badge-single'}>
-                                    {area.label}
-                                </Badge>
-                            );
-                        else return <></>;
-                    })}
-                </Col>
+                <Col md="9">{BadgeRender(areas, 'primary', 'impact-area-badge  badge-single-small')}</Col>
             </Row>
         );
     }
     if (areas && areas.length > 0) {
         return (
             <Row>
-                <Col md="12">
-                    {areas.map((area, i) => {
-                        if (area)
-                            return (
-                                <Badge variant="primary" key={i} className="impact-area-badge  badge-single-small">
-                                    {area.label}
-                                </Badge>
-                            );
-                        else return <></>;
-                    })}
-                </Col>
+                <Col md="12">{BadgeRender(areas, 'primary', 'impact-area-badge  badge-single-small')}</Col>
             </Row>
         );
     } else return <></>;
@@ -249,7 +221,9 @@ export const KeywordsRender = (label, keywords) => {
         return (
             <Row>
                 <Col md="3">
-                    <b>{label}</b>
+                    <b>
+                        {label}({keywords.length})
+                    </b>
                 </Col>
                 <Col md="9">
                     {keywords.map((key, i) => {
@@ -260,6 +234,28 @@ export const KeywordsRender = (label, keywords) => {
                         );
                     })}
                 </Col>
+            </Row>
+        );
+    } else return <></>;
+};
+
+export const SkillsRender = (label, skills) => {
+    if (label && skills && skills.length > 0) {
+        return (
+            <Row>
+                {label && (
+                    <Col md="3">
+                        <b>{label}</b>
+                    </Col>
+                )}
+                <Col md="9">{BadgeRender(skills, 'primary', 'skill-badge  badge-single-small')}</Col>
+            </Row>
+        );
+    }
+    if (skills && skills.length > 0) {
+        return (
+            <Row>
+                <Col md="12">{BadgeRender(skills, 'light', 'skill-badge  badge-single-small')}</Col>
             </Row>
         );
     } else return <></>;

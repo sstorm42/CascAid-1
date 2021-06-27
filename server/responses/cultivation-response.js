@@ -16,6 +16,10 @@ exports.NotFound = { success: false, message: 'No cultivation list found!' };
 exports.Updated = { success: true, message: 'Cultivation List updated successfully!' };
 exports.NotUpdated = { success: false, message: 'No cultivation list updated!' };
 
+// FOUND
+exports.Deleted = { success: true, message: 'Cultivation deleted successfully!' };
+exports.NotDeleted = { success: false, message: 'No cultivation deleted!' };
+
 // CATCH ERROR
 exports.Error = (err) => {
     console.log(err.message);

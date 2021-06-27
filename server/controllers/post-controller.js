@@ -3,6 +3,7 @@ const { Follow } = require('../models/follow-model');
 const { Interest } = require('../models/interest-model');
 const { User } = require('../models/user-model');
 const { View } = require('../models/view-model');
+const { Scheduler } = require('../models/scheduler-model');
 const { saveImageSchemaOnServer } = require('../utils/library');
 const ObjectId = require('mongoose').Types.ObjectId;
 const RESPONSES = require('../responses/post-response');
@@ -235,7 +236,6 @@ exports.deleteOne = async (req, res) => {
 exports.getAllFeeds = async (req, res) => {
     try {
         const userId = req.user._id;
-
         const allFollowingOrganizations = await Follow.find({ followerId: userId });
         let match = {};
         match['creatorId'] = { $in: [...allFollowingOrganizations.map((follow) => follow.followingId), userId] };
@@ -265,6 +265,81 @@ exports.getAllFeeds = async (req, res) => {
         };
         let aggregateOptions = [];
         aggregateOptions.push({ $match: match }, ...lookUps, { $sort: { createdAt: -1 } }, { $project: project });
+
+        const allPosts = await Post.aggregate(aggregateOptions);
+        // const allPosts = await Post.find({ creatorId: { $in: allFollowingOrganizations.map((follow) => follow.followingId) } });
+
+        res.status(200).send({ success: true, message: 'Posts for home page', allPosts });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+exports.getAllCalenderPosts = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const query = req.query;
+        const title = query.title ? JSON.parse(query.title) : '';
+        const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
+        const skills = query.skills ? JSON.parse(query.skills) : [];
+        const postTypes = query.postTypes ? JSON.parse(query.postTypes) : [];
+        const topNeed = query.topNeed ? JSON.parse(query.topNeed) : '';
+        let match = {};
+        if (title && title.length > 0) {
+            match['title'] = { $regex: title, $options: 'i' };
+        }
+
+        if (impactAreas && impactAreas.length > 0) {
+            match['impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
+        }
+        if (skills && skills.length > 0) {
+            match['skills'] = { $in: skills.map((skill) => mongoose.Types.ObjectId(skill)) };
+        }
+        if (postTypes && postTypes.length > 0) {
+            match['postType'] = { $in: postTypes };
+        }
+
+        if (topNeed !== '') {
+            match['topNeed'] = topNeed;
+        }
+        const allFollowingOrganizations = await Follow.find({ followerId: userId });
+
+        match['creatorId'] = { $in: [...allFollowingOrganizations.map((follow) => follow.followingId), userId] };
+        match['isActive'] = true;
+        const lookUps = [
+            LOOKUPS.post_organization,
+            LOOKUPS.post_impactAreas,
+            LOOKUPS.post_skills,
+            LOOKUPS.post_interests,
+        ];
+        const project = {
+            _id: 1,
+            title: 1,
+            images: 1,
+            description: 1,
+            organizationName: '$organization.basicInfo.name',
+            organizationProfilePicture: '$organization.basicInfo.profilePicture',
+            creatorId: 1,
+            postType: 1,
+            impactAreas: 1,
+            skills: 1,
+            address: 1,
+            createdAt: 1,
+            interests: 1,
+            startDateTime: 1,
+            endDateTime: 1,
+        };
+        const schedules = await Scheduler.find({ userId: userId, isAdded: true });
+        const schedulerPosts = schedules.map((schedule) => schedule.postId);
+        const schedulePostMatch = {};
+        schedulePostMatch['_id'] = { $in: schedulerPosts };
+
+        let aggregateOptions = [];
+        aggregateOptions.push(
+            { $match: { $or: [schedulePostMatch, match] } },
+            ...lookUps,
+            { $sort: { createdAt: -1 } },
+            { $project: project },
+        );
 
         const allPosts = await Post.aggregate(aggregateOptions);
         // const allPosts = await Post.find({ creatorId: { $in: allFollowingOrganizations.map((follow) => follow.followingId) } });

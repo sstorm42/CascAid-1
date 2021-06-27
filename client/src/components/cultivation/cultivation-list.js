@@ -13,6 +13,7 @@ const CultivationList = (props) => {
     const handleGoToEditCultivationPage = props.handleGoToEditCultivationPage;
     const handleGoToDisplayCultivationPage = props.handleGoToDisplayCultivationPage;
     const allCultivations = props.allCultivations;
+    const handleDeleteCultivation = props.handleDeleteCultivation;
     return (
         <Container>
             <Row>
@@ -42,16 +43,22 @@ const CultivationList = (props) => {
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Created On</th>
+                                        <th>Number of Users</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {allCultivations.map((cultivation, i) => {
+                                        let totalUsers = 0;
+                                        if (cultivation.users) {
+                                            totalUsers = cultivation.users.length;
+                                        }
                                         return (
                                             <tr key={i}>
                                                 <td>{cultivation.title}</td>
                                                 <td>{DescriptionRender(cultivation.description)}</td>
                                                 <td>{moment(cultivation.createdAt).format('LL')}</td>
+                                                <td>{totalUsers}</td>
                                                 <td>
                                                     <DetailsButtonRender
                                                         onClick={() => {
@@ -61,16 +68,13 @@ const CultivationList = (props) => {
                                                     &nbsp;
                                                     <EditButtonRender
                                                         onClick={() => {
-                                                            alert('YET TO DEVELOP');
+                                                            handleGoToEditCultivationPage(cultivation._id);
                                                         }}
-                                                        // onClick={() => {
-                                                        //     handleGoToEditCultivationPage(cultivation._id);
-                                                        // }}
                                                     />
                                                     &nbsp;
                                                     <DeleteButtonRender
                                                         onClick={() => {
-                                                            alert('YET TO DEVELOP');
+                                                            handleDeleteCultivation(cultivation._id);
                                                         }}
                                                     />
                                                 </td>

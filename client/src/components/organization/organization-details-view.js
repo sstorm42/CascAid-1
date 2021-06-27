@@ -4,10 +4,12 @@ import moment from 'moment';
 import { getMembershipStatusByValue, getMembershipByValue } from '../../constants/membership-types';
 import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
 import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
+import { ImpactAreasRender, TagWithLabelRender } from '../form_template/details-render';
 const TimeRender = (time) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return `${months[time.month]}-${time.year}`;
 };
+
 const DetailsView = (props) => {
     const organization = props.organization;
     const memberships = props.memberships;
@@ -130,7 +132,7 @@ const DetailsView = (props) => {
                 <hr />
                 <div style={{ height: 25 }} />
                 {keywordsRender('Service Areas', serviceInfo.serviceAreas)}
-                {tagsRender('Impact Area', impactAreas)}
+                {ImpactAreasRender('Impact Area', impactAreas)}
                 {keywordsRender('Keywords', serviceInfo.keywords)}
                 <div style={{ height: 25 }} />
                 <hr />

@@ -128,5 +128,22 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
+    get_all_calendar_posts = (filter, userId) => {
+        let queryString = '?';
+        for (let t in filter) {
+            if (filter[t]) {
+                console.log(t);
+                queryString += t.toString();
+                queryString += '=';
+                queryString += JSON.stringify(filter[t]);
+                queryString += '&';
+            }
+        }
+
+        return axios
+            .get(APIPaths.getAllCalendarPosts(userId) + queryString.slice(0, -1), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
 }
 export default new PostDA();

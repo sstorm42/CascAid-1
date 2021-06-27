@@ -8,81 +8,213 @@ const PrivacyPolicy = (props) => {
                     <h2>Privacy Policy</h2>
                     <small>last updated on June 06, 2021</small>
                     <hr />
-                    <p style={{ textAlign: 'justify' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, augue vitae consequat molestie, nunc massa ornare sapien, in
-                        hendrerit ante eros et est. Donec vestibulum ligula sem. Ut placerat imperdiet consequat. Interdum et malesuada fames ac ante ipsum
-                        primis in faucibus. Suspendisse egestas ligula in laoreet faucibus. Nulla egestas dui vitae accumsan molestie. In commodo sagittis
-                        sapien, at feugiat mauris faucibus a. Etiam pharetra rutrum consectetur. Cras pulvinar enim nec dolor tempus euismod. Donec bibendum
-                        venenatis sollicitudin. Proin vel mauris convallis, tristique arcu et, hendrerit arcu. Integer eget malesuada lacus, id condimentum
-                        enim. Aenean sed velit non orci feugiat euismod id ut libero. In leo nulla, rutrum nec ipsum a, tempor dictum odio. Aenean arcu tellus,
-                        tincidunt at sollicitudin sit amet, sodales vestibulum purus.
+                    <p className="justify-text">
+                        We value our users' privacy. This Privacy Policy ("Policy") will help you understand how we collect and use personal information from
+                        those who visit our website or make use of our online facilities and services, and what we will and will not do with the information we
+                        collect. Our Policy has been designed and created to ensure our commitment and realization of our obligation not only to meet, but to
+                        exceed, most existing privacy standards.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Sed at mollis dui, blandit facilisis lorem. Sed ultrices a ex sed porttitor. Fusce nec sapien eu risus consectetur sodales. Maecenas
-                        egestas accumsan odio nec aliquam. In eget cursus ipsum. Nulla at elit enim. Nulla elementum mattis quam a pellentesque. Sed efficitur
-                        magna et mauris faucibus euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    <p className="justify-text">
+                        We reserve the right to make changes to this Policy at any given time. If you want to make sure that you are up to date with the latest
+                        changes, we advise you to frequently visit this page. If at any point in time we decide to make use of any personally identifiable
+                        information on file, in a manner vastly different from that which was stated when this information was initially collected, the user or
+                        users shall be promptly notified by email. Users at that time shall have the option as to whether to permit the use of their information
+                        in this separate manner.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Phasellus aliquet turpis a lacus convallis aliquet ac a neque. Vestibulum sapien nulla, dignissim ac sollicitudin quis, pharetra in mi.
-                        Nunc pellentesque leo erat, non mattis velit fringilla dapibus. Nulla nec augue finibus, mattis magna at, pellentesque est. Curabitur ut
-                        rhoncus urna, consectetur imperdiet velit. Nam tempor posuere sapien, et facilisis enim placerat vel. Donec nec ipsum sit amet diam
-                        gravida tincidunt. Proin et lorem nisl. Pellentesque interdum ut ante in egestas. Donec vitae rutrum tellus. Sed id sollicitudin felis.
+                    <p className="justify-text">
+                        This Policy applies to Daniel Berger, and it governs any and all data collection and usage by us. Through the use of
+                        www.impacttapestry.com, you are therefore consenting to the data collection procedures expressed in this Policy.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Phasellus sodales consequat faucibus. Nulla sagittis orci quis ipsum pharetra, in dapibus lacus aliquam. Fusce faucibus posuere lacinia.
-                        Morbi facilisis convallis elit nec venenatis. Suspendisse eget elementum turpis. Nullam laoreet mattis lectus imperdiet lacinia. Nullam
-                        laoreet, arcu nec rutrum sodales, quam lorem euismod nisl, in scelerisque lacus odio eu justo. In iaculis erat lorem, nec condimentum
-                        risus suscipit eu. Proin eget augue non lectus pharetra pulvinar vel rutrum libero. Ut ut augue sed purus porta hendrerit. Etiam
-                        efficitur, nisl tincidunt pretium volutpat, purus velit eleifend metus, non aliquam est arcu vel purus.
+                    <p className="justify-text">
+                        Please note that this Policy does not govern the collection and use of information by companies that Daniel Berger does not control, nor
+                        by individuals not employed or managed by us. If you visit a website that we mention or link to, be sure to review its privacy policy
+                        before providing the site with information. It is highly recommended and suggested that you review the privacy policies and statements
+                        of any website you choose to use or frequent to better understand the way in which websites garner, make use of and share the
+                        information collected.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Nulla condimentum nulla a velit pharetra euismod. Etiam malesuada dignissim lacinia. Cras vel lorem volutpat, ullamcorper libero at,
-                        vehicula est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque cursus placerat
-                        porta. Nullam eget purus facilisis elit pretium euismod ut nec elit. Sed in nibh dignissim, ullamcorper massa quis, tristique augue.
-                        Pellentesque rhoncus tortor sem. Cras dignissim sed nisi eget pulvinar. Pellentesque sed neque sit amet diam hendrerit efficitur. Proin
-                        quis faucibus mauris, vel auctor nisl.
+                    <p className="justify-text">
+                        Specifically, this Policy will inform you of the following:
+                        <ol>
+                            <li>What personally identifiable information is collected from you through our website;</li>
+                            <li>Why we collect personally identifiable information and the legal basis for such collection;</li>
+                            <li>How we use the collected information and with whom it may be shared;</li>
+                            <li>What choices are available to you regarding the use of your data; and</li>
+                            <li>The security procedures in place to protect the misuse of your information.</li>
+                        </ol>
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Pellentesque sit amet nunc non erat pretium laoreet. Donec ligula enim, dapibus sed erat non, mattis tincidunt sapien. Morbi maximus et
-                        lectus eu aliquam. Nulla facilisi. Sed non semper magna, vitae semper velit. Suspendisse ornare augue nisi, eu mattis odio dignissim ac.
-                        In ut ipsum lobortis, mattis tortor non, aliquam sapien. Aliquam purus lorem, gravida eget ornare ac, sollicitudin id urna. Interdum et
-                        malesuada fames ac ante ipsum primis in faucibus. Fusce feugiat lacus metus, a gravida massa faucibus ac. Curabitur cursus mauris id
-                        eros elementum, et dignissim ipsum hendrerit. Duis in consequat augue. Vivamus blandit rutrum neque.
+                    <hr />
+                    <h5>Information We Collect</h5>
+                    <p className="justify-text">
+                        It is always up to you whether to disclose personally identifiable information to us, although if you elect not to do so, we reserve the
+                        right not to register you as a user or provide you with any products or services. This website collects various types of information,
+                        such as:
+                        <ul>
+                            <li>
+                                Voluntarily provided information which may include your name, address, email address, billing and/or credit card information
+                                etc. which may be used when you purchase products and/or services and to deliver the services you have requested.
+                            </li>
+                            <li>
+                                Information automatically collected when visiting our website, which may include cookies, third party tracking technologies and
+                                server logs.
+                            </li>
+                        </ul>
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Vivamus porttitor arcu et fermentum tempor. Proin non tellus lorem. In ut justo metus. Nunc neque orci, placerat vel sem venenatis,
-                        auctor elementum eros. Vivamus efficitur rutrum velit eu pretium. Maecenas semper, augue ac laoreet aliquam, nunc nisi euismod diam, sit
-                        amet scelerisque arcu augue in urna. Quisque aliquam non leo a bibendum.
+                    <p className="justify-text">
+                        In addition, Daniel Berger may have the occasion to collect non-personal anonymous demographic information, such as age, gender,
+                        household income, political affiliation, race and religion, as well as the type of browser you are using, IP address, or type of
+                        operating system, which will assist us in providing and maintaining superior quality service.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Duis dictum elit porttitor, aliquet risus sed, posuere nibh. Morbi sem libero, pharetra ut condimentum vel, placerat quis purus.
-                        Vestibulum eu purus eu tortor pretium pulvinar sit amet a mi. Praesent eget sodales neque, eu pharetra diam. Proin quis finibus massa.
-                        Etiam semper nibh ex, sed vestibulum nisl sollicitudin a. Aliquam lacus nulla, ullamcorper ac condimentum ut, interdum at arcu. In et
-                        ligula suscipit, interdum nunc id, sodales quam. Ut accumsan bibendum nunc. Aenean venenatis leo eget purus rhoncus cursus. Aenean eu
-                        nunc quis lorem imperdiet faucibus sit amet ut lorem. Morbi venenatis ante sed porttitor vulputate. Nam condimentum dolor ac ante porta,
-                        non lobortis ligula blandit. Praesent eu venenatis est, pellentesque congue nisi.
+                    <p className="justify-text">
+                        Daniel Berger may also deem it necessary, from time to time, to follow websites that our users may frequent to gleam what types of
+                        services and products may be the most popular to customers or the general public.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Pellentesque consequat ex et condimentum lobortis. Vivamus non odio diam. Ut posuere eros ac libero condimentum, vehicula egestas urna
-                        ultrices. Sed ornare porttitor elit, quis volutpat urna rhoncus non. Orci varius natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Proin scelerisque volutpat nisi, sit amet dapibus elit malesuada et. Vestibulum ac felis porta, aliquam ante
-                        posuere, interdum turpis. Aenean nec ex sit amet nunc accumsan venenatis. Pellentesque sagittis hendrerit augue nec pharetra. Nullam
-                        tristique enim sed egestas pretium. Etiam fermentum vulputate nisl, sit amet gravida risus ultrices sed. Suspendisse lacinia, sem at
-                        mollis luctus, sapien ipsum rutrum dolor, non condimentum ligula tellus eu arcu. Mauris pretium nulla convallis, placerat felis at,
-                        bibendum nunc. Nulla facilisi. Morbi a commodo tellus.
+                    <p className="justify-text">
+                        Please rest assured that this site will only collect personal information that you knowingly and willingly provide to us by way of
+                        surveys, completed membership forms, and emails. It is the intent of this site to use personal information only for the purpose for
+                        which it was requested, and any additional uses specifically provided for on this Policy.
                     </p>
-                    <p style={{ textAlign: 'justify' }}>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus tincidunt tincidunt felis, ut
-                        feugiat magna pretium convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a justo eget nisi rutrum elementum eu ut
-                        magna. Curabitur pharetra, sem eu facilisis rhoncus, tortor ipsum malesuada velit, quis rutrum urna odio eget elit. Cras at mauris
-                        rutrum, lobortis urna in, dapibus mi. Suspendisse a facilisis nisi, id tristique nisi. Mauris vulputate risus nec scelerisque eleifend.
-                        Mauris interdum, diam non posuere fringilla, odio sem auctor ipsum, ut porta sapien tellus in mauris. Pellentesque molestie vulputate
-                        leo, ut finibus nibh dapibus id. Duis pretium justo et neque malesuada, eget pretium sem consectetur. Phasellus ut mollis erat. Sed eu
-                        dictum metus. Fusce eget suscipit nunc.
+                    <h5>Why We Collect Information and For How Long</h5>
+                    <p className="justify-text">
+                        We are collecting your data for several reasons:
+                        <ul>
+                            <li>
+                                To better understand your needs and provide you with the services you have requested; To fulfill our legitimate interest in
+                                improving our services and products;
+                            </li>
+                            <li>To send you promotional emails containing information we think you may like when we have your consent to do so;</li>
+                            <li>To contact you to fill out surveys or participate in other types of market research, when we have your consent to do so; </li>
+                            <li>To customize our website according to your online behavior and personal preferences.</li>
+                        </ul>
                     </p>
-                    <Button variant="outline-primary" size="sm">
+                    <p className="justify-text">
+                        The data we collect from you will be stored for no longer than necessary. The length of time we retain said information will be
+                        determined based upon the following criteria: the length of time your personal information remains relevant; the length of time it is
+                        reasonable to keep records to demonstrate that we have fulfilled our duties and obligations; any limitation periods within which claims
+                        might be made; any retention periods prescribed by law or recommended by regulators, professional bodies or associations; the type of
+                        contract we have with you, the existence of your consent, and our legitimate interest in keeping such information as stated in this
+                        Policy.
+                    </p>
+                    <h5>Use of Information Collected</h5>
+                    <p className="justify-text">Daniel Berger does not now sell, rent, or lease any of its customer lists and/or names to any third parties.</p>
+                    <p className="justify-text">
+                        Daniel Berger may collect and may make use of personal information to assist in the operation of this website and to ensure delivery of
+                        the services you need and request. At times, we may find it necessary to use personally identifiable information as a means to keep you
+                        informed of other possible products and/or services that may be available to you from www.impacttapestry.com
+                    </p>
+                    <p className="justify-text">
+                        Daniel Berger may also be in contact with you with regards to completing surveys and/or research questionnaires related to your opinion
+                        of current or potential future services that may be offered.
+                    </p>
+                    <p className="justify-text">
+                        Daniel Berger uses various third-party social media features including but not limited to Facebook, Twitter, lnstagram, Youtube,
+                        Linkedln and other interactive programs. These may collect your IP address and require cookies to work properly. These services are
+                        governed by the privacy policies of the providers and are not within Daniel Berger's control.
+                    </p>
+                    <hr />
+                    <h5>Disclosure of Information</h5>
+                    <p className="justify-text">
+                        Daniel Berger may not use or disclose the information provided by you except under the following circumstances:
+                    </p>
+                    <ul>
+                        <li>as necessary to provide services or products you have ordered;</li>
+                        <li>
+                            in other ways described in this Policy or to which you have otherwise consented; in the aggregate with other information in such a
+                            way so that your identity cannot reasonably be determined;
+                        </li>
+                        <li>as required by law, or in response to a subpoena or search warrant;</li>
+                        <li>to outside auditors who have agreed to keep the information confidential; as necessary to enforce the Terms of Service;</li>
+                        <li>as necessary to maintain, safeguard and preserve all the rights and property of Daniel Berger</li>
+                    </ul>
+                    <h5>Non-Marketing Purposes</h5>
+                    <p className="justify-text">
+                        Daniel Berger greatly respects your privacy. We do maintain and reserve the right to contact you if needed for non-marketing purposes
+                        (such as bug alerts, security breaches, account issues, and/or changes in Daniel Berger products and services). In certain
+                        circumstances, we may use our website, newspapers, or other public means to post a notice.
+                    </p>
+                    <h5>Children under the age of 13</h5>
+                    <p className="justify-text">
+                        Daniel Berger's website is not directed to, and does not knowingly collect personal identifiable information from, children under the
+                        age of thirteen (13). If it is determined that such information has been inadvertently collected on anyone under the age of thirteen
+                        (13), we shall immediately take the necessary steps to ensure that such information is deleted from our system's database, or in the
+                        alternative, that verifiable parental consent is obtained for the use and storage of such information. Anyone under the age of thirteen
+                        (13) must seek and obtain parent or guardian permission to use this website.
+                    </p>
+                    <h5>Unsubscribe or Opt-Out</h5>
+                    <p className="justify-text">
+                        All users and visitors to our website have the option to discontinue receiving communications from us by way of email or newsletters. To
+                        discontinue or unsubscribe from our website please send an email that you wish to unsubscribe to unsubscribe@impacttapestry.com. If you
+                        wish to unsubscribe or opt-out from any third-party websites, you must go to that specific website to unsubscribe or opt-out. Daniel
+                        Berger will continue to adhere to this Policy with respect to any personal information previously collected.
+                    </p>
+                    <h5> Links to Other Websites</h5>
+                    <p className="justify-text">
+                        Our website does contain links to affiliate and other websites. Daniel Berger does not claim nor accept responsibility for any privacy
+                        policies, practices and/or procedures of other such websites. Therefore, we encourage all users and visitors to be aware when they leave
+                        our website and to read the privacy statements of every website that collects personally identifiable information. This Privacy Policy
+                        Agreement applies only and solely to the information collected by our website.
+                    </p>
+                    <h5> Notice to European Union Users</h5>
+
+                    <p className="justify-text">
+                        Daniel Berger's operations are located primarily in the United States. If you provide information to us, the information will be
+                        transferred out of the European Union (EU) and sent to the United States. (The adequacy decision on the EU-US Privacy became operational
+                        on August 1, 2016. This framework protects the fundamental rights of anyone in the EU whose personal data is transferred to the United
+                        States for commercial purposes. It allows the free transfer of data to companies that are certified in the US under the Privacy Shield.)
+                        By providing personal information to us, you are consenting to its storage and use as described in this Policy.
+                    </p>
+
+                    <h5> Security</h5>
+
+                    <p className="justify-text">
+                        Daniel Berger takes precautions to protect your information. When you submit sensitive information via the website, your information is
+                        protected both online and offline. Wherever we collect sensitive information (e.g., credit card information), that information is
+                        encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for
+                        "https" at the beginning of the address of the webpage.
+                    </p>
+                    <p className="justify-text">
+                        While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees
+                        who need the information to perform a specific job (for example, billing or customer service) are granted access to personally
+                        identifiable information.
+                    </p>
+                    <p className="justify-text">
+                        The computers and servers in which we store personally identifiable information are kept in a secure environment. This is all done to
+                        prevent any loss, misuse, unauthorized access, disclosure, or modification of the user's personal information under our control.
+                    </p>
+                    <p className="justify-text">
+                        The company also uses Secure Socket Layer (SSL) for authentication and private communications to build users' trust and confidence in
+                        the internet and website use by providing simple and secure access and communication of credit card and personal information.
+                    </p>
+                    <h5>Acceptance of Terms</h5>
+                    <p className="justify-text">
+                        By using this website, you are hereby accepting the terms and conditions stipulated within the Privacy Policy Agreement. If you are not
+                        in agreement with our terms and conditions, then you should refrain from further use of our sites. In addition, your continued use of
+                        our website following the posting of any updates or changes to our terms and conditions shall mean that you agree and accept such
+                        changes.
+                    </p>
+                    <h5>How to Contact Us</h5>
+                    <p className="justify-text">
+                        If you have any questions or concerns regarding the Privacy Policy Agreement related to our website, please feel free to contact us at
+                        the following email, telephone number or mailing address.
+                    </p>
+
+                    <p className="justify-text">
+                        <b>Email:</b> dr.berger07@gmail.com
+                        <br />
+                        <b>Telephone Number:</b> 201-602-8754
+                        <br />
+                        <b>Mailing Address:</b>
+                        <br />
+                        Daniel Berger
+                        <br />
+                        2121 Market St
+                        <br />
+                        Philadelphia, Pennsylvania
+                        <br />
+                        19103
+                    </p>
+                    {/* <Button variant="outline-primary" size="sm">
                         Download as PDF
-                    </Button>
+                    </Button> */}
                 </Col>
             </Row>
         </Container>

@@ -4,6 +4,7 @@ const { allowIfLoggedIn, grantAccess } = require('../middlewares/access-control'
 
 post.get('/', PostController.getAll);
 post.get('/feed', allowIfLoggedIn, PostController.getAllFeeds);
+post.get('/calendar/user/:userId', allowIfLoggedIn, PostController.getAllCalenderPosts);
 post.get('/suggestions', allowIfLoggedIn, PostController.getAllSuggestions);
 post.get('/:postId', allowIfLoggedIn, PostController.getOne);
 post.post('/', allowIfLoggedIn, PostController.createOne);

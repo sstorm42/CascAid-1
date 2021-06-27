@@ -9,9 +9,55 @@ exports.createOne = async (req, res) => {
         const cultivation = new Cultivation(req.body);
         console.log('🚀 ~ file: cultivation-controller.js ~ line 10 ~ exports.createOne= ~ cultivation', cultivation);
         const savedCultivation = await cultivation.save();
-        if (savedCultivation) {
-            return res.status(200).send(RESPONSES.Created);
+        if (savedCultivation && savedCultivation._id) {
+            return res.status(200).send({ ...RESPONSES.Created, cultivation: savedCultivation });
         } else return res.status(400).send(RESPONSES.NotCreated);
+    } catch (error) {
+        return res.status(500).send(RESPONSES.Error(error));
+    }
+};
+
+exports.updateOne = async (req, res) => {
+    try {
+        const cultivationId = req.params.cultivationId;
+        console.log(
+            '🚀 ~ file: cultivation-controller.js ~ line 23 ~ exports.updateOne= ~ cultivationId',
+            cultivationId,
+        );
+        const { title, description } = req.body;
+        console.log(
+            '🚀 ~ file: cultivation-controller.js ~ line 25 ~ exports.updateOne= ~ title, description',
+            title,
+            description,
+        );
+        const updatedCultivation = await Cultivation.findOneAndUpdate(
+            { _id: cultivationId },
+            {
+                $set: {
+                    title,
+                    description,
+                },
+            },
+            {
+                new: true,
+            },
+        );
+
+        if (updatedCultivation && updatedCultivation._id) {
+            return res.status(200).send({ ...RESPONSES.Updated, cultivation: updatedCultivation });
+        } else return res.status(400).send(RESPONSES.NotUpdated);
+    } catch (error) {
+        return res.status(500).send(RESPONSES.Error(error));
+    }
+};
+exports.deleteOne = async (req, res) => {
+    try {
+        const cultivationId = req.params.cultivationId;
+
+        const deletedCultivation = await Cultivation.findOneAndDelete({ _id: cultivationId });
+        if (deletedCultivation) {
+            return res.status(200).send({ ...RESPONSES.Deleted, cultivation: deletedCultivation });
+        } else return res.status(400).send(RESPONSES.NotDeleted);
     } catch (error) {
         return res.status(500).send(RESPONSES.Error(error));
     }
@@ -49,18 +95,15 @@ exports.getOne = async (req, res) => {
 exports.addUserToCultivationList = async (req, res) => {
     try {
         const cultivationId = req.params.cultivationId;
-        const userId = req.body.userId;
+        const userIds = req.body.userId;
+
         const cultivation = await Cultivation.updateOne(
             { _id: cultivationId },
-            { $addToSet: { users: ObjectId(userId) } },
+            { $addToSet: { users: { $each: userIds.map((userId) => ObjectId(userId)) } } },
             {
                 new: true,
                 upsert: true,
             },
-        );
-        console.log(
-            '🚀 ~ file: cultivation-controller.js ~ line 51 ~ exports.addUserToCultivationList= ~ cultivation',
-            cultivation,
         );
         if (cultivation) {
             return res.status(200).send({ ...RESPONSES.Updated, cultivation });
@@ -71,6 +114,19 @@ exports.addUserToCultivationList = async (req, res) => {
 };
 exports.removeUserFromCultivationList = async (req, res) => {
     try {
+        const cultivationId = req.params.cultivationId;
+        const userIds = req.body.userId;
+        const cultivation = await Cultivation.updateOne(
+            { _id: cultivationId },
+            { $pull: { users: { $in: userIds.map((userId) => ObjectId(userId)) } } },
+            {
+                new: true,
+                upsert: true,
+            },
+        );
+        if (cultivation) {
+            return res.status(200).send({ ...RESPONSES.Updated, cultivation });
+        } else return res.status(400).send(RESPONSES.NotUpdated);
     } catch (error) {
         return res.status(500).send(RESPONSES.Error(error));
     }

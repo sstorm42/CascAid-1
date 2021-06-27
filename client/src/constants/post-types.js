@@ -34,7 +34,20 @@ const fields = {
     keywords: 'keywords',
 };
 export const postTypeFields = {
-    event: { title: 1, description: 1, images: 1, impactAreas: 1, startDateTime: 1, endDateTime: 1, address: 1, isActive: 1, keywords: 1 },
+    event: {
+        title: 1,
+        description: 1,
+        images: 1,
+        impactAreas: 1,
+        startDateTime: 1,
+        endDateTime: 1,
+        address: 1,
+        isActive: 1,
+        keywords: 1,
+        postURL: 1,
+        contact: 1,
+        addable: 1,
+    },
     project: {
         title: 1,
         description: 1,
@@ -48,6 +61,9 @@ export const postTypeFields = {
         isActive: 1,
         topNeed: 1,
         keywords: 1,
+        postURL: 1,
+        contact: 1,
+        addable: 1,
     },
     general: { title: 1, description: 1, images: 1, impactAreas: 1, isActive: 1, keywords: 1 },
     volunteering: {
@@ -62,8 +78,11 @@ export const postTypeFields = {
         isActive: 1,
         topNeed: 1,
         keywords: 1,
+        postURL: 1,
+        contact: 1,
+        addable: 1,
     },
-    'in-kind': { title: 1, description: 1, images: 1, impactAreas: 1, requiredItems: 1, isActive: 1, topNeed: 1, keywords: 1 },
+    'in-kind': { title: 1, description: 1, images: 1, impactAreas: 1, requiredItems: 1, isActive: 1, topNeed: 1, keywords: 1, postURL: 1, contact: 1 },
     advocacy: {
         title: 1,
         description: 1,
@@ -76,6 +95,9 @@ export const postTypeFields = {
         address: 1,
         isActive: 1,
         keywords: 1,
+        postURL: 1,
+        contact: 1,
+        addable: 1,
     },
 };
 export const allPostTypeValues = ['event', 'project', 'general', 'volunteering', 'in-kind', 'advocacy'];
@@ -103,9 +125,9 @@ export const getPostTypeName = (value) => {
     const name = postTypes[value] ? postTypes[value] : '';
     return name;
 };
-export const calenderPostTypeWithColor = [
-    { name: 'event', label: 'EVENT' },
-    { name: 'project', label: 'PROJECT' },
-    { name: 'volunteering', label: 'VOLUNTEERING' },
-    { name: 'advocacy', label: 'ADVOCACY' },
+export const allCalenderPostTypes = [
+    { value: 'event', label: 'EVENT' },
+    { value: 'project', label: 'PROJECT' },
+    { value: 'volunteering', label: 'VOLUNTEERING' },
+    { value: 'advocacy', label: 'ADVOCACY' },
 ];

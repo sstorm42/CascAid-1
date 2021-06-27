@@ -869,6 +869,7 @@ exports.getAllIndividuals = async (req, res) => {
         const onlyLookingForMembership = query.onlyLookingForMembership
             ? JSON.parse(query.onlyLookingForMembership)
             : '';
+        const onlyFollowers = query.onlyFollowers ? JSON.parse(query.onlyFollowers) : '';
 
         // Converting query values into query string
         let match = {};
@@ -888,6 +889,11 @@ exports.getAllIndividuals = async (req, res) => {
         }
         if (onlyLookingForMembership) {
             match['involvement.lookingForMembership'] = onlyLookingForMembership;
+        }
+        if (onlyFollowers && req.user._id) {
+            const allFollows = await Follow.find({ followingId: req.user._id });
+            match['_id'] = { $in: allFollows.map((follow) => follow.followerId) };
+            console.log(match['_id']);
         }
         if (name) {
             // match['basicInfo.name'] = { $regex: name, $options: 'i' };

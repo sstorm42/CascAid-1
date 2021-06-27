@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PostDetails from '../../components/post/post-details';
 import { connect } from 'react-redux';
 import { getAllCommittedPersons } from '../../actions/post-action';
+import { NotificationManager } from 'react-notifications';
 import CommittedPersonsModal from '../../components/post/committed-persons-list';
 import {
     getPostById,
@@ -14,6 +15,7 @@ import {
     changePostInterest,
 } from '../../actions/post-action';
 import { postManagePage } from '../../constants/route-paths';
+import { checkIfPostAddedToScheduler, addPostToScheduler, removePostFromScheduler } from '../../actions/scheduler-action';
 const DisplayPost = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');
@@ -21,13 +23,15 @@ const DisplayPost = (props) => {
     const [committedLoading, setCommittedLoading] = useState(false);
     const [committedList, setCommittedList] = useState([]);
     useEffect(() => {
-        const getInitialInfo = () => {
+        const getInitialInfo = (postId) => {
             const user = props.auth.user;
             if (user && user._id) {
                 setUserId(user._id);
+                props.dispatch(checkIfPostAddedToScheduler(user._id, postId));
             }
             setLoading(true);
             props.dispatch(getPostById(postId));
+
             setLoading(false);
         };
         const postId = props.match.params.postId;
@@ -79,6 +83,30 @@ const DisplayPost = (props) => {
         props.dispatch(cancelGoingPost(postId));
         props.dispatch(changePostInterest(postId, userId, 'ungoing'));
     };
+    const handleAddPostToScheduler = () => {
+        props.dispatch(addPostToScheduler(userId, props.match.params.postId));
+    };
+    const handleRemovePostFromScheduler = () => {
+        props.dispatch(removePostFromScheduler(userId, props.match.params.postId));
+    };
+    useEffect(() => {
+        const { success, message } = props.getAddPostToSchedulerResponse;
+        if (success) {
+            NotificationManager.success(message, 'success');
+            props.dispatch(checkIfPostAddedToScheduler(userId, props.match.params.postId));
+        } else if (success === false) {
+            NotificationManager.error(message, 'Failed');
+        }
+    }, [props.getAddPostToSchedulerResponse]);
+    useEffect(() => {
+        const { success, message } = props.getRemovePostFromSchedulerResponse;
+        if (success) {
+            NotificationManager.success(message, 'success');
+            props.dispatch(checkIfPostAddedToScheduler(userId, props.match.params.postId));
+        } else if (success === false) {
+            NotificationManager.error(message, 'Failed');
+        }
+    }, [props.getRemovePostFromSchedulerResponse]);
     return (
         <>
             <CommittedPersonsModal
@@ -98,6 +126,9 @@ const DisplayPost = (props) => {
                 handleGoingPost={handleGoingPost}
                 handleCancelGoingPost={handleCancelGoingPost}
                 handleClickCommittedButtons={handleClickCommittedButtons}
+                getCheckIfPostAddedToSchedulerResponse={props.getCheckIfPostAddedToSchedulerResponse}
+                handleAddPostToScheduler={handleAddPostToScheduler}
+                handleRemovePostFromScheduler={handleRemovePostFromScheduler}
             />
         </>
     );
@@ -105,7 +136,9 @@ const DisplayPost = (props) => {
 const mapStateToProps = (state) => {
     console.log(state);
     const getPostResponse = state.Post.getPost ? state.Post.getPost : {};
-
-    return { getPostResponse };
+    const getCheckIfPostAddedToSchedulerResponse = state.Scheduler.checkIfPostAddedToScheduler;
+    const getAddPostToSchedulerResponse = state.Scheduler.addPostToScheduler;
+    const getRemovePostFromSchedulerResponse = state.Scheduler.removePostFromScheduler;
+    return { getPostResponse, getCheckIfPostAddedToSchedulerResponse, getAddPostToSchedulerResponse, getRemovePostFromSchedulerResponse };
 };
 export default connect(mapStateToProps, null)(DisplayPost);

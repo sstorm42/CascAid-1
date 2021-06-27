@@ -7,6 +7,7 @@ import { interestTypes } from '../../constants/interest-types';
 import moment from 'moment';
 import {
     TagWithLabelRender,
+    SkillsRender,
     ImpactAreasRender,
     DescriptionRender,
     ImageAndDescriptionRender,
@@ -16,7 +17,13 @@ import {
     BooleanRender,
     KeywordsRender,
 } from '../form_template/details-render';
-import { LikeButtonRender, GoingButtonRender, InterestedButtonRender } from '../form_template/buttons-render';
+import {
+    LikeButtonRender,
+    GoingButtonRender,
+    InterestedButtonRender,
+    AddToSchedulerButtonRender,
+    RemoveFromSchedulerButtonRender,
+} from '../form_template/buttons-render';
 import PostMapView from './post-map-view';
 import * as RoutePath from '../../constants/route-paths';
 import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
@@ -25,6 +32,9 @@ const DisplayPost = (props) => {
     console.log('🚀 ~ file: post-details.js ~ line 24 ~ DisplayPost ~ post', post);
     const userId = props.userId;
     const fields = postTypeFields[post.postType];
+    const getCheckIfPostAddedToSchedulerResponse = props.getCheckIfPostAddedToSchedulerResponse;
+    const handleAddPostToScheduler = props.handleAddPostToScheduler;
+    const handleRemovePostFromScheduler = props.handleRemovePostFromScheduler;
     if (post && post._id) {
         const name = post.organizationName ? post.organizationName : 'Organization Name Not Found';
         const profilePicture = post.organizationProfilePicture ? post.organizationProfilePicture : defaultOrganizationProfilePicture;
@@ -36,6 +46,13 @@ const DisplayPost = (props) => {
         let going = post.interests.filter((interest) => interest.going).length;
         let mapView = false;
         if (fields.address && post.address && post.address.latitude && post.address.longitude) mapView = true;
+        let follows = false;
+        let postIsAddedToScheduler = false;
+        if (getCheckIfPostAddedToSchedulerResponse && getCheckIfPostAddedToSchedulerResponse.success) {
+            follows = getCheckIfPostAddedToSchedulerResponse.follows;
+            postIsAddedToScheduler = getCheckIfPostAddedToSchedulerResponse.isAdded;
+        }
+        console.log('🚀 ~ file: post-details.js ~ line 51 ~ DisplayPost ~ follows', follows, postIsAddedToScheduler);
         return (
             <Container>
                 <Row>
@@ -86,13 +103,12 @@ const DisplayPost = (props) => {
                         <Row>
                             <Col>{ImpactAreasRender('', post.impactAreas)}</Col>
                         </Row>
-                        <hr />
+
                         {fields.skills && (
                             <>
                                 <Row>
-                                    <Col>{TagWithLabelRender('', post.skills)}</Col>
+                                    <Col>{SkillsRender('', post.skills)}</Col>
                                 </Row>
-                                <hr />
                             </>
                         )}
                         {fields.startDateTime && fields.endDateTime && (
@@ -104,7 +120,7 @@ const DisplayPost = (props) => {
                                 <Row>
                                     {post.expectedRequiredHours && <Col>{InfoRender('Expected Required Time', post.expectedRequiredHours + ' Hour')}</Col>}
                                 </Row>
-                                {post.startDateTime || post.endDateTime ? <hr /> : ''}
+                                {/* {post.startDateTime || post.endDateTime ? <hr /> : ''} */}
                             </>
                         )}
                         {fields.petitionLink && post.petitionLink && (
@@ -129,6 +145,7 @@ const DisplayPost = (props) => {
                             <Col>
                                 {DescriptionRender('', post.description)}
                                 <hr />
+
                                 {KeywordsRender('Keywords', post.keywords)}
                             </Col>
                             <hr />
@@ -143,7 +160,16 @@ const DisplayPost = (props) => {
                             <Col>{ImageAndDescriptionRender(post.images)}</Col>
                             <hr />
                         </Row>
-
+                        {fields.postURL && post.postURL && (
+                            <Row>
+                                <Col>{InfoRender('URL', post.postURL)}</Col>
+                            </Row>
+                        )}
+                        {fields.contact && post.contact && (
+                            <Row>
+                                <Col>{InfoRender('Contact', post.contact)}</Col>
+                            </Row>
+                        )}
                         <div style={{ height: 50 }} />
                         <Row>
                             <Col>
@@ -207,6 +233,25 @@ const DisplayPost = (props) => {
                                     <></>
                                 )}
                                 &nbsp;
+                                {fields.addable && !follows ? (
+                                    postIsAddedToScheduler ? (
+                                        <RemoveFromSchedulerButtonRender
+                                            hover_title="Remove From My Calendar"
+                                            onClick={() => {
+                                                handleRemovePostFromScheduler();
+                                            }}
+                                        />
+                                    ) : (
+                                        <AddToSchedulerButtonRender
+                                            hover_title="Add To My Calendar"
+                                            onClick={() => {
+                                                handleAddPostToScheduler();
+                                            }}
+                                        />
+                                    )
+                                ) : (
+                                    <></>
+                                )}
                             </Col>
                             <Col className="right-align">
                                 {interestTypes[post.postType].like && liked > 0 && (

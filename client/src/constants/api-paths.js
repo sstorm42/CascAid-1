@@ -68,6 +68,7 @@ export const deletePostById = (postId) => serverAddress + `/api/posts/${postId}`
 export const getAllPosts = serverAddress + `/api/posts`;
 export const getAllPostsByUser = (userId) => serverAddress + `/api/users/${userId}/posts`;
 export const getAllImages = (userId) => serverAddress + `/api/posts/gallery/user/${userId}`;
+export const getAllCalendarPosts = (userId) => serverAddress + `/api/posts/calendar/user/${userId}`;
 // FOLLOW
 export const followUser = serverAddress + `/api/follows/follow`;
 export const unfollowUser = serverAddress + `/api/follows/unfollow`;
@@ -139,7 +140,13 @@ export const getConversationCountByUser = (userId) => serverAddress + `/api/conv
 
 // CULTIVATION
 export const createOneCultivation = serverAddress + '/api/cultivations/';
+export const updateOneCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}`;
 export const getAllCultivationsByUser = (userId) => serverAddress + `/api/cultivations/user/${userId}`;
 export const getOneCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}`;
-export const addOneUserToCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/add/user`;
-export const removeOneUserFromCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/remove/user`;
+export const addUsersToCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/add/user`;
+export const removeUsersFromCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}/remove/user`;
+export const deleteOneCultivation = (cultivationId) => serverAddress + `/api/cultivations/${cultivationId}`;
+// SCHEDULER
+export const checkIfPostAddedToScheduler = (userId, postId) => serverAddress + `/api/schedulers/check-if-added/${userId}/${postId}`;
+export const addPostToScheduler = (userId) => serverAddress + `/api/schedulers/user/${userId}/add-post`;
+export const removePostFromScheduler = (userId) => serverAddress + `/api/schedulers/user/${userId}/remove-post`;

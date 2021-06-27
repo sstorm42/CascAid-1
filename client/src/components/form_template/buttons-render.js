@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Tooltip, OverlayTrigger, Dropdown, DropdownButton } from 'react-bootstrap';
-import { FaThumbsUp, FaLocationArrow } from 'react-icons/fa';
+import { FaThumbsUp, FaLocationArrow, FaRegCalendarPlus, FaRegCalendarMinus } from 'react-icons/fa';
 import { RiUserFollowLine } from 'react-icons/ri';
 import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart, FaHandsHelping } from 'react-icons/fa';
 import { BiDetail, BiDotsVertical, BiImageAdd } from 'react-icons/bi';
@@ -12,7 +12,11 @@ import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/r
 import { BsCardList, BsPaperclip } from 'react-icons/bs';
 import { TiThList } from 'react-icons/ti';
 import { ImCross } from 'react-icons/im';
+import { FiHelpCircle } from 'react-icons/fi';
 import { CgUserAdd, CgUserRemove } from 'react-icons/cg';
+const renderTitle = (title) => {
+    return title ? title : '';
+};
 const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
         {props.title ? props.title : 'NA'}
@@ -293,31 +297,30 @@ export const CancelEndorseUserButtonRender = (props) => {
 };
 
 export const MessageButtonRender = (props) => {
-    const buttonTitle = props.title;
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <RiChat2Line /> {buttonTitle}
+            <RiChat2Line /> {renderTitle(props.button_title)}
         </Button>
     );
 };
 export const SendMessageButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <AiOutlineSend /> {props.buttonTitle}
+            <AiOutlineSend /> {renderTitle(props.button_title)}
         </Button>
     );
 };
 export const MessageAttachmentButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <BsPaperclip /> {props.buttonTitle}
+            <BsPaperclip /> {renderTitle(props.button_title)}
         </Button>
     );
 };
 export const MessageImageUploadButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <BiImageAdd /> {props.buttonTitle}
+            <BiImageAdd /> {renderTitle(props.button_title)}
         </Button>
     );
 };
@@ -366,16 +369,18 @@ export const OptionButtonRender = (props) => {
 
 export const AddUserToCultivation = (props) => {
     return (
-        <Button size="sm" variant="outline-success" {...props}>
-            <CgUserAdd /> {props.buttonTitle}
-        </Button>
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: renderTitle(props.hover_title) })}>
+            <Button size="sm" variant="outline-success" {...props}>
+                <CgUserAdd /> {renderTitle(props.button_title)}
+            </Button>
+        </OverlayTrigger>
     );
 };
 
 export const RemoveUserFromCultivation = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <CgUserRemove /> {props.buttonTitle}
+            <CgUserRemove /> {renderTitle(props.button_title)}
         </Button>
     );
 };
@@ -383,7 +388,45 @@ export const RemoveUserFromCultivation = (props) => {
 export const AddButtonRender = (props) => {
     return (
         <Button size="sm" variant="outline-success" {...props}>
-            <AiOutlinePlus /> {props.buttonTitle}
+            <AiOutlinePlus /> {renderTitle(props.button_title)}
         </Button>
+    );
+};
+
+export const HelpButtonRender = (props) => {
+    return (
+        <Button size="sm" variant="outline-primary" {...props}>
+            <FiHelpCircle /> {renderTitle(props.button_title)}
+        </Button>
+    );
+};
+export const ResetButtonRender = (props) => {
+    return (
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: renderTitle(props.hover_title) })}>
+            <Button size="sm" variant="outline-success" {...props}>
+                <CgUserAdd /> {renderTitle(props.button_title)}
+            </Button>
+        </OverlayTrigger>
+    );
+};
+
+export const AddToSchedulerButtonRender = (props) => {
+    console.log(props.hover_title);
+    return (
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: renderTitle(props.hover_title) })}>
+            <Button size="sm" variant="outline-success" {...props}>
+                <FaRegCalendarPlus /> {renderTitle(props.button_title)}
+            </Button>
+        </OverlayTrigger>
+    );
+};
+
+export const RemoveFromSchedulerButtonRender = (props) => {
+    return (
+        <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: renderTitle(props.hover_title) })}>
+            <Button size="sm" variant="outline-danger" {...props}>
+                <FaRegCalendarMinus /> {renderTitle(props.button_title)}
+            </Button>
+        </OverlayTrigger>
     );
 };

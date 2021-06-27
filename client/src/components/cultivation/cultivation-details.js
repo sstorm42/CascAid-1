@@ -6,7 +6,7 @@ import moment from 'moment';
 const CultivationDetails = (props) => {
     const cultivation = props.cultivation;
     const handleGoToUserDetailsPage = props.handleGoToUserDetailsPage;
-    console.log('🚀 ~ file: cultivation-details.js ~ line 7 ~ CultivationDetails ~ cultivation', cultivation);
+    const handleRemoveUsersFromCultivation = props.handleRemoveUsersFromCultivation;
     return (
         <Container>
             <Row>
@@ -42,7 +42,7 @@ const CultivationDetails = (props) => {
                     {cultivation.users && cultivation.users.length > 0 ? (
                         <Row>
                             <Col>
-                                <Table>
+                                <Table striped bordered size="sm" hover>
                                     <tbody>
                                         {cultivation.users.map((user, i) => {
                                             let name = '';
@@ -59,7 +59,7 @@ const CultivationDetails = (props) => {
                                                     : defaultOrganizationProfilePicture;
                                             }
                                             return (
-                                                <tr>
+                                                <tr key={i}>
                                                     <td>
                                                         <Image src={profilePicture} width="40" />
                                                     </td>
@@ -70,12 +70,12 @@ const CultivationDetails = (props) => {
                                                                 handleGoToUserDetailsPage(user.userType, user._id);
                                                             }}
                                                         />{' '}
-                                                        &nbsp;
+                                                        {/* &nbsp;
                                                         <RemoveUserFromCultivation
                                                             onClick={() => {
-                                                                alert('NOT DEVELOPED YET');
+                                                                handleRemoveUsersFromCultivation(user._id);
                                                             }}
-                                                        />
+                                                        /> */}
                                                     </td>
                                                 </tr>
                                             );

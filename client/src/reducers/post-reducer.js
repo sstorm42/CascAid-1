@@ -15,6 +15,7 @@ const initialState = {
     cancelGoing: {},
     getAllViewersByPost: {},
     getGallery: {},
+    getAllCalendarPosts: {},
 };
 const changePostInterest = (post_, { postId, userId, type }) => {
     let post = post_.post;
@@ -145,6 +146,8 @@ const PostReducer = (state = initialState, action) => {
             return { ...state, getAllViewersByPost: action.payload };
         case Types.GET_GALLERY:
             return { ...state, getGallery: action.payload };
+        case Types.GET_ALL_CALENDAR_POSTS:
+            return { ...state, getAllCalendarPosts: action.payload };
         default:
             return { ...state };
     }

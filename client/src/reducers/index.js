@@ -15,6 +15,7 @@ import Friendship from './friendship-reducer';
 import Endorsement from './endorsement-reducer';
 import Conversation from './conversation-reducer';
 import Cultivation from './cultivation-reducer';
+import Scheduler from './scheduler-reducer';
 const rootReducer = combineReducers({
     form: formReducer,
     Auth,
@@ -31,5 +32,6 @@ const rootReducer = combineReducers({
     Endorsement,
     Conversation,
     Cultivation,
+    Scheduler,
 });
 export default rootReducer;

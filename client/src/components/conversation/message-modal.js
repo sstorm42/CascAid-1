@@ -35,7 +35,7 @@ const MessageModal = (props) => {
             </Modal.Body>
             <Modal.Footer>
                 <SendMessageButtonRender
-                    buttonTitle="Send"
+                    button_title="Send"
                     onClick={() => {
                         props.handleSendNewMessage(messageReceiver.userId, message);
                     }}

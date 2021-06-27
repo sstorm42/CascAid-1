@@ -10,11 +10,11 @@ import SearchMenu from '../../components/search/search-menu';
 import IndividualFilter from '../../components/search/individual-filters';
 import { connect } from 'react-redux';
 import LoadingAnim from '../../components/form_template/loading-anim';
-import { getAllCultivationsByUser, addUserToCultivation } from '../../actions/cultivation-action';
+import { getAllCultivationsByUser, addUsersToCultivation, createCultivation, clearAddUsersToCultivation } from '../../actions/cultivation-action';
 import Pagination from 'react-js-pagination';
 import { defaultCurrentLocation } from '../../constants/default-user-information';
 import CultivationListModal from '../../components/cultivation/cultivation-list-modal';
-
+import { NotificationManager } from 'react-notifications';
 const SearchIndividual = (props) => {
     const [userId, setUserId] = useState();
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
@@ -24,7 +24,10 @@ const SearchIndividual = (props) => {
     const [followObject, setFollowObject] = useState({});
     const [endorseObject, setEndorseObject] = useState({});
     const [cultivationModal, setCultivationModal] = useState(false);
-    const [selectedUserId, setSelectedUserId] = useState('');
+    const [createNewCultivation, setCreateNewCultivation] = useState(false);
+    const [newCultivation, setNewCultivation] = useState({ title: '', description: '' });
+    const [selectedUserId, setSelectedUserId] = useState([]);
+    const [selectedMultipleUserId, setSelectedMultipleUserId] = useState([]);
     const [filter, setFilter] = useState({
         name: '',
         impactAreas: [],
@@ -86,12 +89,43 @@ const SearchIndividual = (props) => {
     }, []);
 
     const handleAddUserToCultivationList = (cultivationId) => {
-        props.dispatch(addUserToCultivation(cultivationId, selectedUserId));
+        props.dispatch(addUsersToCultivation(cultivationId, selectedUserId));
     };
-    const showCultivationListModal = (userId) => {
+    const showCultivationListModal = (userIds) => {
         setCultivationModal(true);
-        setSelectedUserId(userId);
+        setSelectedUserId(userIds);
     };
+    const handleSetNewCultivation = (key, value) => {
+        console.log('🚀 ~ file: search-individual.js ~ line 99 ~ handleSetNewCultivation ~ key, value', key, value);
+        const newCultivation_ = newCultivation;
+        newCultivation_[key] = value;
+        setNewCultivation({ ...newCultivation_ });
+    };
+    const handleCreateNewCultivation = () => {
+        props.dispatch(createCultivation({ ...newCultivation, creatorId: userId }));
+        setNewCultivation({ title: '', description: '' });
+        setCreateNewCultivation(false);
+    };
+    useEffect(() => {
+        const { success } = props.setCultivationResponse;
+        if (success) {
+            NotificationManager.success('Cultivation created successfully.', 'success');
+            props.dispatch(getAllCultivationsByUser(userId));
+        } else if (success === false) {
+            NotificationManager.error('Cultivation not created', 'Failed');
+        }
+    }, [props.setCultivationResponse]);
+    useEffect(() => {
+        const { success } = props.addUserToCultivationResponse;
+        if (success) {
+            NotificationManager.success('Users are added successfully.', 'success');
+            setCultivationModal(false);
+            props.dispatch(clearAddUsersToCultivation());
+        } else if (success === false) {
+            NotificationManager.error('Users are not added', 'Failed');
+            props.dispatch(clearAddUsersToCultivation());
+        }
+    }, [props.addUserToCultivationResponse]);
     if (loading) return <LoadingAnim />;
     else
         return (
@@ -101,6 +135,11 @@ const SearchIndividual = (props) => {
                     setCultivationModal={setCultivationModal}
                     allCultivations={props.getAllCultivationsResponse.success ? props.getAllCultivationsResponse.allCultivations : []}
                     handleAddUserToCultivationList={handleAddUserToCultivationList}
+                    createNewCultivation={createNewCultivation}
+                    setCreateNewCultivation={setCreateNewCultivation}
+                    newCultivation={newCultivation}
+                    handleSetNewCultivation={handleSetNewCultivation}
+                    handleCreateNewCultivation={handleCreateNewCultivation}
                 />
                 <Row className="parent-page">
                     <Col lg={4}>
@@ -134,6 +173,8 @@ const SearchIndividual = (props) => {
                             }
                             gotoIndividualDetails={gotoIndividualDetails}
                             showCultivationListModal={showCultivationListModal}
+                            selectedMultipleUserId={selectedMultipleUserId}
+                            setSelectedMultipleUserId={setSelectedMultipleUserId}
                         />
                     </Col>
                 </Row>
@@ -148,6 +189,8 @@ const mapStateToProps = (state) => {
     const getAllFollowingsResponse = state.Follow.getAllFollowings;
     const getAllEndorseesResponse = state.Endorsement.getAllEndorsees;
     const getAllCultivationsResponse = state.Cultivation.getAllCultivations;
+    const setCultivationResponse = state.Cultivation.setCultivation;
+    const addUserToCultivationResponse = state.Cultivation.addUserToCultivation;
     return {
         getImpactAreaResponse,
         getAllIndividualsResponse,
@@ -155,6 +198,8 @@ const mapStateToProps = (state) => {
         getAllFollowingsResponse,
         getAllEndorseesResponse,
         getAllCultivationsResponse,
+        setCultivationResponse,
+        addUserToCultivationResponse,
     };
 };
 export default connect(mapStateToProps, null)(SearchIndividual);
