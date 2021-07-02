@@ -1,6 +1,6 @@
 import { getLocalStorage } from '@Actions';
-// export const serverAddress = `http://localhost:3001`;
-export const serverAddress = `http://172.104.35.84`;
+export const serverAddress = `http://localhost:3001`;
+// export const serverAddress = `http://172.104.35.84`;
 
 // API CONFIG
 export const apiConfig = () => ({ headers: { Authorization: `Bearer ${getLocalStorage(`token`)}` } });
