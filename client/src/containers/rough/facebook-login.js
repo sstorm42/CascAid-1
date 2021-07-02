@@ -17,6 +17,7 @@ const FBLogin = (props) => {
                     <hr />
                     <FacebookLogin appId="808303879820603" autoLoad={true} fields="name,email,picture" onClick={componentClicked} callback={responseFacebook} />
                     <h6>Test commit 1</h6>
+                    <h5>Test commit 2</h5>
                 </Col>
             </Row>
         </Container>
