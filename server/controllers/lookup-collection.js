@@ -140,7 +140,14 @@ exports.conversation_users = {
         as: 'members',
     },
 };
-
+exports.messageUserEntity_message = {
+    $lookup: {
+        from: 'messages',
+        localField: 'messageId',
+        foreignField: '_id',
+        as: 'message',
+    },
+};
 // USER
 exports.user_organization_impactAreas = {
     $lookup: {

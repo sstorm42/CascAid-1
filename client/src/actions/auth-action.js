@@ -1,2 +1,2 @@
-import AuthDA from '../data_accesses/auth-da';
-import * as Types from '../constants/reducer-types';
+import AuthDA from '@DA/auth-da';
+import * as Types from '@Constants/reducer-types';

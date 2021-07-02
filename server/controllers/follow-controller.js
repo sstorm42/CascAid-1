@@ -29,7 +29,7 @@ exports.unfollowUser = async (req, res) => {
             followerId: followerId,
             followingId: followingId,
         });
-        console.log('🚀 ~ file: follow-controller.js ~ line 27 ~ exports.unfollowUser= ~ follow', follow);
+
         if (!follow) res.status(200).send({ success: false, follow: follow });
         else if (follow) {
             NotificationController.deleteOne(followingId, followerId, NotificationResponse.Types.Follow, null);
@@ -55,7 +55,6 @@ exports.getAllFollower = async (req, res) => {
         if (!followers) res.status(200).send({ success: false, followers: [], totalFollowers: 0 });
         else if (followers) res.status(200).send({ success: true, followers, totalFollowers: followers.length });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -71,12 +70,10 @@ exports.getAllFollowing = async (req, res) => {
         aggregateOptions.push(LOOKUPS.follow_following);
         aggregateOptions.push(PROJECTS.follow_get_all_following);
         const followings = await Follow.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: follow-controller.js ~ line 74 ~ exports.getAllFollowing= ~ followings', followings);
 
         if (!followings) res.status(200).send({ success: false, followings: [], totalFollowings: 0 });
         else if (followings) res.status(200).send({ success: true, followings, totalFollowings: followings.length });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -91,6 +88,25 @@ exports.CheckIfFollower = async (req, res) => {
 
         if (!follow) res.status(200).send({ success: true, follows: false });
         else if (follow) res.status(200).send({ success: true, follows: true });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getSummary = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const lastWeek = new Date();
+        lastWeek.setDate(lastWeek.getDate() - 7);
+        const totalFollowers = await Follow.countDocuments({ followingId: userId });
+        const totalNewFollowers = await Follow.countDocuments({
+            followingId: userId,
+            updatedAt: { $gte: new Date(lastWeek) },
+        });
+
+        return res
+            .status(200)
+            .send({ success: true, message: 'Follower summary found.', totalFollowers, totalNewFollowers });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

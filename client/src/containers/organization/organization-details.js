@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { getUserPublicInfo } from '../../actions/user-action';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import DetailsView from '../../components/organization/organization-details-view';
-import { followUser, unfollowUser, checkIfFollower } from '../../actions/follow-action';
-import { endorseUser, cancelEndorseUser, checkIfEndorses } from '../../actions/endorsement-action';
-import SideSubMenu from '../../components/organization/organization-sub-menu';
+import { getUserPublicInfo } from '@Actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import DetailsView from '@Components/organization/organization-details-view';
+import { followUser, unfollowUser, checkIfFollower } from '@Actions/follow-action';
+import { endorseUser, cancelEndorseUser, checkIfEndorses } from '@Actions/endorsement-action';
+import SideSubMenu from '@Components/organization/organization-sub-menu';
 
 const OrganizationDetails = (props) => {
     const [loading, setLoading] = useState(false);

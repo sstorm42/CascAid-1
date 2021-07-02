@@ -71,7 +71,7 @@ exports.getOne = async (req, res) => {
         aggregateOptions.push({ $match: match }, ...lookUps, { $project: project });
 
         const allPosts = await Post.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: post-controller.js ~ line 69 ~ exports.getOne= ~ allPosts', allPosts.length);
+
         if (allPosts && allPosts.length > 0) {
             const userId = req.user._id;
             if (userId) {
@@ -80,7 +80,6 @@ exports.getOne = async (req, res) => {
                     {},
                     { new: true, upsert: true },
                 );
-                console.log('🚀 ~ file: post-controller.js ~ line 74 ~ exports.getOne= ~ userId', userId, newView);
             }
 
             res.status(200).send({ success: true, message: 'Post found', post: allPosts[0] });
@@ -94,7 +93,6 @@ exports.getOne = async (req, res) => {
 
 exports.getAll = async (req, res) => {
     try {
-        console.log('QUERY', req.query);
         const title = req.query.title ? JSON.parse(req.query.title) : '';
         const creatorId = req.query.creatorId ? JSON.parse(req.query.creatorId) : '';
 
@@ -111,10 +109,6 @@ exports.getAll = async (req, res) => {
             match['title'] = { $regex: title, $options: 'i' };
         }
         if (creatorId && creatorId.length > 0) {
-            console.log(
-                '🚀 ~ file: post-controller.js ~ line 85 ~ exports.getAll= ~ creatorId',
-                mongoose.Types.ObjectId(creatorId),
-            );
             match['creatorId'] = mongoose.Types.ObjectId(creatorId.toString());
         }
         if (impactAreas && impactAreas.length > 0) {
@@ -163,10 +157,14 @@ exports.getAll = async (req, res) => {
 
         const lookUps = [LOOKUPS.post_organization, LOOKUPS.post_impactAreas, LOOKUPS.post_interests];
         const project = PROJECTS.post_get_all;
-        aggregateOptions.push({ $match: { $and: [match, dateCondition] } }, ...lookUps, { $project: project });
+        aggregateOptions.push(
+            { $match: { $and: [match, dateCondition] } },
+            ...lookUps,
+            { $sort: { createdAt: -1 } },
+            { $project: project },
+        );
 
         const allPosts = await Post.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: post-controller.js ~ line 154 ~ exports.getAll= ~ allPosts', allPosts.length);
 
         if (allPosts) return res.status(200).send({ ...RESPONSES.PostFound, allPosts });
         else return res.status(404).send(RESPONSES.PostNotFound);
@@ -199,7 +197,7 @@ exports.updateOne = async (req, res) => {
             if (success) post.impactAreas = newImpactAreas;
             else return res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
         }
-        console.log('post', post.isActive);
+
         if (post.keywords) post.keywords = post.keywords.map((key) => key.label);
 
         const updatedPost = await Post.findOneAndUpdate(
@@ -209,7 +207,6 @@ exports.updateOne = async (req, res) => {
             { $set: post },
             { new: true },
         );
-        console.log('🚀 ~ file: post-controller.js ~ line 216 ~ exports.updateOne= ~ updatedPost', updatedPost);
 
         if (!updatedPost)
             return res.status(401).send({
@@ -222,7 +219,6 @@ exports.updateOne = async (req, res) => {
                 message: 'Post updated successfully.',
             });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -361,7 +357,7 @@ exports.like = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
-        console.log('like', userId, postId);
+
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -448,7 +444,7 @@ exports.cancelInterested = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
-        console.log('uninterested', userId, postId);
+
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -501,7 +497,7 @@ exports.cancelGoing = async (req, res) => {
     try {
         const userId = req.user._id;
         const postId = req.params.postId;
-        console.log('uninterested', userId, postId);
+
         const interest = await Interest.findOneAndUpdate(
             {
                 userId: userId,
@@ -535,7 +531,7 @@ exports.getAllCommitted = async (req, res) => {
         if (interestType) {
             options[interestType] = true;
         }
-        console.log(options);
+
         const lookup = {
             $lookup: {
                 from: 'users',
@@ -566,10 +562,9 @@ exports.getAllCommitted = async (req, res) => {
         aggregateOptions.push({ $match: options }, lookup, { $project: project }, { $project: project2 });
 
         const users = await Interest.aggregate(aggregateOptions);
-        console.log(users);
+
         if (users) return res.status(200).send({ success: true, users });
     } catch (error) {
-        console.log(error.message);
         return res.status(501).send({ success: false, message: error.message });
     }
 };
@@ -667,7 +662,6 @@ exports.seedCalenderPosts = async (req, res) => {
         }
         return res.status(200).send({ success: true });
     } catch (error) {
-        console.log(error.message);
         return res.status(501).send({ success: false, message: error.message });
     }
 };
@@ -710,5 +704,49 @@ exports.seedUpdatedPosts = async (req, res) => {
         return res.status(200).send({ success: true, ttl: didntfound.length, didntfound });
     } catch (error) {
         return res.status(501).send({ success: false, message: error.message });
+    }
+};
+// SUMMARY
+exports.getViewerSummary = async (req, res) => {
+    try {
+        // const userId = req.params.userId;
+        // const lastWeek = new Date();
+        // lastWeek.setDate(lastWeek.getDate() - 7);
+        // const totalFollowers = await Follow.countDocuments({ followingId: userId });
+        // const totalFollowersOfLastWeek = await Follow.countDocuments({
+        //     followingId: userId,
+        //     updatedAt: { $gte:new Date(lastWeek) },
+        // });
+        return res
+            .status(200)
+            .send({ success: true, message: 'Viewer summary found.', totalViewers: 10, totalNewViewers: 5 });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+exports.getStatistics = async (req, res) => {
+    try {
+        const dummyData = {
+            viewerStatistics: [
+                { label: 'January 21', value: 20 },
+                { label: 'February 21', value: 30 },
+                { label: 'March 21', value: 40 },
+                { label: 'April 21', value: 50 },
+                { label: 'May 21', value: 60 },
+                { label: 'June 21', value: 70 },
+            ],
+            interactionStatistics: [
+                { label: 'January 21', liked: 20, interested: 30, going: 40 },
+                { label: 'February 21', liked: 30, interested: 40, going: 60 },
+                { label: 'March 21', liked: 40, interested: 50, going: 80 },
+                { label: 'April 21', liked: 50, interested: 60, going: 100 },
+                { label: 'May 21', liked: 60, interested: 70, going: 120 },
+                { label: 'June 21', liked: 70, interested: 80, going: 140 },
+            ],
+        };
+
+        return res.status(200).send({ success: true, message: 'Viewer summary found.', statistics: dummyData });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
     }
 };

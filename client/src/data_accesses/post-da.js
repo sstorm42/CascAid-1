@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 
 class PostDA {
     create_post = (post) => {
@@ -142,6 +142,19 @@ class PostDA {
 
         return axios
             .get(APIPaths.getAllCalendarPosts(userId) + queryString.slice(0, -1), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+
+    get_viewer_summary = (userId) => {
+        return axios
+            .get(APIPaths.getViewerSummary(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_post_statistics = (userId) => {
+        return axios
+            .get(APIPaths.getPostStatistics(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

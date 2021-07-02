@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { NotificationManager } from 'react-notifications';
-import { individualCompletePrivacyPage, individualCompleteSuggestionsPage } from '../../constants/route-paths';
-import { getAllMemberships, createMembership, updateMembership, deleteMembership, acceptMembership, rejectMembership } from '../../actions/membership-action';
-import MembershipForm from '../../components/membership/membership-form';
-import { searchUsersByName } from '../../actions';
+import { individualCompletePrivacyPage, individualCompleteSuggestionsPage } from '@Constants/route-paths';
+import { getAllMemberships, createMembership, updateMembership, deleteMembership, acceptMembership, rejectMembership } from '@Actions/membership-action';
+import MembershipForm from '@Components/membership/membership-form';
+import { searchUsersByName } from '@Actions';
 import AsyncSelect from 'react-select/async';
 const Membership = (props) => {
     const [editMode, setEditMode] = useState(false);

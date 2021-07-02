@@ -18,7 +18,7 @@ const RequiredItemList = (props) => {
                     </Col>
                 </Row>
 
-                <Table striped bordered hover responsive>
+                <Table striped bordered hover responsive size="sm">
                     <thead>
                         <tr>
                             <th>Name</th>

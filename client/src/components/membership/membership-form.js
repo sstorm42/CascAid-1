@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { individualHeaders, organizationHeaders, totalIndividualStep, totalOrganizationStep } from '../../constants/step-headers';
+import { individualHeaders, organizationHeaders, totalIndividualStep, totalOrganizationStep } from '@Constants/step-headers';
 import MembershipModal from './membership-modal';
 import MembershipList from './membership-list';
 const MembershipForm = (props) => {

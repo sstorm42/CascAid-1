@@ -9,5 +9,5 @@ endorsement.post('/cancel-endorse', allowIfLoggedIn, EndorsementController.cance
 endorsement.get('/endorsers/:userId', allowIfLoggedIn, EndorsementController.getAllEndorsers);
 endorsement.get('/endorsees/:userId', allowIfLoggedIn, EndorsementController.getAllEndorsees);
 endorsement.get('/:endorserId/:endorseeId', allowIfLoggedIn, EndorsementController.CheckIfEndorses);
-
+endorsement.get('/endorsers/:userId/summary', allowIfLoggedIn, EndorsementController.getSummary);
 module.exports = endorsement;

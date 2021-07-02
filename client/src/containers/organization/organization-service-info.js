@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getServiceInfo, setServiceInfo, clearServiceInfo } from '../../actions/user-action';
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
-import { getAllOrganizationTypes } from '../../actions/organization-type-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getServiceInfo, setServiceInfo, clearServiceInfo } from '@Actions/user-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
+import { getAllOrganizationTypes } from '@Actions/organization-type-action';
 import { NotificationManager } from 'react-notifications';
-import OrganizationServiceInfoForm from '../../components/organization/organization-service-info-form';
-import { homePage, organizationCompleteBasicInfoPage, organizationCompleteMembershipPage } from '../../constants/route-paths';
+import OrganizationServiceInfoForm from '@Components/organization/organization-service-info-form';
+import { homePage, organizationCompleteBasicInfoPage, organizationCompleteMembershipPage } from '@Constants/route-paths';
 
 const ServiceInfo = (props) => {
     const [loading, setLoading] = useState(false);

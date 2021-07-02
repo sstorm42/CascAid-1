@@ -1,11 +1,11 @@
 import React from 'react';
 import { Badge, Container, Row, Col } from 'react-bootstrap';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import * as RoutePath from '../../constants/route-paths';
-import { getPostTypeByValue } from '../../constants/post-types';
+import * as RoutePath from '@Constants/route-paths';
+import { getPostTypeByValue } from '@Constants/post-types';
 import { Link } from 'react-router-dom';
 import { ImpactAreasRender, InfoRender } from '../form_template/details-render';
-import { interestTypes } from '../../constants/interest-types';
+import { interestTypes } from '@Constants/interest-types';
 import { LikeButtonRender, InterestedButtonRender, GoingButtonRender, FollowButtonRender, UnfollowUserButtonRender } from '../form_template/buttons-render';
 const libraries = ['places'];
 const mapContainerStyle = {

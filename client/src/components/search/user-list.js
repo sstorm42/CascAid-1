@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, CardColumns, Badge } from 'react-bootstrap';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 const getUserTypeName = {
     individual: 'INDIVIDUAL',
     organization: 'ORGANIZATION',

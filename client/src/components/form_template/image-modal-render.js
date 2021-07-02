@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Modal, Image, Button } from 'react-bootstrap';
-import { GrDocumentDownload } from 'react-icons/gr';
 import moment from 'moment';
+import React from 'react';
+import { Col, Image, Modal, Row } from 'react-bootstrap';
 export const PostImageModalRender = (props) => {
     const imageDetailsModal = props.imageDetailsModal;
     const image = props.image;

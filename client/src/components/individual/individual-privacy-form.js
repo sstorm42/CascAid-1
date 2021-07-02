@@ -2,9 +2,9 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { CheckBoxRender, SelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { allActivityTypes } from '../../constants/privacy-activity-types';
-import { allSearchTypes } from '../../constants/privacy-search-types';
-import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
+import { allActivityTypes } from '@Constants/privacy-activity-types';
+import { allSearchTypes } from '@Constants/privacy-search-types';
+import { individualHeaders, totalIndividualStep } from '@Constants/step-headers';
 const PrivacyForm = (props) => {
     const editMode = props.editMode;
     const submitting = props.submitting;
@@ -28,7 +28,15 @@ const PrivacyForm = (props) => {
                             </div>
                         )}
 
-                        <Field id="publicCalender" name="isCalenderPublic" component={CheckBoxRender} label="My calender is public" col1={6} col2={6} type="checkbox" />
+                        <Field
+                            id="publicCalender"
+                            name="isCalenderPublic"
+                            component={CheckBoxRender}
+                            label="My calender is public"
+                            col1={6}
+                            col2={6}
+                            type="checkbox"
+                        />
                         <Field
                             id="isEmailSearchable"
                             name="isEmailSearchable"
@@ -38,8 +46,24 @@ const PrivacyForm = (props) => {
                             col2={6}
                             type="checkbox"
                         />
-                        <Field id="project" name="isUserSearchable" component={CheckBoxRender} label="Organization can find me in searches" col1={6} col2={6} type="checkbox" />
-                        <Field id="showOnSearch" name="showOnSearch" type="text" component={SelectRender} label="I show up in individual searches done by:" col1={6} col2={6}>
+                        <Field
+                            id="project"
+                            name="isUserSearchable"
+                            component={CheckBoxRender}
+                            label="Organization can find me in searches"
+                            col1={6}
+                            col2={6}
+                            type="checkbox"
+                        />
+                        <Field
+                            id="showOnSearch"
+                            name="showOnSearch"
+                            type="text"
+                            component={SelectRender}
+                            label="I show up in individual searches done by:"
+                            col1={6}
+                            col2={6}
+                        >
                             {allActivityTypes.map((activity, i) => {
                                 return (
                                     <option key={activity.value} value={activity.value}>
@@ -48,7 +72,15 @@ const PrivacyForm = (props) => {
                                 );
                             })}
                         </Field>
-                        <Field id="showActivity" name="showActivity" type="text" component={SelectRender} label="My activity shows up on the feeds of" col1={6} col2={6}>
+                        <Field
+                            id="showActivity"
+                            name="showActivity"
+                            type="text"
+                            component={SelectRender}
+                            label="My activity shows up on the feeds of"
+                            col1={6}
+                            col2={6}
+                        >
                             {allSearchTypes.map((search, i) => {
                                 return (
                                     <option key={search.value} value={search.value}>

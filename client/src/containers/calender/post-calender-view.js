@@ -1,19 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Modal, Badge, Button } from 'react-bootstrap';
-import CalendarInfoModal from '../../components/calendar/calendar-info-modal';
-import CalendarPostModal from '../../components/calendar/calendar-post-modal';
-import CalendarView from '../../components/calendar/calendar-view';
-import { HelpButtonRender } from '../../components/form_template/buttons-render';
-
-import moment from 'moment';
-import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllGlobalSkills } from '../../actions/skill-action';
-import { connect } from 'react-redux';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { getColorByPostType, getPostTypeName, allCalenderPostTypes } from '../../constants/post-types';
-
-import CalenderFilter from '../../components/calendar/calendar-filter';
-import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
+import { getAllGlobalImpactAreas } from '@Actions/impact-area-action';
 import {
     cancelGoingPost,
     cancelInterestedPost,
@@ -23,7 +8,19 @@ import {
     goingPost,
     interestedPost,
     likePost,
-} from '../../actions/post-action';
+} from '@Actions/post-action';
+import { getAllGlobalSkills } from '@Actions/skill-action';
+import CalenderFilter from '@Components/calendar/calendar-filter';
+import CalendarInfoModal from '@Components/calendar/calendar-info-modal';
+import CalendarPostModal from '@Components/calendar/calendar-post-modal';
+import CalendarView from '@Components/calendar/calendar-view';
+import { HelpButtonRender } from '@Components/form_template/buttons-render';
+import { allCalenderPostTypes } from '@Constants/post-types';
+import { postDetailsPage, userDetailsPage } from '@Constants/route-paths';
+import React, { useEffect, useState } from 'react';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { Col, Container, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 const PostCalenderView = (props) => {
     const [loading, setLoading] = useState(false);

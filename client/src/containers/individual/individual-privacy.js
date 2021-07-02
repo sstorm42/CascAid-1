@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getPrivacy, setPrivacy, clearPrivacy } from '../../actions/user-action';
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getPrivacy, setPrivacy, clearPrivacy } from '@Actions/user-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
-import IndividualPrivacyForm from '../../components/individual/individual-privacy-form';
-import { individualCompleteInvolvementPage, individualCompleteMembershipPage } from '../../constants/route-paths';
+import IndividualPrivacyForm from '@Components/individual/individual-privacy-form';
+import { individualCompleteInvolvementPage, individualCompleteMembershipPage } from '@Constants/route-paths';
 const Privacy = (props) => {
     const [editMode, setEditMode] = useState(false);
     const [loading, setLoading] = useState(false);

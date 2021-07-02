@@ -6,7 +6,7 @@ import {
     communityFriendListPage,
     communityRequestListPage,
     communityEndorserListPage,
-} from '../../constants/route-paths';
+} from '@Constants/route-paths';
 const CommunityMenu = (props) => {
     const selected = props.selected;
     const userType = props.userType || 'NA';

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import CultivationList from '../../components/cultivation/cultivation-list';
-import * as RoutePaths from '../../constants/route-paths';
+import CultivationList from '@Components/cultivation/cultivation-list';
+import * as RoutePaths from '@Constants/route-paths';
 import { connect } from 'react-redux';
-import { getAllCultivationsByUser, deleteCultivation, clearCultivation } from '../../actions/cultivation-action';
+import { getAllCultivationsByUser, deleteCultivation, clearCultivation } from '@Actions/cultivation-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css

@@ -56,7 +56,6 @@ exports.getAllEndorsers = async (req, res) => {
         if (!endorsers) res.status(200).send({ success: false, endorsers: [], totalEndorsers: 0 });
         else if (endorsers) res.status(200).send({ success: true, endorsers, totalEndorsers: endorsers.length });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -76,7 +75,6 @@ exports.getAllEndorsees = async (req, res) => {
         if (!endorsees) res.status(200).send({ success: false, endorsees: [], totalEndorsees: 0 });
         else if (endorsees) res.status(200).send({ success: true, endorsees, totalEndorsees: endorsees.length });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -91,6 +89,24 @@ exports.CheckIfEndorses = async (req, res) => {
 
         if (!endorsement) res.status(200).send({ success: true, endorses: false });
         else if (endorsement) res.status(200).send({ success: true, endorses: true });
+    } catch (err) {
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
+exports.getSummary = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const lastWeek = new Date();
+        lastWeek.setDate(lastWeek.getDate() - 7);
+        const totalEndorsers = await Endorsement.countDocuments({ endorseeId: userId });
+        const totalNewEndorsers = await Endorsement.countDocuments({
+            endorseeId: userId,
+            updatedAt: { $gte: new Date(lastWeek) },
+        });
+        return res
+            .status(200)
+            .send({ success: true, message: 'Endorser summary found.', totalEndorsers, totalNewEndorsers });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }

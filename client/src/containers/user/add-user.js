@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUser, setUser, clearUser } from '../../actions';
+import { getUser, setUser, clearUser } from '@Actions';
 import { reduxForm } from 'redux-form';
-import {} from '../../actions/validate';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import UserForm from '../../components/user/user-form';
-import * as RoutePath from '../../constants/route-paths';
+import {} from '@Actions/validate';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import UserForm from '@Components/user/user-form';
+import * as RoutePath from '@Constants/route-paths';
 import { NotificationManager } from 'react-notifications';
 import { Container, Row, Col } from 'react-bootstrap';
-import asyncValidate from '../../actions/asyncValidate';
-import { SaveButtonRender, ListButtonRender } from '../../components/form_template/buttons-render';
+import asyncValidate from '@Actions/asyncValidate';
+import { SaveButtonRender, ListButtonRender } from '@Components/form_template/buttons-render';
 class AddUser extends Component {
     constructor(props) {
         super(props);
@@ -47,7 +47,8 @@ class AddUser extends Component {
                         formSubmitted: false,
                         loading: false,
                         error: true,
-                        errorMessage: this.props.user.errorList && this.props.user.errorList.length > 0 ? this.props.user.errorList[0] : this.props.user.message,
+                        errorMessage:
+                            this.props.user.errorList && this.props.user.errorList.length > 0 ? this.props.user.errorList[0] : this.props.user.message,
                     });
                 }
             }
@@ -73,7 +74,8 @@ class AddUser extends Component {
                     this.setState({
                         loading: false,
                         error: true,
-                        errorMessage: this.props.user.errorList && this.props.user.errorList.length > 0 ? this.props.user.errorList[0] : this.props.user.message,
+                        errorMessage:
+                            this.props.user.errorList && this.props.user.errorList.length > 0 ? this.props.user.errorList[0] : this.props.user.message,
                     });
                 }
             }

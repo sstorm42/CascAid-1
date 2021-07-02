@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Dropdown, Modal, Button } from 'react-bootstrap';
-import * as DefaultImages from '../../constants/default-images';
-import * as RoutePaths from '../../constants/route-paths';
+import * as DefaultImages from '@Constants/default-images';
+import * as RoutePaths from '@Constants/route-paths';
 import { FaPlus } from 'react-icons/fa';
 import SampleNews from './sample-news';
 const ManagePosts = (props) => {

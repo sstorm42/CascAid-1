@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import UserDA from '../data_accesses/user-da';
+import * as Types from '@Constants/reducer-types';
+import UserDA from '@DA/user-da';
 
 // BASIC INFO
 export const getBasicInfo = (userId) => {

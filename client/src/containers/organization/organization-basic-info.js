@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getBasicInfo, setBasicInfo, clearBasicInfo } from '@Actions/user-action';
 import { NotificationManager } from 'react-notifications';
-import OrganizationBasicInfoForm from '../../components/organization/organization-basic-info-form';
-import { organizationCompleteServiceInfoPage } from '../../constants/route-paths';
-import { getAllOrganizationTypes } from '../../actions/organization-type-action';
+import OrganizationBasicInfoForm from '@Components/organization/organization-basic-info-form';
+import { organizationCompleteServiceInfoPage } from '@Constants/route-paths';
+import { getAllOrganizationTypes } from '@Actions/organization-type-action';
 const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);
     const [profilePicture, setProfilePicture] = useState();

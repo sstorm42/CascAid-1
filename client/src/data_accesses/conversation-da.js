@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 
 class ConversationDA {
     create_new_conversation = (conversation) => {
@@ -37,7 +37,11 @@ class ConversationDA {
     get_conversation = (conversationId) => {
         return axios
             .get(APIPaths.getOneConversation(conversationId), APIPaths.apiConfig())
-            .then((response) => response.data)
+            .then((response) => {
+                console.log('🚀 ~ file: conversation-da.js ~ line 41 ~ ConversationDA ~ .then ~ response', response);
+
+                return response.data;
+            })
             .catch((err) => {
                 console.log(err);
                 return err.response.data;

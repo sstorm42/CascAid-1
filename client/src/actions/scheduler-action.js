@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import SchedulerDA from '../data_accesses/scheduler-da';
+import * as Types from '@Constants/reducer-types';
+import SchedulerDA from '@DA/scheduler-da';
 
 export const checkIfPostAddedToScheduler = (userId, postId) => {
     console.log('🚀 ~ file: scheduler-action.js ~ line 5 ~ checkIfPostAddedToScheduler ~ userId, postId', userId, postId);

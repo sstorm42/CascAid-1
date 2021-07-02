@@ -1,5 +1,5 @@
-import FriendshipDA from '../data_accesses/friendship-da';
-import * as Types from '../constants/reducer-types';
+import FriendshipDA from '@DA/friendship-da';
+import * as Types from '@Constants/reducer-types';
 
 export const createFriendship = (friendship) => {
     return {

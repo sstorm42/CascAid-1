@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Image, Row, Col, Button, Table, Dropdown, Modal } from 'react-bootstrap';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { getPostTypeByValue } from '../../constants/post-types';
-import { EditButtonRender, DeleteButtonRender, DetailsButtonRender, ListButtonRender } from '../../components/form_template/buttons-render';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { getPostTypeByValue } from '@Constants/post-types';
+import { EditButtonRender, DeleteButtonRender, DetailsButtonRender, ListButtonRender } from '@Components/form_template/buttons-render';
 import moment from 'moment';
-import * as RoutePaths from '../../constants/route-paths';
+import * as RoutePaths from '@Constants/route-paths';
 import { FaPlus } from 'react-icons/fa';
-import { CheckIconRender, CrossIconRender } from '../../components/form_template/icon-render';
+import { CheckIconRender, CrossIconRender } from '@Components/form_template/icon-render';
 const PostList = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -130,9 +130,9 @@ const PostList = (props) => {
                     </Row>
                     <br />
                     {allPosts && allPosts.length > 0 && (
-                        <Table striped bordered hover>
+                        <Table striped bordered hover responsive size="sm">
                             <thead>
-                                <tr>
+                                <tr class="table-active">
                                     <th>#</th>
                                     <th>Post Type</th>
                                     <th>Title</th>

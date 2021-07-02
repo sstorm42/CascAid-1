@@ -1,11 +1,11 @@
 import React from 'react';
-import { Calendar, momentLocalizer, dateFnsLocalizer, Views } from 'react-big-calendar';
+import { Calendar, dateFnsLocalizer, Views } from 'react-big-calendar';
 
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
-import { getColorByPostType } from '../../constants/post-types';
+import { getColorByPostType } from '@Constants/post-types';
 
 const locales = {
     'en-US': require('date-fns/locale/en-US'),
@@ -40,13 +40,13 @@ const ColoredDateCellWrapper = ({ children }) =>
             backgroundColor: 'white',
         },
     });
-const customSlotPropGetter = (date) => {
-    if (date.getDate() === 7 || date.getDate() === 15)
-        return {
-            className: 'special-day',
-        };
-    else return {};
-};
+// const customSlotPropGetter = (date) => {
+//     if (date.getDate() === 7 || date.getDate() === 15)
+//         return {
+//             className: 'special-day',
+//         };
+//     else return {};
+// };
 const CalendarView = (props) => {
     const posts = props.posts;
     const setPost = props.setPost;
@@ -54,7 +54,7 @@ const CalendarView = (props) => {
     const eventStyleGetter = (post, start, end, isSelected) => {
         var style = {
             backgroundColor: getColorByPostType(post.postType),
-            borderRadius: '0px',
+
             opacity: 0.8,
             color: 'white',
             borderRadius: '3px',

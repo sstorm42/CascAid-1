@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import { Container, Row, Col, Image, Button, Modal, Badge } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
 import { FaThumbsUp, FaLocationArrow, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';

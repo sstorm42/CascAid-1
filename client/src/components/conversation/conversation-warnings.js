@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Alert } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 export const FileMaxSizeErrorModal = (props) => {
     const show = props.show;

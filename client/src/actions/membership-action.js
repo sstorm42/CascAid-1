@@ -1,5 +1,5 @@
-import MembershipDA from '../data_accesses/membership-da';
-import * as Types from '../constants/reducer-types';
+import MembershipDA from '@DA/membership-da';
+import * as Types from '@Constants/reducer-types';
 
 export const createMembership = (membership) => {
     return {

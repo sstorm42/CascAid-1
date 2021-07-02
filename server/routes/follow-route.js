@@ -10,5 +10,6 @@ follow.post('/unfollow', allowIfLoggedIn, FollowValidator.unfollowUser, validate
 follow.get('/followers/:userId', allowIfLoggedIn, FollowController.getAllFollower);
 follow.get('/followings/:userId', allowIfLoggedIn, FollowController.getAllFollowing);
 follow.get('/:followerId/:followingId', allowIfLoggedIn, FollowController.CheckIfFollower);
+follow.get('/followers/:userId/summary', allowIfLoggedIn, FollowController.getSummary);
 
 module.exports = follow;

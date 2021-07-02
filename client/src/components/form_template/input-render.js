@@ -1,11 +1,11 @@
+import moment from 'moment';
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Row, Col, InputGroup, FormControl } from 'react-bootstrap';
-import CreatableSelect from 'react-select/creatable';
+import { Mention, MentionsInput } from 'react-mentions';
 import Select from 'react-select';
-import moment from 'moment';
-import { MentionsInput, Mention } from 'react-mentions';
+import CreatableSelect from 'react-select/creatable';
 
 export const InputRender = ({ input, label, type, placeholder, meta: { touched, error, warning } }) => {
     const className = `form-group row ${touched ? (error ? 'has-danger' : '') : ''}`;

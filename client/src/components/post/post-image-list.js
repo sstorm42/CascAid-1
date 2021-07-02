@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table, Image, Button, Row, Col, Badge } from 'react-bootstrap';
-import { DeleteButtonRender, UpArrowButtonRender, DownArrowButtonRender } from '../form_template/buttons-render';
+import { Badge, Col, Image, Row, Table } from 'react-bootstrap';
+import { DeleteButtonRender, DownArrowButtonRender, UpArrowButtonRender } from '../form_template/buttons-render';
 const PostImageList = (props) => {
     const images = props.images;
     if (images && images.length > 0) {
@@ -12,12 +12,12 @@ const PostImageList = (props) => {
                     </Col>
                     <Col className="right-align">
                         <Badge pill variant="dark" className="badge-single ">
-                            Remember: First Image of the list will be your default post image
+                            ß Remember: First Image of the list will be your default post image
                         </Badge>
                     </Col>
                 </Row>
 
-                <Table striped bordered hover responsive>
+                <Table striped bordered hover responsive size="sm">
                     <thead>
                         <tr>
                             <th>Image</th>

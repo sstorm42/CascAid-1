@@ -1,6 +1,6 @@
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Container, Row, Col, Modal, Image, Button } from 'react-bootstrap';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { Col, Container, Image, Modal, Row } from 'react-bootstrap';
 const UserListModal = (props) => {
     const userListModal = props.userListModal;
     const users = props.users;

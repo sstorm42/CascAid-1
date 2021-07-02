@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import CultivationDA from '../data_accesses/cultivation-da';
+import * as Types from '@Constants/reducer-types';
+import CultivationDA from '@DA/cultivation-da';
 
 export const createCultivation = (cultivation) => {
     console.log('🚀 ~ file: cultivation-action.js ~ line 5 ~ createCultivation ~ cultivation', cultivation);

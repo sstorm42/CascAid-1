@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 
 class EndorsementDA {
     endorse_user = (values) => {
@@ -33,6 +33,12 @@ class EndorsementDA {
     check_if_endorses = (endorserId, endorseeId) => {
         return axios
             .get(APIPaths.CheckIfEndorses(endorserId, endorseeId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_endorser_summary = (userId) => {
+        return axios
+            .get(APIPaths.getEndorserSummary(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

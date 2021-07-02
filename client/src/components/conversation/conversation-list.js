@@ -1,8 +1,8 @@
+import { OptionButtonRender } from '@Components/form_template/buttons-render';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Container, ListGroup, Row, Col, Button } from 'react-bootstrap';
 import Avatar from 'react-avatar';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { OptionButtonRender } from '../../components/form_template/buttons-render';
+import { Col, Container, ListGroup, Row } from 'react-bootstrap';
 const PersonRender = ({ person }) => {
     let name = '';
     let profilePicture = '';

@@ -1,5 +1,5 @@
-import FollowDA from '../data_accesses/follow-da';
-import * as Types from '../constants/reducer-types';
+import FollowDA from '@DA/follow-da';
+import * as Types from '@Constants/reducer-types';
 
 export const followUser = (values) => {
     return {
@@ -29,5 +29,11 @@ export const getAllFollowings = (userId) => {
     return {
         type: Types.GET_ALL_FOLLOWINGS,
         payload: FollowDA.get_all_followings(userId),
+    };
+};
+export const getFollowerSummary = (userId) => {
+    return {
+        type: Types.GET_FOLLOWER_SUMMARY,
+        payload: FollowDA.get_follower_summary(userId),
     };
 };

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import PostForm from '../../components/post/post-form';
+import PostForm from '@Components/post/post-form';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getPostById, createPost, updatePostById, clearPost } from '../../actions/post-action';
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getPostById, createPost, updatePostById, clearPost } from '@Actions/post-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import * as RoutePaths from '../../constants/route-paths';
+import * as RoutePaths from '@Constants/route-paths';
 const CreatePost = (props) => {
     const [loading, setLoading] = useState(false);
     const [images, setImages] = useState([]);

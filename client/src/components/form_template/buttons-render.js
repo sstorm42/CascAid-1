@@ -1,19 +1,27 @@
 import React from 'react';
-import { Button, Tooltip, OverlayTrigger, Dropdown, DropdownButton } from 'react-bootstrap';
-import { FaThumbsUp, FaLocationArrow, FaRegCalendarPlus, FaRegCalendarMinus } from 'react-icons/fa';
-import { RiUserFollowLine } from 'react-icons/ri';
-import { FaRegEdit, FaRegTrashAlt, FaArrowCircleDown, FaArrowCircleUp, FaHeart, FaHandsHelping } from 'react-icons/fa';
-import { BiDetail, BiDotsVertical, BiImageAdd } from 'react-icons/bi';
-import { IoMailUnreadOutline } from 'react-icons/io5';
-import { VscMailRead } from 'react-icons/vsc';
-import { FiUserCheck, FiUserMinus, FiUserX, FiUserPlus } from 'react-icons/fi';
-import { AiOutlineUserAdd, AiOutlineUserDelete, AiOutlineUser, AiOutlineSend, AiOutlinePlus } from 'react-icons/ai';
-import { RiUserFollowFill, RiUserUnfollowFill, RiChat2Line } from 'react-icons/ri';
-import { BsCardList, BsPaperclip } from 'react-icons/bs';
-import { TiThList } from 'react-icons/ti';
-import { ImCross } from 'react-icons/im';
-import { FiHelpCircle } from 'react-icons/fi';
+import { Button, Dropdown, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { AiOutlinePlus, AiOutlineSend, AiOutlineUserAdd, AiOutlineUserDelete } from 'react-icons/ai';
+import { BiDetail, BiImageAdd } from 'react-icons/bi';
+import { BsPaperclip } from 'react-icons/bs';
 import { CgUserAdd, CgUserRemove } from 'react-icons/cg';
+import {
+    FaArrowCircleDown,
+    FaArrowCircleUp,
+    FaHandsHelping,
+    FaHeart,
+    FaLocationArrow,
+    FaRegCalendarMinus,
+    FaRegCalendarPlus,
+    FaRegEdit,
+    FaRegTrashAlt,
+    FaThumbsUp,
+} from 'react-icons/fa';
+import { FiHelpCircle, FiUserCheck, FiUserMinus, FiUserPlus, FiUserX } from 'react-icons/fi';
+import { ImCross } from 'react-icons/im';
+import { IoMailUnreadOutline } from 'react-icons/io5';
+import { RiChat2Line, RiUserFollowFill, RiUserFollowLine } from 'react-icons/ri';
+import { TiThList } from 'react-icons/ti';
+import { VscMailRead } from 'react-icons/vsc';
 const renderTitle = (title) => {
     return title ? title : '';
 };
@@ -107,7 +115,7 @@ export const LikeButtonRender = (props) => {
     const className = props.complete ? 'filled-like-btn' : '';
     return (
         <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
-            <Button className="actionButton" variant="outline-primary" className={className} size="sm" {...props}>
+            <Button variant="outline-primary" className={'actionButton ' + className} size="sm" {...props}>
                 <FaThumbsUp />
             </Button>
         </OverlayTrigger>
@@ -118,7 +126,7 @@ export const InterestedButtonRender = (props) => {
     const className = props.complete ? 'filled-interest-btn' : '';
     return (
         <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
-            <Button className="actionButton" variant="outline-secondary" className={className} size="sm" {...props}>
+            <Button variant="outline-secondary" className={'actionButton ' + className} size="sm" {...props}>
                 <FaHeart />
             </Button>
         </OverlayTrigger>
@@ -129,7 +137,7 @@ export const GoingButtonRender = (props) => {
     const className = props.complete ? 'filled-going-btn' : '';
     return (
         <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip({ title: toolTipTitle })}>
-            <Button className="actionButton" variant="outline-info" className={className} size="sm" {...props}>
+            <Button variant="outline-info" className={'actionButton ' + className} size="sm" {...props}>
                 <FaLocationArrow />
             </Button>
         </OverlayTrigger>

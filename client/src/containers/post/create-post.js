@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import PostForm from '../../components/post/post-form';
+import PostForm from '@Components/post/post-form';
 import { connect } from 'react-redux';
 import { reduxForm, formValueSelector, change } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getPostById, createPost, updatePostById, clearPost } from '../../actions/post-action';
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
-import { getAllSkillsByUser } from '../../actions/skill-action';
-import { getServiceInfo, getAllUsersNames } from '../../actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getPostById, createPost, updatePostById, clearPost } from '@Actions/post-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
+import { getAllSkillsByUser } from '@Actions/skill-action';
+import { getServiceInfo, getAllUsersNames } from '@Actions/user-action';
 import { NotificationManager } from 'react-notifications';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import * as RoutePaths from '../../constants/route-paths';
+import * as RoutePaths from '@Constants/route-paths';
 
 const CreatePost = (props) => {
     const [loading, setLoading] = useState(false);
@@ -191,7 +191,7 @@ const CreatePost = (props) => {
             props.dispatch(getAllSkillsByUser(user._id));
             props.dispatch(getServiceInfo(user._id));
             const url = window.location.pathname;
-            if (url.split('/')[2] === 'edit') {
+            if (url.split('/')[3] === 'edit') {
                 setEditMode(true);
                 getInitialInfo(props.match.params.postId);
             } else {
@@ -229,6 +229,12 @@ const CreatePost = (props) => {
             setUsersName([...usersName_]);
         }
     }, [props.getAllUsersNameResponse]);
+    const handleOnStartDateTimeChange = (time) => {
+        const startDateTime = new Date(time);
+        startDateTime.setHours(startDateTime.getHours() + 1);
+        console.log('🚀 ~ file: create-post.js ~ line 255 ~ handleOnStartDateTimeChange ~ startDateTime', startDateTime);
+        props.change('endDateTime', startDateTime);
+    };
     if (loading) return <LoadingAnim />;
     else
         return (
@@ -258,6 +264,7 @@ const CreatePost = (props) => {
                 handleItemPosition={handleItemPosition}
                 requiredItems={requiredItems}
                 setIsActive={setIsActive}
+                handleOnStartDateTimeChange={handleOnStartDateTimeChange}
             />
         );
 };

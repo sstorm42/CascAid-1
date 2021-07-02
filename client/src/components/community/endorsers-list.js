@@ -1,12 +1,12 @@
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Card, CardColumns, Badge } from 'react-bootstrap';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { MessageButtonRender } from '../form_template/buttons-render';
+import { Badge, Card, CardColumns } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
+import { MessageButtonRender } from '../form_template/buttons-render';
 const EndorserList = (props) => {
     const endorsers = props.endorsers;
     const cards = props.cards;
-    const userId = props.userId;
+    // const userId = props.userId;
     const handleGotoUserDetails = props.handleGotoUserDetails;
     const getUserTypeName = {
         individual: 'INDIVIDUAL',
@@ -48,7 +48,7 @@ const EndorserList = (props) => {
                                             src={profilePicture}
                                             alt="Endorser"
                                             onClick={() => {
-                                                props.handleGotoUserDetails(endorser.endorserUserType, endorser.endorserId);
+                                                handleGotoUserDetails(endorser.endorserUserType, endorser.endorserId);
                                             }}
                                         />
                                         <Badge variant="primary" className="image-text-top-left-small">
@@ -58,7 +58,7 @@ const EndorserList = (props) => {
                                     <Card.Body
                                         className="special-btn"
                                         onClick={() => {
-                                            props.handleGotoUserDetails(endorser.endorserUserType, endorser.endorserId);
+                                            handleGotoUserDetails(endorser.endorserUserType, endorser.endorserId);
                                         }}
                                     >
                                         <Card.Title>{name}</Card.Title>

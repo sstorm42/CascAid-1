@@ -113,3 +113,6 @@ export const cultivationManagePage = '/cultivation/manage';
 export const cultivationCreatePage = '/cultivation/create';
 export const cultivationDetailsPage = (cultivationId) => `/cultivation/${cultivationId}/details`;
 export const cultivationEditPage = (cultivationId) => `/cultivation/${cultivationId}/edit`;
+
+// ROUGH
+export const roughFaceBookLogin = '/rough/facebook-login';

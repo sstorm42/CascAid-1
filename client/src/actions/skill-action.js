@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import SkillDA from '../data_accesses/skill-da';
+import * as Types from '@Constants/reducer-types';
+import SkillDA from '@DA/skill-da';
 
 export const getAllGlobalSkills = () => {
     return {

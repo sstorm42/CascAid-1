@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import Step1 from '../../components/profile_step/step_1';
-import Step2 from '../../components/profile_step/step_2';
-import Step3 from '../../components/profile_step/step_3';
-import Step4 from '../../components/profile_step/step_4';
-import Step5 from '../../components/profile_step/step_5';
-import Step6 from '../../components/profile_step/step_6';
-import Step7 from '../../components/profile_step/step_7';
-import { getUserInformation, setUserInformation, getAllAreaOfInterests } from '../../actions';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import Step1 from '@Components/profile_step/step_1';
+import Step2 from '@Components/profile_step/step_2';
+import Step3 from '@Components/profile_step/step_3';
+import Step4 from '@Components/profile_step/step_4';
+import Step5 from '@Components/profile_step/step_5';
+import Step6 from '@Components/profile_step/step_6';
+import Step7 from '@Components/profile_step/step_7';
+import { getUserInformation, setUserInformation, getAllAreaOfInterests } from '@Actions';
 import { NotificationManager } from 'react-notifications';
 const CompleteProfile = (props) => {
     const [stepId, setStepId] = useState(2);

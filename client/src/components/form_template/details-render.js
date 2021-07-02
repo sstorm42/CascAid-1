@@ -190,7 +190,7 @@ export const RequiredItemsRender = (items) => {
         return (
             <>
                 <h6>Required Items</h6>
-                <Table striped bordered>
+                <Table striped bordered hover responsive size="sm">
                     <thead variant="dark">
                         <tr>
                             <th>#</th>

@@ -1,6 +1,6 @@
-import * as Types from '../constants/reducer-types';
+import * as Types from '@Constants/reducer-types';
 import { setLocalStorage, getLocalStorage, removeLocalStorage } from './index';
-import ConversationDA from '../data_accesses/conversation-da';
+import ConversationDA from '@DA/conversation-da';
 
 export const setConversation = (conversation) => {
     return {

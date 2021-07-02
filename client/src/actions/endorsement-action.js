@@ -1,5 +1,5 @@
-import EndorsementDA from '../data_accesses/endorsement-da';
-import * as Types from '../constants/reducer-types';
+import EndorsementDA from '@DA/endorsement-da';
+import * as Types from '@Constants/reducer-types';
 
 export const endorseUser = (values) => {
     return {
@@ -29,5 +29,11 @@ export const getAllEndorsees = (userId) => {
     return {
         type: Types.GET_ALL_ENDORSEES,
         payload: EndorsementDA.get_all_endorsees(userId),
+    };
+};
+export const getEndorserSummary = (userId) => {
+    return {
+        type: Types.GET_ENDORSER_SUMMARY,
+        payload: EndorsementDA.get_endorser_summary(userId),
     };
 };

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import SignUpForm from '../../components/user/sign-up-form';
+import SignUpForm from '@Components/user/sign-up-form';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { userSignUp, authenticate, printLocalStorage } from '../../actions';
-import { validate } from '../../actions/validate';
-import asyncValidate from '../../actions/asyncValidate';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getUserTypeDataById } from '../../constants/user-type-data';
+import { userSignUp, authenticate, printLocalStorage } from '@Actions';
+import { validate } from '@Actions/validate';
+import asyncValidate from '@Actions/asyncValidate';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getUserTypeDataById } from '@Constants/user-type-data';
 import { NotificationManager } from 'react-notifications';
-import { getBasicInfoPageByUserType } from '../../constants/route-paths';
+import { getBasicInfoPageByUserType } from '@Constants/route-paths';
 class SignUp extends Component {
     constructor(props) {
         super(props);

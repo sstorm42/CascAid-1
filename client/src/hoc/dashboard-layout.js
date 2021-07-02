@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../components/layout/header';
-import Footer from '../components/layout/footer';
+import Header from '@Components/layout/header';
+import Footer from '@Components/layout/footer';
 import 'react-notifications/lib/notifications.css';
 import { connect } from 'react-redux';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
@@ -9,7 +9,7 @@ import { withRouter } from 'react-router-dom';
 import { FaHome, FaSearch, FaConnectdevelop, FaCalendarAlt, FaUserCog, FaEnvelope, FaNewspaper } from 'react-icons/fa';
 import { CgUserList } from 'react-icons/cg';
 import { FiDisc } from 'react-icons/fi';
-import * as RoutePath from '../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 class DashboardLayout extends Component {
     individualSideNav = () => {
         return (
@@ -86,7 +86,7 @@ class DashboardLayout extends Component {
             >
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="home">
-                    <NavItem eventKey="/">
+                    <NavItem eventKey={RoutePath.dashboardPage}>
                         <NavIcon>
                             <FaHome size={24} />
                         </NavIcon>

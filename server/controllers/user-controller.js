@@ -320,7 +320,7 @@ exports.getAll = async (req, res) => {
     try {
         // Getting all query values
         const query = req.query;
-        console.log('🚀 ~ file: user-controller.js ~ line 317 ~ exports.getAll= ~ query', query);
+
         const userType = query.userType ? JSON.parse(query.userType) : '';
         const organizationTypes = query.organizationTypes ? JSON.parse(query.organizationTypes) : [];
         const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
@@ -341,17 +341,13 @@ exports.getAll = async (req, res) => {
                 $in: organizationTypes.map((type) => ObjectId(type)),
             };
         }
-        console.log('TYPE', userType);
-        console.log('AREA', impactAreas);
+
         if (impactAreas && impactAreas.length > 0) {
             if (userType === 'individual') {
-                console.log('individual called');
                 match['involvement.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
             } else if (userType === 'organization') {
-                console.log('organization called');
                 match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
             } else {
-                console.log('others called');
                 match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
                 match['involvement.impactAreas'] = { $in: impactAreas.map((area) => ObjectId(area)) };
             }
@@ -398,7 +394,6 @@ exports.getAll = async (req, res) => {
         aggregateOptions.push({ $match: { $and: [nameMatch, match, addressCondition] } }, ...lookUps);
 
         const users = await User.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: user-controller.js ~ line 402 ~ exports.getAll= ~ users', users);
 
         if (users) return res.status(200).send({ ...UserResponse.UserFound, users });
         else return res.status(404).send(UserResponse.UserNotFound);
@@ -409,7 +404,7 @@ exports.getAll = async (req, res) => {
 exports.getPublicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
-        console.log('🚀 ~ file: user-controller.js ~ line 373 ~ exports.getPublicInfo= ~ userId', userId);
+
         const user = await User.findOne({ _id: userId })
             .populate('basicInfo.skills', { _id: 1, label: 1, value: 1 })
             .populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 })
@@ -476,11 +471,10 @@ exports.getPublicInfo = async (req, res) => {
         const aggregateOptions = [];
         aggregateOptions.push({ $match: match }, ...lookUps, { $project: project }, { $project: projectWind });
         const memberships = await Membership.aggregate(aggregateOptions);
-        console.log(user);
+
         if (user._id) return res.status(200).send({ ...UserResponse.UserFound, user, memberships });
         else return res.status(404).send(UserResponse.UserNotFound);
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -489,7 +483,7 @@ exports.getAllSuggestions = async (req, res) => {
     try {
         let limit = 100;
         if (req.query.limit) limit = JSON.parse(req.query.limit);
-        console.log(limit);
+
         const userId = req.user._id;
         const userType = req.query.userType;
         let impactAreas = [];
@@ -507,12 +501,10 @@ exports.getAllSuggestions = async (req, res) => {
         const follows = await Follow.find({ followerId: req.params.userId });
 
         if (follows && follows.length > 0) {
-            // console.log(follows)
+            //
             // const followings = follows.toObject();
             followingIds = follows.map((following) => following.followingId);
         }
-
-        console.log('🚀 ~ file: user-controller.js ~ line 410 ~ exports.getAllSuggestions= ~ follows', followingIds);
 
         let match1 = {};
         let match2 = {};
@@ -572,7 +564,6 @@ exports.getAllSuggestions = async (req, res) => {
         if (users) return res.status(200).send({ ...UserResponse.UserFound, users });
         else return res.status(404).send(UserResponse.UserNotFound);
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -587,9 +578,8 @@ exports.seedUsers = async (req, res) => {
                 let individual = await Individual.findOne({
                     userId: user._id.toString(),
                 });
-                console.log('🚀 ~ file: user-controller.js ~ line 555 ~ exports.seedUsers= ~ individual', individual);
+
                 if (individual && individual._id) {
-                    console.log('IND', individual._id);
                     let update = await User.updateOne(
                         { _id: ObjectId(individual.userId) },
                         {
@@ -600,7 +590,7 @@ exports.seedUsers = async (req, res) => {
                             },
                         },
                     );
-                    console.log('🚀 ~ file: user-controller.js ~ line 566 ~ exports.seedUsers= ~ update', update);
+
                     if (!update) return res.status(401).send({ success: false, update });
                 }
             }
@@ -625,7 +615,6 @@ exports.seedUsers = async (req, res) => {
         }
         return res.status(200).send({ success: true, totalUsers: users.length });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -640,7 +629,6 @@ exports.deleteMultipleUsers = async (req, res) => {
             return res.status(200).send({ success: true, deletedUsers });
         } else return res.status(401).send({ success: false, deletedUsers });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -724,7 +712,6 @@ exports.seedNew = async (req, res) => {
         // writeLocalJsonFile(orgs, 'organizations');
         res.status(200).send({ success: true, orgs });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -747,7 +734,6 @@ exports.getAllZips = async (req, res) => {
         }
         return res.status(200).send({ success: true, zips, zipObject, ttlUsers, ttl: zips.length });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -760,8 +746,6 @@ exports.setOnMap = async (req, res) => {
         for (let i = 0; i < ttlUsers; i++) {
             let org = updatedOrganizations[i];
             if (org.Contact) {
-                console.log('🚀 ~ file: user-controller.js ~ line 748 ~ exports.setOnMap= ~ org.Contact', org.Contact);
-
                 const path = `http://api.positionstack.com/v1/forward?access_key=cd0f1a6397527f68a958186a6944d663&query=${org.Address},${org.Zip}`;
                 const dt = await axios.get(path).then(async (response) => {
                     let data = response.data;
@@ -805,7 +789,6 @@ exports.setOnMap = async (req, res) => {
         }
         return res.status(200).send({ success: true, notFoundOrg, foundOrg });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -824,7 +807,6 @@ exports.updateUserCountry = async (req, res) => {
         );
         return res.status(200).send({ success: true, message: 'Updated' });
     } catch (err) {
-        console.log('ERR', err.message);
         return res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -847,8 +829,6 @@ exports.getAllUsersName = async (req, res) => {
         ]);
         return res.status(200).send({ success: true, users });
     } catch (error) {
-        console.log('ERR', error.message);
-
         return res.status(500).send({ success: false, message: error.message });
     }
 };
@@ -857,7 +837,6 @@ exports.getAllIndividuals = async (req, res) => {
     try {
         // Getting all query values
         const query = req.query;
-        console.log('🚀 ~ file: user-controller.js ~ line 860 ~ exports.getAllIndividuals= ~ query', query);
 
         const impactAreas = query.impactAreas ? JSON.parse(query.impactAreas) : [];
         const skills = query.skills ? JSON.parse(query.skills) : [];
@@ -893,7 +872,6 @@ exports.getAllIndividuals = async (req, res) => {
         if (onlyFollowers && req.user._id) {
             const allFollows = await Follow.find({ followingId: req.user._id });
             match['_id'] = { $in: allFollows.map((follow) => follow.followerId) };
-            console.log(match['_id']);
         }
         if (name) {
             // match['basicInfo.name'] = { $regex: name, $options: 'i' };

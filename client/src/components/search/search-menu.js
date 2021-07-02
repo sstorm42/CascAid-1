@@ -1,6 +1,6 @@
+import { communityActivitySearchPage, organizationSearchPage } from '@Constants/route-paths';
 import React from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
-import { organizationSearchPage, communityActivitySearchPage } from '../../constants/route-paths';
+import { Nav } from 'react-bootstrap';
 const SearchMenu = (props) => {
     const selected = props.selected;
     return (

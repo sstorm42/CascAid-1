@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from '../components/layout/header';
-import Footer from '../components/layout/footer';
+import Header from '@Components/layout/header';
+import Footer from '@Components/layout/footer';
 import 'react-notifications/lib/notifications.css';
 import { connect } from 'react-redux';
 

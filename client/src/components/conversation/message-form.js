@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import React from 'react';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import {
-    MessageAttachmentButtonRender,
-    HiddenFileInputRender,
-    SendMessageButtonRender,
-    MessageImageUploadButtonRender,
     DeleteAttachmentButtonRender,
     DeleteButtonRender,
+    HiddenFileInputRender,
+    MessageAttachmentButtonRender,
+    MessageImageUploadButtonRender,
+    SendMessageButtonRender,
 } from '../form_template/buttons-render';
 const MessageForm = (props) => {
     const hiddenFileInput = React.useRef(null);

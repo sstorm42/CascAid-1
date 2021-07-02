@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 exports.createOne = async (req, res) => {
     try {
         const membership = { ...req.body, status: 'pending' };
-        console.log('🚀 ~ file: membership-controller.js ~ line 9 ~ exports.createOne= ~ membership', membership);
+
         const membership_ = new Membership(membership);
         const savedMembership = await membership_.save();
         if (savedMembership && savedMembership._id) {
@@ -51,7 +51,6 @@ exports.deleteOne = async (req, res) => {
 // GET ALL
 exports.getAll = async (req, res) => {
     try {
-        console.log(req.query);
         const individualId = req.query.individualId ? JSON.parse(req.query.individualId) : null;
         const organizationId = req.query.organizationId ? JSON.parse(req.query.organizationId) : null;
         let match = {};
@@ -117,7 +116,7 @@ exports.getAll = async (req, res) => {
 exports.acceptOne = async (req, res) => {
     try {
         const membershipId = req.params.membershipId;
-        console.log('🚀 ~ file: membership-controller.js ~ line 121 ~ exports.acceptOne= ~ membershipId', membershipId);
+
         const updatedMembership = await Membership.findOneAndUpdate(
             { _id: membershipId },
             { $set: { status: 'accepted' } },

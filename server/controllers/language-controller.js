@@ -5,7 +5,7 @@ const { lineToWordConverter } = require('../utils/library');
 exports.seed = async (req, res) => {
     try {
         const initialData = req.body.Languages || Languages;
-        console.log('🚀 ~ file: language-controller.js ~ line 8 ~ exports.seed= ~ initialData', initialData);
+
         for (let i = 0; i < initialData.length; i++) {
             let language = await new Language({
                 value: lineToWordConverter(initialData[i]),
@@ -14,7 +14,10 @@ exports.seed = async (req, res) => {
                 creatorId: '000000000000000000000000',
             });
             let savedData = await language.save();
-            if (!savedData) return res.status(500).send({ success: false, message: initialData[i] + ' Could not be saved on database' });
+            if (!savedData)
+                return res
+                    .status(500)
+                    .send({ success: false, message: initialData[i] + ' Could not be saved on database' });
         }
         res.status(200).send({ success: true, message: 'All languages are created' });
     } catch (err) {

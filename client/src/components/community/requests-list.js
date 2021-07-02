@@ -1,9 +1,8 @@
+import { defaultIndividualProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Card, CardColumns, Button } from 'react-bootstrap';
-import { defaultIndividualProfilePicture } from '../../constants/default-images';
-import { AcceptButtonRender, RejectButtonRender, DeleteFriendshipButtonRender } from '../form_template/buttons-render';
+import { Card, CardColumns } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
-import { MessageButtonRender } from '../form_template/buttons-render';
+import { AcceptButtonRender, DeleteFriendshipButtonRender, MessageButtonRender, RejectButtonRender } from '../form_template/buttons-render';
 const FriendRequestList = (props) => {
     const friendships = props.friendships;
     const userId = props.userId;

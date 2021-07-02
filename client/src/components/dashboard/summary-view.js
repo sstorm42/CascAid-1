@@ -1,7 +1,28 @@
 import React from 'react';
-import { Container, Row, Col, Button, Card, CardColumns } from 'react-bootstrap';
+import { Button, Card, CardColumns, Col, Row } from 'react-bootstrap';
 
 const SummaryView = (props) => {
+    const getFollowerSummaryResponse = props.getFollowerSummaryResponse;
+    const getEndorserSummaryResponse = props.getEndorserSummaryResponse;
+    const getViewerSummaryResponse = props.getViewerSummaryResponse;
+    let totalFollowers = 0;
+    let totalNewFollowers = 0;
+    let totalEndorsers = 0;
+    let totalNewEndorsers = 0;
+    let totalViewers = 0;
+    let totalNewViewers = 0;
+    if (getFollowerSummaryResponse && getFollowerSummaryResponse.success) {
+        totalFollowers = getFollowerSummaryResponse.totalFollowers;
+        totalNewFollowers = getFollowerSummaryResponse.totalNewFollowers;
+    }
+    if (getEndorserSummaryResponse && getEndorserSummaryResponse.success) {
+        totalEndorsers = getEndorserSummaryResponse.totalEndorsers;
+        totalNewEndorsers = getEndorserSummaryResponse.totalNewEndorsers;
+    }
+    if (getViewerSummaryResponse && getViewerSummaryResponse.success) {
+        totalViewers = getViewerSummaryResponse.totalViewers;
+        totalNewViewers = getViewerSummaryResponse.totalNewViewers;
+    }
     return (
         <>
             <Row>
@@ -15,13 +36,13 @@ const SummaryView = (props) => {
                                     <Col sm={8}>
                                         <b>Total followers</b>
                                     </Col>
-                                    <Col sm={4}>200</Col>
+                                    <Col sm={4}>{totalFollowers}</Col>
                                 </Row>
                                 <Row>
                                     <Col sm={8}>
                                         <b>Last 7 Days</b>
                                     </Col>
-                                    <Col sm={4}>20</Col>
+                                    <Col sm={4}>{totalNewFollowers}</Col>
                                 </Row>
                             </Card.Body>
                             <Card.Footer>
@@ -45,13 +66,13 @@ const SummaryView = (props) => {
                                     <Col sm={8}>
                                         <b>Total endorsers</b>
                                     </Col>
-                                    <Col sm={4}>100</Col>
+                                    <Col sm={4}>{totalEndorsers}</Col>
                                 </Row>
                                 <Row>
                                     <Col sm={8}>
                                         <b>Last 7 Days</b>
                                     </Col>
-                                    <Col sm={4}>10</Col>
+                                    <Col sm={4}>{totalNewEndorsers}</Col>
                                 </Row>
                             </Card.Body>
                             <Card.Footer>
@@ -74,13 +95,13 @@ const SummaryView = (props) => {
                                     <Col sm={8}>
                                         <b>Total viewers</b>
                                     </Col>
-                                    <Col sm={4}>100</Col>
+                                    <Col sm={4}>{totalViewers}</Col>
                                 </Row>
                                 <Row>
                                     <Col sm={8}>
                                         <b>Last 7 Days</b>
                                     </Col>
-                                    <Col sm={4}>10</Col>
+                                    <Col sm={4}>{totalNewViewers}</Col>
                                 </Row>
                             </Card.Body>
                             <Card.Footer>

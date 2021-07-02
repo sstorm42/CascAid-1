@@ -2,7 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { SwitchRender, SelectRender, InputRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
+import { organizationHeaders, totalOrganizationStep } from '@Constants/step-headers';
 const InternalLinkForm = (props) => {
     const submitting = props.submitting;
 

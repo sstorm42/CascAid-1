@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import PostList from '../../components/post/post-list';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import PostList from '@Components/post/post-list';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { connect } from 'react-redux';
-import { getAllPostsByOrganization } from '../../actions/organization-action';
-import * as RoutePaths from '../../constants/route-paths';
+import { getAllPostsByOrganization } from '@Actions/organization-action';
+import * as RoutePaths from '@Constants/route-paths';
 const ManagePosts = (props) => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {

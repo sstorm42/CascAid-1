@@ -1,13 +1,12 @@
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Card, CardColumns, Badge } from 'react-bootstrap';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { UnfollowUserButtonRender } from '../form_template/buttons-render';
+import { Badge, Card, CardColumns } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
-import { MessageButtonRender } from '../form_template/buttons-render';
+import { MessageButtonRender, UnfollowUserButtonRender } from '../form_template/buttons-render';
 const FollowingList = (props) => {
     const followings = props.followings;
     const cards = props.cards;
-    const userId = props.userId;
+    // const userId = props.userId;
     const handleGotoUserDetails = props.handleGotoUserDetails;
     const getUserTypeName = {
         individual: 'INDIVIDUAL',
@@ -49,7 +48,7 @@ const FollowingList = (props) => {
                                             src={profilePicture}
                                             alt="Following"
                                             onClick={() => {
-                                                props.handleGotoUserDetails(following.followingUserType, following.followingId);
+                                                handleGotoUserDetails(following.followingUserType, following.followingId);
                                             }}
                                         />
                                         <Badge variant="primary" className="image-text-top-left-small">
@@ -59,7 +58,7 @@ const FollowingList = (props) => {
                                     <Card.Body
                                         className="special-btn"
                                         onClick={() => {
-                                            props.handleGotoUserDetails(following.followingUserType, following.followingId);
+                                            handleGotoUserDetails(following.followingUserType, following.followingId);
                                         }}
                                     >
                                         <Card.Title>{name}</Card.Title>

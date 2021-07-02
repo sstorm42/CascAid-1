@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
 import moment from 'moment';
-import { EditButtonRender, DeleteButtonRender } from '../../components/form_template/buttons-render';
+import { EditButtonRender, DeleteButtonRender } from '@Components/form_template/buttons-render';
 const SampleNews = (props) => {
     const news = [
         {
@@ -76,7 +76,7 @@ const SampleNews = (props) => {
         },
     ];
     return (
-        <Table striped bordered hover size="sm">
+        <Table striped bordered hover responsive size="sm">
             <thead>
                 <tr>
                     <th></th>

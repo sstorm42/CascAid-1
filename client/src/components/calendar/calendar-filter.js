@@ -1,7 +1,7 @@
+import { allCalenderPostTypes } from '@Constants/post-types';
 import React from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import Select from 'react-select';
-import { allCalenderPostTypes } from '../../constants/post-types';
 const CalenderFilters = (props) => {
     const filter = props.filter;
     const changeFilterValue = props.changeFilterValue;
@@ -31,12 +31,7 @@ const CalenderFilters = (props) => {
             <Row>
                 <Col>
                     <label>Impact Area</label>
-                    <Select
-                        onChange={(value) => changeFilterValue('impactAreas', value)}
-                        isMulti={true}
-                        options={props.impactAreas}
-                        value={filter.impactAreas}
-                    />
+                    <Select onChange={(value) => changeFilterValue('impactAreas', value)} isMulti={true} options={impactAreas} value={filter.impactAreas} />
                 </Col>
             </Row>
             <br />

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getBasicInfo, setBasicInfo, clearBasicInfo } from '../../actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getBasicInfo, setBasicInfo, clearBasicInfo } from '@Actions/user-action';
 import { NotificationManager } from 'react-notifications';
-import IndividualBasicInfoForm from '../../components/individual/individual-basic-info-form';
-import { individualCompleteInvolvementPage } from '../../constants/route-paths';
-import { getAllLanguagesByUser } from '../../actions/language-action';
-import { getAllSkillsByUser } from '../../actions/skill-action';
-import { getRacesByValues } from '../../constants/races';
+import IndividualBasicInfoForm from '@Components/individual/individual-basic-info-form';
+import { individualCompleteInvolvementPage } from '@Constants/route-paths';
+import { getAllLanguagesByUser } from '@Actions/language-action';
+import { getAllSkillsByUser } from '@Actions/skill-action';
+import { getRacesByValues } from '@Constants/races';
 
 const BasicInfo = (props) => {
     const [loading, setLoading] = useState(false);

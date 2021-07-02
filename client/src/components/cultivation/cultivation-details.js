@@ -1,12 +1,12 @@
-import React from 'react';
-import { Container, Row, Col, Image, Button, Table } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
-import { DetailsButtonRender, RemoveUserFromCultivation } from '../form_template/buttons-render';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import moment from 'moment';
+import React from 'react';
+import { Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { DetailsButtonRender } from '../form_template/buttons-render';
 const CultivationDetails = (props) => {
     const cultivation = props.cultivation;
     const handleGoToUserDetailsPage = props.handleGoToUserDetailsPage;
-    const handleRemoveUsersFromCultivation = props.handleRemoveUsersFromCultivation;
+    // const handleRemoveUsersFromCultivation = props.handleRemoveUsersFromCultivation;
     return (
         <Container>
             <Row>
@@ -42,7 +42,7 @@ const CultivationDetails = (props) => {
                     {cultivation.users && cultivation.users.length > 0 ? (
                         <Row>
                             <Col>
-                                <Table striped bordered size="sm" hover>
+                                <Table striped bordered hover responsive size="sm">
                                     <tbody>
                                         {cultivation.users.map((user, i) => {
                                             let name = '';

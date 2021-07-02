@@ -1,20 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
-import PostsCardView from '../../components/post/post-card-view';
-import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllPostsByFilter } from '../../actions/post-action';
-import PostsMapView from '../../components/post/post-map-view';
-import SearchMenu from '../../components/search/search-menu';
-import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import Select from 'react-select';
+import { followUser, getAllFollowings, unfollowUser } from '@Actions/follow-action';
+import { getAllGlobalImpactAreas } from '@Actions/impact-area-action';
+import {
+    cancelGoingPost,
+    cancelInterestedPost,
+    cancelLikePost,
+    changePostInterest,
+    getAllPostsByFilter,
+    goingPost,
+    interestedPost,
+    likePost,
+} from '@Actions/post-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import PostsCardView from '@Components/post/post-card-view';
+import PostsMapView from '@Components/post/post-map-view';
+import PostFilter from '@Components/search/post-filters';
+import SearchMenu from '@Components/search/search-menu';
+import { defaultCurrentLocation } from '@Constants/default-user-information';
+import { allSearchablePostTypes } from '@Constants/post-types';
+import { postDetailsPage } from '@Constants/route-paths';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
 import Pagination from 'react-js-pagination';
-import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
-import { defaultCurrentLocation } from '../../constants/default-user-information';
-import PostFilter from '../../components/search/post-filters';
-import { allSearchablePostTypes } from '../../constants/post-types';
-import { postDetailsPage } from '../../constants/route-paths';
-import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
+import { connect } from 'react-redux';
 
 const SearchCommunityActivity = (props) => {
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);

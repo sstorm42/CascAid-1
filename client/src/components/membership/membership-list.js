@@ -1,9 +1,8 @@
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { getMembershipByValue, getMembershipStatusByValue } from '@Constants/membership-types';
 import React from 'react';
-import { DeleteButtonRender, EditButtonRender, AcceptButtonRender, RejectButtonRender } from '../form_template/buttons-render';
-import { getMembershipByValue } from '../../constants/membership-types';
-import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
-import { getMembershipStatusByValue } from '../../constants/membership-types';
-import { Table, Image, Badge } from 'react-bootstrap';
+import { Badge, Image, Table } from 'react-bootstrap';
+import { AcceptButtonRender, DeleteButtonRender, RejectButtonRender } from '../form_template/buttons-render';
 const TimeRender = (time) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return `${months[time.month]}-${time.year}`;
@@ -13,7 +12,7 @@ const MembershipList = (props) => {
     const userType = props.userType;
     console.log('🚀 ~ file: membership-list.js ~ line 12 ~ MembershipList ~ memberships', memberships);
     return (
-        <Table>
+        <Table striped bordered hover responsive size="sm">
             <thead></thead>
             <tbody>
                 {memberships.map((member, i) => {

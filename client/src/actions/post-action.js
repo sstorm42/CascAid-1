@@ -1,5 +1,5 @@
-import PostDA from '../data_accesses/post-da';
-import * as Types from '../constants/reducer-types';
+import PostDA from '@DA/post-da';
+import * as Types from '@Constants/reducer-types';
 export const createPost = (post) => {
     return {
         type: Types.SET_POST,
@@ -136,5 +136,17 @@ export const getAllCalendarPosts = (filter, userId) => {
     return {
         type: Types.GET_ALL_CALENDAR_POSTS,
         payload: PostDA.get_all_calendar_posts(filters, userId),
+    };
+};
+export const getViewerSummary = (userId) => {
+    return {
+        type: Types.GET_VIEWER_SUMMARY,
+        payload: PostDA.get_viewer_summary(userId),
+    };
+};
+export const getPostStatistics = (userId) => {
+    return {
+        type: Types.GET_POST_STATISTICS,
+        payload: PostDA.get_post_statistics(userId),
     };
 };

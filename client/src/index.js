@@ -6,9 +6,9 @@ import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import Routes from './route';
-import reducers from './reducers';
+import reducers from '@Reducers';
 import { NotificationContainer } from 'react-notifications';
-import * as APIPaths from './constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore);
 
 ReactDOM.render(

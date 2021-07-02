@@ -9,7 +9,9 @@ const { saveImagesOnServer, saveAttachmentsOnServer } = require('../utils/librar
 const EmitNewMessage = (userId) => {
     global.io.emit('Message_' + userId.toString(), 'NewMessage');
 };
-
+const EmitNewMessageCount = (userId) => {
+    global.io.emit('Message_' + userId.toString(), 'Count');
+};
 // TESTING
 exports.createFalse = async (req, res) => {
     EmitNewMessage(req.body.userId);
@@ -42,10 +44,7 @@ exports.createOneConversation = async (req, res) => {
 exports.getAllConversationsByUser = async (req, res) => {
     try {
         const userId = req.params.userId ? ObjectId(req.params.userId) : '';
-        console.log(
-            '🚀 ~ file: conversation-controller.js ~ line 31 ~ exports.getAllConversationsByUser= ~ userId',
-            userId,
-        );
+
         const match = {
             members: { $in: [userId] },
         };
@@ -55,10 +54,7 @@ exports.getAllConversationsByUser = async (req, res) => {
             LOOKUPS.conversation_messages,
             PROJECTS.conversation_get_all,
         ]);
-        console.log(
-            '🚀 ~ file: conversation-controller.js ~ line 43 ~ exports.getAllConversationsByUser= ~ conversations',
-            conversations,
-        );
+
         if (conversations && conversations.length > 0) {
             return res.status(200).send({ success: true, conversations, message: 'Conversations found' });
         } else return res.status(401).send({ success: false, message: 'Conversations not found' });
@@ -71,6 +67,20 @@ exports.getAllConversationsByUser = async (req, res) => {
 exports.getOneConversation = async (req, res) => {
     try {
         const conversationId = req.params.conversationId ? ObjectId(req.params.conversationId) : '';
+        const userId = ObjectId(req.user._id);
+        console.log(
+            '🚀 ~ file: conversation-controller.js ~ line 69 ~ exports.getOneConversation= ~ userId',
+            conversationId,
+            userId,
+        );
+
+        // First Update The Conversation
+        // All Message in the conversation is read for the user (userId)
+        const updatedMessageUserEntity = await MessageUserEntity.updateMany(
+            { conversationId, userId },
+            { $set: { isRead: true } },
+        );
+
         const match = {
             _id: conversationId,
         };
@@ -79,12 +89,26 @@ exports.getOneConversation = async (req, res) => {
             LOOKUPS.conversation_users,
             LOOKUPS.conversation_messages,
         ]);
+
+        const entityMatch = {};
+        entityMatch['conversationId'] = conversationId;
+        entityMatch['userId'] = userId;
+        const messageUserEntity = await MessageUserEntity.aggregate([
+            { $match: entityMatch },
+            LOOKUPS.messageUserEntity_message,
+            PROJECTS.messageUserEntity_get_one,
+        ]);
         if (conversations && conversations.length > 0) {
-            return res
-                .status(200)
-                .send({ success: true, conversation: conversations[0], message: 'Conversation found' });
+            // EmitNewMessageCount(userId);
+            return res.status(200).send({
+                success: true,
+                conversation: conversations[0],
+                message: 'Conversation found',
+                messageUserEntity,
+            });
         } else return res.status(401).send({ success: false, message: 'Conversation not found' });
     } catch (error) {
+        console.log('ERROR', error.message);
         res.status(500).send({ success: false, message: error.message });
     }
 };
@@ -101,7 +125,7 @@ exports.createOneMessage = async (req, res) => {
         if (message.images && message.images.length > 0) message.images = saveImagesOnServer(message.images);
         if (message.attachments && message.attachments.length > 0)
             message.attachments = saveAttachmentsOnServer(message.attachments);
-        console.log('🚀 ~ file: conversation-controller.js ~ line 99 ~ exports.createOneMessage= ~ message', message);
+
         if (!message.conversationId) {
             const foundConversation = await Conversation.findOne({
                 members: {
@@ -111,10 +135,7 @@ exports.createOneMessage = async (req, res) => {
                     ],
                 },
             });
-            console.log(
-                '🚀 ~ file: conversation-controller.js ~ line 86 ~ exports.createOneMessage= ~ foundConversation',
-                foundConversation,
-            );
+
             if (foundConversation && foundConversation._id) {
                 conversationId = foundConversation._id;
             } else {
@@ -157,7 +178,7 @@ exports.createOneMessage = async (req, res) => {
                         userId: memberId,
                         conversationId: conversation._id,
                         isDeleted: false,
-                        isRead: createdMessage.senderId === memberId ? true : false,
+                        isRead: createdMessage.senderId.toString() === memberId.toString() ? true : false,
                     });
                     const savedEntity = await newEntity.save();
                     if (!savedEntity) {
@@ -173,7 +194,6 @@ exports.createOneMessage = async (req, res) => {
             return res.status(401).send({ success: false, message: 'Message not created' });
         }
     } catch (error) {
-        console.log(error.message);
         res.status(500).send({ success: false, message: error.message });
     }
 };
@@ -185,13 +205,14 @@ exports.deleteOneMessage = async (req, res) => {};
 exports.getCountNew = async (req, res) => {
     try {
         const userId = req.params.userId;
+        console.log('🚀 ~ file: conversation-controller.js ~ line 205 ~ exports.getCountNew= ~ userId', userId);
         const uniqueMessageUserEntities = await MessageUserEntity.distinct('conversationId', {
             userId: userId,
+            isRead: false,
         });
         const totalUniqueEntity = uniqueMessageUserEntities.length;
         return res.status(200).send({ success: true, uniqueMessageUserEntities, totalUniqueEntity });
     } catch (error) {
-        console.log(error.message);
         res.status(500).send({ success: false, message: error.message });
     }
 };

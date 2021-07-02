@@ -1,19 +1,38 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import Summary from './summary-view';
-import Statistics from './statistics-view';
-import TopNotifications from './top-notifications';
-import UpcomingActivities from './upcoming-activity-list';
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+import { connect } from 'react-redux';
+import Summary from '@Components/dashboard/summary-view';
+import Statistics from '@Components/dashboard/statistics-view';
+import TopNotifications from '@Components/dashboard/top-notifications';
+import UpcomingActivities from '@Components/dashboard/upcoming-activity-list';
+import SectionMenu from '@Components/dashboard/section-menu';
+import { getFollowerSummary } from '@Actions/follow-action';
+import { getEndorserSummary } from '@Actions/endorsement-action';
+import { getViewerSummary, getPostStatistics } from '@Actions/post-action';
+
 const Dashboard = (props) => {
+    const [userId, setUserId] = useState('');
+    const [userName, setUserName] = useState('');
     const summaryRef = useRef(null);
     const statisticsRef = useRef(null);
     const notificationRef = useRef(null);
     const upcomingRef = useRef(null);
-    // const executeScroll = (point) => scrollToRef(point);
+
+    // GET INITIAL ORGANIZATIOn INFORMATION
+    useEffect(() => {
+        const user = props.auth.user;
+        if (user && user._id) {
+            setUserId(user._id);
+            const basicInfo = props.auth.basicInfo;
+            props.dispatch(getFollowerSummary(user._id));
+            props.dispatch(getEndorserSummary(user._id));
+            props.dispatch(getViewerSummary(user._id));
+            props.dispatch(getPostStatistics(user._id));
+            setUserName(basicInfo.name ? basicInfo.name : '');
+        }
+    }, [props.auth]);
+
     const executeScroll = (event) => {
-        console.log('🚀 ~ file: dashboard.js ~ line 15 ~ executeScroll ~ event', event);
-        //.current is verification that your element has rendered
         if (event.current) {
             event.current.scrollIntoView({
                 behavior: 'smooth',
@@ -25,64 +44,25 @@ const Dashboard = (props) => {
         <Container>
             <Row>
                 <Col className="parent-page">
-                    <h1>DASHBOARD WIRE-FRAME</h1>
-                    <hr />
-                    <Row>
-                        <Col sm={6}>
-                            <h2>Organization Name</h2>
-                        </Col>
-                        <Col sm={6}>
-                            <Button
-                                variant="dark"
-                                size="sm"
-                                onClick={() => {
-                                    executeScroll(summaryRef);
-                                }}
-                            >
-                                SUMMARY
-                            </Button>
-                            &nbsp;
-                            <Button
-                                variant="dark"
-                                size="sm"
-                                onClick={() => {
-                                    executeScroll(statisticsRef);
-                                }}
-                            >
-                                Statistics
-                            </Button>
-                            &nbsp;
-                            <Button
-                                variant="dark"
-                                size="sm"
-                                onClick={() => {
-                                    executeScroll(notificationRef);
-                                }}
-                            >
-                                Top Notifications
-                            </Button>
-                            &nbsp;
-                            <Button
-                                variant="dark"
-                                size="sm"
-                                onClick={() => {
-                                    executeScroll(upcomingRef);
-                                }}
-                            >
-                                Upcoming
-                            </Button>
-                            &nbsp;
-                        </Col>
-                    </Row>
-
-                    <small>organization address with other information</small>
+                    <SectionMenu
+                        userName={userName}
+                        executeScroll={executeScroll}
+                        summaryRef={summaryRef}
+                        statisticsRef={statisticsRef}
+                        notificationRef={notificationRef}
+                        upcomingRef={upcomingRef}
+                    />
                     <hr />
                     <div ref={summaryRef}>
-                        <Summary />
+                        <Summary
+                            getFollowerSummaryResponse={props.getFollowerSummaryResponse}
+                            getEndorserSummaryResponse={props.getEndorserSummaryResponse}
+                            getViewerSummaryResponse={props.getViewerSummaryResponse}
+                        />
                         <hr />
                     </div>
                     <div ref={statisticsRef}>
-                        <Statistics />
+                        <Statistics getPostStatisticsResponse={props.getPostStatisticsResponse} />
                         <hr />
                     </div>
                     <div ref={notificationRef}>
@@ -97,4 +77,12 @@ const Dashboard = (props) => {
         </Container>
     );
 };
-export default Dashboard;
+const mapStateToProps = (state) => {
+    console.log('🚀 ~ file: dashboard.js ~ line 80 ~ mapStateToProps ~ state', state);
+    const getFollowerSummaryResponse = state.Follow.getFollowerSummary;
+    const getEndorserSummaryResponse = state.Endorsement.getEndorserSummary;
+    const getViewerSummaryResponse = state.Post.getViewerSummary;
+    const getPostStatisticsResponse = state.Post.getPostStatistics;
+    return { getFollowerSummaryResponse, getEndorserSummaryResponse, getViewerSummaryResponse, getPostStatisticsResponse };
+};
+export default connect(mapStateToProps, null)(Dashboard);

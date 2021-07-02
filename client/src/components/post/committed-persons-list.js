@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Image } from 'react-bootstrap';
 import LoadingAnim from '../form_template/loading-anim';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 const CommittedPersonsList = (props) => {
     const committedList = props.committedList;
     const committedLoading = props.committedLoading;

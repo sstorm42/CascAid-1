@@ -14,12 +14,18 @@ exports.getBasicInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
 
-        const organization = await Organization.findOne({ userId }).populate('basicInfo.organizationTypes', { _id: 1, label: 1, value: 1 });
+        const organization = await Organization.findOne({ userId }).populate('basicInfo.organizationTypes', {
+            _id: 1,
+            label: 1,
+            value: 1,
+        });
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
             let basicInfo = organization.basicInfo ? organization.basicInfo.toObject() : {};
             if (basicInfo.organizationType) {
-                basicInfo.organizationType = allOrganizationTypes.filter((type) => basicInfo.organizationType.includes(type.value));
+                basicInfo.organizationType = allOrganizationTypes.filter((type) =>
+                    basicInfo.organizationType.includes(type.value),
+                );
             }
 
             res.status(200).send({ ...RESPONSES.OrganizationFound, basicInfo: basicInfo });
@@ -33,12 +39,18 @@ exports.getServiceInfo = async (req, res) => {
     try {
         const userId = req.params.userId;
 
-        const organization = await Organization.findOne({ userId }).populate('serviceInfo.impactAreas', { _id: 1, label: 1, value: 1 });
+        const organization = await Organization.findOne({ userId }).populate('serviceInfo.impactAreas', {
+            _id: 1,
+            label: 1,
+            value: 1,
+        });
         if (!organization) return res.status(404).send(RESPONSES.OrganizationNotFound);
         else {
             let serviceInfo = organization.serviceInfo ? organization.serviceInfo.toObject() : {};
             if (serviceInfo.serviceAreaTypes)
-                serviceInfo.serviceAreaTypes = allServiceAreaTypes.filter((type) => serviceInfo.serviceAreaTypes.includes(type.value));
+                serviceInfo.serviceAreaTypes = allServiceAreaTypes.filter((type) =>
+                    serviceInfo.serviceAreaTypes.includes(type.value),
+                );
             if (serviceInfo.serviceAreas)
                 serviceInfo.serviceAreas = serviceInfo.serviceAreas.map((area) => {
                     return { value: area, label: area };
@@ -92,11 +104,16 @@ exports.setServiceInfo = async (req, res) => {
         const userId = req.params.userId;
 
         let serviceInfo = req.body;
-        if (serviceInfo.serviceAreaTypes) serviceInfo.serviceAreaTypes = serviceInfo.serviceAreaTypes.map((type) => type.value);
+        if (serviceInfo.serviceAreaTypes)
+            serviceInfo.serviceAreaTypes = serviceInfo.serviceAreaTypes.map((type) => type.value);
         if (serviceInfo.serviceAreas) serviceInfo.serviceAreas = serviceInfo.serviceAreas.map((area) => area.label);
         if (serviceInfo.keywords) serviceInfo.keywords = serviceInfo.keywords.map((key) => key.label);
         if (serviceInfo.impactAreas) {
-            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(userId, 'organization', serviceInfo.impactAreas);
+            const { success, newImpactAreas } = await ImpactAreaController.convertObjectToId(
+                userId,
+                'organization',
+                serviceInfo.impactAreas,
+            );
 
             if (success) serviceInfo.impactAreas = newImpactAreas;
             else return res.status(400).send({ success: false, message: 'Impact areas can not be saved' });
@@ -150,7 +167,9 @@ exports.getAll = async (req, res) => {
 
         let match = {};
         if (organizationTypes && organizationTypes.length > 0) {
-            match['basicInfo.organizationTypes'] = { $in: organizationTypes.map((type) => mongoose.Types.ObjectId(type)) };
+            match['basicInfo.organizationTypes'] = {
+                $in: organizationTypes.map((type) => mongoose.Types.ObjectId(type)),
+            };
         }
         if (impactAreas && impactAreas.length > 0) {
             match['serviceInfo.impactAreas'] = { $in: impactAreas.map((area) => mongoose.Types.ObjectId(area)) };
@@ -305,12 +324,11 @@ exports.getAllPostsByType = async (req, res) => {
         aggregateOptions.push({ $match: match }, ...lookUps, { $project: project });
 
         const allPosts = await Post.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: organization-controller.js ~ line 309 ~ exports.getAllPostsByType= ~ allPosts', allPosts);
+
         if (allPosts) {
             return res.status(200).send({ success: true, allPosts });
         } else return res.status(404).send({ success: false, message: 'No posts found' });
     } catch (err) {
-        console.log(err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };
@@ -347,7 +365,11 @@ exports.changeAddress = async (req, res) => {
         const updates = await Organization.updateMany(
             {},
             {
-                $set: { 'basicInfo.address.country': 'UnitedStates', 'basicInfo.address.state': 'Pennsylvania', 'basicInfo.address.city': 'Philadelphia' },
+                $set: {
+                    'basicInfo.address.country': 'UnitedStates',
+                    'basicInfo.address.state': 'Pennsylvania',
+                    'basicInfo.address.city': 'Philadelphia',
+                },
             },
         );
         res.status(200).send({ success: true, zipUpdates, updates });

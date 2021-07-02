@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import CultivationDetails from '../../components/cultivation/cultivation-details';
+import CultivationDetails from '@Components/cultivation/cultivation-details';
 import { connect } from 'react-redux';
-import { getCultivationById, removeUsersFromCultivation, clearRemoveUsersToCultivation, clearCultivation } from '../../actions/cultivation-action';
-import * as RoutePaths from '../../constants/route-paths';
+import { getCultivationById, removeUsersFromCultivation, clearRemoveUsersToCultivation, clearCultivation } from '@Actions/cultivation-action';
+import * as RoutePaths from '@Constants/route-paths';
 import { NotificationManager } from 'react-notifications';
 const DisplayCultivation = (props) => {
     const [loading, setLoading] = useState(false);

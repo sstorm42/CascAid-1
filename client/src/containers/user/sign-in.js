@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import SignInForm from '../../components/user/sign-in-form';
+import SignInForm from '@Components/user/sign-in-form';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { userSignIn, authenticate } from '../../actions';
+import { userSignIn, authenticate } from '@Actions';
 import { NotificationManager } from 'react-notifications';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 class SignIn extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +49,12 @@ class SignIn extends Component {
     render() {
         const { submitting } = this.props;
         return (
-            <SignInForm submitting={submitting} errorFlag={this.state.errorFlag} errorMessage={this.state.errorMessage} handleSignInSubmit={this.props.handleSubmit((event) => this.onSubmit(event))} />
+            <SignInForm
+                submitting={submitting}
+                errorFlag={this.state.errorFlag}
+                errorMessage={this.state.errorMessage}
+                handleSignInSubmit={this.props.handleSubmit((event) => this.onSubmit(event))}
+            />
         );
     }
 }

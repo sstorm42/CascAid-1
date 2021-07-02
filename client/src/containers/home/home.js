@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { followUser } from '../../actions/follow-action';
+import { followUser } from '@Actions/follow-action';
 import {
     cancelGoingPost,
     cancelInterestedPost,
@@ -12,13 +12,13 @@ import {
     goingPost,
     interestedPost,
     likePost,
-} from '../../actions/post-action';
-import { getAllSuggestedUsers } from '../../actions/user-action';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import HomePostFeeds from '../../components/home/home-post-feeds';
-import HomeOrganizationSuggestions from '../../components/home/home-suggestions';
-import CommittedPersonsModal from '../../components/post/committed-persons-list';
-import { postDetailsPage, userDetailsPage } from '../../constants/route-paths';
+} from '@Actions/post-action';
+import { getAllSuggestedUsers } from '@Actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import HomePostFeeds from '@Components/home/home-post-feeds';
+import HomeOrganizationSuggestions from '@Components/home/home-suggestions';
+import CommittedPersonsModal from '@Components/post/committed-persons-list';
+import { postDetailsPage, userDetailsPage } from '@Constants/route-paths';
 const Home = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');

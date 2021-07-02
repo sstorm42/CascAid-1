@@ -1,7 +1,7 @@
-import AuthDA from '../data_accesses/auth-da';
-import PasswordDA from '../data_accesses/password-da';
-import SearchDA from '../data_accesses/search-da';
-import * as Types from '../constants/reducer-types';
+import AuthDA from '@DA/auth-da';
+import PasswordDA from '@DA/password-da';
+import SearchDA from '@DA/search-da';
+import * as Types from '@Constants/reducer-types';
 
 export const setLocalStorage = (key, value) => {
     if (window !== 'undefined') {

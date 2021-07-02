@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 const SideNavBar = (props) => {
     const isAuth = props.isAuth;
     if (isAuth) {

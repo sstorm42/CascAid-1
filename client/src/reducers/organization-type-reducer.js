@@ -1,4 +1,4 @@
-import * as Types from '../constants/reducer-types';
+import * as Types from '@Constants/reducer-types';
 const initialState = {
     getAllOrganizationTypes: {
         success: false,

@@ -1,6 +1,6 @@
+import * as RoutePath from '@Constants/route-paths';
 import React from 'react';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
-import * as RoutePath from '../../constants/route-paths';
+import { Nav } from 'react-bootstrap';
 const PostTypeMenu = (props) => {
     const selected = props.selected;
     const userId = props.userId;

@@ -1,4 +1,4 @@
-import { getLocalStorage } from '../actions';
+import { getLocalStorage } from '@Actions';
 // export const serverAddress = `http://localhost:3001`;
 export const serverAddress = `http://172.104.35.84`;
 
@@ -69,13 +69,16 @@ export const getAllPosts = serverAddress + `/api/posts`;
 export const getAllPostsByUser = (userId) => serverAddress + `/api/users/${userId}/posts`;
 export const getAllImages = (userId) => serverAddress + `/api/posts/gallery/user/${userId}`;
 export const getAllCalendarPosts = (userId) => serverAddress + `/api/posts/calendar/user/${userId}`;
+export const getViewerSummary = (userId) => serverAddress + `/api/posts/viewers/${userId}/summary`;
+export const getPostStatistics = (userId) => serverAddress + `/api/posts/${userId}/statistics`;
+
 // FOLLOW
 export const followUser = serverAddress + `/api/follows/follow`;
 export const unfollowUser = serverAddress + `/api/follows/unfollow`;
-
 export const getAllFollower = (userId) => serverAddress + `/api/follows/followers/${userId}`;
 export const getAllFollowing = (userId) => serverAddress + `/api/follows/followings/${userId}`;
 export const checkIfFollower = (followerId, followingId) => serverAddress + `/api/follows/${followerId}/${followingId}`;
+export const getFollowerSummary = (userId) => serverAddress + `/api/follows/followers/${userId}/summary`;
 
 // HOME
 export const getAllFeedPosts = serverAddress + `/api/posts/feed`;
@@ -88,13 +91,10 @@ export const getAllSuggestedUsers = (userId, userType, limit) =>
 // INTEREST
 export const likePost = (postId) => serverAddress + `/api/posts/${postId}/like`;
 export const cancelLikePost = (postId) => serverAddress + `/api/posts/${postId}/cancel-like`;
-
 export const interestPost = (postId) => serverAddress + `/api/posts/${postId}/interested`;
 export const cancelInterestPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-interested`;
-
 export const goingPost = (postId) => serverAddress + `/api/posts/${postId}/going`;
 export const cancelGoingPost = (postId) => serverAddress + `/api/posts/${postId}/cancel-going`;
-
 export const getAllCommittedPersons = (postId, type) => serverAddress + `/api/posts/${postId}/committed/?interestType=${type}`;
 
 // NOTIFICATION
@@ -105,9 +105,7 @@ export const updateNotification = (notificationId) => serverAddress + `/api/noti
 // MEMBERSHIP
 export const createMembership = serverAddress + `/api/memberships/`;
 export const updateMembership = (membershipId) => serverAddress + `/api/memberships/`;
-
 export const getAllMemberships = serverAddress + `/api/memberships/`;
-
 export const deleteMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}`;
 export const acceptMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}/accept`;
 export const rejectMembership = (membershipId) => serverAddress + `/api/memberships/${membershipId}/reject`;
@@ -123,10 +121,10 @@ export const getAllFriendships = (userId, status) => serverAddress + `/api/frien
 // ENDORSEMENT
 export const endorseUser = serverAddress + `/api/endorsements/endorse`;
 export const cancelEndorseUser = serverAddress + `/api/endorsements/cancel-endorse`;
-
 export const getAllEndorsers = (userId) => serverAddress + `/api/endorsements/endorsers/${userId}`;
 export const getAllEndorsees = (userId) => serverAddress + `/api/endorsements/endorsees/${userId}`;
 export const CheckIfEndorses = (endorserId, endorseeId) => serverAddress + `/api/endorsements/${endorserId}/${endorseeId}`;
+export const getEndorserSummary = (userId) => serverAddress + `/api/endorsements/endorsers/${userId}/summary`;
 
 // VIEWER
 export const getAllViewersByPost = (postId) => serverAddress + `/api/posts/${postId}/viewers`;

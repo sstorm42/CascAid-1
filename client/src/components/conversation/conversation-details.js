@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
-import Avatar from 'react-avatar';
-import { MessageImageModalRender } from '../form_template/image-modal-render';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { OptionButtonRender, SendButtonRender, SendMessageButtonRender } from '../../components/form_template/buttons-render';
+import { OptionButtonRender } from '@Components/form_template/buttons-render';
 import moment from 'moment';
+import React, { useEffect, useRef, useState } from 'react';
+import Avatar from 'react-avatar';
+import { Col, Container, Image, Row } from 'react-bootstrap';
+import { MessageImageModalRender } from '../form_template/image-modal-render';
 
 const MessageTextRender = (text) => {
     const textArray = text.split('\n');
@@ -44,7 +43,7 @@ const AlwaysScrollToBottom = () => {
 const ThreadDetails = (props) => {
     const [imageModal, setImageModal] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
-    const messagesEnd = React.createRef();
+    // const messagesEnd = React.createRef();
     const conversation = props.conversation;
     const members = conversation.members;
     const messages = conversation.messages;
@@ -66,7 +65,7 @@ const ThreadDetails = (props) => {
                                 src={image}
                                 style={{ height: '100px', width: '100px', resizeMode: 'contain', backgroundColor: 'white' }}
                                 thumbnail
-                                square
+                                rounded
                             />
                         );
                     })}

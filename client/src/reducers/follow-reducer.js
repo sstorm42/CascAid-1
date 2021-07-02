@@ -1,4 +1,4 @@
-import * as Types from '../constants/reducer-types';
+import * as Types from '@Constants/reducer-types';
 
 const initialState = {
     followUser: {},
@@ -6,6 +6,7 @@ const initialState = {
     getAllFollowers: {},
     getAllFollowings: {},
     checkIfFollower: {},
+    getFollowerSummary: {},
 };
 const FollowReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,6 +20,8 @@ const FollowReducer = (state = initialState, action) => {
             return { ...state, getAllFollowings: action.payload, setEvent: action.payload };
         case Types.CHECK_IF_FOLLOWER:
             return { ...state, checkIfFollower: action.payload };
+        case Types.GET_FOLLOWER_SUMMARY:
+            return { ...state, getFollowerSummary: action.payload };
         default:
             return { ...state };
     }

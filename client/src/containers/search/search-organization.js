@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import OrganizationListView from '../../components/organization/organization-list-view';
-import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
-import { getAllEndorsees, endorseUser, cancelEndorseUser } from '../../actions/endorsement-action';
-import { getAllUsers } from '../../actions/user-action';
-import { getAllOrganizationTypes } from '../../actions/organization-type-action';
-import SearchMenu from '../../components/search/search-menu';
-import OrganizationFilter from '../../components/search/organization-filters';
+import OrganizationListView from '@Components/organization/organization-list-view';
+import { getAllGlobalImpactAreas } from '@Actions/impact-area-action';
+import { getAllFollowings, followUser, unfollowUser } from '@Actions/follow-action';
+import { getAllEndorsees, endorseUser, cancelEndorseUser } from '@Actions/endorsement-action';
+import { getAllUsers } from '@Actions/user-action';
+import { getAllOrganizationTypes } from '@Actions/organization-type-action';
+import SearchMenu from '@Components/search/search-menu';
+import OrganizationFilter from '@Components/search/organization-filters';
 import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import OrganizationMapView from '../../components/organization/organization-map-view';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import OrganizationMapView from '@Components/organization/organization-map-view';
 import Pagination from 'react-js-pagination';
-import { defaultCurrentLocation } from '../../constants/default-user-information';
+import { defaultCurrentLocation } from '@Constants/default-user-information';
 
 const SearchOrganization = (props) => {
     const [userId, setUserId] = useState();

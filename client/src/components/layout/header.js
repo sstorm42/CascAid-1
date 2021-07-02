@@ -1,14 +1,14 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 import { Link } from 'react-router-dom';
 // import SearchBox from './search-box';
 import ReactAutoSuggest from './react-autosuggest-lib';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import Avatar from 'react-avatar';
 import GlobalNotification from './global-notification';
 import GlobalConversation from './global-conversation';
-import { get } from '../../actions';
+import { get } from '@Actions';
 const GetNameAndProfilePicture = (userType, basicInfo) => {
     let name = '';
     let profilePicture = '';

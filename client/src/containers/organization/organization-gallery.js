@@ -1,12 +1,11 @@
+import { getGallery } from '@Actions/post-action';
+import { PostImageModalRender } from '@Components/form_template/image-modal-render';
+import GalleryView from '@Components/post/gallery-view';
+import * as RoutePaths from '@Constants/route-paths';
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, CardColumns } from 'react-bootstrap';
-import Gallery from 'react-photo-gallery';
-import { PostImageModalRender } from '../../components/form_template/image-modal-render';
-import OrganizationSideMenu from './organization-side-menu';
-import { getGallery } from '../../actions/post-action';
+import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import GalleryView from '../../components/post/gallery-view';
-import * as RoutePaths from '../../constants/route-paths';
+import OrganizationSideMenu from './organization-side-menu';
 const OrganizationGallery = (props) => {
     const [loading, setLoading] = useState(false);
     const [imageDetailsModal, setImageDetailsModal] = useState(false);

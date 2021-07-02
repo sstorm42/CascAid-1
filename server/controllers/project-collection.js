@@ -176,6 +176,18 @@ exports.conversation_get_all = {
         messages: 1,
     },
 };
+exports.messageUserEntity_get_one = {
+    $project: {
+        ...common,
+        conversationId: 1,
+        isRead: 1,
+        senderId: { $arrayElemAt: ['$message.senderId', 0] },
+        text: { $arrayElemAt: ['$message.text', 0] },
+        images: { $arrayElemAt: ['$message.images', 0] },
+        attachments: { $arrayElemAt: ['$message.attachments', 0] },
+        messageId: 1,
+    },
+};
 
 // CULTIVATION
 exports.cultivation_get_one = {

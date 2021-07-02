@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { interestTypes } from '@Constants/interest-types';
 import moment from 'moment';
-import { Container, Row, Col, Image, Button, Modal, Badge } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { interestTypes } from '../../constants/interest-types';
-import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../form_template/buttons-render';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import Avatar from 'react-avatar';
+import { Badge, Button, Col, Image, Row } from 'react-bootstrap';
+import { GoingButtonRender, InterestedButtonRender, LikeButtonRender } from '../form_template/buttons-render';
 
 const HomePostFeed = (props) => {
     const userId = props.userId;
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
     const posts = props.allPosts;
     let interest = {};

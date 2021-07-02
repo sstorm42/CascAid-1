@@ -10,7 +10,7 @@ exports.checkIfAdded = async (req, res) => {
         const post = await Post.findOne({ _id: postId });
 
         const follows = await Follow.findOne({ followerId: userId, followingId: post.creatorId });
-        console.log('🚀 ~ file: scheduler-controller.js ~ line 13 ~ exports.checkIfAdded= ~ follows', follows);
+
         if (follows && follows._id) {
             return res.status(200).send({ ...RESPONSE.PostFound, follows: true, isAdded: true });
         } else {
@@ -44,7 +44,7 @@ exports.addOnePost = async (req, res) => {
                 upsert: true,
             },
         );
-        console.log('🚀 ~ file: scheduler-controller.js ~ line 47 ~ exports.addOnePost= ~ scheduler', scheduler);
+
         if (scheduler && scheduler._id) {
             return res.status(200).send({ ...RESPONSE.SchedulerUpdated, scheduler });
         } else return res.status(200).send({ ...RESPONSE.SchedulerNotUpdated, scheduler });

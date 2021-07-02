@@ -1,13 +1,12 @@
+import { FollowButtonRender } from '@Components/form_template/buttons-render';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import moment from 'moment';
-import { Container, Badge, Row, Col, Image, Button, OverlayTrigger, Popover } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { FollowButtonRender } from '../../components/form_template/buttons-render';
-import { BsFillExclamationDiamondFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
+import { Badge, Button, Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { BsFillExclamationDiamondFill } from 'react-icons/bs';
+import { RiUserFollowFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 const HomeSuggestions = (props) => {
     const organizations = props.allOrganizations;
     console.log('🚀 ~ file: home-suggestions.js ~ line 11 ~ HomeSuggestions ~ organizations', organizations);

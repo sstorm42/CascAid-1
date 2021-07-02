@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import CultivationForm from '../../components/cultivation/cultivation-form';
-import * as RoutePaths from '../../constants/route-paths';
+import CultivationForm from '@Components/cultivation/cultivation-form';
+import * as RoutePaths from '@Constants/route-paths';
 import { reduxForm, formValueSelector, change } from 'redux-form';
 import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { NotificationManager } from 'react-notifications';
 import {
     createCultivation,
@@ -12,7 +12,7 @@ import {
     clearRemoveUsersToCultivation,
     updateCultivation,
     clearCultivation,
-} from '../../actions/cultivation-action';
+} from '@Actions/cultivation-action';
 
 const CreateCultivation = (props) => {
     const [loading, setLoading] = useState(false);
@@ -87,6 +87,9 @@ const CreateCultivation = (props) => {
             props.dispatch(createCultivation(cultivation));
         }
     };
+    const handleGoToManageCultivations = () => {
+        props.history.push(RoutePaths.cultivationManagePage);
+    };
     if (loading) return <LoadingAnim />;
     else
         return (
@@ -98,6 +101,7 @@ const CreateCultivation = (props) => {
                 })}
                 handleGoToUserDetailsPage={handleGoToUserDetailsPage}
                 handleRemoveUsersFromCultivation={handleRemoveUsersFromCultivation}
+                handleGoToManageCultivations={handleGoToManageCultivations}
             />
         );
 };

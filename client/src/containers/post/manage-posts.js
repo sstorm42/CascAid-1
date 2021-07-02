@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import PostList from '../../components/post/post-list';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import PostList from '@Components/post/post-list';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { connect } from 'react-redux';
-import { getAllPostsByFilter, getAllViewersByPost } from '../../actions/post-action';
-import * as RoutePaths from '../../constants/route-paths';
+import { getAllPostsByFilter, getAllViewersByPost } from '@Actions/post-action';
+import * as RoutePaths from '@Constants/route-paths';
 
 const ManagePosts = (props) => {
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,9 @@ const ManagePosts = (props) => {
         isActive: 'both',
     });
     const [viewerModal, setViewerModal] = useState(false);
-
+    useEffect(() => {
+        document.title = 'Manage Posts';
+    }, []);
     useEffect(() => {
         const getInitialInfo = (userId) => {
             setLoading(true);

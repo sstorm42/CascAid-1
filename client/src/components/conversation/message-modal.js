@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Modal, Image } from 'react-bootstrap';
-import { CancelButtonRender, SendMessageButtonRender } from '../form_template/buttons-render';
+import { Container, Modal, Row } from 'react-bootstrap';
+import { SendMessageButtonRender } from '../form_template/buttons-render';
 const MessageModal = (props) => {
     const [message, setMessage] = useState('');
     const messageReceiver = props.messageReceiver;

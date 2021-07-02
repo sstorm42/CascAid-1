@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import NotificationDA from '../data_accesses/notification-da';
+import * as Types from '@Constants/reducer-types';
+import NotificationDA from '@DA/notification-da';
 
 export const getNotificationsCount = (onlyNew) => {
     return {

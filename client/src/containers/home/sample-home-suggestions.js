@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import { Container, Badge, Row, Col, Image, Button, OverlayTrigger, Popover } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { FollowButtonRender } from '../../components/form_template/buttons-render';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { FollowButtonRender } from '@Components/form_template/buttons-render';
 import { BsFillExclamationDiamondFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';

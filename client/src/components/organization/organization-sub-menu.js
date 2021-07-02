@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Image, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
 import Collapsible from 'react-collapsible';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 import { EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render.js';
 const SideMenu = (props) => {
     const organization = props.organization;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardColumns } from 'react-bootstrap';
-import { defaultIndividualProfilePicture } from '../../constants/default-images';
+import { defaultIndividualProfilePicture } from '@Constants/default-images';
 import { MessageButtonRender } from '../form_template/buttons-render';
 const SampleOrgList = (props) => {
     const friendships = props.friendships;

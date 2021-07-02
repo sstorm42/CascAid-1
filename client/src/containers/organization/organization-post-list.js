@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '../../actions/post-action';
-import PostListView from '../../components/post/post-card-view';
-import { getUserPublicInfo } from '../../actions/user-action';
-import { getAllPostsByFilter } from '../../actions/post-action';
-import { followUser, unfollowUser, checkIfFollower } from '../../actions/follow-action';
-import SideSubMenu from '../../components/organization/organization-sub-menu';
+import { likePost, cancelLikePost, interestedPost, cancelInterestedPost, goingPost, cancelGoingPost, changePostInterest } from '@Actions/post-action';
+import PostListView from '@Components/post/post-card-view';
+import { getUserPublicInfo } from '@Actions/user-action';
+import { getAllPostsByFilter } from '@Actions/post-action';
+import { followUser, unfollowUser, checkIfFollower } from '@Actions/follow-action';
+import SideSubMenu from '@Components/organization/organization-sub-menu';
 import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import PostTypeMenu from '../../components/organization/organization-post-menu';
-import PostFilter from '../../components/organization/organization-post-filter';
-import { postDetailsPage } from '../../constants/route-paths';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import PostTypeMenu from '@Components/organization/organization-post-menu';
+import PostFilter from '@Components/organization/organization-post-filter';
+import { postDetailsPage } from '@Constants/route-paths';
 
 const OrganizationPostList = (props) => {
     const [loading, setLoading] = useState(false);

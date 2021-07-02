@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PostDetails from '../../components/post/post-details';
+import PostDetails from '@Components/post/post-details';
 import { connect } from 'react-redux';
-import { getPostById } from '../../actions/post-action';
+import { getPostById } from '@Actions/post-action';
 const DisplayPost = (props) => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
@@ -15,7 +15,12 @@ const DisplayPost = (props) => {
         else {
         }
     }, [props.auth]);
-    return <PostDetails post={props.getPostResponse.success ? props.getPostResponse.post : {}} organization={props.getPostResponse.success ? props.getPostResponse.organization : {}} />;
+    return (
+        <PostDetails
+            post={props.getPostResponse.success ? props.getPostResponse.post : {}}
+            organization={props.getPostResponse.success ? props.getPostResponse.organization : {}}
+        />
+    );
 };
 const mapStateToProps = (state) => {
     console.log(state);

@@ -1,9 +1,8 @@
+import { searchUsersByName } from '@Actions';
+import * as RoutePaths from '@Constants/route-paths';
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import { withRouter } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
-import { searchUsersByName } from '../../actions';
-import * as RoutePaths from '../../constants/route-paths';
 const individualNameRender = (individual) => {
     let name = individual.firstName ? individual.firstName + ' ' : '';
     name += individual.lastName ? individual.lastName : '';

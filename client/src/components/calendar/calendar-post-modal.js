@@ -1,10 +1,10 @@
+import { GoingButtonRender, InterestedButtonRender, LikeButtonRender } from '@Components/form_template/buttons-render';
+import { ImpactAreasRender } from '@Components/form_template/details-render';
+import { getPostTypeName } from '@Constants/post-types';
+import * as RoutePath from '@Constants/route-paths';
 import React from 'react';
-import { Row, Col, Modal, Button } from 'react-bootstrap';
-import { getPostTypeName } from '../../constants/post-types';
+import { Col, Modal, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import * as RoutePath from '../../constants/route-paths';
-import { ImpactAreasRender, InfoRender } from '../../components/form_template/details-render';
-import { LikeButtonRender, InterestedButtonRender, GoingButtonRender } from '../../components/form_template/buttons-render';
 const CalendarPostModal = (props) => {
     const post = props.post;
     const postModal = props.postModal;

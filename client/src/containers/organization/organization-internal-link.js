@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getInternalLink, setInternalLink, clearInternalLink } from '../../actions/organization-action';
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getInternalLink, setInternalLink, clearInternalLink } from '@Actions/organization-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
-import OrganizationInternalLinkForm from '../../components/organization/organization-internal-link-form';
-import { organizationCompleteServiceInfoPage, homePage } from '../../constants/route-paths';
+import OrganizationInternalLinkForm from '@Components/organization/organization-internal-link-form';
+import { organizationCompleteServiceInfoPage, homePage } from '@Constants/route-paths';
 const InternalLink = (props) => {
     const [loading, setLoading] = useState(false);
     const getInitialInfo = () => {

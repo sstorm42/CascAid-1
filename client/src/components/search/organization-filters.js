@@ -1,6 +1,6 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Select from 'react-select';
-import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
 const SearchMenu = (props) => {
     const submitting = props.submitting;
     console.log('🚀 ~ file: filter-organization.js ~ line 6 ~ SearchMenu ~ submitting', submitting);

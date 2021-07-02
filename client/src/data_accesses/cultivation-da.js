@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 class CultivationDA {
     create_cultivation = (cultivation) => {
         return axios

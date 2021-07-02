@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 
 class FollowDA {
     follow_user = (values) => {
@@ -34,6 +34,12 @@ class FollowDA {
     check_if_follower = (followerId, followingId) => {
         return axios
             .get(APIPaths.checkIfFollower(followerId, followingId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_follower_summary = (userId) => {
+        return axios
+            .get(APIPaths.getFollowerSummary(userId), APIPaths.apiConfig())
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };

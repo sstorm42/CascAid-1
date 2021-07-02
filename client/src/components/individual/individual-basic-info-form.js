@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Field } from 'redux-form';
 import { SelectRender, InputRender, DatePickerRender, MultiSelectRender, CreatableMultiSelectRender } from '../form_template/input-render';
-import { information_asking_reason } from '../../constants/misc';
+import { information_asking_reason } from '@Constants/misc';
 import { Container, Row, Col, ProgressBar, Button, Modal, Image } from 'react-bootstrap';
-import { countries, states } from '../../constants/country-and-state';
-import { allGenders } from '../../constants/genders';
-import { allRaces } from '../../constants/races';
-import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
-import ProfilePictureUploader from '../../components/user/profile-picture-changer';
-import { date, required } from '../../actions/validate';
+import { countries, states } from '@Constants/country-and-state';
+import { allGenders } from '@Constants/genders';
+import { allRaces } from '@Constants/races';
+import { individualHeaders, totalIndividualStep } from '@Constants/step-headers';
+import ProfilePictureUploader from '@Components/user/profile-picture-changer';
+import { date, required } from '@Actions/validate';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;
     const editMode = props.editMode;

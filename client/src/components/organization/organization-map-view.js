@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import * as RoutePath from '../../constants/route-paths';
-import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
+import * as RoutePath from '@Constants/route-paths';
+import { getCountryByCode, getStateByCountryAndCode } from '@Constants/country-and-state';
 import { Button, Badge, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render';

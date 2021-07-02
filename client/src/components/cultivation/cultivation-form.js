@@ -1,17 +1,9 @@
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Container, Row, Col, Image, Button, Table } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
+import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import { DetailsButtonRender, RemoveUserFromCultivation } from '../form_template/buttons-render';
-import {
-    SelectRender,
-    InputRender,
-    InputRenderWithLargeLabel,
-    DateTimePickerRender,
-    TextRender,
-    CheckBoxRender,
-    CreatableMultiSelectRender,
-} from '../form_template/input-render';
+import { InputRender, TextRender } from '../form_template/input-render';
 const CultivationForm = (props) => {
     const editMode = props.editMode;
     const handleGoToUserDetailsPage = props.handleGoToUserDetailsPage;
@@ -23,18 +15,20 @@ const CultivationForm = (props) => {
                 <Col className="parent-page">
                     <Row>
                         <Col sm={6}>{editMode ? <h4>Edit Cultivation</h4> : <h4>Create Cultivation</h4>}</Col>
-                        {/* <Col sm={6} className="right-align">
+                        <Col sm={6} className="right-align">
                             <Button
                                 size="sm"
+                                type="button"
                                 variant="outline-primary"
                                 onClick={() => {
-                                    props.handleGoToManagePosts();
+                                    props.handleGoToManageCultivations();
                                 }}
                             >
-                                Manage Posts
+                                Manage Cultivations
                             </Button>
-                        </Col> */}
+                        </Col>
                     </Row>
+                    <hr />
                     <form onSubmit={props.handleOnSubmit}>
                         <Field name="title" type="text" component={InputRender} label="Title" placeholder="Title..." />
                         <Field name="description" type="text" component={TextRender} label="Description" placeholder="Description..." col1={4} col2={8} />
@@ -44,6 +38,17 @@ const CultivationForm = (props) => {
                             <Col sm={8}>
                                 <Button variant="primary" size="sm" type="submit">
                                     {editMode ? 'Update' : 'Save'}
+                                </Button>
+                                &nbsp;
+                                <Button
+                                    size="sm"
+                                    type="button"
+                                    variant="outline-primary"
+                                    onClick={() => {
+                                        props.handleGoToManageCultivations();
+                                    }}
+                                >
+                                    Cancel
                                 </Button>
                             </Col>
                         </Row>
@@ -57,7 +62,7 @@ const CultivationForm = (props) => {
                     {editMode && cultivation.users && cultivation.users.length > 0 ? (
                         <Row>
                             <Col>
-                                <Table striped bordered size="sm" hover>
+                                <Table striped bordered hover responsive size="sm">
                                     <tbody>
                                         {cultivation.users.map((user, i) => {
                                             let name = '';

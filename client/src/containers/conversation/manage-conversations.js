@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import ConversationList from '../../components/conversation/conversation-list';
+import ConversationList from '@Components/conversation/conversation-list';
 import { connect } from 'react-redux';
-import * as RoutePaths from '../../constants/route-paths';
-import ConversationDetails from '../../components/conversation/conversation-details';
-import { FileMaxSizeErrorModal } from '../../components/conversation/conversation-warnings';
+import * as RoutePaths from '@Constants/route-paths';
+import ConversationDetails from '@Components/conversation/conversation-details';
+import { FileMaxSizeErrorModal } from '@Components/conversation/conversation-warnings';
 import {
     getAllConversationsByUser,
     getConversation,
@@ -13,9 +13,9 @@ import {
     setMessageTextOnLS,
     printMessageTextOnLS,
     removeAllMessagesOnLS,
-} from '../../actions/conversation-action';
-import { serverAddress } from '../../constants/api-paths';
-import MessageForm from '../../components/conversation/message-form';
+} from '@Actions/conversation-action';
+import { serverAddress } from '@Constants/api-paths';
+import MessageForm from '@Components/conversation/message-form';
 import useSound from 'use-sound';
 import openSocket from 'socket.io-client';
 
@@ -134,6 +134,7 @@ const Conversations = (props) => {
                     <Col sm={9}>
                         <ConversationDetails
                             conversation={props.getConversationResponse.success ? props.getConversationResponse.conversation : {}}
+                            messageUserEntity={props.getConversationResponse.success ? props.getConversationResponse.messageUserEntity : {}}
                             userId={userId}
                         />
 

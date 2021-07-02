@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { getColorByPostType, allCalenderPostTypes } from '../../constants/post-types';
+import { getColorByPostType, allCalenderPostTypes } from '@Constants/post-types';
 const CalendarInfoModal = (props) => {
     const infoModal = props.infoModal;
     const setInfoModal = props.setInfoModal;

@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import OrganizationTypeDA from '../data_accesses/organization-type-da';
+import * as Types from '@Constants/reducer-types';
+import OrganizationTypeDA from '@DA/organization-type-da';
 
 export const getAllOrganizationTypes = () => {
     return {

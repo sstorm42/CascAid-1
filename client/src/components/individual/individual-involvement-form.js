@@ -2,8 +2,8 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { InputRenderWithLargeLabel, CheckBoxRender, SelectRender, TextRender, CreatableMultiSelectRender } from '../form_template/input-render';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
-import { allInvolvementTypes } from '../../constants/involvement-types';
-import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
+import { allInvolvementTypes } from '@Constants/involvement-types';
+import { individualHeaders, totalIndividualStep } from '@Constants/step-headers';
 
 const ProfileStep3 = (props) => {
     const submitting = props.submitting;

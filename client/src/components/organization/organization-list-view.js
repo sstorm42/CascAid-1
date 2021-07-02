@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardColumns, Badge, Row, Col } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
 import { FollowUserButtonRender, UnfollowUserButtonRender, EndorseUserButtonRender, CancelEndorseUserButtonRender } from '../form_template/buttons-render';
 const OrganizationListView = (props) => {
     const allOrganizations = props.allOrganizations;

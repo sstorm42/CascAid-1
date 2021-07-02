@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
-import IndividualListView from '../../components/individual/individual-list-view';
-import { getAllGlobalImpactAreas } from '../../actions/impact-area-action';
-import { getAllFollowings, followUser, unfollowUser } from '../../actions/follow-action';
-import { getAllEndorsees, endorseUser, cancelEndorseUser } from '../../actions/endorsement-action';
-import { getAllIndividuals } from '../../actions/user-action';
-import { getAllGlobalSkills } from '../../actions/skill-action';
-import SearchMenu from '../../components/search/search-menu';
-import IndividualFilter from '../../components/search/individual-filters';
-import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getAllCultivationsByUser, addUsersToCultivation, createCultivation, clearAddUsersToCultivation } from '../../actions/cultivation-action';
+import { addUsersToCultivation, clearAddUsersToCultivation, createCultivation, getAllCultivationsByUser } from '@Actions/cultivation-action';
+import { getAllEndorsees } from '@Actions/endorsement-action';
+import { getAllFollowings } from '@Actions/follow-action';
+import { getAllGlobalImpactAreas } from '@Actions/impact-area-action';
+import { getAllGlobalSkills } from '@Actions/skill-action';
+import { getAllIndividuals } from '@Actions/user-action';
+import CultivationListModal from '@Components/cultivation/cultivation-list-modal';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import IndividualListView from '@Components/individual/individual-list-view';
+import IndividualFilter from '@Components/search/individual-filters';
+import { defaultCurrentLocation } from '@Constants/default-user-information';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import Pagination from 'react-js-pagination';
-import { defaultCurrentLocation } from '../../constants/default-user-information';
-import CultivationListModal from '../../components/cultivation/cultivation-list-modal';
 import { NotificationManager } from 'react-notifications';
+import { connect } from 'react-redux';
 const SearchIndividual = (props) => {
     const [userId, setUserId] = useState();
     const [currentLocation, setCurrentLocation] = useState(defaultCurrentLocation);
@@ -119,7 +118,7 @@ const SearchIndividual = (props) => {
         const { success } = props.addUserToCultivationResponse;
         if (success) {
             NotificationManager.success('Users are added successfully.', 'success');
-            setCultivationModal(false);
+            // setCultivationModal(false);
             props.dispatch(clearAddUsersToCultivation());
         } else if (success === false) {
             NotificationManager.error('Users are not added', 'Failed');

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Avatar from 'react-avatar';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { OptionButtonRender, SendButtonRender, SendMessageButtonRender } from '../../components/form_template/buttons-render';
+import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { OptionButtonRender, SendButtonRender, SendMessageButtonRender } from '@Components/form_template/buttons-render';
 import moment from 'moment';
 import MessageForm from './message-form';
 const MessageTextRender = (text) => {

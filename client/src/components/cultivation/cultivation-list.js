@@ -37,13 +37,13 @@ const CultivationList = (props) => {
                     <hr />
                     <Row>
                         <Col>
-                            <Table striped bordered hover>
+                            <Table striped bordered hover responsive size="sm">
                                 <thead>
                                     <tr>
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Created On</th>
-                                        <th>Number of Users</th>
+                                        <th>Total User</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,7 +58,7 @@ const CultivationList = (props) => {
                                                 <td>{cultivation.title}</td>
                                                 <td>{DescriptionRender(cultivation.description)}</td>
                                                 <td>{moment(cultivation.createdAt).format('LL')}</td>
-                                                <td>{totalUsers}</td>
+                                                <td className="center-align">{totalUsers}</td>
                                                 <td>
                                                     <DetailsButtonRender
                                                         onClick={() => {

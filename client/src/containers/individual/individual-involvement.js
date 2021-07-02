@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import { getInvolvement, setInvolvement, clearInvolvement } from '../../actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import { getInvolvement, setInvolvement, clearInvolvement } from '@Actions/user-action';
 
-import { getAllImpactAreasByUser } from '../../actions/impact-area-action';
+import { getAllImpactAreasByUser } from '@Actions/impact-area-action';
 import { NotificationManager } from 'react-notifications';
-import IndividualInvolvementForm from '../../components/individual/individual-involvement-form';
-import { individualCompleteBasicInfoPage, individualCompletePrivacyPage } from '../../constants/route-paths';
+import IndividualInvolvementForm from '@Components/individual/individual-involvement-form';
+import { individualCompleteBasicInfoPage, individualCompletePrivacyPage } from '@Constants/route-paths';
 
 const Involvement = (props) => {
     const [loading, setLoading] = useState(false);

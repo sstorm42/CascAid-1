@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 const filterToQueryString = (filters) => {
     let queryString = '?';
     for (let t in filters) {

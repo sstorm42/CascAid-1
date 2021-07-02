@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { userAuth } from '../actions';
+import { userAuth } from '@Actions';
 import { connect } from 'react-redux';
-import LoadingAnim from '../components/form_template/loading-anim';
-import * as RoutePath from '../constants/route-paths';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import * as RoutePath from '@Constants/route-paths';
 import { NotificationManager } from 'react-notifications';
 const UserAuthChecker = (ComposedClass, allowedUserTypes, allowAuthenticatedUsers = true) => {
     class AuthenticationCheck extends Component {

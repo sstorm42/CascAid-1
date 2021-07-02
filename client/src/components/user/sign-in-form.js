@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import { required, email, stringLengthRange } from '../../actions/validate';
+import { required, email, stringLengthRange } from '@Actions/validate';
 import { SaInputRender } from '../form_template/input-render';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 const stringRange6To256 = stringLengthRange(6, 256);
 const stringRange6To100 = stringLengthRange(6, 100);

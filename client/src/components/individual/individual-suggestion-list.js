@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, ProgressBar, Button, Card, CardColumns, Badge } from 'react-bootstrap';
-import { individualHeaders, totalIndividualStep } from '../../constants/step-headers';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
-import { FollowButtonRender } from '../../components/form_template/buttons-render';
+import { individualHeaders, totalIndividualStep } from '@Constants/step-headers';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
+import { FollowButtonRender } from '@Components/form_template/buttons-render';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 import { CSSTransition } from 'react-transition-group';
 const DescriptionRender = (description) => {

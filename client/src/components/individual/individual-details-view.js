@@ -1,15 +1,13 @@
+import { getCountryByCode, getStateByCountryAndCode } from '@Constants/country-and-state';
+import { defaultIndividualProfilePicture } from '@Constants/default-images';
 import React from 'react';
 import { Badge, Col, Container, Image, Row } from 'react-bootstrap';
-import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { defaultIndividualProfilePicture } from '../../constants/default-images';
 import {
-    AddFriendshipButtonRender,
-    FollowUserButtonRender,
-    DeleteFriendshipButtonRender,
     AcceptFriendshipButtonRender,
-    RejectFriendshipButtonRender,
-    UnfollowUserButtonRender,
+    AddFriendshipButtonRender,
+    DeleteFriendshipButtonRender,
     FriendDropdownRender,
+    RejectFriendshipButtonRender,
 } from '../form_template/buttons-render';
 const DetailsView = (props) => {
     const individual = props.individual;

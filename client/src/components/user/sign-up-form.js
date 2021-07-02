@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import { required, email, stringLengthRange } from '../../actions/validate';
+import { required, email, stringLengthRange } from '@Actions/validate';
 import { SaInputRender } from '../form_template/input-render';
-import * as RoutePath from '../../constants/route-paths';
+import * as RoutePath from '@Constants/route-paths';
 import { Container, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 
 const stringRange6To256 = stringLengthRange(6, 256);
@@ -29,7 +29,8 @@ const SignUpForm = (props) => {
                         <Row onChange={props.handleUserTypeChange}>
                             <Col className="sign-as-left">
                                 <label className={`btn ${props.isIndividualChecked ? 'user-type-checked' : 'user-type-unchecked'}`}>
-                                    <input className="sign-radio-btn" style={{ display: 'none' }} type="radio" value={1} name="regType" defaultChecked /> Individual
+                                    <input className="sign-radio-btn" style={{ display: 'none' }} type="radio" value={1} name="regType" defaultChecked />{' '}
+                                    Individual
                                 </label>
                             </Col>
                             <Col className="sign-as-right">
@@ -42,9 +43,22 @@ const SignUpForm = (props) => {
 
                         <br />
                         <div className="container">
-                            <Field name="email" type="text" component={SaInputRender} placeholder="example@example.com" label="Email" validate={[required, email, stringRange6To256]} />
+                            <Field
+                                name="email"
+                                type="text"
+                                component={SaInputRender}
+                                placeholder="example@example.com"
+                                label="Email"
+                                validate={[required, email, stringRange6To256]}
+                            />
                             <Field name="password" type="password" component={SaInputRender} label="Password" validate={[required, stringRange6To100]} />
-                            <Field name="confirmPassword" type="password" component={SaInputRender} label="Confirm Password" validate={[required, stringRange6To100]} />
+                            <Field
+                                name="confirmPassword"
+                                type="password"
+                                component={SaInputRender}
+                                label="Confirm Password"
+                                validate={[required, stringRange6To100]}
+                            />
                             <br />
                             <Row>
                                 <Col sm="6">

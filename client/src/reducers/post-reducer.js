@@ -1,4 +1,4 @@
-import * as Types from '../constants/reducer-types';
+import * as Types from '@Constants/reducer-types';
 
 const initialState = {
     getPost: {},
@@ -16,6 +16,8 @@ const initialState = {
     getAllViewersByPost: {},
     getGallery: {},
     getAllCalendarPosts: {},
+    getViewerSummary: {},
+    getPostStatistics: {},
 };
 const changePostInterest = (post_, { postId, userId, type }) => {
     let post = post_.post;
@@ -148,6 +150,10 @@ const PostReducer = (state = initialState, action) => {
             return { ...state, getGallery: action.payload };
         case Types.GET_ALL_CALENDAR_POSTS:
             return { ...state, getAllCalendarPosts: action.payload };
+        case Types.GET_VIEWER_SUMMARY:
+            return { ...state, getViewerSummary: action.payload };
+        case Types.GET_POST_STATISTICS:
+            return { ...state, getPostStatistics: action.payload };
         default:
             return { ...state };
     }

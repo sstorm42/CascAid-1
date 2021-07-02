@@ -1,10 +1,9 @@
+import { getCountryByCode, getStateByCountryAndCode } from '@Constants/country-and-state';
+import { defaultIndividualProfilePicture } from '@Constants/default-images';
+import { getMembershipByValue } from '@Constants/membership-types';
 import React from 'react';
-import { Container, Image, Table, Row, Col, Badge, ListGroup, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import moment from 'moment';
-import { getMembershipStatusByValue, getMembershipByValue } from '../../constants/membership-types';
-import { getCountryByCode, getStateByCountryAndCode } from '../../constants/country-and-state';
-import { defaultOrganizationProfilePicture, defaultIndividualProfilePicture } from '../../constants/default-images';
-import { ImpactAreasRender, TagWithLabelRender } from '../form_template/details-render';
+import { Badge, Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { ImpactAreasRender } from '../form_template/details-render';
 const TimeRender = (time) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return `${months[time.month]}-${time.year}`;
@@ -102,7 +101,7 @@ const DetailsView = (props) => {
                 {infoRender('EIN', basicInfo.ein)}
                 {infoRender('Address', addressMaker(basicInfo.address))}
                 <b>Memberships</b>
-                <Table>
+                <Table striped bordered hover responsive size="sm">
                     <thead></thead>
                     <tbody>
                         {memberships.map((membership, i) => {

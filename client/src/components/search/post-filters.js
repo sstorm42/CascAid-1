@@ -1,8 +1,8 @@
+import { allSearchablePostTypes } from '@Constants/post-types';
 import React from 'react';
-import Select from 'react-select';
-import { Container, Row, Col, Image, Nav, Button, Form } from 'react-bootstrap';
-import { allSearchablePostTypes } from '../../constants/post-types';
+import { Button, Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
+import Select from 'react-select';
 const EventFilter = (props) => {
     console.log(props);
     return (

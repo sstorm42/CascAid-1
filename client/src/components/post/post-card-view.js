@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardColumns, Row, Col, Badge } from 'react-bootstrap';
-import { defaultPostPicture } from '../../constants/default-images';
+import { defaultPostPicture } from '@Constants/default-images';
 import moment from 'moment';
-import { interestTypes } from '../../constants/interest-types';
-import { getPostTypeByValue } from '../../constants/post-types';
+import { interestTypes } from '@Constants/interest-types';
+import { getPostTypeByValue } from '@Constants/post-types';
 import { ImpactAreasRender, InfoRender } from '../form_template/details-render';
 import { LikeButtonRender, InterestedButtonRender, GoingButtonRender, FollowButtonRender, UnfollowUserButtonRender } from '../form_template/buttons-render';
 

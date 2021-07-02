@@ -34,4 +34,8 @@ post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewers);
 
 // GALLERY
 post.get('/gallery/user/:userId', PostController.getAllImages);
+
+// SUMMARY
+post.get('/viewers/:userId/summary', allowIfLoggedIn, PostController.getViewerSummary);
+post.get('/:userId/statistics', allowIfLoggedIn, PostController.getStatistics);
 module.exports = post;

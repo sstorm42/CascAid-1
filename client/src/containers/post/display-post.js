@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import PostDetails from '../../components/post/post-details';
+import PostDetails from '@Components/post/post-details';
 import { connect } from 'react-redux';
-import { getAllCommittedPersons } from '../../actions/post-action';
+import { getAllCommittedPersons } from '@Actions/post-action';
 import { NotificationManager } from 'react-notifications';
-import CommittedPersonsModal from '../../components/post/committed-persons-list';
+import CommittedPersonsModal from '@Components/post/committed-persons-list';
 import {
     getPostById,
     likePost,
@@ -13,9 +13,9 @@ import {
     goingPost,
     cancelGoingPost,
     changePostInterest,
-} from '../../actions/post-action';
-import { postManagePage } from '../../constants/route-paths';
-import { checkIfPostAddedToScheduler, addPostToScheduler, removePostFromScheduler } from '../../actions/scheduler-action';
+} from '@Actions/post-action';
+import { postManagePage } from '@Constants/route-paths';
+import { checkIfPostAddedToScheduler, addPostToScheduler, removePostFromScheduler } from '@Actions/scheduler-action';
 const DisplayPost = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');

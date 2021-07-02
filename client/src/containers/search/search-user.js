@@ -1,10 +1,9 @@
+import { getAllUsers } from '@Actions/user-action';
+import UserList from '@Components/search/user-list';
 import React, { useEffect, useState } from 'react';
-import { getAllUsers } from '../../actions/user-action';
-import { Container, Row, Col } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import { Col, Container, Row } from 'react-bootstrap';
 import Pagination from 'react-js-pagination';
-import UserList from '../../components/search/user-list';
+import { connect } from 'react-redux';
 const SearchUser = (props) => {
     const [userId, setUserId] = useState();
     const [activePage, setActivePage] = useState(1);

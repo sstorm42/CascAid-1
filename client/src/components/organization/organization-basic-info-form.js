@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import ProfilePictureUploader from '@Components/user/profile-picture-changer';
+import { countries, states } from '@Constants/country-and-state';
+import { organizationHeaders, totalOrganizationStep } from '@Constants/step-headers';
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Container, Image, ProgressBar, Row } from 'react-bootstrap';
 import { Field } from 'redux-form';
-import { SelectRender, InputRender, DatePickerRender, TextRender, MultiSelectRender } from '../form_template/input-render';
-import ProfilePictureUploader from '../../components/user/profile-picture-changer';
-import { Container, Row, Col, ProgressBar, Button, Image } from 'react-bootstrap';
-import { countries, states } from '../../constants/country-and-state';
-import { organizationHeaders, totalOrganizationStep } from '../../constants/step-headers';
+import { InputRender, MultiSelectRender, SelectRender, TextRender } from '../form_template/input-render';
 import PostGeoCoding from '../post/post-geo-coding';
 const BasicInfoForm = (props) => {
     const submitting = props.submitting;

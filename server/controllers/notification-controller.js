@@ -4,10 +4,6 @@ const mongoose = require('mongoose');
 const LOOKUPS = require('./lookup-collection');
 const PROJECTS = require('./project-collection');
 const EmitNotification = (userId) => {
-    console.log(
-        '🚀 ~ file: notification-controller.js ~ line 5 ~ EmitNotification ~ userId',
-        'Notification_' + userId.toString(),
-    );
     global.io.emit('Notification_' + userId.toString(), 'NewNotification');
 };
 
@@ -36,10 +32,7 @@ exports.createOne = async (userId, senderId, NotificationType, postId) => {
             upsert: true,
         },
     );
-    console.log(
-        '🚀 ~ file: notification-controller.js ~ line 39 ~ exports.createOne= ~ foundNotification',
-        foundNotification,
-    );
+
     if (!foundNotification) {
         return false;
     }
@@ -76,10 +69,7 @@ exports.deleteOne = async (userId, senderId, NotificationType, postId) => {
             new: true,
         },
     );
-    console.log(
-        '🚀 ~ file: notification-controller.js ~ line 80 ~ exports.createOne= ~ foundNotification',
-        foundNotification,
-    );
+
     if (!foundNotification) {
         return false;
     }
@@ -130,10 +120,8 @@ exports.getAll = async (req, res) => {
             .populate('postId', { _id: 1, title: 1, postType: 1 })
             .populate('senders.userId', { _id: 1, userType: 1, basicInfo: 1 });
 
-        console.log(notifications);
         return res.status(200).send({ ...NotificationResponse.NotificationsFound, notifications });
     } catch (err) {
-        console.log(err.message);
         return res.status(500).send({ ...NotificationResponse.Error(err.message) });
     }
 };
@@ -157,7 +145,7 @@ exports.updateOne = async (req, res) => {
     try {
         const readStatus = req.body.isRead;
         const notificationId = req.params.notificationId;
-        console.log(readStatus, notificationId);
+
         const update = await Notification.findOneAndUpdate(
             { _id: notificationId },
             { $set: { isRead: readStatus } },

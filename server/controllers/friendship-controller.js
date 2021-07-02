@@ -10,7 +10,7 @@ const { options } = require('../routes/friendship-route');
 exports.createOne = async (req, res) => {
     try {
         const friendship = new Friendship({ ...req.body, status: 'pending' });
-        console.log('🚀 ~ file: friendship-controller.js ~ line 9 ~ exports.createOne= ~ friendship', friendship);
+
         const friendship_ = await friendship.save();
         if (!friendship_) return res.status(401).send({ ...RESPONSE.NotCreated });
         else {
@@ -114,7 +114,7 @@ exports.checkIfFriends = async (req, res) => {
                 { senderId: friendId, receiverId: userId },
             ],
         });
-        console.log('🚀 ~ file: friendship-controller.js ~ line 71 ~ exports.checkIfFriends= ~ friendship', friendship);
+
         if (!friendship) return res.status(401).send({ ...RESPONSE.NotFound });
         else res.status(401).send({ ...RESPONSE.Found, friendship: friendship });
     } catch (err) {
@@ -124,7 +124,7 @@ exports.checkIfFriends = async (req, res) => {
 exports.getAll = async (req, res) => {
     try {
         const userId = req.params.userId;
-        console.log('🚀 ~ file: friendship-controller.js ~ line 113 ~ exports.getAll= ~ userId', userId);
+
         const status = req.query.status;
         let match = {
             $or: [{ senderId: ObjectId(userId) }, { receiverId: ObjectId(userId) }],
@@ -140,7 +140,7 @@ exports.getAll = async (req, res) => {
         aggregateOptions.push(LOOKUPS.friendship_receiver);
         aggregateOptions.push(PROJECTS.friendship_get_all);
         const friendships = await Friendship.aggregate(aggregateOptions);
-        console.log('🚀 ~ file: friendship-controller.js ~ line 124 ~ exports.getAll= ~ friendships', friendships);
+
         if (!friendships) return res.status(401).send({ ...RESPONSE.NotFound });
         else res.status(200).send({ ...RESPONSE.Found, friendships: friendships });
     } catch (err) {
@@ -151,7 +151,6 @@ exports.deleteOne = async (req, res) => {
     try {
         const friendshipId = req.params.friendshipId;
 
-        console.log('🚀 ~ file: friendship-controller.js ~ line 94 ~ exports.deleteOne ~ friendshipId', friendshipId);
         const deletedFriendship = await Friendship.findOneAndDelete({ _id: friendshipId });
         if (!deletedFriendship) return res.status({ ...RESPONSE.NotDeleted });
         else {

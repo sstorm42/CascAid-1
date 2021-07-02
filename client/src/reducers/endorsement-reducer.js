@@ -1,4 +1,4 @@
-import * as Types from '../constants/reducer-types';
+import * as Types from '@Constants/reducer-types';
 
 const initialState = {
     endorseUser: {},
@@ -6,6 +6,7 @@ const initialState = {
     getAllEndorsers: {},
     getAllEndorsees: {},
     checkIfEndorses: {},
+    getEndorserSummary: {},
 };
 const EndorsementReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,6 +20,8 @@ const EndorsementReducer = (state = initialState, action) => {
             return { ...state, getAllEndorsees: action.payload };
         case Types.CHECK_IF_ENDORSES:
             return { ...state, checkIfEndorses: action.payload };
+        case Types.GET_ENDORSER_SUMMARY:
+            return { ...state, getEndorserSummary: action.payload };
         default:
             return { ...state };
     }

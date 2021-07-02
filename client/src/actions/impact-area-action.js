@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import ImpactAreaDA from '../data_accesses/impact-area-da';
+import * as Types from '@Constants/reducer-types';
+import ImpactAreaDA from '@DA/impact-area-da';
 
 export const getAllGlobalImpactAreas = () => {
     return {

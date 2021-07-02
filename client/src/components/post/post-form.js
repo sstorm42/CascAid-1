@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { getPostTypeByValue, postTypeFields } from '@Constants/post-types';
+import React from 'react';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Field } from 'redux-form';
-import PostImageList from './post-image-list';
-import { MentionsInput, Mention } from 'react-mentions';
-
 import {
-    SelectRender,
-    InputRender,
-    InputRenderWithLargeLabel,
-    DateTimePickerRender,
-    TextRender,
     CheckBoxRender,
     CreatableMultiSelectRender,
+    DateTimePickerRender,
+    InputRender,
+    InputRenderWithLargeLabel,
+    TextRender,
 } from '../form_template/input-render';
 import PostGeoCoding from './post-geo-coding';
-import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
+import PostImageList from './post-image-list';
 import RequiredItemList from './required-item-list';
+
 let style = {
     input: {
         overflow: 'auto',
@@ -65,10 +63,18 @@ const PostForm = (props) => {
                             </Col>
                         </Row>
                         <br />
-                        <label>{description}</label>
+                        {/* <label>{description}</label> */}
                         {fields.title && <Field name="title" type="text" component={InputRender} label="Title" placeholder="Title..." />}
                         {fields.startDateTime && (
-                            <Field name="startDateTime" component={DateTimePickerRender} label="Start time" col1={4} col2={8} zIndex={6001} />
+                            <Field
+                                name="startDateTime"
+                                component={DateTimePickerRender}
+                                label="Start time"
+                                col1={4}
+                                col2={8}
+                                zIndex={6001}
+                                onChange={props.handleOnStartDateTimeChange}
+                            />
                         )}
                         {fields.endDateTime && <Field name="endDateTime" component={DateTimePickerRender} label="End time" col1={4} col2={8} zIndex={6000} />}
                         {fields.description && (

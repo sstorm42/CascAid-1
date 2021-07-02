@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { getUserPublicInfo } from '../../actions/user-action';
-import LoadingAnim from '../../components/form_template/loading-anim';
-import DetailsView from '../../components/individual/individual-details-view';
-import { checkIfFriends, createFriendship, acceptFriendship, rejectFriendship, deleteFriendship } from '../../actions/friendship-action';
-import { followUser, checkIfFollower, unfollowUser } from '../../actions/follow-action';
+import { getUserPublicInfo } from '@Actions/user-action';
+import LoadingAnim from '@Components/form_template/loading-anim';
+import DetailsView from '@Components/individual/individual-details-view';
+import { checkIfFriends, createFriendship, acceptFriendship, rejectFriendship, deleteFriendship } from '@Actions/friendship-action';
+import { followUser, checkIfFollower, unfollowUser } from '@Actions/follow-action';
 
 const IndividualDetails = (props) => {
     const [loading, setLoading] = useState(false);

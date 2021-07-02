@@ -8,7 +8,7 @@ exports.getAllPosts = async (req, res) => {
         const userId = req.user._id;
         const allFollowingOrganizations = await Follow.find({ followerId: userId });
         const allPosts = await Post.find({ creatorId: { $in: allFollowingOrganizations } });
-        console.log(allPosts);
+
         res.status(200).send({ success: true, message: 'Posts for home page', allPosts });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });

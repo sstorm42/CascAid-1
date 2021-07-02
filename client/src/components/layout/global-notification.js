@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react';
-import NotificationBadge from 'react-notification-badge';
-import { Effect } from 'react-notification-badge';
-import { Button, Badge, NavDropdown, Image, Row, Container, Col } from 'react-bootstrap';
-import * as RoutePaths from '../../constants/route-paths';
-import { Link, withRouter } from 'react-router-dom';
+import { getNotificationsCount, getTitleByType, getTopNotifications, updateNotification, updateNotificationLocal } from '@Actions/notification-action';
+import { serverAddress } from '@Constants/api-paths';
+import * as RoutePaths from '@Constants/route-paths';
 import moment from 'moment';
-import { defaultIndividualProfilePicture, defaultOrganizationProfilePicture } from '../../constants/default-images';
+import React, { useEffect } from 'react';
+import { Badge, Button, Col, Container, Image, NavDropdown, Row } from 'react-bootstrap';
 import { BsBellFill } from 'react-icons/bs';
-import openSocket from 'socket.io-client';
-import { serverAddress } from '../../constants/api-paths';
 import { connect } from 'react-redux';
-import { getNotificationsCount, getTopNotifications, getTitleByType, updateNotification, updateNotificationLocal } from '../../actions/notification-action';
-
+import { withRouter } from 'react-router-dom';
+import openSocket from 'socket.io-client';
 import useSound from 'use-sound';
 
 const socket = openSocket(serverAddress, { transports: ['websocket', 'polling', 'flashsocket'] });

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 class NotificationDA {
     get_notifications_count = (onlyNew) => {
         return axios

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Image, Button, Badge } from 'react-bootstrap';
-import { defaultOrganizationProfilePicture } from '../../constants/default-images';
+import { defaultOrganizationProfilePicture } from '@Constants/default-images';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
-import { interestTypes } from '../../constants/interest-types';
+import { interestTypes } from '@Constants/interest-types';
 import moment from 'moment';
 import {
     TagWithLabelRender,
@@ -25,8 +25,8 @@ import {
     RemoveFromSchedulerButtonRender,
 } from '../form_template/buttons-render';
 import PostMapView from './post-map-view';
-import * as RoutePath from '../../constants/route-paths';
-import { getPostTypeByValue, postTypeFields } from '../../constants/post-types';
+import * as RoutePath from '@Constants/route-paths';
+import { getPostTypeByValue, postTypeFields } from '@Constants/post-types';
 const DisplayPost = (props) => {
     const post = props.post;
     console.log('🚀 ~ file: post-details.js ~ line 24 ~ DisplayPost ~ post', post);

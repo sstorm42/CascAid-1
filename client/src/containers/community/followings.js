@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Image, Nav, Button } from 'react-bootstrap';
-import CommunityMenu from '../../components/community/community-menu';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import CommunityMenu from '@Components/community/community-menu';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { connect } from 'react-redux';
 import SampleUsers from './sample-users';
-import FollowingsList from '../../components/community/followings-list';
-import { getAllFollowings, unfollowUser } from '../../actions/follow-action';
-import * as RoutePaths from '../../constants/route-paths';
-import { setMessage } from '../../actions/conversation-action';
-import MessageModal from '../../components/conversation/message-modal';
+import FollowingsList from '@Components/community/followings-list';
+import { getAllFollowings, unfollowUser } from '@Actions/follow-action';
+import * as RoutePaths from '@Constants/route-paths';
+import { setMessage } from '@Actions/conversation-action';
+import MessageModal from '@Components/conversation/message-modal';
 import { NotificationManager } from 'react-notifications';
 const CommunityFollowings = (props) => {
     const [loading, setLoading] = useState(false);

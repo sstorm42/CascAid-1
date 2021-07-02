@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, ListGroup, Image, Button, Modal } from 'react-bootstrap';
-import { getTitleByType } from '../../actions/notification-action';
-import { ReadButtonRender, UnreadButtonRender, DeleteButtonRender, ListButtonRender } from '../form_template/buttons-render';
+import { getTitleByType } from '@Actions/notification-action';
 import moment from 'moment';
+import React, { useState } from 'react';
+import { Col, Container, Image, ListGroup, Row } from 'react-bootstrap';
+import { DeleteButtonRender, ListButtonRender, ReadButtonRender, UnreadButtonRender } from '../form_template/buttons-render';
 import UserListModal from './user-list-modal';
 const NotificationList = (props) => {
     const allNotifications = props.allNotifications;
-    const TitleRender = (notification) => {};
+
     const [userListModal, setUserListModal] = useState(false);
     const [users, setUsers] = useState([]);
     const handleListModal = (users, modal) => {

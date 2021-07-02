@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as APIPaths from '../constants/api-paths';
+import * as APIPaths from '@Constants/api-paths';
 class SchedulerDA {
     check_if_post_added_to_scheduler = (userId, postId) => {
         return axios

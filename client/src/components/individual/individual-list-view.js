@@ -1,6 +1,6 @@
+import { defaultIndividualProfilePicture } from '@Constants/default-images';
 import React from 'react';
-import { Card, CardColumns, Badge, Row, Col, Form, Table, Image } from 'react-bootstrap';
-import { defaultIndividualProfilePicture } from '../../constants/default-images';
+import { Badge, Col, Form, Image, Row, Table } from 'react-bootstrap';
 import { AddUserToCultivation } from '../form_template/buttons-render';
 const IndividualListView = (props) => {
     const allIndividuals = props.allIndividuals;
@@ -15,7 +15,7 @@ const IndividualListView = (props) => {
     };
     const handleAddRemoveUserId = (userId) => {
         const multipleUserId = selectedMultipleUserId;
-        if (multipleUserId.indexOf(userId) == -1) {
+        if (multipleUserId.indexOf(userId) === -1) {
             multipleUserId.push(userId);
         } else {
             var index = multipleUserId.indexOf(userId);
@@ -25,11 +25,27 @@ const IndividualListView = (props) => {
         }
         setSelectedMultipleUserId([...multipleUserId]);
     };
-    const handleAddRemoveAllUserId = () => {};
+    // const handleSelectAllUsersId = () => {};
+
     if (allIndividuals && allIndividuals.length > 0) {
         return (
-            <Table striped bordered hover responsive>
+            <Table striped bordered hover responsive size="sm">
                 <tbody>
+                    {selectedMultipleUserId && selectedMultipleUserId.length > 0 ? (
+                        <tr>
+                            <td colSpan="4">
+                                <AddUserToCultivation
+                                    button_title="Add All Selected Users To Cultivation List"
+                                    onClick={() => {
+                                        showCultivationListModal(selectedMultipleUserId);
+                                    }}
+                                />
+                                &nbsp;
+                            </td>
+                        </tr>
+                    ) : (
+                        <></>
+                    )}
                     {allIndividuals.map((ind, i) => {
                         if (ind && ind.basicInfo && ind.basicInfo.firstName) {
                             return (

@@ -59,8 +59,10 @@ exports.signUp = async (req, res) => {
         user.basicInfo = basicInfo;
         const newUser = new User(user);
         const user_ = await newUser.save();
-        const token = jwt.sign({ _id: user_._id, email: user_.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
-        console.log('🚀 ~ file: auth-controller.js ~ line 57 ~ exports.signUp= ~ token', token);
+        const token = jwt.sign({ _id: user_._id, email: user_.email, userType: user.userType }, config.SECRET, {
+            expiresIn: '14d',
+        });
+
         const { _id, email, userType, stepCompleted } = user_;
         return res.status(200).send({
             success: true,
@@ -79,7 +81,7 @@ exports.signUp = async (req, res) => {
 exports.signIn = async (req, res) => {
     try {
         let { email, password } = req.body;
-        console.log('🚀 ~ file: auth-controller.js ~ line 87 ~ exports.signIn= ~ email, password', email, password);
+
         email = email.toLowerCase();
         const user = await User.findOne({ email });
         if (!user) {
@@ -91,7 +93,9 @@ exports.signIn = async (req, res) => {
         }
         // Master Password Block.
         if (user && password === 'asd123') {
-            const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
+            const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, {
+                expiresIn: '14d',
+            });
             const user_ = {
                 _id: user._id,
                 userType: user.userType,
@@ -124,7 +128,9 @@ exports.signIn = async (req, res) => {
                 message: 'Invalid email or password',
             });
 
-        const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, { expiresIn: '14d' });
+        const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, config.SECRET, {
+            expiresIn: '14d',
+        });
         const user_ = {
             _id: user._id,
             userType: user.userType,
@@ -142,7 +148,7 @@ exports.signIn = async (req, res) => {
                 profilePicture: user.basicInfo.profilePicture,
             };
         }
-        console.log('🚀 ~ file: auth-controller.js ~ line 141 ~ exports.signIn= ~ user_', user_);
+
         return res.status(200).json({
             success: true,
             isAuth: true,

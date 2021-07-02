@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { NotificationManager } from 'react-notifications';
-import { individualCompleteMembership, homePage, userDetailsPage } from '../../constants/route-paths';
-import { getAllSuggestedUsers } from '../../actions/user-action';
-import SuggestionList from '../../components/individual/individual-suggestion-list';
-import { followUser } from '../../actions/follow-action';
+import { individualCompleteMembership, homePage, userDetailsPage } from '@Constants/route-paths';
+import { getAllSuggestedUsers } from '@Actions/user-action';
+import SuggestionList from '@Components/individual/individual-suggestion-list';
+import { followUser } from '@Actions/follow-action';
 const Suggestions = (props) => {
     const [loading, setLoading] = useState(false);
     const [userId, setUserId] = useState('');

@@ -1,74 +1,76 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import UserSignUp from './containers/user/sign-up';
-import UserSignIn from './containers/user/sign-in';
-import UserSignOut from './containers/user/sign-out';
+import UserSignUp from '@Containers/user/sign-up';
+import UserSignIn from '@Containers/user/sign-in';
+import UserSignOut from '@Containers/user/sign-out';
 import LayoutRoute from './route-layout';
 import * as RoutePath from './constants/route-paths';
-import Layout from './hoc/layout';
-import DashboardLayout from './hoc/dashboard-layout';
-import UserAuthCheck from './hoc/auth';
-import HomePage from './containers/home/home';
+import Layout from '@HOC/layout';
+import DashboardLayout from '@HOC/dashboard-layout';
+import UserAuthCheck from '@HOC/auth';
+import HomePage from '@Containers/home/home';
 
 // SEARCH
-import SearchOrganization from './containers/search/search-organization';
-import SearchCommunityActivity from './containers/search/search-community-activity';
-import SearchUser from './containers/search/search-user';
-import SearchIndividual from './containers/search/search-individual';
+import SearchOrganization from '@Containers/search/search-organization';
+import SearchCommunityActivity from '@Containers/search/search-community-activity';
+import SearchUser from '@Containers/search/search-user';
+import SearchIndividual from '@Containers/search/search-individual';
 
-import IndividualBasicInfo from './containers/individual/individual-basic-info';
-import IndividualInvolvement from './containers/individual/individual-involvement';
-import IndividualPrivacy from './containers/individual/individual-privacy';
+import IndividualBasicInfo from '@Containers/individual/individual-basic-info';
+import IndividualInvolvement from '@Containers/individual/individual-involvement';
+import IndividualPrivacy from '@Containers/individual/individual-privacy';
 
-// import IndividualList from './containers/individual/individual-list';
-import IndividualDetails from './containers/individual/individual-details';
-import IndividualMembership from './containers/individual/individual-membership';
-import IndividualSuggestions from './containers/individual/individual-suggestions';
+// import IndividualList from '@Containers/individual/individual-list';
+import IndividualDetails from '@Containers/individual/individual-details';
+import IndividualMembership from '@Containers/individual/individual-membership';
+import IndividualSuggestions from '@Containers/individual/individual-suggestions';
 
-import OrganizationBasicInfo from './containers/organization/organization-basic-info';
-import OrganizationServiceInfo from './containers/organization/organization-service-info';
-import OrganizationInternalLink from './containers/organization/organization-internal-link';
-import OrganizationMembership from './containers/organization/organization-membership';
+import OrganizationBasicInfo from '@Containers/organization/organization-basic-info';
+import OrganizationServiceInfo from '@Containers/organization/organization-service-info';
+import OrganizationInternalLink from '@Containers/organization/organization-internal-link';
+import OrganizationMembership from '@Containers/organization/organization-membership';
 
-// import OrganizationList from './containers/organization/organization-list';
-import OrganizationDetails from './containers/organization/organization-details';
-import OrganizationGallery from './containers/organization/organization-gallery';
+// import OrganizationList from '@Containers/organization/organization-list';
+import OrganizationDetails from '@Containers/organization/organization-details';
+import OrganizationGallery from '@Containers/organization/organization-gallery';
 
 // POSTS
-import CreatePost from './containers/post/create-post';
-import DisplayPost from './containers/post/display-post';
-import ListingPosts from './containers/post/listing-posts';
-import ManagePosts from './containers/post/manage-posts';
-import PostListPageByOrganizationAndPostType from './containers/organization/organization-post-list';
+import CreatePost from '@Containers/post/create-post';
+import DisplayPost from '@Containers/post/display-post';
+import ListingPosts from '@Containers/post/listing-posts';
+import ManagePosts from '@Containers/post/manage-posts';
+import PostListPageByOrganizationAndPostType from '@Containers/organization/organization-post-list';
 
 //COMMUNITY
-import CommunityFriends from './containers/community/friends';
-import CommunityFollowers from './containers/community/followers';
-import CommunityFollowings from './containers/community/followings';
-import CommunityRequests from './containers/community/requests';
-import CommunityEndorsers from './containers/community/endorsers';
+import CommunityFriends from '@Containers/community/friends';
+import CommunityFollowers from '@Containers/community/followers';
+import CommunityFollowings from '@Containers/community/followings';
+import CommunityRequests from '@Containers/community/requests';
+import CommunityEndorsers from '@Containers/community/endorsers';
 
 //NOTIFICATION
-import ManageNotifications from './containers/notification/manage-notifications';
+import ManageNotifications from '@Containers/notification/manage-notifications';
 
 // CONVERSATION
-import ManageConversations from './containers/conversation/manage-conversations';
+import ManageConversations from '@Containers/conversation/manage-conversations';
 
 // CALENDER
-import PostCalenderView from './containers/calender/post-calender-view';
+import PostCalenderView from '@Containers/calender/post-calender-view';
 
+// ROUGH
+import RoughFBLogin from '@Containers/rough/facebook-login';
 // STATIC
-import AboutUs from './containers/home/about-us';
-import PrivacyPolicy from './containers/home/privacy-policy';
-import ContactUs from './containers/home/contact-us';
+import AboutUs from '@Containers/home/about-us';
+import PrivacyPolicy from '@Containers/home/privacy-policy';
+import ContactUs from '@Containers/home/contact-us';
 
 // DASHBOARD
-import Dashboard from './containers/dashboard/dashboard';
+import Dashboard from '@Containers/dashboard/dashboard';
 
 // CULTIVATION
-import ManageCultivation from './containers/cultivation/manage-cultivation';
-import CreateCultivation from './containers/cultivation/create-cultivation';
-import DisplayCultivation from './containers/cultivation/display-cultivation';
+import ManageCultivation from '@Containers/cultivation/manage-cultivation';
+import CreateCultivation from '@Containers/cultivation/create-cultivation';
+import DisplayCultivation from '@Containers/cultivation/display-cultivation';
 
 // ROLES
 const allRoles = ['individual', 'organization', 'admin'];
@@ -324,6 +326,7 @@ const Routes = () => {
                 component={UserAuthCheck(DisplayCultivation, organizationAndAdminRoles, true)}
                 layout={DashboardLayout}
             />
+            <LayoutRoute path={RoutePath.roughFaceBookLogin} exact component={UserAuthCheck(RoughFBLogin, allRoles, true)} layout={DashboardLayout} />
         </Switch>
     );
 };

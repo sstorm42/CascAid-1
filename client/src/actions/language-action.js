@@ -1,5 +1,5 @@
-import * as Types from '../constants/reducer-types';
-import LanguageDA from '../data_accesses/language-da';
+import * as Types from '@Constants/reducer-types';
+import LanguageDA from '@DA/language-da';
 
 export const getAllGlobalLanguages = () => {
     return {

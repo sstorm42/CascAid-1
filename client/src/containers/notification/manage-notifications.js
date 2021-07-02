@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import NotificationList from '../../components/notification/notification-list';
-import LoadingAnim from '../../components/form_template/loading-anim';
+import NotificationList from '@Components/notification/notification-list';
+import LoadingAnim from '@Components/form_template/loading-anim';
 import { connect } from 'react-redux';
-import { getAllNotifications, updateNotification, updateNotificationLocal } from '../../actions/notification-action';
-import * as RoutePaths from '../../constants/route-paths';
+import { getAllNotifications, updateNotification, updateNotificationLocal } from '@Actions/notification-action';
+import * as RoutePaths from '@Constants/route-paths';
 
 const ManageNotifications = (props) => {
     const [loading, setLoading] = useState(false);

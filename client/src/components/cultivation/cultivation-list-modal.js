@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Modal, Table, Button } from 'react-bootstrap';
+import { Button, Modal, Table } from 'react-bootstrap';
 import { AddButtonRender } from '../form_template/buttons-render';
 const TitleRender = (title) => {
     if (title) {
@@ -28,7 +28,7 @@ const CultivationListModal = (props) => {
             <Modal.Header closeButton>Cultivate List</Modal.Header>
             <Modal.Body>
                 {!createNewCultivation && (
-                    <Table striped bordered hover size="sm">
+                    <Table striped bordered hover responsive size="sm">
                         <tbody>
                             {allCultivations.map((cultivation, i) => {
                                 return (
