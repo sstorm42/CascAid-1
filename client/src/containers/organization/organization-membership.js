@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import LoadingAnim from '@Components/form_template/loading-anim';
 import { NotificationManager } from 'react-notifications';
-import { organizationCompleteServiceInfoPage, homePage } from '@Constants/route-paths';
+import { organizationCompleteServiceInfoPage, homePage, dashboardPage } from '@Constants/route-paths';
 import { getAllMemberships, createMembership, updateMembership, deleteMembership, acceptMembership, rejectMembership } from '@Actions/membership-action';
 import MembershipForm from '@Components/membership/membership-form';
 import { searchUsersByName } from '@Actions';
@@ -120,7 +120,8 @@ const Membership = (props) => {
         props.history.push(organizationCompleteServiceInfoPage);
     };
     const handleSkipButton = () => {
-        props.history.push(homePage);
+        // props.history.push(homePage);
+        props.history.push(dashboardPage);
     };
     const promiseOptions = (inputValue) =>
         new Promise((resolve) => {

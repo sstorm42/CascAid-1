@@ -173,6 +173,31 @@ exports.getAll = async (req, res) => {
     }
 };
 
+exports.getAllUpcomingPosts = async (req, res) => {
+    try {
+        const creatorId = req.query.creatorId ? JSON.parse(req.query.creatorId) : '';
+        const match = {};
+
+        if (creatorId && creatorId.length > 0) {
+            match['creatorId'] = mongoose.Types.ObjectId(creatorId.toString());
+        }
+        match['startDateTime'] = { $gte: new Date() };
+
+        let aggregateOptions = [];
+
+        const lookUps = [LOOKUPS.post_organization, LOOKUPS.post_impactAreas, LOOKUPS.post_interests];
+        const project = PROJECTS.post_get_all;
+        aggregateOptions.push({ $match: match }, ...lookUps, { $sort: { startDateTime: 1 } }, { $project: project });
+        const allPosts = await Post.aggregate(aggregateOptions);
+
+        if (allPosts) return res.status(200).send({ ...RESPONSES.PostFound, allPosts });
+        else return res.status(404).send(RESPONSES.PostNotFound);
+    } catch (err) {
+        console.log('🚀 ~ file: post-controller.js ~ line 203 ~ exports.getAllUpcomingPosts= ~ err', err.message);
+        res.status(500).send({ success: false, message: err.message });
+    }
+};
+
 exports.updateOne = async (req, res) => {
     try {
         const postId = req.params.postId;
@@ -617,6 +642,20 @@ exports.seedPosts = async (req, res) => {
 // VIEWS
 exports.getAllViewers = async (req, res) => {
     try {
+        const userId = req.params.userId;
+        const posts = await Post.find({ creatorId: userId });
+        const postIds = posts.map((post) => post._id);
+        const match = {
+            postId: { $in: postIds },
+        };
+        const viewers = await View.aggregate([{ $match: match }, LOOKUPS.view_user, PROJECTS.view_get_all_viewers]);
+        return res.status(200).send({ success: true, message: 'All Viewers', viewers });
+    } catch (error) {
+        return res.status(501).send({ success: false, message: error.message });
+    }
+};
+exports.getAllViewersByPost = async (req, res) => {
+    try {
         const postId = req.params.postId;
         const match = {
             postId: ObjectId(postId),
@@ -709,44 +748,131 @@ exports.seedUpdatedPosts = async (req, res) => {
 // SUMMARY
 exports.getViewerSummary = async (req, res) => {
     try {
-        // const userId = req.params.userId;
-        // const lastWeek = new Date();
-        // lastWeek.setDate(lastWeek.getDate() - 7);
-        // const totalFollowers = await Follow.countDocuments({ followingId: userId });
-        // const totalFollowersOfLastWeek = await Follow.countDocuments({
-        //     followingId: userId,
-        //     updatedAt: { $gte:new Date(lastWeek) },
-        // });
-        return res
-            .status(200)
-            .send({ success: true, message: 'Viewer summary found.', totalViewers: 10, totalNewViewers: 5 });
+        const userId = req.params.userId;
+        const lastWeek = new Date();
+        lastWeek.setDate(lastWeek.getDate() - 7);
+        const posts = await Post.find({ creatorId: userId });
+        const postIds = posts.map((post) => post._id);
+        const views = await View.find({
+            postId: { $in: postIds },
+        });
+        const totalViewers = views.length;
+        const newViews = await View.find({
+            postId: { $in: postIds },
+            updatedAt: { $gte: new Date(lastWeek) },
+        });
+        const totalNewViewers = newViews.length;
+        console.log(
+            '🚀 ~ file: post-controller.js ~ line 735 ~ exports.getViewerSummary= ~ totalViewers, totalNewViewers',
+            totalViewers,
+            totalNewViewers,
+        );
+        return res.status(200).send({ success: true, message: 'Viewer summary found.', totalViewers, totalNewViewers });
     } catch (err) {
         res.status(500).send({ success: false, message: err.message });
     }
 };
+const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];
 exports.getStatistics = async (req, res) => {
     try {
-        const dummyData = {
-            viewerStatistics: [
-                { label: 'January 21', value: 20 },
-                { label: 'February 21', value: 30 },
-                { label: 'March 21', value: 40 },
-                { label: 'April 21', value: 50 },
-                { label: 'May 21', value: 60 },
-                { label: 'June 21', value: 70 },
-            ],
-            interactionStatistics: [
-                { label: 'January 21', liked: 20, interested: 30, going: 40 },
-                { label: 'February 21', liked: 30, interested: 40, going: 60 },
-                { label: 'March 21', liked: 40, interested: 50, going: 80 },
-                { label: 'April 21', liked: 50, interested: 60, going: 100 },
-                { label: 'May 21', liked: 60, interested: 70, going: 120 },
-                { label: 'June 21', liked: 70, interested: 80, going: 140 },
-            ],
-        };
+        const userId = req.params.userId;
+        const viewerStatisticsOfLastSixMonths = [];
+        const interactionStatisticsOfLastSixMonths = [];
+        const today = new Date();
 
-        return res.status(200).send({ success: true, message: 'Viewer summary found.', statistics: dummyData });
+        const posts = await Post.find({ creatorId: userId });
+        const postIds = posts.map((post) => post._id);
+        for (let i = 0; i < 6; i++) {
+            let startDate = new Date(today.getFullYear(), today.getMonth() - i, 1);
+            let endDate = new Date(today.getFullYear(), today.getMonth() + 1 - i, 1);
+            let views = await View.countDocuments({
+                postId: { $in: postIds },
+                createdAt: { $gte: startDate },
+                createdAt: { $lt: endDate },
+            });
+
+            viewerStatisticsOfLastSixMonths.push({
+                idx: i,
+                label: monthNames[startDate.getMonth()] + '-' + startDate.getFullYear(),
+                firstDate: startDate,
+                lastDate: endDate,
+                views: views,
+            });
+            let liked = await Interest.countDocuments({
+                postId: { $in: postIds },
+                liked: true,
+                likedAt: { $gte: startDate },
+                likedAt: { $lt: endDate },
+            });
+            let interested = await Interest.countDocuments({
+                postId: { $in: postIds },
+                interested: true,
+                interestedAt: { $gte: startDate },
+                interestedAt: { $lt: endDate },
+            });
+            let going = await Interest.countDocuments({
+                postId: { $in: postIds },
+                going: true,
+                goingAt: { $gte: startDate },
+                goingAt: { $lt: endDate },
+            });
+            interactionStatisticsOfLastSixMonths.push({
+                idx: i,
+                label: monthNames[startDate.getMonth()] + '-' + startDate.getFullYear(),
+                firstDate: startDate,
+                lastDate: endDate,
+                liked,
+                interested,
+                going,
+            });
+        }
+        // const dummyData = {
+        //     viewerStatistics: [
+        //         { label: 'January 21', value: 20 },
+        //         { label: 'February 21', value: 30 },
+        //         { label: 'March 21', value: 40 },
+        //         { label: 'April 21', value: 50 },
+        //         { label: 'May 21', value: 60 },
+        //         { label: 'June 21', value: 70 },
+        //     ],
+        //     interactionStatistics: [
+        //         { label: 'January 21', liked: 20, interested: 30, going: 40 },
+        //         { label: 'February 21', liked: 30, interested: 40, going: 60 },
+        //         { label: 'March 21', liked: 40, interested: 50, going: 80 },
+        //         { label: 'April 21', liked: 50, interested: 60, going: 100 },
+        //         { label: 'May 21', liked: 60, interested: 70, going: 120 },
+        //         { label: 'June 21', liked: 70, interested: 80, going: 140 },
+        //     ],
+        // };
+        console.log(
+            '🚀 ~ file: post-controller.js ~ line 784 ~ exports.getStatistics= ~ viewerStatisticsOfLastSixMonths',
+            viewerStatisticsOfLastSixMonths,
+        );
+        console.log(
+            '🚀 ~ file: post-controller.js ~ line 832 ~ exports.getStatistics= ~ interactionStatisticsOfLastSixMonths',
+            interactionStatisticsOfLastSixMonths,
+        );
+        return res.status(200).send({
+            success: true,
+            message: 'Viewer summary found.',
+            viewerStatisticsOfLastSixMonths,
+            interactionStatisticsOfLastSixMonths,
+        });
     } catch (err) {
+        console.log('🚀 ~ file: post-controller.js ~ line 875 ~ exports.getStatistics= ~ err.message', err.message);
         res.status(500).send({ success: false, message: err.message });
     }
 };

@@ -13,6 +13,8 @@ conversation.get('/count/new/:userId', ConversationController.getCountNew);
 conversation.post('/message', allowIfLoggedIn, ConversationController.createOneMessage);
 conversation.delete('/message/:messageId', allowIfLoggedIn, ConversationController.deleteOneMessage);
 
+// conversation.post('/message/automatic/:userId/:listType',allowIfLoggedIn,ConversationController.automaticSendToList);
+
 // TEST
 conversation.post('/test/rtc', ConversationController.createFalse);
 module.exports = conversation;

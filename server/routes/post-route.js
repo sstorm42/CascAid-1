@@ -4,6 +4,8 @@ const { allowIfLoggedIn, grantAccess } = require('../middlewares/access-control'
 
 post.get('/', PostController.getAll);
 post.get('/feed', allowIfLoggedIn, PostController.getAllFeeds);
+// UPCOMING
+post.get('/upcoming', allowIfLoggedIn, PostController.getAllUpcomingPosts);
 post.get('/calendar/user/:userId', allowIfLoggedIn, PostController.getAllCalenderPosts);
 post.get('/suggestions', allowIfLoggedIn, PostController.getAllSuggestions);
 post.get('/:postId', allowIfLoggedIn, PostController.getOne);
@@ -30,12 +32,14 @@ post.post('/seedCalenderPosts', PostController.seedCalenderPosts);
 post.post('/seedUpdatedPosts', PostController.seedUpdatedPosts);
 
 // VIEW
-post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewers);
+post.get('/:postId/viewers', allowIfLoggedIn, PostController.getAllViewersByPost);
 
 // GALLERY
 post.get('/gallery/user/:userId', PostController.getAllImages);
 
 // SUMMARY
 post.get('/viewers/:userId/summary', allowIfLoggedIn, PostController.getViewerSummary);
+post.get('/viewers/user/:userId', allowIfLoggedIn, PostController.getAllViewers);
 post.get('/:userId/statistics', allowIfLoggedIn, PostController.getStatistics);
+
 module.exports = post;

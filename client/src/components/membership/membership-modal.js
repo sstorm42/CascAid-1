@@ -95,13 +95,13 @@ const MembershipModal = (props) => {
                         </Col>
                     </Row>
 
-                    <Row class="form-group">
+                    <Row className="form-group">
                         <Col sm={6}>Is Current Member?</Col>
                         <Col>
-                            <div class="custom-control custom-switch" style={{ zIndex: 100 }}>
+                            <div className="custom-control custom-switch" style={{ zIndex: 100 }}>
                                 <input
                                     type="checkbox"
-                                    class="custom-control-input"
+                                    className="custom-control-input"
                                     id="customSwitch1"
                                     checked={membership.isCurrent}
                                     onChange={() => {

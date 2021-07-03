@@ -49,6 +49,7 @@ exports.getAllFollower = async (req, res) => {
 
         aggregateOptions.push({ $match: match });
         aggregateOptions.push(LOOKUPS.follow_follower);
+        aggregateOptions.push({ $sort: { updatedAt: -1 } });
         aggregateOptions.push(PROJECTS.follow_get_all_follower);
         const followers = await Follow.aggregate(aggregateOptions);
 

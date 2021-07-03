@@ -216,3 +216,14 @@ exports.getCountNew = async (req, res) => {
         res.status(500).send({ success: false, message: error.message });
     }
 };
+
+// AUTOMATIC
+// exports.automaticSendToList = async (req, res) => {
+//     try {
+//         const userId = req.params.userId;
+//         const listType = req.params.listType;
+//         // return res.status(200).send({ success: true, uniqueMessageUserEntities, totalUniqueEntity });
+//     } catch (error) {
+//         res.status(500).send({ success: false, message: error.message });
+//     }
+// };

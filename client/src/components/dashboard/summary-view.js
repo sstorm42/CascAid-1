@@ -1,10 +1,56 @@
 import React from 'react';
 import { Button, Card, CardColumns, Col, Row } from 'react-bootstrap';
+import { RiMailSendFill, RiFileList2Line } from 'react-icons/ri';
+const CardRender = (props) => {
+    const cardHeader = props.cardHeader;
+    const cardType = props.cardType;
+    const data = props.data;
+    const handleViewAllButton = props.handleViewAllButton;
+    return (
+        <Card border="primary">
+            <Card.Header>{cardHeader}</Card.Header>
+            <Card.Body>
+                {data &&
+                    data.length > 0 &&
+                    data.map((d, i) => {
+                        return (
+                            <Row key={i}>
+                                <Col sm={8}>
+                                    <b>{d.label}</b>
+                                </Col>
+                                <Col sm={4}>{d.value}</Col>
+                            </Row>
+                        );
+                    })}
+            </Card.Body>
+            <Card.Footer>
+                <Button
+                    variant="outline-primary"
+                    size="sm"
+                    className="dashboard-btn"
+                    onClick={() => {
+                        handleViewAllButton(cardType);
+                    }}
+                >
+                    <RiFileList2Line /> View All
+                </Button>
 
+                <Button variant="outline-primary" size="sm" className="dashboard-btn">
+                    <RiMailSendFill /> New {cardHeader}
+                </Button>
+
+                <Button variant="outline-primary" size="sm" className="dashboard-btn">
+                    <RiMailSendFill /> All {cardHeader}
+                </Button>
+            </Card.Footer>
+        </Card>
+    );
+};
 const SummaryView = (props) => {
     const getFollowerSummaryResponse = props.getFollowerSummaryResponse;
     const getEndorserSummaryResponse = props.getEndorserSummaryResponse;
     const getViewerSummaryResponse = props.getViewerSummaryResponse;
+    const handleViewAllButton = props.handleViewAllButton;
     let totalFollowers = 0;
     let totalNewFollowers = 0;
     let totalEndorsers = 0;
@@ -23,93 +69,40 @@ const SummaryView = (props) => {
         totalViewers = getViewerSummaryResponse.totalViewers;
         totalNewViewers = getViewerSummaryResponse.totalNewViewers;
     }
+
     return (
         <>
             <Row>
                 <Col>
                     <h5>SUMMARY</h5>
                     <CardColumns className="four-columns">
-                        <Card border="primary">
-                            <Card.Header>FOLLOWERS</Card.Header>
-                            <Card.Body>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Total followers</b>
-                                    </Col>
-                                    <Col sm={4}>{totalFollowers}</Col>
-                                </Row>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Last 7 Days</b>
-                                    </Col>
-                                    <Col sm={4}>{totalNewFollowers}</Col>
-                                </Row>
-                            </Card.Body>
-                            <Card.Footer>
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    View All
-                                </Button>
-
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    Send Welcome Message To New Followers
-                                </Button>
-
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    Send Promotional Message To All Followers
-                                </Button>
-                            </Card.Footer>
-                        </Card>
-                        <Card border="primary">
-                            <Card.Header>ENDORSERS</Card.Header>
-                            <Card.Body>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Total endorsers</b>
-                                    </Col>
-                                    <Col sm={4}>{totalEndorsers}</Col>
-                                </Row>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Last 7 Days</b>
-                                    </Col>
-                                    <Col sm={4}>{totalNewEndorsers}</Col>
-                                </Row>
-                            </Card.Body>
-                            <Card.Footer>
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    View All
-                                </Button>
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    Send Welcome Message To New Endorsers
-                                </Button>
-
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    Send Promotional Message To All Endorsers
-                                </Button>
-                            </Card.Footer>
-                        </Card>
-                        <Card border="primary">
-                            <Card.Header>VIEWERS</Card.Header>
-                            <Card.Body>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Total viewers</b>
-                                    </Col>
-                                    <Col sm={4}>{totalViewers}</Col>
-                                </Row>
-                                <Row>
-                                    <Col sm={8}>
-                                        <b>Last 7 Days</b>
-                                    </Col>
-                                    <Col sm={4}>{totalNewViewers}</Col>
-                                </Row>
-                            </Card.Body>
-                            <Card.Footer>
-                                <Button variant="outline-primary" size="sm" style={{ marginBottom: 5, width: '100%' }}>
-                                    View All
-                                </Button>
-                            </Card.Footer>
-                        </Card>
+                        <CardRender
+                            cardHeader="Followers"
+                            cardType="follower"
+                            data={[
+                                { label: 'Total Followers', value: totalFollowers },
+                                { label: 'Last 7 Days', value: totalNewFollowers },
+                            ]}
+                            handleViewAllButton={handleViewAllButton}
+                        />
+                        <CardRender
+                            cardHeader="Endorsers"
+                            cardType="endorser"
+                            data={[
+                                { label: 'Total Endorsers', value: totalEndorsers },
+                                { label: 'Last 7 Days', value: totalNewEndorsers },
+                            ]}
+                            handleViewAllButton={handleViewAllButton}
+                        />
+                        <CardRender
+                            cardHeader="Viewers"
+                            cardType="viewer"
+                            data={[
+                                { label: 'Total Viewers', value: totalViewers },
+                                { label: 'Last 7 Days', value: totalNewViewers },
+                            ]}
+                            handleViewAllButton={handleViewAllButton}
+                        />
                     </CardColumns>
                 </Col>
             </Row>

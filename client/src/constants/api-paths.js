@@ -1,6 +1,6 @@
 import { getLocalStorage } from '@Actions';
-export const serverAddress = `http://localhost:3001`;
-// export const serverAddress = `http://172.104.35.84`;
+// export const serverAddress = `http://localhost:3001`;
+export const serverAddress = `http://172.104.35.84`;
 
 // API CONFIG
 export const apiConfig = () => ({ headers: { Authorization: `Bearer ${getLocalStorage(`token`)}` } });
@@ -66,6 +66,7 @@ export const createPost = serverAddress + `/api/posts/`;
 export const updatePostById = (postId) => serverAddress + `/api/posts/${postId}`;
 export const deletePostById = (postId) => serverAddress + `/api/posts/${postId}`;
 export const getAllPosts = serverAddress + `/api/posts`;
+export const getAllUpcomingPosts = serverAddress + `/api/posts/upcoming`;
 export const getAllPostsByUser = (userId) => serverAddress + `/api/users/${userId}/posts`;
 export const getAllImages = (userId) => serverAddress + `/api/posts/gallery/user/${userId}`;
 export const getAllCalendarPosts = (userId) => serverAddress + `/api/posts/calendar/user/${userId}`;
@@ -127,6 +128,7 @@ export const CheckIfEndorses = (endorserId, endorseeId) => serverAddress + `/api
 export const getEndorserSummary = (userId) => serverAddress + `/api/endorsements/endorsers/${userId}/summary`;
 
 // VIEWER
+export const getAllViewers = (userId) => serverAddress + `/api/posts/viewers/user/${userId}`;
 export const getAllViewersByPost = (postId) => serverAddress + `/api/posts/${postId}/viewers`;
 
 // CONVERSATION

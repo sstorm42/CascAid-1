@@ -132,7 +132,7 @@ const PostList = (props) => {
                     {allPosts && allPosts.length > 0 && (
                         <Table striped bordered hover responsive size="sm">
                             <thead>
-                                <tr class="table-active">
+                                <tr className="table-active">
                                     <th>#</th>
                                     <th>Post Type</th>
                                     <th>Title</th>

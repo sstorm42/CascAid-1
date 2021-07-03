@@ -115,7 +115,12 @@ class PostDA {
             .then((response) => response.data)
             .catch((err) => err.response.data);
     };
-
+    get_all_viewers = (userId) => {
+        return axios
+            .get(APIPaths.getAllViewers(userId), APIPaths.apiConfig())
+            .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
     get_all_viewers_by_post = (postId) => {
         return axios
             .get(APIPaths.getAllViewersByPost(postId), APIPaths.apiConfig())
@@ -156,6 +161,27 @@ class PostDA {
         return axios
             .get(APIPaths.getPostStatistics(userId), APIPaths.apiConfig())
             .then((response) => response.data)
+            .catch((err) => err.response.data);
+    };
+    get_all_upcoming_posts = (filter) => {
+        let queryString = '?';
+
+        for (let t in filter) {
+            if (filter[t]) {
+                console.log(t);
+                queryString += t.toString();
+                queryString += '=';
+                queryString += JSON.stringify(filter[t]);
+                queryString += '&';
+            }
+        }
+        console.log('🚀 ~ file: post-da.js ~ line 168 ~ PostDA ~ queryString', queryString);
+        return axios
+            .get(APIPaths.getAllUpcomingPosts + queryString.slice(0, -1), APIPaths.apiConfig())
+            .then((response) => {
+                console.log('🚀 ~ file: post-da.js ~ line 182 ~ PostDA ~ .then ~ response', response);
+                return response.data;
+            })
             .catch((err) => err.response.data);
     };
 }

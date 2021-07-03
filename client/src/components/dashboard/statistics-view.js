@@ -5,7 +5,7 @@ import LineChart from './line-chart';
 const StatisticsView = (props) => {
     const getPostStatisticsResponse = props.getPostStatisticsResponse;
     if (getPostStatisticsResponse && getPostStatisticsResponse.success) {
-        const { viewerStatistics, interactionStatistics } = getPostStatisticsResponse.statistics;
+        const { viewerStatisticsOfLastSixMonths, interactionStatisticsOfLastSixMonths } = getPostStatisticsResponse;
         return (
             <>
                 <Row>
@@ -14,10 +14,10 @@ const StatisticsView = (props) => {
 
                         <Row>
                             <Col md={6}>
-                                <LineChart viewerStatistics={viewerStatistics} />
+                                <LineChart viewerStatistics={viewerStatisticsOfLastSixMonths} />
                             </Col>
                             <Col md={6}>
-                                <InteractionChart interactionStatistics={interactionStatistics} />
+                                <InteractionChart interactionStatistics={interactionStatisticsOfLastSixMonths} />
                             </Col>
                         </Row>
                     </Col>

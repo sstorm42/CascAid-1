@@ -18,6 +18,7 @@ const initialState = {
     getAllCalendarPosts: {},
     getViewerSummary: {},
     getPostStatistics: {},
+    getAllUpComingPosts: {},
 };
 const changePostInterest = (post_, { postId, userId, type }) => {
     let post = post_.post;
@@ -154,6 +155,8 @@ const PostReducer = (state = initialState, action) => {
             return { ...state, getViewerSummary: action.payload };
         case Types.GET_POST_STATISTICS:
             return { ...state, getPostStatistics: action.payload };
+        case Types.GET_ALL_UPCOMING_POSTS:
+            return { ...state, getAllUpComingPosts: action.payload };
         default:
             return { ...state };
     }

@@ -50,6 +50,7 @@ exports.getAllEndorsers = async (req, res) => {
 
         aggregateOptions.push({ $match: match });
         aggregateOptions.push(LOOKUPS.endorsement_endorser);
+        aggregateOptions.push({ $sort: { updatedAt: -1 } });
         aggregateOptions.push(PROJECTS.endorsement_get_all_endorser);
         const endorsers = await Endorsement.aggregate(aggregateOptions);
 

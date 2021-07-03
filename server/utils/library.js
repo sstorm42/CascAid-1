@@ -6,8 +6,8 @@ const fs = require('fs');
 const moment = require('moment');
 const randomstring = require('randomstring');
 
-const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
-// const appDir = `http://localhost:3001/uploaded-images/`;
+// const appDir = `http://cascaid.sky4242.com/uploaded-images/`;
+const appDir = `http://localhost:3001/uploaded-images/`;
 const path2 = './uploaded_images/';
 
 exports.saveImagesOnServer = (imageArray) => {

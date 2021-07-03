@@ -7,7 +7,7 @@ const data = (viewerStatistics) => {
         datasets: [
             {
                 label: '# of Views',
-                data: viewerStatistics.map((viewer) => viewer.value),
+                data: viewerStatistics.map((viewer) => viewer.views),
                 fill: true,
                 backgroundColor: '#5f9ea0',
                 borderColor: '#5f9ea0',
@@ -30,6 +30,7 @@ const options = {
 
 const LineChart = (props) => {
     const viewerStatistics = props.viewerStatistics;
+    console.log('🚀 ~ file: line-chart.js ~ line 33 ~ LineChart ~ viewerStatistics', viewerStatistics);
     return (
         <>
             <div className="header">

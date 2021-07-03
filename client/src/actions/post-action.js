@@ -114,6 +114,12 @@ export const getAllCommittedPersons = (postId, type) => {
     return PostDA.get_all_committed_persons(postId, type);
 };
 
+export const getAllViewers = (userId) => {
+    return {
+        type: Types.GET_ALL_VIEWERS,
+        payload: PostDA.get_all_viewers(userId),
+    };
+};
 export const getAllViewersByPost = (postId) => {
     return {
         type: Types.GET_ALL_VIEWERS_BY_POST,
@@ -148,5 +154,12 @@ export const getPostStatistics = (userId) => {
     return {
         type: Types.GET_POST_STATISTICS,
         payload: PostDA.get_post_statistics(userId),
+    };
+};
+
+export const getAllUpcomingPosts = (filter) => {
+    return {
+        type: Types.GET_ALL_UPCOMING_POSTS,
+        payload: PostDA.get_all_upcoming_posts(filter),
     };
 };

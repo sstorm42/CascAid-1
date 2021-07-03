@@ -31,7 +31,10 @@ class SignIn extends Component {
                 if (this.props.auth.success && this.props.auth.isAuth) {
                     authenticate(this.props.auth);
                     NotificationManager.success('Welcome to CascAid', 'Success');
-                    this.props.history.push(RoutePath.homePage);
+                    const user = this.props.auth.user;
+                    const userType = user.userType;
+                    if (userType === 'individual') this.props.history.push(RoutePath.homePage);
+                    else if (userType === 'organization') this.props.history.push(RoutePath.dashboardPage);
                 } else if (this.props.auth.success === false && this.props.auth.isAuth === false) {
                     console.log('🚀 ~ file: sign-in.js ~ line 34 ~ SignIn ~ this.props.auth', this.props.auth);
                     this.setState({
