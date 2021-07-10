@@ -22,6 +22,11 @@ import { IoMailUnreadOutline } from 'react-icons/io5';
 import { RiChat2Line, RiUserFollowFill, RiUserFollowLine } from 'react-icons/ri';
 import { TiThList } from 'react-icons/ti';
 import { VscMailRead } from 'react-icons/vsc';
+import { facebookAppId } from '@Constants/api-paths';
+import { FacebookShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton } from 'react-share'; // FACEBOOK
+import { LinkedinShareButton, LinkedinIcon } from 'react-share'; // LINKED IN
+import { TwitterShareButton, TwitterIcon } from 'react-share'; // TWITTER
+import { EmailShareButton, EmailIcon } from 'react-share';
 const renderTitle = (title) => {
     return title ? title : '';
 };
@@ -436,5 +441,52 @@ export const RemoveFromSchedulerButtonRender = (props) => {
                 <FaRegCalendarMinus /> {renderTitle(props.button_title)}
             </Button>
         </OverlayTrigger>
+    );
+};
+
+export const FacebookShareButtonRender = (props) => {
+    const shareUrl = props.shareUrl ? props.shareUrl : '';
+    const quote = props.quote ? props.quote : '';
+    return (
+        <FacebookShareButton url={shareUrl} quote={quote}>
+            <FacebookIcon size={32} round />
+        </FacebookShareButton>
+    );
+};
+
+export const LinkedInShareButtonRender = (props) => {
+    const shareUrl = props.shareUrl ? props.shareUrl : '';
+    const quote = props.quote ? props.quote : '';
+    return (
+        <LinkedinShareButton url={shareUrl}>
+            <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
+    );
+};
+export const TwitterShareButtonRender = (props) => {
+    const shareUrl = props.shareUrl ? props.shareUrl : '';
+    const quote = props.quote ? props.quote : '';
+    return (
+        <TwitterShareButton url={shareUrl} title={quote}>
+            <TwitterIcon size={32} round />
+        </TwitterShareButton>
+    );
+};
+export const MessengerShareButtonRender = (props) => {
+    const shareUrl = props.shareUrl ? props.shareUrl : '';
+    const quote = props.quote ? props.quote : '';
+    return (
+        <FacebookMessengerShareButton url={shareUrl} appId={facebookAppId}>
+            <FacebookMessengerIcon size={32} round />
+        </FacebookMessengerShareButton>
+    );
+};
+export const EmailShareButtonRender = (props) => {
+    const shareUrl = props.shareUrl ? props.shareUrl : '';
+    const quote = props.quote ? props.quote : '';
+    return (
+        <EmailShareButton url={shareUrl} subject={quote} body="body">
+            <EmailIcon size={32} round />
+        </EmailShareButton>
     );
 };

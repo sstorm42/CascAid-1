@@ -18,10 +18,12 @@ import { postManagePage } from '@Constants/route-paths';
 import { checkIfPostAddedToScheduler, addPostToScheduler, removePostFromScheduler } from '@Actions/scheduler-action';
 const DisplayPost = (props) => {
     const [loading, setLoading] = useState(false);
+    const [url, setUrl] = useState('');
     const [userId, setUserId] = useState('');
     const [committedModal, setCommittedModal] = useState(false);
     const [committedLoading, setCommittedLoading] = useState(false);
     const [committedList, setCommittedList] = useState([]);
+
     useEffect(() => {
         const getInitialInfo = (postId) => {
             const user = props.auth.user;
@@ -31,7 +33,7 @@ const DisplayPost = (props) => {
             }
             setLoading(true);
             props.dispatch(getPostById(postId));
-
+            setUrl(window.location.href);
             setLoading(false);
         };
         const postId = props.match.params.postId;
@@ -129,6 +131,7 @@ const DisplayPost = (props) => {
                 getCheckIfPostAddedToSchedulerResponse={props.getCheckIfPostAddedToSchedulerResponse}
                 handleAddPostToScheduler={handleAddPostToScheduler}
                 handleRemovePostFromScheduler={handleRemovePostFromScheduler}
+                url={url}
             />
         </>
     );

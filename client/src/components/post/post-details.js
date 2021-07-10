@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import { interestTypes } from '@Constants/interest-types';
 import moment from 'moment';
+
 import {
     TagWithLabelRender,
     SkillsRender,
@@ -23,13 +24,19 @@ import {
     InterestedButtonRender,
     AddToSchedulerButtonRender,
     RemoveFromSchedulerButtonRender,
+    FacebookShareButtonRender,
+    LinkedInShareButtonRender,
+    TwitterShareButtonRender,
+    MessengerShareButtonRender,
+    EmailShareButtonRender,
 } from '../form_template/buttons-render';
 import PostMapView from './post-map-view';
 import * as RoutePath from '@Constants/route-paths';
 import { getPostTypeByValue, postTypeFields } from '@Constants/post-types';
 const DisplayPost = (props) => {
     const post = props.post;
-    console.log('🚀 ~ file: post-details.js ~ line 24 ~ DisplayPost ~ post', post);
+    const url = props.url;
+
     const userId = props.userId;
     const fields = postTypeFields[post.postType];
     const getCheckIfPostAddedToSchedulerResponse = props.getCheckIfPostAddedToSchedulerResponse;
@@ -291,6 +298,26 @@ const DisplayPost = (props) => {
                                 )}
                             </Col>
                         </Row>
+                        <hr />
+                        {url && (
+                            <Row>
+                                <Col sm={2}>
+                                    <label>SHARE</label>
+                                </Col>
+                                <Col sm={10}>
+                                    <FacebookShareButtonRender shareUrl={url} quote={post.title} />
+                                    &nbsp;
+                                    <MessengerShareButtonRender shareUrl={url} quote={post.title} />
+                                    &nbsp;
+                                    <LinkedInShareButtonRender shareUrl={url} quote={post.title} />
+                                    &nbsp;
+                                    <TwitterShareButtonRender shareUrl={url} quote={post.title} />
+                                    &nbsp;
+                                    <EmailShareButtonRender shareUrl={url} quote={post.title} />
+                                    &nbsp;
+                                </Col>
+                            </Row>
+                        )}
                     </Col>
                 </Row>
             </Container>
