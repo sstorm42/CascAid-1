@@ -839,24 +839,7 @@ exports.getStatistics = async (req, res) => {
                 going,
             });
         }
-        // const dummyData = {
-        //     viewerStatistics: [
-        //         { label: 'January 21', value: 20 },
-        //         { label: 'February 21', value: 30 },
-        //         { label: 'March 21', value: 40 },
-        //         { label: 'April 21', value: 50 },
-        //         { label: 'May 21', value: 60 },
-        //         { label: 'June 21', value: 70 },
-        //     ],
-        //     interactionStatistics: [
-        //         { label: 'January 21', liked: 20, interested: 30, going: 40 },
-        //         { label: 'February 21', liked: 30, interested: 40, going: 60 },
-        //         { label: 'March 21', liked: 40, interested: 50, going: 80 },
-        //         { label: 'April 21', liked: 50, interested: 60, going: 100 },
-        //         { label: 'May 21', liked: 60, interested: 70, going: 120 },
-        //         { label: 'June 21', liked: 70, interested: 80, going: 140 },
-        //     ],
-        // };
+
         console.log(
             '🚀 ~ file: post-controller.js ~ line 784 ~ exports.getStatistics= ~ viewerStatisticsOfLastSixMonths',
             viewerStatisticsOfLastSixMonths,
